@@ -289,6 +289,33 @@ export default function Home() {
                 AAWhatsApp matches or exceeds the highest limits: send 1GB+ videos and 100+ images in a single message with minimal compression, far surpassing the 16MB stock limit.
               </AccordionContent>
             </AccordionItem>
+
+            <AccordionItem value="item-5" className="border-b-0">
+              <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
+                Do I need to uninstall official WhatsApp?
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
+                No, you can run official WhatsApp and AAWhatsApp side-by-side using different phone numbers. This is perfect for separating work and personal life.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="border-b-0">
+              <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
+                How do I update AAWhatsApp?
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
+                To update, simply download the latest APK from our site and install it over your existing version. Your chats will remain intact. Always back up your chats before updating for extra safety.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-7" className="border-b-0">
+              <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
+                Can I restore chats from official WhatsApp?
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
+                Yes! During the setup process, AAWhatsApp will detect any local backups from official WhatsApp and offer to restore them, making the transition seamless.
+              </AccordionContent>
+            </AccordionItem>
           </Accordion>
         </div>
       </section>
