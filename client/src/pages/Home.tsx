@@ -454,9 +454,6 @@ export default function Home() {
               <p>
                 AAWhatsApp runs smoothly on modern Android devices (4.3+ or 5.0+) without requiring root access. While it is optimized to be lighter than flashy mods like Aero, it still offers multi-language support (40+ languages) for global users.
               </p>
-              <p>
-                <span className="text-yellow-500 font-bold">⚠️ Caution:</span> Remember that all mods violate WhatsApp's terms. Always use a secondary number, update often to benefit from anti-ban fixes, and scan APKs for malware before installation.
-              </p>
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
