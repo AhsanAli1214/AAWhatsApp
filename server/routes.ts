@@ -3,7 +3,7 @@ import type { Server } from "http";
 import { api } from "@shared/routes";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function registerRoutes(
   httpServer: Server,
@@ -12,6 +12,10 @@ export async function registerRoutes(
   
   app.post("/api/report-bug", async (req, res) => {
     try {
+      if (!resend) {
+        console.error("Resend API Key is missing");
+        return res.status(500).json({ error: "Email service not configured" });
+      }
       const { type, email, message } = req.body;
       
       const { data, error } = await resend.emails.send({
