@@ -365,111 +365,73 @@ export default function Home() {
 
       {/* FAQ Section */}
       <section id="faq" className="py-24 bg-secondary/20 relative z-10">
-        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-center mb-12">
-            Frequently Asked Questions
-          </h2>
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Everything you need to know about AAWhatsApp's features and safety.
+            </p>
+          </div>
           
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            <AccordionItem value="item-1" className="border-b-0">
-              <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
-                Is AAWhatsApp safe to use?
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
-                Yes, it retains official encryption, but it's an unofficial mod. We recommend using it on a spare number and keeping the app updated from trusted sources to reduce any risks.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-2" className="border-b-0">
-              <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
-                Can I use two WhatsApp accounts?
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
-                Absolutely! AAWhatsApp supports dual/multiple accounts on one device, similar to GBWhatsApp. You can run two numbers simultaneously on the same phone.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-3" className="border-b-0">
-              <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
-                Does it support auto-reply?
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
-                Yes, AAWhatsApp includes business-friendly tools like auto-reply and message scheduling, giving you flexibility similar to FMWhatsApp and GBWhatsApp styles.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-4" className="border-b-0">
-              <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
-                How do media limits compare?
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
-                AAWhatsApp matches or exceeds the highest limits: send 1GB+ videos and 100+ images in a single message with minimal compression, far surpassing the 16MB stock limit.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-5" className="border-b-0">
-              <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
-                Do I need to uninstall official WhatsApp?
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
-                No, you can run official WhatsApp and AAWhatsApp side-by-side using different phone numbers. This is perfect for separating work and personal life.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-6" className="border-b-0">
-              <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
-                How do I update AAWhatsApp?
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
-                To update, simply download the latest APK from our site and install it over your existing version. Your chats will remain intact. Always back up your chats before updating for extra safety.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-7" className="border-b-0">
-              <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
-                Can I restore chats from official WhatsApp?
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
-                Yes! During the setup process, AAWhatsApp will detect any local backups from official WhatsApp and offer to restore them, making the transition seamless.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                q: "Is AAWhatsApp safe to use?",
+                a: "Yes, it retains official end-to-end encryption. However, as an unofficial mod, we recommend keeping it updated and using it responsibly to ensure maximum account safety."
+              },
+              {
+                q: "Can I use two WhatsApp accounts?",
+                a: "Absolutely! AAWhatsApp is designed to run side-by-side with the official app or other mods, allowing you to manage multiple numbers on a single device easily."
+              },
+              {
+                q: "Does it support auto-reply?",
+                a: "Yes, it includes advanced business tools like auto-reply, message scheduling, and a powerful DND mode to help you manage your communication more effectively."
+              },
+              {
+                q: "What are the media limits?",
+                a: "You can send videos up to 1GB and share 100+ high-quality images at once. Unlike the official app, AAWhatsApp doesn't aggressively compress your files."
+              },
+              {
+                q: "Do I need to root my phone?",
+                a: "No, AAWhatsApp works perfectly on all standard Android devices without requiring root access or any special system modifications."
+              },
+              {
+                q: "How do I update the app?",
+                a: "Simply download the latest APK from our website and install it. It will automatically update your existing installation while keeping all your chats safe."
+              },
+              {
+                q: "Is it really Anti-Ban?",
+                a: "We include a cutting-edge anti-ban engine that is constantly updated to match the latest security protocols, significantly reducing the risk of account suspension."
+              },
+              {
+                q: "Can I customize the UI?",
+                a: "Yes! Access thousands of free themes, custom fonts, bubble styles, and unique animations to make your WhatsApp look exactly how you want it."
+              },
+              {
+                q: "What is DND Mode?",
+                a: "The Do Not Disturb mode allows you to disable internet access for AAWhatsApp specifically, so you can stay online in other apps without being interrupted."
+              }
+            ].map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="bg-card p-8 rounded-3xl border border-primary/10 shadow-lg hover:shadow-primary/5 transition-all hover:-translate-y-1"
+              >
+                <h3 className="text-xl font-bold mb-4 text-primary">{faq.q}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {faq.a}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 border-t border-white/5 relative z-10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="bg-primary/5 rounded-3xl p-8 mb-12 border border-primary/10">
-            <h3 className="text-2xl font-bold mb-4">Safety & Performance</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-muted-foreground leading-relaxed">
-              <p>
-                AAWhatsApp runs smoothly on modern Android devices (4.3+ or 5.0+) without requiring root access. While it is optimized to be lighter than flashy mods like Aero, it still offers multi-language support (40+ languages) for global users.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary font-bold">
-                AA
-              </div>
-              <span className="font-bold font-display text-lg">AAWhatsApp</span>
-            </div>
-            
-            <div className="flex gap-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-primary transition-colors">Contact Us</a>
-            </div>
-          </div>
-          
-          <div className="text-center md:text-left text-xs text-muted-foreground/60 leading-relaxed">
-            <p>
-              &copy; 2026 AAWhatsApp Team. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
       {/* Footer */}
       <footer className="relative z-10 py-12 border-t border-white/5 bg-secondary/10">
         <div className="container mx-auto px-4 md:px-6">

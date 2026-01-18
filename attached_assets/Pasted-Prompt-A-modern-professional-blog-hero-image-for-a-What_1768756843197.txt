@@ -1,0 +1,51 @@
+Prompt:
+
+A modern professional blog hero image for a WhatsApp mod called AAWhatsApp, featuring a smartphone displaying a stylish chat interface, enhanced privacy icons (lock, shield, hidden eye), customization elements (themes, colors, emojis), clean dark green and black color scheme inspired by WhatsApp, glowing UI, tech-style background, soft light effects, high resolution, minimal text, realistic mobile mockup, premium Android app style, include the provided AAWhatsApp logo naturally on the screen, ultra-detailed, professional, 4K quality
+
+2️⃣ Privacy Features Image
+
+Section: Privacy & Anti-Ban Features
+
+Prompt:
+
+A futuristic illustration showing WhatsApp privacy features for AAWhatsApp, smartphone screen with chat interface, icons for hide last seen, blue ticks off, anti-delete messages, fingerprint lock, shield and lock symbols floating around the phone, dark mode UI, cybersecurity feel, neon accents, modern Android style, realistic UI, AAWhatsApp logo visible, high detail, professional tech illustration
+
+3️⃣ Customization & Themes Image
+
+Section: Themes, UI & Personalization
+
+Prompt:
+
+A creative visual showing multiple WhatsApp theme styles on one smartphone for AAWhatsApp, colorful chat themes, dark mode, light mode, gradient bubbles, custom fonts and emojis, theme switcher UI, stylish modern look, smooth gradients, premium app design, AAWhatsApp logo included, vibrant but clean, ultra-high resolution, professional app showcase
+
+4️⃣ Media Sharing & File Transfer Image
+
+Section: File & Media Sharing
+
+Prompt:
+
+A realistic smartphone mockup displaying AAWhatsApp media sharing features, large video files, HD photos, documents, file size icons (1GB+), fast upload arrows, cloud and media symbols, clean WhatsApp-style interface, modern UI, glowing effects, professional Android app look, AAWhatsApp logo on screen, high-quality, detailed, blog illustration
+
+5️⃣ Security & Anti-Ban Protection Image
+
+Section: Security & Stability
+
+Prompt:
+
+A professional cybersecurity-themed illustration for AAWhatsApp, smartphone protected by digital shield, anti-ban protection concept, secure WhatsApp chats, encrypted message symbols, green and black color palette, futuristic tech background, realistic UI, AAWhatsApp logo clearly visible, premium quality, 4K, modern app branding
+
+6️⃣ Comparison Image (AAWhatsApp vs Others)
+
+Section: Comparison
+
+Prompt:
+
+A clean comparison illustration showing AAWhatsApp vs other WhatsApp mods, two smartphones side-by-side, AAWhatsApp highlighted as premium and powerful, feature icons like privacy, customization, speed, security, modern UI design, minimal text, professional tech comparison style, AAWhatsApp logo emphasized, high resolution, blog-friendly layout
+
+7️⃣ Download / Call-to-Action Image
+
+Use near Download Button
+
+Prompt:
+
+A call-to-action image for downloading AAWhatsApp APK, smartphone with install screen, download arrow, secure badge, Android icon, clean background, modern WhatsApp-style colors, professional UI, AAWhatsApp logo prominently displayed, minimal text, high clarity, premium app promotion image
