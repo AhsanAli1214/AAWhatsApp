@@ -16,6 +16,7 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
+    { name: "About", to: "about" },
     { name: "Features", to: "features" },
     { name: "Comparison", to: "comparison" },
     { name: "FAQ", to: "faq" },
