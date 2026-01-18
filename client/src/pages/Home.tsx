@@ -359,25 +359,30 @@ export default function Home() {
                 </div>
 
                 {[
-                  { feature: "Anti-Ban System", aa: true, off: true },
-                  { feature: "Message Scheduler", aa: true, off: false },
-                  { feature: "Hide View Status", aa: true, off: false },
-                  { feature: "Anti-Delete Msg", aa: true, off: false },
-                  { feature: "Send 1GB+ Video", aa: true, off: false },
-                  { feature: "Custom Themes", aa: true, off: false },
-                  { feature: "Anti-Revoke", aa: true, off: false },
-                  { feature: "Status Downloader", aa: true, off: false },
-                  { feature: "Per-Chat Lock", aa: true, off: false },
-                  { feature: "DND Mode", aa: true, off: false },
+                  { feature: "Anti-Ban System", aa: true, off: true, detail: "Advanced AI-powered engine vs standard protection" },
+                  { feature: "Message Scheduler", aa: true, off: false, detail: "Automate your replies and business messages" },
+                  { feature: "Hide View Status", aa: true, off: false, detail: "Watch statuses without leaving a trace" },
+                  { feature: "Anti-Delete Msg", aa: true, off: false, detail: "Read messages even after they're deleted" },
+                  { feature: "Media Size Limit", aa: true, off: false, detail: "Send 2GB+ vs 16MB standard limit" },
+                  { feature: "Photo Quality", aa: true, off: false, detail: "Zero compression HD sharing vs heavy compression" },
+                  { feature: "Custom Themes", aa: true, off: false, detail: "1000s of UI skins vs standard light/dark" },
+                  { feature: "Anti-Revoke", aa: true, off: false, detail: "Prevent others from deleting sent messages" },
+                  { feature: "Status Downloader", aa: true, off: false, detail: "Download any status with one tap" },
+                  { feature: "Per-Chat Lock", aa: true, off: false, detail: "Secure individual chats with Fingerprint/PIN" },
+                  { feature: "DND Mode", aa: true, off: false, detail: "Mute WhatsApp internet while staying online elsewhere" },
+                  { feature: "Ghost Mode", aa: true, off: false, detail: "Hide second tick and 'typing...' indicator" },
                 ].map((row, i) => (
-                  <div key={i} className="grid grid-cols-3 gap-4 py-4 items-center text-center hover:bg-white/5 rounded-xl transition-colors">
-                    <div className="text-left pl-4 font-medium">{row.feature}</div>
-                    <div className="flex justify-center">
-                      {row.aa ? <CheckCircle2 className="text-primary w-6 h-6" /> : <XCircle className="text-red-500 w-6 h-6" />}
+                  <div key={i} className="py-6 border-b border-white/5 last:border-0 hover:bg-white/5 rounded-xl transition-all px-4">
+                    <div className="grid grid-cols-3 gap-4 items-center text-center">
+                      <div className="text-left font-bold text-lg">{row.feature}</div>
+                      <div className="flex justify-center">
+                        <CheckCircle2 className="text-primary w-7 h-7" />
+                      </div>
+                      <div className="flex justify-center opacity-30">
+                        {row.off ? <CheckCircle2 className="w-7 h-7" /> : <XCircle className="w-7 h-7" />}
+                      </div>
                     </div>
-                    <div className="flex justify-center opacity-50">
-                      {row.off ? <CheckCircle2 className="w-6 h-6" /> : <XCircle className="w-6 h-6" />}
-                    </div>
+                    <div className="mt-2 text-sm text-muted-foreground text-left">{row.detail}</div>
                   </div>
                 ))}
               </div>
