@@ -12,10 +12,10 @@ interface DownloadOption {
 }
 
 const OPTIONS: DownloadOption[] = [
-  { name: "Fast Server 1", icon: Server, url: "https://otieu.com/4/10272561", platform: "android", version: "v19.45" },
-  { name: "Google Drive", icon: HardDrive, url: "https://drive.google.com/uc?export=download&id=1Okxhfb5HI-qFRl3w0QB7NkGfa9a-b_7L", platform: "android", version: "v19.45" },
-  { name: "Upload.app", icon: Server, url: "https://upload.app/download/aawhatsapp/com.gbwhatsapp/eadda49b577008fc16152bdfe2320d4efc982ae0d0d4300803f5ec7958c428b4", platform: "android", version: "v19.45" },
-  { name: "MediaFire", icon: Download, url: "https://www.mediafire.com/file/8cph5lhutmthw83/AAWhatsapp_Latest.apk/file", platform: "android", version: "v19.45" },
+  { name: "Fast Server 1", icon: Server, url: "https://otieu.com/4/10272561", platform: "android", version: "latest" },
+  { name: "Google Drive", icon: HardDrive, url: "https://drive.google.com/uc?export=download&id=1Okxhfb5HI-qFRl3w0QB7NkGfa9a-b_7L", platform: "android", version: "latest" },
+  { name: "Upload.app", icon: Server, url: "https://upload.app/download/aawhatsapp/com.gbwhatsapp/eadda49b577008fc16152bdfe2320d4efc982ae0d0d4300803f5ec7958c428b4", platform: "android", version: "latest" },
+  { name: "MediaFire", icon: Download, url: "https://www.mediafire.com/file/8cph5lhutmthw83/AAWhatsapp_Latest.apk/file", platform: "android", version: "latest" },
 ];
 
 export function DownloadCard() {
@@ -49,7 +49,7 @@ export function DownloadCard() {
           </div>
           <div>
             <h3 className="text-2xl font-bold font-display">Download APK</h3>
-            <p className="text-sm text-primary font-medium">Version 19.45 • 65MB</p>
+            <p className="text-sm text-primary font-medium">Safe • Secure • Fast</p>
           </div>
         </div>
 

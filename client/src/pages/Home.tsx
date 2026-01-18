@@ -36,13 +36,13 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              Latest Version 2026 Released
+              Latest Version Released
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold font-display leading-[1.1] mb-6">
               AAWhatsApp APK Download – <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300 text-glow">
-                Latest 2026 WhatsApp Mod
+                Latest WhatsApp Mod
               </span>
             </h1>
             
@@ -53,7 +53,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <ScrollLink to="download" smooth={true} offset={-100}>
                 <button className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold text-lg shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
-                  Download APK v19.45
+                  Download APK
                 </button>
               </ScrollLink>
               <ScrollLink to="features" smooth={true} offset={-100}>
@@ -473,9 +473,6 @@ export default function Home() {
           </div>
           
           <div className="text-center md:text-left text-xs text-muted-foreground/60 leading-relaxed">
-            <p className="mb-2">
-              Disclaimer: AAWhatsApp is a modified version of WhatsApp. We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp Inc. or any of its subsidiaries or its affiliates.
-            </p>
             <p>
               &copy; 2026 AAWhatsApp Team. All rights reserved.
             </p>
