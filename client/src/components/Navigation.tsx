@@ -3,6 +3,8 @@ import { Link as ScrollLink } from "react-scroll";
 import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import logoImg from "@assets/icon_1768754567492.png";
+
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,9 +32,7 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-emerald-700 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/20">
-            AA
-          </div>
+          <img src={logoImg} alt="AAWhatsApp Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-primary/20" />
           <span className="text-xl font-bold font-display tracking-tight">AAWhatsApp</span>
         </div>
 

@@ -16,6 +16,8 @@ import { DownloadCard } from "@/components/DownloadCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link as ScrollLink } from "react-scroll";
 
+import logoImg from "@assets/icon_1768754567492.png";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
@@ -75,9 +77,9 @@ export default function Home() {
               <div className="rounded-[3rem] border-8 border-secondary bg-background overflow-hidden shadow-2xl shadow-primary/20 relative aspect-[9/19]">
                  {/* Scenic mountain landscape from unsplash for phone screen */}
                  <img 
-                   src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80" 
+                   src={logoImg} 
                    alt="App Interface" 
-                   className="w-full h-full object-cover opacity-80"
+                   className="w-full h-full object-contain p-8 bg-gradient-to-b from-primary/10 to-background"
                  />
                  
                  {/* Overlay UI elements to make it look like a chat app */}
