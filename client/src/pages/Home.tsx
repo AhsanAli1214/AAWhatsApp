@@ -16,7 +16,13 @@ import { DownloadCard } from "@/components/DownloadCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link as ScrollLink } from "react-scroll";
 
-import logoImg from "@assets/icon_1768754567492.png";
+import heroImage from "@assets/generated_images/modern_professional_blog_hero_image_for_aawhatsapp_mod..png";
+import privacyImage from "@assets/generated_images/futuristic_illustration_of_privacy_features_for_aawhatsapp..png";
+import themesImage from "@assets/generated_images/creative_visual_showing_multiple_whatsapp_theme_styles_for_aawhatsapp..png";
+import mediaImage from "@assets/generated_images/smartphone_mockup_displaying_aawhatsapp_media_sharing_features..png";
+import securityImage from "@assets/generated_images/professional_cybersecurity-themed_illustration_for_aawhatsapp..png";
+import comparisonImage from "@assets/generated_images/clean_comparison_illustration_showing_aawhatsapp_vs_other_mods..png";
+import ctaImage from "@assets/generated_images/call-to-action_image_for_downloading_aawhatsapp_apk..png";
 
 export default function Home() {
   return (
@@ -72,37 +78,13 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="flex-1 relative"
           >
-            <div className="relative z-10 mx-auto max-w-[300px]">
-              {/* Phone Mockup */}
-              <div className="rounded-[3rem] border-8 border-secondary bg-background overflow-hidden shadow-2xl shadow-primary/20 relative aspect-[9/19]">
-                 {/* Scenic mountain landscape from unsplash for phone screen */}
-                 <img 
-                   src={logoImg} 
-                   alt="App Interface" 
-                   className="w-full h-full object-contain p-8 bg-gradient-to-b from-primary/10 to-background"
-                 />
-                 
-                 {/* Overlay UI elements to make it look like a chat app */}
-                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 flex flex-col justify-between p-6">
-                   <div className="space-y-4 pt-8">
-                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/50" />
-                        <div className="h-2 w-24 bg-white/20 rounded-full" />
-                     </div>
-                     <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/5 max-w-[80%]">
-                       <div className="h-2 w-full bg-white/40 rounded-full mb-2" />
-                       <div className="h-2 w-2/3 bg-white/40 rounded-full" />
-                     </div>
-                     <div className="p-4 rounded-2xl bg-primary/20 backdrop-blur-md border border-primary/20 max-w-[80%] ml-auto">
-                       <div className="h-2 w-full bg-primary/40 rounded-full mb-2" />
-                       <div className="h-2 w-2/3 bg-primary/40 rounded-full" />
-                     </div>
-                   </div>
-                 </div>
-              </div>
+            <div className="relative z-10 mx-auto max-w-lg">
+              <img 
+                src={heroImage} 
+                alt="AAWhatsApp Interface" 
+                className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20"
+              />
             </div>
-            
-            {/* Decorative Elements behind phone */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10" />
           </motion.div>
         </div>
@@ -201,7 +183,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -223,10 +205,41 @@ export default function Home() {
             </motion.div>
 
             <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <img 
+                src={privacyImage} 
+                alt="Privacy Features" 
+                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+              />
+            </motion.div>
+          </div>
+
+          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="order-2 lg:order-1"
+            >
+              <img 
+                src={securityImage} 
+                alt="Security & Anti-Ban" 
+                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+              />
+            </motion.div>
+            
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="order-1 lg:order-2"
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">Chat & Messaging Tools</h2>
               <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
@@ -239,14 +252,11 @@ export default function Home() {
                 <p>
                   <span className="text-foreground font-bold">Broadcast & Group Tools:</span> Pin up to 100 chats, send broadcast messages to unlimited contacts, and manage large group chats with hundreds of members.
                 </p>
-                <p>
-                  <span className="text-foreground font-bold">Message Filtering:</span> Sort and clear chats efficiently with advanced search and filtering tools, similar to professional inbox management.
-                </p>
               </div>
             </motion.div>
           </div>
 
-          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -267,10 +277,40 @@ export default function Home() {
             </motion.div>
 
             <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img 
+                src={mediaImage} 
+                alt="Media Sharing" 
+                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+              />
+            </motion.div>
+          </div>
+
+          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="order-2 lg:order-1"
+            >
+              <img 
+                src={themesImage} 
+                alt="Customization & Themes" 
+                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+              />
+            </motion.div>
+
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="order-1 lg:order-2"
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">Customization & Themes</h2>
               <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
@@ -295,36 +335,51 @@ export default function Home() {
             Better Than The Rest
           </h2>
 
-          <div className="overflow-x-auto">
-            <div className="max-w-2xl mx-auto bg-secondary/40 backdrop-blur-md rounded-3xl border border-white/5 p-8">
-              <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-white/5 font-display font-bold text-lg text-center">
-                <div className="text-left pl-4 text-muted-foreground">Feature</div>
-                <div className="text-primary">AAWhatsApp</div>
-                <div className="text-muted-foreground">Official</div>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img 
+                src={comparisonImage} 
+                alt="Comparison" 
+                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+              />
+            </motion.div>
 
-              {[
-                { feature: "Anti-Ban System", aa: true, off: true },
-                { feature: "Message Scheduler", aa: true, off: false },
-                { feature: "Hide View Status", aa: true, off: false },
-                { feature: "Anti-Delete Msg", aa: true, off: false },
-                { feature: "Send 1GB+ Video", aa: true, off: false },
-                { feature: "Custom Themes", aa: true, off: false },
-                { feature: "Anti-Revoke", aa: true, off: false },
-                { feature: "Status Downloader", aa: true, off: false },
-                { feature: "Per-Chat Lock", aa: true, off: false },
-                { feature: "DND Mode", aa: true, off: false },
-              ].map((row, i) => (
-                <div key={i} className="grid grid-cols-3 gap-4 py-4 items-center text-center hover:bg-white/5 rounded-xl transition-colors">
-                  <div className="text-left pl-4 font-medium">{row.feature}</div>
-                  <div className="flex justify-center">
-                    {row.aa ? <CheckCircle2 className="text-primary w-6 h-6" /> : <XCircle className="text-red-500 w-6 h-6" />}
-                  </div>
-                  <div className="flex justify-center opacity-50">
-                    {row.off ? <CheckCircle2 className="w-6 h-6" /> : <XCircle className="w-6 h-6" />}
-                  </div>
+            <div className="overflow-x-auto">
+              <div className="bg-secondary/40 backdrop-blur-md rounded-3xl border border-white/5 p-8">
+                <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-white/5 font-display font-bold text-lg text-center">
+                  <div className="text-left pl-4 text-muted-foreground">Feature</div>
+                  <div className="text-primary">AAWhatsApp</div>
+                  <div className="text-muted-foreground">Official</div>
                 </div>
-              ))}
+
+                {[
+                  { feature: "Anti-Ban System", aa: true, off: true },
+                  { feature: "Message Scheduler", aa: true, off: false },
+                  { feature: "Hide View Status", aa: true, off: false },
+                  { feature: "Anti-Delete Msg", aa: true, off: false },
+                  { feature: "Send 1GB+ Video", aa: true, off: false },
+                  { feature: "Custom Themes", aa: true, off: false },
+                  { feature: "Anti-Revoke", aa: true, off: false },
+                  { feature: "Status Downloader", aa: true, off: false },
+                  { feature: "Per-Chat Lock", aa: true, off: false },
+                  { feature: "DND Mode", aa: true, off: false },
+                ].map((row, i) => (
+                  <div key={i} className="grid grid-cols-3 gap-4 py-4 items-center text-center hover:bg-white/5 rounded-xl transition-colors">
+                    <div className="text-left pl-4 font-medium">{row.feature}</div>
+                    <div className="flex justify-center">
+                      {row.aa ? <CheckCircle2 className="text-primary w-6 h-6" /> : <XCircle className="text-red-500 w-6 h-6" />}
+                    </div>
+                    <div className="flex justify-center opacity-50">
+                      {row.off ? <CheckCircle2 className="w-6 h-6" /> : <XCircle className="w-6 h-6" />}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -341,6 +396,15 @@ export default function Home() {
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 Download the latest version of AAWhatsApp APK now. Enjoy a seamless, ad-free experience with all premium features unlocked.
               </p>
+              
+              <div className="mb-8 rounded-3xl overflow-hidden shadow-xl border border-white/5">
+                <img 
+                  src={ctaImage} 
+                  alt="Download AAWhatsApp" 
+                  className="w-full h-auto"
+                />
+              </div>
+
               <ul className="space-y-4 mb-8">
                 {[
                   "Official Base Update",
