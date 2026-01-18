@@ -84,6 +84,9 @@ export default function Home() {
                 src={heroImage} 
                 alt="AAWhatsApp Interface" 
                 className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20"
+                loading="eager"
+                width="800"
+                height="600"
               />
             </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10" />
@@ -216,6 +219,9 @@ export default function Home() {
                 src={privacyImage} 
                 alt="Privacy Features" 
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+                loading="lazy"
+                width="600"
+                height="400"
               />
             </motion.div>
           </div>
@@ -232,6 +238,9 @@ export default function Home() {
                 src={securityImage} 
                 alt="Security & Anti-Ban" 
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+                loading="lazy"
+                width="600"
+                height="400"
               />
             </motion.div>
             
@@ -287,6 +296,9 @@ export default function Home() {
                 src={mediaImage} 
                 alt="Media Sharing" 
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+                loading="lazy"
+                width="600"
+                height="400"
               />
             </motion.div>
           </div>
@@ -303,6 +315,9 @@ export default function Home() {
                 src={themesImage} 
                 alt="Customization & Themes" 
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+                loading="lazy"
+                width="600"
+                height="400"
               />
             </motion.div>
 
@@ -347,6 +362,9 @@ export default function Home() {
                 src={comparisonImage} 
                 alt="Comparison" 
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+                loading="lazy"
+                width="600"
+                height="400"
               />
             </motion.div>
 
@@ -408,6 +426,9 @@ export default function Home() {
                   src={ctaImage} 
                   alt="Download AAWhatsApp" 
                   className="w-full h-auto"
+                  loading="lazy"
+                  width="600"
+                  height="300"
                 />
               </div>
 
