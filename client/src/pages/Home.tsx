@@ -23,6 +23,7 @@ import mediaImage from "@assets/generated_images/smartphone_mockup_displaying_aa
 import securityImage from "@assets/generated_images/professional_cybersecurity-themed_illustration_for_aawhatsapp..png";
 import comparisonImage from "@assets/generated_images/clean_comparison_illustration_showing_aawhatsapp_vs_other_mods..png";
 import ctaImage from "@assets/generated_images/call-to-action_image_for_downloading_aawhatsapp_apk..png";
+import logoImg from "@assets/icon_1768754567492.png";
 
 export default function Home() {
   return (
