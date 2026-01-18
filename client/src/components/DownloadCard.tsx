@@ -12,9 +12,10 @@ interface DownloadOption {
 }
 
 const OPTIONS: DownloadOption[] = [
-  { name: "Fast Server 1", icon: Server, url: "#", platform: "android", version: "v19.45" },
-  { name: "Google Drive", icon: HardDrive, url: "#", platform: "android", version: "v19.45" },
-  { name: "MediaFire", icon: Download, url: "#", platform: "android", version: "v19.45" },
+  { name: "Fast Server 1", icon: Server, url: "https://otieu.com/4/10272561", platform: "android", version: "v19.45" },
+  { name: "Google Drive", icon: HardDrive, url: "https://drive.google.com/uc?export=download&id=1Okxhfb5HI-qFRl3w0QB7NkGfa9a-b_7L", platform: "android", version: "v19.45" },
+  { name: "Upload.app", icon: Server, url: "https://upload.app/download/aawhatsapp/com.gbwhatsapp/eadda49b577008fc16152bdfe2320d4efc982ae0d0d4300803f5ec7958c428b4", platform: "android", version: "v19.45" },
+  { name: "MediaFire", icon: Download, url: "https://www.mediafire.com/file/8cph5lhutmthw83/AAWhatsapp_Latest.apk/file", platform: "android", version: "v19.45" },
 ];
 
 export function DownloadCard() {
@@ -31,8 +32,8 @@ export function DownloadCard() {
       title: "Download Started",
       description: `Downloading AAWhatsApp ${option.version} from ${option.name}`,
     });
-    
-    // In a real app, window.location.href = option.url;
+    // Track download and open link
+    window.open(option.url, '_blank');
   };
 
   return (
