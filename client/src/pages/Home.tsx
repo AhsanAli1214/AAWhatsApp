@@ -164,8 +164,41 @@ export default function Home() {
       </section>
 
       {/* Detailed Info Sections */}
-      <section className="py-24 relative z-10 bg-secondary/10">
+      <section id="about" className="py-24 relative z-10 bg-secondary/10">
         <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">About AAWhatsApp</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              AAWhatsApp is a premium, powerful unofficial WhatsApp mod designed for users who demand more from their messaging experience. Building on the legacies of GBWhatsApp and FMWhatsApp, AAWhatsApp 2026 brings together the most requested privacy controls, customization options, and media sharing capabilities into a single, high-performance package.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+            <div className="glass-card p-8 rounded-3xl border border-white/5 bg-secondary/20">
+              <h3 className="text-2xl font-bold mb-4 text-primary">Our Mission</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Our goal is to provide a messaging environment that respects your privacy and gives you total creative control. We believe you should be able to communicate without the artificial limits of the official app, whether that's sharing high-quality 1GB+ videos or customizing every pixel of your chat interface.
+              </p>
+            </div>
+            <div className="glass-card p-8 rounded-3xl border border-white/5 bg-secondary/20">
+              <h3 className="text-2xl font-bold mb-4 text-primary">Core Benefits</h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+                  <span>Enhanced Stealth: Read messages and view statuses invisibly.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+                  <span>Uncompressed Media: Send photos and videos in full original quality.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+                  <span>Superior Anti-Ban: Regularly updated engine to keep your account safe.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
