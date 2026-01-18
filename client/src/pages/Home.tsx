@@ -296,37 +296,29 @@ export default function Home() {
           </h2>
 
           <div className="overflow-x-auto">
-            <div className="min-w-[800px] bg-secondary/40 backdrop-blur-md rounded-3xl border border-white/5 p-8">
-              <div className="grid grid-cols-5 gap-4 mb-6 pb-6 border-b border-white/5 font-display font-bold text-lg text-center">
+            <div className="max-w-2xl mx-auto bg-secondary/40 backdrop-blur-md rounded-3xl border border-white/5 p-8">
+              <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-white/5 font-display font-bold text-lg text-center">
                 <div className="text-left pl-4 text-muted-foreground">Feature</div>
                 <div className="text-primary">AAWhatsApp</div>
-                <div className="text-muted-foreground">GBWhatsApp</div>
-                <div className="text-muted-foreground">FMWhatsApp</div>
                 <div className="text-muted-foreground">Official</div>
               </div>
 
               {[
-                { feature: "Anti-Ban System", aa: true, gb: true, fm: true, off: true },
-                { feature: "Message Scheduler", aa: true, gb: true, fm: true, off: false },
-                { feature: "Hide View Status", aa: true, gb: true, fm: true, off: false },
-                { feature: "Anti-Delete Msg", aa: true, gb: true, fm: true, off: false },
-                { feature: "Send 1GB+ Video", aa: true, gb: true, fm: true, off: false },
-                { feature: "Custom Themes", aa: true, gb: true, fm: true, off: false },
-                { feature: "Anti-Revoke", aa: true, gb: true, fm: true, off: false },
-                { feature: "Status Downloader", aa: true, gb: true, fm: true, off: false },
-                { feature: "Per-Chat Lock", aa: true, gb: true, fm: true, off: false },
-                { feature: "DND Mode", aa: true, gb: true, fm: true, off: false },
+                { feature: "Anti-Ban System", aa: true, off: true },
+                { feature: "Message Scheduler", aa: true, off: false },
+                { feature: "Hide View Status", aa: true, off: false },
+                { feature: "Anti-Delete Msg", aa: true, off: false },
+                { feature: "Send 1GB+ Video", aa: true, off: false },
+                { feature: "Custom Themes", aa: true, off: false },
+                { feature: "Anti-Revoke", aa: true, off: false },
+                { feature: "Status Downloader", aa: true, off: false },
+                { feature: "Per-Chat Lock", aa: true, off: false },
+                { feature: "DND Mode", aa: true, off: false },
               ].map((row, i) => (
-                <div key={i} className="grid grid-cols-5 gap-4 py-4 items-center text-center hover:bg-white/5 rounded-xl transition-colors">
+                <div key={i} className="grid grid-cols-3 gap-4 py-4 items-center text-center hover:bg-white/5 rounded-xl transition-colors">
                   <div className="text-left pl-4 font-medium">{row.feature}</div>
                   <div className="flex justify-center">
                     {row.aa ? <CheckCircle2 className="text-primary w-6 h-6" /> : <XCircle className="text-red-500 w-6 h-6" />}
-                  </div>
-                  <div className="flex justify-center opacity-50">
-                    {row.gb ? <CheckCircle2 className="w-6 h-6" /> : <XCircle className="w-6 h-6" />}
-                  </div>
-                  <div className="flex justify-center opacity-50">
-                    {row.fm ? <CheckCircle2 className="w-6 h-6" /> : <XCircle className="w-6 h-6" />}
                   </div>
                   <div className="flex justify-center opacity-50">
                     {row.off ? <CheckCircle2 className="w-6 h-6" /> : <XCircle className="w-6 h-6" />}
