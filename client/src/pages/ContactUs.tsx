@@ -8,7 +8,12 @@ import { useToast } from "@/hooks/use-toast";
 import { api } from "@shared/routes";
 
 export default function ContactUs() {
-  const { register, handleSubmit, reset, formState: { isSubmitting } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = useForm();
   const { toast } = useToast();
 
   const onSubmit = async (data: any) => {
@@ -23,7 +28,8 @@ export default function ContactUs() {
 
       toast({
         title: "Report Submitted!",
-        description: "Thank you for helping us improve AAWhatsApp. Our team will investigate this issue.",
+        description:
+          "Thank you for helping us improve AAWhatsApp. Our team will investigate this issue.",
       });
       reset();
     } catch (error) {
@@ -44,9 +50,12 @@ export default function ContactUs() {
               <Bug className="w-10 h-10" />
             </div>
           </div>
-          <CardTitle className="text-4xl font-extrabold tracking-tight">Report a Bug</CardTitle>
+          <CardTitle className="text-4xl font-extrabold tracking-tight">
+            Report a Bug
+          </CardTitle>
           <p className="text-muted-foreground mt-3 text-lg">
-            Found an error or bug in AAWhatsApp? Report it here to help us fix it.
+            Found an error or bug in AAWhatsApp? Report it here to help us fix
+            it.
           </p>
         </CardHeader>
         <CardContent className="pt-4">
@@ -55,9 +64,9 @@ export default function ContactUs() {
               <label className="text-sm font-medium leading-none">
                 Bug Type
               </label>
-              <Input 
-                placeholder="e.g. App Crash, UI Glitch, Anti-Ban Issue" 
-                {...register("type", { required: true })} 
+              <Input
+                placeholder="e.g. App Crash, UI Glitch, Anti-Ban Issue"
+                {...register("type", { required: true })}
                 className="bg-background/50 border-primary/10 focus:border-primary"
               />
             </div>
@@ -65,10 +74,10 @@ export default function ContactUs() {
               <label className="text-sm font-medium leading-none">
                 Email Address
               </label>
-              <Input 
-                type="email" 
-                placeholder="your@email.com" 
-                {...register("email", { required: true })} 
+              <Input
+                type="email"
+                placeholder="your@email.com"
+                {...register("email", { required: true })}
                 className="bg-background/50 border-primary/10 focus:border-primary"
               />
             </div>
@@ -76,25 +85,26 @@ export default function ContactUs() {
               <label className="text-sm font-medium leading-none">
                 Bug Details
               </label>
-              <Textarea 
-                placeholder="Please describe the steps to reproduce the bug..." 
+              <Textarea
+                placeholder="Please describe the steps to reproduce the bug..."
                 className="min-h-[150px] bg-background/50 border-primary/10 focus:border-primary resize-none"
                 {...register("message", { required: true })}
               />
             </div>
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               disabled={isSubmitting}
               className="w-full h-12 text-lg font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform"
             >
-              <Send className="mr-2 h-5 w-5" /> {isSubmitting ? "Submitting..." : "Submit Report"}
+              <Send className="mr-2 h-5 w-5" />{" "}
+              {isSubmitting ? "Submitting..." : "Submit Report"}
             </Button>
           </form>
 
           <div className="mt-12 pt-8 border-t border-primary/10 flex flex-col items-center gap-4 text-muted-foreground">
             <div className="flex items-center gap-2">
               <Mail className="w-5 h-5 text-primary" />
-              <span>bugs@aawhatsapp.com</span>
+              <span>AA WhatsApp by Ahsan Ali Wadani</span>
             </div>
           </div>
         </CardContent>
