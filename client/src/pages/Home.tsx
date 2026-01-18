@@ -163,6 +163,96 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Detailed Info Sections */}
+      <section className="py-24 relative z-10 bg-secondary/10">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">Advanced Privacy Features</h2>
+              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
+                <p>
+                  <span className="text-foreground font-bold">Hide Read Receipts & Status:</span> AAWhatsApp lets you hide your online status, second (blue) ticks, and even the "typing..." and "recording..." indicators. You get both global options (freeze last seen) and selective privacy toggles for specific contacts.
+                </p>
+                <p>
+                  <span className="text-foreground font-bold">View Deleted Messages:</span> With the built-in anti-revoke feature, you can see messages your friends delete. It also includes a game-changing status downloader to save photos and videos directly.
+                </p>
+                <p>
+                  <span className="text-foreground font-bold">In-App Chat Lock:</span> Secure your app and individual chats with a built-in PIN or fingerprint lock, adding an extra security layer without third-party apps.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">Chat & Messaging Tools</h2>
+              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
+                <p>
+                  <span className="text-foreground font-bold">Auto-Reply & Scheduler:</span> Set automated replies for orders or schedule messages for birthdays and meetings. It works as a mini-business assistant for your busy lifestyle.
+                </p>
+                <p>
+                  <span className="text-foreground font-bold">Do Not Disturb (DND):</span> Disable WhatsApp's internet connection only, allowing you to use other apps without being disturbed by incoming messages.
+                </p>
+                <p>
+                  <span className="text-foreground font-bold">Broadcast & Group Tools:</span> Pin up to 100 chats, send broadcast messages to unlimited contacts, and manage large group chats with hundreds of members.
+                </p>
+                <p>
+                  <span className="text-foreground font-bold">Message Filtering:</span> Sort and clear chats efficiently with advanced search and filtering tools, similar to professional inbox management.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">File & Media Sharing</h2>
+              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
+                <p>
+                  AAWhatsApp matches or exceeds the highest limits in the mod world. Send up to <span className="text-primary font-bold">90 photos</span> or <span className="text-primary font-bold">1GB+ video clips</span> at once without the heavy compression found in the official app.
+                </p>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Bulk Media: Send 100+ images in a single message.</li>
+                  <li>High-Quality: Shared files retain their original clarity and resolution.</li>
+                  <li>Status Download: Save friends' status updates and view "view once" media even after it expires.</li>
+                </ul>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">Customization & Themes</h2>
+              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
+                <p>
+                  Radically change the app's look with full UI control. Download <span className="text-primary font-bold">thousands of user-created themes</span> or build your own from scratch.
+                </p>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Fonts & Layout: Change message bubble styles, font types/sizes, and UI animations.</li>
+                  <li>Emojis & Stickers: Use custom emoji packs (iOS, Facebook, Google styles) and unlimited stickers.</li>
+                  <li>Animated Themes: Enjoy visual flair with Aero-inspired animated skins.</li>
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Comparison Table */}
       <section id="comparison" className="py-24 bg-secondary/20 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
@@ -323,6 +413,17 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 border-t border-white/5 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
+          <div className="bg-primary/5 rounded-3xl p-8 mb-12 border border-primary/10">
+            <h3 className="text-2xl font-bold mb-4">Safety & Performance</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-muted-foreground leading-relaxed">
+              <p>
+                AAWhatsApp runs smoothly on modern Android devices (4.3+ or 5.0+) without requiring root access. While it is optimized to be lighter than flashy mods like Aero, it still offers multi-language support (40+ languages) for global users.
+              </p>
+              <p>
+                <span className="text-yellow-500 font-bold">⚠️ Caution:</span> Remember that all mods violate WhatsApp's terms. Always use a secondary number, update often to benefit from anti-ban fixes, and scan APKs for malware before installation.
+              </p>
+            </div>
+          </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary font-bold">
