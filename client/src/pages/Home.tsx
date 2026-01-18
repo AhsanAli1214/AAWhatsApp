@@ -40,14 +40,14 @@ export default function Home() {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold font-display leading-[1.1] mb-6">
-              Experience WhatsApp <br/>
+              AAWhatsApp APK Download – <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300 text-glow">
-                Without Limits
+                Latest 2026 WhatsApp Mod
               </span>
             </h1>
             
             <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Unlock advanced privacy features, custom themes, and large file sharing capabilities. The most trusted WhatsApp mod of 2026.
+              Advanced Privacy, Anti-Ban, Large Media Sharing & Custom Themes. Experience the powerful unofficial WhatsApp mod that builds on the features of GBWhatsApp and FMWhatsApp.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -125,38 +125,38 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <FeatureCard 
               icon={Ghost}
-              title="Ultimate Privacy"
-              description="Hide your online status, blue ticks, second ticks, and even 'typing...' status while seeing everyone else's."
+              title="Privacy Suite"
+              description="Hide online status, second ticks, and 'typing...' indicators. View deleted messages with anti-revoke and save statuses directly."
               delay={0.1}
             />
             <FeatureCard 
               icon={Shield}
-              title="Anti-Ban Protection"
-              description="Our advanced anti-ban technology keeps your account safe and secure from temporary or permanent bans."
+              title="Security & Anti-Ban"
+              description="Advanced anti-ban engine reduces suspension risk. Built-in app lock (PIN/fingerprint) for app and individual chats."
               delay={0.2}
             />
             <FeatureCard 
               icon={Palette}
-              title="Custom Themes"
-              description="Access thousands of themes or create your own. Change fonts, bubbles, ticks, and launcher icons."
+              title="Full UI Control"
+              description="1000s of themes, custom fonts, bubble styles, and animations. Dark/light modes and vibrant skins for a unique interface."
               delay={0.3}
             />
             <FeatureCard 
               icon={Zap}
-              title="Large Media Sharing"
-              description="Send videos up to 1GB and high-resolution images without compression. No more blurry photos."
+              title="Pro Media Sharing"
+              description="Send 1GB+ videos and 100+ high-definition images at once with minimal compression. Perfect for large documents."
               delay={0.4}
             />
             <FeatureCard 
               icon={MessageSquare}
-              title="Auto-Reply & Scheduler"
-              description="Schedule messages for birthdays or meetings. Set up auto-replies when you're busy or sleeping."
+              title="Business Assistant"
+              description="Auto-reply for busy hours and message scheduling. DND mode to cut data for WhatsApp while staying connected on other apps."
               delay={0.5}
             />
             <FeatureCard 
               icon={Lock}
-              title="Built-in App Lock"
-              description="Secure your chats with fingerprint, pattern, or PIN lock directly within the app."
+              title="Group & Broadcast"
+              description="High limits for pinned chats and group members (hundreds). Broadcast messages to unlimited contacts effortlessly."
               delay={0.6}
             />
           </div>
@@ -185,9 +185,12 @@ export default function Home() {
                 { feature: "Message Scheduler", aa: true, gb: true, fm: true, off: false },
                 { feature: "Hide View Status", aa: true, gb: true, fm: true, off: false },
                 { feature: "Anti-Delete Msg", aa: true, gb: true, fm: true, off: false },
-                { feature: "Send 1GB Video", aa: true, gb: false, fm: false, off: false },
-                { feature: "Custom Fonts", aa: true, gb: true, fm: true, off: false },
-                { feature: "No Ads", aa: true, gb: false, fm: false, off: true },
+                { feature: "Send 1GB+ Video", aa: true, gb: true, fm: true, off: false },
+                { feature: "Custom Themes", aa: true, gb: true, fm: true, off: false },
+                { feature: "Anti-Revoke", aa: true, gb: true, fm: true, off: false },
+                { feature: "Status Downloader", aa: true, gb: true, fm: true, off: false },
+                { feature: "Per-Chat Lock", aa: true, gb: true, fm: true, off: false },
+                { feature: "DND Mode", aa: true, gb: true, fm: true, off: false },
               ].map((row, i) => (
                 <div key={i} className="grid grid-cols-5 gap-4 py-4 items-center text-center hover:bg-white/5 rounded-xl transition-colors">
                   <div className="text-left pl-4 font-medium">{row.feature}</div>
@@ -256,34 +259,34 @@ export default function Home() {
                 Is AAWhatsApp safe to use?
               </AccordionTrigger>
               <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
-                Yes, AAWhatsApp is scanned daily for malware and viruses. It uses the same servers as official WhatsApp to send messages, so your chats remain end-to-end encrypted. However, using any modded app carries a small risk, so we recommend using a secondary number.
+                Yes, it retains official encryption, but it's an unofficial mod. We recommend using it on a spare number and keeping the app updated from trusted sources to reduce any risks.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-2" className="border-b-0">
               <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
-                Will I get banned for using this?
+                Can I use two WhatsApp accounts?
               </AccordionTrigger>
               <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
-                AAWhatsApp comes with Anti-Ban V10.2 protection which significantly reduces the risk of bans. To be extra safe, avoid using "mass message" features excessively and keep the app updated.
+                Absolutely! AAWhatsApp supports dual/multiple accounts on one device, similar to GBWhatsApp. You can run two numbers simultaneously on the same phone.
               </AccordionContent>
             </AccordionItem>
             
             <AccordionItem value="item-3" className="border-b-0">
               <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
-                How do I update without losing chats?
+                Does it support auto-reply?
               </AccordionTrigger>
               <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
-                Simply download the new version and install it OVER the existing one. Do not uninstall the old version first. We always recommend backing up your chats to local storage (Settings {'>'} Chats {'>'} Chat Backup) before updating.
+                Yes, AAWhatsApp includes business-friendly tools like auto-reply and message scheduling, giving you flexibility similar to FMWhatsApp and GBWhatsApp styles.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-4" className="border-b-0">
               <AccordionTrigger className="bg-secondary/40 px-6 rounded-2xl hover:bg-secondary/60 hover:no-underline font-semibold text-lg">
-                Can I use two WhatsApp accounts?
+                How do media limits compare?
               </AccordionTrigger>
               <AccordionContent className="px-6 pt-4 text-muted-foreground text-base leading-relaxed">
-                Absolutely! AAWhatsApp has a built-in account switcher feature. Alternatively, you can install AAWhatsApp alongside the official WhatsApp app to run two numbers on one phone simultaneously.
+                AAWhatsApp matches or exceeds the highest limits: send 1GB+ videos and 100+ images in a single message with minimal compression, far surpassing the 16MB stock limit.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
