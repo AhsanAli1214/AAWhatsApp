@@ -470,6 +470,39 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      {/* Footer */}
+      <footer className="relative z-10 py-12 border-t border-white/5 bg-secondary/10">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center gap-2 mb-4">
+                <img src={logoImg} alt="Logo" className="w-8 h-8 object-contain" />
+                <span className="text-xl font-bold font-display">AAWhatsApp</span>
+              </div>
+              <p className="text-muted-foreground max-w-sm">
+                The ultimate WhatsApp modification for advanced privacy, unlimited customization, and high-performance media sharing.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Legal</h4>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+                <li><a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Support</h4>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><a href="/contact" className="hover:text-primary transition-colors">Contact Us</a></li>
+                <li><ScrollLink to="faq" smooth={true} className="hover:text-primary cursor-pointer transition-colors">FAQs</ScrollLink></li>
+              </ul>
+            </div>
+          </div>
+          <div className="pt-8 border-t border-white/5 text-center text-muted-foreground text-sm">
+            <p>© {new Date().getFullYear()} AAWhatsApp. All rights reserved. Not affiliated with WhatsApp Inc.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
