@@ -49,9 +49,9 @@ export default function Home() {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold font-display leading-[1.1] mb-6">
-              AAWhatsApp APK Download – <br/>
+              AAWhatsApp APK Download (2026) – <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300 text-glow">
-                Latest WhatsApp Mod
+                Latest Anti-Ban WhatsApp Mod
               </span>
             </h1>
             
@@ -103,7 +103,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
-              Why Choose <span className="text-primary">AAWhatsApp</span>?
+              Why AAWhatsApp is the Best WhatsApp Mod?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               We've packed the most requested features into a lightweight, stable package that keeps you safe and private.
