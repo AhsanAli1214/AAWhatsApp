@@ -58,14 +58,22 @@ export function DownloadCard() {
             <Button
               key={idx}
               onClick={() => handleDownload(opt)}
-              className="w-full justify-between h-14 text-base font-medium bg-secondary hover:bg-secondary/80 border border-white/5 hover:border-primary/50 group transition-all"
+              className="w-full justify-between h-16 text-lg font-bold bg-gradient-to-r from-secondary to-secondary/50 hover:from-primary/20 hover:to-primary/10 border border-white/10 hover:border-primary/50 group transition-all duration-300 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
               variant="outline"
             >
-              <span className="flex items-center gap-2">
-                <opt.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                {opt.name}
+              <span className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-background/50 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <opt.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <span className="flex flex-col items-start">
+                  <span className="leading-none mb-1">{opt.name}</span>
+                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Official Mirror</span>
+                </span>
               </span>
-              <Download className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-primary" />
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">Fast Download</span>
+                <Download className="w-5 h-5 opacity-40 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-primary" />
+              </div>
             </Button>
           ))}
         </div>

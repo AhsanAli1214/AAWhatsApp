@@ -60,13 +60,18 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <ScrollLink to="download" smooth={true} offset={-100}>
-                <button className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold text-lg shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
-                  Download APK
+              <ScrollLink to="download" smooth={true} offset={-100} className="w-full sm:w-auto">
+                <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full">
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    <Zap className="w-6 h-6 fill-current" />
+                    Download APK
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
               </ScrollLink>
-              <ScrollLink to="features" smooth={true} offset={-100}>
-                <button className="px-8 py-4 rounded-full bg-secondary border border-white/5 hover:bg-secondary/80 text-foreground font-semibold text-lg transition-all w-full sm:w-auto">
+              <ScrollLink to="features" smooth={true} offset={-100} className="w-full sm:w-auto">
+                <button className="px-10 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 hover:bg-secondary/80 text-foreground font-semibold text-lg transition-all w-full">
                   Explore Features
                 </button>
               </ScrollLink>
