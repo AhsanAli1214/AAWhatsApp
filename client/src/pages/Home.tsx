@@ -546,13 +546,13 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-4">Support</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="/contact" className="hover:text-primary transition-colors">Contact Us</a></li>
+                <li><a href="/contact" className="hover:text-primary transition-colors">Report Bug</a></li>
                 <li><ScrollLink to="faq" smooth={true} className="hover:text-primary cursor-pointer transition-colors">FAQs</ScrollLink></li>
               </ul>
             </div>
           </div>
           <div className="pt-8 border-t border-white/5 text-center text-muted-foreground text-sm">
-            <p>© {new Date().getFullYear()} AAWhatsApp. All rights reserved. Not affiliated with WhatsApp Inc.</p>
+            <p>© {new Date().getFullYear()} AAWhatsApp. All rights reserved.</p>
           </div>
         </div>
       </footer>

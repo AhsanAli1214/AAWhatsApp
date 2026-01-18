@@ -1,12 +1,44 @@
 import type { Express } from "express";
 import type { Server } from "http";
 import { api } from "@shared/routes";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
   
+  app.post("/api/report-bug", async (req, res) => {
+    try {
+      const { type, email, message } = req.body;
+      
+      const { data, error } = await resend.emails.send({
+        from: "onboarding@resend.dev",
+        to: "contact.alvini.pro@gmail.com",
+        subject: `AAWhatsApp Bug Report: ${type}`,
+        html: `
+          <h3>New Bug Report Received</h3>
+          <p><strong>Type:</strong> ${type}</p>
+          <p><strong>Reporter Email:</strong> ${email}</p>
+          <p><strong>Details:</strong></p>
+          <p>${message}</p>
+        `,
+      });
+
+      if (error) {
+        console.error("Resend Error:", error);
+        return res.status(500).json({ error: "Failed to send email" });
+      }
+
+      res.status(200).json({ success: true, data });
+    } catch (err) {
+      console.error("Server Error:", err);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  });
+
   app.post(api.subscribers.create.path, async (req, res) => {
     res.status(201).json({ id: 1, email: req.body.email });
   });
