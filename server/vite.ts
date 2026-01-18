@@ -31,10 +31,7 @@ export async function setupVite(server: Server, app: Express) {
 
   app.use(vite.middlewares);
 
-  app.get("*", async (req, res, next) => {
-    if (req.path.startsWith("/api")) {
-      return next();
-    }
+  app.get(/^(?!\/api).*/, async (req, res, next) => {
     const url = req.originalUrl;
 
     try {
