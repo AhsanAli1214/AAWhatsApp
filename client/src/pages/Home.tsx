@@ -343,10 +343,10 @@ export default function Home() {
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  "Base update 2.24.2.76",
-                  "Exclusive Anti-Ban V10.2",
+                  "Official Base Update",
+                  "Exclusive Anti-Ban Engine",
                   "Fixed 'Expired' error",
-                  "Added new iOS Emojis 2026"
+                  "Added new iOS Emojis"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-muted-foreground">
                     <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary">
