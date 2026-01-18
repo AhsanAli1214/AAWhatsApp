@@ -44,5 +44,20 @@ export async function registerRoutes(
     res.json(stats);
   });
 
+  app.get("/sitemap.xml", (req, res) => {
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://aawhatsapp.replit.app/</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>`;
+    res.header("Content-Type", "application/xml");
+    res.send(sitemap);
+  });
+
   return httpServer;
 }
+const new_status_date = new Date().toISOString().split('T')[0];
