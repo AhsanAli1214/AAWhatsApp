@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertSubscriberSchema, insertDownloadSchema, subscribers, downloads } from './schema';
+import { insertSubscriberSchema, insertDownloadSchema } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -21,9 +21,9 @@ export const api = {
       path: '/api/subscribers',
       input: insertSubscriberSchema,
       responses: {
-        201: z.custom<typeof subscribers.$inferSelect>(),
+        201: z.object({ id: z.number(), email: z.string() }),
         400: errorSchemas.validation,
-        409: z.object({ message: z.string() }), // Conflict
+        409: z.object({ message: z.string() }),
       },
     },
   },
@@ -40,7 +40,7 @@ export const api = {
       method: 'GET' as const,
       path: '/api/downloads/stats',
       responses: {
-        200: z.array(z.custom<typeof downloads.$inferSelect>()),
+        200: z.object({ total: z.number(), android: z.number(), ios: z.number() }),
       },
     },
   },
