@@ -31,9 +31,11 @@ export function Navigation() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img src={logoImg} alt="AAWhatsApp Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-primary/20" />
-          <span className="text-xl font-bold font-display tracking-tight">AAWhatsApp</span>
+        <div className="flex items-center gap-3">
+          <div className="p-1 bg-primary/10 rounded-xl">
+            <img src={logoImg} alt="AAWhatsApp Logo" className="w-9 h-9 rounded-lg shadow-lg shadow-primary/20" />
+          </div>
+          <span className="text-xl font-bold font-display tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">AAWhatsApp</span>
         </div>
 
         {/* Desktop Nav */}
