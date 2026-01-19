@@ -16,12 +16,24 @@ export function serveStatic(app: Express) {
 
   app.use(express.static(distPath));
 
-  // Ensure index.html is served for all non-API/non-file routes
-  app.get(/^(?!\/api).*/, (req, res, next) => {
-    const assetExtensions = /\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|mp4|webm|apk|map)$/i;
-    if (assetExtensions.test(req.path)) {
+  // Serve static files from the dist/public directory
+  app.use(express.static(distPath, {
+    index: false,
+    fallthrough: true
+  }));
+
+  // Ensure index.html is served ONLY for page requests
+  app.get("*", (req, res, next) => {
+    // API and files with extensions should not return index.html
+    if (req.path.startsWith("/api") || req.path.includes(".")) {
       return next();
     }
-    res.sendFile(path.resolve(distPath, "index.html"));
+    
+    res.setHeader("Content-Type", "text/html");
+    res.sendFile(path.resolve(distPath, "index.html"), (err) => {
+      if (err) {
+        next(err);
+      }
+    });
   });
 }

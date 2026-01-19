@@ -2,14 +2,34 @@
   "version": 2,
   "public": true,
   "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     {
       "source": "/api/(.*)",
       "destination": "/api/$1"
     },
     {
-      "source": "/((?!api|attached_assets|assets|.*\\..*).*)",
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
+    },
+    {
+      "source": "/attached_assets/(.*)",
+      "destination": "/attached_assets/$1"
+    },
+    {
+      "source": "/((?!api|assets|attached_assets|.*\\..*).*)",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, proxy-revalidate"
+        }
+      ]
     }
   ]
 }
