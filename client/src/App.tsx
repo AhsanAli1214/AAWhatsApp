@@ -3,6 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { BackToTop } from "@/components/BackToTop";
 import Home from "@/pages/Home";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
@@ -27,6 +28,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        <BackToTop />
       </TooltipProvider>
     </QueryClientProvider>
   );
