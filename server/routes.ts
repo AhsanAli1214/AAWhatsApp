@@ -19,15 +19,57 @@ export async function registerRoutes(
       const { type, email, message } = req.body;
       
       const { data, error } = await resend.emails.send({
-        from: "onboarding@resend.dev",
+        from: "AAWhatsApp <onboarding@resend.dev>",
         to: "a67515346@gmail.com",
-        subject: `AAWhatsApp Bug Report: ${type}`,
+        subject: `🚨 Bug Report: ${type}`,
         html: `
-          <h3>New Bug Report Received</h3>
-          <p><strong>Type:</strong> ${type}</p>
-          <p><strong>Reporter Email:</strong> ${email}</p>
-          <p><strong>Details:</strong></p>
-          <p>${message}</p>
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <style>
+                body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f7f6; }
+                .container { max-width: 600px; margin: 20px auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; }
+                .header { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 30px 20px; text-align: center; }
+                .header h1 { margin: 0; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; }
+                .content { padding: 30px; }
+                .item { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #f0f0f0; }
+                .item:last-child { border-bottom: none; }
+                .label { font-weight: bold; color: #ef4444; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: block; }
+                .value { font-size: 16px; color: #1a1a1a; word-break: break-word; }
+                .badge { display: inline-block; padding: 4px 12px; background: #fee2e2; color: #ef4444; border-radius: 20px; font-size: 14px; font-weight: 600; }
+                .footer { background: #f9fafb; padding: 20px; text-align: center; font-size: 12px; color: #6b7280; border-top: 1px solid #e0e0e0; }
+              </style>
+            </head>
+            <body>
+              <div class="container">
+                <div class="header">
+                  <h1>New Bug Report</h1>
+                </div>
+                <div class="content">
+                  <div class="item">
+                    <span class="label">Priority Level</span>
+                    <span class="badge">Attention Required</span>
+                  </div>
+                  <div class="item">
+                    <span class="label">Issue Category</span>
+                    <div class="value" style="font-weight: 600;">${type}</div>
+                  </div>
+                  <div class="item">
+                    <span class="label">Reporter Details</span>
+                    <div class="value">${email}</div>
+                  </div>
+                  <div class="item">
+                    <span class="label">Technical Description</span>
+                    <div class="value" style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; font-family: monospace;">${message}</div>
+                  </div>
+                </div>
+                <div class="footer">
+                  <p>Sent via AAWhatsApp Automated Support System</p>
+                  <p>&copy; ${new Date().getFullYear()} AAWhatsApp. Technical Support Team.</p>
+                </div>
+              </div>
+            </body>
+          </html>
         `,
       });
 
