@@ -18,16 +18,10 @@ export function serveStatic(app: Express) {
 
   // Ensure index.html is served for all non-API/non-file routes
   app.get(/^(?!\/api).*/, (req, res, next) => {
-    // Only serve index.html if it doesn't look like a direct file request
-    // and specifically exclude common static asset extensions
-    const assetExtensions = /\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|mp4|webm|apk)$/i;
+    const assetExtensions = /\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|mp4|webm|apk|map)$/i;
     if (assetExtensions.test(req.path)) {
-      return res.status(404).end();
+      return next();
     }
-    res.sendFile(path.resolve(distPath, "index.html"), (err) => {
-      if (err) {
-        next(err);
-      }
-    });
+    res.sendFile(path.resolve(distPath, "index.html"));
   });
 }
