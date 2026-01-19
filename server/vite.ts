@@ -33,7 +33,8 @@ export async function setupVite(server: Server, app: Express) {
 
   app.get(/^(?!\/api).*/, async (req, res, next) => {
     // Only serve index.html if it doesn't look like a direct file request
-    if (req.path.includes(".")) {
+    const assetExtensions = /\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|mp4|webm|apk)$/i;
+    if (assetExtensions.test(req.path)) {
       return next();
     }
     const url = req.originalUrl;
