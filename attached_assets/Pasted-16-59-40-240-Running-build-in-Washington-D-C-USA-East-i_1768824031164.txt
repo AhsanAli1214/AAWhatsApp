@@ -1,0 +1,55 @@
+16:59:40.240 Running build in Washington, D.C., USA (East) – iad1
+16:59:40.241 Build machine configuration: 2 cores, 8 GB
+16:59:40.359 Cloning github.com/AhsanAli1214/AAWhatsApp (Branch: main, Commit: d3e8e48)
+16:59:40.360 Previous build caches not available.
+16:59:40.813 Cloning completed: 454.000ms
+16:59:41.270 Running "vercel build"
+16:59:42.196 Vercel CLI 50.4.5
+16:59:42.469 Installing dependencies...
+16:59:58.155 
+16:59:58.156 added 452 packages in 15s
+16:59:58.158 
+16:59:58.158 70 packages are looking for funding
+16:59:58.159   run `npm fund` for details
+16:59:58.199 Detected Next.js version: 16.1.3
+16:59:58.207 Running "npm run build"
+16:59:58.305 
+16:59:58.306 > rest-express@1.0.0 build
+16:59:58.306 > tsx script/build.ts
+16:59:58.306 
+16:59:59.752 building client...
+16:59:59.830 [36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+17:00:00.100 transforming...
+17:00:05.347 [32m✓[39m 2261 modules transformed.
+17:00:05.723 rendering chunks...
+17:00:05.754 computing gzip size...
+17:00:05.929 [2m../dist/public/[22m[32mindex.html                                                                                  [39m[1m[2m    4.70 kB[22m[1m[22m[2m │ gzip:   1.55 kB[22m
+17:00:05.930 [2m../dist/public/[22m[2massets/[22m[32micon_1768754567492-Cdkf0KIB.png                                                      [39m[1m[2m   33.87 kB[22m[1m[22m
+17:00:05.930 [2m../dist/public/[22m[2massets/[22m[32mclean_comparison_illustration_showing_aawhatsapp_vs_other_mods.-Vx5TYYnM.png         [39m[1m[2m  816.17 kB[22m[1m[22m
+17:00:05.931 [2m../dist/public/[22m[2massets/[22m[32mmodern_professional_blog_hero_image_for_aawhatsapp_mod.-Cpo7IY2q.png                 [39m[1m[2m  992.57 kB[22m[1m[22m
+17:00:05.931 [2m../dist/public/[22m[2massets/[22m[32mcall-to-action_image_for_downloading_aawhatsapp_apk.-UIopoV0I.png                    [39m[1m[2m  996.82 kB[22m[1m[22m
+17:00:05.931 [2m../dist/public/[22m[2massets/[22m[32mfuturistic_illustration_of_privacy_features_for_aawhatsapp.-DBZVLh98.png             [39m[1m[2m1,129.47 kB[22m[1m[22m
+17:00:05.931 [2m../dist/public/[22m[2massets/[22m[32msmartphone_mockup_displaying_aawhatsapp_media_sharing_features.-Dj8KhJjz.png         [39m[1m[2m1,143.38 kB[22m[1m[22m
+17:00:05.932 [2m../dist/public/[22m[2massets/[22m[32mcreative_visual_showing_multiple_whatsapp_theme_styles_for_aawhatsapp.-C6-WiR8j.png  [39m[1m[2m1,232.37 kB[22m[1m[22m
+17:00:05.932 [2m../dist/public/[22m[2massets/[22m[32mprofessional_cybersecurity-themed_illustration_for_aawhatsapp.-CZOG8pCM.png          [39m[1m[2m1,357.83 kB[22m[1m[22m
+17:00:05.932 [2m../dist/public/[22m[2massets/[22m[35mindex-_V9XJWyg.css                                                                   [39m[1m[2m   77.59 kB[22m[1m[22m[2m │ gzip:  12.42 kB[22m
+17:00:05.932 [2m../dist/public/[22m[2massets/[22m[36mindex-DVkT17Zm.js                                                                    [39m[1m[33m  538.14 kB[39m[22m[2m │ gzip: 168.22 kB[22m
+17:00:05.933 [33m
+17:00:05.933 (!) Some chunks are larger than 500 kB after minification. Consider:
+17:00:05.933 - Using dynamic import() to code-split the application
+17:00:05.933 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+17:00:05.934 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+17:00:05.934 [32m✓ built in 5.87s[39m
+17:00:05.934 building server...
+17:00:06.054 
+17:00:06.055   dist/index.cjs  852.2kb
+17:00:06.055 
+17:00:06.056 ⚡ Done in 109ms
+17:00:06.138 Error: The Next.js output directory ".next" was not found at "/vercel/path0/.next". This is usually caused by one of the following:
+17:00:06.139 
+17:00:06.140 1. The "Output Directory" setting in your project is misconfigured. Check your project settings and ensure the output directory matches your Next.js configuration.
+17:00:06.140 
+17:00:06.140 2. If using Turborepo, ensure your task outputs include the Next.js build directory. Add ".next/**" to the "outputs" array in your turbo.json for the build task.
+17:00:06.141 
+17:00:06.141 3. The build command did not complete successfully. Check the build logs above for errors.
+17:00:06.141 Learn More: https://err.sh/vercel/vercel/now-next-routes-manifest
