@@ -49,14 +49,14 @@ export default function Home() {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold font-display leading-[1.1] mb-6">
-              AAWhatsApp APK Download (2026) – <br/>
+              AAWhatsApp APK Download 2026 (Official) – <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300 text-glow">
-                Latest Anti-Ban WhatsApp Mod
+                #1 Anti-Ban WhatsApp Mod
               </span>
             </h1>
             
             <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Advanced Privacy, Anti-Ban, Large Media Sharing & Custom Themes. Experience the powerful unofficial WhatsApp mod that builds on the features of GBWhatsApp and FMWhatsApp.
+              Experience elite privacy, Anti-Ban v2.0, and 4K media sharing. The ultimate WhatsApp mod choice, outperforming GBWhatsApp, FMWhatsApp, and YoWhatsApp in 2026.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
