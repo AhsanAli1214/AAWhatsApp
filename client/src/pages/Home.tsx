@@ -90,6 +90,7 @@ export default function Home() {
                 alt="AAWhatsApp Interface" 
                 className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20"
                 loading="eager"
+                decoding="async"
                 width="800"
                 height="600"
               />
@@ -225,6 +226,7 @@ export default function Home() {
                 alt="Privacy Features" 
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
                 loading="lazy"
+                decoding="async"
                 width="600"
                 height="400"
               />
@@ -244,6 +246,7 @@ export default function Home() {
                 alt="Security & Anti-Ban" 
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
                 loading="lazy"
+                decoding="async"
                 width="600"
                 height="400"
               />
@@ -302,6 +305,7 @@ export default function Home() {
                 alt="Media Sharing" 
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
                 loading="lazy"
+                decoding="async"
                 width="600"
                 height="400"
               />
@@ -321,6 +325,7 @@ export default function Home() {
                 alt="Customization & Themes" 
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
                 loading="lazy"
+                decoding="async"
                 width="600"
                 height="400"
               />
@@ -368,6 +373,7 @@ export default function Home() {
                 alt="Comparison" 
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
                 loading="lazy"
+                decoding="async"
                 width="600"
                 height="400"
               />
@@ -432,6 +438,7 @@ export default function Home() {
                   alt="Download AAWhatsApp" 
                   className="w-full h-auto"
                   loading="lazy"
+                  decoding="async"
                   width="600"
                   height="300"
                 />
