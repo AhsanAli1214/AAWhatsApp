@@ -8,7 +8,7 @@
       "destination": "/api/$1"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api|attached_assets|assets|.*\\..*).*)",
       "destination": "/index.html"
     }
   ]
