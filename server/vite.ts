@@ -32,6 +32,10 @@ export async function setupVite(server: Server, app: Express) {
   app.use(vite.middlewares);
 
   app.get(/^(?!\/api).*/, async (req, res, next) => {
+    // Only serve index.html if it doesn't look like a direct file request
+    if (req.path.includes(".")) {
+      return next();
+    }
     const url = req.originalUrl;
 
     try {
