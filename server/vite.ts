@@ -32,7 +32,7 @@ export async function setupVite(server: Server, app: Express) {
   app.use(vite.middlewares);
 
   app.get(/^(?!\/api).*/, async (req, res, next) => {
-    // API and files with extensions should not return index.html
+    // API and files with extensions (like .xml, .txt) should not return index.html
     if (req.path.includes(".")) {
       return next();
     }

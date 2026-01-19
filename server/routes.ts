@@ -126,7 +126,7 @@ export async function registerRoutes(
   </url>
 </urlset>`;
     res.header("Content-Type", "application/xml");
-    res.send(sitemap);
+    res.status(200).send(sitemap);
   });
 
   return httpServer;

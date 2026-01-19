@@ -18,7 +18,7 @@ export function serveStatic(app: Express) {
 
   // Ensure index.html is served ONLY for page requests
   app.get(/^(?!\/api).*/, (req, res, next) => {
-    // API and files with extensions should not return index.html
+    // API and files with extensions (like .xml, .txt, .js, .css) should not return index.html
     if (req.path.includes(".")) {
       return next();
     }
