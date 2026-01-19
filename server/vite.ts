@@ -32,8 +32,8 @@ export async function setupVite(server: Server, app: Express) {
   app.use(vite.middlewares);
 
   app.get(/^(?!\/api).*/, async (req, res, next) => {
-    const assetExtensions = /\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|mp4|webm|apk|map)$/i;
-    if (assetExtensions.test(req.path)) {
+    // API and files with extensions should not return index.html
+    if (req.path.includes(".")) {
       return next();
     }
     const url = req.originalUrl;

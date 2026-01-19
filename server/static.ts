@@ -16,16 +16,10 @@ export function serveStatic(app: Express) {
 
   app.use(express.static(distPath));
 
-  // Serve static files from the dist/public directory
-  app.use(express.static(distPath, {
-    index: false,
-    fallthrough: true
-  }));
-
   // Ensure index.html is served ONLY for page requests
-  app.get("*", (req, res, next) => {
+  app.get(/^(?!\/api).*/, (req, res, next) => {
     // API and files with extensions should not return index.html
-    if (req.path.startsWith("/api") || req.path.includes(".")) {
+    if (req.path.includes(".")) {
       return next();
     }
     
