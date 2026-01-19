@@ -48,9 +48,9 @@ export default function Home() {
               Latest Version Released
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-bold font-display leading-[1.1] mb-6">
+            <h1 className="text-5xl lg:text-7xl font-bold font-display leading-[1.1] mb-6 tracking-tight">
               AAWhatsApp APK Download 2026 (Official) – <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300 text-glow">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow">
                 #1 Anti-Ban WhatsApp Mod
               </span>
             </h1>
@@ -61,7 +61,7 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <ScrollLink to="download" smooth={true} offset={-100} className="w-full sm:w-auto">
-                <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full">
+                <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full border border-primary/20">
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     <Zap className="w-6 h-6 fill-current" />
                     Download APK
@@ -116,44 +116,44 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <FeatureCard 
-              icon={Ghost}
-              title="Privacy Suite"
-              description="Hide online status, second ticks, and 'typing...' indicators. View deleted messages with anti-revoke and save statuses directly."
-              delay={0.1}
-            />
-            <FeatureCard 
-              icon={Shield}
-              title="Security & Anti-Ban"
-              description="Advanced anti-ban engine reduces suspension risk. Built-in app lock (PIN/fingerprint) for app and individual chats."
-              delay={0.2}
-            />
-            <FeatureCard 
-              icon={Palette}
-              title="Full UI Control"
-              description="1000s of themes, custom fonts, bubble styles, and animations. Dark/light modes and vibrant skins for a unique interface."
-              delay={0.3}
-            />
-            <FeatureCard 
-              icon={Zap}
-              title="Pro Media Sharing"
-              description="Send 1GB+ videos and 100+ high-definition images at once with minimal compression. Perfect for large documents."
-              delay={0.4}
-            />
-            <FeatureCard 
-              icon={MessageSquare}
-              title="Business Assistant"
-              description="Auto-reply for busy hours and message scheduling. DND mode to cut data for WhatsApp while staying connected on other apps."
-              delay={0.5}
-            />
-            <FeatureCard 
-              icon={Lock}
-              title="Group & Broadcast"
-              description="High limits for pinned chats and group members (hundreds). Broadcast messages to unlimited contacts effortlessly."
-              delay={0.6}
-            />
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <FeatureCard 
+                icon={Ghost}
+                title="Privacy Suite"
+                description="Hide online status, second ticks, and 'typing...' indicators. View deleted messages with anti-revoke and save statuses directly."
+                delay={0.1}
+              />
+              <FeatureCard 
+                icon={Shield}
+                title="Security & Anti-Ban"
+                description="Advanced anti-ban engine reduces suspension risk. Built-in app lock (PIN/fingerprint) for app and individual chats."
+                delay={0.2}
+              />
+              <FeatureCard 
+                icon={Palette}
+                title="Full UI Control"
+                description="1000s of themes, custom fonts, bubble styles, and animations. Dark/light modes and vibrant skins for a unique interface."
+                delay={0.3}
+              />
+              <FeatureCard 
+                icon={Zap}
+                title="Pro Media Sharing"
+                description="Send 1GB+ videos and 100+ high-definition images at once with minimal compression. Perfect for large documents."
+                delay={0.4}
+              />
+              <FeatureCard 
+                icon={MessageSquare}
+                title="Business Assistant"
+                description="Auto-reply for busy hours and message scheduling. DND mode to cut data for WhatsApp while staying connected on other apps."
+                delay={0.5}
+              />
+              <FeatureCard 
+                icon={Lock}
+                title="Group & Broadcast"
+                description="High limits for pinned chats and group members (hundreds). Broadcast messages to unlimited contacts effortlessly."
+                delay={0.6}
+              />
+            </div>
         </div>
       </section>
 
