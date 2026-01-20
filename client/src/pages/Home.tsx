@@ -491,6 +491,7 @@ export default function Home() {
             </motion.div>
           </div>
 
+          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -556,6 +557,19 @@ export default function Home() {
                 height="400"
               />
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">
+                Chat & Messaging Tools
+              </h2>
+              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
+                <p>
+                  <span className="text-foreground font-bold">
                     Auto-Reply & Scheduler:
                   </span>{" "}
                   Set automated replies for orders or schedule messages for
@@ -665,24 +679,19 @@ export default function Home() {
               </h2>
               <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
                 <p>
-                  Radically change the app's look with full UI control. Download{" "}
-                  <span className="text-primary font-bold">
-                    thousands of user-created themes
-                  </span>{" "}
-                  or build your own from scratch.
+                  Express yourself with a truly unique interface. AAWhatsApp
+                  gives you access to thousands of themes from the built-in
+                  store, plus deep customization for every element.
                 </p>
                 <ul className="list-disc pl-5 space-y-2">
+                  <li>Store: Access 4000+ custom themes for free.</li>
                   <li>
-                    Fonts & Layout: Change message bubble styles, font
-                    types/sizes, and UI animations.
+                    Visual Control: Change fonts, bubble styles, and tick
+                    icons.
                   </li>
                   <li>
-                    Emojis & Stickers: Use custom emoji packs (iOS, Facebook,
-                    Google styles) and unlimited stickers.
-                  </li>
-                  <li>
-                    Animated Themes: Enjoy visual flair with Aero-inspired
-                    animated skins.
+                    Aero Design: Experience a modern, fluid interface inspired
+                    by Aero glass aesthetics.
                   </li>
                 </ul>
               </div>
@@ -691,132 +700,125 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Comparison Table Section */}
+      {/* Comparison Section */}
       <section id="comparison" className="py-24 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
-              AAWhatsApp vs Official WhatsApp
+              AAWhatsApp vs Others
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              See how AAWhatsApp enhances your experience compared to the standard
-              application.
+              See how AAWhatsApp stacks up against the official app and other
+              popular mods in 2026.
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto overflow-x-auto">
-            <table className="w-full text-left border-collapse glass-card rounded-3xl overflow-hidden border border-white/5">
-              <thead>
-                <tr className="bg-primary/20">
-                  <th className="p-6 text-xl font-bold">Feature</th>
-                  <th className="p-6 text-xl font-bold text-primary">AAWhatsApp</th>
-                  <th className="p-6 text-xl font-bold">Official WhatsApp</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/5">
-                {[
-                  { name: "Anti-Ban Protection", aa: "Elite Engine", official: "Standard" },
-                  { name: "Privacy (Hide Online/Status)", aa: "Advanced Stealth", official: "Limited" },
-                  { name: "Video Size Limit", aa: "1GB+", official: "16MB" },
-                  { name: "Image Quality", aa: "100% Original", official: "Compressed" },
-                  { name: "Theme Customization", aa: "4000+ Themes", official: "Basic Dark/Light" },
-                  { name: "Anti-Delete Messages", aa: "Included", official: "Not Available" },
-                  { name: "Message Scheduling", aa: "Included", official: "Not Available" },
-                  { name: "Status Downloader", aa: "Built-in", official: "Not Available" },
-                  { name: "DND Mode", aa: "Included", official: "Not Available" },
-                ].map((row, i) => (
-                  <tr key={i} className="hover:bg-white/5 transition-colors">
-                    <td className="p-6 font-semibold">{row.name}</td>
-                    <td className="p-6 text-primary font-bold">{row.aa}</td>
-                    <td className="p-6 text-muted-foreground">{row.official}</td>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse min-w-[500px]">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="py-4 font-bold text-primary">Feature</th>
+                    <th className="py-4 font-bold">Official</th>
+                    <th className="py-4 font-bold text-primary">AAWhatsApp</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Download Section */}
-      <section id="download" className="py-24 relative z-10 bg-secondary/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            <div className="flex-1 text-center lg:text-left">
-              <h2 className="text-4xl lg:text-6xl font-bold font-display mb-6 tracking-tight">
-                Ready for the Next Level?
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Download the latest version of AAWhatsApp APK now. Enjoy a seamless, ad-free experience with all premium features unlocked.
-              </p>
-              <ul className="space-y-4 mb-8">
-                {[
-                  "Official Base Update – Verified Secure",
-                  "Exclusive Anti-Ban Engine",
-                  "Fixed 'Expired' Error Forever",
-                  "Added Premium iOS Emojis"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-muted-foreground">
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                      <CheckCircle2 className="w-4 h-4" />
-                    </div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="p-6 rounded-3xl bg-primary/5 border border-primary/20 flex items-center gap-4 text-left">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="font-bold text-lg">Safe • Secure • Fast</p>
-                  <p className="text-sm text-muted-foreground">Verified scan by Play Protect. No malware or spyware detected.</p>
-                </div>
-              </div>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b border-white/5">
+                    <td className="py-4">Anti-Delete Messages</td>
+                    <td className="py-4">No</td>
+                    <td className="py-4 text-primary font-bold">Yes</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-4">Hide Online Status</td>
+                    <td className="py-4">Limited</td>
+                    <td className="py-4 text-primary font-bold">Elite</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-4">Video Limit</td>
+                    <td className="py-4">16MB</td>
+                    <td className="py-4 text-primary font-bold">1GB+</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-4">Themes</td>
+                    <td className="py-4">2</td>
+                    <td className="py-4 text-primary font-bold">4000+</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-4">Anti-Ban Engine</td>
+                    <td className="py-4">N/A</td>
+                    <td className="py-4 text-primary font-bold">v2.0</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
-            <div className="flex-1 w-full max-w-xl">
-              <DownloadCard />
-            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src={comparisonImage}
+                alt="Comparison Table Graphic"
+                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="400"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-24 relative z-10">
+      <section className="py-24 relative z-10 bg-secondary/10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-muted-foreground text-lg">
-              Everything you need to know about AAWhatsApp APK.
-            </p>
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="glass-card border border-white/5 rounded-2xl overflow-hidden">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline font-bold text-lg">Is AAWhatsApp safe to use?</AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  Yes, AAWhatsApp is built on the secure official WhatsApp base with added privacy layers. It is regularly scanned for malware and doesn't collect personal user data.
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Is AAWhatsApp safe to use?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, AAWhatsApp is built on a secure codebase that
+                  prioritizes user privacy. Our unique Privacy Core™ strips
+                  invasive permissions that other mods exploit, making it one
+                  of the safest unofficial WhatsApp mods available in 2026.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-2" className="glass-card border border-white/5 rounded-2xl overflow-hidden">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline font-bold text-lg">Will my account get banned?</AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  AAWhatsApp features an advanced anti-ban engine that significantly reduces the risk of account suspension compared to other mods.
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Will I get banned?</AccordionTrigger>
+                <AccordionContent>
+                  While no mod is 100% immune, AAWhatsApp includes an advanced
+                  Anti-Ban v2.0 engine that is regularly updated to stay ahead
+                  of official app detection. We recommend always using the
+                  latest version for maximum safety.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-3" className="glass-card border border-white/5 rounded-2xl overflow-hidden">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline font-bold text-lg">How do I update AAWhatsApp?</AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  You can download the latest version from this official website whenever a new update is released. We recommend bookmarking this page.
+              <AccordionItem value="item-3">
+                <AccordionTrigger>How do I update AAWhatsApp?</AccordionTrigger>
+                <AccordionContent>
+                  You should regularly check our official website for the latest
+                  APK version. To update, simply download the new APK and
+                  install it over your current version. Your chats will remain
+                  intact.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-4" className="glass-card border border-white/5 rounded-2xl overflow-hidden">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline font-bold text-lg">Can I use it alongside official WhatsApp?</AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  Yes, AAWhatsApp uses a different package name, allowing you to run it as a second WhatsApp account on the same device.
+              <AccordionItem value="item-4">
+                <AccordionTrigger>
+                  Can I use it alongside the official WhatsApp?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Yes, AAWhatsApp uses a different package name, allowing you to
+                  run it alongside the official app or other mods like
+                  GBWhatsApp on the same device with a different phone number.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -824,26 +826,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Call to Action */}
+      <section id="download" className="py-24 relative z-10">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="glass-card rounded-[3rem] p-8 md:p-16 border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-emerald-900/20 overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+              <img src={ctaImage} alt="" className="w-full h-full object-cover" />
+            </div>
+            
+            <div className="relative z-10 max-w-2xl">
+              <h2 className="text-4xl md:text-6xl font-bold font-display mb-8 leading-tight">
+                Ready to Upgrade Your <br />
+                <span className="text-primary">WhatsApp Experience?</span>
+              </h2>
+              <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
+                Join millions of users who trust AAWhatsApp for their daily
+                communication. Safe, fast, and feature-packed.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6">
+                <DownloadCard
+                  version="v20.80"
+                  size="68MB"
+                  date="Jan 20, 2026"
+                  url="#"
+                />
+              </div>
+              
+              <p className="mt-8 text-sm text-muted-foreground flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-primary" />
+                Verified safe by AAWhatsApp Security Team
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 border-t border-white/5 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
-                <img src={logoImg} alt="AA Logo" className="w-8 h-8 object-contain" />
-              </div>
-              <span className="text-2xl font-bold tracking-tighter">AAWhatsApp</span>
+              <img src={logoImg} alt="AAWhatsApp" className="w-8 h-8 rounded-lg" />
+              <span className="text-xl font-bold font-display tracking-tighter">AAWhatsApp</span>
             </div>
             
-            <div className="flex gap-8 text-sm text-muted-foreground">
-              <ScrollLink to="about" smooth={true} offset={-100} className="hover:text-primary transition-colors cursor-pointer">About</ScrollLink>
-              <ScrollLink to="features" smooth={true} offset={-100} className="hover:text-primary transition-colors cursor-pointer">Features</ScrollLink>
-              <ScrollLink to="download" smooth={true} offset={-100} className="hover:text-primary transition-colors cursor-pointer">Download</ScrollLink>
-              <ScrollLink to="faq" smooth={true} offset={-100} className="hover:text-primary transition-colors cursor-pointer">FAQ</ScrollLink>
+            <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground font-medium">
+              <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-primary transition-colors">Bug Report</a>
+              <a href="#" className="hover:text-primary transition-colors">Contact</a>
             </div>
-          </div>
-          <div className="mt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; AAWhatsApp. All rights reserved.</p>
+            
+            <p className="text-sm text-muted-foreground">
+              © 2026 AAWhatsApp Official. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
