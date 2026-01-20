@@ -9,10 +9,14 @@ import {
   CheckCircle2,
   XCircle,
   ChevronDown,
+  ShieldCheck,
+  ShieldAlert,
+  Database,
 } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { FeatureCard } from "@/components/FeatureCard";
 import { DownloadCard } from "@/components/DownloadCard";
+import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionContent,
