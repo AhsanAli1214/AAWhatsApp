@@ -12,8 +12,20 @@ interface DownloadOption {
 }
 
 const OPTIONS: DownloadOption[] = [
-  { name: "Fast Server 1", icon: Server, url: "https://otieu.com/4/10272561", platform: "android", version: "latest" },
-  { name: "MediaFire", icon: Download, url: "https://www.mediafire.com/file/cqrm7bafpnh4yg6/AAWhatsapp+V1.0+final.apk/file", platform: "android", version: "latest" },
+  {
+    name: "Fast Server",
+    icon: Server,
+    url: "https://otieu.com/4/10272561",
+    platform: "android",
+    version: "latest",
+  },
+  {
+    name: "MediaFire",
+    icon: Download,
+    url: "https://www.mediafire.com/file/cqrm7bafpnh4yg6/AAWhatsapp+V1.0+final.apk/file",
+    platform: "android",
+    version: "latest",
+  },
 ];
 
 export function DownloadCard() {
@@ -23,15 +35,15 @@ export function DownloadCard() {
   const handleDownload = (option: DownloadOption) => {
     track({
       version: option.version,
-      platform: option.platform
+      platform: option.platform,
     });
-    
+
     toast({
       title: "Download Started",
       description: `Downloading AAWhatsApp ${option.version} from ${option.name}`,
     });
     // Track download and open link
-    window.open(option.url, '_blank');
+    window.open(option.url, "_blank");
   };
 
   return (
@@ -47,7 +59,9 @@ export function DownloadCard() {
           </div>
           <div>
             <h3 className="text-2xl font-bold font-display">Download APK</h3>
-            <p className="text-sm text-primary font-medium">Safe • Secure • Fast</p>
+            <p className="text-sm text-primary font-medium">
+              Safe • Secure • Fast
+            </p>
           </div>
         </div>
 
@@ -65,11 +79,15 @@ export function DownloadCard() {
                 </div>
                 <span className="flex flex-col items-start">
                   <span className="leading-none mb-1">{opt.name}</span>
-                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Official Mirror</span>
+                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
+                    Official Mirror
+                  </span>
                 </span>
               </span>
               <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">Fast Download</span>
+                <span className="text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Fast Download
+                </span>
                 <Download className="w-5 h-5 opacity-40 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-primary" />
               </div>
             </Button>
