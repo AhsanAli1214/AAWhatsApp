@@ -50,24 +50,19 @@ export default function Home() {
             className="flex-1 text-center lg:text-left"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              Latest Version Released
+              <ShieldCheck className="w-4 h-4" />
+              100% Secure: No Bank/Location Data Access
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-bold font-display leading-[1.1] mb-6 tracking-tight">
-              AAWhatsApp APK Download 2026 (Official) – <br />
+              AAWhatsApp APK – <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow">
-                #1 Anti-Ban WhatsApp Mod
+                Privacy-Clean GBWhatsApp Alternative
               </span>
             </h1>
 
             <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Experience elite privacy, Anti-Ban v2.0, and 4K media sharing. The
-              ultimate WhatsApp mod choice, outperforming GBWhatsApp,
-              FMWhatsApp, and YoWhatsApp in 2026.
+              Get all GBWhatsApp features with <span className="text-primary font-semibold">Zero Data Risk.</span> Unlike other mods, we never access your files, location, or bank accounts.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
