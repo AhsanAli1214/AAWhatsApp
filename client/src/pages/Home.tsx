@@ -680,7 +680,7 @@ export default function Home() {
               </thead>
               <tbody className="divide-y divide-white/5">
                 {[
-                  { name: "Anti-Ban Protection", aa: "Elite v2.0", official: "Standard" },
+                  { name: "Anti-Ban Protection", aa: "Elite Engine", official: "Standard" },
                   { name: "Privacy (Hide Online/Status)", aa: "Advanced Stealth", official: "Limited" },
                   { name: "Video Size Limit", aa: "1GB+", official: "16MB" },
                   { name: "Image Quality", aa: "100% Original", official: "Compressed" },
@@ -716,7 +716,7 @@ export default function Home() {
               <ul className="space-y-4 mb-8">
                 {[
                   "Official Base Update – Verified Secure",
-                  "Exclusive Anti-Ban v2.0 Engine",
+                  "Exclusive Anti-Ban Engine",
                   "Fixed 'Expired' Error Forever",
                   "Added Premium iOS Emojis"
                 ].map((item, i) => (
@@ -769,7 +769,7 @@ export default function Home() {
               <AccordionItem value="item-2" className="glass-card border border-white/5 rounded-2xl overflow-hidden">
                 <AccordionTrigger className="px-6 py-4 hover:no-underline font-bold text-lg">Will my account get banned?</AccordionTrigger>
                 <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  AAWhatsApp features an advanced anti-ban v2.0 engine that significantly reduces the risk of account suspension compared to other mods.
+                  AAWhatsApp features an advanced anti-ban engine that significantly reduces the risk of account suspension compared to other mods.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3" className="glass-card border border-white/5 rounded-2xl overflow-hidden">
