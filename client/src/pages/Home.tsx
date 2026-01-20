@@ -30,7 +30,8 @@ import heroImage from "@assets/generated_images/modern_professional_blog_hero_im
 import privacyImage from "@assets/generated_images/futuristic_illustration_of_privacy_features_for_aawhatsapp..png";
 import themesImage from "@assets/generated_images/creative_visual_showing_multiple_whatsapp_theme_styles_for_aawhatsapp..png";
 import mediaImage from "@assets/generated_images/smartphone_mockup_displaying_aawhatsapp_media_sharing_features..png";
-import securityImage from "@assets/generated_images/professional_cybersecurity-themed_illustration_for_aawhatsapp..png";
+import securityComparisonImage from "@assets/generated_images/security_comparison:_aawhatsapp_vs_others_permissions.png";
+import securityImage from "@assets/generated_images/advanced_security_and_antiban_features_for_aawhatsapp_mod..png";
 import comparisonImage from "@assets/generated_images/clean_comparison_illustration_showing_aawhatsapp_vs_other_mods..png";
 import ctaImage from "@assets/generated_images/call-to-action_image_for_downloading_aawhatsapp_apk..png";
 import logoImg from "@assets/icon_1768754567492.png";
@@ -490,7 +491,6 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -499,8 +499,8 @@ export default function Home() {
               className="order-2 lg:order-1"
             >
               <img
-                src={securityImage}
-                alt="Security & Anti-Ban"
+                src={securityComparisonImage}
+                alt="AAWhatsApp Security Advantage"
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
                 loading="lazy"
                 decoding="async"
@@ -517,11 +517,45 @@ export default function Home() {
               className="order-1 lg:order-2"
             >
               <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">
-                Chat & Messaging Tools
+                Privacy First: <span className="text-primary">No Risky Permissions</span>
               </h2>
               <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
                 <p>
-                  <span className="text-foreground font-bold">
+                  Unlike GBWhatsApp, FMWhatsApp, and other mods that force you to grant 
+                  <span className="text-foreground font-bold"> "Manage All Files" </span> 
+                  permissions, AAWhatsApp respect your data.
+                </p>
+                <p>
+                  Most mods won't even start without this dangerous permission, which 
+                  allows them to read, modify, and delete every file on your phone. 
+                  <span className="text-primary font-bold"> AAWhatsApp runs smoothly </span> 
+                  without ever asking for this access.
+                </p>
+                <p>
+                  Your photos, documents, and personal files remain private and untouched. 
+                  Security isn't just a feature; it's our foundation.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src={securityImage}
+                alt="Security & Anti-Ban"
+                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="400"
+              />
+            </motion.div>
                     Auto-Reply & Scheduler:
                   </span>{" "}
                   Set automated replies for orders or schedule messages for
