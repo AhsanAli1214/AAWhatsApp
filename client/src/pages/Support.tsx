@@ -85,29 +85,29 @@ export default function Support() {
 
   const supportCards = [
     {
-      icon: MessageSquare,
-      title: "Telegram Support",
-      description: "Get instant help from our community",
-      link: "https://t.me/aawhatsapp_official",
-      action: "Join Channel",
-      color: "text-sky-500",
-      bg: "bg-sky-500/10"
+      icon: ShieldCheck,
+      title: "Privacy Protocol",
+      description: "Our surgically rebuilt security layer",
+      link: "#",
+      action: "Learn More",
+      color: "text-emerald-500",
+      bg: "bg-emerald-500/10"
     },
     {
-      icon: Mail,
-      title: "Email Support",
-      description: "Direct assistance for critical issues",
-      link: "mailto:support@aawhatsapp.com",
-      action: "Send Email",
+      icon: Info,
+      title: "Version History",
+      description: "Track the latest Anti-Ban updates",
+      link: "#",
+      action: "View Logs",
       color: "text-primary",
       bg: "bg-primary/10"
     },
     {
       icon: Clock,
-      title: "Response Time",
-      description: "Average response within 2-4 hours",
+      title: "Auto-Permissions",
+      description: "How we strip risky file access",
       link: "#",
-      action: "Check Status",
+      action: "Read Technicals",
       color: "text-amber-500",
       bg: "bg-amber-500/10"
     }
