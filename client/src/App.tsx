@@ -7,8 +7,7 @@ import { BackToTop } from "@/components/BackToTop";
 import Home from "@/pages/Home";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
-import ContactUs from "@/pages/ContactUs";
-import ReportBug from "@/pages/ReportBug";
+import Support from "@/pages/Support";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -17,8 +16,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/privacy" component={PrivacyPolicy} />
       <Route path="/terms" component={TermsOfService} />
-      <Route path="/contact" component={ContactUs} />
-      <Route path="/report-bug" component={ReportBug} />
+      <Route path="/support" component={Support} />
       <Route component={NotFound} />
     </Switch>
   );

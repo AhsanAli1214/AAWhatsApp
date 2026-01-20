@@ -62,14 +62,14 @@ export function Navigation() {
           </div>
           
           <div className="flex items-center gap-3">
-            <Link href="/report-bug">
+            <Link href="/support">
               <Button 
                 variant="outline" 
                 size="sm"
                 className="border-destructive/30 text-destructive hover:bg-destructive/10 hover:border-destructive/50 transition-all rounded-full px-4"
               >
                 <AlertTriangle className="w-4 h-4 mr-2" />
-                Report Error
+                Support
               </Button>
             </Link>
 
@@ -108,14 +108,14 @@ export function Navigation() {
           ))}
           
           <div className="flex flex-col gap-3 mt-2">
-            <Link href="/report-bug">
+            <Link href="/support">
               <Button 
                 variant="outline" 
                 className="w-full border-destructive/30 text-destructive hover:bg-destructive/10 h-12 rounded-xl"
                 onClick={() => setMobileOpen(false)}
               >
                 <AlertTriangle className="w-5 h-5 mr-2" />
-                Report Error
+                Support
               </Button>
             </Link>
 
