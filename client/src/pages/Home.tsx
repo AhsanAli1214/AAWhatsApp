@@ -49,7 +49,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="flex-1 text-center lg:text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-bold mb-6 shadow-[0_0_15px_rgba(16,185,129,0.2)] animate-pulse">
               <ShieldCheck className="w-4 h-4" />
               100% Secure: No Bank/Location Data Access
             </div>
@@ -121,55 +121,66 @@ export default function Home() {
       </section>
 
       {/* The Privacy Core - Unique Selling Point */}
-      <section id="privacy-core" className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5 -skew-y-3 z-0" />
+      <section id="privacy-core" className="py-32 relative overflow-hidden bg-gradient-to-b from-background to-primary/5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_70%)]" />
         <div className="container px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <div className="flex-1">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="space-y-6"
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="space-y-8"
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold uppercase tracking-wider">
-                  <Zap className="w-4 h-4" />
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-bold uppercase tracking-widest shadow-lg shadow-primary/10">
+                  <Zap className="w-4 h-4 fill-current" />
                   The Exclusive Edge
                 </div>
-                <h2 className="text-4xl md:text-6xl font-bold font-display leading-tight">
-                  Introducing <span className="text-primary">The Privacy Core™</span>
+                <h2 className="text-5xl md:text-7xl font-bold font-display leading-[1.05] tracking-tight">
+                  The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400 text-glow">Privacy Core™</span>
                 </h2>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  AAWhatsApp is the world's first <span className="text-foreground font-bold italic">Permission-Clean</span> WhatsApp mod. While other mods use GBWhatsApp's legacy code which leaves data backdoors open, we've rebuilt the security layer from scratch.
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
+                  AAWhatsApp is the world's first <span className="text-foreground font-bold italic border-b-2 border-primary/30">Permission-Clean</span> WhatsApp mod. We've surgically rebuilt the security layer to ensure your private life stays private.
                 </p>
                 
-                <div className="space-y-4">
+                <div className="grid gap-6">
                   {[
                     { 
                       title: "Zero-Trace Protocol", 
-                      desc: "No metadata is ever cached or sent to external servers. Your digital footprint is invisible.",
-                      icon: Ghost
+                      desc: "Your metadata is invisible. No caching, no external logging, no digital footprint left behind.",
+                      icon: Ghost,
+                      color: "from-emerald-500/20 to-primary/10"
                     },
                     { 
                       title: "Hardened Encryption v3", 
-                      desc: "Military-grade 256-bit encryption for every chat, call, and file transfer - even the mod can't read it.",
-                      icon: ShieldCheck
+                      desc: "Military-grade 256-bit encryption for every byte of data. Even we can't see your conversations.",
+                      icon: ShieldCheck,
+                      color: "from-primary/20 to-emerald-500/10"
                     },
                     { 
-                      title: "Automatic Permission Stripper", 
-                      desc: "Our unique engine automatically blocks and removes 45+ invasive Android permissions hidden in other mods.",
-                      icon: XCircle
+                      title: "Auto-Permission Stripper", 
+                      desc: "Our engine automatically neutralizes 45+ invasive Android permissions that other mods exploit.",
+                      icon: XCircle,
+                      color: "from-emerald-500/20 to-primary/10"
                     }
                   ].map((feature, i) => (
-                    <div key={i} className="flex gap-4 p-5 rounded-2xl bg-background/60 border border-primary/10 hover:border-primary/40 transition-colors group">
-                      <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                        <feature.icon className="w-6 h-6" />
+                    <motion.div 
+                      key={i}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.2 }}
+                      className="flex gap-6 p-6 rounded-[2rem] bg-background/40 backdrop-blur-md border border-primary/10 hover:border-primary/40 transition-all duration-500 group cursor-default"
+                    >
+                      <div className={`shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                        <feature.icon className="w-7 h-7" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-lg text-foreground">{feature.title}</h3>
-                        <p className="text-muted-foreground text-sm">{feature.desc}</p>
+                        <h3 className="font-bold text-xl text-foreground mb-1 group-hover:text-primary transition-colors">{feature.title}</h3>
+                        <p className="text-muted-foreground text-base leading-snug">{feature.desc}</p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
@@ -177,35 +188,56 @@ export default function Home() {
             
             <div className="flex-1 relative">
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 1, ease: "backOut" }}
                 className="relative z-10"
               >
-                <div className="aspect-square rounded-[3rem] bg-gradient-to-br from-primary/30 to-emerald-900/40 border border-primary/20 backdrop-blur-3xl flex items-center justify-center p-12 relative overflow-hidden">
-                  <ShieldCheck className="w-full h-full text-primary opacity-20 absolute animate-pulse" />
-                  <div className="relative z-10 text-center">
-                    <div className="w-24 h-24 bg-primary rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-[0_0_50px_rgba(16,185,129,0.5)]">
-                      <Lock className="w-12 h-12 text-primary-foreground" />
-                    </div>
-                    <h3 className="text-3xl font-bold mb-2">Clean-Code Cert</h3>
-                    <p className="text-primary font-mono text-sm">SECURE • VERIFIED • ENCRYPTED</p>
+                <div className="aspect-square rounded-[4rem] bg-gradient-to-br from-primary/20 via-emerald-900/40 to-background border border-primary/30 backdrop-blur-3xl flex items-center justify-center p-16 relative overflow-hidden shadow-2xl">
+                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5" />
+                  <ShieldCheck className="w-full h-full text-primary opacity-10 absolute animate-pulse" />
+                  <div className="relative z-10">
+                    <motion.div 
+                      animate={{ 
+                        y: [0, -20, 0],
+                        rotate: [0, 5, 0]
+                      }}
+                      transition={{ 
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      className="w-32 h-32 bg-primary rounded-[2.5rem] flex items-center justify-center mx-auto mb-8 shadow-[0_0_60px_rgba(16,185,129,0.4)] border border-white/20"
+                    >
+                      <Lock className="w-16 h-16 text-primary-foreground" />
+                    </motion.div>
+                    <h3 className="text-4xl font-bold mb-3 tracking-tighter">Privacy Verified</h3>
+                    <p className="text-primary font-mono text-sm tracking-[0.3em] font-bold">100% CLEAN CODEBASE</p>
                   </div>
                 </div>
                 
-                {/* Floating status badges */}
-                <div className="absolute -top-4 -right-4 bg-background/80 backdrop-blur border border-primary/20 px-4 py-2 rounded-xl shadow-xl animate-float">
-                  <div className="flex items-center gap-2 text-primary font-bold">
-                    <CheckCircle2 className="w-4 h-4" />
-                    Bank Data: LOCKED
+                {/* Status Badges with higher gloss */}
+                <motion.div 
+                  animate={{ x: [0, 10, 0], y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-6 -right-6 bg-background/60 backdrop-blur-xl border border-primary/40 px-6 py-3 rounded-2xl shadow-2xl z-20"
+                >
+                  <div className="flex items-center gap-3 text-primary font-black text-sm">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-ping" />
+                    BANK DATA: SECURED
                   </div>
-                </div>
-                <div className="absolute -bottom-8 -left-4 bg-background/80 backdrop-blur border border-primary/20 px-4 py-2 rounded-xl shadow-xl animate-float-delayed">
-                  <div className="flex items-center gap-2 text-primary font-bold">
-                    <CheckCircle2 className="w-4 h-4" />
-                    Location: STRIPPED
+                </motion.div>
+                <motion.div 
+                  animate={{ x: [0, -10, 0], y: [0, 10, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="absolute -bottom-10 -left-6 bg-background/60 backdrop-blur-xl border border-primary/40 px-6 py-3 rounded-2xl shadow-2xl z-20"
+                >
+                  <div className="flex items-center gap-3 text-primary font-black text-sm">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-ping" />
+                    LOCATION: NULLIFIED
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             </div>
           </div>
@@ -343,17 +375,18 @@ export default function Home() {
       <section id="about" className="py-24 relative z-10 bg-secondary/10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
-              About AAWhatsApp
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              AAWhatsApp is a premium, powerful unofficial WhatsApp mod designed
-              for users who demand more from their messaging experience.
-              Building on the legacies of GBWhatsApp and FMWhatsApp, AAWhatsApp
-              2026 brings together the most requested privacy controls,
-              customization options, and media sharing capabilities into a
-              single, high-performance package.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 tracking-tight">
+                Superior Architecture, <span className="text-primary text-glow">Ultimate Freedom</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                AAWhatsApp isn't just a mod; it's a statement. Engineered for those who refuse to settle for the standard app's limitations or other mods' privacy compromises.
+              </p>
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
@@ -682,10 +715,10 @@ export default function Home() {
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  "Official Base Update",
-                  "Exclusive Anti-Ban Engine",
-                  "Fixed 'Expired' error",
-                  "Added new iOS Emojis"
+                  "Official Base Update – Verified Secure",
+                  "Exclusive Anti-Ban v2.0 Engine",
+                  "Fixed 'Expired' Error Forever",
+                  "Added Premium iOS Emojis"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-muted-foreground">
                     <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary">
