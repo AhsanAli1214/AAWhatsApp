@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   ShieldAlert,
   Database,
+  AlertTriangle,
 } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { FeatureCard } from "@/components/FeatureCard";
