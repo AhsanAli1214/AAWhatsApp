@@ -35,7 +35,7 @@ const reportSchema = z.object({
 
 type ReportFormValues = z.infer<typeof reportSchema>;
 
-export default function ReportBug() {
+export default function Support() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
   
@@ -92,8 +92,8 @@ export default function ReportBug() {
                     <AlertTriangle className="w-8 h-8 text-destructive" />
                   </div>
                   <div>
-                    <h1 className="text-3xl font-bold font-display tracking-tight">Report an Error</h1>
-                    <p className="text-muted-foreground">Help us improve AAWhatsApp for everyone.</p>
+                    <h1 className="text-3xl font-bold font-display tracking-tight">Support & Bug Report</h1>
+                    <p className="text-muted-foreground">Found an error or need help? Contact us here.</p>
                   </div>
                 </div>
 
