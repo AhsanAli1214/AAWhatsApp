@@ -29,7 +29,9 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border/50 py-3" : "bg-transparent py-5"
+        scrolled
+          ? "bg-background/80 backdrop-blur-md border-b border-border/50 py-3"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -37,9 +39,15 @@ export function Navigation() {
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer">
               <div className="p-1 bg-primary/10 rounded-xl">
-                <img src={logoImg} alt="AAWhatsApp Logo" className="w-9 h-9 rounded-lg shadow-lg shadow-primary/20" />
+                <img
+                  src={logoImg}
+                  alt="AAWhatsApp Logo"
+                  className="w-9 h-9 rounded-lg shadow-lg shadow-primary/20"
+                />
               </div>
-              <span className="text-xl font-bold font-display tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">AAWhatsApp</span>
+              <span className="text-xl font-bold font-display tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                AA WhatsApp
+              </span>
             </div>
           </Link>
         </div>
@@ -60,11 +68,11 @@ export function Navigation() {
               </ScrollLink>
             ))}
           </div>
-          
+
           <div className="flex items-center gap-3">
             <Link href="/support">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
                 className="border-destructive/30 text-destructive hover:bg-destructive/10 hover:border-destructive/50 transition-all rounded-full px-4"
               >
@@ -73,7 +81,12 @@ export function Navigation() {
               </Button>
             </Link>
 
-            <ScrollLink to="download" smooth={true} duration={500} offset={-100}>
+            <ScrollLink
+              to="download"
+              smooth={true}
+              duration={500}
+              offset={-100}
+            >
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">
                 Download <Download className="w-4 h-4 ml-2" />
               </Button>
@@ -106,23 +119,23 @@ export function Navigation() {
               {link.name}
             </ScrollLink>
           ))}
-          
+
           <div className="flex flex-col gap-3 mt-2">
             <Link href="/support">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="w-full border-destructive/30 text-destructive hover:bg-destructive/10 h-12 rounded-xl"
                 onClick={() => setMobileOpen(false)}
               >
                 <AlertTriangle className="w-5 h-5 mr-2" />
-                Support
+                Report Error/Bug
               </Button>
             </Link>
 
-            <ScrollLink 
-              to="download" 
-              smooth={true} 
-              duration={500} 
+            <ScrollLink
+              to="download"
+              smooth={true}
+              duration={500}
               offset={-80}
               onClick={() => setMobileOpen(false)}
               className="w-full"
