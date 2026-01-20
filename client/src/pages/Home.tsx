@@ -286,6 +286,7 @@ export default function Home() {
       </section>
 
       {/* Features Grid */}
+      <section id="features" className="py-24 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
@@ -622,497 +623,159 @@ export default function Home() {
         </div>
       </section>
 
-          <section id="privacy-power" className="py-24 bg-primary/5">
-            <div className="container px-4">
-              <div className="max-w-4xl mx-auto">
-                <div className="bg-background/40 backdrop-blur-xl border border-primary/20 rounded-2xl p-8 md:p-12 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 p-4 opacity-10">
-                    <ShieldCheck className="w-32 h-32 text-primary" />
-                  </div>
-                  
-                  <div className="relative z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-                      <ShieldCheck className="w-4 h-4" />
-                      Premium Security Architecture
-                    </div>
-                    
-                    <h2 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight leading-tight">
-                      All the Power of GBWhatsApp, <br />
-                      <span className="text-primary">Zero Privacy Risk.</span>
-                    </h2>
-                    
-                    <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl">
-                      Most WhatsApp mods harvest your data. <span className="text-foreground font-semibold">AAWhatsApp is different.</span> We've surgically removed data-collection protocols while keeping 100% of the advanced features you love.
-                    </p>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                      {[
-                        { 
-                          title: "Clean Permissions", 
-                          desc: "Bank accounts, personal files, and real-time location access have been completely stripped from the code.",
-                          icon: ShieldAlert
-                        },
-                        { 
-                          title: "Zero Data Harvesting", 
-                          desc: "Unlike other mods, your messages, contacts, and metadata never leave your device.",
-                          icon: Lock
-                        },
-                        { 
-                          title: "GB Features Intact", 
-                          desc: "Enjoy full customization, anti-delete, and mass messaging without compromising your identity.",
-                          icon: Zap
-                        },
-                        { 
-                          title: "Encrypted Core", 
-                          desc: "Built on a secure foundation that prioritizes your digital safety above all else.",
-                          icon: Database
-                        }
-                      ].map((item, i) => (
-                        <div key={i} className="flex gap-4 p-4 rounded-xl bg-background/50 border border-border/50 hover-elevate transition-all">
-                          <div className="shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                            <item.icon className="w-6 h-6" />
-                          </div>
-                          <div>
-                            <h3 className="font-bold text-lg mb-1">{item.title}</h3>
-                            <p className="text-sm text-muted-foreground leading-snug">{item.desc}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    <div className="p-6 rounded-xl bg-primary/10 border border-primary/20 flex flex-col md:flex-row items-center gap-6">
-                      <div className="text-center md:text-left flex-1">
-                        <p className="text-primary font-bold text-lg mb-1">Total Privacy Guaranteed</p>
-                        <p className="text-sm text-muted-foreground">AAWhatsApp is the only mod that puts your bank details and location data beyond reach.</p>
-                      </div>
-                      <Button size="lg" className="shrink-0" asChild>
-                        <a href="#download">Get Secure Download</a>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-      {/* The Privacy Core - Unique Selling Point */}
-      <section id="privacy-core" className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5 -skew-y-3 z-0" />
-        <div className="container px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="flex-1">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold uppercase tracking-wider">
-                  <Zap className="w-4 h-4" />
-                  The Exclusive Edge
-                </div>
-                <h2 className="text-4xl md:text-6xl font-bold font-display leading-tight">
-                  Introducing <span className="text-primary">The Privacy Core™</span>
-                </h2>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  AAWhatsApp is the world's first <span className="text-foreground font-bold italic">Permission-Clean</span> WhatsApp mod. While other mods use GBWhatsApp's legacy code which leaves data backdoors open, we've rebuilt the security layer from scratch.
-                </p>
-                
-                <div className="space-y-4">
-                  {[
-                    { 
-                      title: "Zero-Trace Protocol", 
-                      desc: "No metadata is ever cached or sent to external servers. Your digital footprint is invisible.",
-                      icon: Ghost
-                    },
-                    { 
-                      title: "Hardened Encryption v3", 
-                      desc: "Military-grade 256-bit encryption for every chat, call, and file transfer - even the mod can't read it.",
-                      icon: ShieldCheck
-                    },
-                    { 
-                      title: "Automatic Permission Stripper", 
-                      desc: "Our unique engine automatically blocks and removes 45+ invasive Android permissions hidden in other mods.",
-                      icon: XCircle
-                    }
-                  ].map((feature, i) => (
-                    <div key={i} className="flex gap-4 p-5 rounded-2xl bg-background/60 border border-primary/10 hover:border-primary/40 transition-colors group">
-                      <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                        <feature.icon className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-lg text-foreground">{feature.title}</h3>
-                        <p className="text-muted-foreground text-sm">{feature.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-            
-            <div className="flex-1 relative">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="relative z-10"
-              >
-                <div className="aspect-square rounded-[3rem] bg-gradient-to-br from-primary/30 to-emerald-900/40 border border-primary/20 backdrop-blur-3xl flex items-center justify-center p-12 relative overflow-hidden">
-                  <ShieldCheck className="w-full h-full text-primary opacity-20 absolute animate-pulse" />
-                  <div className="relative z-10 text-center">
-                    <div className="w-24 h-24 bg-primary rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-[0_0_50px_rgba(16,185,129,0.5)]">
-                      <Lock className="w-12 h-12 text-primary-foreground" />
-                    </div>
-                    <h3 className="text-3xl font-bold mb-2">Clean-Code Cert</h3>
-                    <p className="text-primary font-mono text-sm">SECURE • VERIFIED • ENCRYPTED</p>
-                  </div>
-                </div>
-                
-                {/* Floating status badges */}
-                <div className="absolute -top-4 -right-4 bg-background/80 backdrop-blur border border-primary/20 px-4 py-2 rounded-xl shadow-xl animate-float">
-                  <div className="flex items-center gap-2 text-primary font-bold">
-                    <CheckCircle2 className="w-4 h-4" />
-                    Bank Data: LOCKED
-                  </div>
-                </div>
-                <div className="absolute -bottom-8 -left-4 bg-background/80 backdrop-blur border border-primary/20 px-4 py-2 rounded-xl shadow-xl animate-float-delayed">
-                  <div className="flex items-center gap-2 text-primary font-bold">
-                    <CheckCircle2 className="w-4 h-4" />
-                    Location: STRIPPED
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Table */}
-      <section id="comparison" className="py-24 bg-secondary/20 relative z-10">
+      {/* Comparison Table Section */}
+      <section id="comparison" className="py-24 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-5xl font-bold font-display text-center mb-16">
-            Better Than The Rest
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
+              AAWhatsApp vs Official WhatsApp
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              See how AAWhatsApp enhances your experience compared to the standard
+              application.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <img
-                src={comparisonImage}
-                alt="Comparison"
-                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
-              />
-            </motion.div>
-
-            <div className="overflow-x-auto">
-              <div className="bg-secondary/40 backdrop-blur-md rounded-3xl border border-white/5 p-8">
-                <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-white/5 font-display font-bold text-lg text-center">
-                  <div className="text-left pl-4 text-muted-foreground">
-                    Feature
-                  </div>
-                  <div className="text-primary">AAWhatsApp</div>
-                  <div className="text-muted-foreground">Official</div>
-                </div>
-
+          <div className="max-w-5xl mx-auto overflow-x-auto">
+            <table className="w-full text-left border-collapse glass-card rounded-3xl overflow-hidden border border-white/5">
+              <thead>
+                <tr className="bg-primary/20">
+                  <th className="p-6 text-xl font-bold">Feature</th>
+                  <th className="p-6 text-xl font-bold text-primary">AAWhatsApp</th>
+                  <th className="p-6 text-xl font-bold">Official WhatsApp</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/5">
                 {[
-                  {
-                    feature: "Anti-Ban System",
-                    aa: true,
-                    off: true,
-                    detail: "Advanced AI-powered engine vs standard protection",
-                  },
-                  {
-                    feature: "Message Scheduler",
-                    aa: true,
-                    off: false,
-                    detail: "Automate your replies and business messages",
-                  },
-                  {
-                    feature: "Hide View Status",
-                    aa: true,
-                    off: false,
-                    detail: "Watch statuses without leaving a trace",
-                  },
-                  {
-                    feature: "Anti-Delete Msg",
-                    aa: true,
-                    off: false,
-                    detail: "Read messages even after they're deleted",
-                  },
-                  {
-                    feature: "Media Size Limit",
-                    aa: true,
-                    off: false,
-                    detail: "Send 2GB+ vs 16MB standard limit",
-                  },
-                  {
-                    feature: "Photo Quality",
-                    aa: true,
-                    off: false,
-                    detail: "Zero compression HD sharing vs heavy compression",
-                  },
-                  {
-                    feature: "Custom Themes",
-                    aa: true,
-                    off: false,
-                    detail: "1000s of UI skins vs standard light/dark",
-                  },
-                  {
-                    feature: "Anti-Revoke",
-                    aa: true,
-                    off: false,
-                    detail: "Prevent others from deleting sent messages",
-                  },
-                  {
-                    feature: "Status Downloader",
-                    aa: true,
-                    off: false,
-                    detail: "Download any status with one tap",
-                  },
-                  {
-                    feature: "Per-Chat Lock",
-                    aa: true,
-                    off: false,
-                    detail: "Secure individual chats with Fingerprint/PIN",
-                  },
-                  {
-                    feature: "DND Mode",
-                    aa: true,
-                    off: false,
-                    detail:
-                      "Mute WhatsApp internet while staying online elsewhere",
-                  },
-                  {
-                    feature: "Ghost Mode",
-                    aa: true,
-                    off: false,
-                    detail: "Hide second tick and 'typing...' indicator",
-                  },
+                  { name: "Anti-Ban Protection", aa: "Elite v2.0", official: "Standard" },
+                  { name: "Privacy (Hide Online/Status)", aa: "Advanced Stealth", official: "Limited" },
+                  { name: "Video Size Limit", aa: "1GB+", official: "16MB" },
+                  { name: "Image Quality", aa: "100% Original", official: "Compressed" },
+                  { name: "Theme Customization", aa: "4000+ Themes", official: "Basic Dark/Light" },
+                  { name: "Anti-Delete Messages", aa: "Included", official: "Not Available" },
+                  { name: "Message Scheduling", aa: "Included", official: "Not Available" },
+                  { name: "Status Downloader", aa: "Built-in", official: "Not Available" },
+                  { name: "DND Mode", aa: "Included", official: "Not Available" },
                 ].map((row, i) => (
-                  <div
-                    key={i}
-                    className="py-6 border-b border-white/5 last:border-0 hover:bg-white/5 rounded-xl transition-all px-4"
-                  >
-                    <div className="grid grid-cols-3 gap-4 items-center text-center">
-                      <div className="text-left font-bold text-lg">
-                        {row.feature}
-                      </div>
-                      <div className="flex justify-center">
-                        <CheckCircle2 className="text-primary w-7 h-7" />
-                      </div>
-                      <div className="flex justify-center opacity-30">
-                        {row.off ? (
-                          <CheckCircle2 className="w-7 h-7" />
-                        ) : (
-                          <XCircle className="w-7 h-7" />
-                        )}
-                      </div>
-                    </div>
-                    <div className="mt-2 text-sm text-muted-foreground text-left">
-                      {row.detail}
-                    </div>
-                  </div>
+                  <tr key={i} className="hover:bg-white/5 transition-colors">
+                    <td className="p-6 font-semibold">{row.name}</td>
+                    <td className="p-6 text-primary font-bold">{row.aa}</td>
+                    <td className="p-6 text-muted-foreground">{row.official}</td>
+                  </tr>
                 ))}
-              </div>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
       {/* Download Section */}
-      <section id="download" className="py-24 relative z-10">
+      <section id="download" className="py-24 relative z-10 bg-secondary/10">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
-                Ready to Upgrade?
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="flex-1 text-center lg:text-left">
+              <h2 className="text-4xl lg:text-6xl font-bold font-display mb-6 tracking-tight">
+                Ready for the Next Level?
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Download the latest version of AAWhatsApp APK now. Enjoy a
-                seamless, ad-free experience with all premium features unlocked.
+                Download the latest version of AAWhatsApp APK now. Enjoy a seamless, ad-free experience with all premium features unlocked.
               </p>
-
-              <div className="mb-8 rounded-3xl overflow-hidden shadow-xl border border-white/5">
-                <img
-                  src={ctaImage}
-                  alt="Download AAWhatsApp"
-                  className="w-full h-auto"
-                  loading="lazy"
-                  decoding="async"
-                  width="600"
-                  height="300"
-                />
-              </div>
-
               <ul className="space-y-4 mb-8">
                 {[
                   "Official Base Update",
                   "Exclusive Anti-Ban Engine",
                   "Fixed 'Expired' error",
-                  "Added new iOS Emojis",
+                  "Added new iOS Emojis"
                 ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-3 text-muted-foreground"
-                  >
+                  <li key={i} className="flex items-center gap-3 text-muted-foreground">
                     <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary">
                       <CheckCircle2 className="w-4 h-4" />
                     </div>
-                    {item}
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
+              <div className="p-6 rounded-3xl bg-primary/5 border border-primary/20 flex items-center gap-4 text-left">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="font-bold text-lg">Safe • Secure • Fast</p>
+                  <p className="text-sm text-muted-foreground">Verified scan by Play Protect. No malware or spyware detected.</p>
+                </div>
+              </div>
             </div>
 
-            <DownloadCard />
+            <div className="flex-1 w-full max-w-xl">
+              <DownloadCard />
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-24 bg-secondary/20 relative z-10">
+      <section id="faq" className="py-24 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Everything you need to know about AAWhatsApp's features and
-              safety.
+            <p className="text-muted-foreground text-lg">
+              Everything you need to know about AAWhatsApp APK.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                q: "Is AAWhatsApp safe to use?",
-                a: "Yes, it retains official end-to-end encryption. However, as an unofficial mod, we recommend keeping it updated and using it responsibly to ensure maximum account safety.",
-              },
-              {
-                q: "Can I use two WhatsApp accounts?",
-                a: "Absolutely! AAWhatsApp is designed to run side-by-side with the official app or other mods, allowing you to manage multiple numbers on a single device easily.",
-              },
-              {
-                q: "Does it support auto-reply?",
-                a: "Yes, it includes advanced business tools like auto-reply, message scheduling, and a powerful DND mode to help you manage your communication more effectively.",
-              },
-              {
-                q: "What are the media limits?",
-                a: "You can send videos up to 1GB and share 100+ high-quality images at once. Unlike the official app, AAWhatsApp doesn't aggressively compress your files.",
-              },
-              {
-                q: "Do I need to root my phone?",
-                a: "No, AAWhatsApp works perfectly on all standard Android devices without requiring root access or any special system modifications.",
-              },
-              {
-                q: "How do I update the app?",
-                a: "Simply download the latest APK from our website and install it. It will automatically update your existing installation while keeping all your chats safe.",
-              },
-              {
-                q: "Is it really Anti-Ban?",
-                a: "We include a cutting-edge anti-ban engine that is constantly updated to match the latest security protocols, significantly reducing the risk of account suspension.",
-              },
-              {
-                q: "Can I customize the UI?",
-                a: "Yes! Access thousands of free themes, custom fonts, bubble styles, and unique animations to make your WhatsApp look exactly how you want it.",
-              },
-              {
-                q: "What is DND Mode?",
-                a: "The Do Not Disturb mode allows you to disable internet access for AAWhatsApp specifically, so you can stay online in other apps without being interrupted.",
-              },
-            ].map((faq, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-card p-8 rounded-3xl border border-primary/10 shadow-lg hover:shadow-primary/5 transition-all hover:-translate-y-1"
-              >
-                <h3 className="text-xl font-bold mb-4 text-primary">{faq.q}</h3>
-                <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
-              </motion.div>
-            ))}
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="glass-card border border-white/5 rounded-2xl overflow-hidden">
+                <AccordionTrigger className="px-6 py-4 hover:no-underline font-bold text-lg">Is AAWhatsApp safe to use?</AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                  Yes, AAWhatsApp is built on the secure official WhatsApp base with added privacy layers. It is regularly scanned for malware and doesn't collect personal user data.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="glass-card border border-white/5 rounded-2xl overflow-hidden">
+                <AccordionTrigger className="px-6 py-4 hover:no-underline font-bold text-lg">Will my account get banned?</AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                  AAWhatsApp features an advanced anti-ban v2.0 engine that significantly reduces the risk of account suspension compared to other mods.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" className="glass-card border border-white/5 rounded-2xl overflow-hidden">
+                <AccordionTrigger className="px-6 py-4 hover:no-underline font-bold text-lg">How do I update AAWhatsApp?</AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                  You can download the latest version from this official website whenever a new update is released. We recommend bookmarking this page.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4" className="glass-card border border-white/5 rounded-2xl overflow-hidden">
+                <AccordionTrigger className="px-6 py-4 hover:no-underline font-bold text-lg">Can I use it alongside official WhatsApp?</AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                  Yes, AAWhatsApp uses a different package name, allowing you to run it as a second WhatsApp account on the same device.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 py-12 border-t border-white/5 bg-secondary/10">
+      <footer className="py-12 border-t border-white/5 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center gap-2 mb-4">
-                <img
-                  src={logoImg}
-                  alt="Logo"
-                  className="w-8 h-8 object-contain"
-                />
-                <span className="text-xl font-bold font-display">
-                  AAWhatsApp
-                </span>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+                <img src={logoImg} alt="AA Logo" className="w-8 h-8 object-contain" />
               </div>
-              <p className="text-muted-foreground max-w-sm">
-                The ultimate WhatsApp modification for advanced privacy,
-                unlimited customization, and high-performance media sharing.
-              </p>
+              <span className="text-2xl font-bold tracking-tighter">AAWhatsApp</span>
             </div>
-            <div>
-              <h4 className="font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>
-                  <a
-                    href="/privacy"
-                    className="hover:text-primary transition-colors"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/terms"
-                    className="hover:text-primary transition-colors"
-                  >
-                    Terms of Service
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Support</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>
-                  <a
-                    href="/contact"
-                    className="hover:text-primary transition-colors"
-                  >
-                    Report Bug
-                  </a>
-                </li>
-                <li>
-                  <ScrollLink
-                    to="faq"
-                    smooth={true}
-                    className="hover:text-primary cursor-pointer transition-colors"
-                  >
-                    FAQs
-                  </ScrollLink>
-                </li>
-              </ul>
+            
+            <div className="flex gap-8 text-sm text-muted-foreground">
+              <ScrollLink to="about" smooth={true} offset={-100} className="hover:text-primary transition-colors cursor-pointer">About</ScrollLink>
+              <ScrollLink to="features" smooth={true} offset={-100} className="hover:text-primary transition-colors cursor-pointer">Features</ScrollLink>
+              <ScrollLink to="download" smooth={true} offset={-100} className="hover:text-primary transition-colors cursor-pointer">Download</ScrollLink>
+              <ScrollLink to="faq" smooth={true} offset={-100} className="hover:text-primary transition-colors cursor-pointer">FAQ</ScrollLink>
             </div>
           </div>
-          <div className="pt-8 border-t border-white/5 text-center text-muted-foreground text-sm">
-            <p>
-              © {new Date().getFullYear()} AAWhatsApp. All rights reserved.
-            </p>
+          <div className="mt-8 text-center text-sm text-muted-foreground">
+            <p>&copy; AAWhatsApp. All rights reserved.</p>
           </div>
         </div>
       </footer>
