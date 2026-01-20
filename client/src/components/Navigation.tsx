@@ -46,7 +46,7 @@ export function Navigation() {
                 />
               </div>
               <span className="text-xl font-bold font-display tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-                AA WhatsApp
+                AAWhatsApp
               </span>
             </div>
           </Link>
@@ -77,7 +77,7 @@ export function Navigation() {
                 className="border-destructive/30 text-destructive hover:bg-destructive/10 hover:border-destructive/50 transition-all rounded-full px-4"
               >
                 <AlertTriangle className="w-4 h-4 mr-2" />
-                Support
+                Report Error/Bug
               </Button>
             </Link>
 
