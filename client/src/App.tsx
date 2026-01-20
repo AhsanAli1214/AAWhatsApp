@@ -8,6 +8,7 @@ import Home from "@/pages/Home";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import ContactUs from "@/pages/ContactUs";
+import ReportBug from "@/pages/ReportBug";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/privacy" component={PrivacyPolicy} />
       <Route path="/terms" component={TermsOfService} />
       <Route path="/contact" component={ContactUs} />
+      <Route path="/report-bug" component={ReportBug} />
       <Route component={NotFound} />
     </Switch>
   );

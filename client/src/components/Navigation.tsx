@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 
 import logoImg from "@assets/icon_1768754567492.png";
 
+import { Link } from "wouter";
+
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,10 +34,14 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="p-1 bg-primary/10 rounded-xl">
-            <img src={logoImg} alt="AAWhatsApp Logo" className="w-9 h-9 rounded-lg shadow-lg shadow-primary/20" />
-          </div>
-          <span className="text-xl font-bold font-display tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">AAWhatsApp</span>
+          <Link href="/">
+            <div className="flex items-center gap-3 cursor-pointer">
+              <div className="p-1 bg-primary/10 rounded-xl">
+                <img src={logoImg} alt="AAWhatsApp Logo" className="w-9 h-9 rounded-lg shadow-lg shadow-primary/20" />
+              </div>
+              <span className="text-xl font-bold font-display tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">AAWhatsApp</span>
+            </div>
+          </Link>
         </div>
 
         {/* Desktop Nav */}
@@ -56,17 +62,16 @@ export function Navigation() {
           </div>
           
           <div className="flex items-center gap-3">
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="border-destructive/30 text-destructive hover:bg-destructive/10 hover:border-destructive/50 transition-all rounded-full px-4"
-              asChild
-            >
-              <a href="https://t.me/Aawhatsapp" target="_blank" rel="noopener noreferrer">
+            <Link href="/report-bug">
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="border-destructive/30 text-destructive hover:bg-destructive/10 hover:border-destructive/50 transition-all rounded-full px-4"
+              >
                 <AlertTriangle className="w-4 h-4 mr-2" />
                 Report Error
-              </a>
-            </Button>
+              </Button>
+            </Link>
 
             <ScrollLink to="download" smooth={true} duration={500} offset={-100}>
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">
@@ -103,16 +108,16 @@ export function Navigation() {
           ))}
           
           <div className="flex flex-col gap-3 mt-2">
-            <Button 
-              variant="outline" 
-              className="w-full border-destructive/30 text-destructive hover:bg-destructive/10 h-12 rounded-xl"
-              asChild
-            >
-              <a href="https://t.me/Aawhatsapp" target="_blank" rel="noopener noreferrer">
+            <Link href="/report-bug">
+              <Button 
+                variant="outline" 
+                className="w-full border-destructive/30 text-destructive hover:bg-destructive/10 h-12 rounded-xl"
+                onClick={() => setMobileOpen(false)}
+              >
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Report Error
-              </a>
-            </Button>
+              </Button>
+            </Link>
 
             <ScrollLink 
               to="download" 
