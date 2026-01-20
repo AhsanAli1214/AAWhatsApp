@@ -31,7 +31,7 @@ import privacyImage from "@assets/generated_images/futuristic_illustration_of_pr
 import themesImage from "@assets/generated_images/creative_visual_showing_multiple_whatsapp_theme_styles_for_aawhatsapp..png";
 import mediaImage from "@assets/generated_images/smartphone_mockup_displaying_aawhatsapp_media_sharing_features..png";
 import securityComparisonImage from "@assets/generated_images/security_comparison:_aawhatsapp_vs_others_permissions.png";
-import securityImage from "@assets/generated_images/advanced_security_and_antiban_features_for_aawhatsapp_mod..png";
+import securityImage from "@assets/generated_images/professional_cybersecurity-themed_illustration_for_aawhatsapp..png";
 import comparisonImage from "@assets/generated_images/clean_comparison_illustration_showing_aawhatsapp_vs_other_mods..png";
 import ctaImage from "@assets/generated_images/call-to-action_image_for_downloading_aawhatsapp_apk..png";
 import logoImg from "@assets/icon_1768754567492.png";
@@ -845,12 +845,7 @@ export default function Home() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
-                <DownloadCard
-                  version="v20.80"
-                  size="68MB"
-                  date="Jan 20, 2026"
-                  url="#"
-                />
+                <DownloadCard />
               </div>
               
               <p className="mt-8 text-sm text-muted-foreground flex items-center gap-2">
