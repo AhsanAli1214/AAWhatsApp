@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import logoImg from "@assets/icon_1768754567492.png";
@@ -39,24 +39,41 @@ export function Navigation() {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <ScrollLink
-              key={link.name}
-              to={link.to}
-              smooth={true}
-              duration={500}
-              offset={-100}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+        <div className="hidden md:flex items-center gap-6">
+          <div className="flex items-center gap-6 mr-4">
+            {navLinks.map((link) => (
+              <ScrollLink
+                key={link.name}
+                to={link.to}
+                smooth={true}
+                duration={500}
+                offset={-100}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+              >
+                {link.name}
+              </ScrollLink>
+            ))}
+          </div>
+          
+          <div className="flex items-center gap-3">
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="border-destructive/30 text-destructive hover:bg-destructive/10 hover:border-destructive/50 transition-all rounded-full px-4"
+              asChild
             >
-              {link.name}
-            </ScrollLink>
-          ))}
-          <ScrollLink to="download" smooth={true} duration={500} offset={-100}>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">
-              Download <Download className="w-4 h-4 ml-2" />
+              <a href="https://t.me/Aawhatsapp" target="_blank" rel="noopener noreferrer">
+                <AlertTriangle className="w-4 h-4 mr-2" />
+                Report Error
+              </a>
             </Button>
-          </ScrollLink>
+
+            <ScrollLink to="download" smooth={true} duration={500} offset={-100}>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">
+                Download <Download className="w-4 h-4 ml-2" />
+              </Button>
+            </ScrollLink>
+          </div>
         </div>
 
         {/* Mobile Toggle */}
@@ -84,17 +101,32 @@ export function Navigation() {
               {link.name}
             </ScrollLink>
           ))}
-          <ScrollLink 
-            to="download" 
-            smooth={true} 
-            duration={500} 
-            offset={-80}
-            onClick={() => setMobileOpen(false)}
-          >
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg h-12 rounded-xl">
-              Download Now
+          
+          <div className="flex flex-col gap-3 mt-2">
+            <Button 
+              variant="outline" 
+              className="w-full border-destructive/30 text-destructive hover:bg-destructive/10 h-12 rounded-xl"
+              asChild
+            >
+              <a href="https://t.me/Aawhatsapp" target="_blank" rel="noopener noreferrer">
+                <AlertTriangle className="w-5 h-5 mr-2" />
+                Report Error
+              </a>
             </Button>
-          </ScrollLink>
+
+            <ScrollLink 
+              to="download" 
+              smooth={true} 
+              duration={500} 
+              offset={-80}
+              onClick={() => setMobileOpen(false)}
+              className="w-full"
+            >
+              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg h-12 rounded-xl">
+                Download Now
+              </Button>
+            </ScrollLink>
+          </div>
         </div>
       )}
     </nav>
