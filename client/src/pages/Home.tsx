@@ -459,6 +459,79 @@ export default function Home() {
         </div>
       </section>
 
+          <section id="privacy-power" className="py-24 bg-primary/5">
+            <div className="container px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-background/40 backdrop-blur-xl border border-primary/20 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-4 opacity-10">
+                    <ShieldCheck className="w-32 h-32 text-primary" />
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+                      <ShieldCheck className="w-4 h-4" />
+                      Premium Security Architecture
+                    </div>
+                    
+                    <h2 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight leading-tight">
+                      All the Power of GBWhatsApp, <br />
+                      <span className="text-primary">Zero Privacy Risk.</span>
+                    </h2>
+                    
+                    <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl">
+                      Most WhatsApp mods harvest your data. <span className="text-foreground font-semibold">AAWhatsApp is different.</span> We've surgically removed data-collection protocols while keeping 100% of the advanced features you love.
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                      {[
+                        { 
+                          title: "Clean Permissions", 
+                          desc: "Bank accounts, personal files, and real-time location access have been completely stripped from the code.",
+                          icon: ShieldAlert
+                        },
+                        { 
+                          title: "Zero Data Harvesting", 
+                          desc: "Unlike other mods, your messages, contacts, and metadata never leave your device.",
+                          icon: Lock
+                        },
+                        { 
+                          title: "GB Features Intact", 
+                          desc: "Enjoy full customization, anti-delete, and mass messaging without compromising your identity.",
+                          icon: Zap
+                        },
+                        { 
+                          title: "Encrypted Core", 
+                          desc: "Built on a secure foundation that prioritizes your digital safety above all else.",
+                          icon: Database
+                        }
+                      ].map((item, i) => (
+                        <div key={i} className="flex gap-4 p-4 rounded-xl bg-background/50 border border-border/50 hover-elevate transition-all">
+                          <div className="shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                            <item.icon className="w-6 h-6" />
+                          </div>
+                          <div>
+                            <h3 className="font-bold text-lg mb-1">{item.title}</h3>
+                            <p className="text-sm text-muted-foreground leading-snug">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="p-6 rounded-xl bg-primary/10 border border-primary/20 flex flex-col md:flex-row items-center gap-6">
+                      <div className="text-center md:text-left flex-1">
+                        <p className="text-primary font-bold text-lg mb-1">Total Privacy Guaranteed</p>
+                        <p className="text-sm text-muted-foreground">AAWhatsApp is the only mod that puts your bank details and location data beyond reach.</p>
+                      </div>
+                      <Button size="lg" className="shrink-0" asChild>
+                        <a href="#download">Get Secure Download</a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
       {/* Comparison Table */}
       <section id="comparison" className="py-24 bg-secondary/20 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
