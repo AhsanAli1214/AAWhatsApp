@@ -197,6 +197,18 @@ export default function Home() {
                 transition={{ duration: 1, ease: "backOut" }}
                 className="relative z-10"
               >
+                <div className="mb-8 text-center space-y-3">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-destructive/15 border border-destructive/30 text-destructive text-sm font-bold uppercase tracking-widest shadow-lg shadow-destructive/10">
+                    <XCircle className="w-4 h-4" />
+                    INVASIVE PERMISSIONS BLOCKED
+                  </div>
+                  <h3 className="text-3xl font-bold font-display leading-tight">
+                    No <span className="text-destructive">"All Files Access"</span> Required
+                  </h3>
+                  <p className="text-muted-foreground text-lg max-w-md mx-auto">
+                    Unlike GBWhatsApp and FMWhatsApp, we surgically removed the code that demands access to your private storage.
+                  </p>
+                </div>
                 <div className="aspect-square rounded-[4rem] bg-gradient-to-br from-primary/20 via-emerald-900/40 to-background border border-primary/30 backdrop-blur-3xl flex items-center justify-center p-16 relative overflow-hidden shadow-2xl">
                   <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5" />
                   <ShieldCheck className="w-full h-full text-primary opacity-10 absolute animate-pulse" />
