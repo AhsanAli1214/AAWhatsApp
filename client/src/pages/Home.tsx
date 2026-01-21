@@ -108,6 +108,7 @@ export default function Home() {
                 alt="AAWhatsApp Interface"
                 className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20"
                 loading="eager"
+                fetchPriority="high"
                 decoding="async"
                 width="800"
                 height="600"
@@ -831,7 +832,13 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="glass-card rounded-[3rem] p-8 md:p-16 border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-emerald-900/20 overflow-hidden relative">
             <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
-              <img src={ctaImage} alt="" className="w-full h-full object-cover" />
+              <img 
+                src={ctaImage} 
+                alt="" 
+                className="w-full h-full object-cover" 
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             
             <div className="relative z-10 max-w-2xl">
