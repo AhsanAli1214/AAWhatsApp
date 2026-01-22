@@ -57,7 +57,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-bold font-display leading-[1.1] mb-6 tracking-tight">
-              AA Mods APK – <br />
+              AAWhatsApp APK – <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow">
                 Privacy-Clean GBWhatsApp Alternative
               </span>
@@ -77,7 +77,7 @@ export default function Home() {
                 <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full border border-primary/20">
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     <Zap className="w-6 h-6 fill-current" />
-                    Download AA Mods APK
+                    Download AAWhatsApp APK
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -105,7 +105,7 @@ export default function Home() {
             <div className="relative z-10 mx-auto max-w-lg">
               <img
                 src={heroImage}
-                alt="AA Mods Interface"
+                alt="AAWhatsApp Interface"
                 className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20"
                 loading="eager"
                 fetchPriority="high"
@@ -144,7 +144,7 @@ export default function Home() {
                   The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400 text-glow">Privacy Core™</span>
                 </h2>
                 <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
-                  AA Mods is the world's first <span className="text-foreground font-bold italic border-b-2 border-primary/30">Permission-Clean</span> WhatsApp mod. We've surgically rebuilt the security layer to ensure your private life stays private.
+                  AAWhatsApp is the world's first <span className="text-foreground font-bold italic border-b-2 border-primary/30">Permission-Clean</span> WhatsApp mod. We've surgically rebuilt the security layer to ensure your private life stays private.
                 </p>
                 
                 <div className="grid gap-6">
@@ -206,7 +206,7 @@ export default function Home() {
                     No <span className="text-destructive">"All Files Access"</span> Required
                   </h3>
                   <p className="text-muted-foreground text-lg max-w-md mx-auto">
-                    Unlike GBWhatsApp and FMWhatsApp, we surgically removed the code that demands access to your private storage in AA Mods.
+                    Unlike GBWhatsApp and FMWhatsApp, we surgically removed the code that demands access to your private storage.
                   </p>
                 </div>
                 <div className="aspect-square rounded-[4rem] bg-gradient-to-br from-primary/20 via-emerald-900/40 to-background border border-primary/30 backdrop-blur-3xl flex items-center justify-center p-16 relative overflow-hidden shadow-2xl">
@@ -279,7 +279,7 @@ export default function Home() {
                 </h2>
                 
                 <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl">
-                  Most WhatsApp mods harvest your data. <span className="text-foreground font-semibold">AA Mods is different.</span> We've surgically removed data-collection protocols while keeping 100% of the advanced features you love.
+                  Most WhatsApp mods harvest your data. <span className="text-foreground font-semibold">AAWhatsApp is different.</span> We've surgically removed data-collection protocols while keeping 100% of the advanced features you love.
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
@@ -320,7 +320,7 @@ export default function Home() {
                 <div className="p-6 rounded-xl bg-primary/10 border border-primary/20 flex flex-col md:flex-row items-center gap-6">
                   <div className="text-center md:text-left flex-1">
                     <p className="text-primary font-bold text-lg mb-1">Total Privacy Guaranteed</p>
-                    <p className="text-sm text-muted-foreground">AA Mods is the only mod that puts your bank details and location data beyond reach.</p>
+                    <p className="text-sm text-muted-foreground">AAWhatsApp is the only mod that puts your bank details and location data beyond reach.</p>
                   </div>
                   <Button size="lg" className="shrink-0" asChild>
                     <a href="#download">Get Secure Download</a>
@@ -337,7 +337,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
-              Why AA Mods is the Best WhatsApp Mod?
+              Why AAWhatsApp is the Best WhatsApp Mod?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               We've packed the most requested features into a lightweight,
@@ -399,7 +399,7 @@ export default function Home() {
                 Superior Architecture, <span className="text-primary text-glow">Ultimate Freedom</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                AA Mods isn't just a mod; it's a statement. Engineered for those who refuse to settle for the standard app's limitations or other mods' privacy compromises.
+                AAWhatsApp isn't just a mod; it's a statement. Engineered for those who refuse to settle for the standard app's limitations or other mods' privacy compromises.
               </p>
             </motion.div>
           </div>
@@ -461,7 +461,7 @@ export default function Home() {
                   <span className="text-foreground font-bold">
                     Hide Read Receipts & Status:
                   </span>{" "}
-                  AA Mods lets you hide your online status, second (blue)
+                  AAWhatsApp lets you hide your online status, second (blue)
                   ticks, and even the "typing..." and "recording..." indicators.
                   You get both global options (freeze last seen) and selective
                   privacy toggles for specific contacts.
@@ -514,7 +514,7 @@ export default function Home() {
             >
               <img
                 src={securityComparisonImage}
-                alt="AA Mods Security Advantage"
+                alt="AAWhatsApp Security Advantage"
                 className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
                 loading="lazy"
                 decoding="async"
@@ -537,12 +537,12 @@ export default function Home() {
                 <p>
                   Unlike GBWhatsApp, FMWhatsApp, and other mods that force you to grant 
                   <span className="text-foreground font-bold"> "Manage All Files" </span> 
-                  permissions, AA Mods respect your data.
+                  permissions, AAWhatsApp respect your data.
                 </p>
                 <p>
                   Most mods won't even start without this dangerous permission, which 
                   allows them to read, modify, and delete every file on your phone. 
-                  <span className="text-primary font-bold"> AA Mods runs smoothly </span> 
+                  <span className="text-primary font-bold"> AAWhatsApp runs smoothly </span> 
                   without ever asking for this access.
                 </p>
                 <p>
@@ -620,7 +620,7 @@ export default function Home() {
               </h2>
               <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
                 <p>
-                  AA Mods matches or exceeds the highest limits in the mod
+                  AAWhatsApp matches or exceeds the highest limits in the mod
                   world. Send up to{" "}
                   <span className="text-primary font-bold">90 photos</span> or{" "}
                   <span className="text-primary font-bold">
@@ -692,7 +692,7 @@ export default function Home() {
               </h2>
               <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
                 <p>
-                  Express yourself with a truly unique interface. AA Mods
+                  Express yourself with a truly unique interface. AAWhatsApp
                   gives you access to thousands of themes from the built-in
                   store, plus deep customization for every element.
                 </p>
@@ -718,10 +718,10 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
-              AA Mods vs Others
+              AAWhatsApp vs Others
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              See how AA Mods stacks up against the official app and other
+              See how AAWhatsApp stacks up against the official app and other
               popular mods in 2026.
             </p>
           </div>
@@ -733,7 +733,7 @@ export default function Home() {
                   <tr className="border-b border-white/10">
                     <th className="py-4 font-bold text-primary">Feature</th>
                     <th className="py-4 font-bold">Official</th>
-                    <th className="py-4 font-bold text-primary">AA Mods</th>
+                    <th className="py-4 font-bold text-primary">AAWhatsApp</th>
                   </tr>
                 </thead>
                 <tbody className="text-muted-foreground">
@@ -798,9 +798,9 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger>Is AA Mods safe to use?</AccordionTrigger>
+                <AccordionTrigger>Is AAWhatsApp safe to use?</AccordionTrigger>
                 <AccordionContent>
-                  Yes, AA Mods is built on a secure codebase that
+                  Yes, AAWhatsApp is built on a secure codebase that
                   prioritizes user privacy. Our unique Privacy Core™ strips
                   invasive permissions that other mods exploit, making it one
                   of the safest unofficial WhatsApp mods available in 2026.
@@ -809,14 +809,14 @@ export default function Home() {
               <AccordionItem value="item-2">
                 <AccordionTrigger>Will I get banned?</AccordionTrigger>
                 <AccordionContent>
-                  While no mod is 100% immune, AA Mods includes an advanced
+                  While no mod is 100% immune, AAWhatsApp includes an advanced
                   Anti-Ban v2.0 engine that is regularly updated to stay ahead
                   of official app detection. We recommend always using the
                   latest version for maximum safety.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
-                <AccordionTrigger>How do I update AA Mods?</AccordionTrigger>
+                <AccordionTrigger>How do I update AAWhatsApp?</AccordionTrigger>
                 <AccordionContent>
                   You should regularly check our official website for the latest
                   APK version. To update, simply download the new APK and
@@ -829,7 +829,7 @@ export default function Home() {
                   Can I use it alongside the official WhatsApp?
                 </AccordionTrigger>
                 <AccordionContent>
-                  Yes, AA Mods uses a different package name, allowing you to
+                  Yes, AAWhatsApp uses a different package name, allowing you to
                   run it alongside the official app or other mods like
                   GBWhatsApp on the same device with a different phone number.
                 </AccordionContent>
@@ -859,7 +859,7 @@ export default function Home() {
                 <span className="text-primary">WhatsApp Experience?</span>
               </h2>
               <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-                Join millions of users who trust AA Mods for their daily
+                Join millions of users who trust AAWhatsApp for their daily
                 communication. Safe, fast, and feature-packed.
               </p>
               
@@ -869,7 +869,7 @@ export default function Home() {
               
               <p className="mt-8 text-sm text-muted-foreground flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-primary" />
-                Verified safe by AA Mods Security Team
+                Verified safe by AAWhatsApp Security Team
               </p>
             </div>
           </div>
@@ -881,8 +881,8 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
-              <img src={logoImg} alt="AA Mods" className="w-8 h-8 rounded-lg" />
-              <span className="text-xl font-bold font-display tracking-tighter">AA Mods</span>
+              <img src={logoImg} alt="AAWhatsApp" className="w-8 h-8 rounded-lg" />
+              <span className="text-xl font-bold font-display tracking-tighter">AAWhatsApp</span>
             </div>
             
             <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground font-medium">
@@ -893,7 +893,7 @@ export default function Home() {
             </div>
             
             <p className="text-sm text-muted-foreground">
-              © 2026 AA Mods Official. All rights reserved.
+              © 2026 AAWhatsApp Official. All rights reserved.
             </p>
           </div>
         </div>
