@@ -130,9 +130,9 @@ export default function Support() {
               </Link>
               
               <div className="space-y-4">
-                <h1 className="text-4xl font-bold font-display tracking-tight">Help & <br /><span className="text-primary">Support Center</span></h1>
+                <h1 className="text-4xl font-bold font-display tracking-tight">Help & <br /><span className="text-primary">AA Mods Support</span></h1>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Have questions about AAWhatsApp? Our team is here to help you get the most out of your experience.
+                  Have questions about AA Mods products? Our team is here to help you get the most out of your experience.
                 </p>
               </div>
 

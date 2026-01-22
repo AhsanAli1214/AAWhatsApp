@@ -881,8 +881,8 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
-              <img src={logoImg} alt="AAWhatsApp" className="w-8 h-8 rounded-lg" />
-              <span className="text-xl font-bold font-display tracking-tighter">AAWhatsApp</span>
+              <img src={logoImg} alt="AA Mods" className="w-8 h-8 rounded-lg" />
+              <span className="text-xl font-bold font-display tracking-tighter">AA Mods</span>
             </div>
             
             <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground font-medium">
@@ -893,7 +893,7 @@ export default function Home() {
             </div>
             
             <p className="text-sm text-muted-foreground">
-              © 2026 AAWhatsApp Official. All rights reserved.
+              © 2026 AA Mods. All rights reserved. AAWhatsApp is a product by AA Mods.
             </p>
           </div>
         </div>
