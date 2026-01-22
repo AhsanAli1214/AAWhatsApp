@@ -13,6 +13,7 @@ import {
   ShieldAlert,
   Database,
   AlertTriangle,
+  Send,
 } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { FeatureCard } from "@/components/FeatureCard";
@@ -865,6 +866,17 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row gap-6">
                 <DownloadCard />
+                <a 
+                  href="http://t.me/ahsan_tech_hub" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <button className="w-full h-full min-h-[64px] px-8 rounded-2xl bg-[#0088cc] hover:bg-[#0088cc]/90 text-white font-bold text-xl flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-[#0088cc]/40">
+                    <Send className="w-6 h-6" />
+                    Join Telegram
+                  </button>
+                </a>
               </div>
               
               <p className="mt-8 text-sm text-muted-foreground flex items-center gap-2">
@@ -886,6 +898,9 @@ export default function Home() {
             </div>
             
             <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground font-medium">
+              <a href="http://t.me/ahsan_tech_hub" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-1">
+                <Send className="w-3 h-3" /> Telegram Updates
+              </a>
               <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
               <a href="#" className="hover:text-primary transition-colors">Bug Report</a>

@@ -123,11 +123,19 @@ export default function Support() {
             
             {/* Left Column: Info & Links */}
             <div className="w-full md:w-1/3 space-y-8">
-              <Link href="/">
-                <Button variant="ghost" className="mb-4 hover:bg-white/5 gap-2 pl-0 hover:pl-2 transition-all">
-                  <ArrowLeft className="w-4 h-4" /> Back to Home
-                </Button>
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/">
+                  <Button variant="ghost" className="hover:bg-white/5 gap-2 pl-0 hover:pl-2 transition-all no-default-hover-elevate">
+                    <ArrowLeft className="w-4 h-4" /> Back to Home
+                  </Button>
+                </Link>
+                <a href="http://t.me/ahsan_tech_hub" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="gap-2 border-primary/30 text-primary hover:bg-primary/10 no-default-hover-elevate">
+                    <Send className="w-4 h-4" />
+                    Join Telegram Updates
+                  </Button>
+                </a>
+              </div>
               
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold font-display tracking-tight">Help & <br /><span className="text-primary">AA Mods Support</span></h1>
