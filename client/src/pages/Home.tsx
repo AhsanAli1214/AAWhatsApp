@@ -34,7 +34,7 @@ import securityComparisonImage from "@assets/Gemini_Generated_Image_leenipleenip
 import securityImage from "@assets/Gemini_Generated_Image_q9qqs4q9qqs4q9qq_(1)_1768930866856.png";
 import comparisonImage from "@assets/generated_images/clean_comparison_illustration_showing_aawhatsapp_vs_other_mods..png";
 import ctaImage from "@assets/generated_images/call-to-action_image_for_downloading_aawhatsapp_apk..png";
-import logoImg from "@assets/icon_1768754567492.png";
+import logoImg from "@assets/Gemini_Generated_Image_72b2nh72b2nh72b2_1769103369360.png";
 
 export default function Home() {
   return (
