@@ -19,7 +19,7 @@ export async function registerRoutes(
       const { type, email, message } = req.body;
       
       const { data, error } = await resend.emails.send({
-        from: "AAWhatsApp <onboarding@resend.dev>",
+        from: "AA Mods <onboarding@resend.dev>",
         to: "a67515346@gmail.com",
         subject: `🚨 Bug Report: ${type}`,
         html: `
@@ -64,8 +64,8 @@ export async function registerRoutes(
                   </div>
                 </div>
                 <div class="footer">
-                  <p>Sent via AAWhatsApp Automated Support System</p>
-                  <p>&copy; ${new Date().getFullYear()} AAWhatsApp. Technical Support Team.</p>
+                  <p>Sent via AA Mods Automated Support System</p>
+                  <p>&copy; ${new Date().getFullYear()} AA Mods. Technical Support Team.</p>
                 </div>
               </div>
             </body>
