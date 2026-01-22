@@ -130,9 +130,9 @@ export default function Support() {
               </Link>
               
               <div className="space-y-4">
-                <h1 className="text-4xl font-bold font-display tracking-tight">Help & <br /><span className="text-primary">AA Mods Center</span></h1>
+                <h1 className="text-4xl font-bold font-display tracking-tight">Help & <br /><span className="text-primary">Support Center</span></h1>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Have questions about AA Mods? Our team is here to help you get the most out of your experience.
+                  Have questions about AAWhatsApp? Our team is here to help you get the most out of your experience.
                 </p>
               </div>
 
@@ -160,7 +160,7 @@ export default function Support() {
               <div className="p-4 rounded-2xl bg-primary/5 border border-primary/10 flex gap-3">
                 <Info className="w-5 h-5 text-primary shrink-0" />
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Before reporting a bug, please ensure you are running the latest version of AA Mods APK.
+                  Before reporting a bug, please ensure you are running the latest version of AAWhatsApp APK.
                 </p>
               </div>
             </div>

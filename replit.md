@@ -1,8 +1,8 @@
-# AA Mods APK Download Website
+# AAWhatsApp APK Download Website
 
 ## Overview
 
-This is a modern, SEO-optimized landing page for AA Mods APK, a WhatsApp mod application. The website showcases features, provides download links, and includes comparison tables with other WhatsApp mods. Built as a full-stack application with a React frontend and Express backend, it includes subscriber email collection and download tracking functionality.
+This is a modern, SEO-optimized landing page for AAWhatsApp APK, a WhatsApp mod application. The website showcases features, provides download links, and includes comparison tables with other WhatsApp mods. Built as a full-stack application with a React frontend and Express backend, it includes subscriber email collection and download tracking functionality.
 
 ## User Preferences
 

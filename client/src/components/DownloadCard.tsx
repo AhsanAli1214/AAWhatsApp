@@ -40,7 +40,7 @@ export function DownloadCard() {
 
     toast({
       title: "Download Started",
-      description: `Downloading AA Mods ${option.version} from ${option.name}`,
+      description: `Downloading AAWhatsApp ${option.version} from ${option.name}`,
     });
     // Track download and open link
     window.open(option.url, "_blank");
