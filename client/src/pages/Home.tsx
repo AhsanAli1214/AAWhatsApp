@@ -881,7 +881,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
-              <img src={logoImg} alt="AA Mods" className="w-8 h-8 rounded-lg" />
+              <img src={logoImg} alt="AA Mods" className="w-8 h-8 rounded-lg object-contain bg-background" />
               <span className="text-xl font-bold font-display tracking-tighter">AA Mods</span>
             </div>
             
