@@ -42,7 +42,7 @@ export function Navigation() {
                 <img
                   src={logoImg}
                   alt="AA Mods Logo"
-                  className="w-9 h-9 rounded-lg shadow-lg shadow-primary/20"
+                  className="w-9 h-9 rounded-lg shadow-lg shadow-primary/20 object-contain bg-background"
                 />
               </div>
               <span className="text-xl font-bold font-display tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
