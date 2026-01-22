@@ -57,9 +57,9 @@ export default function Home() {
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-bold font-display leading-[1.1] mb-6 tracking-tight">
-              AAWhatsApp APK – <br />
+              AAWhatsApp APK by AA Mods – <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow">
-                Privacy-Clean GBWhatsApp Alternative
+                100% Secure WhatsApp Mod
               </span>
             </h1>
 
@@ -141,10 +141,10 @@ export default function Home() {
                   The Exclusive Edge
                 </div>
                 <h2 className="text-5xl md:text-7xl font-bold font-display leading-[1.05] tracking-tight">
-                  The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400 text-glow">Privacy Core™</span>
+                  The Original <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400 text-glow">Privacy Core™</span>
                 </h2>
                 <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light">
-                  AAWhatsApp is the world's first <span className="text-foreground font-bold italic border-b-2 border-primary/30">Permission-Clean</span> WhatsApp mod. We've surgically rebuilt the security layer to ensure your private life stays private.
+                  AAWhatsApp by AA Mods is the world's first and only <span className="text-foreground font-bold italic border-b-2 border-primary/30">Permission-Clean</span> WhatsApp mod. We've surgically rebuilt the security layer to ensure your private life stays private, making it the most secure mod available in 2026.
                 </p>
                 
                 <div className="grid gap-6">
