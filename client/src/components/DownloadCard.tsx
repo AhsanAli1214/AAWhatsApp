@@ -22,7 +22,7 @@ const OPTIONS: DownloadOption[] = [
   {
     name: "MediaFire",
     icon: Download,
-    url: "https://www.mediafire.com/file/cqrm7bafpnh4yg6/AAWhatsapp+V1.0+final.apk/file",
+    url: "https://www.mediafire.com/file/q1oxvjftdpubkrl/AAWhatsApp+V2.0.apk/file",
     platform: "android",
     version: "latest",
   },
