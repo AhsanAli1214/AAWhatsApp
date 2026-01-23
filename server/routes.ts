@@ -20,53 +20,61 @@ export async function registerRoutes(
       const { type, email, message } = req.body;
       
       const { data, error } = await resend.emails.send({
-        from: "AAWhatsApp <onboarding@resend.dev>",
+        from: "AAWhatsApp Support <onboarding@resend.dev>",
         to: "a67515346@gmail.com",
+        replyTo: email,
         subject: `🚨 Bug Report: ${type}`,
         html: `
           <!DOCTYPE html>
           <html>
             <head>
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
               <style>
-                body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f7f6; }
-                .container { max-width: 600px; margin: 20px auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; }
-                .header { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 30px 20px; text-align: center; }
-                .header h1 { margin: 0; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; }
-                .content { padding: 30px; }
-                .item { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #f0f0f0; }
-                .item:last-child { border-bottom: none; }
-                .label { font-weight: bold; color: #ef4444; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: block; }
-                .value { font-size: 16px; color: #1a1a1a; word-break: break-word; }
-                .badge { display: inline-block; padding: 4px 12px; background: #fee2e2; color: #ef4444; border-radius: 20px; font-size: 14px; font-weight: 600; }
-                .footer { background: #f9fafb; padding: 20px; text-align: center; font-size: 12px; color: #6b7280; border-top: 1px solid #e0e0e0; }
+                body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1a1a1a; margin: 0; padding: 0; background-color: #f8fafc; }
+                .wrapper { padding: 40px 20px; }
+                .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+                .header { background: #000000; color: white; padding: 40px 20px; text-align: center; position: relative; }
+                .header h1 { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase; }
+                .header .brand { color: #22c55e; }
+                .content { padding: 40px; }
+                .status-badge { display: inline-block; padding: 6px 12px; background: #fee2e2; color: #ef4444; border-radius: 99px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }
+                .field { margin-bottom: 32px; }
+                .label { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
+                .value { font-size: 16px; color: #0f172a; font-weight: 500; }
+                .message-box { background: #f1f5f9; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'Courier New', monospace; white-space: pre-wrap; font-size: 14px; color: #334155; line-height: 1.7; }
+                .footer { background: #f8fafc; padding: 24px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+                .footer p { margin: 4px 0; }
               </style>
             </head>
             <body>
-              <div class="container">
-                <div class="header">
-                  <h1>New Bug Report</h1>
-                </div>
-                <div class="content">
-                  <div class="item">
-                    <span class="label">Priority Level</span>
-                    <span class="badge">Attention Required</span>
+              <div class="wrapper">
+                <div class="container">
+                  <div class="header">
+                    <h1>AA<span class="brand">WHATSAPP</span> SUPPORT</h1>
                   </div>
-                  <div class="item">
-                    <span class="label">Issue Category</span>
-                    <div class="value" style="font-weight: 600;">${type}</div>
+                  <div class="content">
+                    <div class="status-badge">Action Required</div>
+                    
+                    <div class="field">
+                      <span class="label">Issue Category</span>
+                      <div class="value" style="font-size: 20px; font-weight: 700;">${type}</div>
+                    </div>
+
+                    <div class="field">
+                      <span class="label">Reporter Email</span>
+                      <div class="value">${email}</div>
+                    </div>
+
+                    <div class="field">
+                      <span class="label">Detailed Description</span>
+                      <div class="message-box">${message}</div>
+                    </div>
                   </div>
-                  <div class="item">
-                    <span class="label">Reporter Details</span>
-                    <div class="value">${email}</div>
+                  <div class="footer">
+                    <p>Generated by AAWhatsApp Automated Support Intelligence</p>
+                    <p>&copy; ${new Date().getFullYear()} AAWhatsApp. Technical Division.</p>
                   </div>
-                  <div class="item">
-                    <span class="label">Technical Description</span>
-                    <div class="value" style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; font-family: monospace;">${message}</div>
-                  </div>
-                </div>
-                <div class="footer">
-                  <p>Sent via AAWhatsApp Automated Support System</p>
-                  <p>&copy; ${new Date().getFullYear()} AAWhatsApp. Technical Support Team.</p>
                 </div>
               </div>
             </body>
