@@ -193,15 +193,20 @@ export default function Support() {
                       exit={{ opacity: 0, scale: 0.98 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-12">
-                        <div className="w-16 h-16 bg-destructive/10 rounded-2xl flex items-center justify-center shrink-0">
-                          <AlertTriangle className="w-8 h-8 text-destructive" />
-                        </div>
-                        <div>
-                          <h2 className="text-3xl font-black font-display tracking-tight text-white mb-1">Technical Support</h2>
-                          <p className="text-muted-foreground font-medium">Detailed feedback directly impacts development priority.</p>
-                        </div>
-                      </div>
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-12">
+                            <div className="w-16 h-16 bg-destructive/10 rounded-2xl flex items-center justify-center shrink-0">
+                              <AlertTriangle className="w-8 h-8 text-destructive" />
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex items-center justify-between mb-1">
+                                <h2 className="text-3xl font-black font-display tracking-tight text-white">Technical Support</h2>
+                                <div className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full">
+                                  <span className="text-[10px] font-black text-primary uppercase tracking-widest">Version V 2.0</span>
+                                </div>
+                              </div>
+                              <p className="text-muted-foreground font-medium">Detailed feedback directly impacts development priority.</p>
+                            </div>
+                          </div>
 
                       <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-8">
