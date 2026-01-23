@@ -70,7 +70,7 @@ export function Navigation() {
           </div>
 
           <div className="flex items-center gap-3">
-            <a href="http://t.me/ahsan_tech_hub" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
                 size="sm"
@@ -132,7 +132,7 @@ export function Navigation() {
           ))}
 
           <div className="flex flex-col gap-3 mt-2">
-            <a href="http://t.me/ahsan_tech_hub" target="_blank" rel="noopener noreferrer" className="w-full">
+            <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer" className="w-full">
               <Button
                 variant="outline"
                 className="w-full border-primary/30 text-primary hover:bg-primary/10 h-12 rounded-xl"
