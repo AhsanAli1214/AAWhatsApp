@@ -120,6 +120,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Version Protocol Section */}
+      <section className="py-12 relative z-10">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative group"
+          >
+            <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-[3rem] -z-10 group-hover:bg-primary/10 transition-colors duration-700" />
+            <div className="glass-card rounded-[2.5rem] p-8 md:p-12 border border-white/5 relative overflow-hidden flex flex-col lg:flex-row items-center gap-12">
+              {/* Background scanning line */}
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-scan" />
+              
+              <div className="flex-1 space-y-6 text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black uppercase tracking-[0.3em]">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  System Protocol Active
+                </div>
+                <h2 className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-none">
+                  AAWhatsApp <span className="text-primary text-glow italic">V 2.0</span>
+                </h2>
+                <p className="text-muted-foreground text-lg font-medium max-w-xl leading-relaxed">
+                  The latest iteration of AAWhatsApp is now synchronized. Built on a hardened codebase with zero-access privacy protocols.
+                </p>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+                  {[
+                    { label: "Build", value: "2.0.26" },
+                    { label: "Stability", value: "99.9%" },
+                    { label: "Status", value: "Verified" }
+                  ].map((stat, i) => (
+                    <div key={i} className="px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/5 flex flex-col items-center lg:items-start min-w-[120px]">
+                      <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-1">{stat.label}</span>
+                      <span className="text-sm font-black text-primary font-mono">{stat.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="w-px h-32 bg-gradient-to-b from-transparent via-white/10 to-transparent hidden lg:block" />
+
+              <div className="shrink-0 flex flex-col items-center gap-6">
+                <div className="relative">
+                  <div className="w-32 h-32 rounded-[2.5rem] bg-primary/10 flex items-center justify-center border border-primary/20 shadow-2xl shadow-primary/10">
+                    <Database className="w-14 h-14 text-primary" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-background border-2 border-primary flex items-center justify-center shadow-xl">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                  </div>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-black font-mono text-white mb-1 tracking-tight">V 2.0.0.1</p>
+                  <p className="text-xs font-bold text-primary uppercase tracking-[0.2em] opacity-70">Current Mainframe Version</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* The Privacy Core - Unique Selling Point */}
       <section id="privacy-core" className="py-32 relative overflow-hidden bg-gradient-to-b from-background to-primary/5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_70%)]" />
