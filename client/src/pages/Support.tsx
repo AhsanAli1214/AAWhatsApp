@@ -88,7 +88,7 @@ export default function Support() {
       icon: ShieldCheck,
       title: "Privacy Protocol",
       description: "Our surgically rebuilt security layer",
-      link: "#",
+      link: "https://t.me/AA_ModsOfficial",
       action: "Learn More",
       color: "text-emerald-500",
       bg: "bg-emerald-500/10"
@@ -97,7 +97,7 @@ export default function Support() {
       icon: Info,
       title: "Version History",
       description: "Track the latest Anti-Ban updates",
-      link: "#",
+      link: "https://t.me/AA_ModsOfficial",
       action: "View Logs",
       color: "text-primary",
       bg: "bg-primary/10"
@@ -106,7 +106,7 @@ export default function Support() {
       icon: Clock,
       title: "Auto-Permissions",
       description: "How we strip risky file access",
-      link: "#",
+      link: "https://t.me/AA_ModsOfficial",
       action: "Read Technicals",
       color: "text-amber-500",
       bg: "bg-amber-500/10"
@@ -114,67 +114,96 @@ export default function Support() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 relative overflow-hidden">
+      <div className="fixed inset-0 hero-gradient opacity-40 pointer-events-none z-0" />
+      <div className="fixed top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent z-50" />
       <Navigation />
       
-      <main className="pt-32 pb-20 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <div className="flex flex-col md:flex-row items-start justify-between gap-12">
+      <main className="relative z-10 pt-32 pb-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col lg:flex-row items-start justify-between gap-16 lg:gap-24">
             
             {/* Left Column: Info & Links */}
-            <div className="w-full md:w-1/3 space-y-8">
-              <div className="flex flex-col sm:flex-row gap-3">
+            <div className="w-full lg:w-[38%] space-y-10">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/">
-                  <Button variant="ghost" className="hover:bg-white/5 gap-2 pl-0 hover:pl-2 transition-all no-default-hover-elevate">
-                    <ArrowLeft className="w-4 h-4" /> Back to Home
+                  <Button variant="ghost" className="hover:bg-primary/10 gap-2 pl-0 hover:pl-4 transition-all no-default-hover-elevate rounded-xl text-muted-foreground hover:text-primary">
+                    <ArrowLeft className="w-4 h-4" /> Back to Terminal
                   </Button>
                 </Link>
                 <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="gap-2 border-primary/30 text-primary hover:bg-primary/10 no-default-hover-elevate">
+                  <Button variant="outline" className="gap-2 border-primary/20 bg-primary/5 text-primary hover:bg-primary/20 no-default-hover-elevate rounded-xl shadow-lg shadow-primary/5">
                     <Send className="w-4 h-4" />
-                    Join Telegram Updates
+                    Live Transmission
                   </Button>
                 </a>
               </div>
               
-              <div className="space-y-4">
-                <h1 className="text-4xl font-bold font-display tracking-tight">Help & <br /><span className="text-primary">AA Mods Support</span></h1>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Have questions about AA Mods products? Our team is here to help you get the most out of your experience.
-                </p>
+              <div className="space-y-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <h1 className="text-5xl lg:text-7xl font-black font-display tracking-tighter leading-[0.95] mb-4">
+                    CENTRAL <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow">SUPPORT</span>
+                  </h1>
+                  <p className="text-muted-foreground text-xl leading-relaxed font-medium">
+                    Direct access to the AA Mods development division. Secure reporting for technical anomalies.
+                  </p>
+                </motion.div>
               </div>
 
-              <div className="grid gap-4">
+              <div className="grid gap-5">
                 {supportCards.map((card, idx) => (
-                  <Card key={idx} className="bg-white/5 border-white/10 hover-elevate transition-all overflow-visible">
-                    <CardHeader className="flex flex-row items-center gap-4 space-y-0 p-4">
-                      <div className={`p-2 rounded-xl ${card.bg}`}>
-                        <card.icon className={`w-5 h-5 ${card.color}`} />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <CardTitle className="text-sm font-semibold truncate">{card.title}</CardTitle>
-                        <CardDescription className="text-xs truncate">{card.description}</CardDescription>
-                      </div>
-                      <Button variant="ghost" size="icon" className="shrink-0" asChild>
-                        <a href={card.link} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    </CardHeader>
-                  </Card>
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                  >
+                    <Card className="bg-white/[0.02] border-white/5 hover:border-primary/20 transition-all duration-500 group relative overflow-hidden rounded-[1.5rem] backdrop-blur-sm">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <CardHeader className="flex flex-row items-center gap-5 space-y-0 p-5">
+                        <div className={`p-3 rounded-2xl ${card.bg} shadow-inner`}>
+                          <card.icon className={`w-6 h-6 ${card.color}`} />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <CardTitle className="text-base font-bold tracking-tight mb-0.5">{card.title}</CardTitle>
+                          <CardDescription className="text-sm font-medium opacity-60">{card.description}</CardDescription>
+                        </div>
+                        <Button variant="ghost" size="icon" className="shrink-0 rounded-xl bg-white/5 hover:bg-primary/10" asChild>
+                          <a href={card.link} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-4 h-4 text-primary" />
+                          </a>
+                        </Button>
+                      </CardHeader>
+                    </Card>
+                  </motion.div>
                 ))}
               </div>
 
-              <div className="p-4 rounded-2xl bg-primary/5 border border-primary/10 flex gap-3">
-                <Info className="w-5 h-5 text-primary shrink-0" />
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Before reporting a bug, please ensure you are running the latest version of AAWhatsApp APK.
-                </p>
-              </div>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="p-6 rounded-3xl bg-primary/5 border border-primary/10 flex gap-4 items-start"
+              >
+                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center shrink-0">
+                  <Info className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-sm text-primary uppercase tracking-widest mb-1">Pre-Submission Check</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed font-medium">
+                    Ensure synchronization with current version protocols. Outdated builds may trigger false anomalies.
+                  </p>
+                </div>
+              </motion.div>
             </div>
 
             {/* Right Column: Contact Form */}
-            <div className="w-full md:w-2/3">
+            <div className="w-full lg:w-[62%]">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
