@@ -45,6 +45,8 @@ import { useToast } from "@/hooks/use-toast";
 import { Navigation } from "@/components/Navigation";
 import { apiRequest } from "@/lib/queryClient";
 
+import securityImage from "@assets/Gemini_Generated_Image_q9qqs4q9qqs4q9qq_(1)_1768930866856.png";
+
 const reportSchema = z.object({
   type: z.string().min(1, "Please select an issue type"),
   email: z.string().email("Invalid email address"),
@@ -145,6 +147,21 @@ export default function Support() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                 >
+                  <div className="mb-8 rounded-3xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 group">
+                    <div className="relative aspect-video">
+                      <img 
+                        src={securityImage} 
+                        alt="Security Infrastructure" 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-background/60 backdrop-blur-md border border-white/10">
+                        <p className="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-1">Infrastructure Status</p>
+                        <p className="text-sm font-medium text-white">Military-grade encryption protocols active and monitored 24/7.</p>
+                      </div>
+                    </div>
+                  </div>
+
                   <h1 className="text-5xl lg:text-7xl font-black font-display tracking-tighter leading-[0.95] mb-4">
                     CENTRAL <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow">SUPPORT</span>
