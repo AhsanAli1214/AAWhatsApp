@@ -21,7 +21,7 @@ export async function registerRoutes(
       
       const { data, error } = await resend.emails.send({
         from: "AAWhatsApp Support <onboarding@resend.dev>",
-        to: "a67515346@gmail.com",
+        to: ["a67515346@gmail.com"],
         replyTo: email,
         subject: `🚨 Bug Report: ${type}`,
         html: `
