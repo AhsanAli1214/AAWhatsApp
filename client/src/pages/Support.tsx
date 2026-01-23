@@ -176,54 +176,54 @@ export default function Support() {
             {/* Right Column: Contact Form */}
             <div className="w-full md:w-2/3">
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4 }}
-                className="glass-card p-8 md:p-12 border border-white/10 rounded-[2rem] shadow-2xl relative overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-card/30 backdrop-blur-xl p-8 md:p-12 border border-white/5 rounded-[2.5rem] shadow-2xl relative overflow-hidden"
               >
-                {/* Background Glows */}
-                <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none" />
-                <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-accent/10 blur-[100px] rounded-full pointer-events-none" />
+                {/* Visual Polish */}
+                <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+                <div className="absolute -top-32 -right-32 w-80 h-80 bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
                 
                 <AnimatePresence mode="wait">
                   {!isSubmitted ? (
                     <motion.div
                       key="form"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0, scale: 0.98 }}
+                      transition={{ duration: 0.2 }}
                     >
-                      <div className="flex items-center gap-4 mb-10">
-                        <div className="p-3 bg-destructive/10 rounded-2xl">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-12">
+                        <div className="w-16 h-16 bg-destructive/10 rounded-2xl flex items-center justify-center shrink-0">
                           <AlertTriangle className="w-8 h-8 text-destructive" />
                         </div>
                         <div>
-                          <h2 className="text-2xl font-bold font-display tracking-tight">Report an Issue</h2>
-                          <p className="text-sm text-muted-foreground">Technical feedback helps us improve.</p>
+                          <h2 className="text-3xl font-black font-display tracking-tight text-white mb-1">Technical Support</h2>
+                          <p className="text-muted-foreground font-medium">Detailed feedback directly impacts development priority.</p>
                         </div>
                       </div>
 
                       <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-6">
-                          <div className="grid md:grid-cols-2 gap-6">
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-8">
+                          <div className="grid md:grid-cols-2 gap-8">
                             <FormField
                               control={form.control}
                               name="type"
                               render={({ field }) => (
                                 <FormItem>
-                                  <FormLabel className="text-xs uppercase tracking-wider font-bold opacity-70">Issue Type</FormLabel>
+                                  <FormLabel className="text-[10px] uppercase tracking-[0.2em] font-black text-primary mb-3 block">Category</FormLabel>
                                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
-                                      <SelectTrigger className="bg-white/5 border-white/10 h-14 rounded-2xl focus:ring-primary/20 transition-all">
-                                        <SelectValue placeholder="Select category" />
+                                      <SelectTrigger className="bg-white/[0.03] border-white/10 h-16 rounded-2xl focus:ring-primary/30 transition-all hover:bg-white/[0.06] text-base font-medium">
+                                        <SelectValue placeholder="What's the issue?" />
                                       </SelectTrigger>
                                     </FormControl>
-                                    <SelectContent className="bg-background/95 backdrop-blur-xl border-white/10 rounded-2xl p-2">
-                                      <SelectItem value="Download Issue" className="rounded-xl">Download Issue</SelectItem>
-                                      <SelectItem value="Installation Error" className="rounded-xl">Installation Error</SelectItem>
-                                      <SelectItem value="App Crash" className="rounded-xl">App Crash</SelectItem>
-                                      <SelectItem value="Privacy Bug" className="rounded-xl">Privacy Bug</SelectItem>
-                                      <SelectItem value="Other" className="rounded-xl">Other</SelectItem>
+                                    <SelectContent className="bg-[#0a0a0a] border-white/10 rounded-2xl p-2 shadow-2xl">
+                                      <SelectItem value="Download Issue" className="rounded-xl py-3 cursor-pointer">Download Issue</SelectItem>
+                                      <SelectItem value="Installation Error" className="rounded-xl py-3 cursor-pointer">Installation Error</SelectItem>
+                                      <SelectItem value="App Crash" className="rounded-xl py-3 cursor-pointer">App Crash</SelectItem>
+                                      <SelectItem value="Privacy Bug" className="rounded-xl py-3 cursor-pointer">Privacy Bug</SelectItem>
+                                      <SelectItem value="Other" className="rounded-xl py-3 cursor-pointer">Other</SelectItem>
                                     </SelectContent>
                                   </Select>
                                   <FormMessage />
@@ -236,11 +236,11 @@ export default function Support() {
                               name="email"
                               render={({ field }) => (
                                 <FormItem>
-                                  <FormLabel className="text-xs uppercase tracking-wider font-bold opacity-70">Your Email</FormLabel>
+                                  <FormLabel className="text-[10px] uppercase tracking-[0.2em] font-black text-primary mb-3 block">Your Email</FormLabel>
                                   <FormControl>
                                     <Input 
-                                      placeholder="support@example.com" 
-                                      className="bg-white/5 border-white/10 h-14 rounded-2xl focus:ring-primary/20 transition-all"
+                                      placeholder="support@aamods.com" 
+                                      className="bg-white/[0.03] border-white/10 h-16 rounded-2xl focus:ring-primary/30 transition-all hover:bg-white/[0.06] text-base font-medium"
                                       {...field} 
                                     />
                                   </FormControl>
@@ -255,11 +255,11 @@ export default function Support() {
                             name="message"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel className="text-xs uppercase tracking-wider font-bold opacity-70">Message Details</FormLabel>
+                                <FormLabel className="text-[10px] uppercase tracking-[0.2em] font-black text-primary mb-3 block">Issue Description</FormLabel>
                                 <FormControl>
                                   <Textarea 
-                                    placeholder="Tell us what happened..." 
-                                    className="bg-white/5 border-white/10 min-h-[180px] rounded-2xl p-4 resize-none focus:ring-primary/20 transition-all"
+                                    placeholder="Please provide steps to reproduce the issue..." 
+                                    className="bg-white/[0.03] border-white/10 min-h-[220px] rounded-3xl p-6 resize-none focus:ring-primary/30 transition-all hover:bg-white/[0.06] text-base leading-relaxed font-medium"
                                     {...field} 
                                   />
                                 </FormControl>
@@ -270,45 +270,47 @@ export default function Support() {
 
                           <Button 
                             type="submit" 
-                            className="w-full h-16 bg-primary hover:bg-primary/90 text-white font-bold text-lg rounded-2xl shadow-xl shadow-primary/20 transition-all active-elevate-2 group"
+                            className="w-full h-18 bg-primary hover:bg-primary/90 text-white font-black text-xl rounded-2xl shadow-2xl shadow-primary/20 transition-all active:scale-[0.98] group flex items-center justify-center gap-4"
                             disabled={form.formState.isSubmitting}
                           >
                             {form.formState.isSubmitting ? (
-                              <span className="flex items-center gap-3">
-                                <div className="w-5 h-5 border-3 border-white/30 border-t-white rounded-full animate-spin" />
-                                Processing...
-                              </span>
+                              <>
+                                <div className="w-6 h-6 border-3 border-white/30 border-t-white rounded-full animate-spin" />
+                                <span>INITIALIZING ENVOY...</span>
+                              </>
                             ) : (
-                              <span className="flex items-center gap-3">
-                                Send Message <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                              </span>
+                              <>
+                                <span>TRANSMIT REPORT</span>
+                                <Send className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                              </>
                             )}
                           </Button>
                         </form>
                       </Form>
-                      
-                      <div className="mt-8 flex items-center justify-center gap-2 text-xs text-muted-foreground bg-black/20 py-3 px-6 rounded-2xl w-fit mx-auto">
-                        <ShieldCheck className="w-4 h-4 text-primary" />
-                        <span>Encryption active: Your messages are sent securely via SSL</span>
-                      </div>
                     </motion.div>
                   ) : (
                     <motion.div 
                       key="success"
-                      initial={{ scale: 0.9, opacity: 0 }}
+                      initial={{ scale: 0.95, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      className="text-center py-20"
+                      className="text-center py-16"
                     >
-                      <div className="w-24 h-24 bg-primary/20 rounded-[2rem] flex items-center justify-center mx-auto mb-8 shadow-inner">
-                        <CheckCircle2 className="w-12 h-12 text-primary" />
+                      <div className="w-28 h-28 bg-primary/20 rounded-[2.5rem] flex items-center justify-center mx-auto mb-10 relative">
+                        <CheckCircle2 className="w-14 h-14 text-primary" />
+                        <motion.div 
+                          className="absolute inset-0 border-2 border-primary rounded-[2.5rem]"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1.2, opacity: 0 }}
+                          transition={{ duration: 1, repeat: Infinity }}
+                        />
                       </div>
-                      <h2 className="text-4xl font-bold mb-4 font-display">Report Received!</h2>
-                      <p className="text-muted-foreground mb-12 text-lg max-w-sm mx-auto">
-                        Thank you for helping us improve. Our technical team has been notified and will review your report.
+                      <h2 className="text-4xl font-black mb-4 font-display text-white">Transmission Successful</h2>
+                      <p className="text-muted-foreground mb-12 text-lg max-w-sm mx-auto font-medium">
+                        Your report has been encrypted and successfully delivered to our development queue.
                       </p>
                       <Link href="/">
-                        <Button className="rounded-2xl px-12 h-14 bg-primary hover:bg-primary/90 text-lg font-bold shadow-xl shadow-primary/20">
-                          Back to Homepage
+                        <Button variant="outline" className="rounded-2xl px-12 h-16 border-white/10 hover:bg-white/5 text-lg font-bold transition-all">
+                          Return to Terminal
                         </Button>
                       </Link>
                     </motion.div>
