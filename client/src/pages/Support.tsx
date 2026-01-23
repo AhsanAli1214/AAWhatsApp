@@ -158,6 +158,10 @@ export default function Support() {
                         src={securityImage} 
                         alt="Security Infrastructure" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                        width="1200"
+                        height="675"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                       <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-background/60 backdrop-blur-md border border-white/10">
