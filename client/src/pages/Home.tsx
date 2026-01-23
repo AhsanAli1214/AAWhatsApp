@@ -127,8 +127,8 @@ export default function Home() {
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
-                width="800"
-                height="600"
+                width="1200"
+                height="800"
               />
             </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10" />
