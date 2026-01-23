@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -117,6 +118,10 @@ export default function Support() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 relative overflow-hidden">
+      <Helmet>
+        <title>Central Support - AA Mods | Technical Assistance & Bug Reporting</title>
+        <meta name="description" content="Access official technical support for AAWhatsApp. Report bugs, track version history, and learn about our security protocols. Directly connected to AA Mods development." />
+      </Helmet>
       <div className="fixed inset-0 hero-gradient opacity-40 pointer-events-none z-0" />
       <div className="fixed top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent z-50" />
       <Navigation />

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import {
   Shield,
@@ -40,6 +41,15 @@ import logoImg from "@assets/Gemini_Generated_Image_72b2nh72b2nh72b2_17691033693
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+      <Helmet>
+        <title>AAWhatsApp APK Download V 2.0 | 100% Secure WhatsApp Mod 2026</title>
+        <meta name="description" content="Download AAWhatsApp APK V 2.0 by AA Mods. The most secure WhatsApp mod with zero-access privacy protocols, military-grade encryption, and GBWhatsApp features. No malware, no data harvesting." />
+        <meta name="keywords" content="AAWhatsApp, AAWhatsApp APK, AA Mods, WhatsApp Mod 2026, Secure WhatsApp Mod, Download AAWhatsApp, Privacy WhatsApp" />
+        <meta property="og:title" content="AAWhatsApp APK Download V 2.0 | Secure WhatsApp Mod" />
+        <meta property="og:description" content="Get AAWhatsApp V 2.0 - The first permission-clean WhatsApp mod. 100% Secure with GBWhatsApp features." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       <div className="fixed inset-0 hero-gradient pointer-events-none z-0" />
       <Navigation />
 
