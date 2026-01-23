@@ -129,7 +129,7 @@ export default function Support() {
                     <ArrowLeft className="w-4 h-4" /> Back to Home
                   </Button>
                 </Link>
-                <a href="http://t.me/ahsan_tech_hub" target="_blank" rel="noopener noreferrer">
+                <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="gap-2 border-primary/30 text-primary hover:bg-primary/10 no-default-hover-elevate">
                     <Send className="w-4 h-4" />
                     Join Telegram Updates
