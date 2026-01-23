@@ -60,7 +60,7 @@ export function DownloadCard() {
           <div>
             <h3 className="text-2xl font-bold font-display">Download APK</h3>
             <p className="text-sm text-primary font-medium">
-              Safe • Secure • Fast
+              V 2.0 • Safe • Secure
             </p>
           </div>
         </div>
