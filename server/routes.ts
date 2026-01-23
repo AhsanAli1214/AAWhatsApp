@@ -23,7 +23,7 @@ export async function registerRoutes(
         from: "AAWhatsApp Support <onboarding@resend.dev>",
         to: ["a67515346@gmail.com"],
         replyTo: email,
-        subject: `🚨 Bug Report: ${type}`,
+        subject: `🚨 Bug Report (V 2.0): ${type}`,
         html: `
           <!DOCTYPE html>
           <html>
@@ -42,6 +42,7 @@ export async function registerRoutes(
                 .field { margin-bottom: 32px; }
                 .label { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
                 .value { font-size: 16px; color: #0f172a; font-weight: 500; }
+                .version-badge { display: inline-block; padding: 4px 10px; background: #f1f5f9; color: #64748b; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 11px; font-weight: 700; }
                 .message-box { background: #f1f5f9; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'Courier New', monospace; white-space: pre-wrap; font-size: 14px; color: #334155; line-height: 1.7; }
                 .footer { background: #f8fafc; padding: 24px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0; }
                 .footer p { margin: 4px 0; }
@@ -54,7 +55,10 @@ export async function registerRoutes(
                     <h1>AA<span class="brand">WHATSAPP</span> SUPPORT</h1>
                   </div>
                   <div class="content">
-                    <div class="status-badge">Action Required</div>
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 24px;">
+                      <div class="status-badge">Action Required</div>
+                      <div class="version-badge">VERSION V 2.0</div>
+                    </div>
                     
                     <div class="field">
                       <span class="label">Issue Category</span>
