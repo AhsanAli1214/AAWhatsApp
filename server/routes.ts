@@ -9,6 +9,7 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  const new_status_date = new Date().toISOString().split('T')[0];
   
   app.post("/api/report-bug", async (req, res) => {
     try {
@@ -131,4 +132,3 @@ export async function registerRoutes(
 
   return httpServer;
 }
-const new_status_date = new Date().toISOString().split('T')[0];
