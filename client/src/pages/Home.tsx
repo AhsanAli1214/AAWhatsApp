@@ -37,7 +37,7 @@ import securityImage from "@assets/Gemini_Generated_Image_q9qqs4q9qqs4q9qq_(1)_1
 import comparisonImage from "@assets/generated_images/clean_comparison_illustration_showing_aawhatsapp_vs_other_mods..png";
 import ctaImage from "@assets/generated_images/call-to-action_image_for_downloading_aawhatsapp_apk..png";
 import logoImg from "@assets/Gemini_Generated_Image_72b2nh72b2nh72b2_1769103369360.png";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
+
 
 export default function Home() {
   return (
@@ -217,18 +217,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      {/* Ad Section - Leaderboard */}
-      <script>
-        atOptions = {
-          'key' : 'ca232c50e76b4c8c0b1b2672f20c3059',
-          'format' : 'iframe',
-          'height' : 50,
-          'width' : 320,
-          'params' : {}
-        };
-      </script>
-      <script  src="https://www.highperformanceformat.com/ca232c50e76b4c8c0b1b2672f20c3059/invoke.js"></script>
 
       {/* The Privacy Core - Unique Selling Point */}
       <section
@@ -487,13 +475,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Ad Section - Rectangle */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex justify-center">
-          <AdPlaceholder format="rectangle" className="my-0" />
-        </div>
-      </div>
 
       {/* Features Grid */}
       <section id="features" className="py-24 relative z-10">
@@ -959,16 +940,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Ad Section - Before FAQ */}
-      <div className="container mx-auto px-4 py-6">
-        <div className="hidden md:block">
-          <AdPlaceholder format="leaderboard" className="my-2" />
-        </div>
-        <div className="md:hidden">
-          <AdPlaceholder format="mobile" className="my-2" />
-        </div>
-      </div>
 
       {/* FAQ Section */}
       <section id="faq" className="py-24 relative z-10 bg-secondary/10">
