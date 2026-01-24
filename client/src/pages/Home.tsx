@@ -55,6 +55,10 @@ export default function Home() {
       <div className="fixed inset-0 hero-gradient pointer-events-none z-0" />
       <Navigation />
 
+      <div className="container mx-auto px-4 py-8">
+        <AdPlaceholder format="leaderboard" />
+      </div>
+
       {/* Hero Section */}
       <section className="relative z-10 pt-32 pb-20 lg:pt-48 lg:pb-32 container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -90,37 +94,38 @@ export default function Home() {
               accounts.
             </p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                  <ScrollLink
-                    to="download"
-                    smooth={true}
-                    offset={-100}
-                    className="w-full sm:w-auto"
-                  >
-                    <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full border border-primary/20">
-                      <span className="relative z-10 flex items-center justify-center gap-2">
-                        <Zap className="w-6 h-6 fill-current" />
-                        Download AAWhatsApp APK
-                      </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </button>
-                  </ScrollLink>
-                  <a
-                    href="https://t.me/AA_ModsOfficial"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto"
-                  >
-                    <button className="px-10 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 hover:bg-secondary/80 text-foreground font-semibold text-lg transition-all w-full flex items-center justify-center gap-2">
-                      <Send className="w-5 h-5" />
-                      Join Telegram
-                    </button>
-                  </a>
-                </div>
-                <div className="mt-8 max-w-md">
-                </div>
-              </motion.div>
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <ScrollLink
+                to="download"
+                smooth={true}
+                offset={-100}
+                className="w-full sm:w-auto"
+              >
+                <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full border border-primary/20">
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    <Zap className="w-6 h-6 fill-current" />
+                    Download AAWhatsApp APK
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+              </ScrollLink>
+              <a
+                href="http://t.me/ahsan_tech_hub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
+                <button className="px-10 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 hover:bg-secondary/80 text-foreground font-semibold text-lg transition-all w-full flex items-center justify-center gap-2">
+                  <Send className="w-5 h-5" />
+                  Join Telegram
+                </button>
+              </a>
+            </div>
+            <div className="mt-8 max-w-md mx-auto lg:mx-0">
+               <AdPlaceholder format="mobile" />
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
@@ -1054,7 +1059,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      <div className="container mx-auto px-4 py-8">
+        <AdPlaceholder format="leaderboard" />
+      </div>
+
       <footer className="py-12 border-t border-white/5 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
