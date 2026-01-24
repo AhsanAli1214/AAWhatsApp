@@ -21,6 +21,7 @@ export function Navigation() {
 
   const navLinks = [
     { name: "About", to: "about" },
+    { name: "AA APK", href: "/aa-whatsapp-apk" },
     { name: "Features", to: "features" },
     { name: "Comparison", to: "comparison" },
     { name: "FAQ", to: "faq" },
@@ -60,16 +61,24 @@ export function Navigation() {
         <div className="hidden md:flex items-center gap-6">
           <div className="flex items-center gap-6 mr-4">
             {navLinks.map((link) => (
-              <ScrollLink
-                key={link.name}
-                to={link.to}
-                smooth={true}
-                duration={500}
-                offset={-100}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
-              >
-                {link.name}
-              </ScrollLink>
+              link.to ? (
+                <ScrollLink
+                  key={link.name}
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  offset={-100}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                >
+                  {link.name}
+                </ScrollLink>
+              ) : (
+                <Link key={link.name} href={link.href!}>
+                  <span className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                    {link.name}
+                  </span>
+                </Link>
+              )
             ))}
           </div>
 
@@ -136,6 +145,17 @@ export function Navigation() {
           ))}
 
           <div className="flex flex-col gap-3 mt-2">
+            <Link href="/aa-whatsapp-apk">
+              <Button
+                variant="outline"
+                className="w-full border-primary/30 text-primary hover:bg-primary/10 h-12 rounded-xl"
+                onClick={() => setMobileOpen(false)}
+              >
+                <Download className="w-5 h-5 mr-2" />
+                AA WhatsApp APK
+              </Button>
+            </Link>
+
             <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer" className="w-full">
               <Button
                 variant="outline"
