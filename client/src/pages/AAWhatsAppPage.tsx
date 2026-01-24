@@ -16,8 +16,6 @@ import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "wouter";
 
-import { AdPlaceholder } from "@/components/AdPlaceholder";
-
 export default function AAWhatsAppPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
@@ -64,18 +62,22 @@ export default function AAWhatsAppPage() {
               who value privacy and security. Unlike GB WhatsApp, AA WhatsApp
               does NOT require location access or unnecessary media permissions.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-              <ScrollLink to="download" smooth={true} offset={-100}>
-                <Button
-                  size="lg"
-                  className="rounded-2xl px-10 h-18 text-xl font-black shadow-2xl shadow-primary/20 w-full sm:w-auto"
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <ScrollLink
+                  to="download"
+                  smooth={true}
+                  offset={-100}
+                  className="w-full sm:w-auto"
                 >
-                  <Download className="w-6 h-6 mr-2" />
-                  Download APK Now
-                </Button>
-              </ScrollLink>
-            </div>
-          </section>
+                  <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full border border-primary/20">
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      <Zap className="w-6 h-6 fill-current" />
+                      Download AAWhatsApp APK
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </button>
+                </ScrollLink>
 
           {/* Intro Text */}
           <section className="glass-card p-10 rounded-[2.5rem] border border-white/5 space-y-6">
