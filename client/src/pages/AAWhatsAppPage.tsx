@@ -99,6 +99,8 @@ export default function AAWhatsAppPage() {
             </p>
           </section>
 
+          <AdPlaceholder format="rectangle" slot="apk_middle" />
+
           <section className="space-y-8" id="how-to-download">
             <h2 className="text-3xl font-bold">How to Download & Install AA WhatsApp APK</h2>
             <div className="space-y-4">
