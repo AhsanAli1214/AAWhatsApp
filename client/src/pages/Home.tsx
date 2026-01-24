@@ -127,7 +127,6 @@ export default function Home() {
                 alt="AAWhatsApp Interface"
                 className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20"
                 loading="eager"
-                fetchPriority="high"
                 decoding="async"
                 width="1200"
                 height="800"
