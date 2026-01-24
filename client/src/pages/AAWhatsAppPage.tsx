@@ -57,7 +57,7 @@ export default function AAWhatsAppPage() {
             </motion.h1>
             <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-sm font-bold uppercase tracking-widest animate-pulse">
               <span className="w-2 h-2 rounded-full bg-primary" />
-              Build 2.0.26 - Stable
+              Build 2.25.36.73 - Stable
             </div>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               AA WhatsApp is a next-generation WhatsApp mod designed for users
