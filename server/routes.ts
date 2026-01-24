@@ -17,13 +17,16 @@ export async function registerRoutes(
         console.error("Resend API Key is missing");
         return res.status(500).json({ error: "Email service not configured" });
       }
-      const { type, email, message } = req.body;
+      // Supporting both old (type, email, message) and new (name, email, subject, message) formats
+      const { type, name, email, subject, message } = req.body;
+      const reportSubject = subject || type || "General Bug";
+      const reporterName = name || "Anonymous User";
       
       const { data, error } = await resend.emails.send({
         from: "AAWhatsApp Support <onboarding@resend.dev>",
         to: ["a67515346@gmail.com"],
         replyTo: email,
-        subject: `🚨 Bug Report (V 2.0): ${type}`,
+        subject: `🚨 Bug Report (V 2.0): ${reportSubject}`,
         html: `
           <!DOCTYPE html>
           <html>
@@ -61,8 +64,13 @@ export async function registerRoutes(
                     </div>
                     
                     <div class="field">
-                      <span class="label">Issue Category</span>
-                      <div class="value" style="font-size: 20px; font-weight: 700;">${type}</div>
+                      <span class="label">Reporter Name</span>
+                      <div class="value">${reporterName}</div>
+                    </div>
+
+                    <div class="field">
+                      <span class="label">Issue Category/Subject</span>
+                      <div class="value" style="font-size: 20px; font-weight: 700;">${reportSubject}</div>
                     </div>
 
                     <div class="field">
