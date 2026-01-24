@@ -219,14 +219,16 @@ export default function Home() {
       </section>
 
       {/* Ad Section - Leaderboard */}
-      <div className="container mx-auto px-4">
-        <div className="hidden md:block">
-          <AdPlaceholder format="leaderboard" className="my-4" />
-        </div>
-        <div className="md:hidden">
-          <AdPlaceholder format="mobile" className="my-4" />
-        </div>
-      </div>
+      <script>
+        atOptions = {
+          'key' : 'ca232c50e76b4c8c0b1b2672f20c3059',
+          'format' : 'iframe',
+          'height' : 50,
+          'width' : 320,
+          'params' : {}
+        };
+      </script>
+      <script  src="https://www.highperformanceformat.com/ca232c50e76b4c8c0b1b2672f20c3059/invoke.js"></script>
 
       {/* The Privacy Core - Unique Selling Point */}
       <section
