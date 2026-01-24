@@ -38,7 +38,6 @@ import comparisonImage from "@assets/generated_images/clean_comparison_illustrat
 import ctaImage from "@assets/generated_images/call-to-action_image_for_downloading_aawhatsapp_apk..png";
 import logoImg from "@assets/Gemini_Generated_Image_72b2nh72b2nh72b2_1769103369360.png";
 
-import { AdPlaceholder } from "@/components/AdPlaceholder";
 
 export default function Home() {
   return (
@@ -54,10 +53,6 @@ export default function Home() {
       </Helmet>
       <div className="fixed inset-0 hero-gradient pointer-events-none z-0" />
       <Navigation />
-
-      <div className="container mx-auto px-4 py-8">
-        <AdPlaceholder format="leaderboard" />
-      </div>
 
       {/* Hero Section */}
       <section className="relative z-10 pt-32 pb-20 lg:pt-48 lg:pb-32 container mx-auto px-4 md:px-6">
@@ -122,9 +117,6 @@ export default function Home() {
                 </button>
               </a>
             </div>
-            <div className="mt-8 max-w-md mx-auto lg:mx-0">
-               <AdPlaceholder format="mobile" />
-            </div>
           </motion.div>
 
           <motion.div
@@ -152,11 +144,6 @@ export default function Home() {
           <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
         </div>
       </section>
-
-      <div className="container mx-auto px-4 py-8">
-        {/* Ad placement for revenue and visibility */}
-        <AdPlaceholder format="leaderboard" />
-      </div>
 
       {/* Version Protocol Section */}
       <section className="py-12 relative z-10">
@@ -230,10 +217,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      <div className="container mx-auto px-4 py-8">
-        <AdPlaceholder format="rectangle" />
-      </div>
 
       {/* The Privacy Core - Unique Selling Point */}
       <section
@@ -959,7 +942,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 relative z-10 bg-secondary/10">
+      <section id="faq" className="py-24 relative z-10 bg-secondary/10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
@@ -1058,10 +1041,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <div className="container mx-auto px-4 py-8">
-        <AdPlaceholder format="leaderboard" />
-      </div>
 
       <footer className="py-12 border-t border-white/5 relative z-10">
         <div className="container mx-auto px-4 md:px-6">

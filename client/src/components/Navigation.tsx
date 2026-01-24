@@ -131,17 +131,28 @@ export function Navigation() {
       {mobileOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border/50 p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 duration-200 shadow-2xl">
           {navLinks.map((link) => (
-            <ScrollLink
-              key={link.name}
-              to={link.to}
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="text-lg font-medium p-2 hover:bg-muted/50 rounded-lg cursor-pointer"
-              onClick={() => setMobileOpen(false)}
-            >
-              {link.name}
-            </ScrollLink>
+            link.to ? (
+              <ScrollLink
+                key={link.name}
+                to={link.to}
+                smooth={true}
+                duration={500}
+                offset={-80}
+                className="text-lg font-medium p-2 hover:bg-muted/50 rounded-lg cursor-pointer"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.name}
+              </ScrollLink>
+            ) : (
+              <Link key={link.name} href={link.href ?? "#"}>
+                <span 
+                  className="text-lg font-medium p-2 hover:bg-muted/50 rounded-lg cursor-pointer block"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.name}
+                </span>
+              </Link>
+            )
           ))}
 
           <div className="flex flex-col gap-3 mt-2">
