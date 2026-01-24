@@ -53,8 +53,6 @@ export default function AAWhatsAppPage() {
                  </Button>
                </ScrollLink>
             </div>
-
-            <AdPlaceholder format="leaderboard" className="max-w-3xl mx-auto" />
           </section>
 
           {/* Intro Text */}
@@ -102,8 +100,6 @@ export default function AAWhatsAppPage() {
               of temporary or permanent account suspensions.
             </p>
           </section>
-
-          <AdPlaceholder format="rectangle" />
 
           <section className="space-y-8" id="how-to-download">
             <h2 className="text-3xl font-bold">How to Download & Install AA WhatsApp APK</h2>
