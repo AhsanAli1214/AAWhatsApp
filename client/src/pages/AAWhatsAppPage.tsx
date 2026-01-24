@@ -14,7 +14,7 @@ export default function AAWhatsAppPage() {
       <Helmet>
         <title>AA WhatsApp APK Download Latest Version (Anti-Ban & Secure)</title>
         <meta name="description" content="Download AA WhatsApp APK latest version. A secure WhatsApp mod with no location or media permissions. Best and safe GB WhatsApp alternative." />
-        <meta name="keywords" content="AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp Mod APK, AA Mods APK, WhatsApp Mod APK, GB WhatsApp Alternative, Secure WhatsApp Mod, Privacy WhatsApp Mod" />
+        <meta name="keywords" content="AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp Mod APK, AA Mods APK, AA WhatsApp Pro Protocol, AA WhatsApp Anti-Ban v2.0, WhatsApp Mod APK, GB WhatsApp Alternative, Secure WhatsApp Mod, Privacy WhatsApp Mod, Download AAWhatsApp Latest, Best WhatsApp Mod 2026, Anti-Ban APK Download" />
       </Helmet>
       
       <Navigation />

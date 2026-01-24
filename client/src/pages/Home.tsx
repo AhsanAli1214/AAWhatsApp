@@ -46,7 +46,7 @@ export default function Home() {
       <Helmet>
         <title>AA Mods – Download AA WhatsApp APK | Secure WhatsApp Mod</title>
         <meta name="description" content="Download AA WhatsApp APK – a secure WhatsApp mod without location or media permissions. Best GB WhatsApp alternative. Fast, safe & anti-ban." />
-        <meta name="keywords" content="AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp Mod APK, AA Mods APK, WhatsApp Mod APK, GB WhatsApp Alternative, Secure WhatsApp Mod, Privacy WhatsApp Mod, WhatsApp Mod Without Location Permission" />
+        <meta name="keywords" content="AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp Mod APK, AA Mods APK, AA WhatsApp Latest Version, AA WhatsApp Official, AA WhatsApp Anti-Ban, WhatsApp Mod APK, GB WhatsApp Alternative, Secure WhatsApp Mod, Privacy WhatsApp Mod, WhatsApp Mod Without Location Permission, YOWhatsApp Download, FMWhatsApp APK, WhatsApp Plus 2026, Anti-Ban WhatsApp 2026" />
         <meta property="og:title" content="AA Mods – Download AA WhatsApp APK | Secure WhatsApp Mod" />
         <meta property="og:description" content="Download AA WhatsApp APK – a secure WhatsApp mod without location or media permissions. Best GB WhatsApp alternative. Fast, safe & anti-ban." />
         <meta property="og:type" content="website" />
