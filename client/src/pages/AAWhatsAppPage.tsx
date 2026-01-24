@@ -54,7 +54,7 @@ export default function AAWhatsAppPage() {
                </ScrollLink>
             </div>
 
-            <AdPlaceholder format="leaderboard" slot="apk_top" className="max-w-3xl mx-auto" />
+            <AdPlaceholder format="leaderboard" className="max-w-3xl mx-auto" />
           </section>
 
           {/* Intro Text */}
@@ -103,7 +103,7 @@ export default function AAWhatsAppPage() {
             </p>
           </section>
 
-          <AdPlaceholder format="rectangle" slot="apk_middle" />
+          <AdPlaceholder format="rectangle" />
 
           <section className="space-y-8" id="how-to-download">
             <h2 className="text-3xl font-bold">How to Download & Install AA WhatsApp APK</h2>
