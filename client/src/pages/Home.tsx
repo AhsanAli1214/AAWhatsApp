@@ -119,7 +119,6 @@ export default function Home() {
                   </a>
                 </div>
                 <div className="mt-8 max-w-md">
-                   <AdPlaceholder format="mobile" />
                 </div>
               </motion.div>
 
@@ -150,7 +149,8 @@ export default function Home() {
       </section>
 
       <div className="container mx-auto px-4">
-        <AdPlaceholder format="leaderboard" />
+        {/* Only active Adsterra ad placement */}
+        <AdPlaceholder format="mobile" />
       </div>
 
       {/* Version Protocol Section */}
@@ -227,7 +227,6 @@ export default function Home() {
       </section>
 
       <div className="container mx-auto px-4">
-        <AdPlaceholder format="rectangle" />
       </div>
 
       {/* The Privacy Core - Unique Selling Point */}
