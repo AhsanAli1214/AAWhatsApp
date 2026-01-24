@@ -42,11 +42,25 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>AAWhatsApp APK Download V 2.0 | 100% Secure WhatsApp Mod 2026</title>
-        <meta name="description" content="Download AAWhatsApp APK V 2.0 by AA Mods. The most secure WhatsApp mod with zero-access privacy protocols, military-grade encryption, and GBWhatsApp features. No malware, no data harvesting." />
-        <meta name="keywords" content="AAWhatsApp, AAWhatsApp APK, AA Mods, WhatsApp Mod 2026, Secure WhatsApp Mod, Download AAWhatsApp, Privacy WhatsApp" />
-        <meta property="og:title" content="AAWhatsApp APK Download V 2.0 | Secure WhatsApp Mod" />
-        <meta property="og:description" content="Get AAWhatsApp V 2.0 - The first permission-clean WhatsApp mod. 100% Secure with GBWhatsApp features." />
+        <title>
+          AAWhatsApp APK Download V 2.0 | 100% Secure WhatsApp Mod 2026
+        </title>
+        <meta
+          name="description"
+          content="Download AAWhatsApp APK V 2.0 by AA Mods. The most secure WhatsApp mod with zero-access privacy protocols, military-grade encryption, and GBWhatsApp features. No malware, no data harvesting."
+        />
+        <meta
+          name="keywords"
+          content="AAWhatsApp, AAWhatsApp APK, AA Mods, WhatsApp Mod 2026, Secure WhatsApp Mod, Download AAWhatsApp, Privacy WhatsApp"
+        />
+        <meta
+          property="og:title"
+          content="AAWhatsApp APK Download V 2.0 | Secure WhatsApp Mod"
+        />
+        <meta
+          property="og:description"
+          content="Get AAWhatsApp V 2.0 - The first permission-clean WhatsApp mod. 100% Secure with GBWhatsApp features."
+        />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
@@ -1076,8 +1090,7 @@ export default function Home() {
             </div>
 
             <p className="text-sm text-muted-foreground">
-              © 2026 AA Mods. All rights reserved. AAWhatsApp is a product by
-              AA Mods.
+              © 2026 AA Mods. All rights reserved.
             </p>
           </div>
         </div>
