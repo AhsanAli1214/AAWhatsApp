@@ -51,6 +51,7 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
     const script2 = document.createElement("script");
     script2.src = `https://www.highperformanceformat.com/${config.key}/invoke.js`;
     script2.async = true;
+    script2.setAttribute("data-cfasync", "false");
 
     adRef.current.appendChild(script1);
     adRef.current.appendChild(script2);
