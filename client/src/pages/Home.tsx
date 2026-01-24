@@ -38,6 +38,8 @@ import comparisonImage from "@assets/generated_images/clean_comparison_illustrat
 import ctaImage from "@assets/generated_images/call-to-action_image_for_downloading_aawhatsapp_apk..png";
 import logoImg from "@assets/Gemini_Generated_Image_72b2nh72b2nh72b2_1769103369360.png";
 
+import { AdPlaceholder } from "@/components/AdPlaceholder";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
@@ -140,6 +142,10 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="container mx-auto px-4">
+        <AdPlaceholder format="leaderboard" slot="home_top" />
+      </div>
+
       {/* Version Protocol Section */}
       <section className="py-12 relative z-10">
         <div className="container mx-auto px-4">
@@ -212,6 +218,10 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <div className="container mx-auto px-4">
+        <AdPlaceholder format="rectangle" slot="home_middle" />
+      </div>
 
       {/* The Privacy Core - Unique Selling Point */}
       <section
