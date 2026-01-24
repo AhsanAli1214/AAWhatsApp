@@ -106,7 +106,7 @@ export default function Home() {
                 </button>
               </ScrollLink>
               <a
-                href="http://t.me/ahsan_tech_hub"
+                href="https://t.me/AA_ModsOfficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
@@ -1058,7 +1058,7 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground font-medium">
               <a
-                href="http://t.me/ahsan_tech_hub"
+                href="https://t.me/AA_ModsOfficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors flex items-center gap-1"
