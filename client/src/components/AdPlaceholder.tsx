@@ -56,7 +56,7 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
     adRef.current.appendChild(script2);
   }, [format, config]);
 
-  const minHeight = `min-h-[${config.height}px]`;
+  const minHeight = `${config.height}px`;
 
   return (
     <motion.div
@@ -64,10 +64,11 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       className={`w-full overflow-hidden my-8 flex items-center justify-center relative ${className}`}
+      style={{ minHeight, containIntrinsicSize: `auto ${minHeight}`, contentVisibility: 'auto' }}
     >
       <div 
         ref={adRef} 
-        style={{ minHeight: `${config.height}px`, width: `${config.width}px` }}
+        style={{ height: minHeight, width: `${config.width}px` }}
         className="flex items-center justify-center bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden"
       />
     </motion.div>
