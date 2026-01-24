@@ -1,0 +1,25 @@
+
+Error
+00:01.000
+Refused to apply style from 'https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=L...mily=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Space+Grotesk:wght@300..700&family= ...
+https://aa-whatsapp.vercel.app/:0
+
+Error
+00:01.000
+Error: Can only be used on: https://aa-mods.vercel.app at https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.es6.js?v=160510:1:18009 at https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.es6.js?v=160510:1:18071 at async t.Pe (https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.es6.js?v=160510:1:181503) at async t.init (https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.es6.js?v=160510:1:182159) at async https://aa-whatsapp.vercel.app/:111:9 at async https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.es6.js?v=160510:1:186341
+https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.es6.js?v=160510:1
+
+Error
+00:02.000
+Access to fetch at 'https://3nbf4.com/zone?pub=0&zone_id=10507745&is_mobile=true&domain=aa-whatsapp.vercel.app&var=&ymid=&var_3=&tg=0&sw=3.1.644&drf=&ch=eyJhcmNoaXRlY3R1cmUiOiIiLCJiaXRuZXNzIjoiIiwiYnJhbmRzIjpbXSwiZnVsbFZlcnNpb25MaXN0IjpbXSwibW9iaWxlIjpmYWxzZSwibW9kZWwiOiIiLCJwbGF0Zm9ybSI6IiIsInBsYXRmb3JtVmVyc2lvbiI6IiIsIndvdzY0IjpmYWxzZX0=' from origin 'https://aa-whatsapp.vercel.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+https://aa-whatsapp.vercel.app/:0
+
+Error
+00:04.000
+Uncaught (in promise) SyntaxError: Failed to execute 'measure' on 'Performance': The mark 'hidden_iframe:start' does not exist.
+https://al5sm.com/tag.min.js:0
+
+Error
+00:04.000
+Uncaught Error: AAB Request Failed
+https://3nbf4.com/act/files/tag.min.js?z=10507745:0
