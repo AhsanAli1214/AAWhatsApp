@@ -73,7 +73,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl lg:text-8xl font-black font-display leading-[0.95] mb-8 tracking-tighter"
+              className="text-5xl lg:text-7xl font-black font-display leading-[1.1] mb-8 tracking-tighter"
             >
               AAWhatsApp APK <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
@@ -148,9 +148,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4">
-        {/* Only active Adsterra ad placement */}
-        <AdPlaceholder format="mobile" />
+      <div className="container mx-auto px-4 py-8">
+        {/* Ad placement for revenue and visibility */}
+        <AdPlaceholder format="leaderboard" />
       </div>
 
       {/* Version Protocol Section */}
@@ -226,7 +226,8 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-8">
+        <AdPlaceholder format="rectangle" />
       </div>
 
       {/* The Privacy Core - Unique Selling Point */}
