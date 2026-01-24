@@ -20,6 +20,7 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
+    { name: "Home", to: "/" },
     { name: "About", to: "about" },
     { name: "AA APK", href: "/aa-whatsapp-apk" },
     { name: "Features", to: "features" },
@@ -60,7 +61,7 @@ export function Navigation() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
           <div className="flex items-center gap-6 mr-4">
-            {navLinks.map((link) => (
+            {navLinks.map((link) =>
               link.to ? (
                 <ScrollLink
                   key={link.name}
@@ -78,12 +79,16 @@ export function Navigation() {
                     {link.name}
                   </span>
                 </Link>
-              )
-            ))}
+              ),
+            )}
           </div>
 
           <div className="flex items-center gap-3">
-            <a href="http://t.me/ahsan_tech_hub" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://t.me/AA_ModsOfficial"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 variant="outline"
                 size="sm"
@@ -111,9 +116,14 @@ export function Navigation() {
               duration={500}
               offset={-100}
             >
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">
-                Download <Download className="w-4 h-4 ml-2" />
-              </Button>
+              <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full border border-primary/20">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <Zap className="w-6 h-6 fill-current" />
+                  Download AAWhatsApp APK
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </button>
             </ScrollLink>
           </div>
         </div>
@@ -130,7 +140,7 @@ export function Navigation() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border/50 p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 duration-200 shadow-2xl">
-          {navLinks.map((link) => (
+          {navLinks.map((link) =>
             link.to ? (
               <ScrollLink
                 key={link.name}
@@ -145,15 +155,15 @@ export function Navigation() {
               </ScrollLink>
             ) : (
               <Link key={link.name} href={link.href ?? "#"}>
-                <span 
+                <span
                   className="text-lg font-medium p-2 hover:bg-muted/50 rounded-lg cursor-pointer block"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.name}
                 </span>
               </Link>
-            )
-          ))}
+            ),
+          )}
 
           <div className="flex flex-col gap-3 mt-2">
             <Link href="/aa-whatsapp-apk">
@@ -167,7 +177,12 @@ export function Navigation() {
               </Button>
             </Link>
 
-            <a href="http://t.me/ahsan_tech_hub" target="_blank" rel="noopener noreferrer" className="w-full">
+            <a
+              href="http://t.me/ahsan_tech_hub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
               <Button
                 variant="outline"
                 className="w-full border-primary/30 text-primary hover:bg-primary/10 h-12 rounded-xl"
