@@ -85,35 +85,38 @@ export default function Home() {
               accounts.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <ScrollLink
-                to="download"
-                smooth={true}
-                offset={-100}
-                className="w-full sm:w-auto"
-              >
-                <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full border border-primary/20">
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    <Zap className="w-6 h-6 fill-current" />
-                    Download AAWhatsApp APK
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
-              </ScrollLink>
-              <a
-                href="https://t.me/AA_ModsOfficial"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto"
-              >
-                <button className="px-10 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 hover:bg-secondary/80 text-foreground font-semibold text-lg transition-all w-full flex items-center justify-center gap-2">
-                  <Send className="w-5 h-5" />
-                  Join Telegram
-                </button>
-              </a>
-            </div>
-          </motion.div>
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                  <ScrollLink
+                    to="download"
+                    smooth={true}
+                    offset={-100}
+                    className="w-full sm:w-auto"
+                  >
+                    <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full border border-primary/20">
+                      <span className="relative z-10 flex items-center justify-center gap-2">
+                        <Zap className="w-6 h-6 fill-current" />
+                        Download AAWhatsApp APK
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </button>
+                  </ScrollLink>
+                  <a
+                    href="https://t.me/AA_ModsOfficial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto"
+                  >
+                    <button className="px-10 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 hover:bg-secondary/80 text-foreground font-semibold text-lg transition-all w-full flex items-center justify-center gap-2">
+                      <Send className="w-5 h-5" />
+                      Join Telegram
+                    </button>
+                  </a>
+                </div>
+                <div className="mt-8 max-w-md">
+                   <AdPlaceholder format="mobile" slot="hero_bottom" />
+                </div>
+              </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
