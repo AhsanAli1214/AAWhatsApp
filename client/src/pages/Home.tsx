@@ -1032,7 +1032,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-6">
                 <DownloadCard />
                 <a
-                  href="http://t.me/ahsan_tech_hub"
+                  href="https://t.me/AA_ModsOfficial"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1"
