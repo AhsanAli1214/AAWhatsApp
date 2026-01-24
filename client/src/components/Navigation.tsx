@@ -20,7 +20,7 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { name: "AA APK", href: "/" },
+    { name: "Home", href: "/" },
     { name: "About", to: "about" },
     { name: "AA APK", href: "/aa-whatsapp-apk" },
     { name: "Features", to: "features" },
