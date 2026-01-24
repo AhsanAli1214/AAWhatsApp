@@ -73,7 +73,7 @@ export function Navigation() {
                   {link.name}
                 </ScrollLink>
               ) : (
-                <Link key={link.name} href={link.href!}>
+                <Link key={link.name} href={link.href ?? "#"}>
                   <span className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                     {link.name}
                   </span>
