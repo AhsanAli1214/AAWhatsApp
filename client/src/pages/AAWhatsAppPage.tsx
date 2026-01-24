@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "wouter";
 
+import { AdPlaceholder } from "@/components/AdPlaceholder";
+
 export default function AAWhatsAppPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
@@ -47,6 +49,8 @@ export default function AAWhatsAppPage() {
                  </Button>
                </ScrollLink>
             </div>
+
+            <AdPlaceholder format="leaderboard" slot="apk_top" className="max-w-3xl mx-auto" />
           </section>
 
           {/* Intro Text */}
