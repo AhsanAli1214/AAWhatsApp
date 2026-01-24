@@ -42,25 +42,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>
-          AAWhatsApp APK Download V 2.0 | 100% Secure WhatsApp Mod 2026
-        </title>
-        <meta
-          name="description"
-          content="Download AAWhatsApp APK V 2.0 by AA Mods. The most secure WhatsApp mod with zero-access privacy protocols, military-grade encryption, and GBWhatsApp features. No malware, no data harvesting."
-        />
-        <meta
-          name="keywords"
-          content="AAWhatsApp, AAWhatsApp APK, AA Mods, WhatsApp Mod 2026, Secure WhatsApp Mod, Download AAWhatsApp, Privacy WhatsApp"
-        />
-        <meta
-          property="og:title"
-          content="AAWhatsApp APK Download V 2.0 | Secure WhatsApp Mod"
-        />
-        <meta
-          property="og:description"
-          content="Get AAWhatsApp V 2.0 - The first permission-clean WhatsApp mod. 100% Secure with GBWhatsApp features."
-        />
+        <title>AA Mods – Download AA WhatsApp APK | Secure WhatsApp Mod</title>
+        <meta name="description" content="Download AA WhatsApp APK – a secure WhatsApp mod without location or media permissions. Best GB WhatsApp alternative. Fast, safe & anti-ban." />
+        <meta name="keywords" content="AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp Mod APK, AA Mods APK, WhatsApp Mod APK, GB WhatsApp Alternative, Secure WhatsApp Mod, Privacy WhatsApp Mod, WhatsApp Mod Without Location Permission" />
+        <meta property="og:title" content="AA Mods – Download AA WhatsApp APK | Secure WhatsApp Mod" />
+        <meta property="og:description" content="Download AA WhatsApp APK – a secure WhatsApp mod without location or media permissions. Best GB WhatsApp alternative. Fast, safe & anti-ban." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
