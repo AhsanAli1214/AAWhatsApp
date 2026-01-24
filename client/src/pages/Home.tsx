@@ -69,12 +69,17 @@ export default function Home() {
               100% Secure: No Bank/Location Data Access
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold font-display leading-[1.1] mb-6 tracking-tight">
-              AAWhatsApp APK by AA Mods – <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow">
-                100% Secure WhatsApp Mod
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-5xl lg:text-8xl font-black font-display leading-[0.95] mb-8 tracking-tighter"
+            >
+              AAWhatsApp APK <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
+                Secure Mod V 2.0
               </span>
-            </h1>
+            </motion.h1>
 
             <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Get all GBWhatsApp features with{" "}

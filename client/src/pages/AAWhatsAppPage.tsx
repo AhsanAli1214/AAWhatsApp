@@ -26,17 +26,21 @@ export default function AAWhatsAppPage() {
           className="max-w-4xl mx-auto space-y-16"
         >
           {/* H1 Header */}
-          <section className="text-center space-y-6">
-            <h1 className="text-4xl md:text-7xl font-black font-display tracking-tighter leading-none">
-              AA WhatsApp APK – <br/>
+          <section className="text-center space-y-8">
+            <motion.h1 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-5xl md:text-8xl font-black font-display tracking-tighter leading-[0.9] mb-4"
+            >
+              AA WhatsApp <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow">
-                Secure WhatsApp Mod
+                PRO PROTOCOL
               </span>
-              <br/>
-              <span className="text-2xl md:text-4xl text-muted-foreground font-medium block mt-4">
-                (Latest Version V 2.0)
-              </span>
-            </h1>
+            </motion.h1>
+            <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-sm font-bold uppercase tracking-widest animate-pulse">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              Build 2.0.26 - Stable 
+            </div>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               AA WhatsApp is a next-generation WhatsApp mod designed for users who value privacy and security. 
               Unlike GB WhatsApp, AA WhatsApp does NOT require location access or unnecessary media permissions.
