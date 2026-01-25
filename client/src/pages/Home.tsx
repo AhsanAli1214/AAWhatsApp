@@ -123,9 +123,6 @@ export default function Home() {
                 </button>
               </a>
             </div>
-            <div className="max-w-[320px] mx-auto lg:mx-0">
-              <AdPlaceholder format="mobile" className="my-0" />
-            </div>
           </motion.div>
 
           <motion.div
@@ -232,13 +229,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Privacy Core - Unique Selling Point */}
-      <section
-        id="privacy-core"
-        className="py-32 relative overflow-hidden bg-gradient-to-b from-background to-primary/5"
-      >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_70%)]" />
-        <div className="container px-4 relative z-10">
+      {/* Privacy Core Section */}
+      <section id="privacy-core" className="py-24 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-[320px] mx-auto mb-12">
+            <AdPlaceholder format="mobile" />
+          </div>
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <div className="flex-1">
               <motion.div

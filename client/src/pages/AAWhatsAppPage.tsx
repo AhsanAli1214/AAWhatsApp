@@ -85,9 +85,6 @@ export default function AAWhatsAppPage() {
                 </Button>
               </Link>
             </div>
-            <div className="max-w-[300px] mx-auto">
-              <AdPlaceholder format="rectangle" className="my-0" />
-            </div>
           </section>
 
           {/* Intro Text */}
@@ -106,6 +103,10 @@ export default function AAWhatsAppPage() {
           </section>
 
           <PermissionSimulator />
+
+          <div className="max-w-[300px] mx-auto my-12">
+            <AdPlaceholder format="rectangle" />
+          </div>
 
           {/* New Sections from SEO Guide */}
           <section className="space-y-8">
