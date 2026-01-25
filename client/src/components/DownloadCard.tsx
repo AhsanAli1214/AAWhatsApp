@@ -2,6 +2,7 @@ import { Download, Server, ShieldCheck, HardDrive } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTrackDownload } from "@/hooks/use-downloads";
 import { useToast } from "@/hooks/use-toast";
+import { useState, useEffect } from "react";
 
 interface DownloadOption {
   name: string;
@@ -22,7 +23,7 @@ const OPTIONS: DownloadOption[] = [
   {
     name: "MediaFire",
     icon: Download,
-    url: "https://www.mediafire.com/file/q1oxvjftdpubkrl/AAWhatsApp_V2.0.apk/file",
+    url: "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file",
     platform: "android",
     version: "latest",
   },
@@ -31,8 +32,23 @@ const OPTIONS: DownloadOption[] = [
 export function DownloadCard() {
   const { mutate: track } = useTrackDownload();
   const { toast } = useToast();
+  const [clickCount, setClickCount] = useState(0);
 
   const handleDownload = (option: DownloadOption) => {
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+
+    if (newCount === 1) {
+      // First click: show "best ads"
+      window.open("https://otieu.com/4/10272561", "_blank");
+      toast({
+        title: "Preparing Download",
+        description: "Please wait a moment while we verify your connection...",
+      });
+      return;
+    }
+
+    // Second click or more: open the actual link
     track({
       version: option.version,
       platform: option.platform,
@@ -42,8 +58,15 @@ export function DownloadCard() {
       title: "Download Started",
       description: `Downloading AAWhatsApp ${option.version} from ${option.name}`,
     });
-    // Track download and open link
-    window.open(option.url, "_blank");
+    
+    // Use the updated MediaFire link if it's the MediaFire option
+    const downloadUrl = option.name === "MediaFire" 
+      ? "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
+      : option.url;
+
+    window.open(downloadUrl, "_blank");
+    // Reset after successful download open
+    setClickCount(0);
   };
 
   return (
