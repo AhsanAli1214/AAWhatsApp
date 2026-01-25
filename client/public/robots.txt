@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://aa-whatsapp.vercel.app/sitemap.xml
+Sitemap: https://aa-mods.vercel.app/sitemap.xml
