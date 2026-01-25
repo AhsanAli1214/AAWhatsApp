@@ -48,6 +48,7 @@ export default function Home() {
       <AdBlockDetector />
       <Helmet>
         <title>AA Mods – Download AA WhatsApp APK 2026 | #1 Secure WhatsApp Mod</title>
+        <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
         <meta
           name="description"
           content="Download AA WhatsApp APK 2026 – the world's only secure WhatsApp mod without location or media permissions. Best GB WhatsApp alternative. Fast, safe & anti-ban v2.0."
@@ -128,6 +129,7 @@ export default function Home() {
                 alt="AAWhatsApp Interface"
                 className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20"
                 loading="eager"
+                fetchPriority="high"
                 decoding="async"
                 width="1200"
                 height="800"
