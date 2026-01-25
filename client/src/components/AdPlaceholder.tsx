@@ -54,14 +54,16 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
     script2.src = `//exasperatebubblyorthodox.com/${config.key}/invoke.js`;
     script2.async = true;
     script2.setAttribute("data-cfasync", "false");
-    script2.setAttribute("fetchpriority", "high");
-    script2.setAttribute("loading", "eager");
 
     // Small delay to ensure container is ready and help with race conditions
-    if (adRef.current) {
-      adRef.current.appendChild(script1);
-      adRef.current.appendChild(script2);
-    }
+    const timeoutId = setTimeout(() => {
+      if (adRef.current) {
+        adRef.current.appendChild(script1);
+        adRef.current.appendChild(script2);
+      }
+    }, 50);
+
+    return () => clearTimeout(timeoutId);
   }, [format, config.key, config.height, config.width]);
 
   const minHeight = `${config.height}px`;
@@ -72,7 +74,7 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       className={`w-full overflow-hidden my-4 flex items-center justify-center relative ${className}`}
-      style={{ minHeight, containIntrinsicSize: `auto ${minHeight}`, contentVisibility: 'auto' }}
+      style={{ minHeight }}
     >
       <div 
         ref={adRef} 
