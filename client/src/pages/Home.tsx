@@ -15,6 +15,7 @@ import {
   Database,
   AlertTriangle,
   Send,
+  Download,
 } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { FeatureCard } from "@/components/FeatureCard";
