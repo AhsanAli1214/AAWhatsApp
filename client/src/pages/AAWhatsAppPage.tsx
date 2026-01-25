@@ -16,6 +16,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { Link, useLocation } from "wouter";
+import { PermissionSimulator } from "@/components/PermissionSimulator";
+import { FAQSection } from "@/components/FAQSection";
 
 export default function AAWhatsAppPage() {
   const [, setLocation] = useLocation();
@@ -105,6 +107,8 @@ export default function AAWhatsAppPage() {
               "Permission-Clean" infrastructure.
             </p>
           </section>
+
+          <PermissionSimulator />
 
           {/* New Sections from SEO Guide */}
           <section className="space-y-8">
@@ -324,6 +328,8 @@ export default function AAWhatsAppPage() {
               </table>
             </div>
           </section>
+
+          <FAQSection />
 
           {/* Footer Navigation */}
           <section className="pt-20 border-t border-white/5 text-center space-y-8">
