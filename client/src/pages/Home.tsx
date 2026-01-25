@@ -28,10 +28,9 @@ import {
 } from "@/components/ui/accordion";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
-import { DownloadTunnel } from "@/components/DownloadTunnel";
-import { AdBlockDetector } from "@/components/AdBlockDetector";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 
-import heroImage from "@assets/generated_images/modern_professional_blog_hero_image_for_aawhatsapp_mod..png";
+export default function Home() {
 import privacyImage from "@assets/generated_images/futuristic_illustration_of_privacy_features_for_aawhatsapp..png";
 import themesImage from "@assets/generated_images/creative_visual_showing_multiple_whatsapp_theme_styles_for_aawhatsapp..png";
 import mediaImage from "@assets/generated_images/smartphone_mockup_displaying_aawhatsapp_media_sharing_features..png";
@@ -101,7 +100,7 @@ export default function Home() {
                 {t('hero_subtitle')}
               </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
               <DownloadTunnel onComplete={() => window.location.href = "/aa-whatsapp-apk"} />
               <a
                 href="https://t.me/AA_ModsOfficial"
@@ -115,6 +114,7 @@ export default function Home() {
                 </button>
               </a>
             </div>
+            <AdPlaceholder format="mobile" />
           </motion.div>
 
           <motion.div
@@ -142,6 +142,7 @@ export default function Home() {
         <div className="flex justify-center mt-20">
           <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
         </div>
+        <AdPlaceholder format="leaderboard" className="mt-12" />
       </section>
 
       {/* Version Protocol Section */}

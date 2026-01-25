@@ -19,6 +19,7 @@ import { Link, useLocation } from "wouter";
 import { PermissionSimulator } from "@/components/PermissionSimulator";
 import { FAQSection } from "@/components/FAQSection";
 import { DownloadTunnel } from "@/components/DownloadTunnel";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 
 import { useTranslation } from "@/hooks/useTranslation";
 
@@ -76,7 +77,7 @@ export default function AAWhatsAppPage() {
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               {t('hero_subtitle')}
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
               <DownloadTunnel onComplete={() => {
                 const element = document.getElementById('download');
                 if (element) {
@@ -84,6 +85,7 @@ export default function AAWhatsAppPage() {
                 }
               }} />
             </div>
+            <AdPlaceholder format="rectangle" />
           </section>
 
           {/* Intro Text */}
@@ -323,6 +325,7 @@ export default function AAWhatsAppPage() {
           </section>
 
           <FAQSection />
+          <AdPlaceholder format="leaderboard" />
 
           {/* Footer Navigation */}
           <section className="pt-20 border-t border-white/5 text-center space-y-8">
