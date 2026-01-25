@@ -22,16 +22,14 @@ export default function AAWhatsAppPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>
-          AA WhatsApp APK Download Latest Version (Anti-Ban & Secure)
-        </title>
+        <title>AA WhatsApp APK Download 2026 | #1 Secure & Anti-Ban v2.0</title>
         <meta
           name="description"
-          content="Download AA WhatsApp APK latest version. A secure WhatsApp mod with no location or media permissions. Best and safe GB WhatsApp alternative."
+          content="Download AA WhatsApp APK 2026 latest version. The safest WhatsApp mod with zero invasive permissions. Anti-ban protected, privacy-focused, and 100% secure."
         />
         <meta
           name="keywords"
-          content="AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp Mod APK, AA Mods APK, AA WhatsApp Pro Protocol, AA WhatsApp Anti-Ban v2.0, WhatsApp Mod APK, GB WhatsApp Alternative, Secure WhatsApp Mod, Privacy WhatsApp Mod, Download AAWhatsApp Latest, Best WhatsApp Mod 2026, Anti-Ban APK Download"
+          content="AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp Mod APK, AA Mods APK, AA WhatsApp Pro Protocol, AA WhatsApp Anti-Ban v2.0, WhatsApp Mod APK, GB WhatsApp Alternative, Secure WhatsApp Mod, Privacy WhatsApp Mod, Download AAWhatsApp Latest, Best WhatsApp Mod 2026, Anti-Ban APK Download, whatsapp mod pro 2026, safe whatsapp apk"
         />
       </Helmet>
 
