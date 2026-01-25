@@ -148,6 +148,9 @@ export default function DownloadPage() {
           {/* Installation Guide */}
           <section className="space-y-10">
             <h2 className="text-3xl md:text-5xl font-black text-center tracking-tighter">Installation Guide</h2>
+            <div className="mb-10">
+              <AdPlaceholder format="leaderboard" />
+            </div>
             <div className="grid md:grid-cols-2 gap-6">
               {installSteps.map((step, i) => (
                 <motion.div 
