@@ -154,6 +154,17 @@ export default function AAWhatsAppPage() {
             </p>
           </section>
 
+          <div className="max-w-4xl mx-auto mt-16 p-8 glass-card rounded-[2.5rem] border border-primary/10 bg-primary/5">
+            <div className="text-center mb-6">
+              <span className="text-[10px] uppercase tracking-[0.4em] text-primary font-black opacity-70">Sponsor Verified</span>
+            </div>
+            <AdPlaceholder format="rectangle" />
+          </div>
+
+          <div className="max-w-[320px] mx-auto my-12">
+             <AdPlaceholder format="mobile" />
+          </div>
+
           <section className="space-y-8" id="how-to-download">
             <h2 className="text-3xl font-bold">
               How to Download & Install AA WhatsApp APK
@@ -184,6 +195,9 @@ export default function AAWhatsAppPage() {
             <h2 className="text-3xl md:text-5xl font-black text-center tracking-tighter">
               AA WhatsApp Features
             </h2>
+            <div className="mb-10">
+              <AdPlaceholder format="leaderboard" />
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
@@ -391,6 +405,12 @@ export default function AAWhatsAppPage() {
           </div>
 
           <FAQSection />
+          <div className="max-w-4xl mx-auto mt-16 p-8 glass-card rounded-[2.5rem] border border-primary/10 bg-primary/5">
+            <div className="text-center mb-6">
+              <span className="text-[10px] uppercase tracking-[0.4em] text-primary font-black opacity-70">Sponsor Verified</span>
+            </div>
+            <AdPlaceholder format="rectangle" />
+          </div>
           <div className="max-w-4xl mx-auto">
             <AdPlaceholder format="rectangle" className="mt-12" />
           </div>

@@ -173,9 +173,16 @@ export default function DownloadPage() {
             </div>
           </section>
 
+          <div className="max-w-[320px] mx-auto my-12">
+            <AdPlaceholder format="mobile" />
+          </div>
+
           {/* Why AAWhatsApp */}
           <section className="bg-primary/5 rounded-[3rem] p-10 md:p-16 space-y-8 border border-primary/10">
             <h2 className="text-3xl md:text-4xl font-black tracking-tight">Why Choose AAWhatsApp Over Others?</h2>
+            <div className="mb-8">
+              <AdPlaceholder format="leaderboard" />
+            </div>
             <div className="grid md:grid-cols-2 gap-10">
               <div className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
