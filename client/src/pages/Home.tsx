@@ -29,6 +29,7 @@ import {
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
 import { DownloadTunnel } from "@/components/DownloadTunnel";
+import { AdBlockDetector } from "@/components/AdBlockDetector";
 
 import heroImage from "@assets/generated_images/modern_professional_blog_hero_image_for_aawhatsapp_mod..png";
 import privacyImage from "@assets/generated_images/futuristic_illustration_of_privacy_features_for_aawhatsapp..png";
@@ -44,6 +45,7 @@ export default function Home() {
   const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+      <AdBlockDetector />
       <Helmet>
         <title>AA Mods – Download AA WhatsApp APK 2026 | #1 Secure WhatsApp Mod</title>
         <meta
