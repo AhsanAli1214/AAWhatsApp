@@ -78,12 +78,12 @@ export default function AAWhatsAppPage() {
               {t('hero_subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
-              <DownloadTunnel onComplete={() => {
-                const element = document.getElementById('download');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }} />
+              <Link href="/download" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full px-10 py-7 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3">
+                  <Download className="w-6 h-6" />
+                  Download APK Now
+                </Button>
+              </Link>
             </div>
             <div className="max-w-[300px] mx-auto">
               <AdPlaceholder format="rectangle" className="my-0" />
@@ -356,9 +356,12 @@ export default function AAWhatsAppPage() {
                     </div>
                   ))}
                 </div>
-                <DownloadTunnel onComplete={() => {
-                  window.location.href = "https://www.mediafire.com/file/o6r60v20v6r60v2/AAWhatsApp_v2.0_Secure.apk/file";
-                }} />
+                <Link href="/download" className="w-full">
+                  <Button size="lg" className="w-full py-8 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground font-black text-2xl shadow-2xl shadow-primary/30 transition-all flex items-center justify-center gap-4">
+                    <Download className="w-8 h-8" />
+                    GO TO DOWNLOAD PAGE
+                  </Button>
+                </Link>
                 <p className="mt-8 text-xs text-muted-foreground font-medium">
                   By downloading, you agree to our Terms of Service.
                 </p>

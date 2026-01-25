@@ -26,6 +26,7 @@ export function Navigation() {
   const navLinks = [
     { name: t("nav_home"), href: "/" },
     { name: "About", to: "about" },
+    { name: "Download", href: "/download" },
     { name: "AA APK", href: "/aa-whatsapp-apk" },
     { name: "Features", to: "features" },
     { name: "Comparison", to: "comparison" },
@@ -115,16 +116,11 @@ export function Navigation() {
               </Button>
             </Link>
 
-            <ScrollLink
-              to="download"
-              smooth={true}
-              duration={500}
-              offset={-100}
-            >
+            <Link href="/download">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">
                 Download <Download className="w-4 h-4 ml-2" />
               </Button>
-            </ScrollLink>
+            </Link>
           </div>
         </div>
 
@@ -211,18 +207,11 @@ export function Navigation() {
               </Button>
             </a>
 
-            <ScrollLink
-              to="download"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              onClick={() => setMobileOpen(false)}
-              className="w-full"
-            >
+            <Link href="/download" className="w-full">
               <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg h-12 rounded-xl">
                 Download Now
               </Button>
-            </ScrollLink>
+            </Link>
           </div>
         </div>
       )}

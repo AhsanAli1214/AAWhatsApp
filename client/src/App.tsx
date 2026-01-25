@@ -12,6 +12,7 @@ import AAWhatsAppPage from "@/pages/AAWhatsAppPage";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import Support from "@/pages/Support";
+import DownloadPage from "@/pages/DownloadPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/aa-whatsapp-apk" component={AAWhatsAppPage} />
+      <Route path="/download" component={DownloadPage} />
       <Route path="/privacy" component={PrivacyPolicy} />
       <Route path="/terms" component={TermsOfService} />
       <Route path="/support" component={Support} />
