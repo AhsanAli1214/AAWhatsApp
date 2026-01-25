@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/hooks/useTranslation";
 import { BackToTop } from "@/components/BackToTop";
+import { Analytics } from "@vercel/analytics/react";
+
 import Home from "@/pages/Home";
 import AAWhatsAppPage from "@/pages/AAWhatsAppPage";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
@@ -33,6 +35,9 @@ function App() {
           <Toaster />
           <Router />
           <BackToTop />
+
+          {/* Vercel Analytics */}
+          <Analytics />
         </TooltipProvider>
       </LanguageProvider>
     </QueryClientProvider>
