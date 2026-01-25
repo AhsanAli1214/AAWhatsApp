@@ -103,7 +103,7 @@ export default function Home() {
                 {t('hero_subtitle')}
               </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
               <DownloadTunnel onComplete={() => window.location.href = "/aa-whatsapp-apk"} />
               <a
                 href="https://t.me/AA_ModsOfficial"
@@ -117,7 +117,9 @@ export default function Home() {
                 </button>
               </a>
             </div>
-            <AdPlaceholder format="mobile" />
+            <div className="max-w-[320px] mx-auto lg:mx-0">
+              <AdPlaceholder format="mobile" className="my-0" />
+            </div>
           </motion.div>
 
           <motion.div

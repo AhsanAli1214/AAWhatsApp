@@ -77,7 +77,7 @@ export default function AAWhatsAppPage() {
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               {t('hero_subtitle')}
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
               <DownloadTunnel onComplete={() => {
                 const element = document.getElementById('download');
                 if (element) {
@@ -85,7 +85,9 @@ export default function AAWhatsAppPage() {
                 }
               }} />
             </div>
-            <AdPlaceholder format="rectangle" />
+            <div className="max-w-[300px] mx-auto">
+              <AdPlaceholder format="rectangle" className="my-0" />
+            </div>
           </section>
 
           {/* Intro Text */}

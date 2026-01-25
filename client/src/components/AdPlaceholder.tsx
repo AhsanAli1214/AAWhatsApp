@@ -64,13 +64,13 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className={`w-full overflow-hidden my-8 flex items-center justify-center relative ${className}`}
+      className={`w-full overflow-hidden my-4 flex items-center justify-center relative ${className}`}
       style={{ minHeight, containIntrinsicSize: `auto ${minHeight}`, contentVisibility: 'auto' }}
     >
       <div 
         ref={adRef} 
-        style={{ height: minHeight, width: `${config.width}px` }}
-        className="flex items-center justify-center bg-white/[0.02] border border-white/5 rounded-lg overflow-hidden"
+        style={{ minHeight, width: `${config.width}px` }}
+        className="flex items-center justify-center bg-white/[0.01] border border-white/5 rounded-xl overflow-hidden shadow-inner mx-auto"
       />
     </motion.div>
   );
