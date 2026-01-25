@@ -11,12 +11,14 @@ import {
   Info,
   CheckCircle2,
   ChevronRight,
+  ArrowLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 export default function AAWhatsAppPage() {
+  const [, setLocation] = useLocation();
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
@@ -36,6 +38,16 @@ export default function AAWhatsAppPage() {
       <Navigation />
 
       <main className="relative z-10 pt-32 pb-20 container mx-auto px-4">
+        <div className="max-w-4xl mx-auto mb-8">
+          <Button 
+            variant="ghost" 
+            onClick={() => setLocation("/")}
+            className="hover:bg-primary/10 gap-2 text-muted-foreground hover:text-primary"
+            data-testid="button-back-home"
+          >
+            <ArrowLeft className="w-4 h-4" /> Back to Home
+          </Button>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
