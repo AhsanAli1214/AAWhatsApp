@@ -19,6 +19,36 @@ export const translations: Translations = {
     ru: "Главная",
     id: "Beranda"
   },
+  adblock_title: {
+    en: "Ad-Blocker Detected",
+    es: "Bloqueador de anuncios detectado",
+    pt: "Bloqueador de anúncios detectado",
+    ar: "تم اكتشاف مانع الإعلانات",
+    fr: "Bloqueur de publicités détecté",
+    ur: "ایڈ بلاکر کا پتہ چلا",
+    ru: "Обнаружен блокировщик рекламы",
+    id: "Pemblokir Iklan Terdeteksi"
+  },
+  adblock_description: {
+    en: "To keep AAWhatsApp free and maintained, please disable your ad-blocker for this site and refresh the page.",
+    es: "Para mantener AAWhatsApp gratuito y actualizado, desactive su bloqueador de anuncios para este sitio y actualice la página.",
+    pt: "Para manter o AAWhatsApp gratuito e atualizado, desative o seu bloqueador de anúncios para este site e atualize a página.",
+    ar: "للحفاظ على AAWhatsApp مجانًا، يرجى تعطيل مانع الإعلانات لهذا الموقع وتحديث الصفحة.",
+    fr: "Pour garder AAWhatsApp gratuit et maintenu, veuillez désactiver votre bloqueur de publicités pour ce site et rafraîchir la page.",
+    ur: "AAWhatsApp کو مفت رکھنے کے لیے، براہ کرم اس سائٹ کے لیے اپنے ایڈ بلاکر کو غیر فعال کریں اور صفحہ کو ریفریش کریں۔",
+    ru: "Чтобы AAWhatsApp оставался бесплатным, пожалуйста, отключите блокировщик рекламы для этого сайта и обновите страницу.",
+    id: "Agar AAWhatsApp tetap gratis, harap nonaktifkan pemblokir iklan Anda untuk situs ini dan segarkan halaman."
+  },
+  refresh_page: {
+    en: "Refresh Page",
+    es: "Actualizar página",
+    pt: "Atualizar página",
+    ar: "تحديث الصفحة",
+    fr: "Rafraîchir la page",
+    ur: "صفحہ کو ریفریش کریں",
+    ru: "Обновить страницу",
+    id: "Segarkan Halaman"
+  },
   nav_apk: { 
     en: "Download APK", 
     es: "Descargar APK", 
