@@ -104,7 +104,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <DownloadTunnel onComplete={() => window.location.href = "/aa-whatsapp-apk"} />
               <a
-                href="http://t.me/ahsan_tech_hub"
+                href="https://t.me/AA_ModsOfficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
@@ -1020,7 +1020,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-6">
               <DownloadCard />
               <a
-                href="http://t.me/ahsan_tech_hub"
+                href="https://t.me/AA_ModsOfficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1"
@@ -1059,7 +1059,7 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground font-medium">
               <a
-                href="http://t.me/ahsan_tech_hub"
+                href="https://t.me/AA_ModsOfficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors flex items-center gap-1"
