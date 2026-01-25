@@ -1,9 +1,22 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ShieldCheck, Lock, Eye } from "lucide-react";
+import { ShieldCheck, Lock, Eye, ArrowLeft } from "lucide-react";
+import { useLocation } from "wouter";
+import { Button } from "@/components/ui/button";
 
 export default function PrivacyPolicy() {
+  const [, setLocation] = useLocation();
   return (
     <div className="container mx-auto py-12 px-4 max-w-4xl">
+      <div className="mb-8">
+        <Button 
+          variant="ghost" 
+          onClick={() => setLocation("/")}
+          className="hover:bg-primary/10 gap-2 text-muted-foreground hover:text-primary"
+          data-testid="button-back-home"
+        >
+          <ArrowLeft className="w-4 h-4" /> Back to Home
+        </Button>
+      </div>
       <Card className="border-none shadow-lg">
         <CardHeader className="text-center pb-8 border-b">
           <div className="flex justify-center mb-4">
