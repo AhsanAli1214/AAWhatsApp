@@ -101,20 +101,20 @@ export default function Home() {
                 {t('hero_subtitle')}
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <DownloadTunnel onComplete={() => window.location.href = "/aa-whatsapp-apk"} />
-                <a
-                  href="https://t.me/AA_ModsOfficial"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto"
-                >
-                  <button className="px-10 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 hover:bg-secondary/80 text-foreground font-semibold text-lg transition-all w-full flex items-center justify-center gap-2">
-                    <Send className="w-5 h-5" />
-                    Join Telegram
-                  </button>
-                </a>
-              </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <DownloadTunnel onComplete={() => window.location.href = "/aa-whatsapp-apk"} />
+              <a
+                href="http://t.me/ahsan_tech_hub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
+                <button className="px-10 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 hover:bg-secondary/80 text-foreground font-semibold text-lg transition-all w-full flex items-center justify-center gap-2">
+                  <Send className="w-5 h-5" />
+                  Join Telegram
+                </button>
+              </a>
+            </div>
           </motion.div>
 
           <motion.div
@@ -1017,20 +1017,20 @@ export default function Home() {
                 communication. Safe, fast, and feature-packed.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-6">
-                <DownloadCard />
-                <a
-                  href="https://t.me/AA_ModsOfficial"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1"
-                >
-                  <button className="w-full h-full min-h-[64px] px-8 rounded-2xl bg-[#0088cc] hover:bg-[#0088cc]/90 text-white font-bold text-xl flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-[#0088cc]/40">
-                    <Send className="w-6 h-6" />
-                    Join Telegram
-                  </button>
-                </a>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <DownloadCard />
+              <a
+                href="http://t.me/ahsan_tech_hub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1"
+              >
+                <button className="w-full h-full min-h-[64px] px-8 rounded-2xl bg-[#0088cc] hover:bg-[#0088cc]/90 text-white font-bold text-xl flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-[#0088cc]/40">
+                  <Send className="w-6 h-6" />
+                  Join Telegram
+                </button>
+              </a>
+            </div>
 
               <p className="mt-8 text-sm text-muted-foreground flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-primary" />
@@ -1049,6 +1049,8 @@ export default function Home() {
                 src={logoImg}
                 alt="AA Mods"
                 className="w-8 h-8 rounded-lg object-contain bg-background"
+                loading="lazy"
+                decoding="async"
               />
               <span className="text-xl font-bold font-display tracking-tighter">
                 AA Mods
@@ -1057,7 +1059,7 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground font-medium">
               <a
-                href="https://t.me/AA_ModsOfficial"
+                href="http://t.me/ahsan_tech_hub"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors flex items-center gap-1"
@@ -1070,7 +1072,7 @@ export default function Home() {
               <a href="#" className="hover:text-primary transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="/support" className="hover:text-primary transition-colors">
                 Bug Report
               </a>
               <a href="#" className="hover:text-primary transition-colors">
