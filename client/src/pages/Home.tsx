@@ -27,6 +27,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Link as ScrollLink } from "react-scroll";
+import { useTranslation } from "@/hooks/useTranslation";
+import { DownloadTunnel } from "@/components/DownloadTunnel";
 
 import heroImage from "@assets/generated_images/modern_professional_blog_hero_image_for_aawhatsapp_mod..png";
 import privacyImage from "@assets/generated_images/futuristic_illustration_of_privacy_features_for_aawhatsapp..png";
@@ -79,55 +81,36 @@ export default function Home() {
               100% Secure: No Bank/Location Data Access
             </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl lg:text-7xl font-black font-display leading-[1.1] mb-8 tracking-tighter"
-            >
-              AAWhatsApp APK <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
-                Secure Mod V 2.0
-              </span>
-            </motion.h1>
-
-            <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Get all GBWhatsApp features with{" "}
-              <span className="text-primary font-semibold">
-                Zero Data Risk.
-              </span>{" "}
-              Unlike other mods, we never access your files, location, or bank
-              accounts.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <ScrollLink
-                to="download"
-                smooth={true}
-                offset={-100}
-                className="w-full sm:w-auto"
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-5xl lg:text-7xl font-black font-display leading-[1.1] mb-8 tracking-tighter"
               >
-                <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full border border-primary/20">
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    <Zap className="w-6 h-6 fill-current" />
-                    Download AAWhatsApp APK
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
-              </ScrollLink>
-              <a
-                href="https://t.me/AA_ModsOfficial"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto"
-              >
-                <button className="px-10 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 hover:bg-secondary/80 text-foreground font-semibold text-lg transition-all w-full flex items-center justify-center gap-2">
-                  <Send className="w-5 h-5" />
-                  Join Telegram
-                </button>
-              </a>
-            </div>
+                AAWhatsApp APK <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
+                  {t('hero_title')}
+                </span>
+              </motion.h1>
+
+              <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                {t('hero_subtitle')}
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <DownloadTunnel onComplete={() => window.location.href = "/aa-whatsapp-apk"} />
+                <a
+                  href="https://t.me/AA_ModsOfficial"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
+                >
+                  <button className="px-10 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 hover:bg-secondary/80 text-foreground font-semibold text-lg transition-all w-full flex items-center justify-center gap-2">
+                    <Send className="w-5 h-5" />
+                    Join Telegram
+                  </button>
+                </a>
+              </div>
           </motion.div>
 
           <motion.div

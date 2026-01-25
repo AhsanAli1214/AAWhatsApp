@@ -7,7 +7,11 @@ import logoImg from "@assets/Gemini_Generated_Image_72b2nh72b2nh72b2_17691033693
 
 import { Link } from "wouter";
 
+import { useTranslation } from "@/hooks/useTranslation";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+
 export function Navigation() {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -20,7 +24,7 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
+    { name: t("nav_home"), href: "/" },
     { name: "About", to: "about" },
     { name: "AA APK", href: "/aa-whatsapp-apk" },
     { name: "Features", to: "features" },
@@ -79,11 +83,12 @@ export function Navigation() {
                     {link.name}
                   </span>
                 </Link>
-              ),
+              )
             )}
           </div>
 
           <div className="flex items-center gap-3">
+            <LanguageSwitcher />
             <a
               href="https://t.me/AA_ModsOfficial"
               target="_blank"
