@@ -18,8 +18,12 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link, useLocation } from "wouter";
 import { PermissionSimulator } from "@/components/PermissionSimulator";
 import { FAQSection } from "@/components/FAQSection";
+import { DownloadTunnel } from "@/components/DownloadTunnel";
+
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function AAWhatsAppPage() {
+  const { t } = useTranslation();
   const [, setLocation] = useLocation();
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
@@ -62,34 +66,23 @@ export default function AAWhatsAppPage() {
             >
               AA WhatsApp <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow">
-                PRO PROTOCOL
+                {t('hero_title')}
               </span>
             </motion.h1>
             <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-sm font-bold uppercase tracking-widest animate-pulse">
               <span className="w-2 h-2 rounded-full bg-primary" />
-              Build 2.25.36.73 - Stable
+              Build 2.0.26 - Stable
             </div>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              AA WhatsApp is a next-generation WhatsApp mod designed for users
-              who value privacy and security. Unlike GB WhatsApp, AA WhatsApp
-              does NOT require location access or unnecessary media permissions.
+              {t('hero_subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <ScrollLink
-                to="download"
-                smooth={true}
-                offset={-100}
-                className="w-full sm:w-auto"
-              >
-                <button className="relative group overflow-hidden px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-300 w-full border border-primary/20">
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    <Zap className="w-6 h-6 fill-current" />
-                    Download AAWhatsApp APK
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
-              </ScrollLink>
+              <DownloadTunnel onComplete={() => {
+                const element = document.getElementById('download');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }} />
             </div>
           </section>
 
