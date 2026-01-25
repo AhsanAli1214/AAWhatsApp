@@ -121,7 +121,8 @@ export default function DownloadPage() {
           </section>
 
           {/* Main Download Section */}
-          <section className="glass-card p-10 md:p-16 rounded-[3rem] border border-primary/20 text-center space-y-10">
+          <section className="glass-card p-10 md:p-16 rounded-[3rem] border border-primary/20 text-center space-y-10 relative overflow-hidden">
+            <div className="absolute inset-0 bg-primary/5 opacity-50 -z-10" />
             <div className="space-y-4">
               <h2 className="text-3xl md:text-5xl font-black">Ready to Start?</h2>
               <p className="text-muted-foreground">The download link is synchronized with your device security protocol.</p>
@@ -134,6 +135,11 @@ export default function DownloadPage() {
             <div className="pt-4 flex flex-wrap justify-center gap-6 text-sm text-muted-foreground opacity-60">
               <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> Est. Download Time: 10s</span>
               <span className="flex items-center gap-1"><ArrowDown className="w-4 h-4" /> Verified Direct Link</span>
+            </div>
+
+            {/* Additional Ad Unit */}
+            <div className="pt-8">
+              <AdPlaceholder format="rectangle" className="my-0" />
             </div>
           </section>
 
