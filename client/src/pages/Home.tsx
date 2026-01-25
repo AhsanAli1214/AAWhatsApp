@@ -42,22 +42,22 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>AA Mods – Download AA WhatsApp APK | Secure WhatsApp Mod</title>
+        <title>AA Mods – Download AA WhatsApp APK 2026 | #1 Secure WhatsApp Mod</title>
         <meta
           name="description"
-          content="Download AA WhatsApp APK – a secure WhatsApp mod without location or media permissions. Best GB WhatsApp alternative. Fast, safe & anti-ban."
+          content="Download AA WhatsApp APK 2026 – the world's only secure WhatsApp mod without location or media permissions. Best GB WhatsApp alternative. Fast, safe & anti-ban v2.0."
         />
         <meta
           name="keywords"
-          content="AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp Mod APK, AA Mods APK, AA WhatsApp Latest Version, AA WhatsApp Official, AA WhatsApp Anti-Ban, WhatsApp Mod APK, GB WhatsApp Alternative, Secure WhatsApp Mod, Privacy WhatsApp Mod, WhatsApp Mod Without Location Permission, YOWhatsApp Download, FMWhatsApp APK, WhatsApp Plus 2026, Anti-Ban WhatsApp 2026"
+          content="AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp Mod APK, AA Mods APK, AA WhatsApp Latest Version, AA WhatsApp Official, AA WhatsApp Anti-Ban, WhatsApp Mod APK, GB WhatsApp Alternative, Secure WhatsApp Mod, Privacy WhatsApp Mod, WhatsApp Mod Without Location Permission, YOWhatsApp Download, FMWhatsApp APK, WhatsApp Plus 2026, Anti-Ban WhatsApp 2026, whatsapp mod 2026 download, safe whatsapp mod apk"
         />
         <meta
           property="og:title"
-          content="AA Mods – Download AA WhatsApp APK | Secure WhatsApp Mod"
+          content="AA Mods – Download AA WhatsApp APK 2026 | Secure & Private"
         />
         <meta
           property="og:description"
-          content="Download AA WhatsApp APK – a secure WhatsApp mod without location or media permissions. Best GB WhatsApp alternative. Fast, safe & anti-ban."
+          content="Download AA WhatsApp APK 2026 – the world's only secure WhatsApp mod without location or media permissions. 100% safe & anti-ban."
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
