@@ -37,8 +37,8 @@ export function AdBlockDetector() {
         // ONLY trigger if ALL sources are blocked (less aggressive)
         const allBlocked = results.every(res => res === 'blocked');
         
-        // Final check: check if the highperformanceformat script is loaded
-        const highPerfBlocked = !document.querySelector('script[src*="highperformanceformat.com"]');
+        // Final check: check if the exasperatebubblyorthodox script is loaded
+        const highPerfBlocked = !document.querySelector('script[src*="exasperatebubblyorthodox.com"]');
         
         setIsAdBlockActive(allBlocked && highPerfBlocked);
       } catch (error) {
