@@ -41,6 +41,7 @@ import ctaImage from "@assets/generated_images/call-to-action_image_for_download
 import logoImg from "@assets/Gemini_Generated_Image_72b2nh72b2nh72b2_1769103369360.png";
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
