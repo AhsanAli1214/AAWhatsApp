@@ -166,6 +166,10 @@ export function Navigation() {
           )}
 
           <div className="flex flex-col gap-3 mt-2">
+            <div className="flex items-center justify-between p-2 bg-muted/50 rounded-lg">
+              <span className="text-sm font-medium">Language / Idioma</span>
+              <LanguageSwitcher />
+            </div>
             <Link href="/aa-whatsapp-apk">
               <Button
                 variant="outline"
