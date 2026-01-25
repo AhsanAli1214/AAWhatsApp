@@ -17,26 +17,40 @@ export function AdBlockDetector() {
 
   useEffect(() => {
     const checkAdBlock = async () => {
-      // Common ad script URLs that adblockers usually block
-      const adUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+      // Multiple detection strategies for better reliability
+      const adSources = [
+        'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        'https://static.ads-twitter.com/uwt.js',
+        'https://connect.facebook.net/en_US/fbevents.js'
+      ];
       
       try {
-        const response = await fetch(adUrl, {
-          method: 'HEAD',
-          mode: 'no-cors',
-          cache: 'no-store'
-        });
-        // If the request succeeds (even with no-cors), the script isn't blocked
-        setIsAdBlockActive(false);
+        // Try to fetch several common ad scripts
+        const results = await Promise.all(
+          adSources.map(url => 
+            fetch(url, { method: 'HEAD', mode: 'no-cors', cache: 'no-store' })
+              .catch(() => 'blocked')
+          )
+        );
+
+        // If any of them are blocked, an adblocker is active
+        const blocked = results.some(res => res === 'blocked');
+        setIsAdBlockActive(blocked);
       } catch (error) {
-        // If the fetch fails, it's highly likely an adblocker is active
         setIsAdBlockActive(true);
       }
     };
 
-    // Run check after a short delay to allow adblockers to kick in
-    const timer = setTimeout(checkAdBlock, 2000);
-    return () => clearTimeout(timer);
+    // Initial check after 1.5s
+    const timer = setTimeout(checkAdBlock, 1500);
+    
+    // Periodic check every 10 seconds to catch toggle changes
+    const interval = setInterval(checkAdBlock, 10000);
+    
+    return () => {
+      clearTimeout(timer);
+      clearInterval(interval);
+    };
   }, []);
 
   const handleReload = () => {
