@@ -48,7 +48,9 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA Mods – Download AA WhatsApp APK 2026 | #1 Secure WhatsApp Mod</title>
+        <title>
+          AA Mods – Download AA WhatsApp APK 2026 | #1 Secure WhatsApp Mod
+        </title>
         <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <meta
           name="description"
@@ -86,24 +88,26 @@ export default function Home() {
               100% Secure: No Bank/Location Data Access
             </div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-5xl lg:text-7xl font-black font-display leading-[1.1] mb-8 tracking-tighter"
-              >
-                AAWhatsApp APK <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
-                  {t('hero_title')}
-                </span>
-              </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-5xl lg:text-7xl font-black font-display leading-[1.1] mb-8 tracking-tighter"
+            >
+              AAWhatsApp APK <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
+                {t("hero_title")}
+              </span>
+            </motion.h1>
 
-              <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                {t('hero_subtitle')}
-              </p>
+            <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              {t("hero_subtitle")}
+            </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <DownloadTunnel onComplete={() => window.location.href = "/aa-whatsapp-apk"} />
+              <DownloadTunnel
+                onComplete={() => (window.location.href = "/aa-whatsapp-apk")}
+              />
               <a
                 href="https://t.me/AA_ModsOfficial"
                 target="_blank"
@@ -1019,20 +1023,20 @@ export default function Home() {
                 communication. Safe, fast, and feature-packed.
               </p>
 
-            <div className="flex flex-col sm:flex-row gap-6">
-              <DownloadCard />
-              <a
-                href="https://t.me/AA_ModsOfficial"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1"
-              >
-                <button className="w-full h-full min-h-[64px] px-8 rounded-2xl bg-[#0088cc] hover:bg-[#0088cc]/90 text-white font-bold text-xl flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-[#0088cc]/40">
-                  <Send className="w-6 h-6" />
-                  Join Telegram
-                </button>
-              </a>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <DownloadCard />
+                <a
+                  href="https://t.me/AA_ModsOfficial"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <button className="w-full h-full min-h-[64px] px-8 rounded-2xl bg-[#0088cc] hover:bg-[#0088cc]/90 text-white font-bold text-xl flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-[#0088cc]/40">
+                    <Send className="w-6 h-6" />
+                    Join Telegram
+                  </button>
+                </a>
+              </div>
 
               <p className="mt-8 text-sm text-muted-foreground flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-primary" />
@@ -1074,7 +1078,10 @@ export default function Home() {
               <a href="#" className="hover:text-primary transition-colors">
                 Terms of Service
               </a>
-              <a href="/support" className="hover:text-primary transition-colors">
+              <a
+                href="/support"
+                className="hover:text-primary transition-colors"
+              >
                 Bug Report
               </a>
               <a href="#" className="hover:text-primary transition-colors">
