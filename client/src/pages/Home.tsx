@@ -159,6 +159,9 @@ export default function Home() {
       {/* Version Protocol Section */}
       <section className="py-12 relative z-10">
         <div className="container mx-auto px-4">
+          <div className="mb-12">
+            <AdPlaceholder format="leaderboard" />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

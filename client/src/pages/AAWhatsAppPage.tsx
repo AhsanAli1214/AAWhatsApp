@@ -276,53 +276,58 @@ export default function AAWhatsAppPage() {
             <h2 className="text-3xl font-bold text-center">
               AA WhatsApp vs GB WhatsApp Comparison
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="py-4 px-6 text-left font-black text-primary uppercase tracking-widest text-xs">
-                      Feature
-                    </th>
-                    <th className="py-4 px-6 text-left font-black text-primary uppercase tracking-widest text-xs">
-                      AA WhatsApp
-                    </th>
-                    <th className="py-4 px-6 text-left font-black text-primary uppercase tracking-widest text-xs">
-                      GB WhatsApp
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="text-sm">
-                  {[
-                    {
-                      f: "Location Permission",
-                      aa: "Not Required",
-                      gb: "Mandatory",
-                    },
-                    {
-                      f: "Media Access",
-                      aa: "Zero Invasive Access",
-                      gb: "Full Disk Access",
-                    },
-                    { f: "Anti-Ban", aa: "V 2.0 Enhanced", gb: "Standard" },
-                    {
-                      f: "Privacy",
-                      aa: "Security Focused",
-                      gb: "Feature Focused",
-                    },
-                  ].map((row, i) => (
-                    <tr
-                      key={i}
-                      className="border-b border-white/5 hover:bg-white/[0.02] transition-colors"
-                    >
-                      <td className="py-4 px-6 font-bold">{row.f}</td>
-                      <td className="py-4 px-6 text-primary font-medium">
-                        {row.aa}
-                      </td>
-                      <td className="py-4 px-6 opacity-60">{row.gb}</td>
+            <div className="grid lg:grid-cols-[1fr,300px] gap-8 items-start">
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="py-4 px-6 text-left font-black text-primary uppercase tracking-widest text-xs">
+                        Feature
+                      </th>
+                      <th className="py-4 px-6 text-left font-black text-primary uppercase tracking-widest text-xs">
+                        AA WhatsApp
+                      </th>
+                      <th className="py-4 px-6 text-left font-black text-primary uppercase tracking-widest text-xs">
+                        GB WhatsApp
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="text-sm">
+                    {[
+                      {
+                        f: "Location Permission",
+                        aa: "Not Required",
+                        gb: "Mandatory",
+                      },
+                      {
+                        f: "Media Access",
+                        aa: "Zero Invasive Access",
+                        gb: "Full Disk Access",
+                      },
+                      { f: "Anti-Ban", aa: "V 2.0 Enhanced", gb: "Standard" },
+                      {
+                        f: "Privacy",
+                        aa: "Security Focused",
+                        gb: "Feature Focused",
+                      },
+                    ].map((row, i) => (
+                      <tr
+                        key={i}
+                        className="border-b border-white/5 hover:bg-white/[0.02] transition-colors"
+                      >
+                        <td className="py-4 px-6 font-bold">{row.f}</td>
+                        <td className="py-4 px-6 text-primary font-medium">
+                          {row.aa}
+                        </td>
+                        <td className="py-4 px-6 opacity-60">{row.gb}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="hidden lg:block sticky top-32">
+                <AdPlaceholder format="rectangle" className="my-0" />
+              </div>
             </div>
           </section>
 
