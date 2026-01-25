@@ -53,17 +53,15 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
     script2.type = "text/javascript";
     script2.src = `//exasperatebubblyorthodox.com/${config.key}/invoke.js`;
     script2.async = true;
-    script2.setAttribute("data-cfasync", "false");
 
-    // Small delay to ensure container is ready and help with race conditions
-    const timeoutId = setTimeout(() => {
-      if (adRef.current) {
-        adRef.current.appendChild(script1);
-        adRef.current.appendChild(script2);
-      }
-    }, 50);
+    // Add a unique container for the ad script to target if needed
+    const adContainer = document.createElement("div");
+    adContainer.id = `ad-container-${config.key}`;
+    adRef.current.appendChild(adContainer);
 
-    return () => clearTimeout(timeoutId);
+    // Standard Monotag execution flow
+    adRef.current.appendChild(script1);
+    adRef.current.appendChild(script2);
   }, [format, config.key, config.height, config.width]);
 
   const minHeight = `${config.height}px`;
