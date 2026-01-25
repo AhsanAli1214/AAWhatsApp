@@ -326,8 +326,65 @@ export default function AAWhatsAppPage() {
             </div>
           </section>
 
+          {/* Final CTA Section */}
+          <section id="download" className="py-24 relative overflow-hidden">
+            <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-[4rem] -z-10" />
+            <div className="max-w-3xl mx-auto text-center space-y-12">
+              <div className="space-y-4">
+                <h2 className="text-4xl md:text-6xl font-black tracking-tighter">
+                  Ready for the <span className="text-primary italic">Ultimate</span> Privacy?
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Join 100,000+ users who trust AA Mods for their secure communication. 
+                  Zero permissions, maximum security.
+                </p>
+              </div>
+
+              <div className="glass-card p-12 rounded-[3.5rem] border border-primary/20 relative group">
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-primary text-primary-foreground font-bold text-xs uppercase tracking-[0.3em] shadow-xl">
+                  Official Build v2.0
+                </div>
+                <div className="grid md:grid-cols-3 gap-8 mb-12">
+                  {[
+                    { label: "File Size", value: "68 MB" },
+                    { label: "Android", value: "5.0+" },
+                    { label: "Last Update", value: "2026" }
+                  ].map((spec, i) => (
+                    <div key={i} className="space-y-1">
+                      <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">{spec.label}</p>
+                      <p className="text-xl font-black text-white">{spec.value}</p>
+                    </div>
+                  ))}
+                </div>
+                <DownloadTunnel onComplete={() => {
+                  window.location.href = "https://www.mediafire.com/file/o6r60v20v6r60v2/AAWhatsApp_v2.0_Secure.apk/file";
+                }} />
+                <p className="mt-8 text-xs text-muted-foreground font-medium">
+                  By downloading, you agree to our Terms of Service.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-4">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+                  <ShieldCheck className="w-4 h-4 text-primary" />
+                  <span className="text-xs font-bold uppercase tracking-widest">Malware Scanned</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+                  <Lock className="w-4 h-4 text-primary" />
+                  <span className="text-xs font-bold uppercase tracking-widest">Encrypted Direct Link</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div className="max-w-4xl mx-auto">
+            <AdPlaceholder format="leaderboard" className="mt-8" />
+          </div>
+
           <FAQSection />
-          <AdPlaceholder format="leaderboard" />
+          <div className="max-w-4xl mx-auto">
+            <AdPlaceholder format="rectangle" className="mt-12" />
+          </div>
 
           {/* Footer Navigation */}
           <section className="pt-20 border-t border-white/5 text-center space-y-8">
