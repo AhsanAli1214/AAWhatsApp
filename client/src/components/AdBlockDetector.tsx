@@ -29,15 +29,21 @@ export function AdBlockDetector() {
         const results = await Promise.all(
           adSources.map(url => 
             fetch(url, { method: 'HEAD', mode: 'no-cors', cache: 'no-store' })
+              .then(() => 'success')
               .catch(() => 'blocked')
           )
         );
 
-        // If any of them are blocked, an adblocker is active
-        const blocked = results.some(res => res === 'blocked');
-        setIsAdBlockActive(blocked);
+        // ONLY trigger if ALL sources are blocked (less aggressive)
+        const allBlocked = results.every(res => res === 'blocked');
+        
+        // Final check: check if the highperformanceformat script is loaded
+        const highPerfBlocked = !document.querySelector('script[src*="highperformanceformat.com"]');
+        
+        setIsAdBlockActive(allBlocked && highPerfBlocked);
       } catch (error) {
-        setIsAdBlockActive(true);
+        // Default to false if check fails to avoid false positives
+        setIsAdBlockActive(false);
       }
     };
 
