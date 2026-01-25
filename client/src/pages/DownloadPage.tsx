@@ -85,9 +85,9 @@ export default function DownloadPage() {
               <div className="space-y-4">
                 {[
                   { label: "App Name", value: "AAWhatsApp APK" },
-                  { label: "Version", value: "v2.0.26 (Official)" },
-                  { label: "Base Version", value: "2.25.x.x" },
-                  { label: "File Size", value: "68 MB" },
+                  { label: "Version", value: "v2.0 (Official)" },
+                  { label: "Base Version", value: "2.25.36.72" },
+                  { label: "File Size", value: "118 MB" },
                   { label: "Developer", value: "AA Mods" },
                   { label: "Last Updated", value: "Jan 2026" }
                 ].map((item, i) => (
@@ -129,7 +129,7 @@ export default function DownloadPage() {
             </div>
             
             <DownloadTunnel onComplete={() => {
-              window.location.href = "https://www.mediafire.com/file/o6r60v20v6r60v2/AAWhatsApp_v2.0_Secure.apk/file";
+              window.location.href = "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file";
             }} />
             
             <div className="pt-4 flex flex-wrap justify-center gap-6 text-sm text-muted-foreground opacity-60">
