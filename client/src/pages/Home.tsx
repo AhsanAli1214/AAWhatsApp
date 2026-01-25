@@ -50,7 +50,9 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA Mods – Download AA WhatsApp APK 2026 | #1 Secure WhatsApp Mod</title>
+        <title>
+          AA Mods – Download AA WhatsApp APK 2026 | #1 Secure WhatsApp Mod
+        </title>
         <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <link rel="preconnect" href="//exasperatebubblyorthodox.com" />
         <link rel="dns-prefetch" href="//exasperatebubblyorthodox.com" />
@@ -90,25 +92,28 @@ export default function Home() {
               100% Secure: No Bank/Location Data Access
             </div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-5xl lg:text-7xl font-black font-display leading-[1.1] mb-8 tracking-tighter"
-              >
-                AAWhatsApp APK <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
-                  {t('hero_title')}
-                </span>
-              </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-5xl lg:text-7xl font-black font-display leading-[1.1] mb-8 tracking-tighter"
+            >
+              AAWhatsApp APK <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
+                {t("hero_title")}
+              </span>
+            </motion.h1>
 
-              <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                {t('hero_subtitle')}
-              </p>
+            <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              {t("hero_subtitle")}
+            </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
               <Link href="/download" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full px-10 py-7 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3">
+                <Button
+                  size="lg"
+                  className="w-full px-10 py-7 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3"
+                >
                   <Download className="w-6 h-6" />
                   Download APK
                 </Button>
@@ -152,14 +157,14 @@ export default function Home() {
         <div className="flex justify-center mt-20">
           <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
         </div>
-        <AdPlaceholder format="leaderboard" className="mt-12" />
+        <AdPlaceholder format="mobile" className="mt-12" />
       </section>
 
       {/* Version Protocol Section */}
       <section className="py-12 relative z-10">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <AdPlaceholder format="leaderboard" />
+            <AdPlaceholder format="mobile" />
           </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -489,7 +494,10 @@ export default function Home() {
       </section>
 
       {/* Comparison Section */}
-      <section id="compare" className="py-24 container mx-auto px-4 md:px-6 relative z-10">
+      <section
+        id="compare"
+        className="py-24 container mx-auto px-4 md:px-6 relative z-10"
+      >
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <div className="flex-1 space-y-8">
             <h2 className="text-4xl md:text-6xl font-black font-display tracking-tight leading-none">
@@ -497,14 +505,16 @@ export default function Home() {
               <span className="text-primary italic">vs. The Rest</span>
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Why settle for dangerous mods that steal your data? AAWhatsApp by AA Mods provides a 100% "Permission-Clean" infrastructure while keeping 100% of the advanced features.
+              Why settle for dangerous mods that steal your data? AAWhatsApp by
+              AA Mods provides a 100% "Permission-Clean" infrastructure while
+              keeping 100% of the advanced features.
             </p>
             <div className="space-y-4">
               {[
                 "No bank account data collection protocols.",
                 "Zero location tracking or GPS metadata harvesting.",
                 "Privacy Core™ technology for 100% secure messaging.",
-                "Fast, anti-ban, and optimized for Android 14+."
+                "Fast, anti-ban, and optimized for Android 14+.",
               ].map((point, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
@@ -516,15 +526,15 @@ export default function Home() {
             </div>
           </div>
           <div className="flex-1 relative">
-             <div className="glass-card rounded-[2rem] p-8 border border-primary/20 shadow-2xl overflow-hidden relative group">
-                <div className="absolute inset-0 bg-primary/5 blur-3xl group-hover:bg-primary/10 transition-colors" />
-                <img 
-                  src={comparisonImage} 
-                  alt="AAWhatsApp vs Other Mods" 
-                  className="relative z-10 w-full h-auto rounded-xl"
-                  loading="lazy"
-                />
-             </div>
+            <div className="glass-card rounded-[2rem] p-8 border border-primary/20 shadow-2xl overflow-hidden relative group">
+              <div className="absolute inset-0 bg-primary/5 blur-3xl group-hover:bg-primary/10 transition-colors" />
+              <img
+                src={comparisonImage}
+                alt="AAWhatsApp vs Other Mods"
+                className="relative z-10 w-full h-auto rounded-xl"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -532,50 +542,77 @@ export default function Home() {
       {/* Download Section */}
       <section id="download" className="py-24 relative z-10">
         <div className="container mx-auto px-4 text-center space-y-12">
-           <div className="max-w-3xl mx-auto space-y-4">
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Ready to <span className="text-primary">Upgrade?</span></h2>
-              <p className="text-xl text-muted-foreground">Download the world's most secure WhatsApp mod today. Zero invasive permissions, 100% anti-ban.</p>
-           </div>
-           
-           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-             <DownloadCard />
-             <div className="glass-card rounded-[2rem] p-10 flex flex-col items-center justify-center border border-white/5 bg-white/[0.02]">
-                <Send className="w-16 h-16 text-primary mb-6 animate-pulse" />
-                <h3 className="text-2xl font-bold mb-4">Official Community</h3>
-                <p className="text-muted-foreground mb-8">Join 50k+ users in our official Telegram for real-time updates and support.</p>
-                <Button size="lg" variant="secondary" className="w-full h-14 text-lg font-bold rounded-xl" asChild>
-                  <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer">Join Official Telegram</a>
-                </Button>
-             </div>
-           </div>
+          <div className="max-w-3xl mx-auto space-y-4">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter">
+              Ready to <span className="text-primary">Upgrade?</span>
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Download the world's most secure WhatsApp mod today. Zero invasive
+              permissions, 100% anti-ban.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <DownloadCard />
+            <div className="glass-card rounded-[2rem] p-10 flex flex-col items-center justify-center border border-white/5 bg-white/[0.02]">
+              <Send className="w-16 h-16 text-primary mb-6 animate-pulse" />
+              <h3 className="text-2xl font-bold mb-4">Official Community</h3>
+              <p className="text-muted-foreground mb-8">
+                Join 50k+ users in our official Telegram for real-time updates
+                and support.
+              </p>
+              <Button
+                size="lg"
+                variant="secondary"
+                className="w-full h-14 text-lg font-bold rounded-xl"
+                asChild
+              >
+                <a
+                  href="https://t.me/AA_ModsOfficial"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Join Official Telegram
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section id="faq" className="py-24 bg-primary/5 relative z-10">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-4xl font-black text-center mb-16 tracking-tighter uppercase">Frequently <span className="text-primary">Asked</span> Questions</h2>
+          <h2 className="text-4xl font-black text-center mb-16 tracking-tighter uppercase">
+            Frequently <span className="text-primary">Asked</span> Questions
+          </h2>
           <Accordion type="single" collapsible className="w-full space-y-4">
             {[
               {
                 q: "Is AA WhatsApp really safe?",
-                a: "Yes. AA WhatsApp is the world's first 'Permission-Clean' mod. We have surgically removed the code that requests location, bank, and invasive media access found in other mods."
+                a: "Yes. AA WhatsApp is the world's first 'Permission-Clean' mod. We have surgically removed the code that requests location, bank, and invasive media access found in other mods.",
               },
               {
                 q: "Does it have anti-ban protection?",
-                a: "Absolutely. Version 2.0 includes the latest hardened anti-ban script that masks your client as an official version during server-side verification."
+                a: "Absolutely. Version 2.0 includes the latest hardened anti-ban script that masks your client as an official version during server-side verification.",
               },
               {
                 q: "How is it different from GB WhatsApp?",
-                a: "AA WhatsApp provides all the features of GB WhatsApp but with a massive security upgrade. We prioritize your privacy by blocking 45+ invasive Android permissions."
+                a: "AA WhatsApp provides all the features of GB WhatsApp but with a massive security upgrade. We prioritize your privacy by blocking 45+ invasive Android permissions.",
               },
               {
                 q: "Who is the developer of AA WhatsApp?",
-                a: "AA WhatsApp is developed and maintained by the official AA Mods team led by Ahsan Ali Wadani."
-              }
+                a: "AA WhatsApp is developed and maintained by the official AA Mods team led by Ahsan Ali Wadani.",
+              },
             ].map((item, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border border-white/10 bg-background/50 rounded-2xl px-6 overflow-hidden">
-                <AccordionTrigger className="text-lg font-bold hover:no-underline py-6 tracking-tight">{item.q}</AccordionTrigger>
+              <AccordionItem
+                key={i}
+                value={`item-${i}`}
+                className="border border-white/10 bg-background/50 rounded-2xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-lg font-bold hover:no-underline py-6 tracking-tight">
+                  {item.q}
+                </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-6 text-base leading-relaxed">
                   {item.a}
                 </AccordionContent>
@@ -590,30 +627,79 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
             <div className="flex flex-col items-center md:items-start gap-4">
-               <div className="flex items-center gap-2">
-                 <img src={logoImg} alt="AA Mods Logo" className="w-10 h-10 rounded-lg shadow-glow" />
-                 <span className="text-2xl font-black tracking-tighter">AA MODS</span>
-               </div>
-               <p className="text-muted-foreground text-center md:text-left max-w-xs">Building the future of secure communication, one mod at a time.</p>
+              <div className="flex items-center gap-2">
+                <img
+                  src={logoImg}
+                  alt="AA Mods Logo"
+                  className="w-10 h-10 rounded-lg shadow-glow"
+                />
+                <span className="text-2xl font-black tracking-tighter">
+                  AA MODS
+                </span>
+              </div>
+              <p className="text-muted-foreground text-center md:text-left max-w-xs">
+                Building the future of secure communication, one mod at a time.
+              </p>
             </div>
             <div className="flex flex-wrap justify-center gap-12">
-               <div className="flex flex-col items-center md:items-start gap-4">
-                 <span className="font-black text-xs uppercase tracking-[0.2em] text-primary">Navigate</span>
-                 <ScrollLink to="privacy-core" smooth className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium">Privacy Core</ScrollLink>
-                 <ScrollLink to="compare" smooth className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium">Comparison</ScrollLink>
-                 <ScrollLink to="download" smooth className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium">Download</ScrollLink>
-               </div>
-               <div className="flex flex-col items-center md:items-start gap-4">
-                 <span className="font-black text-xs uppercase tracking-[0.2em] text-primary">Legal</span>
-                 <Link href="/privacy" className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium">Privacy Policy</Link>
-                 <Link href="/terms" className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium">Disclaimer</Link>
-                 <a href="https://t.me/AA_ModsOfficial" className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium">Telegram</a>
-               </div>
+              <div className="flex flex-col items-center md:items-start gap-4">
+                <span className="font-black text-xs uppercase tracking-[0.2em] text-primary">
+                  Navigate
+                </span>
+                <ScrollLink
+                  to="privacy-core"
+                  smooth
+                  className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium"
+                >
+                  Privacy Core
+                </ScrollLink>
+                <ScrollLink
+                  to="compare"
+                  smooth
+                  className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium"
+                >
+                  Comparison
+                </ScrollLink>
+                <ScrollLink
+                  to="download"
+                  smooth
+                  className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium"
+                >
+                  Download
+                </ScrollLink>
+              </div>
+              <div className="flex flex-col items-center md:items-start gap-4">
+                <span className="font-black text-xs uppercase tracking-[0.2em] text-primary">
+                  Legal
+                </span>
+                <Link
+                  href="/privacy"
+                  className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium"
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  href="/terms"
+                  className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium"
+                >
+                  Disclaimer
+                </Link>
+                <a
+                  href="https://t.me/AA_ModsOfficial"
+                  className="text-muted-foreground hover:text-primary cursor-pointer transition-colors font-medium"
+                >
+                  Telegram
+                </a>
+              </div>
             </div>
           </div>
           <div className="pt-12 border-t border-white/5 text-center space-y-2">
-            <p className="text-sm text-muted-foreground font-medium italic opacity-60">AA Mods official website © 2026</p>
-            <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-black opacity-30">Security Hardened Infrastructure by AA Mods Team</p>
+            <p className="text-sm text-muted-foreground font-medium italic opacity-60">
+              AA Mods official website © 2026
+            </p>
+            <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-black opacity-30">
+              Security Hardened Infrastructure by AA Mods Team
+            </p>
           </div>
         </div>
       </footer>
