@@ -104,7 +104,12 @@ export default function Home() {
               </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
-              <DownloadTunnel onComplete={() => window.location.href = "/aa-whatsapp-apk"} />
+              <Link href="/download" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full px-10 py-7 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3">
+                  <Download className="w-6 h-6" />
+                  Download APK
+                </Button>
+              </Link>
               <a
                 href="https://t.me/AA_ModsOfficial"
                 target="_blank"
