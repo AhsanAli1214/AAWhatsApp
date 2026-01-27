@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "publicSource": "public",
   "rewrites": [
     {
       "source": "/myupdate.json",
-      "destination": "/myupdate.json"
+      "destination": "/client/public/myupdate.json"
     }
   ],
   "headers": [
