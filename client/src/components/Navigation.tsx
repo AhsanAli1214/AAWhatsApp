@@ -30,7 +30,7 @@ export function Navigation() {
     { name: "Features", to: "features" },
     { name: "Comparison", to: "comparison" },
     { name: "Blog", href: "/blog" },
-    { name: "FAQ", to: "faq" },
+    { name: "FAQ", href: "/faq" },
   ];
 
   return (
