@@ -26,10 +26,10 @@ export function Navigation() {
   const navLinks = [
     { name: t("nav_home"), href: "/" },
     { name: "About", to: "about" },
-    { name: "Download", href: "/download" },
     { name: "AA APK", href: "/aa-whatsapp-apk" },
     { name: "Features", to: "features" },
     { name: "Comparison", to: "comparison" },
+    { name: "Blog", href: "/blog" },
     { name: "FAQ", to: "faq" },
   ];
 
