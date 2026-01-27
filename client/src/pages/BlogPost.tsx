@@ -1,11 +1,17 @@
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Link, useParams } from "wouter";
-import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, BookOpen, Download, Settings, HelpCircle, RefreshCw, Scale, ChevronRight } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, BookOpen, Download, Settings, HelpCircle, RefreshCw, Scale, ChevronRight, ChevronDown } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { getBlogPostBySlug, getRelatedPosts, BlogPost as BlogPostType } from "@/data/blogPosts";
 import ReactMarkdown from "react-markdown";
 
@@ -119,6 +125,22 @@ export default function BlogPost() {
             }
           })}
         </script>
+        {post.faqs && post.faqs.length > 0 && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": post.faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer
+                }
+              }))
+            })}
+          </script>
+        )}
       </Helmet>
 
       <div className="fixed inset-0 hero-gradient pointer-events-none z-0" />
@@ -198,6 +220,29 @@ export default function BlogPost() {
               ">
                 <ReactMarkdown>{post.content}</ReactMarkdown>
               </div>
+
+              {post.faqs && post.faqs.length > 0 && (
+                <section className="mb-12">
+                  <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <HelpCircle className="w-6 h-6 text-primary" />
+                    Frequently Asked Questions
+                  </h2>
+                  <Card className="bg-card/50 border-border/50">
+                    <Accordion type="single" collapsible className="w-full">
+                      {post.faqs.map((faq, index) => (
+                        <AccordionItem key={index} value={`faq-${index}`} className="border-border/50">
+                          <AccordionTrigger className="px-6 text-left hover:no-underline hover:text-primary" data-testid={`accordion-faq-${index}`}>
+                            <span className="font-semibold text-foreground">{faq.question}</span>
+                          </AccordionTrigger>
+                          <AccordionContent className="px-6 pb-4 text-muted-foreground">
+                            {faq.answer}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </Card>
+                </section>
+              )}
 
               <Card className="bg-gradient-to-r from-primary/10 via-card to-card border-primary/20 p-6 md:p-8 mb-12">
                 <div className="flex flex-col md:flex-row items-center gap-6">
