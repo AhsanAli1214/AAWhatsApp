@@ -150,19 +150,5 @@ export async function registerRoutes(
     res.status(200).send(sitemap);
   });
 
-  // Ensure myupdate.json is served with correct headers for Force Update
-  app.get("/myupdate.json", (_req, res) => {
-    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-    res.setHeader("Pragma", "no-cache");
-    res.setHeader("Expires", "0");
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Content-Type", "application/json");
-    
-    // Explicitly joining path to avoid any resolution issues
-    const path = require('path');
-    const filePath = path.join(process.cwd(), "client", "public", "myupdate.json");
-    res.sendFile(filePath);
-  });
-
   return httpServer;
 }
