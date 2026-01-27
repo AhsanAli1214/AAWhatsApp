@@ -6,6 +6,7 @@ This is a comprehensive, SEO-optimized website for AA WhatsApp, the most secure 
 
 ## Recent Changes (January 2026)
 
+- **Streamlined Download Flow**: Home page redirects to download page, download page uses 2-click system (first click shows ad, second click opens MediaFire)
 - **Enhanced Download Page**: Comprehensive download experience with live download counter, version history, changelog, package details, safety verification badges, and installation guide
 - **Version Information**: AAWhatsApp V 2.0 (Base 2.25.36.73) with all version details consistent across pages
 - **Live Stats**: Dynamic download counter showing 10M+ downloads with real-time increments
