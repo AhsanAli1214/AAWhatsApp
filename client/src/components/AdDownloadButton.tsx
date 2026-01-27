@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 
 interface AdDownloadButtonProps {
   downloadUrl: string;
+  buttonClassName?: string;
 }
 
-export function AdDownloadButton({ downloadUrl }: AdDownloadButtonProps) {
+export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadButtonProps) {
   const [clickCount, setClickCount] = useState(0);
   const [showAd, setShowAd] = useState(false);
   const [countdown, setCountdown] = useState(5);
@@ -50,7 +51,7 @@ export function AdDownloadButton({ downloadUrl }: AdDownloadButtonProps) {
           >
             <button
               onClick={handleClick}
-              className="relative group overflow-hidden px-10 py-6 rounded-2xl bg-primary text-primary-foreground font-black text-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter"
+              className={buttonClassName || "relative group overflow-hidden px-10 py-6 rounded-2xl bg-primary text-primary-foreground font-black text-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter"}
               data-testid="button-download-main"
             >
               <span className="relative z-10 flex items-center justify-center gap-3">

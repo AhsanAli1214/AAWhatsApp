@@ -239,6 +239,7 @@ export default function DownloadPage() {
               <div className="mb-10">
                 <AdDownloadButton 
                   downloadUrl="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
+                  buttonClassName="w-full max-w-md h-20 rounded-2xl bg-primary text-primary-foreground font-black text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-3 border border-white/20"
                 />
               </div>
 
