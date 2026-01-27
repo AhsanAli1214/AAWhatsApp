@@ -31,6 +31,7 @@ export function Navigation() {
     { name: "AA APK", href: "/aa-whatsapp-apk", icon: Download },
     { name: "Blog", href: "/blog", icon: BookOpen },
     { name: "FAQ", href: "/faq", icon: HelpCircle },
+    { name: "Support", href: "/support", icon: AlertTriangle },
   ];
 
   return (
