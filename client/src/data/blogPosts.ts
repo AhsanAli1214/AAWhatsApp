@@ -17,20 +17,20 @@ export const blogPosts: BlogPost[] = [
   {
     id: "1",
     slug: "aa-whatsapp-latest-version-download",
-    title: "AA WhatsApp Latest Version Download 2026 – Official APK v20.80",
-    metaTitle: "AA WhatsApp Download 2026 v20.80 – Official Safe APK | AA Mods",
-    metaDescription: "Download AA WhatsApp APK v20.80 official latest version 2026. Anti-ban protection, 50+ premium features, privacy controls, 1000+ themes. 100% safe & verified.",
-    keywords: ["AA WhatsApp download 2026", "AA WhatsApp APK", "AA WhatsApp latest version", "AA WhatsApp v20.80", "WhatsApp mod download", "AA Mods APK", "secure WhatsApp mod", "anti-ban WhatsApp", "AA WhatsApp official", "download AA WhatsApp free", "AA WhatsApp for Android", "WhatsApp mod 2026"],
+    title: "AA WhatsApp Latest Version Download 2026 – Official APK v2.0",
+    metaTitle: "AA WhatsApp Download 2026 v2.0 – Official Safe APK | AA Mods",
+    metaDescription: "Download AA WhatsApp APK v2.0 official latest version 2026. Anti-ban protection, 50+ premium features, privacy controls, 1000+ themes. 100% safe & verified.",
+    keywords: ["AA WhatsApp download 2026", "AA WhatsApp APK", "AA WhatsApp latest version", "AA WhatsApp v2.0", "WhatsApp mod download", "AA Mods APK", "secure WhatsApp mod", "anti-ban WhatsApp", "AA WhatsApp official", "download AA WhatsApp free", "AA WhatsApp for Android", "WhatsApp mod 2026"],
     category: "download",
-    excerpt: "Download AA WhatsApp APK v20.80 latest version 2026 with anti-ban protection, 50+ premium features, complete privacy controls, and 1000+ themes. 100% safe and officially verified.",
+    excerpt: "Download AA WhatsApp APK v2.0 latest version 2026 with anti-ban protection, 50+ premium features, complete privacy controls, and 1000+ themes. 100% safe and officially verified.",
     content: `AA WhatsApp has established itself as the most trusted and secure WhatsApp modification available in 2026. With over 10 million active users worldwide, it offers unparalleled privacy features, extensive customization options, and a superior messaging experience that the official WhatsApp simply cannot match. Download the latest version directly from AA Mods – your official source for 100% safe and malware-free APK files.
 
-## AA WhatsApp v20.80 – Complete Version Information
+## AA WhatsApp v2.0 – Complete Version Information
 
 | Specification | Details |
 |--------------|---------|
 | Application Name | AA WhatsApp |
-| Current Version | v20.80 (January 2026 Release) |
+| Current Version | v2.0 (January 2026 Release) |
 | APK File Size | 55 MB |
 | Developer | AA Mods Official Team |
 | Minimum Android | Android 5.0 (Lollipop) and above |
@@ -100,7 +100,7 @@ Our latest Anti-Ban v2.0 system represents a complete redesign of account protec
 
 ### 3. Complete Feature Arsenal
 
-AA WhatsApp v20.80 comes loaded with over 50 premium features:
+AA WhatsApp v2.0 comes loaded with over 50 premium features:
 
 **Privacy Control Suite:**
 - Hide online status from everyone or specific contacts
@@ -196,7 +196,7 @@ For Android 5.0 - 7.1:
 4. Wait for the download to complete fully
 
 **Step 2.2: Verify Download**
-- File name should be: AAWhatsApp_v20.80.apk
+- File name should be: AAWhatsApp_v2.0.apk
 - File size should be approximately 55 MB
 - If size differs significantly, delete and re-download
 
@@ -212,7 +212,7 @@ If using the same phone number:
 **Step 3.2: Install AA WhatsApp**
 1. Open your File Manager app
 2. Navigate to the **Downloads** folder
-3. Tap the **AAWhatsApp_v20.80.apk** file
+3. Tap the **AAWhatsApp_v2.0.apk** file
 4. If prompted about permissions, tap **Settings** and enable
 5. Tap **Install** on the installation screen
 6. Wait 30-60 seconds for completion
@@ -280,11 +280,11 @@ If using the same phone number:
 | Support | None | Community + updates |
 | Anti-ban | May be broken | Always working |
 
-## Download AA WhatsApp v20.80 Now
+## Download AA WhatsApp v2.0 Now
 
 Join over 10 million users who trust AA WhatsApp for secure, feature-rich messaging. Download now and experience WhatsApp the way it should be.
 
-**Current Version:** v20.80 | **File Size:** 55 MB | **Updated:** January 2026 | **Android:** 5.0+`,
+**Current Version:** v2.0 | **File Size:** 55 MB | **Updated:** January 2026 | **Android:** 5.0+`,
     publishedAt: "2026-01-20",
     readTime: 15,
     faqs: [
@@ -1523,7 +1523,7 @@ The biggest concern with WhatsApp mods is getting banned. AA WhatsApp's Anti-Ban
 | 5 | Network analysis | No suspicious connections |
 | 6 | Signature verification | Valid AA Mods signature |
 
-**Verification Results for v20.80:**
+**Verification Results for v2.0:**
 - VirusTotal: 0/70 detections
 - Malwarebytes: Clean
 - Kaspersky: Clean
@@ -1805,7 +1805,7 @@ WhatsApp mods are not on the Play Store, so you need to allow installation from 
 **Step 3.4:** Wait for download to complete (check notification bar)
 
 **Step 3.5:** Verify download:
-- File name: AAWhatsApp_v20.80.apk (or current version)
+- File name: AAWhatsApp_v2.0.apk (or current version)
 - File size: Approximately 55 MB
 
 ### Download Verification
@@ -1844,7 +1844,7 @@ Skip uninstallation. You can have multiple WhatsApp apps with different numbers.
 
 **Step 5.2:** Navigate to **Downloads** folder
 
-**Step 5.3:** Tap the **AAWhatsApp_v20.80.apk** file
+**Step 5.3:** Tap the **AAWhatsApp_v2.0.apk** file
 
 **Step 5.4:** If prompted:
 - "For your security...": Tap **Settings**, enable installation, go back
@@ -2263,7 +2263,7 @@ Settings → About → Version
 
 | Version | Key Changes |
 |---------|-------------|
-| v20.80 | Anti-Ban v2.0, Privacy Dashboard |
+| v2.0 | Anti-Ban v2.0, Privacy Dashboard |
 | v20.75 | Performance improvements |
 | v20.70 | New theme engine |
 | v20.65 | Extended media limits |
@@ -3429,13 +3429,13 @@ Most VoIP numbers don't work:
   {
     id: "15",
     slug: "aa-whatsapp-v20-80-update",
-    title: "AA WhatsApp v20.80 Update – Complete Changelog & New Features",
-    metaTitle: "AA WhatsApp v20.80 Update 2026 – What's New | AA Mods",
-    metaDescription: "Complete changelog for AA WhatsApp v20.80. Discover Anti-Ban v2.0, Privacy Dashboard, performance improvements, bug fixes, and all new features.",
-    keywords: ["AA WhatsApp v20.80", "AA WhatsApp update 2026", "WhatsApp mod changelog", "AA WhatsApp new features", "AA WhatsApp latest version"],
+    title: "AA WhatsApp v2.0 Update – Complete Changelog & New Features",
+    metaTitle: "AA WhatsApp v2.0 Update 2026 – What's New | AA Mods",
+    metaDescription: "Complete changelog for AA WhatsApp v2.0. Discover Anti-Ban v2.0, Privacy Dashboard, performance improvements, bug fixes, and all new features.",
+    keywords: ["AA WhatsApp v2.0", "AA WhatsApp update 2026", "WhatsApp mod changelog", "AA WhatsApp new features", "AA WhatsApp latest version"],
     category: "update",
-    excerpt: "Complete changelog for AA WhatsApp v20.80 featuring Anti-Ban v2.0, Privacy Dashboard, Ghost Mode improvements, performance boosts, and security patches.",
-    content: `AA WhatsApp v20.80 is our most significant update yet! This version brings major security improvements, exclusive new features, and significant performance enhancements.
+    excerpt: "Complete changelog for AA WhatsApp v2.0 featuring Anti-Ban v2.0, Privacy Dashboard, Ghost Mode improvements, performance boosts, and security patches.",
+    content: `AA WhatsApp v2.0 is our most significant update yet! This version brings major security improvements, exclusive new features, and significant performance enhancements.
 
 ## Headline Features
 
@@ -3524,7 +3524,7 @@ Enhanced invisibility:
 
 ### Direct Update (Recommended)
 1. Backup chats
-2. Download v20.80 from AA Mods
+2. Download v2.0 from AA Mods
 3. Install over existing (don't uninstall)
 4. Open and verify
 5. Enable Anti-Ban v2.0
@@ -3540,7 +3540,7 @@ Enhanced invisibility:
 
 | Detail | Value |
 |--------|-------|
-| Version | v20.80 |
+| Version | v2.0 |
 | Size | 55 MB |
 | Released | January 2026 |
 | Android | 5.0+ |
@@ -3549,10 +3549,10 @@ Download now from AA Mods!`,
     publishedAt: "2026-01-06",
     readTime: 8,
     faqs: [
-      { question: "What's new in AA WhatsApp v20.80?", answer: "Major updates include Anti-Ban v2.0 (0.1% ban rate), Privacy Dashboard, improved Ghost Mode, 40% faster startup, and many bug fixes." },
+      { question: "What's new in AA WhatsApp v2.0?", answer: "Major updates include Anti-Ban v2.0 (0.1% ban rate), Privacy Dashboard, improved Ghost Mode, 40% faster startup, and many bug fixes." },
       { question: "Do I need to backup before updating?", answer: "We recommend backing up, but direct updates (installing over existing) automatically preserve all your data." },
       { question: "Will my settings reset after updating?", answer: "Most settings are preserved with direct updates. You may need to configure new features like Privacy Dashboard." },
-      { question: "Is v20.80 compatible with my themes?", answer: "Most themes work perfectly. The new theme engine improves compatibility and makes it easy to find alternatives if needed." }
+      { question: "Is v2.0 compatible with my themes?", answer: "Most themes work perfectly. The new theme engine improves compatibility and makes it easy to find alternatives if needed." }
     ]
   },
   {
@@ -3588,7 +3588,7 @@ Download now from AA Mods!`,
 
 ## Recent Patch Notes
 
-### Security Fixes (v20.80)
+### Security Fixes (v2.0)
 
 | Fix | Description |
 |-----|-------------|
@@ -3597,7 +3597,7 @@ Download now from AA Mods!`,
 | API Masking | Hides mod-specific calls |
 | Session Security | Better token handling |
 
-### Bug Fixes (v20.80)
+### Bug Fixes (v2.0)
 
 | Bug | Status |
 |-----|--------|

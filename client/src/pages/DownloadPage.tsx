@@ -21,12 +21,12 @@ import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { DownloadTunnel } from "@/components/DownloadTunnel";
 
 const versionInfo = {
-  version: "V 2.0.26",
-  date: "January 24, 2026",
+  version: "V 2.0",
+  date: "January 27, 2026",
   size: "118 MB",
   android: "5.0+",
   status: "Verified Safe",
-  base: "2.25.36.72"
+  base: "2.25.36.73"
 };
 
 export default function DownloadPage() {
