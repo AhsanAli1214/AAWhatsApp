@@ -111,6 +111,8 @@ export default function FAQ() {
       <Helmet>
         <title>AA WhatsApp FAQs – Complete 2026 Guide | Support & Help</title>
         <meta name="description" content="Get answers to all your AA WhatsApp questions. Comprehensive guide for downloading, installing, updating and troubleshooting AA WhatsApp APK in 2026." />
+        <link rel="canonical" href="https://aa-mods.vercel.app/faq" />
+        <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
