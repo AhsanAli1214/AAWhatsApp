@@ -73,7 +73,7 @@ export function PermissionSimulator() {
             Privacy Core™ Active
           </div>
           <div className="text-muted-foreground">
-            Protocol Version: 2.0.26
+            Protocol Version: 2.0 | Base: 2.25.36.73
           </div>
         </div>
       </div>
