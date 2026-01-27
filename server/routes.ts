@@ -157,7 +157,11 @@ export async function registerRoutes(
     res.setHeader("Expires", "0");
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Content-Type", "application/json");
-    res.sendFile("myupdate.json", { root: "./client/public" });
+    
+    // Explicitly joining path to avoid any resolution issues
+    const path = require('path');
+    const filePath = path.join(process.cwd(), "client", "public", "myupdate.json");
+    res.sendFile(filePath);
   });
 
   return httpServer;
