@@ -1,7 +1,6 @@
 import { Download, Server, ShieldCheck, HardDrive } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTrackDownload } from "@/hooks/use-downloads";
-import { useToast } from "@/hooks/use-toast";
 import { useState, useEffect } from "react";
 
 interface DownloadOption {
@@ -31,7 +30,6 @@ const OPTIONS: DownloadOption[] = [
 
 export function DownloadCard() {
   const { mutate: track } = useTrackDownload();
-  const { toast } = useToast();
   const [clickCount, setClickCount] = useState(0);
 
   const handleDownload = (option: DownloadOption) => {
@@ -41,10 +39,6 @@ export function DownloadCard() {
     if (newCount === 1) {
       // First click: show "best ads"
       window.open("https://otieu.com/4/10272561", "_blank");
-      toast({
-        title: "Preparing Download",
-        description: "Please wait a moment while we verify your connection...",
-      });
       return;
     }
 
@@ -52,11 +46,6 @@ export function DownloadCard() {
     track({
       version: option.version,
       platform: option.platform,
-    });
-
-    toast({
-      title: "Download Started",
-      description: `Downloading AAWhatsApp ${option.version} from ${option.name}`,
     });
     
     // Use the updated MediaFire link if it's the MediaFire option

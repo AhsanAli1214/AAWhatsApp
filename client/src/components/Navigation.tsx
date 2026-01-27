@@ -2,11 +2,8 @@ import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Menu, X, Download, AlertTriangle, Send, Home, Info, Scale, BookOpen, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 import logoImg from "@assets/Gemini_Generated_Image_72b2nh72b2nh72b2_1769103369360.png";
-
 import { Link, useLocation } from "wouter";
-
 import { useTranslation } from "@/hooks/useTranslation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 

@@ -43,7 +43,6 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         <TooltipProvider>
-          <Toaster />
           <Router />
           <BackToTop />
         </TooltipProvider>
