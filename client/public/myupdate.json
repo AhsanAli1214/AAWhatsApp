@@ -1,0 +1,19 @@
+{
+  "VERSION_NAME": "2.5.0",
+  "FORCE_UPDATE": true,
+  "UPDATE_MESSAGE": "A new version of AA Mods is available! Please update to continue using the app.",
+  "WEBSITE_URL": "https://aa-mods.com/download/latest.apk",
+  "CHANGELOG": [
+    "Added 500+ new features",
+    "Bug fixes and performance improvements",
+    "Improved user interface and dark mode support",
+    "Security patches applied"
+  ],
+  "MINIMUM_SUPPORTED_VERSION": "2.0.0",
+  "APK_SIZE_MB": 25,
+  "APK_VERSION_CODE": 25,
+  "RELEASE_DATE": "2026-01-27",
+  "UPDATE_TYPE": "mandatory",
+  "NOTIFICATION_TITLE": "Update Available",
+  "NOTIFICATION_MESSAGE": "Please update AA Mods to version 2.5.0 to continue using all features."
+}
