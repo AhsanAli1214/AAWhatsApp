@@ -27,15 +27,6 @@
       "dest": "/attached_assets/$1"
     },
     {
-      "src": "/myupdate.json",
-      "dest": "/client/public/myupdate.json",
-      "headers": {
-        "Cache-Control": "no-cache, no-store, must-revalidate",
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json"
-      }
-    },
-    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
