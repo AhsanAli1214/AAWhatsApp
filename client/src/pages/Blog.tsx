@@ -176,18 +176,44 @@ export default function Blog() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-16 text-center"
+            className="mt-16"
           >
-            <Card className="bg-card/50 border-border/50 p-8 md:p-12">
-              <h3 className="text-2xl font-bold mb-4">Looking for AA WhatsApp?</h3>
-              <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                Download the latest version of AA WhatsApp with all premium features, 
-                enhanced privacy, and anti-ban protection.
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <Card className="bg-card/50 border-border/50 p-8 hover-elevate group">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <ShieldCheck className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Privacy First Content</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Our blog is dedicated to transparency. We explain how our Permission-Clean™ technology 
+                  works and why it's the safest choice for mod users.
+                </p>
+              </Card>
+              <Card className="bg-card/50 border-border/50 p-8 hover-elevate group">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Zap className="w-6 h-6 text-emerald-500" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Anti-Ban v2.0 Updates</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Stay ahead of server-side detections. We post regular updates on how to maintain 
+                  a 100% stable WhatsApp experience without risk of bans.
+                </p>
+              </Card>
+            </div>
+
+            <Card className="bg-gradient-to-r from-primary/20 via-card to-card border-primary/20 p-8 md:p-12 text-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 opacity-5">
+                <ShieldCheck className="w-64 h-64 text-primary" />
+              </div>
+              <h3 className="text-3xl font-bold mb-4 relative z-10">Experience the Best Mod</h3>
+              <p className="text-muted-foreground mb-8 max-w-2xl mx-auto relative z-10">
+                Join thousands of users who have switched to AAWhatsApp for the perfect balance 
+                of premium features and absolute privacy.
               </p>
               <Link href="/download">
-                <Button size="lg" className="font-bold" data-testid="button-download-cta">
+                <Button size="lg" className="font-bold px-10 h-14 rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 relative z-10" data-testid="button-download-cta">
                   <Download className="w-5 h-5 mr-2" />
-                  Download AA WhatsApp
+                  Get AA WhatsApp v2.0
                 </Button>
               </Link>
             </Card>
