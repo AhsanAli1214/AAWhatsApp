@@ -244,18 +244,30 @@ export default function BlogPost() {
                 </section>
               )}
 
-              <Card className="bg-gradient-to-r from-primary/10 via-card to-card border-primary/20 p-6 md:p-8 mb-12">
-                <div className="flex flex-col md:flex-row items-center gap-6">
+              <Card className="bg-gradient-to-br from-primary/20 via-card to-card border-primary/20 p-8 md:p-12 mb-16 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform duration-700">
+                  <ShieldCheck className="w-48 h-48 text-primary" />
+                </div>
+                <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
                   <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-xl font-bold mb-2">Ready to Download AA WhatsApp?</h3>
-                    <p className="text-muted-foreground">
-                      Get the latest version with all premium features, enhanced privacy, and anti-ban protection.
+                    <h3 className="text-2xl md:text-3xl font-black mb-4 tracking-tight">Ready for Total Privacy?</h3>
+                    <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                      Get the latest AAWhatsApp build with <strong>Privacy Core™</strong>. 
+                      No location tracking, no bank data access, just pure communication.
                     </p>
+                    <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-500 text-xs font-bold border border-emerald-500/20">
+                        <CheckCircle2 className="w-3.5 h-3.5" /> Anti-Ban v2.0
+                      </div>
+                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
+                        <ShieldCheck className="w-3.5 h-3.5" /> Secure Build
+                      </div>
+                    </div>
                   </div>
                   <Link href="/download">
-                    <Button size="lg" className="font-bold whitespace-nowrap" data-testid="button-download-post">
-                      <Download className="w-5 h-5 mr-2" />
-                      Download Now
+                    <Button size="lg" className="font-black px-10 h-16 rounded-2xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 text-xl transition-all" data-testid="button-download-post">
+                      <Download className="w-6 h-6 mr-3" />
+                      DOWNLOAD NOW
                     </Button>
                   </Link>
                 </div>
