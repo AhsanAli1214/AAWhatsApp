@@ -122,28 +122,77 @@ export async function registerRoutes(
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://aawhatsapp.replit.app/</loc>
+    <loc>https://aa-mods.vercel.app/</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aawhatsapp.replit.app/#download</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aawhatsapp.replit.app/#features</loc>
+    <loc>https://aa-mods.vercel.app/about</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aawhatsapp.replit.app/#comparison</loc>
+    <loc>https://aa-mods.vercel.app/comparison</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/aa-whatsapp-apk</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/download</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/blog</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/faq</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/support</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/privacy</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/terms</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-latest-version-download</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-features-security</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>`;
     res.header("Content-Type", "application/xml");
