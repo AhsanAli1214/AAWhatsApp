@@ -26,7 +26,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
-import { DownloadTunnel } from "@/components/DownloadTunnel";
+import { AdDownloadButton } from "@/components/AdDownloadButton";
 import { useState, useEffect } from "react";
 
 const versionInfo = {
@@ -217,10 +217,8 @@ export default function DownloadPage() {
               </p>
 
               <div className="mb-10">
-                <DownloadTunnel
-                  onComplete={() => {
-                    window.location.href = "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file";
-                  }}
+                <AdDownloadButton 
+                  downloadUrl="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
                 />
               </div>
 
