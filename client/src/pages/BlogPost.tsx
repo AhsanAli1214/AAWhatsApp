@@ -213,12 +213,43 @@ export default function BlogPost() {
                 prose-a:text-primary prose-a:no-underline hover:prose-a:underline
                 prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:text-foreground prose-code:before:content-none prose-code:after:content-none
                 prose-pre:bg-muted prose-pre:border prose-pre:border-border
-                prose-table:border-collapse prose-table:w-full
+                prose-table:hidden
                 prose-th:bg-muted prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:border prose-th:border-border prose-th:text-foreground
                 prose-td:px-4 prose-td:py-2 prose-td:border prose-td:border-border prose-td:text-muted-foreground
                 prose-blockquote:border-l-primary prose-blockquote:bg-muted/50 prose-blockquote:py-1 prose-blockquote:px-4 prose-blockquote:rounded-r
               ">
-                <ReactMarkdown>{post.content}</ReactMarkdown>
+                <ReactMarkdown
+                  components={{
+                    table: ({ children }) => (
+                      <div className="my-10 grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
+                        {children}
+                      </div>
+                    ),
+                    thead: () => null,
+                    tbody: ({ children }) => <>{children}</>,
+                    tr: ({ children }) => (
+                      <div className="bg-secondary/30 backdrop-blur-md border border-white/10 rounded-3xl p-8 flex flex-col gap-4 hover:border-primary/40 hover:bg-secondary/40 transition-all duration-300 shadow-xl group/card">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-hover/card:scale-110 transition-transform">
+                            <Settings className="w-5 h-5" />
+                          </div>
+                          <span className="text-xs font-black uppercase tracking-[0.2em] text-primary/70">System Info</span>
+                        </div>
+                        <div className="space-y-4">
+                          {children}
+                        </div>
+                      </div>
+                    ),
+                    td: ({ children, index }: any) => (
+                      <div className="flex justify-between items-center gap-6 border-b border-white/5 pb-3 last:border-0 last:pb-0">
+                        <span className="text-sm font-bold text-muted-foreground uppercase tracking-wider">{index === 0 ? "Specification" : "Detail"}</span>
+                        <span className={`text-base font-black ${index === 1 ? "text-primary text-glow" : "text-foreground"}`}>{children}</span>
+                      </div>
+                    )
+                  }}
+                >
+                  {post.content}
+                </ReactMarkdown>
               </div>
 
               {post.faqs && post.faqs.length > 0 && (
