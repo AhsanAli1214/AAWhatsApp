@@ -77,16 +77,11 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>Blog – AA Mods | WhatsApp Mod Guides, Tips & Updates 2026</title>
-        <meta
-          name="description"
-          content="Expert guides on AA WhatsApp, WhatsApp mods, privacy tips, installation guides, and troubleshooting. Stay updated with the latest WhatsApp mod news in 2026."
-        />
-        <meta
-          name="keywords"
-          content="AA WhatsApp blog, WhatsApp mod guides, WhatsApp mod tutorials, AA WhatsApp tips, WhatsApp privacy guide, WhatsApp mod comparison"
-        />
+        <title>AA WhatsApp Blog – Official Updates, Security Guides & News 2026</title>
+        <meta name="description" content="Stay updated with the latest AA WhatsApp news. Expert guides on Anti-Ban v2.0, privacy features, and secure WhatsApp mod installation for 2026." />
+        <meta name="keywords" content="AA WhatsApp blog, WhatsApp mod news 2026, AA WhatsApp updates, secure messaging guides, best whatsapp mod blog" />
         <link rel="canonical" href="https://aa-mods.vercel.app/blog" />
+        <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Blog – AA Mods | WhatsApp Mod Guides & Updates" />
         <meta property="og:description" content="Expert guides on AA WhatsApp, WhatsApp mods, privacy tips, installation guides, and troubleshooting." />
         <meta property="og:type" content="website" />
