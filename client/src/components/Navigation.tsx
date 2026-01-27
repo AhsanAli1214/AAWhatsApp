@@ -25,7 +25,7 @@ export function Navigation() {
 
   const navLinks = [
     { name: t("nav_home"), href: "/" },
-    { name: "About", to: "about" },
+    { name: "About", href: "/about" },
     { name: "AA APK", href: "/aa-whatsapp-apk" },
     { name: "Features", to: "features" },
     { name: "Comparison", to: "comparison" },
