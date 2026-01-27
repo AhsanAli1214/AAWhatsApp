@@ -69,6 +69,8 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
+        <link rel="canonical" href="https://aa-mods.vercel.app/" />
+        <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {`
             {
