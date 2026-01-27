@@ -130,6 +130,24 @@ export default function DownloadPage() {
         <title>Download AA WhatsApp APK {versionInfo.version} | Official Secure Link 2026</title>
         <meta name="description" content={`Download the latest AA WhatsApp APK ${versionInfo.version} (Base ${versionInfo.base}). 100% Secure, Anti-Ban v2.0, and No Invasive Permissions. Official download from AA Mods.`} />
         <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, AA Mods APK download, secure WhatsApp mod download" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "AA WhatsApp",
+              "operatingSystem": "Android",
+              "applicationCategory": "CommunicationApplication",
+              "softwareVersion": "${versionInfo.version}",
+              "fileSize": "${versionInfo.size}",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          `}
+        </script>
       </Helmet>
 
       <Navigation />

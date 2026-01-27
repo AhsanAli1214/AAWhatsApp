@@ -41,6 +41,16 @@ export default function Comparison() {
         <title>AA WhatsApp Comparison 2026 – GB WhatsApp, FM WhatsApp & Official WhatsApp</title>
         <meta name="description" content="Compare AA WhatsApp with GB WhatsApp, FM WhatsApp, and the official WhatsApp. Discover features, privacy, security, and which mod is best in 2026." />
         <meta name="keywords" content="WhatsApp mod comparison 2026, AA WhatsApp vs GB WhatsApp, best WhatsApp mod, AA WhatsApp vs FM WhatsApp, WhatsApp mod features" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "AA WhatsApp Comparison Guide 2026",
+              "description": "Detailed comparison of AA WhatsApp with GB WhatsApp, FM WhatsApp, and official WhatsApp."
+            }
+          `}
+        </script>
       </Helmet>
       
       <Navigation />

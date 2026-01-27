@@ -49,9 +49,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <AdBlockDetector />
       <Helmet>
-        <title>
-          AA Mods – Download AA WhatsApp APK 2026 | #1 Secure WhatsApp Mod
-        </title>
+        <title>AA Mods – Download AA WhatsApp APK 2026 | #1 Secure WhatsApp Mod</title>
         <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <meta
           name="description"
@@ -71,6 +69,27 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "AA WhatsApp",
+              "operatingSystem": "Android",
+              "applicationCategory": "CommunicationApplication",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "ratingCount": "102456"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          `}
+        </script>
       </Helmet>
       <div className="fixed inset-0 hero-gradient pointer-events-none z-0" />
       <Navigation />

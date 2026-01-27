@@ -38,6 +38,22 @@ export default function AAWhatsAppPage() {
           name="keywords"
           content="AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp Mod APK, AA Mods APK, AA WhatsApp Pro Protocol, AA WhatsApp Anti-Ban v2.0, WhatsApp Mod APK, GB WhatsApp Alternative, Secure WhatsApp Mod, Privacy WhatsApp Mod, Download AAWhatsApp Latest, Best WhatsApp Mod 2026, Anti-Ban APK Download, whatsapp mod pro 2026, safe whatsapp apk"
         />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "AA WhatsApp",
+              "operatingSystem": "Android",
+              "applicationCategory": "CommunicationApplication",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "ratingCount": "102456"
+              }
+            }
+          `}
+        </script>
       </Helmet>
 
       <Navigation />

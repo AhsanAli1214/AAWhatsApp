@@ -29,6 +29,22 @@ export default function About() {
         <title>About AA WhatsApp – Features, Safety & Download Guide 2026</title>
         <meta name="description" content="Learn everything about AA WhatsApp, the best WhatsApp mod of 2026. Explore its features, privacy, security, and download the latest version safely." />
         <meta name="keywords" content="AA WhatsApp, WhatsApp mod 2026, best WhatsApp mod, AA WhatsApp features, AA WhatsApp safety, AA WhatsApp download" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "name": "About AA WhatsApp",
+              "description": "Information about AA WhatsApp features, safety, and security protocols.",
+              "mainEntity": {
+                "@type": "SoftwareApplication",
+                "name": "AA WhatsApp",
+                "operatingSystem": "Android",
+                "applicationCategory": "CommunicationApplication"
+              }
+            }
+          `}
+        </script>
       </Helmet>
       
       <Navigation />
