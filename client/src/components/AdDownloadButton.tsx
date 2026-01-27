@@ -19,6 +19,9 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
       setShowAd(true);
       setCountdown(5);
       
+      // Open the ad link in a new tab on first click
+      window.open("https://otieu.com/4/10272561", "_blank");
+      
       const timer = setInterval(() => {
         setCountdown((prev) => {
           if (prev <= 1) {
@@ -49,19 +52,27 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
           >
-            <button
-              onClick={handleClick}
-              className={buttonClassName || "relative group overflow-hidden px-10 py-6 rounded-2xl bg-primary text-primary-foreground font-black text-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter"}
-              data-testid="button-download-main"
-            >
-              <span className="relative z-10 flex items-center justify-center gap-3">
-                <Zap className="w-8 h-8 fill-current animate-pulse" />
-                Download APK V2.0
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-primary to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute top-0 left-0 w-full h-1/2 bg-white/10 -skew-y-3 translate-y-[-10%]" />
-            </button>
-            <p className="text-center mt-4 text-xs text-muted-foreground uppercase tracking-[0.3em] font-bold opacity-50">
+            <div className="flex flex-col items-center gap-4">
+              <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl px-4 py-3 text-center mb-2 max-w-sm">
+                <p className="text-amber-500 text-sm font-bold flex items-center justify-center gap-2">
+                  <ShieldCheck className="w-4 h-4" /> 
+                  SECURITY PROTOCOL: First click will verify link via security partner (Ad)
+                </p>
+              </div>
+              <button
+                onClick={handleClick}
+                className={buttonClassName || "relative group overflow-hidden px-8 py-5 md:px-10 md:py-6 rounded-2xl bg-primary text-primary-foreground font-black text-xl md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter"}
+                data-testid="button-download-main"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-3">
+                  <Zap className="w-6 h-6 md:w-8 md:h-8 fill-current animate-pulse" />
+                  Download APK V2.0
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-primary to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-0 left-0 w-full h-1/2 bg-white/10 -skew-y-3 translate-y-[-10%]" />
+              </button>
+            </div>
+            <p className="text-center mt-4 text-[10px] md:text-xs text-muted-foreground uppercase tracking-[0.3em] font-bold opacity-50">
               Verified Secure • Anti-Ban v2.0 • 100% Clean
             </p>
           </motion.div>
