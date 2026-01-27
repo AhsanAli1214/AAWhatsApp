@@ -1,25 +1,36 @@
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
-import {
-  Download,
-  ShieldCheck,
-  Zap,
-  Settings,
-  Info,
-  CheckCircle2,
-  FileText,
-  Smartphone,
-  ShieldAlert,
+import { 
+  Download, 
+  ShieldCheck, 
+  Zap, 
+  ShieldAlert, 
+  CheckCircle2, 
+  ArrowLeft,
   Clock,
-  ArrowDown,
+  HardDrive,
+  Info,
+  Smartphone,
+  Settings,
+  ArrowDown
 } from "lucide-react";
-import { DownloadTunnel } from "@/components/DownloadTunnel";
+import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "wouter";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
-import { useTranslation } from "@/hooks/useTranslation";
+import { DownloadTunnel } from "@/components/DownloadTunnel";
+
+const versionInfo = {
+  version: "V 2.0.26",
+  date: "January 24, 2026",
+  size: "118 MB",
+  android: "5.0+",
+  status: "Verified Safe",
+  base: "2.25.36.72"
+};
 
 export default function DownloadPage() {
-  const { t } = useTranslation();
+  const [, setLocation] = useLocation();
 
   const installSteps = [
     {
@@ -45,19 +56,27 @@ export default function DownloadPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>Download AAWhatsApp APK v2.0 (Official) - Anti-Ban 2026</title>
-        <meta
-          name="description"
-          content="Official AAWhatsApp APK Download Page. Get the latest v2.0 version with Anti-Ban features, zero invasive permissions, and high-speed secure download."
-        />
+        <title>Download AA WhatsApp APK {versionInfo.version} | Official Secure Link</title>
+        <meta name="description" content={`Download the latest AA WhatsApp APK ${versionInfo.version}. 100% Secure, Anti-Ban v2.0, and No Invasive Permissions.`} />
       </Helmet>
 
       <Navigation />
 
-      <main className="pt-32 pb-20 container mx-auto px-4">
-        <div className="max-w-4xl mx-auto space-y-16">
+      <main className="relative z-10 pt-32 pb-20 container mx-auto px-4">
+        <div className="max-w-4xl mx-auto mb-8">
+          <Button 
+            variant="ghost" 
+            onClick={() => setLocation("/aa-whatsapp-apk")}
+            className="hover:bg-primary/10 gap-2 text-muted-foreground hover:text-primary"
+            data-testid="button-back-info"
+          >
+            <ArrowLeft className="w-4 h-4" /> Back to App Info
+          </Button>
+        </div>
+
+        <div className="max-w-4xl mx-auto space-y-12">
           {/* Header Section */}
           <section className="text-center space-y-6">
             <motion.h1
@@ -70,11 +89,11 @@ export default function DownloadPage() {
             </motion.h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               You are about to download the world's most secure WhatsApp mod.
-              Version 2.0.26 with enhanced Anti-Ban protection.
+              Version {versionInfo.version} with enhanced Anti-Ban protection.
             </p>
           </section>
 
-          {/* Version Info Card */}
+          {/* Version Info Grid */}
           <section className="grid md:grid-cols-2 gap-8">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -88,11 +107,11 @@ export default function DownloadPage() {
               <div className="space-y-4">
                 {[
                   { label: "App Name", value: "AAWhatsApp APK" },
-                  { label: "Version", value: "v2.0 (Official)" },
-                  { label: "Base Version", value: "2.25.36.72" },
-                  { label: "File Size", value: "118 MB" },
+                  { label: "Version", value: versionInfo.version },
+                  { label: "Base Version", value: versionInfo.base },
+                  { label: "File Size", value: versionInfo.size },
                   { label: "Developer", value: "AA Mods" },
-                  { label: "Last Updated", value: "Jan 2026" },
+                  { label: "Last Updated", value: versionInfo.date },
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -137,25 +156,30 @@ export default function DownloadPage() {
             </motion.div>
           </section>
 
-          {/* Main Download Section */}
-          <section className="glass-card p-10 md:p-16 rounded-[3rem] border border-primary/20 text-center space-y-10 relative overflow-hidden">
-            <div className="absolute inset-0 bg-primary/5 opacity-50 -z-10" />
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-5xl font-black">
-                Ready to Start?
-              </h2>
-              <p className="text-muted-foreground">
-                The download link is synchronized with your device security
-                protocol.
-              </p>
+          {/* Main Download Card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="glass-card p-8 md:p-12 rounded-[3rem] border border-primary/20 bg-primary/5 text-center relative overflow-hidden"
+          >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+            
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-8">
+              <ShieldCheck className="w-4 h-4" />
+              Secure Download Mainframe
             </div>
 
-            <DownloadTunnel
-              onComplete={() => {
-                window.location.href =
-                  "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file";
-              }}
-            />
+            <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter">
+              Ready to Download?
+            </h2>
+
+            <div className="mb-10">
+              <DownloadTunnel
+                onComplete={() => {
+                  window.location.href = "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file";
+                }}
+              />
+            </div>
 
             <div className="pt-4 flex flex-wrap justify-center gap-6 text-sm text-muted-foreground opacity-60">
               <span className="flex items-center gap-1">
@@ -165,23 +189,15 @@ export default function DownloadPage() {
                 <ArrowDown className="w-4 h-4" /> Verified Direct Link
               </span>
             </div>
+          </motion.div>
 
-            {/* Additional Ad Unit */}
-            <div className="pt-8">
-              <AdPlaceholder format="rectangle" className="my-0" />
-            </div>
-          </section>
-
-          <AdPlaceholder format="mobile" />
+          <AdPlaceholder format="leaderboard" />
 
           {/* Installation Guide */}
           <section className="space-y-10">
             <h2 className="text-3xl md:text-5xl font-black text-center tracking-tighter">
               Installation Guide
             </h2>
-            <div className="mb-10">
-              <AdPlaceholder format="mobile" />
-            </div>
             <div className="grid md:grid-cols-2 gap-6">
               {installSteps.map((step, i) => (
                 <motion.div
@@ -208,59 +224,46 @@ export default function DownloadPage() {
             </div>
           </section>
 
-          <div className="max-w-[320px] mx-auto my-12">
-            <AdPlaceholder format="mobile" />
-          </div>
-
-          {/* Why AAWhatsApp */}
-          <section className="bg-primary/5 rounded-[3rem] p-10 md:p-16 space-y-8 border border-primary/10">
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight">
-              Why Choose AAWhatsApp Over Others?
+          {/* Version Changelog */}
+          <section className="space-y-8">
+            <h2 className="text-3xl font-bold flex items-center gap-3">
+              <Info className="w-8 h-8 text-primary" />
+              What's New in {versionInfo.version}
             </h2>
-            <div className="mb-8">
-              <AdPlaceholder format="mobile" />
-            </div>
-            <div className="grid md:grid-cols-2 gap-10">
-              <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  While mods like GBWhatsApp are feature-rich, they often
-                  compromise user privacy by demanding access to location and
-                  media storage. AAWhatsApp is the first "Permission-Clean"
-                  alternative.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Zero invasive location tracking",
-                    "No 'All Files Access' required",
-                    "Optimized for 2026 Anti-Ban servers",
-                    "Clean, minimalist UI with premium mods",
-                  ].map((item, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center gap-3 text-sm font-medium"
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-primary" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="relative">
-                <div className="p-8 bg-background/40 backdrop-blur-xl border border-destructive/20 rounded-2xl space-y-4">
-                  <div className="flex items-center gap-2 text-destructive font-bold text-xs uppercase tracking-widest">
-                    <ShieldAlert className="w-4 h-4" /> Security Alert
-                  </div>
-                  <p className="text-sm italic opacity-80">
-                    "Other mods have been reported to harvest user bank data via
-                    broad storage permissions. AAWhatsApp surgically removes
-                    this risk."
-                  </p>
+            <div className="grid gap-4">
+              {[
+                "New Anti-Ban v2.0 script for 2026 security protocols.",
+                "Surgically removed 5 more invasive Android permissions.",
+                "Enhanced Privacy Core™ encryption layer.",
+                "Fixed media download issues on Android 14+.",
+                "Improved dark mode contrast for AMOLED screens."
+              ].map((item, i) => (
+                <div key={i} className="flex gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 items-start">
+                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
+                  <p className="text-muted-foreground">{item}</p>
                 </div>
-              </div>
+              ))}
             </div>
           </section>
 
           <AdPlaceholder format="rectangle" />
+
+          {/* Installation Safety */}
+          <section className="p-8 rounded-[2.5rem] bg-destructive/5 border border-destructive/20">
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-destructive">
+              <ShieldAlert className="w-6 h-6" />
+              Safety Verification
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              AAWhatsApp is scanned daily by multiple security engines. Unlike other mods that demand "All Files Access", AAWhatsApp runs on a minimal permission footprint. Your banking apps and private files remain 100% isolated and safe.
+            </p>
+          </section>
+
+          <div className="text-center pt-10 border-t border-white/5">
+            <p className="text-xs text-muted-foreground uppercase tracking-widest opacity-40">
+              AA Mods | Build ID: PRO-7729-SEC
+            </p>
+          </div>
         </div>
       </main>
     </div>
