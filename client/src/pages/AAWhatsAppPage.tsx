@@ -362,13 +362,14 @@ export default function AAWhatsAppPage() {
 
               <div className="glass-card p-12 rounded-[3.5rem] border border-primary/20 relative group">
                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-primary text-primary-foreground font-bold text-xs uppercase tracking-[0.3em] shadow-xl">
-                  Official Build v2.0
+                  Official Build V 2.0
                 </div>
-                <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="grid md:grid-cols-4 gap-6 mb-12">
                   {[
-                    { label: "File Size", value: "68 MB" },
-                    { label: "Android", value: "5.0+" },
-                    { label: "Last Update", value: "2026" }
+                    { label: "Version", value: "V 2.0" },
+                    { label: "Base", value: "2.25.36.73" },
+                    { label: "File Size", value: "118 MB" },
+                    { label: "Android", value: "5.0+" }
                   ].map((spec, i) => (
                     <div key={i} className="space-y-1">
                       <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">{spec.label}</p>
