@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "publicSource": "public",
   "rewrites": [
     {
       "source": "/myupdate.json",
