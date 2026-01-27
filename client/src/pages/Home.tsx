@@ -228,7 +228,110 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Privacy Core - Unique Selling Point */}
+      {/* Detailed Info Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="container px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                Why AAWhatsApp is the <span className="text-primary">Best Choice</span> in 2026
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                While other mods like GBWhatsApp and FMWhatsApp continue to request invasive permissions, AAWhatsApp has been rebuilt from the ground up. Our focus is 100% on user privacy and high-speed performance.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
+                  <div className="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg">Enhanced Media Sharing</h4>
+                    <p className="text-muted-foreground">Share up to 2GB of files without any compression. Your photos and videos stay in HD.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
+                  <div className="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg">Anti-Ban Protection</h4>
+                    <p className="text-muted-foreground">Advanced scripts that bypass the latest security checks, ensuring your account remains safe.</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <img 
+                src={mediaImage} 
+                alt="AAWhatsApp Advanced Features" 
+                className="rounded-3xl shadow-2xl border border-primary/20"
+              />
+              <div className="absolute -bottom-6 -right-6 p-6 bg-background border border-primary/30 rounded-2xl shadow-xl hidden md:block">
+                <p className="text-primary font-bold text-xl">HD Media Sharing</p>
+                <p className="text-sm text-muted-foreground">Up to 2GB Files</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Another Info Section with Image */}
+      <section className="py-24 bg-primary/5">
+        <div className="container px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, order: 2 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="lg:order-2 space-y-6"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                Ultimate <span className="text-primary">Theme Customization</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Tired of the same old green interface? AAWhatsApp offers over 4000+ custom themes and deep UI customization options that let you change every pixel of your app.
+              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {['Custom Fonts', 'DND Mode', 'Message Scheduler', 'Auto Reply', 'Hide Online Status', 'Blue Ticks Control'].map((feat) => (
+                  <li key={feat} className="flex items-center gap-2 text-foreground font-medium">
+                    <Zap className="w-4 h-4 text-primary" />
+                    {feat}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/download">
+                <Button size="lg" className="rounded-full px-8 text-lg font-bold">
+                  Try Custom Themes Now
+                </Button>
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -30, order: 1 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:order-1"
+            >
+              <img 
+                src={themesImage} 
+                alt="Custom Themes Visual" 
+                className="rounded-3xl shadow-2xl border border-primary/20"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section (Existing) */}
       <section
         id="privacy-core"
         className="py-32 relative overflow-hidden bg-gradient-to-b from-background to-primary/5"
@@ -952,102 +1055,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-24 relative z-10 bg-secondary/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Is AAWhatsApp safe to use?</AccordionTrigger>
-                <AccordionContent>
-                  Yes, AAWhatsApp is built on a secure codebase that prioritizes
-                  user privacy. Our unique Privacy Core™ strips invasive
-                  permissions that other mods exploit, making it one of the
-                  safest unofficial WhatsApp mods available in 2026.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Will I get banned?</AccordionTrigger>
-                <AccordionContent>
-                  While no mod is 100% immune, AAWhatsApp includes an advanced
-                  Anti-Ban v2.0 engine that is regularly updated to stay ahead
-                  of official app detection. We recommend always using the
-                  latest version for maximum safety.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>How do I update AAWhatsApp?</AccordionTrigger>
-                <AccordionContent>
-                  You should regularly check our official website for the latest
-                  APK version. To update, simply download the new APK and
-                  install it over your current version. Your chats will remain
-                  intact.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger>
-                  Can I use it alongside the official WhatsApp?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Yes, AAWhatsApp uses a different package name, allowing you to
-                  run it alongside the official app or other mods like
-                  GBWhatsApp on the same device with a different phone number.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </div>
-      </section>
-
       {/* Call to Action */}
-      <section id="download" className="py-24 relative z-10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="glass-card rounded-[3rem] p-8 md:p-16 border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-emerald-900/20 overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
-              <img
-                src={ctaImage}
-                alt=""
-                className="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-
-            <div className="relative z-10 max-w-2xl">
-              <h2 className="text-4xl md:text-6xl font-bold font-display mb-8 leading-tight">
-                Ready to Upgrade Your <br />
-                <span className="text-primary">WhatsApp Experience?</span>
+      <section className="py-20 relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="glass-card rounded-[3rem] p-12 text-center border border-white/10 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 via-transparent to-primary/20 pointer-events-none" />
+            <div className="relative z-10 max-w-3xl mx-auto space-y-8">
+              <h2 className="text-4xl md:text-6xl font-black font-display tracking-tight leading-none">
+                Ready for the <br />
+                <span className="text-primary text-glow">Ultimate Experience?</span>
               </h2>
-              <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-                Join millions of users who trust AAWhatsApp for their daily
-                communication. Safe, fast, and feature-packed.
+              <p className="text-xl text-muted-foreground font-medium">
+                Join 5M+ users who switched to AAWhatsApp for better privacy and
+                exclusive features.
               </p>
-
-              <div className="flex flex-col sm:flex-row gap-6">
-                <DownloadCard />
-                <a
-                  href="https://t.me/AA_ModsOfficial"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1"
-                >
-                  <button className="w-full h-full min-h-[64px] px-8 rounded-2xl bg-[#0088cc] hover:bg-[#0088cc]/90 text-white font-bold text-xl flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-[#0088cc]/40">
-                    <Send className="w-6 h-6" />
-                    Join Telegram
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link href="/download" className="w-full sm:w-auto">
+                  <button className="px-12 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] hover:-translate-y-1 transition-all w-full border border-white/20 uppercase tracking-tight flex items-center justify-center gap-3">
+                    <Download className="w-6 h-6" />
+                    Download Now
                   </button>
-                </a>
+                </Link>
+                <Link href="/faq" className="w-full sm:w-auto">
+                  <button className="px-12 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 text-foreground font-bold text-lg transition-all w-full flex items-center justify-center gap-2">
+                    <MessageSquare className="w-5 h-5" />
+                    View FAQ
+                  </button>
+                </Link>
               </div>
-
-              <p className="mt-8 text-sm text-muted-foreground flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-primary" />
-                Verified safe by AAWhatsApp Security Team
-              </p>
             </div>
           </div>
         </div>
