@@ -77,14 +77,14 @@ export default function AAWhatsAppPage() {
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               {t('hero_subtitle')}
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
-              <Link href="/download" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full px-10 py-7 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3">
-                  <Download className="w-6 h-6" />
-                  Download APK Now
-                </Button>
-              </Link>
-            </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+            <Link href="/download" className="w-full sm:w-auto">
+              <Button size="lg" className="w-full px-10 py-7 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3" data-testid="link-download-apk">
+                <Download className="w-6 h-6" />
+                Go to Download Page
+              </Button>
+            </Link>
+          </div>
           </section>
 
           {/* Intro Text */}
