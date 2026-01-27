@@ -32,10 +32,10 @@ import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
 import { AdBlockDetector } from "@/components/AdBlockDetector";
 
-import heroImage from "@assets/generated_images/modern_professional_blog_hero_image_for_aawhatsapp_mod..png";
-import privacyImage from "@assets/generated_images/futuristic_illustration_of_privacy_features_for_aawhatsapp..png";
+import heroImage from "@/assets/security-hero.png";
+import privacyImage from "@/assets/privacy-feature.png";
 import themesImage from "@assets/generated_images/creative_visual_showing_multiple_whatsapp_theme_styles_for_aawhatsapp..png";
-import mediaImage from "@assets/generated_images/smartphone_mockup_displaying_aawhatsapp_media_sharing_features..png";
+import mediaImage from "@/assets/media-feature.png";
 import securityComparisonImage from "@assets/Gemini_Generated_Image_leenipleenipleen_(1)_1768930872554.png";
 import securityImage from "@assets/Gemini_Generated_Image_q9qqs4q9qqs4q9qq_(1)_1768930866856.png";
 import comparisonImage from "@assets/generated_images/clean_comparison_illustration_showing_aawhatsapp_vs_other_mods..png";
@@ -158,13 +158,14 @@ export default function Home() {
             <div className="relative z-10 mx-auto max-w-lg">
               <img
                 src={heroImage}
-                alt="AAWhatsApp Interface"
-                className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20"
+                alt="AAWhatsApp Interface - Secure and Encrypted Messaging v2.0"
+                title="AAWhatsApp Secure Mainframe Interface"
+                className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/20"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
                 width="1200"
-                height="800"
+                height="675"
               />
             </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10" />
@@ -294,8 +295,12 @@ export default function Home() {
             >
               <img 
                 src={mediaImage} 
-                alt="AAWhatsApp Advanced Features" 
-                className="rounded-3xl shadow-2xl border border-primary/20"
+                alt="AAWhatsApp High-Speed Media Sharing - Send 2GB Files in HD" 
+                title="Advanced Media Delivery System"
+                className="rounded-3xl shadow-2xl border border-primary/20 w-full"
+                loading="lazy"
+                width="800"
+                height="800"
               />
               <div className="absolute -bottom-6 -right-6 p-6 bg-background border border-primary/30 rounded-2xl shadow-xl hidden md:block">
                 <p className="text-primary font-bold text-xl">HD Media Sharing</p>
@@ -344,8 +349,65 @@ export default function Home() {
             >
               <img 
                 src={themesImage} 
-                alt="Custom Themes Visual" 
-                className="rounded-3xl shadow-2xl border border-primary/20"
+                alt="AAWhatsApp Theme Engine - 4000+ Custom Styles and Layouts" 
+                title="Visual Customization Hub"
+                className="rounded-3xl shadow-2xl border border-primary/20 w-full"
+                loading="lazy"
+                width="800"
+                height="800"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Privacy Deep-Dive Section */}
+      <section className="py-24 relative z-10 bg-secondary/20">
+        <div className="container px-4">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex-1 space-y-6"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                Privacy That <span className="text-primary">Stays Invisible</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                AAWhatsApp is engineered with a proprietary anonymity layer. From hiding your "Last Seen" to disabling blue ticks selectively, you control exactly how you appear to the world.
+              </p>
+              <div className="grid gap-4">
+                <div className="p-5 rounded-2xl bg-background border border-white/5 flex gap-4">
+                  <Ghost className="w-8 h-8 text-primary shrink-0" />
+                  <div>
+                    <h4 className="font-bold">Incognito Mode</h4>
+                    <p className="text-sm text-muted-foreground">View statuses and read messages without leaving a trace.</p>
+                  </div>
+                </div>
+                <div className="p-5 rounded-2xl bg-background border border-white/5 flex gap-4">
+                  <Lock className="w-8 h-8 text-primary shrink-0" />
+                  <div>
+                    <h4 className="font-bold">Anti-Delete Messages</h4>
+                    <p className="text-sm text-muted-foreground">Read messages and view stories even after they've been deleted by the sender.</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="flex-1"
+            >
+              <img 
+                src={privacyImage} 
+                alt="AAWhatsApp Advanced Privacy Controls - Ghost Mode and Anti-Delete" 
+                title="Elite Privacy Command Center"
+                className="rounded-3xl shadow-2xl border border-primary/20 w-full max-w-md mx-auto"
+                loading="lazy"
+                width="600"
+                height="600"
               />
             </motion.div>
           </div>
