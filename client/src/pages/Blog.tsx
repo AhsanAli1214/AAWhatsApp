@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Calendar, Clock, ArrowRight, BookOpen, Download, Settings, HelpCircle, RefreshCw, Scale } from "lucide-react";
+import { Calendar, Clock, ArrowRight, BookOpen, Download, Settings, HelpCircle, RefreshCw, Scale, ShieldCheck, Zap } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
