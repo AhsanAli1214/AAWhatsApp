@@ -55,7 +55,13 @@
   .glass-card {
     @apply bg-secondary/60 backdrop-blur-xl border border-white/5;
   }
-  
+
+  .safe-area-pb {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@layer utilities {
   .hero-gradient {
     background: radial-gradient(circle at top right, rgba(37, 211, 102, 0.15), transparent 40%),
                 radial-gradient(circle at bottom left, rgba(6, 182, 212, 0.1), transparent 40%);
