@@ -28,6 +28,7 @@ import {
 } from "@/components/ui/accordion";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { DownloadTunnel } from "@/components/DownloadTunnel";
 import { AdBlockDetector } from "@/components/AdBlockDetector";
 
