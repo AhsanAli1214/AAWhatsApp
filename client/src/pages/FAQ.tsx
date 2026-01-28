@@ -143,12 +143,22 @@ export default function FAQ() {
             2026 Official Guide
           </div>
           <h1 className="text-4xl md:text-6xl font-black font-display tracking-tight">
-            AA WhatsApp <span className="text-primary">FAQs</span>
+            AA WhatsApp <span className="text-primary">Help Center</span>
           </h1>
           <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
-            Everything you need to know about the world's most secure WhatsApp mod.
+            Get expert support for the world's most secure WhatsApp mod. Master privacy, fix errors, and stay updated.
           </p>
         </motion.div>
+
+        <div className="mb-12 p-8 rounded-[2.5rem] bg-primary/5 border border-primary/20 flex flex-col md:flex-row items-center gap-8">
+          <div className="shrink-0 w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center">
+            <ShieldCheck className="w-12 h-12 text-primary" />
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold mb-2">Verified Safety Support</h3>
+            <p className="text-muted-foreground leading-relaxed">Our support guides are updated daily to reflect the latest Anti-Ban v2.0 protocols. Rest assured that all solutions provided here are tested for security and stability.</p>
+          </div>
+        </div>
 
         <div className="grid gap-6">
           <Accordion type="single" collapsible className="w-full space-y-4">

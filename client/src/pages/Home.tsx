@@ -416,6 +416,25 @@ export default function Home() {
 
       {/* Detailed Info Section */}
       <section className="py-24 relative overflow-hidden">
+        <div className="container px-4 text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-sm font-black uppercase tracking-widest mb-8"
+          >
+            <ShieldCheck className="w-5 h-5" />
+            Safety Verified by 60+ Engines
+          </motion.div>
+          <img 
+            src="/src/assets/safety-verified.png" 
+            alt="Safety Verified Certificate" 
+            className="mx-auto h-40 w-auto drop-shadow-[0_0_30px_rgba(16,185,129,0.4)] mb-8"
+          />
+          <h2 className="text-4xl md:text-6xl font-black font-display tracking-tighter">
+            Total Privacy <span className="text-primary italic">Guaranteed</span>
+          </h2>
+        </div>
         <div className="container px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div

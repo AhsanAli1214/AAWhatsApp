@@ -235,6 +235,10 @@ export default function DownloadPage() {
                 Secure Download Mainframe
               </div>
 
+              <div className="mb-8 flex justify-center">
+                <img src="/src/assets/safety-verified.png" alt="Safety Verified Certificate" className="h-32 w-auto drop-shadow-[0_0_20px_rgba(16,185,129,0.3)]" />
+              </div>
+
               <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tighter">
                 Ready to Download?
               </h2>
@@ -248,6 +252,21 @@ export default function DownloadPage() {
                   downloadUrl="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
                   buttonClassName="w-full max-w-md h-20 rounded-2xl bg-primary text-primary-foreground font-black text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-3 border border-white/20"
                 />
+              </div>
+
+              <div className="mb-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col md:flex-row items-center justify-center gap-8 text-sm font-bold">
+                <div className="flex items-center gap-2 text-emerald-400">
+                  <ShieldCheck className="w-5 h-5" />
+                  Anti-Ban v2.0
+                </div>
+                <div className="flex items-center gap-2 text-blue-400">
+                  <Lock className="w-5 h-5" />
+                  Privacy Core™
+                </div>
+                <div className="flex items-center gap-2 text-amber-400">
+                  <Zap className="w-5 h-5" />
+                  No-Permission Tech
+                </div>
               </div>
 
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
