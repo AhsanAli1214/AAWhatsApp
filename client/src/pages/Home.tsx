@@ -16,6 +16,9 @@ import {
   AlertTriangle,
   Send,
   Download,
+  Users,
+  BarChart3,
+  Globe,
 } from "lucide-react";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
@@ -35,6 +38,11 @@ import comparisonImage from "@assets/generated_images/clean_comparison_illustrat
 import ctaImage from "@assets/generated_images/call-to-action_image_for_downloading_aawhatsapp_apk..png";
 import logoImg from "@/assets/logo.png";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
+
+// New assets
+import globalMap from "@/assets/global-map.png";
+import performanceChart from "@/assets/performance-benchmarks.png";
+import communityImg from "@/assets/community-group.png";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -182,6 +190,107 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Global Impact Section */}
+      <section className="py-24 relative z-10 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <motion.div 
+              className="flex-1 space-y-8"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold uppercase tracking-wider">
+                <Globe className="w-4 h-4" />
+                Global Security Network
+              </div>
+              <h2 className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-[1.1]">
+                Trusted by Millions <br />
+                <span className="text-primary italic text-glow">Worldwide</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                AAWhatsApp serves as the primary communication hub for over 10 million users who prioritize security above all else. Our global server infrastructure ensures lightning-fast delivery while maintaining absolute anonymity.
+              </p>
+              <div className="grid grid-cols-2 gap-8">
+                <div>
+                  <p className="text-4xl font-black text-primary font-mono">10M+</p>
+                  <p className="text-muted-foreground font-bold uppercase text-xs tracking-widest">Active Users</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-black text-primary font-mono">150+</p>
+                  <p className="text-muted-foreground font-bold uppercase text-xs tracking-widest">Countries</p>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div 
+              className="flex-1"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+            >
+              <img 
+                src={globalMap} 
+                alt="Global map showing AA WhatsApp secure connection points" 
+                className="w-full h-auto rounded-[3rem] shadow-2xl border border-primary/20"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Performance Section */}
+      <section className="py-24 bg-secondary/20 relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
+            <motion.div 
+              className="flex-1 space-y-8"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold uppercase tracking-wider">
+                <BarChart3 className="w-4 h-4" />
+                Speed Optimization
+              </div>
+              <h2 className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-[1.1]">
+                Engineered for <br />
+                <span className="text-primary italic text-glow">High Speed</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Our proprietary delivery engine is 40% faster than official WhatsApp. We've optimized the binary execution layer to handle thousands of messages per second with zero lag.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "40% Faster Message Delivery",
+                  "Instant Media Processing",
+                  "Ultra-Low Latency Calls",
+                  "Zero Background Data Waste"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-lg font-bold">
+                    <CheckCircle2 className="w-6 h-6 text-primary" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            <motion.div 
+              className="flex-1"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+            >
+              <img 
+                src={performanceChart} 
+                alt="Performance benchmark chart showing AA WhatsApp speed advantages" 
+                className="w-full h-auto rounded-[3rem] shadow-2xl border border-primary/20"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Version Protocol Section */}
       <section className="py-12 relative z-10">
         <div className="container mx-auto px-4">
@@ -252,6 +361,56 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Community Section */}
+      <section className="py-24 relative z-10 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <motion.div 
+              className="flex-1 space-y-8"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+            >
+              <img 
+                src={communityImg} 
+                alt="Diverse group of professional AA WhatsApp users" 
+                className="w-full h-auto rounded-[3rem] shadow-2xl border border-primary/20"
+                loading="lazy"
+              />
+            </motion.div>
+            <motion.div 
+              className="flex-1 space-y-8 text-center lg:text-left"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold uppercase tracking-wider">
+                <Users className="w-4 h-4" />
+                Global Community
+              </div>
+              <h2 className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-[1.1]">
+                Join the <br />
+                <span className="text-primary italic text-glow">Revolution</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Connect with professional users who demand more from their communication apps. Our community is built on mutual respect, privacy, and technical excellence.
+              </p>
+              <div className="flex justify-center lg:justify-start">
+                <a
+                  href="https://t.me/AA_ModsOfficial"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-xl hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all"
+                >
+                  <Send className="w-6 h-6" />
+                  Join Our Telegram Group
+                </a>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -495,7 +654,7 @@ export default function Home() {
                       className="flex gap-6 p-6 rounded-[2rem] bg-background/40 backdrop-blur-md border border-primary/10 hover:border-primary/40 transition-all duration-500 group cursor-default"
                     >
                       <div
-                        className={`shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
+                        className={`shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br \${feature.color} flex items-center justify-center text-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
                       >
                         <feature.icon className="w-7 h-7" />
                       </div>
@@ -527,9 +686,7 @@ export default function Home() {
                     INVASIVE PERMISSIONS BLOCKED
                   </div>
                   <h3 className="text-3xl font-bold font-display leading-tight">
-                    No{" "}
-                    <span className="text-destructive">"All Files Access"</span>{" "}
-                    Required
+                    No <span className="text-destructive">"All Files Access"</span> Required
                   </h3>
                   <p className="text-muted-foreground text-lg max-w-md mx-auto">
                     Unlike GBWhatsApp and FMWhatsApp, we surgically removed the
@@ -677,9 +834,11 @@ export default function Home() {
                       location data beyond reach.
                     </p>
                   </div>
-                  <Button size="lg" className="shrink-0" asChild>
-                    <a href="#download">Get Secure Download</a>
-                  </Button>
+                  <Link href="/download">
+                    <Button size="lg" className="rounded-full shadow-lg shadow-primary/20 font-bold whitespace-nowrap">
+                      Download Secured APK
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -687,549 +846,192 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section id="features" className="py-24 relative z-10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
-              Why AAWhatsApp is the Best WhatsApp Mod?
+      {/* Security Features Grid */}
+      <section id="features" className="py-32 relative z-10 bg-background">
+        <div className="container px-4">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-4xl md:text-6xl font-black font-display tracking-tighter mb-6">
+              Advanced Security <span className="text-primary italic">Matrix</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              We've packed the most requested features into a lightweight,
-              stable package that keeps you safe and private.
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Explore the surgical security enhancements that make AAWhatsApp the safest choice for secure communication in 2026.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FeatureCard
-              icon={Ghost}
-              title="Privacy Suite"
-              description="Hide online status, second ticks, and 'typing...' indicators. View deleted messages with anti-revoke and save statuses directly."
-              delay={0.1}
+              title="Stealth Protocol"
+              description="Surgical removal of location and contact-harvesting scripts found in traditional mods."
+              icon={<Ghost className="w-8 h-8" />}
+              className="group hover:border-primary/40 transition-colors"
             />
             <FeatureCard
-              icon={Shield}
-              title="Security & Anti-Ban"
-              description="Advanced anti-ban engine reduces suspension risk. Built-in app lock (PIN/fingerprint) for app and individual chats."
-              delay={0.2}
+              title="Encrypted Vault"
+              description="End-to-end encryption layer that hardens your database against local extraction attempts."
+              icon={<Lock className="w-8 h-8" />}
+              className="group hover:border-primary/40 transition-colors"
             />
             <FeatureCard
-              icon={Palette}
-              title="Full UI Control"
-              description="1000s of themes, custom fonts, bubble styles, and animations. Dark/light modes and vibrant skins for a unique interface."
-              delay={0.3}
-            />
-            <FeatureCard
-              icon={Zap}
-              title="Pro Media Sharing"
-              description="Send 1GB+ videos and 100+ high-definition images at once with minimal compression. Perfect for large documents."
-              delay={0.4}
-            />
-            <FeatureCard
-              icon={MessageSquare}
-              title="Business Assistant"
-              description="Auto-reply for busy hours and message scheduling. DND mode to cut data for WhatsApp while staying connected on other apps."
-              delay={0.5}
-            />
-            <FeatureCard
-              icon={Lock}
-              title="Group & Broadcast"
-              description="High limits for pinned chats and group members (hundreds). Broadcast messages to unlimited contacts effortlessly."
-              delay={0.6}
+              title="Anonymity Core"
+              description="Spoof your device ID and metadata to prevent tracking by third-party analytics."
+              icon={<Shield className="w-8 h-8" />}
+              className="group hover:border-primary/40 transition-colors"
             />
           </div>
         </div>
       </section>
 
-      {/* Detailed Info Sections */}
-      <section id="about" className="py-24 relative z-10 bg-secondary/10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 tracking-tight">
-                Superior Architecture,{" "}
-                <span className="text-primary text-glow">Ultimate Freedom</span>
-              </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                AAWhatsApp isn't just a mod; it's a statement. Engineered for
-                those who refuse to settle for the standard app's limitations or
-                other mods' privacy compromises.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-            <div className="glass-card p-8 rounded-3xl border border-white/5 bg-secondary/20">
-              <h3 className="text-2xl font-bold mb-4 text-primary">
-                Our Mission
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Our goal is to provide a messaging environment that respects
-                your privacy and gives you total creative control. We believe
-                you should be able to communicate without the artificial limits
-                of the official app, whether that's sharing high-quality 1GB+
-                videos or customizing every pixel of your chat interface.
-              </p>
-            </div>
-            <div className="glass-card p-8 rounded-3xl border border-white/5 bg-secondary/20">
-              <h3 className="text-2xl font-bold mb-4 text-primary">
-                Core Benefits
-              </h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
-                  <span>
-                    Enhanced Stealth: Read messages and view statuses invisibly.
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
-                  <span>
-                    Uncompressed Media: Send photos and videos in full original
-                    quality.
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
-                  <span>
-                    Superior Anti-Ban: Regularly updated engine to keep your
-                    account safe.
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">
-                Advanced Privacy Features
-              </h2>
-              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
-                <p>
-                  <span className="text-foreground font-bold">
-                    Hide Read Receipts & Status:
-                  </span>{" "}
-                  AAWhatsApp lets you hide your online status, second (blue)
-                  ticks, and even the "typing..." and "recording..." indicators.
-                  You get both global options (freeze last seen) and selective
-                  privacy toggles for specific contacts.
-                </p>
-                <p>
-                  <span className="text-foreground font-bold">
-                    View Deleted Messages:
-                  </span>{" "}
-                  With the built-in anti-revoke feature, you can see messages
-                  your friends delete. It also includes a game-changing status
-                  downloader to save photos and videos directly.
-                </p>
-                <p>
-                  <span className="text-foreground font-bold">
-                    In-App Chat Lock:
-                  </span>{" "}
-                  Secure your app and individual chats with a built-in PIN or
-                  fingerprint lock, adding an extra security layer without
-                  third-party apps.
-                </p>
-              </div>
-            </motion.div>
-
+      {/* Visual Comparison Section */}
+      <section className="py-32 bg-primary/5 relative overflow-hidden">
+        <div className="container px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <img
-                src={privacyImage}
-                alt="Privacy Features"
-                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
-              />
-            </motion.div>
-          </div>
-
-          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-2 lg:order-1"
-            >
-              <img
-                src={securityComparisonImage}
-                alt="AAWhatsApp Security Advantage"
-                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-1 lg:order-2"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">
-                Privacy First:{" "}
-                <span className="text-primary">No Risky Permissions</span>
-              </h2>
-              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
-                <p>
-                  Unlike GBWhatsApp, FMWhatsApp, and other mods that force you
-                  to grant
-                  <span className="text-foreground font-bold">
-                    {" "}
-                    "Manage All Files"{" "}
-                  </span>
-                  permissions, AAWhatsApp respect your data.
-                </p>
-                <p>
-                  Most mods won't even start without this dangerous permission,
-                  which allows them to read, modify, and delete every file on
-                  your phone.
-                  <span className="text-primary font-bold">
-                    {" "}
-                    AAWhatsApp runs smoothly{" "}
-                  </span>
-                  without ever asking for this access.
-                </p>
-                <p>
-                  Your photos, documents, and personal files remain private and
-                  untouched. Security isn't just a feature; it's our foundation.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <img
-                src={securityImage}
-                alt="Security & Anti-Ban"
-                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">
-                Chat & Messaging Tools
-              </h2>
-              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
-                <p>
-                  <span className="text-foreground font-bold">
-                    Auto-Reply & Scheduler:
-                  </span>{" "}
-                  Set automated replies for orders or schedule messages for
-                  birthdays and meetings. It works as a mini-business assistant
-                  for your busy lifestyle.
-                </p>
-                <p>
-                  <span className="text-foreground font-bold">
-                    Do Not Disturb (DND):
-                  </span>{" "}
-                  Disable WhatsApp's internet connection only, allowing you to
-                  use other apps without being disturbed by incoming messages.
-                </p>
-                <p>
-                  <span className="text-foreground font-bold">
-                    Broadcast & Group Tools:
-                  </span>{" "}
-                  Pin up to 100 chats, send broadcast messages to unlimited
-                  contacts, and manage large group chats with hundreds of
-                  members.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">
-                File & Media Sharing
-              </h2>
-              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
-                <p>
-                  AAWhatsApp matches or exceeds the highest limits in the mod
-                  world. Send up to{" "}
-                  <span className="text-primary font-bold">90 photos</span> or{" "}
-                  <span className="text-primary font-bold">
-                    1GB+ video clips
-                  </span>{" "}
-                  at once without the heavy compression found in the official
-                  app.
-                </p>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>Bulk Media: Send 100+ images in a single message.</li>
-                  <li>
-                    High-Quality: Shared files retain their original clarity and
-                    resolution.
-                  </li>
-                  <li>
-                    Status Download: Save friends' status updates and view "view
-                    once" media even after it expires.
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <img
-                src={mediaImage}
-                alt="Media Sharing"
-                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
-              />
-            </motion.div>
-          </div>
-
-          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-2 lg:order-1"
-            >
-              <img
-                src={themesImage}
-                alt="Customization & Themes"
-                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="order-1 lg:order-2"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold font-display mb-8">
-                Customization & Themes
-              </h2>
-              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
-                <p>
-                  Express yourself with a truly unique interface. AAWhatsApp
-                  gives you access to thousands of themes from the built-in
-                  store, plus deep customization for every element.
-                </p>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>Store: Access 4000+ custom themes for free.</li>
-                  <li>
-                    Visual Control: Change fonts, bubble styles, and tick icons.
-                  </li>
-                  <li>
-                    Aero Design: Experience a modern, fluid interface inspired
-                    by Aero glass aesthetics.
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Section */}
-      <section id="comparison" className="py-24 relative z-10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">
-              AAWhatsApp vs Others
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              See how AAWhatsApp stacks up against the official app and other
-              popular mods in 2026.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse min-w-[500px]">
-                <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="py-4 font-bold text-primary">Feature</th>
-                    <th className="py-4 font-bold">Official</th>
-                    <th className="py-4 font-bold text-primary">AAWhatsApp</th>
-                  </tr>
-                </thead>
-                <tbody className="text-muted-foreground">
-                  <tr className="border-b border-white/5">
-                    <td className="py-4">Anti-Delete Messages</td>
-                    <td className="py-4">No</td>
-                    <td className="py-4 text-primary font-bold">Yes</td>
-                  </tr>
-                  <tr className="border-b border-white/5">
-                    <td className="py-4">Hide Online Status</td>
-                    <td className="py-4">Limited</td>
-                    <td className="py-4 text-primary font-bold">Elite</td>
-                  </tr>
-                  <tr className="border-b border-white/5">
-                    <td className="py-4">Video Limit</td>
-                    <td className="py-4">16MB</td>
-                    <td className="py-4 text-primary font-bold">1GB+</td>
-                  </tr>
-                  <tr className="border-b border-white/5">
-                    <td className="py-4">Themes</td>
-                    <td className="py-4">2</td>
-                    <td className="py-4 text-primary font-bold">4000+</td>
-                  </tr>
-                  <tr className="border-b border-white/5">
-                    <td className="py-4">Anti-Ban Engine</td>
-                    <td className="py-4">N/A</td>
-                    <td className="py-4 text-primary font-bold">v2.0</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              className="flex-1"
             >
               <img
                 src={comparisonImage}
-                alt="Comparison Table Graphic"
-                className="w-full h-auto rounded-3xl shadow-xl border border-white/5"
+                alt="AAWhatsApp vs Other Mods Security Analysis"
+                className="w-full h-auto rounded-[3rem] shadow-2xl border border-primary/20"
                 loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
               />
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 relative z-10">
-        <div className="container mx-auto px-4">
-          <div className="glass-card rounded-[3rem] p-12 text-center border border-white/10 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 via-transparent to-primary/20 pointer-events-none" />
-            <div className="relative z-10 max-w-3xl mx-auto space-y-8">
-              <h2 className="text-4xl md:text-6xl font-black font-display tracking-tight leading-none">
-                Ready for the <br />
-                <span className="text-primary text-glow">Ultimate Experience?</span>
+            <div className="flex-1 space-y-8">
+              <h2 className="text-4xl md:text-6xl font-black font-display tracking-tighter">
+                The <span className="text-primary italic">Difference</span>
               </h2>
-              <p className="text-xl text-muted-foreground font-medium">
-                Join 5M+ users who switched to AAWhatsApp for better privacy and
-                exclusive features.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Link href="/download" className="w-full sm:w-auto">
-                  <button className="px-12 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.5)] hover:-translate-y-1 transition-all w-full border border-white/20 uppercase tracking-tight flex items-center justify-center gap-3">
-                    <Download className="w-6 h-6" />
-                    Download Now
-                  </button>
-                </Link>
-                <Link href="/faq" className="w-full sm:w-auto">
-                  <button className="px-12 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 text-foreground font-bold text-lg transition-all w-full flex items-center justify-center gap-2">
-                    <MessageSquare className="w-5 h-5" />
-                    View FAQ
-                  </button>
-                </Link>
+              <div className="space-y-6">
+                <div className="p-6 rounded-2xl bg-background border border-primary/20 shadow-xl">
+                  <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                    <ShieldCheck className="w-8 h-8 text-primary" />
+                    AAWhatsApp (Official)
+                  </h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3 text-muted-foreground font-medium">
+                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                      Zero Data Harvesting
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground font-medium">
+                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                      No Location Permissions
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground font-medium">
+                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                      Bank-Grade Encryption
+                    </li>
+                  </ul>
+                </div>
+                <div className="p-6 rounded-2xl bg-background/50 border border-destructive/20 opacity-70">
+                  <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                    <ShieldAlert className="w-8 h-8 text-destructive" />
+                    Standard Mods
+                  </h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3 text-muted-foreground/60">
+                      <XCircle className="w-5 h-5 text-destructive" />
+                      Constant Permission Requests
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground/60">
+                      <XCircle className="w-5 h-5 text-destructive" />
+                      Hidden Background Analytics
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground/60">
+                      <XCircle className="w-5 h-5 text-destructive" />
+                      Location Data Access
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="py-12 border-t border-white/5 relative z-10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-3">
-              <img
-                src={logoImg}
-                alt="AA Mods"
-                className="w-8 h-8 rounded-lg object-contain bg-background"
-                loading="lazy"
-                decoding="async"
-              />
-              <span className="text-xl font-bold font-display tracking-tighter">
-                AA Mods
-              </span>
-            </div>
+      {/* CTA Section */}
+      <section className="py-32 relative z-10 overflow-hidden">
+        <div className="container px-4">
+          <div className="glass-card rounded-[3rem] p-12 md:p-24 border border-primary/20 relative overflow-hidden text-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 -z-10" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto space-y-10"
+            >
+              <h2 className="text-5xl md:text-8xl font-black font-display tracking-tighter leading-none mb-4">
+                SECURE YOUR <br />
+                <span className="text-primary italic text-glow">COMMUNICATION</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12">
+                Join 10M+ users who have already switched to the world's most secure WhatsApp mod. Experience privacy without compromise.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link href="/download" className="w-full sm:w-auto">
+                  <Button size="lg" className="h-20 px-12 rounded-2xl bg-primary text-primary-foreground font-black text-2xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all hover:-translate-y-1 active:scale-95 w-full uppercase flex items-center justify-center gap-4">
+                    <Download className="w-8 h-8" />
+                    Download Official V2.0
+                  </Button>
+                </Link>
+                <Link href="/blog" className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="h-20 px-12 rounded-2xl border-2 border-primary/30 hover:bg-primary/5 font-bold text-xl w-full">
+                    Read Safety Guides
+                  </Button>
+                </Link>
+              </div>
+              <p className="text-muted-foreground font-mono text-sm tracking-[0.2em] font-bold uppercase opacity-60">
+                Compatible with all Android devices • Anti-Ban v2.0
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
-            <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground font-medium">
-              <a
-                href="https://t.me/AA_ModsOfficial"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary transition-colors flex items-center gap-1"
-              >
-                <Send className="w-3 h-3" /> Telegram Updates
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                Terms of Service
-              </a>
-              <a
-                href="/support"
-                className="hover:text-primary transition-colors"
-              >
-                Bug Report
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                Contact
-              </a>
+      <footer className="py-20 border-t border-white/5 bg-black/40 backdrop-blur-xl relative z-10">
+        <div className="container px-4 mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div className="col-span-1 md:col-span-2 space-y-8">
+              <div className="flex items-center gap-3">
+                <motion.img 
+                  src={logoImg} 
+                  alt="AA Mods Logo" 
+                  className="w-16 h-16 object-contain"
+                />
+                <span className="text-3xl font-black font-display tracking-tighter">AA MODS</span>
+              </div>
+              <p className="text-muted-foreground text-lg leading-relaxed max-w-md">
+                Dedicated to providing the most secure communication tools for the modern age. AA Mods stands for privacy, security, and user empowerment.
+              </p>
             </div>
-
-            <p className="text-sm text-muted-foreground">
-              © 2026 AA Mods. All rights reserved.
+            <div className="space-y-6">
+              <h4 className="text-xl font-bold font-display tracking-tight text-white">Platform</h4>
+              <ul className="space-y-4">
+                <li><Link href="/download" className="text-muted-foreground hover:text-primary transition-colors text-lg">Download V2.0</Link></li>
+                <li><Link href="/aa-whatsapp-features" className="text-muted-foreground hover:text-primary transition-colors text-lg">Features</Link></li>
+                <li><Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors text-lg">Blog & Guides</Link></li>
+                <li><Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors text-lg">FAQ</Link></li>
+              </ul>
+            </div>
+            <div className="space-y-6">
+              <h4 className="text-xl font-bold font-display tracking-tight text-white">Legal</h4>
+              <ul className="space-y-4">
+                <li><Link href="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors text-lg">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors text-lg">Terms of Service</Link></li>
+                <li><Link href="/dmca" className="text-muted-foreground hover:text-primary transition-colors text-lg">DMCA</Link></li>
+                <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors text-lg">Contact Us</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
+            <p className="text-muted-foreground font-medium text-lg">
+              &copy; {new Date().getFullYear()} AA Mods (AA WhatsApp). All rights reserved.
             </p>
+            <div className="flex items-center gap-8">
+              <a href="https://t.me/AA_ModsOfficial" className="text-muted-foreground hover:text-primary transition-colors font-bold text-lg">Telegram</a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-bold text-lg">Twitter</a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-bold text-lg">GitHub</a>
+            </div>
           </div>
         </div>
       </footer>
