@@ -21,7 +21,8 @@ import {
   Shield,
   Sparkles,
   History,
-  ExternalLink
+  ExternalLink,
+  Lock as LockIcon
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
@@ -260,7 +261,7 @@ export default function DownloadPage() {
                   Anti-Ban v2.0
                 </div>
                 <div className="flex items-center gap-2 text-blue-400">
-                  <Lock className="w-5 h-5" />
+                  <LockIcon className="w-5 h-5" />
                   Privacy Core™
                 </div>
                 <div className="flex items-center gap-2 text-amber-400">

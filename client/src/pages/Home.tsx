@@ -449,6 +449,12 @@ export default function Home() {
               <p className="text-xl text-muted-foreground leading-relaxed">
                 While other mods like GBWhatsApp and FMWhatsApp continue to request invasive permissions, AAWhatsApp has been rebuilt from the ground up. Our focus is 100% on user privacy and high-speed performance.
               </p>
+              
+              <div className="p-6 rounded-2xl bg-secondary/30 border border-white/5 mb-8">
+                <img src="/src/assets/security-analysis.png" alt="AA WhatsApp Security Analysis" className="w-full h-auto rounded-xl shadow-lg border border-primary/20" />
+                <p className="mt-4 text-sm text-muted-foreground italic text-center">Real-time deep packet inspection and Anti-Ban v2.0 monitoring interface.</p>
+              </div>
+
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
                   <div className="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
