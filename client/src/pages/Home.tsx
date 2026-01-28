@@ -42,23 +42,23 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA WhatsApp Download V2.0 (Official) – Most Secure WhatsApp Mod 2026</title>
+        <title>AA WhatsApp Download V2.0 (Official) – Most Secure Anti-Ban WhatsApp 2026</title>
         <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <meta
           name="description"
-          content="Download AA WhatsApp APK V2.0 (2026). The world's only secure WhatsApp mod with Anti-Ban v2.0 and zero-permission privacy. Best alternative to GB WhatsApp and FM WhatsApp."
+          content="Official AA WhatsApp APK Download V2.0 (2026). The world's only secure WhatsApp mod with Anti-Ban v2.0, Zero-Permission privacy, and 4000+ themes. Best alternative to GB WhatsApp and FM WhatsApp."
         />
         <meta
           name="keywords"
-          content="AA WhatsApp, AA WhatsApp APK, Download AA WhatsApp, AA WhatsApp V2.0, AA WhatsApp Official, Secure WhatsApp Mod, Anti-Ban WhatsApp 2026, AA Mods"
+          content="AA WhatsApp, AA WhatsApp APK, Download AA WhatsApp, AA WhatsApp V2.0, AA WhatsApp Official, Secure WhatsApp Mod, Anti-Ban WhatsApp 2026, AA Mods, WhatsApp Mod Pro, WhatsApp Privacy Mod"
         />
         <meta
           property="og:title"
-          content="AA WhatsApp Download V2.0 – Official & Secure"
+          content="AA WhatsApp Download V2.0 (2026) – Official & Secure Anti-Ban Mod"
         />
         <meta
           property="og:description"
-          content="Download the latest AA WhatsApp APK V2.0. 100% Secure, Anti-Ban, and Privacy-Focused."
+          content="Download the latest AA WhatsApp APK V2.0. 100% Secure, Anti-Ban v2.0, and Zero-Permission Privacy. The best WhatsApp mod in 2026."
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -73,6 +73,7 @@ export default function Home() {
               "operatingSystem": "Android",
               "applicationCategory": "CommunicationApplication",
               "softwareVersion": "2.0",
+              "fileSize": "118 MB",
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",

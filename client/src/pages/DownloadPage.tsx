@@ -127,9 +127,9 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>Download AA WhatsApp APK {versionInfo.version} | Official Secure Link 2026</title>
-        <meta name="description" content={`Download the latest AA WhatsApp APK ${versionInfo.version} (Base ${versionInfo.base}). 100% Secure, Anti-Ban v2.0, and No Invasive Permissions. Official download from AA Mods.`} />
-        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, AA Mods APK download, secure WhatsApp mod download" />
+        <title>Download AA WhatsApp APK {versionInfo.version} (2026) | Official Anti-Ban Secure Link</title>
+        <meta name="description" content={`Download the latest AA WhatsApp APK ${versionInfo.version} (Base ${versionInfo.base}). 100% Secure, Anti-Ban v2.0, No Invasive Permissions, and High-Speed Media. Official download from AA Mods.`} />
+        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, AA Mods APK download, secure WhatsApp mod download, Anti-Ban WhatsApp APK, WhatsApp Mod 2026 Download" />
         <link rel="canonical" href="https://aa-mods.vercel.app/download" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
@@ -142,10 +142,17 @@ export default function DownloadPage() {
               "applicationCategory": "CommunicationApplication",
               "softwareVersion": "${versionInfo.version}",
               "fileSize": "${versionInfo.size}",
+              "applicationSubCategory": "Messaging",
               "offers": {
                 "@type": "Offer",
                 "price": "0",
-                "priceCurrency": "USD"
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "ratingCount": "102456"
               }
             }
           `}
