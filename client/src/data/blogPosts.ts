@@ -27,18 +27,18 @@ export const blogPosts: BlogPost[] = [
 
 ## AA WhatsApp v2.0 – Complete Version Information
 
-| Specification | Details |
-|--------------|---------|
-| Application Name | AA WhatsApp |
-| Current Version | v2.0 (January 2026 Release) |
-| APK File Size | 118 MB |
-| Developer | AA Mods Official Team |
-| Minimum Android | Android 5.0 (Lollipop) and above |
-| Last Updated | January 20, 2026 |
-| Total Downloads | 10,000,000+ |
-| License | Completely Free |
-| Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v2.0 (Latest) |
+| Parameter | Specification |
+|-----------|---------------|
+| **Application Name** | AA WhatsApp |
+| **Version** | v2.0 (Latest) |
+| **Base Version** | 2.25.36.73 |
+| **APK File Size** | 118 MB |
+| **Package Name** | com.gbwhatsapp |
+| **Anti-Ban** | v2.0 (Verified) |
+| **Developer** | AA Mods Official |
+| **Minimum Android** | 5.0+ |
+| **License** | Free |
+| **Updated** | January 2026 |
 
 ## What Makes AA WhatsApp the Best Choice in 2026?
 
@@ -48,18 +48,14 @@ In a market flooded with WhatsApp modifications, AA WhatsApp distinguishes itsel
 
 AA WhatsApp operates on a minimal permission philosophy that sets it apart from every other WhatsApp mod:
 
-| Specification | Details |
-|--------------|---------|
-| Application Name | AA WhatsApp |
-| Current Version | v2.0 (January 2026 Release) |
-| APK File Size | 118 MB |
-| Developer | AA Mods Official Team |
-| Minimum Android | Android 5.0 (Lollipop) and above |
-| Last Updated | January 20, 2026 |
-| Total Downloads | 10,000,000+ |
-| License | Completely Free |
-| Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v2.0 (Latest) |
+| Parameter | Specification |
+|-----------|---------------|
+| **Application Name** | AA WhatsApp |
+| **Version** | v2.0 (Latest) |
+| **Base Version** | 2.25.36.73 |
+| **APK File Size** | 118 MB |
+| **Package Name** | com.gbwhatsapp |
+| **Anti-Ban** | v2.0 (Verified) |
 
 **What We Absolutely DON'T Request:**
 - Location/GPS tracking (unlike GB WhatsApp)
@@ -82,33 +78,25 @@ Our latest Anti-Ban v2.0 system represents a complete redesign of account protec
 
 **How Anti-Ban v2.0 Works:**
 
-| Specification | Details |
-|--------------|---------|
-| Application Name | AA WhatsApp |
-| Current Version | v2.0 (January 2026 Release) |
-| APK File Size | 118 MB |
-| Developer | AA Mods Official Team |
-| Minimum Android | Android 5.0 (Lollipop) and above |
-| Last Updated | January 20, 2026 |
-| Total Downloads | 10,000,000+ |
-| License | Completely Free |
-| Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v2.0 (Latest) |
+| Parameter | Specification |
+|-----------|---------------|
+| **Application Name** | AA WhatsApp |
+| **Version** | v2.0 (Latest) |
+| **Base Version** | 2.25.36.73 |
+| **APK File Size** | 118 MB |
+| **Package Name** | com.gbwhatsapp |
+| **Anti-Ban** | v2.0 (Verified) |
 
 **Ban Rate Comparison (2025-2026 Data):**
 
-| Specification | Details |
-|--------------|---------|
-| Application Name | AA WhatsApp |
-| Current Version | v2.0 (January 2026 Release) |
-| APK File Size | 118 MB |
-| Developer | AA Mods Official Team |
-| Minimum Android | Android 5.0 (Lollipop) and above |
-| Last Updated | January 20, 2026 |
-| Total Downloads | 10,000,000+ |
-| License | Completely Free |
-| Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v2.0 (Latest) |
+| Parameter | Specification |
+|-----------|---------------|
+| **Application Name** | AA WhatsApp |
+| **Version** | v2.0 (Latest) |
+| **Base Version** | 2.25.36.73 |
+| **APK File Size** | 118 MB |
+| **Package Name** | com.gbwhatsapp |
+| **Anti-Ban** | v2.0 (Verified) |
 
 ### 3. Complete Feature Arsenal
 
