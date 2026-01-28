@@ -104,12 +104,12 @@ export default function Home() {
               <motion.img 
                 src={logoImg} 
                 alt="AA Mods Official Logo" 
-                className="w-48 h-48 object-contain drop-shadow-[0_0_30px_rgba(16,185,129,0.3)] mb-4"
+                className="w-56 h-56 object-contain drop-shadow-[0_0_40px_rgba(16,185,129,0.4)] mb-6"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               />
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-bold shadow-[0_0_15px_rgba(16,185,129,0.2)] animate-pulse">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-bold shadow-[0_0_15px_rgba(16,185,129,0.2)] animate-pulse mb-6">
                 <ShieldCheck className="w-4 h-4" />
                 100% Secure: No Bank/Location Data Access
               </div>
