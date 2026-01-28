@@ -862,20 +862,17 @@ export default function Home() {
             <FeatureCard
               title="Stealth Protocol"
               description="Surgical removal of location and contact-harvesting scripts found in traditional mods."
-              icon={<Ghost className="w-8 h-8" />}
-              className="group hover:border-primary/40 transition-colors"
+              icon={Ghost}
             />
             <FeatureCard
               title="Encrypted Vault"
               description="End-to-end encryption layer that hardens your database against local extraction attempts."
-              icon={<Lock className="w-8 h-8" />}
-              className="group hover:border-primary/40 transition-colors"
+              icon={Lock}
             />
             <FeatureCard
               title="Anonymity Core"
               description="Spoof your device ID and metadata to prevent tracking by third-party analytics."
-              icon={<Shield className="w-8 h-8" />}
-              className="group hover:border-primary/40 transition-colors"
+              icon={Shield}
             />
           </div>
         </div>
