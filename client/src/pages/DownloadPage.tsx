@@ -36,7 +36,7 @@ const versionInfo = {
   android: "5.0+",
   status: "Verified Safe",
   base: "2.25.36.73",
-  packageName: "com.aawhatsapp",
+  packageName: "com.gbwhatsapp",
   developer: "AA Mods Official"
 };
 
