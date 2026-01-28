@@ -100,9 +100,19 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="flex-1 text-center lg:text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-bold mb-6 shadow-[0_0_15px_rgba(16,185,129,0.2)] animate-pulse">
-              <ShieldCheck className="w-4 h-4" />
-              100% Secure: No Bank/Location Data Access
+            <div className="flex flex-col items-center lg:items-start mb-8">
+              <motion.img 
+                src={logoImg} 
+                alt="AA Mods Official Logo" 
+                className="w-48 h-48 object-contain drop-shadow-[0_0_30px_rgba(16,185,129,0.3)] mb-4"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/30 text-primary text-sm font-bold shadow-[0_0_15px_rgba(16,185,129,0.2)] animate-pulse">
+                <ShieldCheck className="w-4 h-4" />
+                100% Secure: No Bank/Location Data Access
+              </div>
             </div>
 
             <motion.h1

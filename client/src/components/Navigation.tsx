@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Menu, X, Download, AlertTriangle, Send, Home, Info, Scale, BookOpen, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImg from "@assets/Gemini_Generated_Image_72b2nh72b2nh72b2_1769103369360.png";
+import logoImg from "@/assets/logo.png";
 import { Link, useLocation } from "wouter";
 import { useTranslation } from "@/hooks/useTranslation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -44,15 +44,13 @@ export function Navigation() {
           <div className="flex items-center gap-3">
             <Link href="/">
               <div className="flex items-center gap-3 cursor-pointer">
-                <div className="p-1 bg-primary/10 rounded-xl">
+                <div className="flex items-center gap-3">
                   <img
                     src={logoImg}
                     alt="AA Mods Logo"
-                    className="w-9 h-9 rounded-lg shadow-lg shadow-primary/20 object-contain bg-background"
+                    className="w-16 h-16 object-contain"
                     loading="eager"
                     decoding="async"
-                    width="36"
-                    height="36"
                   />
                 </div>
                 <span className="text-xl font-bold font-display tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
