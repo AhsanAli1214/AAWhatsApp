@@ -290,6 +290,15 @@ export default function Home() {
                     <p className="text-muted-foreground">Advanced scripts that bypass the latest security checks, ensuring your account remains safe.</p>
                   </div>
                 </div>
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
+                  <div className="mt-1 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg">Ghost Mode Pro</h4>
+                    <p className="text-muted-foreground">Hide your online status, second tick, and blue ticks with surgical precision per contact.</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
             <motion.div
