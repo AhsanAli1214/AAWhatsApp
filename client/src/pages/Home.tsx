@@ -20,14 +20,7 @@ import {
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { FeatureCard } from "@/components/FeatureCard";
-import { DownloadCard } from "@/components/DownloadCard";
 import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
 import { AdBlockDetector } from "@/components/AdBlockDetector";

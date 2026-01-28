@@ -109,8 +109,9 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       <Helmet>
-        <title>AA WhatsApp FAQs – Complete 2026 Guide | Support & Help</title>
-        <meta name="description" content="Get answers to all your AA WhatsApp questions. Comprehensive guide for downloading, installing, updating and troubleshooting AA WhatsApp APK in 2026." />
+        <title>AA WhatsApp FAQ – Support & Guide 2026 (Official)</title>
+        <meta name="description" content="Official AA WhatsApp support page. Learn how to fix ban issues, install updates, and use advanced privacy features in AA WhatsApp V2.0. Expert troubleshooting guide." />
+        <meta name="keywords" content="AA WhatsApp support, AA WhatsApp help, fix whatsapp mod ban, install aa whatsapp, aa whatsapp official faq" />
         <link rel="canonical" href="https://aa-mods.vercel.app/faq" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
