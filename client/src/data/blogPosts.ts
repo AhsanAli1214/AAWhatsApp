@@ -27,58 +27,18 @@ export const blogPosts: BlogPost[] = [
 
 ## AA WhatsApp v2.0 – Complete Version Information
 
-<div className="overflow-x-auto my-6">
-  <table className="w-full text-left border-collapse border border-white/10 rounded-xl overflow-hidden">
-    <thead>
-      <tr className="bg-white/5">
-        <th className="p-4 font-bold border border-white/10">Specification</th>
-        <th className="p-4 font-bold border border-white/10">Details</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td className="p-4 border border-white/10">Application Name</td>
-        <td className="p-4 border border-white/10">AA WhatsApp</td>
-      </tr>
-      <tr className="bg-white/[0.02]">
-        <td className="p-4 border border-white/10">Current Version</td>
-        <td className="p-4 border border-white/10">v2.0 (January 2026 Release)</td>
-      </tr>
-      <tr>
-        <td className="p-4 border border-white/10">APK File Size</td>
-        <td className="p-4 border border-white/10">118 MB</td>
-      </tr>
-      <tr className="bg-white/[0.02]">
-        <td className="p-4 border border-white/10">Developer</td>
-        <td className="p-4 border border-white/10">AA Mods Official Team</td>
-      </tr>
-      <tr>
-        <td className="p-4 border border-white/10">Minimum Android</td>
-        <td className="p-4 border border-white/10">Android 5.0 (Lollipop) and above</td>
-      </tr>
-      <tr className="bg-white/[0.02]">
-        <td className="p-4 border border-white/10">Last Updated</td>
-        <td className="p-4 border border-white/10">January 20, 2026</td>
-      </tr>
-      <tr>
-        <td className="p-4 border border-white/10">Total Downloads</td>
-        <td className="p-4 border border-white/10">10,000,000+</td>
-      </tr>
-      <tr className="bg-white/[0.02]">
-        <td className="p-4 border border-white/10">License</td>
-        <td className="p-4 border border-white/10">Completely Free</td>
-      </tr>
-      <tr>
-        <td className="p-4 border border-white/10">Package Name</td>
-        <td className="p-4 border border-white/10">com.gbwhatsapp</td>
-      </tr>
-      <tr className="bg-white/[0.02]">
-        <td className="p-4 border border-white/10">Anti-Ban Version</td>
-        <td className="p-4 border border-white/10">v2.0 (Latest)</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 ## What Makes AA WhatsApp the Best Choice in 2026?
 
@@ -88,16 +48,18 @@ In a market flooded with WhatsApp modifications, AA WhatsApp distinguishes itsel
 
 AA WhatsApp operates on a minimal permission philosophy that sets it apart from every other WhatsApp mod:
 
-| What We Request | Why We Need It |
-|----------------|----------------|
-| Internet Access | Core messaging functionality |
-| Storage (Read/Write) | Save and share media files |
-| Contacts Access | Display contact names in chats |
-| Camera | Take photos and videos for sharing |
-| Microphone | Voice messages and calls |
-| Notifications | Alert you to new messages |
-| Vibration | Haptic feedback for notifications |
-| Boot Receiver | Auto-start for message delivery |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 **What We Absolutely DON'T Request:**
 - Location/GPS tracking (unlike GB WhatsApp)
@@ -120,23 +82,33 @@ Our latest Anti-Ban v2.0 system represents a complete redesign of account protec
 
 **How Anti-Ban v2.0 Works:**
 
-| Protection Layer | Function | Effectiveness |
-|-----------------|----------|---------------|
-| Signature Rotation | Changes app signatures periodically | 99.9% |
-| Behavior Mimicking | Acts exactly like official WhatsApp | 99.8% |
-| API Call Masking | Uses only undetectable API calls | 99.9% |
-| Pattern Randomization | Avoids detection fingerprints | 99.7% |
-| Real-time Updates | Protection pushed automatically | Always current |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 **Ban Rate Comparison (2025-2026 Data):**
 
-| WhatsApp Mod | Ban Rate | Risk Level |
-|--------------|----------|------------|
-| AA WhatsApp | 0.1% | Extremely Low |
-| FM WhatsApp | 3-5% | Low |
-| YoWhatsApp | 5-8% | Moderate |
-| GB WhatsApp | 5-10% | Moderate-High |
-| WhatsApp Plus | 10%+ | High |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 ### 3. Complete Feature Arsenal
 
@@ -302,23 +274,33 @@ If using the same phone number:
 
 ## Troubleshooting Common Download Issues
 
-| Problem | Solution |
-|---------|----------|
-| Download fails | Clear browser cache, try different browser |
-| "App not installed" | Uninstall existing WhatsApp versions first |
-| Verification stuck | Wait for timer, try call verification |
-| Backup won't restore | Ensure same Google account, stable internet |
-| App crashes | Clear cache, reinstall fresh |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 ## Why Download from AA Mods Only?
 
-| Risk | Third-Party Sources | AA Mods Official |
-|------|--------------------|--------------------|
-| Malware | High risk | 0% - Verified clean |
-| Modified APK | Possible | Original only |
-| Outdated version | Likely | Always latest |
-| Support | None | Community + updates |
-| Anti-ban | May be broken | Always working |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 ## Download AA WhatsApp v2.0 Now
 
@@ -351,13 +333,18 @@ Join over 10 million users who trust AA WhatsApp for secure, feature-rich messag
 
 AA WhatsApp's 50+ features are organized into five major categories:
 
-| Category | Features Count | Key Highlight |
-|----------|---------------|---------------|
-| Privacy Controls | 15+ | Ghost Mode (exclusive) |
-| Customization | 12+ | 1000+ themes |
-| Communication | 10+ | 1GB file sharing |
-| Media Tools | 8+ | Status downloader |
-| Security | 8+ | Anti-Ban v2.0 |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 ## Privacy Controls – Complete Online Presence Management
 
@@ -375,12 +362,18 @@ Ghost Mode is our flagship privacy feature, unavailable in any other WhatsApp mo
 
 **Ghost Mode Settings:**
 
-| Option | Description |
-|--------|-------------|
-| Full Ghost | Complete invisibility for all contacts |
-| Selective Ghost | Invisible to chosen contacts only |
-| Scheduled Ghost | Auto-enable during certain hours |
-| Quick Toggle | Enable/disable from notification shade |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 **Use Cases:**
 - Read messages without anyone knowing
@@ -392,12 +385,18 @@ Ghost Mode is our flagship privacy feature, unavailable in any other WhatsApp mo
 
 Beyond Ghost Mode, granular online status management:
 
-| Feature | Options |
-|---------|---------|
-| Hide Online | From everyone / From contacts / From non-contacts |
-| Show Online | To favorites only / To specific list |
-| Freeze Online | Appear online at fixed time |
-| Custom Status | Different status for different contacts |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 ### Last Seen Management
 
@@ -410,12 +409,18 @@ Complete control over your last seen timestamp:
 
 ### Blue Tick (Read Receipt) Controls
 
-| Setting | Function |
-|---------|----------|
-| Disable Globally | No one sees when you read |
-| Disable Selectively | Hide from specific contacts |
-| Show After Reply | Blue ticks appear only when you respond |
-| One-Sided Control | See others' while hiding yours |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 ### Typing & Recording Indicators
 
@@ -477,12 +482,18 @@ AA WhatsApp's theme engine is one of the most powerful available:
 
 ### Font Customization
 
-| Option | Details |
-|--------|---------|
-| Font Families | 50+ fonts included |
-| Font Size | Adjustable for all text |
-| Font Weight | Light, Regular, Bold options |
-| Custom Fonts | Import your own TTF/OTF |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 ### Chat Bubble Styles
 
@@ -511,12 +522,18 @@ AA WhatsApp's theme engine is one of the most powerful available:
 
 ### Extended File Sharing
 
-| Media Type | Official Limit | AA WhatsApp Limit |
-|-----------|----------------|-------------------|
-| Videos | 16 MB | 1 GB |
-| Audio | 16 MB | 100 MB |
-| Documents | 100 MB | 1 GB |
-| Images | Compressed | Original quality |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 ### Image Quality Control
 
@@ -527,11 +544,18 @@ AA WhatsApp's theme engine is one of the most powerful available:
 
 ### Video Status Enhancement
 
-| Feature | Official | AA WhatsApp |
-|---------|----------|-------------|
-| Duration | 30 seconds | 7 minutes |
-| Quality | Compressed | HD option |
-| Multiple Parts | Manual split | Auto-combine |
+| Specification | Details |
+|--------------|---------|
+| Application Name | AA WhatsApp |
+| Current Version | v2.0 (January 2026 Release) |
+| APK File Size | 118 MB |
+| Developer | AA Mods Official Team |
+| Minimum Android | Android 5.0 (Lollipop) and above |
+| Last Updated | January 20, 2026 |
+| Total Downloads | 10,000,000+ |
+| License | Completely Free |
+| Package Name | com.gbwhatsapp |
+| Anti-Ban Version | v2.0 (Latest) |
 
 ### Message Scheduling
 
