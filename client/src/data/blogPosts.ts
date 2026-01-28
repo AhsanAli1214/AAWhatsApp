@@ -27,18 +27,58 @@ export const blogPosts: BlogPost[] = [
 
 ## AA WhatsApp v2.0 – Complete Version Information
 
-| Specification | Details |
-|--------------|---------|
-| Application Name | AA WhatsApp |
-| Current Version | v2.0 (January 2026 Release) |
-| APK File Size | 55 MB |
-| Developer | AA Mods Official Team |
-| Minimum Android | Android 5.0 (Lollipop) and above |
-| Last Updated | January 20, 2026 |
-| Total Downloads | 10,000,000+ |
-| License | Completely Free |
-| Package Name | com.aawhatsapp |
-| Anti-Ban Version | v2.0 (Latest) |
+<div className="overflow-x-auto my-6">
+  <table className="w-full text-left border-collapse border border-white/10 rounded-xl overflow-hidden">
+    <thead>
+      <tr className="bg-white/5">
+        <th className="p-4 font-bold border border-white/10">Specification</th>
+        <th className="p-4 font-bold border border-white/10">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="p-4 border border-white/10">Application Name</td>
+        <td className="p-4 border border-white/10">AA WhatsApp</td>
+      </tr>
+      <tr className="bg-white/[0.02]">
+        <td className="p-4 border border-white/10">Current Version</td>
+        <td className="p-4 border border-white/10">v2.0 (January 2026 Release)</td>
+      </tr>
+      <tr>
+        <td className="p-4 border border-white/10">APK File Size</td>
+        <td className="p-4 border border-white/10">118 MB</td>
+      </tr>
+      <tr className="bg-white/[0.02]">
+        <td className="p-4 border border-white/10">Developer</td>
+        <td className="p-4 border border-white/10">AA Mods Official Team</td>
+      </tr>
+      <tr>
+        <td className="p-4 border border-white/10">Minimum Android</td>
+        <td className="p-4 border border-white/10">Android 5.0 (Lollipop) and above</td>
+      </tr>
+      <tr className="bg-white/[0.02]">
+        <td className="p-4 border border-white/10">Last Updated</td>
+        <td className="p-4 border border-white/10">January 20, 2026</td>
+      </tr>
+      <tr>
+        <td className="p-4 border border-white/10">Total Downloads</td>
+        <td className="p-4 border border-white/10">10,000,000+</td>
+      </tr>
+      <tr className="bg-white/[0.02]">
+        <td className="p-4 border border-white/10">License</td>
+        <td className="p-4 border border-white/10">Completely Free</td>
+      </tr>
+      <tr>
+        <td className="p-4 border border-white/10">Package Name</td>
+        <td className="p-4 border border-white/10">com.gbwhatsapp</td>
+      </tr>
+      <tr className="bg-white/[0.02]">
+        <td className="p-4 border border-white/10">Anti-Ban Version</td>
+        <td className="p-4 border border-white/10">v2.0 (Latest)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ## What Makes AA WhatsApp the Best Choice in 2026?
 
@@ -284,7 +324,7 @@ If using the same phone number:
 
 Join over 10 million users who trust AA WhatsApp for secure, feature-rich messaging. Download now and experience WhatsApp the way it should be.
 
-**Current Version:** v2.0 | **File Size:** 55 MB | **Updated:** January 2026 | **Android:** 5.0+`,
+**Current Version:** v2.0 | **File Size:** 118 MB | **Updated:** January 2026 | **Android:** 5.0+`,
     publishedAt: "2026-01-20",
     readTime: 15,
     faqs: [
