@@ -110,13 +110,27 @@ export default function Blog() {
               Knowledge Base
             </Badge>
             <h1 className="text-4xl md:text-5xl font-black font-display mb-4">
-              AA Mods <span className="text-primary">Blog</span>
+              AA Mods <span className="text-primary">Security Hub</span>
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Expert guides, tutorials, and the latest updates on AA WhatsApp and WhatsApp mods. 
-              Everything you need to know in one place.
+              The definitive resource for WhatsApp mod security, privacy engineering, and Anti-Ban technology.
             </p>
           </motion.div>
+
+          <div className="mb-12 grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl bg-secondary/20 border border-white/5 text-center">
+              <div className="text-3xl font-black text-primary mb-1">16+</div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground">Expert Articles</div>
+            </div>
+            <div className="p-6 rounded-2xl bg-secondary/20 border border-white/5 text-center">
+              <div className="text-3xl font-black text-primary mb-1">2026</div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground">Latest Tech</div>
+            </div>
+            <div className="p-6 rounded-2xl bg-secondary/20 border border-white/5 text-center">
+              <div className="text-3xl font-black text-primary mb-1">100%</div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground">Security Focus</div>
+            </div>
+          </div>
 
           {featuredPost && (
             <motion.div
