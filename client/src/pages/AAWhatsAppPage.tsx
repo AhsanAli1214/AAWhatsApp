@@ -303,7 +303,7 @@ export default function AAWhatsAppPage() {
               </ul>
             </div>
             <div className="glass-card p-8 rounded-[2rem] border border-primary/20 bg-primary/5 text-center">
-              <ShieldCheck className="w-20 h-20 text-primary mx-auto mb-6 opacity-40" />
+              <ShieldCheckIcon className="w-20 h-20 text-primary mx-auto mb-6 opacity-40" />
               <h3 className="text-xl font-bold mb-2">Privacy Core Active</h3>
               <p className="text-sm text-muted-foreground">
                 Version V 2.0 Security Protocols Enabled
@@ -415,7 +415,7 @@ export default function AAWhatsAppPage() {
 
               <div className="flex flex-wrap justify-center gap-4">
                 <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-                  <ShieldCheck className="w-4 h-4 text-primary" />
+                  <ShieldCheckIcon className="w-4 h-4 text-primary" />
                   <span className="text-xs font-bold uppercase tracking-widest">Malware Scanned</span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
@@ -490,5 +490,23 @@ const XCircle = ({ className }: { className?: string }) => (
     <circle cx="12" cy="12" r="10" />
     <line x1="15" y1="9" x2="9" y2="15" />
     <line x1="9" y1="9" x2="15" y2="15" />
+  </svg>
+);
+
+const ShieldCheckIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+    <path d="m9 12 2 2 4-4" />
   </svg>
 );

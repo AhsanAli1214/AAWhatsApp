@@ -327,7 +327,7 @@ export default function DownloadPage() {
               className="glass-card p-8 rounded-[2rem] border border-white/5 space-y-6 flex flex-col"
             >
               <div className="mx-auto w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mb-4">
-                <Shield className="w-12 h-12 text-primary" />
+                <ShieldCheckIcon className="w-12 h-12 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-center">Safety Guarantee</h3>
               <p className="text-muted-foreground text-center leading-relaxed flex-1">
@@ -494,3 +494,21 @@ export default function DownloadPage() {
     </div>
   );
 }
+
+const ShieldCheckIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+    <path d="m9 12 2 2 4-4" />
+  </svg>
+);
