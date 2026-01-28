@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
 ## AA WhatsApp v2.0 – Complete Version Information
 
 | Parameter | Specification |
-|-----------|---------------|
+
 | **Application Name** | AA WhatsApp |
 | **Version** | v2.0 (Latest) |
 | **Base Version** | 2.25.36.73 |
@@ -49,7 +49,7 @@ In a market flooded with WhatsApp modifications, AA WhatsApp distinguishes itsel
 AA WhatsApp operates on a minimal permission philosophy that sets it apart from every other WhatsApp mod:
 
 | Parameter | Specification |
-|-----------|---------------|
+
 | **Application Name** | AA WhatsApp |
 | **Version** | v2.0 (Latest) |
 | **Base Version** | 2.25.36.73 |
@@ -79,7 +79,7 @@ Our latest Anti-Ban v2.0 system represents a complete redesign of account protec
 **How Anti-Ban v2.0 Works:**
 
 | Parameter | Specification |
-|-----------|---------------|
+
 | **Application Name** | AA WhatsApp |
 | **Version** | v2.0 (Latest) |
 | **Base Version** | 2.25.36.73 |
@@ -90,7 +90,7 @@ Our latest Anti-Ban v2.0 system represents a complete redesign of account protec
 **Ban Rate Comparison (2025-2026 Data):**
 
 | Parameter | Specification |
-|-----------|---------------|
+
 | **Application Name** | AA WhatsApp |
 | **Version** | v2.0 (Latest) |
 | **Base Version** | 2.25.36.73 |
