@@ -42,15 +42,15 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA WhatsApp Download V2.0 (Official) – Most Secure Anti-Ban WhatsApp 2026</title>
+        <title>AA WhatsApp Download V2.0 (2026 Official) – Anti-Ban & Secure WhatsApp Mod</title>
         <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <meta
           name="description"
-          content="Official AA WhatsApp APK Download V2.0 (2026). The world's only secure WhatsApp mod with Anti-Ban v2.0, Zero-Permission privacy, and 4000+ themes. Best alternative to GB WhatsApp and FM WhatsApp."
+          content="Download Official AA WhatsApp APK V2.0 (2026). Features Anti-Ban v2.0, Privacy Core™, and No-Permission technology. The best secure alternative to GB WhatsApp and FM WhatsApp."
         />
         <meta
           name="keywords"
-          content="AA WhatsApp, AA WhatsApp APK, Download AA WhatsApp, AA WhatsApp V2.0, AA WhatsApp Official, Secure WhatsApp Mod, Anti-Ban WhatsApp 2026, AA Mods, WhatsApp Mod Pro, WhatsApp Privacy Mod"
+          content="AA WhatsApp, AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp V2.0, AA WhatsApp Official, Secure WhatsApp Mod, Anti-Ban WhatsApp 2026, AA Mods, WhatsApp Mod Pro, GB WhatsApp, FM WhatsApp"
         />
         <meta
           property="og:title"
