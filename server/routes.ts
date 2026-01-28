@@ -136,12 +136,6 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aa-mods.vercel.app/about</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://aa-mods.vercel.app/comparison</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>weekly</changefreq>

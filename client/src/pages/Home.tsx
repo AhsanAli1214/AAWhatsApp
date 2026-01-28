@@ -49,23 +49,23 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA Mods – Download AA WhatsApp APK 2026 | #1 Secure WhatsApp Mod</title>
+        <title>AA WhatsApp Download V2.0 (Official) – Most Secure WhatsApp Mod 2026</title>
         <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <meta
           name="description"
-          content="Download AA WhatsApp APK 2026 – the world's only secure WhatsApp mod without location or media permissions. Best GB WhatsApp alternative. Fast, safe & anti-ban v2.0."
+          content="Download AA WhatsApp APK V2.0 (2026). The world's only secure WhatsApp mod with Anti-Ban v2.0 and zero-permission privacy. Best alternative to GB WhatsApp and FM WhatsApp."
         />
         <meta
           name="keywords"
-          content="AA WhatsApp APK, AA WhatsApp Download, AA WhatsApp Mod APK, AA Mods APK, AA WhatsApp Latest Version, AA WhatsApp Official, AA WhatsApp Anti-Ban, WhatsApp Mod APK, GB WhatsApp Alternative, Secure WhatsApp Mod, Privacy WhatsApp Mod, WhatsApp Mod Without Location Permission, YOWhatsApp Download, FMWhatsApp APK, WhatsApp Plus 2026, Anti-Ban WhatsApp 2026, whatsapp mod 2026 download, safe whatsapp mod apk"
+          content="AA WhatsApp, AA WhatsApp APK, Download AA WhatsApp, AA WhatsApp V2.0, AA WhatsApp Official, Secure WhatsApp Mod, Anti-Ban WhatsApp 2026, AA Mods"
         />
         <meta
           property="og:title"
-          content="AA Mods – Download AA WhatsApp APK 2026 | Secure & Private"
+          content="AA WhatsApp Download V2.0 – Official & Secure"
         />
         <meta
           property="og:description"
-          content="Download AA WhatsApp APK 2026 – the world's only secure WhatsApp mod without location or media permissions. 100% safe & anti-ban."
+          content="Download the latest AA WhatsApp APK V2.0. 100% Secure, Anti-Ban, and Privacy-Focused."
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -79,6 +79,7 @@ export default function Home() {
               "name": "AA WhatsApp",
               "operatingSystem": "Android",
               "applicationCategory": "CommunicationApplication",
+              "softwareVersion": "2.0",
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
