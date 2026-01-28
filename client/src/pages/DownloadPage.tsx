@@ -251,7 +251,7 @@ export default function DownloadPage() {
               <div className="mb-10">
                 <AdDownloadButton 
                   downloadUrl="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
-                  buttonClassName="w-full max-w-md h-20 rounded-2xl bg-primary text-primary-foreground font-black text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-3 border border-white/20"
+                  buttonClassName="w-full max-w-md h-auto min-h-[5rem] py-4 px-6 rounded-2xl bg-primary text-primary-foreground font-black text-xl md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-3 border border-white/20 break-words text-center"
                 />
               </div>
 
@@ -272,7 +272,7 @@ export default function DownloadPage() {
 
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5">
-                  <HardDrive className="w-4 h-4" /> {versionInfo.size}
+                  <HardDrive className="w-4 h-4" /> 118 MB
                 </span>
                 <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5">
                   <Smartphone className="w-4 h-4" /> Android {versionInfo.android}
