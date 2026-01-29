@@ -175,6 +175,12 @@ export default function DownloadPage() {
         </div>
 
         <div className="max-w-5xl mx-auto space-y-16">
+          <AdPlaceholder format="leaderboard" className="mt-8" />
+          
+          <div className="container px-4 my-12">
+            <AdPlaceholder format="rectangle" />
+          </div>
+
           {/* Hero Header */}
           <section className="text-center space-y-8">
             <motion.div
