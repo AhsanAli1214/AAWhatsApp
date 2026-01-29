@@ -36,8 +36,8 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
       viewport={{ once: true }}
       className={`w-full overflow-hidden my-4 flex flex-col items-center justify-center relative ${className}`}
     >
-      <div className="flex flex-col items-center gap-1">
-        <span className="text-[10px] text-muted-foreground/40 uppercase tracking-widest font-bold">Ads</span>
+      <div className="flex flex-col items-center gap-0.5">
+        <span className="text-[8px] md:text-[9px] text-muted-foreground/30 uppercase tracking-[0.2em] font-medium leading-none">Ads</span>
         <a 
           href={adLink} 
           target="_blank" 
@@ -46,7 +46,10 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
         >
           <img 
             src={adImage} 
-            alt="Advertisement" 
+            alt="Advertisement"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             style={{ 
               height: format === 'mobile' ? '50px' : 'auto',
               maxHeight: format === 'rectangle' ? '250px' : '90px',
