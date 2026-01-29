@@ -263,6 +263,10 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="container px-4 relative z-10 mb-16">
+        <AdPlaceholder format="leaderboard" className="py-8" />
+      </div>
+
       {/* Detailed Info Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="container px-4">

@@ -160,6 +160,8 @@ export default function FAQ() {
           </div>
         </div>
 
+        <AdPlaceholder format="leaderboard" className="mb-12" />
+
         <div className="grid gap-6">
           <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((faq, i) => (
@@ -240,6 +242,7 @@ export default function FAQ() {
         </div>
 
         <div className="mt-20 text-center">
+          <AdPlaceholder format="mobile" className="mb-8" />
           <Link href="/">
             <Button variant="ghost" className="gap-3 text-muted-foreground hover:text-primary text-lg h-14 px-8 rounded-2xl">
               <ArrowLeft className="w-5 h-5" />

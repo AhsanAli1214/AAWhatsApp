@@ -172,6 +172,7 @@ export function Navigation() {
           <div className="h-px bg-white/5 w-full" />
 
           <div className="grid grid-cols-1 gap-4">
+            <AdPlaceholder format="mobile" className="mb-2" />
             <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer">
               <Button className="w-full h-16 rounded-2xl bg-primary text-primary-foreground font-bold text-xl flex items-center justify-center gap-3">
                 <Send className="w-6 h-6" /> Join Telegram
