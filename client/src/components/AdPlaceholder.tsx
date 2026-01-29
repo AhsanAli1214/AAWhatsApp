@@ -36,34 +36,26 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
       viewport={{ once: true }}
       className={`w-full overflow-hidden my-8 flex flex-col items-center justify-center relative ${className}`}
     >
-      <div className="flex flex-col items-center gap-2 w-full max-w-[728px]">
-        <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-2">
-          <span className="text-[9px] text-muted-foreground/60 uppercase tracking-[0.2em] font-black">Sponsor Verified</span>
-          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-        </div>
-        <a 
-          href={adLink} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="block group relative hover:scale-[1.02] transition-all duration-500 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-black/40 backdrop-blur-sm p-1"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          <img 
-            src={adImage} 
-            alt="Verified Sponsor Advertisement"
-            loading="eager"
-            decoding="async"
-            style={{ 
-              height: format === 'mobile' ? '50px' : 'auto',
-              maxHeight: format === 'rectangle' ? '250px' : '90px',
-              maxWidth: '100%',
-              width: 'auto'
-            }}
-            className="relative z-10 object-contain rounded-xl"
-          />
-        </a>
-        <p className="text-[10px] text-muted-foreground/40 italic mt-2">Support our free platform by visiting our partners</p>
-      </div>
+      <a 
+        href={adLink} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block group transition-all duration-500"
+      >
+        <img 
+          src={adImage} 
+          alt="Verified Sponsor Advertisement"
+          loading="eager"
+          decoding="async"
+          style={{ 
+            height: format === 'mobile' ? '50px' : 'auto',
+            maxHeight: format === 'rectangle' ? '250px' : '90px',
+            maxWidth: '100%',
+            width: 'auto'
+          }}
+          className="relative z-10 object-contain"
+        />
+      </a>
     </motion.div>
   );
 }
