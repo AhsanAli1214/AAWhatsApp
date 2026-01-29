@@ -902,7 +902,7 @@ export default function Home() {
               <img
                 src={logoImg}
                 alt="AA Mods"
-                className="w-10 h-10 object-contain opacity-80"
+                className="w-16 h-16 object-contain"
               />
               <span className="text-xl font-bold font-display tracking-tight text-foreground/80">
                 AA Mods
