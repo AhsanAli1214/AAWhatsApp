@@ -52,7 +52,6 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
             src={adImage} 
             alt="Verified Sponsor Advertisement"
             loading="eager"
-            fetchPriority="high"
             decoding="async"
             style={{ 
               height: format === 'mobile' ? '50px' : 'auto',
