@@ -84,7 +84,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
   );
 }
 
-import logoImg from "@assets/Gemini_Generated_Image_72b2nh72b2nh72b2_1769103369360.png";
+import logoImg from "@/assets/logo.png";
 
 export default function Blog() {
   const featuredPost = blogPosts[0];
