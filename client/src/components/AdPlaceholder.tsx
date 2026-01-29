@@ -1,84 +1,62 @@
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import adDownloadNowVertical from "@/assets/images/ad-download-now-vertical.png";
+import adDownloadNowHorizontalRed from "@/assets/images/ad-download-now-horizontal-red.png";
+import adDownloadNowHorizontalBlue from "@/assets/images/ad-download-now-horizontal-blue.png";
+import adGooglePlay from "@/assets/images/ad-google-play.png";
 
 interface AdPlaceholderProps {
   format?: "rectangle" | "leaderboard" | "mobile";
   className?: string;
 }
 
+const AD_IMAGES = {
+  mobile: adGooglePlay,
+  leaderboard: adDownloadNowHorizontalBlue,
+  rectangle: adDownloadNowVertical,
+};
+
 const AD_CONFIGS = {
-  mobile: {
-    key: "ca232c50e76b4c8c0b1b2672f20c3059",
-    height: 50,
-    width: 320,
-  },
-  leaderboard: {
-    key: "38c697dc814ac8c20cf9aa46d6f3337d",
-    height: 90,
-    width: 728,
-  },
-  rectangle: {
-    key: "8e14948758b8dd246fe40fe57195f5a9",
-    height: 250,
-    width: 300,
-  },
+  mobile: { height: 50, width: 320 },
+  leaderboard: { height: 90, width: 728 },
+  rectangle: { height: 250, width: 300 },
 };
 
 /**
- * AdPlaceholder - Correctly integrates specific ad units using the provided keys.
+ * AdPlaceholder - Correctly integrates specific ad images with link.
  */
 export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceholderProps) {
-  const adRef = useRef<HTMLDivElement>(null);
   const config = AD_CONFIGS[format];
-
-  useEffect(() => {
-    if (!adRef.current || !config) return;
-
-    // Clear previous ad if any
-    adRef.current.innerHTML = "";
-
-    const script1 = document.createElement("script");
-    script1.type = "text/javascript";
-    script1.innerHTML = `
-      atOptions = {
-        'key' : '${config.key}',
-        'format' : 'iframe',
-        'height' : ${config.height},
-        'width' : ${config.width},
-        'params' : {}
-      };
-    `;
-
-    const script2 = document.createElement("script");
-    script2.type = "text/javascript";
-    script2.src = `//exasperatebubblyorthodox.com/${config.key}/invoke.js`;
-    script2.async = true;
-
-    // Add a unique container for the ad script to target if needed
-    const adContainer = document.createElement("div");
-    adContainer.id = `ad-container-${config.key}`;
-    adRef.current.appendChild(adContainer);
-
-    // Standard Monotag execution flow
-    adRef.current.appendChild(script1);
-    adRef.current.appendChild(script2);
-  }, [format, config.key, config.height, config.width]);
-
-  const minHeight = `${config.height}px`;
+  const adImage = AD_IMAGES[format];
+  const adLink = "https://otieu.com/4/10538188";
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className={`w-full overflow-hidden my-4 flex items-center justify-center relative ${className}`}
-      style={{ minHeight }}
+      className={`w-full overflow-hidden my-4 flex flex-col items-center justify-center relative ${className}`}
     >
-      <div 
-        ref={adRef} 
-        style={{ minHeight, width: `${config.width}px` }}
-        className="flex items-center justify-center bg-white/[0.01] border border-white/5 rounded-xl overflow-hidden shadow-inner mx-auto"
-      />
+      <div className="flex flex-col items-center gap-1">
+        <span className="text-[10px] text-muted-foreground/40 uppercase tracking-widest font-bold">Ads</span>
+        <a 
+          href={adLink} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block hover:opacity-90 transition-opacity rounded-xl overflow-hidden border border-white/5 shadow-xl"
+        >
+          <img 
+            src={adImage} 
+            alt="Advertisement" 
+            style={{ 
+              height: format === 'mobile' ? '50px' : 'auto',
+              maxHeight: format === 'rectangle' ? '250px' : '90px',
+              maxWidth: '100%',
+              width: 'auto'
+            }}
+            className="object-contain bg-black/20"
+          />
+        </a>
+      </div>
     </motion.div>
   );
 }
