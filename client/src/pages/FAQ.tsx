@@ -28,7 +28,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
-import logoImg from "@assets/Gemini_Generated_Image_72b2nh72b2nh72b2_1769103369360.png";
+import logoImg from "@/assets/logo.png";
 
 export default function FAQ() {
   const faqs = [
