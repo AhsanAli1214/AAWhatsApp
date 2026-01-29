@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 import {
   Accordion,
   AccordionContent,
@@ -133,6 +134,11 @@ export default function FAQ() {
       <Navigation />
 
       <main className="pt-32 pb-20 container mx-auto px-4 max-w-5xl">
+        <Link href="/">
+          <Button variant="ghost" className="mb-8 hover:bg-primary/10 gap-2 text-muted-foreground hover:text-primary">
+            <ArrowLeft className="w-4 h-4" /> Back to Home
+          </Button>
+        </Link>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

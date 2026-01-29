@@ -6,6 +6,7 @@ import logoImg from "@/assets/logo.png";
 import { Link, useLocation } from "wouter";
 import { useTranslation } from "@/hooks/useTranslation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 
 export function Navigation() {
   const { t } = useTranslation();

@@ -1,12 +1,26 @@
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Calendar, Clock, ArrowRight, BookOpen, Download, Settings, HelpCircle, RefreshCw, Scale, ShieldCheck, Zap } from "lucide-react";
+import { 
+  Calendar, 
+  Clock, 
+  ArrowRight, 
+  BookOpen, 
+  Download, 
+  Settings, 
+  HelpCircle, 
+  RefreshCw, 
+  Scale, 
+  ShieldCheck, 
+  Zap,
+  ArrowLeft
+} from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { blogPosts, BlogPost } from "@/data/blogPosts";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 
 const categoryIcons: Record<string, React.ReactNode> = {
   download: <Download className="w-4 h-4" />,
@@ -99,6 +113,11 @@ export default function Blog() {
 
       <main className="relative z-10 pt-28 pb-20">
         <div className="container mx-auto px-4 md:px-6">
+          <Link href="/">
+            <Button variant="ghost" className="mb-8 hover:bg-primary/10 gap-2 text-muted-foreground hover:text-primary">
+              <ArrowLeft className="w-4 h-4" /> Back to Home
+            </Button>
+          </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
