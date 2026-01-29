@@ -132,6 +132,8 @@ export default function Blog() {
             </div>
           </div>
 
+          <AdPlaceholder format="leaderboard" className="mb-12" />
+
           {featuredPost && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -238,6 +240,7 @@ export default function Blog() {
 
       <footer className="relative z-10 border-t border-border/50 py-8 bg-background/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 md:px-6 text-center text-muted-foreground text-sm">
+          <AdPlaceholder format="mobile" className="mb-4" />
           <p>&copy; 2026 AA Mods. All rights reserved.</p>
         </div>
       </footer>
