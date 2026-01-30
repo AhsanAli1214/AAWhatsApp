@@ -148,7 +148,7 @@ export default function Home() {
               <Link href="/download" className="w-full sm:w-auto">
                 <button className="relative group overflow-hidden px-10 py-6 rounded-2xl bg-primary text-primary-foreground font-black text-xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tight flex items-center justify-center gap-3" data-testid="button-download-hero">
                   <Download className="w-7 h-7" />
-                  Continue to Download
+                  <span className="relative z-10">Continue to Download</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-primary to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute top-0 left-0 w-full h-1/2 bg-white/10 -skew-y-3 translate-y-[-10%]" />
                 </button>

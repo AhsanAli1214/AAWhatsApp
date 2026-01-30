@@ -149,7 +149,7 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
                 ) : (
                   <span className="flex items-center justify-center gap-2">
                     <ExternalLink className="w-5 h-5 shrink-0" />
-                    <span className="truncate text-center">Download Now - MediaFire</span>
+                    <span className="truncate text-center">Download Now</span>
                   </span>
                 )}
               </Button>
