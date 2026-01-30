@@ -180,6 +180,7 @@ export default function Home() {
                 title="Official AAWhatsApp Secure Interface"
                 className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/20"
                 loading="eager"
+                fetchPriority="high"
                 decoding="async"
                 width="1200"
                 height="675"
