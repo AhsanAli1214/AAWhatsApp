@@ -274,7 +274,7 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <priority>0.8</priority>
   </url>
 </urlset>`;
-    res.header("Content-Type", "application/xml");
+    res.type("application/xml");
     res.status(200).send(sitemap.trim());
   });
 
