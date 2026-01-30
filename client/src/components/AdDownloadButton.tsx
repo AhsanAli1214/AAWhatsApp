@@ -61,12 +61,12 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
               </div>
               <button
                 onClick={handleClick}
-                className={buttonClassName || "relative group overflow-hidden px-8 py-5 md:px-10 md:py-6 rounded-2xl bg-primary text-primary-foreground font-black text-xl md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter"}
+                className={buttonClassName || "relative group overflow-hidden px-6 py-5 md:px-10 md:py-6 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter"}
                 data-testid="button-download-main"
               >
-                <span className="relative z-10 flex items-center justify-center gap-3">
-                  <Zap className="w-6 h-6 md:w-8 md:h-8 fill-current animate-pulse" />
-                  Download APK V2.0
+                <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3 leading-tight">
+                  <Zap className="w-5 h-5 md:w-8 md:h-8 fill-current animate-pulse shrink-0" />
+                  <span className="truncate">Download APK V2.0</span>
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-primary to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-white/10 -skew-y-3 translate-y-[-10%]" />

@@ -256,10 +256,10 @@ export default function DownloadPage() {
                 Click below to start your secure download. File verified and scanned by 60+ antivirus engines.
               </p>
 
-              <div className="mb-10">
+              <div className="mb-10 w-full flex justify-center px-2">
                 <AdDownloadButton 
                   downloadUrl="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
-                  buttonClassName="w-full max-w-md h-auto min-h-[5rem] py-4 px-6 rounded-2xl bg-primary text-primary-foreground font-black text-xl md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-3 border border-white/20 break-words text-center"
+                  buttonClassName="w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-2 md:gap-3 border border-white/20 text-center leading-tight overflow-hidden"
                 />
               </div>
 
