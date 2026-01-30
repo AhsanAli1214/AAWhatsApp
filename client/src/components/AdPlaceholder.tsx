@@ -12,7 +12,7 @@ interface AdPlaceholderProps {
 const AD_IMAGES = {
   mobile: adGooglePlay,
   leaderboard: adDownloadNowHorizontalBlue,
-  rectangle: adDownloadNowVertical,
+  rectangle: adDownloadNowHorizontalBlue, // Changed from adDownloadNowVertical to adDownloadNowHorizontalBlue
 };
 
 const AD_CONFIGS = {
