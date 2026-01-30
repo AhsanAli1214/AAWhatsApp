@@ -1,12 +1,12 @@
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
-import { 
-  Download, 
-  ShieldCheck, 
-  Zap, 
-  ShieldAlert, 
-  CheckCircle2, 
+import {
+  Download,
+  ShieldCheck,
+  Zap,
+  ShieldAlert,
+  CheckCircle2,
   ArrowLeft,
   Clock,
   HardDrive,
@@ -22,7 +22,7 @@ import {
   Sparkles,
   History,
   ExternalLink,
-  Lock as LockIcon
+  Lock as LockIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
@@ -40,7 +40,7 @@ const versionInfo = {
   status: "Verified Safe",
   base: "2.25.36.73",
   packageName: "com.gbwhatsapp",
-  developer: "AA Mods Official"
+  developer: "AA Mods Official",
 };
 
 const changelog = [
@@ -55,8 +55,8 @@ const changelog = [
       "Enhanced Privacy Core technology",
       "Fixed media download issues on Android 14+",
       "Improved dark mode contrast for AMOLED screens",
-      "Updated base to WhatsApp 2.25.36.73"
-    ]
+      "Updated base to WhatsApp 2.25.36.73",
+    ],
   },
   {
     version: "V 1.9",
@@ -68,8 +68,8 @@ const changelog = [
       "Ghost Mode v2 with scheduled invisibility",
       "40% faster app startup performance",
       "New theme engine with 500+ themes",
-      "Bug fixes for message scheduling"
-    ]
+      "Bug fixes for message scheduling",
+    ],
   },
   {
     version: "V 1.8",
@@ -81,16 +81,16 @@ const changelog = [
       "View deleted messages feature",
       "Custom fonts support",
       "Status downloader enhancement",
-      "Memory optimization"
-    ]
-  }
+      "Memory optimization",
+    ],
+  },
 ];
 
 const stats = [
   { label: "Total Downloads", value: "10M+", icon: Download },
   { label: "Active Users", value: "5M+", icon: Users },
   { label: "User Rating", value: "4.9/5", icon: Star },
-  { label: "Uptime", value: "99.9%", icon: Zap }
+  { label: "Uptime", value: "99.9%", icon: Zap },
 ];
 
 export default function DownloadPage() {
@@ -99,7 +99,7 @@ export default function DownloadPage() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDownloadCount(prev => prev + Math.floor(Math.random() * 3) + 1);
+      setDownloadCount((prev) => prev + Math.floor(Math.random() * 3) + 1);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -130,9 +130,17 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>Download AA WhatsApp APK V2.0 (2026) – Official Secure Link</title>
-        <meta name="description" content="Official Download Link for AA WhatsApp APK V2.0 (2026). 100% Secure, Anti-Ban v2.0, and Privacy Core™ protection. Fast direct download from AA Mods." />
-        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, AA Mods APK, secure WhatsApp mod, anti-ban apk" />
+        <title>
+          Download AA WhatsApp APK V2.0 (2026) – Official Secure Link
+        </title>
+        <meta
+          name="description"
+          content="Official Download Link for AA WhatsApp APK V2.0 (2026). 100% Secure, Anti-Ban v2.0, and Privacy Core™ protection. Fast direct download from AA Mods."
+        />
+        <meta
+          name="keywords"
+          content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, AA Mods APK, secure WhatsApp mod, anti-ban apk"
+        />
         <link rel="canonical" href="https://aa-mods.vercel.app/download" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
@@ -166,8 +174,8 @@ export default function DownloadPage() {
 
       <main className="relative z-10 pt-32 pb-20 container mx-auto px-4">
         <div className="max-w-5xl mx-auto mb-8">
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             onClick={() => setLocation("/aa-whatsapp-apk")}
             className="hover:bg-primary/10 gap-2 text-muted-foreground hover:text-primary"
             data-testid="button-back-info"
@@ -178,7 +186,7 @@ export default function DownloadPage() {
 
         <div className="max-w-5xl mx-auto space-y-16">
           <AdPlaceholder format="leaderboard" className="mt-8" />
-          
+
           <div className="container px-4 my-12">
             <AdPlaceholder format="rectangle" />
           </div>
@@ -193,7 +201,7 @@ export default function DownloadPage() {
               <Sparkles className="w-4 h-4" />
               Official Download Page
             </motion.div>
-            
+
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -205,10 +213,15 @@ export default function DownloadPage() {
                 Version {versionInfo.version} | Base {versionInfo.base}
               </span>
             </motion.h1>
-            
+
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The world's most secure WhatsApp mod with Anti-Ban v2.0 protection.
-              <span className="text-primary font-bold"> {downloadCount.toLocaleString()}+ downloads</span> and counting.
+              The world's most secure WhatsApp mod with Anti-Ban v2.0
+              protection.
+              <span className="text-primary font-bold">
+                {" "}
+                {downloadCount.toLocaleString()}+ downloads
+              </span>{" "}
+              and counting.
             </p>
           </section>
 
@@ -224,20 +237,22 @@ export default function DownloadPage() {
               >
                 <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
                 <p className="text-2xl font-black text-white">{stat.value}</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest">{stat.label}</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-widest">
+                  {stat.label}
+                </p>
               </motion.div>
             ))}
           </section>
 
           {/* Main Download Section */}
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="glass-card p-8 md:p-12 rounded-[3rem] border border-primary/20 bg-primary/5 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
-            
+
             <div className="relative z-10 text-center">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-8">
                 <ShieldCheck className="w-4 h-4" />
@@ -245,19 +260,26 @@ export default function DownloadPage() {
               </div>
 
               <div className="mb-8 flex justify-center">
-                <img src="/src/assets/safety-verified.png" alt="AAWhatsApp Safety Verified - 100% Virus-Free Certification" className="h-32 w-auto drop-shadow-[0_0_20px_rgba(16,185,129,0.3)]" loading="lazy" decoding="async" />
+                <img
+                  src="client/src/assets/safety-verified.png"
+                  alt="AAWhatsApp Safety Verified - 100% Virus-Free Certification"
+                  className="h-32 w-auto drop-shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
 
               <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tighter">
                 Ready to Download?
               </h2>
-              
+
               <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-                Click below to start your secure download. File verified and scanned by 60+ antivirus engines.
+                Click below to start your secure download. File verified and
+                scanned by 60+ antivirus engines.
               </p>
 
               <div className="mb-10 w-full flex justify-center px-2">
-                <AdDownloadButton 
+                <AdDownloadButton
                   downloadUrl="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
                   buttonClassName="w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-2 md:gap-3 border border-white/20 text-center leading-tight overflow-hidden"
                 />
@@ -283,7 +305,8 @@ export default function DownloadPage() {
                   <HardDrive className="w-4 h-4" /> 118 MB
                 </span>
                 <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5">
-                  <Smartphone className="w-4 h-4" /> Android {versionInfo.android}
+                  <Smartphone className="w-4 h-4" /> Android{" "}
+                  {versionInfo.android}
                 </span>
                 <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5">
                   <Calendar className="w-4 h-4" /> {versionInfo.date}
@@ -337,7 +360,9 @@ export default function DownloadPage() {
               <div className="mx-auto w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mb-4">
                 <ShieldCheckIcon className="w-12 h-12 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold text-center">Safety Guarantee</h3>
+              <h3 className="text-2xl font-bold text-center">
+                Safety Guarantee
+              </h3>
               <p className="text-muted-foreground text-center leading-relaxed flex-1">
                 This APK has been scanned against 60+ antivirus engines and
                 verified as 100% clean. No location trackers, no media
@@ -376,7 +401,7 @@ export default function DownloadPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className={`p-6 rounded-2xl border ${release.isLatest ? 'border-primary/30 bg-primary/5' : 'border-white/5 bg-white/[0.02]'}`}
+                  className={`p-6 rounded-2xl border ${release.isLatest ? "border-primary/30 bg-primary/5" : "border-white/5 bg-white/[0.02]"}`}
                 >
                   <div className="flex flex-wrap items-center gap-4 mb-4">
                     <h3 className="text-xl font-black">{release.version}</h3>
@@ -391,7 +416,10 @@ export default function DownloadPage() {
                   </div>
                   <ul className="space-y-2">
                     {release.changes.map((change, i) => (
-                      <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-muted-foreground"
+                      >
                         <CheckCircle2 className="w-4 h-4 text-primary mt-1 shrink-0" />
                         <span>{change}</span>
                       </li>
@@ -422,7 +450,8 @@ export default function DownloadPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-xl mb-2">
-                      <span className="text-primary">{i + 1}.</span> {step.title}
+                      <span className="text-primary">{i + 1}.</span>{" "}
+                      {step.title}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
                       {step.desc}
@@ -443,7 +472,10 @@ export default function DownloadPage() {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p className="leading-relaxed">
-                AAWhatsApp is scanned daily by multiple security engines. Unlike other mods that demand "All Files Access", AAWhatsApp runs on a minimal permission footprint. Your banking apps and private files remain 100% isolated and safe.
+                AAWhatsApp is scanned daily by multiple security engines. Unlike
+                other mods that demand "All Files Access", AAWhatsApp runs on a
+                minimal permission footprint. Your banking apps and private
+                files remain 100% isolated and safe.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <span className="text-xs px-3 py-1.5 rounded-full bg-background/50 border border-white/10">
@@ -464,27 +496,38 @@ export default function DownloadPage() {
 
           {/* Alternative Download */}
           <section className="text-center space-y-6 p-8 rounded-[2rem] bg-white/[0.02] border border-white/5">
-            <h3 className="text-xl font-bold">Need an Alternative Download Link?</h3>
+            <h3 className="text-xl font-bold">
+              Need an Alternative Download Link?
+            </h3>
             <p className="text-muted-foreground">
-              If the main download isn't working, try our backup servers or join our Telegram for direct links.
+              If the main download isn't working, try our backup servers or join
+              our Telegram for direct links.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a 
+              <a
                 href="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline" className="gap-2" data-testid="button-mediafire-download">
+                <Button
+                  variant="outline"
+                  className="gap-2"
+                  data-testid="button-mediafire-download"
+                >
                   <ExternalLink className="w-4 h-4" />
                   MediaFire Mirror
                 </Button>
               </a>
-              <a 
+              <a
                 href="https://t.me/AA_ModsOfficial"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline" className="gap-2" data-testid="button-telegram-link">
+                <Button
+                  variant="outline"
+                  className="gap-2"
+                  data-testid="button-telegram-link"
+                >
                   <ExternalLink className="w-4 h-4" />
                   Telegram Channel
                 </Button>
@@ -494,7 +537,8 @@ export default function DownloadPage() {
 
           <div className="text-center pt-10 border-t border-white/5">
             <p className="text-xs text-muted-foreground uppercase tracking-widest opacity-40">
-              AA Mods | Version {versionInfo.version} | Base {versionInfo.base} | Build ID: PRO-2026-SEC
+              AA Mods | Version {versionInfo.version} | Base {versionInfo.base}{" "}
+              | Build ID: PRO-2026-SEC
             </p>
           </div>
         </div>
@@ -514,10 +558,30 @@ export default function DownloadPage() {
               </span>
             </div>
             <div className="flex flex-wrap justify-center gap-8 text-sm font-medium text-muted-foreground">
-              <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
-              <Link href="/support" className="hover:text-primary transition-colors">Support</Link>
-              <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
+              <Link
+                href="/privacy"
+                className="hover:text-primary transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="hover:text-primary transition-colors"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="/support"
+                className="hover:text-primary transition-colors"
+              >
+                Support
+              </Link>
+              <Link
+                href="/blog"
+                className="hover:text-primary transition-colors"
+              >
+                Blog
+              </Link>
             </div>
             <div className="text-sm text-muted-foreground font-mono">
               © 2026 AA Mods. All rights reserved.
