@@ -22,12 +22,11 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
       // Open the ad link in a new tab on first click
       window.open("https://gizokraijaw.net/4/10538188", "_blank");
       
-      // Monotag integration: Inject direct script for click-tracking if needed
-      // This ensures the monotag script is active when the user interacts
+      // Monotag integration: Inject direct script for click-tracking
       const script = document.createElement("script");
-      script.src = "https://gizokraijaw.net/401/10538188";
-      script.async = true;
-      document.body.appendChild(script);
+      script.dataset.zone = '10507760';
+      script.src = 'https://gizokraijaw.net/vignette.min.js';
+      ([document.documentElement, document.body].filter(Boolean).pop()?.appendChild(script));
 
       const timer = setInterval(() => {
         setCountdown((prev) => {
