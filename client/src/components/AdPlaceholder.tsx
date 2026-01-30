@@ -27,7 +27,7 @@ const AD_CONFIGS = {
 export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceholderProps) {
   const config = AD_CONFIGS[format];
   const adImage = AD_IMAGES[format];
-  const adLink = "https://gizokraijaw.net/4/10538188"; // Updated to gizokraijaw.net
+  const adLink = "https://otieu.com/4/10538188"; 
 
   return (
     <motion.div

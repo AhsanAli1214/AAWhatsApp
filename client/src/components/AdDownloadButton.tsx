@@ -20,7 +20,7 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
       setCountdown(5);
       
       // Open the ad link in a new tab on first click
-      window.open("https://gizokraijaw.net/4/10538188", "_blank");
+      window.open("https://otieu.com/4/10538188", "_blank");
       
       // Monotag integration: Inject direct script for click-tracking
       const script = document.createElement("script");
