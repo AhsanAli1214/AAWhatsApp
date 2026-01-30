@@ -260,13 +260,7 @@ export default function DownloadPage() {
               </div>
 
               <div className="mb-8 flex justify-center">
-                <img
-                  src="client/src/assets/safety-verified.png"
-                  alt="AAWhatsApp Safety Verified - 100% Virus-Free Certification"
-                  className="h-32 w-auto drop-shadow-[0_0_20px_rgba(16,185,129,0.3)]"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <ShieldCheck className="w-32 h-32 text-primary drop-shadow-[0_0_20px_rgba(16,185,129,0.3)]" />
               </div>
 
               <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tighter">
