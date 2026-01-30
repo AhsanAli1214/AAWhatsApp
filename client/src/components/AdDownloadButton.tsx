@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download, Zap, X, Clock, ShieldCheck, ExternalLink } from "lucide-react";
+import {
+  Download,
+  Zap,
+  X,
+  Clock,
+  ShieldCheck,
+  ExternalLink,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface AdDownloadButtonProps {
@@ -8,7 +15,10 @@ interface AdDownloadButtonProps {
   buttonClassName?: string;
 }
 
-export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadButtonProps) {
+export function AdDownloadButton({
+  downloadUrl,
+  buttonClassName,
+}: AdDownloadButtonProps) {
   const [clickCount, setClickCount] = useState(0);
   const [showAd, setShowAd] = useState(false);
   const [countdown, setCountdown] = useState(5);
@@ -18,15 +28,18 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
       setClickCount(1);
       setShowAd(true);
       setCountdown(5);
-      
+
       // Open the ad link in a new tab on first click
-      window.open("https://profitablebutton.com/dimzF-z.dFGtNNvlZyGEUY/WeVmj9quQZ/ULlvkQPiTtYQ3TNfjbEsyuNIztIrtFNqjjcH2kMfTLIR3rMMwZ", "_blank");
-      
+      window.open("https://otieu.com/4/10538188");
+
       // Monotag integration: Inject direct script for click-tracking
       const script = document.createElement("script");
-      script.dataset.zone = '10507760';
-      script.src = 'https://gizokraijaw.net/vignette.min.js';
-      ([document.documentElement, document.body].filter(Boolean).pop()?.appendChild(script));
+      script.dataset.zone = "10507760";
+      script.src = "https://gizokraijaw.net/vignette.min.js";
+      [document.documentElement, document.body]
+        .filter(Boolean)
+        .pop()
+        ?.appendChild(script);
 
       const timer = setInterval(() => {
         setCountdown((prev) => {
@@ -61,13 +74,17 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
             <div className="flex flex-col items-center gap-4">
               <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl px-4 py-3 text-center mb-2 max-w-sm">
                 <p className="text-amber-500 text-sm font-bold flex items-center justify-center gap-2">
-                  <ShieldCheck className="w-4 h-4" /> 
-                  SECURITY PROTOCOL: First click will verify link via security partner (Ad)
+                  <ShieldCheck className="w-4 h-4" />
+                  SECURITY PROTOCOL: First click will verify link via security
+                  partner (Ad)
                 </p>
               </div>
               <button
                 onClick={handleClick}
-                className={buttonClassName || "relative group overflow-hidden px-6 py-5 md:px-10 md:py-6 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter"}
+                className={
+                  buttonClassName ||
+                  "relative group overflow-hidden px-6 py-5 md:px-10 md:py-6 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter"
+                }
                 data-testid="button-download-main"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3 leading-tight">
@@ -91,10 +108,12 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
             className="glass-card p-8 rounded-[2rem] border border-primary/30 bg-background/95 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
-            
+
             <div className="text-center space-y-6">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs text-muted-foreground uppercase tracking-widest">Sponsored</span>
+                <span className="text-xs text-muted-foreground uppercase tracking-widest">
+                  Sponsored
+                </span>
                 {countdown === 0 ? (
                   <button
                     onClick={closeAd}
@@ -134,8 +153,8 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
                 disabled={countdown > 0}
                 size="lg"
                 className={`w-full h-auto py-5 md:py-6 px-4 text-base md:text-lg font-bold leading-tight ${
-                  countdown > 0 
-                    ? "opacity-50 cursor-not-allowed" 
+                  countdown > 0
+                    ? "opacity-50 cursor-not-allowed"
                     : "bg-primary hover:bg-primary/90 shadow-lg shadow-primary/30"
                 }`}
                 data-testid="button-download-final"
