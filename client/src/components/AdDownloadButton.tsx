@@ -127,7 +127,7 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
                 onClick={handleClick}
                 disabled={countdown > 0}
                 size="lg"
-                className={`w-full py-6 text-lg font-bold ${
+                className={`w-full h-auto py-5 md:py-6 px-4 text-base md:text-lg font-bold leading-tight ${
                   countdown > 0 
                     ? "opacity-50 cursor-not-allowed" 
                     : "bg-primary hover:bg-primary/90 shadow-lg shadow-primary/30"
@@ -135,14 +135,14 @@ export function AdDownloadButton({ downloadUrl, buttonClassName }: AdDownloadBut
                 data-testid="button-download-final"
               >
                 {countdown > 0 ? (
-                  <span className="flex items-center gap-2">
-                    <Clock className="w-5 h-5" />
-                    Wait {countdown} seconds...
+                  <span className="flex items-center justify-center gap-2">
+                    <Clock className="w-5 h-5 shrink-0" />
+                    <span className="truncate">Wait {countdown}s...</span>
                   </span>
                 ) : (
-                  <span className="flex items-center gap-2">
-                    <ExternalLink className="w-5 h-5" />
-                    Download Now - MediaFire
+                  <span className="flex items-center justify-center gap-2">
+                    <ExternalLink className="w-5 h-5 shrink-0" />
+                    <span className="truncate text-center">Download Now - MediaFire</span>
                   </span>
                 )}
               </Button>
