@@ -24,10 +24,13 @@ const AD_CONFIGS = {
 /**
  * AdPlaceholder - Correctly integrates specific ad images with link.
  */
-export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceholderProps) {
+export function AdPlaceholder({
+  format = "rectangle",
+  className = "",
+}: AdPlaceholderProps) {
   const config = AD_CONFIGS[format];
   const adImage = AD_IMAGES[format];
-  const adLink = "https://profitablebutton.com/dimzF-z.dFGtNNvlZyGEUY/WeVmj9quQZ/ULlvkQPiTtYQ3TNfjbEsyuNIztIrtFNqjjcH2kMfTLIR3rMMwZ";
+  const adLink = "https://otieu.com/4/10538188";
 
   return (
     <motion.div
@@ -36,22 +39,22 @@ export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceh
       viewport={{ once: true }}
       className={`w-full overflow-hidden my-8 flex flex-col items-center justify-center relative ${className}`}
     >
-      <a 
-        href={adLink} 
-        target="_blank" 
+      <a
+        href={adLink}
+        target="_blank"
         rel="noopener noreferrer"
         className="block group transition-all duration-500"
       >
-        <img 
-          src={adImage} 
+        <img
+          src={adImage}
           alt="Verified Sponsor Advertisement"
           loading="eager"
           decoding="async"
-          style={{ 
-            height: format === 'mobile' ? '50px' : 'auto',
-            maxHeight: format === 'rectangle' ? '250px' : '90px',
-            maxWidth: '100%',
-            width: 'auto'
+          style={{
+            height: format === "mobile" ? "50px" : "auto",
+            maxHeight: format === "rectangle" ? "250px" : "90px",
+            maxWidth: "100%",
+            width: "auto",
           }}
           className="relative z-10 object-contain"
         />
