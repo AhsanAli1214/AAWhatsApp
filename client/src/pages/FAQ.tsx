@@ -121,6 +121,8 @@ export default function FAQ() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
+            "name": "AA WhatsApp Frequently Asked Questions",
+            "description": "Answers to common questions about AA WhatsApp Anti-Ban, security features, and installation.",
             "mainEntity": faqs.map(faq => ({
               "@type": "Question",
               "name": faq.question,
