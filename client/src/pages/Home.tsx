@@ -60,15 +60,15 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA WhatsApp Download V2.0 (Official) – Most Secure Anti-Ban WhatsApp 2026</title>
+        <title>AA WhatsApp APK Download V2.0 (2026 Official) – Best Anti-Ban Mod</title>
         <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <meta
           name="description"
-          content="Official AA WhatsApp APK Download V2.0 (2026). The world's only secure WhatsApp mod with Anti-Ban v2.0, Zero-Permission privacy, and 4000+ themes. Best alternative to GB WhatsApp and FM WhatsApp."
+          content="Download Official AA WhatsApp APK V2.0 (2026). Secure Anti-Ban v2.0, Zero-Permission privacy, and 4000+ themes. The #1 alternative to GB WhatsApp and FM WhatsApp for Android."
         />
         <meta
           name="keywords"
-          content="AA WhatsApp, AA WhatsApp APK, Download AA WhatsApp, AA WhatsApp V2.0, AA WhatsApp Official, Secure WhatsApp Mod, Anti-Ban WhatsApp 2026, AA Mods, WhatsApp Mod Pro, WhatsApp Privacy Mod"
+          content="AA WhatsApp, AA WhatsApp APK, Download AA WhatsApp, AA WhatsApp V2.0, AA WhatsApp Official, Secure WhatsApp Mod, Anti-Ban WhatsApp 2026, AA Mods, WhatsApp Mod Pro, WhatsApp Privacy Mod, Best WhatsApp Mod 2026"
         />
         <meta
           property="og:title"
@@ -76,7 +76,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="Download the latest AA WhatsApp APK V2.0. 100% Secure, Anti-Ban v2.0, and Zero-Permission Privacy. The best WhatsApp mod in 2026."
+          content="Get the latest AA WhatsApp APK V2.0. Featuring Anti-Ban v2.0 and Zero-Permission Privacy Core. The safest WhatsApp mod choice for 2026."
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -92,6 +92,8 @@ export default function Home() {
               "applicationCategory": "CommunicationApplication",
               "softwareVersion": "2.0",
               "fileSize": "118 MB",
+              "genre": "Messaging",
+              "inLanguage": "en",
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
@@ -100,7 +102,8 @@ export default function Home() {
               "offers": {
                 "@type": "Offer",
                 "price": "0",
-                "priceCurrency": "USD"
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
               }
             }
           `}
