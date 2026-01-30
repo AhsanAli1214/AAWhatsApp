@@ -27,7 +27,7 @@ const AD_CONFIGS = {
 export function AdPlaceholder({ format = "rectangle", className = "" }: AdPlaceholderProps) {
   const config = AD_CONFIGS[format];
   const adImage = AD_IMAGES[format];
-  const adLink = "https://otieu.com/4/10538188"; 
+  const adLink = "https://profitablebutton.com/dimzF-z.dFGtNNvlZyGEUY/WeVmj9quQZ/ULlvkQPiTtYQ3TNfjbEsyuNIztIrtFNqjjcH2kMfTLIR3rMMwZ";
 
   return (
     <motion.div
