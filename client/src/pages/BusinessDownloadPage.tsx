@@ -14,6 +14,7 @@ import {
   Users,
   Shield,
   Sparkles,
+  Send,
   Lock as LockIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
