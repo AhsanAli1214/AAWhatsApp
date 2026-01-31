@@ -14,7 +14,7 @@ export function Footer() {
                 className="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-500"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = "https://placehold.co/64x64/10b981/ffffff?text=AA";
+                  target.src = "https://i.postimg.cc/mrqq6LxP/favicon.png";
                 }}
               />
               <span className="font-black text-2xl tracking-tighter uppercase">
