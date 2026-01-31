@@ -44,7 +44,7 @@ export function BusinessNavbar() {
               decoding="async"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = "https://placehold.co/48x48/3b82f6/ffffff?text=AA";
+                target.src = "https://i.postimg.cc/mrqq6LxP/favicon.png";
               }}
             />
             <div className="flex flex-col">
