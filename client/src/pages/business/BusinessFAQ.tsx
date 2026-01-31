@@ -22,7 +22,7 @@ const faqs = [
       },
       {
         q: "Is AA Business WhatsApp safe to use?",
-        a: "Yes, AA Business WhatsApp is completely safe. It features our exclusive Anti-Ban v2.0 technology and Privacy Core, which means it never accesses your bank apps, location, or personal files. Over 5 million businesses trust AA Business for their communication needs."
+        a: "Yes, AA Business WhatsApp is completely safe. It features our exclusive Anti-Ban v1.0 technology and Privacy Core, which means it never accesses your bank apps, location, or personal files. Over 5 million businesses trust AA Business for their communication needs."
       },
       {
         q: "Can I use AA Business with my existing WhatsApp Business account?",
@@ -55,8 +55,8 @@ const faqs = [
     category: "Privacy & Security",
     questions: [
       {
-        q: "What is Anti-Ban v2.0 technology?",
-        a: "Anti-Ban v2.0 is our advanced protection system that prevents account restrictions. It uses sophisticated techniques to make your modified app appear identical to the official WhatsApp Business to their servers, ensuring your account remains safe."
+        q: "What is Anti-Ban v1.0 technology?",
+        a: "Anti-Ban v1.0 is our advanced protection system that prevents account restrictions. It uses sophisticated techniques to make your modified app appear identical to the official WhatsApp Business to their servers, ensuring your account remains safe."
       },
       {
         q: "Can I hide my online status and blue ticks?",

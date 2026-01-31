@@ -68,7 +68,7 @@ const privacyFeatures = [
   },
   {
     icon: Shield,
-    title: "Anti-Ban v2.0",
+    title: "Anti-Ban v1.0",
     description: "Advanced protection against account restrictions"
   }
 ];
