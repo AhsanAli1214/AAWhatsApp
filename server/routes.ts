@@ -265,9 +265,6 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     res.type("application/xml");
     res.status(200).send(sitemap);
   });
-    res.type("application/xml");
-    res.status(200).send(sitemap);
-  });
 
   return httpServer;
 }
