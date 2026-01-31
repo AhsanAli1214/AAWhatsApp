@@ -3731,6 +3731,17 @@ Stay updated, stay protected!`,
     excerpt: "AA Business WhatsApp V1.0 has arrived with enterprise-grade security, Anti-Ban v2.0, and powerful automation tools for businesses.",
     content: `We are thrilled to announce the official release of AA Business WhatsApp V1.0. This version represents a milestone in professional communication, focusing on security, privacy, and productivity.
 
+| **Application Name** | AA Business WhatsApp |
+| **Version** | V1.0 (Latest) |
+| **Base Version** | 2.25.29.77 |
+| **APK File Size** | 125 MB |
+| **Package Name** | com.aa.business |
+| **Anti-Ban** | v2.0 (Verified) |
+| **Developer** | AA Mods Official |
+| **Minimum Android** | 5.0+ |
+| **License** | Free |
+| **Updated** | January 2026 |
+
 ## Key Features in V1.0
 
 - **Anti-Ban v2.0**: The most advanced protection for business accounts.

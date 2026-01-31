@@ -98,7 +98,7 @@ export function AdDownloadButton({
                   ) : (
                     <>
                       <Zap className="w-5 h-5 md:w-8 md:h-8 fill-current animate-pulse shrink-0" />
-                      <span className="truncate">Download APK V2.0</span>
+                      <span className="truncate">Download APK {variant === "business" ? "V1.0" : "V2.0"}</span>
                     </>
                   )}
                 </span>
