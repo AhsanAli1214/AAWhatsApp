@@ -12,7 +12,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
 import { AdBlockDetector } from "@/components/AdBlockDetector";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
 
 import heroImage from "@/assets/business-hero.png";
 import analyticsImage from "@/assets/business-analytics.png";
@@ -265,7 +264,6 @@ export default function BusinessHome() {
       </section>
 
       <div className="container px-4 relative z-10 mb-16">
-        <AdPlaceholder format="leaderboard" className="py-8" />
       </div>
 
       <section className="py-20 px-4 bg-blue-500/5">
@@ -491,25 +489,13 @@ export default function BusinessHome() {
                 <div key={index} className="grid grid-cols-4 gap-4 p-4 border-t border-border/50">
                   <div className="text-sm">{row.feature}</div>
                   <div className="flex justify-center">
-                    {row.aaBusiness ? (
-                      <CheckCircle2 className="w-5 h-5 text-blue-500" />
-                    ) : (
-                      <XCircle className="w-5 h-5 text-red-500/50" />
-                    )}
+                    {row.aaBusiness ? <CheckCircle2 className="text-blue-500 w-5 h-5" /> : <XCircle className="text-destructive w-5 h-5" />}
                   </div>
                   <div className="flex justify-center">
-                    {row.official ? (
-                      <CheckCircle2 className="w-5 h-5 text-green-500" />
-                    ) : (
-                      <XCircle className="w-5 h-5 text-red-500/50" />
-                    )}
+                    {row.official ? <CheckCircle2 className="text-blue-500 w-5 h-5" /> : <XCircle className="text-destructive w-5 h-5" />}
                   </div>
                   <div className="flex justify-center">
-                    {row.gbBusiness ? (
-                      <CheckCircle2 className="w-5 h-5 text-yellow-500" />
-                    ) : (
-                      <XCircle className="w-5 h-5 text-red-500/50" />
-                    )}
+                    {row.gbBusiness ? <CheckCircle2 className="text-blue-500 w-5 h-5" /> : <XCircle className="text-destructive w-5 h-5" />}
                   </div>
                 </div>
               ))}
@@ -518,57 +504,23 @@ export default function BusinessHome() {
         </div>
       </section>
 
-      <section className="py-16 relative z-10">
+      <section className="py-24 relative overflow-hidden bg-background">
         <div className="container px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="border-blue-500/20 bg-blue-500/5 text-center">
-                  <CardContent className="p-8">
-                    <div className="text-4xl font-black text-blue-500 mb-2">{stat.value}</div>
-                    <div className="text-muted-foreground">{stat.label}</div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 px-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 relative overflow-hidden">
-        <div className="container mx-auto max-w-4xl text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-black mb-6">
-              Ready to Grow Your Business?
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight">
+              Ready to Scale Your <span className="text-blue-500 italic">Business?</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Join millions of businesses using AA Business WhatsApp for professional communication.
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Join thousands of businesses already using AA Business WhatsApp to manage their customer relationships securely.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/aa-business/download">
-                <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-lg px-12 py-6 font-bold">
-                  <Download className="w-5 h-5 mr-2" />
-                  Download APK V1.0
-                </Button>
-              </Link>
-              <Link href="/aa-business/features">
-                <Button size="lg" variant="outline" className="border-blue-500/30 hover:bg-blue-500/10 text-lg px-12 py-6">
-                  View All Features
-                  <ArrowRight className="w-5 h-5 ml-2" />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/aa-business/download" className="w-full sm:w-auto">
+                <Button size="lg" className="px-12 py-8 rounded-2xl bg-blue-500 hover:bg-blue-600 text-white font-black text-xl shadow-2xl shadow-blue-500/20">
+                  Download APK Now
                 </Button>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

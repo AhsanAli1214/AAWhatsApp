@@ -21,7 +21,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { AdDownloadButton } from "@/components/AdDownloadButton";
 import { useState, useEffect } from "react";
 
@@ -177,7 +176,6 @@ export default function DownloadPage() {
             </p>
           </section>
 
-          <AdPlaceholder format="leaderboard" />
           {/* Live Stats */}
           <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((stat, i) => (
@@ -305,7 +303,7 @@ export default function DownloadPage() {
               className="glass-card p-8 rounded-[2rem] border border-white/5 space-y-6 flex flex-col"
             >
               <div className="mx-auto w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mb-4">
-                <ShieldCheck className="w-12 h-12 text-primary" />
+                <ShieldCheckIcon className="w-12 h-12 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-center">
                 Safety Guarantee
@@ -331,8 +329,6 @@ export default function DownloadPage() {
               </div>
             </motion.div>
           </section>
-
-          <AdPlaceholder format="leaderboard" />
 
           {/* Version History */}
           <section className="space-y-8">
@@ -408,8 +404,6 @@ export default function DownloadPage() {
               ))}
             </div>
           </section>
-
-          <AdPlaceholder format="rectangle" />
 
           {/* Safety Section */}
           <section className="p-8 rounded-[2.5rem] bg-destructive/5 border border-destructive/20">
@@ -540,3 +534,21 @@ export default function DownloadPage() {
     </div>
   );
 }
+
+const ShieldCheckIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+    <path d="m9 12 2 2 4-4" />
+  </svg>
+);
