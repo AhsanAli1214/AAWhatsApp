@@ -1,21 +1,24 @@
+import { Helmet } from "react-helmet";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { 
-  Briefcase, Shield, Download, CheckCircle, Star, Users, 
+  Briefcase, Shield, Download, CheckCircle2, Star, Users, 
   MessageSquare, Clock, Bot, BarChart3, Tags, Smartphone,
-  ArrowRight, Zap, Globe, Lock
+  ArrowRight, Zap, Globe, Lock, ChevronDown, Database,
+  ShieldCheck, Send, XCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
+import { AdBlockDetector } from "@/components/AdBlockDetector";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
+import heroImage from "@/assets/business-hero.png";
+import analyticsImage from "@/assets/business-analytics.png";
+import automationImage from "@/assets/business-automation.png";
+import securityImage from "@/assets/security-hero.png";
+import privacyImage from "@/assets/privacy-feature.png";
 
 const features = [
   {
@@ -57,67 +60,185 @@ const stats = [
   { value: "24/7", label: "Support" }
 ];
 
+const comparisonData = [
+  { feature: "Auto Reply System", aaBusiness: true, official: true, gbBusiness: true },
+  { feature: "Anti-Ban Protection", aaBusiness: true, official: false, gbBusiness: false },
+  { feature: "Custom Themes", aaBusiness: true, official: false, gbBusiness: true },
+  { feature: "Message Scheduler", aaBusiness: true, official: false, gbBusiness: true },
+  { feature: "Privacy Core", aaBusiness: true, official: false, gbBusiness: false },
+  { feature: "No Bank Data Access", aaBusiness: true, official: true, gbBusiness: false },
+  { feature: "Dual Accounts", aaBusiness: true, official: false, gbBusiness: true },
+  { feature: "Regular Updates", aaBusiness: true, official: true, gbBusiness: false }
+];
+
 export default function BusinessHome() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-blue-500/30">
+      <AdBlockDetector />
+      <Helmet>
+        <title>AA Business WhatsApp APK Download V2.0 (2026) - Best Business Mod</title>
+        <meta
+          name="description"
+          content="Download AA Business WhatsApp APK V2.0 for professional business communication. Auto-reply, customer labels, message statistics, and Anti-Ban v2.0 protection."
+        />
+        <meta
+          name="keywords"
+          content="AA Business WhatsApp, Business WhatsApp Mod, WhatsApp Business APK, Auto Reply WhatsApp, Business WhatsApp 2026, AA Business Download"
+        />
+        <meta property="og:title" content="AA Business WhatsApp Download V2.0 (2026) - Professional Business Mod" />
+        <meta property="og:description" content="The ultimate WhatsApp mod for businesses with auto-reply, customer labels, and message statistics." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-business" />
+      </Helmet>
+
+      <div className="fixed inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5 pointer-events-none z-0" />
       <BusinessNavbar />
-      
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5" />
-        
-        <div className="container mx-auto max-w-6xl relative z-10">
+
+      <section className="relative z-10 pt-32 pb-20 lg:pt-48 lg:pb-32 container mx-auto px-4 md:px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="flex-1 text-center lg:text-left"
           >
-            <Badge className="mb-6 bg-blue-500/10 text-blue-500 border-blue-500/20">
-              <Shield className="w-3 h-3 mr-1" />
-              100% Secure - No Bank/Location Data Access
-            </Badge>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              AA Business <span className="text-blue-500 italic">WhatsApp</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+            <div className="inline-flex flex-col items-center lg:items-start gap-4 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-500 text-sm font-bold shadow-[0_0_15px_rgba(59,130,246,0.2)] animate-pulse">
+                <ShieldCheck className="w-4 h-4" />
+                100% Secure - No Bank/Location Data Access
+              </div>
+            </div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-5xl lg:text-7xl font-black font-display leading-[1.1] mb-8 tracking-tighter"
+            >
+              AA Business <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 italic">
+                WhatsApp
+              </span>
+            </motion.h1>
+
+            <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               The ultimate WhatsApp mod for businesses. Manage customers, automate responses, and grow your business with advanced features.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/aa-business/download">
-                <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-lg px-8" data-testid="button-download-business">
-                  <Download className="w-5 h-5 mr-2" />
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <Link href="/aa-business/download" className="w-full sm:w-auto">
+                <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-blue-500 text-white font-black text-lg shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:-translate-y-1 transition-all duration-500 w-full border border-white/20 uppercase tracking-tight flex items-center justify-center gap-3">
+                  <Download className="w-6 h-6" />
                   Download APK V2.0
-                </Button>
+                </button>
               </Link>
-              <a href="https://t.me/AaMods" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-blue-500/30 hover:bg-blue-500/10 text-lg px-8" data-testid="button-telegram-business">
+              <a href="https://t.me/AaMods" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-transparent border-2 border-blue-500/50 text-blue-500 font-black text-lg hover:-translate-y-1 transition-all duration-500 w-full uppercase tracking-tight flex items-center justify-center gap-3 hover:bg-blue-500/10">
+                  <Send className="w-6 h-6" />
                   Join Telegram
-                </Button>
+                </button>
               </a>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16"
+            initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex-1 relative"
           >
-            {stats.map((stat, index) => (
-              <Card key={index} className="border-blue-500/20 bg-blue-500/5">
-                <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-blue-500 mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="relative z-10 mx-auto max-w-lg">
+              <img
+                src={heroImage}
+                alt="AA Business WhatsApp Interface V2.0"
+                className="w-full h-auto rounded-[2rem] shadow-2xl shadow-blue-500/20 border border-blue-500/20"
+                loading="eager"
+              />
+            </div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] -z-10" />
+          </motion.div>
+        </div>
+
+        <div className="flex justify-center mt-20">
+          <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
+        </div>
+      </section>
+
+      <section className="py-12 relative z-10">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative group"
+          >
+            <div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-[3rem] -z-10 group-hover:bg-blue-500/10 transition-colors duration-700" />
+            <div className="glass-card rounded-[2.5rem] p-8 md:p-12 border border-blue-500/10 relative overflow-hidden flex flex-col lg:flex-row items-center gap-12">
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+
+              <div className="flex-1 space-y-6 text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-xs font-black uppercase tracking-[0.3em]">
+                  <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                  Business Protocol Active
+                </div>
+                <h2 className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-none">
+                  AA Business{" "}
+                  <span className="text-blue-500 italic">V 2.0</span>
+                </h2>
+                <p className="text-muted-foreground text-lg font-medium max-w-xl leading-relaxed">
+                  The latest business-grade WhatsApp modification with professional features for customer management and automated communication.
+                </p>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+                  {[
+                    { label: "Update", value: "23/01/26" },
+                    { label: "Base", value: "2.25.36.73" },
+                    { label: "Status", value: "Verified" },
+                  ].map((stat, i) => (
+                    <div
+                      key={i}
+                      className="px-5 py-3 rounded-2xl bg-white/[0.03] border border-blue-500/10 flex flex-col items-center lg:items-start min-w-[120px]"
+                    >
+                      <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-1">
+                        {stat.label}
+                      </span>
+                      <span className="text-sm font-black text-blue-500 font-mono">
+                        {stat.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="w-px h-32 bg-gradient-to-b from-transparent via-blue-500/20 to-transparent hidden lg:block" />
+
+              <div className="shrink-0 flex flex-col items-center gap-6">
+                <div className="relative">
+                  <div className="w-32 h-32 rounded-[2.5rem] bg-blue-500/10 flex items-center justify-center border border-blue-500/20 shadow-2xl shadow-blue-500/10">
+                    <Briefcase className="w-14 h-14 text-blue-500" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-background border-2 border-blue-500 flex items-center justify-center shadow-xl">
+                    <CheckCircle2 className="w-5 h-5 text-blue-500" />
+                  </div>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-black font-mono text-white mb-1 tracking-tight">
+                    V 2.0
+                  </p>
+                  <p className="text-xs font-bold text-blue-500 uppercase tracking-[0.2em] opacity-70">
+                    Business Edition
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-muted/30">
+      <div className="container px-4 relative z-10 mb-16">
+        <AdPlaceholder format="leaderboard" className="py-8" />
+      </div>
+
+      <section className="py-20 px-4 bg-blue-500/5">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,10 +246,10 @@ export default function BusinessHome() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Business <span className="text-blue-500">Features</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Everything you need to manage your business communications professionally
             </p>
           </motion.div>
@@ -142,13 +263,13 @@ export default function BusinessHome() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="h-full border-blue-500/10 hover:border-blue-500/30 transition-colors">
+                <Card className="h-full border-blue-500/10 hover:border-blue-500/30 transition-all hover:-translate-y-1 duration-300">
                   <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
-                      <feature.icon className="w-6 h-6 text-blue-500" />
+                    <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-4">
+                      <feature.icon className="w-7 h-7 text-blue-500" />
                     </div>
-                    <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm">{feature.description}</p>
+                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                    <p className="text-muted-foreground">{feature.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -157,78 +278,266 @@ export default function BusinessHome() {
         </div>
       </section>
 
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="py-24 relative overflow-hidden">
+        <div className="container px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="space-y-6"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Why Choose <span className="text-blue-500">AA Business</span>?
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                Smart <span className="text-blue-500">Analytics Dashboard</span>
               </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Track every message, monitor delivery rates, and analyze response times. Get detailed insights into your business communication patterns.
+              </p>
               <div className="space-y-4">
-                {[
-                  "All official WhatsApp Business features included",
-                  "Advanced privacy controls for business data",
-                  "Anti-ban v2.0 protection technology",
-                  "Custom themes and UI personalization",
-                  "Dual accounts support on same device",
-                  "Regular updates with new features"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
-                    <span>{item}</span>
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-blue-500/5 border border-blue-500/10">
+                  <div className="mt-1 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-blue-500" />
                   </div>
-                ))}
-              </div>
-              
-              <div className="mt-8">
-                <Link href="/aa-business/features">
-                  <Button variant="outline" className="border-blue-500/30 hover:bg-blue-500/10">
-                    View All Features
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </Link>
+                  <div>
+                    <h4 className="font-bold text-lg">Real-time Statistics</h4>
+                    <p className="text-muted-foreground">Monitor message delivery, read rates, and customer engagement in real-time.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-blue-500/5 border border-blue-500/10">
+                  <div className="mt-1 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-blue-500" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg">Response Analytics</h4>
+                    <p className="text-muted-foreground">Track average response times and identify peak communication hours.</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
-
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 p-8 flex items-center justify-center">
-                <div className="w-full h-full rounded-2xl bg-background/50 backdrop-blur border border-blue-500/20 flex items-center justify-center">
-                  <Briefcase className="w-32 h-32 text-blue-500/50" />
-                </div>
+              <img 
+                src={analyticsImage} 
+                alt="AA Business WhatsApp Analytics Dashboard" 
+                className="rounded-3xl shadow-2xl border border-blue-500/20 w-full"
+                loading="lazy"
+              />
+              <div className="absolute -bottom-6 -right-6 p-6 bg-background border border-blue-500/30 rounded-2xl shadow-xl hidden md:block">
+                <p className="text-blue-500 font-bold text-xl">Smart Analytics</p>
+                <p className="text-sm text-muted-foreground">Track Everything</p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/10">
-        <div className="container mx-auto max-w-4xl text-center">
+      <section className="py-24 bg-gradient-to-br from-blue-500/5 to-cyan-500/5">
+        <div className="container px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:order-2 space-y-6"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                Powerful <span className="text-blue-500">Automation</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Automate your business responses with smart auto-reply, message scheduling, and quick reply templates. Never miss a customer inquiry.
+              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {['Auto Reply System', 'Message Scheduler', 'Quick Templates', 'Away Messages', 'Greeting Messages', 'Custom Triggers'].map((feat) => (
+                  <li key={feat} className="flex items-center gap-2 text-foreground font-medium">
+                    <Zap className="w-4 h-4 text-blue-500" />
+                    {feat}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/aa-business/features">
+                <Button size="lg" className="rounded-full px-8 text-lg font-bold bg-blue-500 hover:bg-blue-600">
+                  Explore Features
+                </Button>
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:order-1"
+            >
+              <img 
+                src={automationImage} 
+                alt="AA Business WhatsApp Automation Features" 
+                className="rounded-3xl shadow-2xl border border-blue-500/20 w-full"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 relative overflow-hidden bg-background">
+        <div className="container px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-sm font-black">
+                <ShieldCheck className="w-4 h-4" />
+                Anti-Ban V2.0 Certified
+              </div>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
+                Enterprise-Grade <span className="text-blue-500 italic">Security</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Our proprietary Anti-Ban v2.0 technology protects your business account. Combined with Privacy Core, your business data stays completely secure.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-6 rounded-2xl bg-blue-500/5 border border-blue-500/10">
+                  <h4 className="text-blue-500 font-black text-2xl mb-1">0.1%</h4>
+                  <p className="text-xs text-muted-foreground uppercase tracking-widest">Ban Rate 2026</p>
+                </div>
+                <div className="p-6 rounded-2xl bg-blue-500/5 border border-blue-500/10">
+                  <h4 className="text-blue-500 font-black text-2xl mb-1">Daily</h4>
+                  <p className="text-xs text-muted-foreground uppercase tracking-widest">Security Updates</p>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <img 
+                src={securityImage} 
+                alt="AA Business WhatsApp Security Technology" 
+                className="rounded-3xl shadow-2xl border border-blue-500/20 w-full"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-blue-500/5">
+        <div className="container px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              How We <span className="text-blue-500">Compare</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              See why AA Business WhatsApp is the best choice for your business
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="bg-background rounded-2xl border border-blue-500/20 overflow-hidden">
+              <div className="grid grid-cols-4 gap-4 p-4 bg-blue-500/10 font-bold text-sm">
+                <div>Feature</div>
+                <div className="text-center text-blue-500">AA Business</div>
+                <div className="text-center">Official Business</div>
+                <div className="text-center">GB Business</div>
+              </div>
+              {comparisonData.map((row, index) => (
+                <div key={index} className="grid grid-cols-4 gap-4 p-4 border-t border-border/50">
+                  <div className="text-sm">{row.feature}</div>
+                  <div className="flex justify-center">
+                    {row.aaBusiness ? (
+                      <CheckCircle2 className="w-5 h-5 text-blue-500" />
+                    ) : (
+                      <XCircle className="w-5 h-5 text-red-500/50" />
+                    )}
+                  </div>
+                  <div className="flex justify-center">
+                    {row.official ? (
+                      <CheckCircle2 className="w-5 h-5 text-green-500" />
+                    ) : (
+                      <XCircle className="w-5 h-5 text-red-500/50" />
+                    )}
+                  </div>
+                  <div className="flex justify-center">
+                    {row.gbBusiness ? (
+                      <CheckCircle2 className="w-5 h-5 text-yellow-500" />
+                    ) : (
+                      <XCircle className="w-5 h-5 text-red-500/50" />
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16 relative z-10">
+        <div className="container px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="border-blue-500/20 bg-blue-500/5 text-center">
+                  <CardContent className="p-8">
+                    <div className="text-4xl font-black text-blue-500 mb-2">{stat.value}</div>
+                    <div className="text-muted-foreground">{stat.label}</div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 relative overflow-hidden">
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-black mb-6">
               Ready to Grow Your Business?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
               Join millions of businesses using AA Business WhatsApp for professional communication.
             </p>
-            <Link href="/aa-business/download">
-              <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-lg px-12">
-                <Download className="w-5 h-5 mr-2" />
-                Download Free
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/aa-business/download">
+                <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-lg px-12 py-6 font-bold">
+                  <Download className="w-5 h-5 mr-2" />
+                  Download APK V2.0
+                </Button>
+              </Link>
+              <Link href="/aa-business/features">
+                <Button size="lg" variant="outline" className="border-blue-500/30 hover:bg-blue-500/10 text-lg px-12 py-6">
+                  View All Features
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
