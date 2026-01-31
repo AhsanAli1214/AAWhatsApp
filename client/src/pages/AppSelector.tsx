@@ -33,17 +33,15 @@ export default function AppSelector() {
             className="text-center mb-16"
           >
             <div className="flex flex-col items-center mb-16">
-              <div className="w-24 h-24 rounded-3xl bg-primary/10 flex items-center justify-center border border-primary/20 shadow-2xl shadow-primary/10 mb-8 overflow-hidden group hover:scale-105 transition-transform duration-500">
-                <img 
-                  src="/favicon.png" 
-                  alt="AA Mods Logo" 
-                  className="w-16 h-16 object-contain"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "https://placehold.co/100x100/10b981/ffffff?text=AA";
-                  }}
-                />
-              </div>
+              <img 
+                src="/favicon.png" 
+                alt="AA Mods Logo" 
+                className="w-32 h-32 object-contain mb-8 group hover:scale-110 transition-transform duration-500"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "https://placehold.co/128x128/10b981/ffffff?text=AA";
+                }}
+              />
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
                 <Sparkles className="w-4 h-4 text-primary" />
                 <span className="text-sm text-primary font-medium">Choose Your WhatsApp Experience</span>
