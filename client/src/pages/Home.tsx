@@ -59,54 +59,11 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA WhatsApp APK Download V2.0 (2026 Official) – Best Anti-Ban Mod</title>
-        <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
-        <meta
-          name="description"
-          content="Download Official AA WhatsApp APK V2.0 (2026). Secure Anti-Ban v2.0, Zero-Permission privacy, and 4000+ themes. The #1 alternative to GB WhatsApp and FM WhatsApp for Android."
-        />
-        <meta
-          name="keywords"
-          content="AA WhatsApp, AA WhatsApp APK, Download AA WhatsApp, AA WhatsApp V2.0, AA WhatsApp Official, Secure WhatsApp Mod, Anti-Ban WhatsApp 2026, AA Mods, WhatsApp Mod Pro, WhatsApp Privacy Mod, Best WhatsApp Mod 2026"
-        />
-        <meta
-          property="og:title"
-          content="AA WhatsApp Download V2.0 (2026) – Official & Secure Anti-Ban Mod"
-        />
-        <meta
-          property="og:description"
-          content="Get the latest AA WhatsApp APK V2.0. Featuring Anti-Ban v2.0 and Zero-Permission Privacy Core. The safest WhatsApp mod choice for 2026."
-        />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <title>AA Mods | Official AAWhatsApp V2.0 & AA Business V1.0 APK (2026)</title>
+        <meta name="description" content="Official AA Mods. Download the safest Anti-Ban WhatsApp mods. AAWhatsApp V2.0 with Privacy Core™ and AA Business V1.0 for enterprise. Secure & Permission-Clean." />
+        <meta name="keywords" content="AA Mods, AA WhatsApp, AA Business WhatsApp, WhatsApp Mod 2026, Anti-Ban WhatsApp APK, Secure WhatsApp, GB WhatsApp Alternative" />
         <link rel="canonical" href="https://aa-mods.vercel.app/" />
         <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "AA WhatsApp",
-              "operatingSystem": "Android",
-              "applicationCategory": "CommunicationApplication",
-              "softwareVersion": "2.0",
-              "fileSize": "118 MB",
-              "genre": "Messaging",
-              "inLanguage": "en",
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "ratingCount": "102456"
-              },
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock"
-              }
-            }
-          `}
-        </script>
       </Helmet>
       <div className="fixed inset-0 hero-gradient pointer-events-none z-0" />
       <Navigation />
