@@ -48,7 +48,7 @@ export default function AppSelector() {
               <img 
                 src="/favicon.png" 
                 alt="AA Mods Logo" 
-                className="w-48 h-48 md:w-56 md:h-56 object-contain group hover:scale-110 transition-transform duration-500 mt-[30px] mb-[30px]"
+                className="w-48 h-48 md:w-56 md:h-56 object-contain group hover:scale-110 transition-transform duration-500 mt-[30px] mb-[30px] rounded-3xl shadow-2xl shadow-primary/20"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = "https://placehold.co/224x224/10b981/ffffff?text=AA";
