@@ -124,12 +124,12 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="flex-1 relative"
             >
-              <div className="relative z-10 mx-auto max-w-lg">
+              <div className="relative z-10 mx-auto max-w-xl">
                 <img
                   src={heroImage}
                   alt="AAWhatsApp Interface V1.0 - Secure Messaging with Anti-Ban v1.0"
                   title="Official AAWhatsApp Secure Interface"
-                  className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/20"
+                  className="w-full h-auto rounded-[2.5rem] shadow-2xl shadow-primary/20 border border-primary/20 scale-110"
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
@@ -137,7 +137,7 @@ export default function Home() {
                   height="675"
                 />
               </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] -z-10" />
           </motion.div>
         </div>
         <AdPlaceholder format="mobile" />

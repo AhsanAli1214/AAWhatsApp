@@ -89,13 +89,6 @@ export function Navbar() {
                 Telegram
               </Button>
             </a>
-
-            <Link href="/aa-whatsapp/download">
-              <Button size="sm" className="bg-primary hover:bg-primary/90">
-                <Download className="w-4 h-4 mr-2" />
-                Download
-              </Button>
-            </Link>
           </div>
 
           <button
@@ -121,12 +114,6 @@ export function Navbar() {
                 </Link>
               ))}
               <hr className="my-2 border-border" />
-              <Link href="/aa-whatsapp/download">
-                <Button className="w-full" onClick={() => setIsOpen(false)}>
-                  <Download className="w-4 h-4 mr-2" />
-                  Download
-                </Button>
-              </Link>
             </div>
           </div>
         )}
