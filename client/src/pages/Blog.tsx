@@ -16,6 +16,7 @@ import {
   ArrowLeft
 } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
+import { AdsBanner } from "@/components/AdsBanner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -124,6 +125,7 @@ export default function Blog() {
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               The definitive resource for {isBusiness ? "enterprise" : "personal"} WhatsApp mod security, privacy engineering, and Anti-Ban technology.
             </p>
+            <AdsBanner />
           </motion.div>
 
           <div className="mb-12 flex justify-center gap-4">

@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
+import { AdsBanner } from "@/components/AdsBanner";
 import {
   Download,
   ShieldCheck,
@@ -245,6 +246,7 @@ export default function DownloadPage() {
                 </div>
               </div>
 
+              <AdsBanner />
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5">
                   <Package className="w-4 h-4" /> 118 MB
