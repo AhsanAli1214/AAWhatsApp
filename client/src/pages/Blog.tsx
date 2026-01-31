@@ -95,7 +95,7 @@ export default function Blog() {
       <Helmet>
         <title>{isBusiness ? "AA Business WhatsApp Blog" : "AA WhatsApp Blog"} 2026 – Anti-Ban & Security</title>
         <meta name="description" content={`Explore the official AA ${isBusiness ? "Business " : ""}WhatsApp blog for the latest updates, security guides, and Anti-Ban technology insights.`} />
-        <link rel="canonical" href={`https://aamods.com/blog${isBusiness ? "?type=business" : ""}`} />
+        <link rel="canonical" href={`https://aa-mods.vercel.app/blog${isBusiness ? "?type=business" : ""}`} />
       </Helmet>
 
       <div className="fixed inset-0 hero-gradient pointer-events-none z-0" />

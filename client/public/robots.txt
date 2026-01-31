@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aamods.com/sitemap.xml
+Sitemap: https://aa-mods.vercel.app/sitemap.xml
