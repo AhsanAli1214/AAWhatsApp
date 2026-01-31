@@ -148,6 +148,18 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aa-mods.vercel.app/aa-business-whatsapp</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/business-download</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://aa-mods.vercel.app/download</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>always</changefreq>
@@ -186,6 +198,18 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
   <url>
     <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-latest-version-download</loc>
     <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/blog/aa-business-whatsapp-features-guide</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/blog/aa-business-whatsapp-vs-whatsapp-business</loc>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -273,9 +297,9 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>`;
+</urlset>`.trim();
     res.type("application/xml");
-    res.status(200).send(sitemap.trim());
+    res.status(200).send(sitemap);
   });
 
   return httpServer;
