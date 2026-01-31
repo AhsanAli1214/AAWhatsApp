@@ -34,6 +34,7 @@ import securityImage from "@assets/Gemini_Generated_Image_q9qqs4q9qqs4q9qq_(1)_1
 import comparisonImage from "@assets/generated_images/clean_comparison_illustration_showing_aawhatsapp_vs_other_mods..png";
 import ctaImage from "@assets/generated_images/call-to-action_image_for_downloading_aawhatsapp_apk..png";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
+import { AdsBanner } from "@/components/AdsBanner";
 
 const ShieldCheckIcon = ({ className }: { className?: string }) => (
   <svg
@@ -165,6 +166,9 @@ export default function Home() {
               </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] -z-10" />
           </motion.div>
+        </div>
+        <div className="mt-20">
+          <AdsBanner />
         </div>
         <div className="flex justify-center mt-20">
           <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
