@@ -11,14 +11,24 @@ import {
 import { Button } from "@/components/ui/button";
 
 interface AdDownloadButtonProps {
-  downloadUrl: string;
+  downloadUrl?: string;
+  href?: string;
+  className?: string;
   buttonClassName?: string;
+  secondaryHref?: string;
+  children?: React.ReactNode;
 }
 
 export function AdDownloadButton({
   downloadUrl,
+  href,
+  className,
   buttonClassName,
+  secondaryHref,
+  children,
 }: AdDownloadButtonProps) {
+  const finalDownloadUrl = downloadUrl || href || secondaryHref || "";
+  const finalClassName = className || buttonClassName;
   const [clickCount, setClickCount] = useState(0);
   const [showAd, setShowAd] = useState(false);
   const [countdown, setCountdown] = useState(5);
@@ -32,15 +42,6 @@ export function AdDownloadButton({
       // Open the ad link in a new tab on first click
       window.open("https://otieu.com/4/10538188");
 
-      // Monotag integration: Inject direct script for click-tracking
-      const script = document.createElement("script");
-      script.dataset.zone = "10507760";
-      script.src = "https://gizokraijaw.net/vignette.min.js";
-      [document.documentElement, document.body]
-        .filter(Boolean)
-        .pop()
-        ?.appendChild(script);
-
       const timer = setInterval(() => {
         setCountdown((prev) => {
           if (prev <= 1) {
@@ -51,7 +52,7 @@ export function AdDownloadButton({
         });
       }, 1000);
     } else if (clickCount === 1 && countdown === 0) {
-      window.open(downloadUrl, "_blank");
+      window.open(finalDownloadUrl, "_blank");
     }
   };
 
@@ -82,14 +83,20 @@ export function AdDownloadButton({
               <button
                 onClick={handleClick}
                 className={
-                  buttonClassName ||
+                  finalClassName ||
                   "relative group overflow-hidden px-6 py-5 md:px-10 md:py-6 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter"
                 }
                 data-testid="button-download-main"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3 leading-tight">
-                  <Zap className="w-5 h-5 md:w-8 md:h-8 fill-current animate-pulse shrink-0" />
-                  <span className="truncate">Download APK V2.0</span>
+                  {children ? (
+                    children
+                  ) : (
+                    <>
+                      <Zap className="w-5 h-5 md:w-8 md:h-8 fill-current animate-pulse shrink-0" />
+                      <span className="truncate">Download APK V2.0</span>
+                    </>
+                  )}
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-primary to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute top-0 left-0 w-full h-1/2 bg-white/10 -skew-y-3 translate-y-[-10%]" />
@@ -134,9 +141,9 @@ export function AdDownloadButton({
                 <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center">
                   <ShieldCheck className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">AAWhatsApp V2.0</h3>
+                <h3 className="text-xl font-bold mb-2">AA Mods Official</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  The most secure WhatsApp mod with Anti-Ban protection
+                  Verified Security Mirror • Commercial Grade Protection
                 </p>
                 <div className="flex flex-wrap justify-center gap-2 text-xs">
                   <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
