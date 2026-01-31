@@ -21,7 +21,6 @@ import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { AdDownloadButton } from "@/components/AdDownloadButton";
-import { VideoAdPlayer } from "@/components/VideoAdPlayer";
 import { useState, useEffect } from "react";
 import { Footer } from "@/components/Footer";
 
@@ -223,9 +222,6 @@ export default function BusinessDownloadPage() {
               Business Safety Information
             </h2>
             
-            <div className="mb-8">
-              <VideoAdPlayer adTagUrl={typeof window !== "undefined" ? (window as any).googleAdTag : ""} />
-            </div>
 
             <div className="space-y-4 text-muted-foreground">
               <p className="leading-relaxed">

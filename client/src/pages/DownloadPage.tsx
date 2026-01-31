@@ -8,13 +8,8 @@ import {
   ShieldAlert,
   CheckCircle2,
   ArrowLeft,
-  Clock,
-  HardDrive,
-  Info,
   Smartphone,
   Settings,
-  ArrowDown,
-  Calendar,
   Package,
   Star,
   Users,
@@ -29,7 +24,6 @@ import { Link, useLocation } from "wouter";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { AdDownloadButton } from "@/components/AdDownloadButton";
 import { useState, useEffect } from "react";
-import { VideoAdPlayer } from "@/components/VideoAdPlayer";
 
 const versionInfo = {
   version: "V 2.0",
@@ -255,14 +249,14 @@ export default function DownloadPage() {
 
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5">
-                  <HardDrive className="w-4 h-4" /> 118 MB
+                  <Package className="w-4 h-4" /> 118 MB
                 </span>
                 <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5">
                   <Smartphone className="w-4 h-4" /> Android{" "}
                   {versionInfo.android}
                 </span>
                 <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5">
-                  <Calendar className="w-4 h-4" /> {versionInfo.date}
+                  <Star className="w-4 h-4" /> {versionInfo.date}
                 </span>
               </div>
             </div>
@@ -311,7 +305,7 @@ export default function DownloadPage() {
               className="glass-card p-8 rounded-[2rem] border border-white/5 space-y-6 flex flex-col"
             >
               <div className="mx-auto w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mb-4">
-                <ShieldCheckIcon className="w-12 h-12 text-primary" />
+                <ShieldCheck className="w-12 h-12 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-center">
                 Safety Guarantee
@@ -423,10 +417,6 @@ export default function DownloadPage() {
               <ShieldAlert className="w-6 h-6" />
               Important Safety Information
             </h2>
-            
-            <div className="mb-8">
-              <VideoAdPlayer adTagUrl={typeof window !== "undefined" ? (window as any).googleAdTag : ""} />
-            </div>
 
             <div className="space-y-4 text-muted-foreground">
               <p className="leading-relaxed">
@@ -550,21 +540,3 @@ export default function DownloadPage() {
     </div>
   );
 }
-
-const ShieldCheckIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-    <path d="m9 12 2 2 4-4" />
-  </svg>
-);
