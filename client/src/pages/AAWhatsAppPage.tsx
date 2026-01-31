@@ -20,6 +20,7 @@ import { PermissionSimulator } from "@/components/PermissionSimulator";
 import { FAQSection } from "@/components/FAQSection";
 import { DownloadTunnel } from "@/components/DownloadTunnel";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
+import { AdsBanner } from "@/components/AdsBanner";
 
 import { useTranslation } from "@/hooks/useTranslation";
 
@@ -123,6 +124,8 @@ export default function AAWhatsAppPage() {
 
           <PermissionSimulator />
 
+          <AdsBanner />
+
           <div className="max-w-[300px] mx-auto my-12">
           </div>
 
@@ -176,6 +179,7 @@ export default function AAWhatsAppPage() {
             <div className="text-center mb-6">
               <span className="text-[10px] uppercase tracking-[0.4em] text-primary font-black opacity-70">Sponsor Verified</span>
             </div>
+            <AdsBanner />
           </div>
 
           <div className="max-w-[320px] mx-auto my-12">
@@ -422,6 +426,7 @@ export default function AAWhatsAppPage() {
             <div className="text-center mb-6">
               <span className="text-[10px] uppercase tracking-[0.4em] text-primary font-black opacity-70">Sponsor Verified</span>
             </div>
+            <AdsBanner />
           </div>
           <div className="max-w-4xl mx-auto">
           </div>

@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/accordion";
 import { getBlogPostBySlug, getRelatedPosts, BlogPost as BlogPostType } from "@/data/blogPosts";
 import ReactMarkdown from "react-markdown";
+import { AdsBanner } from "@/components/AdsBanner";
 
 const categoryIcons: Record<string, React.ReactNode> = {
   download: <Download className="w-4 h-4" />,
@@ -199,6 +200,9 @@ export default function BlogPost() {
                       {keyword}
                     </Badge>
                   ))}
+                </div>
+                <div className="mt-8">
+                  <AdsBanner />
                 </div>
               </header>
 

@@ -1,14 +1,10 @@
 import { Link } from "wouter";
 import { Send } from "lucide-react";
-import { AdsBanner } from "./AdsBanner";
 
 export function Footer() {
   return (
     <footer className="py-12 border-t border-border/50 relative z-10 bg-background/50 backdrop-blur-sm">
       <div className="container mx-auto px-4">
-        <div className="flex justify-center mb-8">
-          <AdsBanner />
-        </div>
         <div className="flex flex-col items-center mb-12">
           <Link href="/">
             <div className="flex flex-col items-center gap-3 cursor-pointer group">
