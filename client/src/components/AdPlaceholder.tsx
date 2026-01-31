@@ -36,16 +36,8 @@ export function AdPlaceholder({
       className={`w-full overflow-hidden my-8 flex flex-col items-center justify-center relative min-h-[100px] rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm ${className}`}
     >
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="hilltop-banner-container min-h-[90px] w-full flex justify-center items-center">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if (window.hilltop) {
-                hilltop('showAd', '10538188');
-              }
-            `,
-          }}
-        />
+      <div className="flippantaside-ad-container min-h-[90px] w-full flex justify-center items-center">
+        {/* Ad will be injected here by the script in index.html or we can trigger it if the script provides a method */}
       </div>
     </motion.div>
   );
