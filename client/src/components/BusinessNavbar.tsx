@@ -33,12 +33,14 @@ export function BusinessNavbar() {
                 <img
                   src="/favicon.png"
                   alt="AA Business"
-                  className="w-8 h-8 object-contain"
+                  className="w-8 h-8 object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.5)] group-hover:scale-110 transition-transform duration-300"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-black text-lg leading-none tracking-tighter">AA Business</span>
+              <span className="font-black text-lg leading-none tracking-tighter bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">AA Business</span>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-500/80 leading-none mt-1">Official Mod</span>
             </div>
           </Link>
