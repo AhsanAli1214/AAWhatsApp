@@ -26,13 +26,16 @@ export function BusinessNavbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
-              <Briefcase className="w-6 h-6 text-blue-500" />
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+              <div className="relative w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
+                <Briefcase className="w-6 h-6 text-blue-500" />
+              </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-lg leading-tight">AA Business</span>
-              <span className="text-xs text-muted-foreground">WhatsApp Mod</span>
+              <span className="font-black text-lg leading-none tracking-tighter">AA Business</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-500/80 leading-none mt-1">Official Mod</span>
             </div>
           </Link>
 
