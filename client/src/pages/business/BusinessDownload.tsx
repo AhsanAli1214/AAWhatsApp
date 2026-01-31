@@ -31,7 +31,7 @@ const versionHistory = [
     date: "January 2026",
     changes: [
       "Initial Enterprise Release",
-      "Anti-Ban v2.0 technology",
+      "Anti-Ban v1.0 technology",
       "Enhanced auto-reply system",
       "New business analytics dashboard",
       "Improved catalog management",
@@ -98,7 +98,7 @@ export default function BusinessDownload() {
               Version {packageDetails.version} | Base {packageDetails.base}
             </p>
             <p className="text-muted-foreground">
-              Professional WhatsApp mod for businesses with Anti-Ban v2.0
+              Professional WhatsApp mod for businesses with Anti-Ban v1.0
               protection.
             </p>
             <p className="text-blue-500 font-semibold mt-4">
@@ -188,7 +188,7 @@ export default function BusinessDownload() {
                 <CardContent className="space-y-3">
                   {[
                     "Verified by AA Mods Team",
-                    "Anti-Ban v2.0 Protected",
+                    "Anti-Ban v1.0 Protected",
                     "No Malware or Spyware",
                     "Privacy Core Technology",
                     "Regular Security Updates",

@@ -81,7 +81,7 @@ export default function BusinessHome() {
         <title>AA Business WhatsApp APK Download V1.0 (2026) - Best Business Mod</title>
         <meta
           name="description"
-          content="Download AA Business WhatsApp APK V1.0 for professional business communication. Auto-reply, customer labels, message statistics, and Anti-Ban v2.0 protection."
+          content="Download AA Business WhatsApp APK V1.0 for professional business communication. Auto-reply, customer labels, message statistics, and Anti-Ban v1.0 protection."
         />
         <meta
           name="keywords"
@@ -401,13 +401,13 @@ export default function BusinessHome() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-sm font-black">
                 <ShieldCheck className="w-4 h-4" />
-                Anti-Ban V2.0 Certified
+                Anti-Ban V1.0 Certified
               </div>
               <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
                 Enterprise-Grade <span className="text-blue-500 italic">Security</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Our proprietary Anti-Ban v2.0 technology protects your business account. Combined with Privacy Core, your business data stays completely secure.
+                Our proprietary Anti-Ban v1.0 technology protects your business account. Combined with Privacy Core, your business data stays completely secure.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-6 rounded-2xl bg-blue-500/5 border border-blue-500/10">
@@ -537,7 +537,7 @@ export default function BusinessHome() {
               <Link href="/aa-business/download">
                 <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-lg px-12 py-6 font-bold">
                   <Download className="w-5 h-5 mr-2" />
-                  Download APK V2.0
+                  Download APK V1.0
                 </Button>
               </Link>
               <Link href="/aa-business/features">

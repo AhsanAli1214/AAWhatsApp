@@ -56,7 +56,7 @@ const blogPosts = [
   {
     slug: "privacy-security-business-whatsapp",
     title: "Privacy & Security in AA Business WhatsApp",
-    excerpt: "Understanding the security features that protect your business data. Anti-Ban v2.0 and Privacy Core explained.",
+    excerpt: "Understanding the security features that protect your business data. Anti-Ban v1.0 and Privacy Core explained.",
     category: "Security",
     date: "December 2025",
     readTime: "9 min read",

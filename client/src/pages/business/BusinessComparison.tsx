@@ -18,7 +18,7 @@ const comparisonData = [
   { feature: "Hide Blue Ticks", aaBusiness: true, official: false, gbBusiness: true, fmBusiness: true },
   { feature: "Custom Themes", aaBusiness: true, official: false, gbBusiness: true, fmBusiness: true },
   { feature: "App Lock", aaBusiness: true, official: false, gbBusiness: true, fmBusiness: true },
-  { feature: "Anti-Ban v2.0", aaBusiness: true, official: false, gbBusiness: false, fmBusiness: false },
+  { feature: "Anti-Ban v1.0", aaBusiness: true, official: false, gbBusiness: false, fmBusiness: false },
   { feature: "Privacy Core", aaBusiness: true, official: false, gbBusiness: false, fmBusiness: false },
   { feature: "No Root Required", aaBusiness: true, official: true, gbBusiness: true, fmBusiness: true },
   { feature: "Regular Updates", aaBusiness: true, official: true, gbBusiness: true, fmBusiness: true },
@@ -125,7 +125,7 @@ export default function BusinessComparison() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {[
-                    "Exclusive Anti-Ban v2.0 technology",
+                    "Exclusive Anti-Ban v1.0 technology",
                     "Privacy Core - no data collection",
                     "Advanced message statistics",
                     "Professional customer management",
