@@ -124,8 +124,6 @@ export default function AAWhatsAppPage() {
 
           <PermissionSimulator />
 
-          <AdsBanner />
-
           <div className="max-w-[300px] mx-auto my-12">
           </div>
 
@@ -175,12 +173,7 @@ export default function AAWhatsAppPage() {
             </p>
           </section>
 
-          <div className="max-w-4xl mx-auto mt-16 p-8 glass-card rounded-[2.5rem] border border-primary/10 bg-primary/5">
-            <div className="text-center mb-6">
-              <span className="text-[10px] uppercase tracking-[0.4em] text-primary font-black opacity-70">Sponsor Verified</span>
-            </div>
-            <AdsBanner />
-          </div>
+          <AdsBanner />
 
           <div className="max-w-[320px] mx-auto my-12">
           </div>
@@ -422,12 +415,7 @@ export default function AAWhatsAppPage() {
           </div>
 
           <FAQSection />
-          <div className="max-w-4xl mx-auto mt-16 p-8 glass-card rounded-[2.5rem] border border-primary/10 bg-primary/5 text-center">
-            <div className="mb-6">
-              <span className="text-[10px] uppercase tracking-[0.4em] text-primary font-black opacity-70">Sponsor Verified</span>
-            </div>
-            <AdsBanner />
-          </div>
+          <AdsBanner />
           <div className="max-w-4xl mx-auto">
           </div>
 
