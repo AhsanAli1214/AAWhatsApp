@@ -30,8 +30,6 @@ import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { AdDownloadButton } from "@/components/AdDownloadButton";
 import { useState, useEffect } from "react";
 
-import logoImg from "@/assets/logo.png";
-
 const versionInfo = {
   version: "V 2.0",
   date: "January 27, 2026",
@@ -539,7 +537,7 @@ export default function DownloadPage() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
               <img
-                src={logoImg}
+                src="/favicon.png"
                 alt="AA Mods"
                 className="w-16 h-16 object-contain"
               />
