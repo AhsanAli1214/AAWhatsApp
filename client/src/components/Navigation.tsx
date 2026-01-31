@@ -60,14 +60,14 @@ export function Navigation() {
                 <div className="relative">
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-emerald-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
                   <img
-                    src="client/public/favicon.png"
+                    src="/favicon.png"
                     alt="AA Mods"
                     className="relative w-12 h-12 object-contain rounded-xl drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] group-hover:scale-110 transition-transform duration-300"
                     loading="eager"
                     decoding="async"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = "/favicon.png";
+                      target.src = "https://i.postimg.cc/mrqq6LxP/favicon.png";
                     }}
                   />
                 </div>
