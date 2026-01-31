@@ -233,8 +233,8 @@ export default function AABusinessWhatsAppPage() {
 
                <div className="grid sm:grid-cols-2 gap-6">
                   {[
-                    { name: "Fast Server (Primary)", type: "Direct Download", color: "amber" },
-                    { name: "MediaFire (Mirror)", type: "Cloud Mirror", color: "white" }
+                    { name: "Fast Server (Primary)", type: "Direct Download", color: "amber", href: "/business-download" },
+                    { name: "MediaFire (Mirror)", type: "Cloud Mirror", color: "white", href: "/business-download" }
                   ].map((mirror, i) => (
                     <div key={i} className={`p-8 rounded-[2.5rem] border ${mirror.color === 'amber' ? 'border-amber-500/20 bg-amber-500/5' : 'border-white/10 bg-white/5'} flex flex-col items-center text-center gap-6 group hover-elevate`}>
                        <div className={`p-4 rounded-2xl ${mirror.color === 'amber' ? 'bg-amber-500/10 text-amber-500' : 'bg-white/10 text-white'}`}>
@@ -244,9 +244,11 @@ export default function AABusinessWhatsAppPage() {
                           <h3 className="font-bold text-xl mb-1">{mirror.name}</h3>
                           <p className="text-xs text-muted-foreground uppercase tracking-widest">{mirror.type}</p>
                        </div>
-                       <Button className={`w-full py-6 rounded-xl ${mirror.color === 'amber' ? 'bg-amber-500 hover:bg-amber-600 text-black' : 'bg-white/10 hover:bg-white/20'}`}>
-                          Download Now
-                       </Button>
+                       <Link href={mirror.href} className="w-full">
+                         <Button className={`w-full py-6 rounded-xl ${mirror.color === 'amber' ? 'bg-amber-500 hover:bg-amber-600 text-black' : 'bg-white/10 hover:bg-white/20'}`}>
+                            Download Now
+                         </Button>
+                       </Link>
                     </div>
                   ))}
                </div>
