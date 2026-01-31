@@ -145,8 +145,6 @@ export default function Blog() {
             </Link>
           </div>
 
-          <AdPlaceholder format="leaderboard" className="mb-12" />
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {(isBusiness ? otherPosts.slice(0, 6) : otherPosts).map((post, index) => (
               <BlogCard key={post.id} post={post} index={index} accentColor={isBusiness ? "amber" : "primary"} />

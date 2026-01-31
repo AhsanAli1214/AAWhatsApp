@@ -19,7 +19,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { FAQSection } from "@/components/FAQSection";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export default function AABusinessWhatsAppPage() {
@@ -274,11 +273,6 @@ export default function AABusinessWhatsAppPage() {
               ))}
             </div>
           </section>
-
-          {/* Ad spacing */}
-          <div className="max-w-4xl mx-auto py-12">
-            <AdPlaceholder format="leaderboard" />
-          </div>
 
           {/* Footer Nav */}
           <section className="pt-20 border-t border-white/5 text-center space-y-8">

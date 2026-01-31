@@ -133,7 +133,6 @@ export default function BusinessDownloadPage() {
             </p>
           </section>
 
-          <AdPlaceholder format="leaderboard" />
           <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((stat, i) => (
               <div

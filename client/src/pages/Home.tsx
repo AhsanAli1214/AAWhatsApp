@@ -166,7 +166,6 @@ export default function Home() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] -z-10" />
           </motion.div>
         </div>
-        <AdPlaceholder format="mobile" />
         <div className="flex justify-center mt-20">
           <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
         </div>
@@ -245,7 +244,6 @@ export default function Home() {
       </section>
 
       <div className="container px-4 relative z-10 mb-16">
-        <AdPlaceholder format="leaderboard" className="py-8" />
       </div>
 
       {/* Detailed Info Section */}
