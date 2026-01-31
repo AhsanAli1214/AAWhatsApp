@@ -17,6 +17,7 @@ interface AdDownloadButtonProps {
   buttonClassName?: string;
   secondaryHref?: string;
   children?: React.ReactNode;
+  variant?: "default" | "business";
 }
 
 export function AdDownloadButton({
@@ -26,6 +27,7 @@ export function AdDownloadButton({
   buttonClassName,
   secondaryHref,
   children,
+  variant = "default",
 }: AdDownloadButtonProps) {
   const finalDownloadUrl = downloadUrl || href || secondaryHref || "";
   const finalClassName = className || buttonClassName;
@@ -84,7 +86,9 @@ export function AdDownloadButton({
                 onClick={handleClick}
                 className={
                   finalClassName ||
-                  "relative group overflow-hidden px-6 py-5 md:px-10 md:py-6 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter"
+                  (variant === "business" 
+                    ? "relative group overflow-hidden px-6 py-5 md:px-10 md:py-6 rounded-2xl bg-blue-500 text-white font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:shadow-[0_0_50px_rgba(59,130,246,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter"
+                    : "relative group overflow-hidden px-6 py-5 md:px-10 md:py-6 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tighter")
                 }
                 data-testid="button-download-main"
               >
