@@ -23,7 +23,6 @@ export default function AppSelector() {
         <meta name="keywords" content="AA Mods collection, download AAWhatsApp, download AA Business, WhatsApp mod selector, secure whatsapp mods, best whatsapp mods 2026, anti-ban whatsapp apk" />
       </Helmet>
       <Navbar />
-      
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <motion.div
@@ -36,7 +35,7 @@ export default function AppSelector() {
               <img 
                 src="/favicon.png" 
                 alt="AA Mods Logo" 
-                className="w-32 h-32 object-contain mb-8 group hover:scale-110 transition-transform duration-500"
+                className="w-32 h-32 object-contain group hover:scale-110 transition-transform duration-500 mt-[30px] mb-[30px]"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = "https://placehold.co/128x128/10b981/ffffff?text=AA";
@@ -165,7 +164,6 @@ export default function AppSelector() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
