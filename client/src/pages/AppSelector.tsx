@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
+import { Helmet } from "react-helmet";
+
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -15,6 +17,11 @@ const fadeInUp = {
 export default function AppSelector() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Download AAWhatsApp V2.0 & AA Business V1.0 APK | AA Mods Official</title>
+        <meta name="description" content="Choose between AAWhatsApp for personal privacy or AA Business for enterprise tools. Both feature Anti-Ban v2.0 and Privacy Core technology. Safe download 2026." />
+        <meta name="keywords" content="AA Mods collection, download AAWhatsApp, download AA Business, WhatsApp mod selector, secure whatsapp mods, best whatsapp mods 2026, anti-ban whatsapp apk" />
+      </Helmet>
       <Navbar />
       
       <section className="pt-32 pb-20 px-4">

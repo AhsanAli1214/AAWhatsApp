@@ -77,18 +77,10 @@ export default function BusinessDownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-amber-500/30">
       <Helmet>
-        <title>
-          Download AA Business WhatsApp APK V1.0 (2026 Official) – Best WhatsApp
-          Business Mod
-        </title>
-        <meta
-          name="description"
-          content="Official Download for AA Business WhatsApp V1.0. Enterprise-grade security, Bulk Broadcasting, and Anti-Ban protection. Secure your business chats now with the best WhatsApp Business mod."
-        />
-        <meta
-          name="keywords"
-          content="AA Business WhatsApp, Download AA Business WhatsApp, WhatsApp Business Mod, Secure WA Business APK, Anti-Ban Business WhatsApp, AA Mods Business, Best WhatsApp Business Mod 2026, WhatsApp Business Mod Anti-Ban, Secure Enterprise WhatsApp, Permission Clean WhatsApp Business"
-        />
+        <title>Download AA Business WhatsApp V1.0 APK (Official) – Secure Anti-Ban 2026</title>
+        <meta name="description" content="Official AA Business WhatsApp V1.0 (Base 2.25.29.77). Enterprise-grade security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging." />
+        <meta name="keywords" content="AA Business WhatsApp, Download AA Business, Business WhatsApp Mod, Secure WA Business, Anti-Ban Business WhatsApp, Enterprise WhatsApp APK, AA Mods Business" />
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-business-whatsapp/download" />
       </Helmet>
 
       <Navigation />

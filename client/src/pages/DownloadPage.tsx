@@ -128,44 +128,10 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>
-          Download AA WhatsApp APK V2.0 (2026) – Official Secure Link
-        </title>
-        <meta
-          name="description"
-          content="Official Download Link for AA WhatsApp APK V2.0 (2026). 100% Secure, Anti-Ban v2.0, and Privacy Core™ protection. Fast direct download from AA Mods."
-        />
-        <meta
-          name="keywords"
-          content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, AA Mods APK, secure WhatsApp mod, anti-ban apk"
-        />
+        <title>Download AAWhatsApp V2.0 APK (2026) – Official Secure Anti-Ban Link</title>
+        <meta name="description" content="Direct download for AAWhatsApp V2.0. Featuring Anti-Ban v2.0, Privacy Core™ protection, and 100% security verification. The definitive WhatsApp mod choice for 2026." />
+        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, secure WhatsApp mod, anti-ban apk 2026, best whatsapp mod" />
         <link rel="canonical" href="https://aa-mods.vercel.app/download" />
-        <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "AA WhatsApp",
-              "operatingSystem": "Android",
-              "applicationCategory": "CommunicationApplication",
-              "softwareVersion": "${versionInfo.version}",
-              "fileSize": "${versionInfo.size}",
-              "applicationSubCategory": "Messaging",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "ratingCount": "102456"
-              }
-            }
-          `}
-        </script>
       </Helmet>
 
       <Navigation />
