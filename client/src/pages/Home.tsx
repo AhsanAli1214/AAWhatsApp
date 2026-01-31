@@ -637,7 +637,6 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <AdPlaceholder format="mobile" />
                 <motion.div
                   animate={{ x: [0, 10, 0], y: [0, -10, 0] }}
                   transition={{
@@ -672,6 +671,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <AdsBanner />
 
       <section id="privacy-power" className="py-24 bg-primary/5">
         <div className="container px-4">
