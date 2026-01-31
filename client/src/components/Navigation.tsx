@@ -49,8 +49,8 @@ export function Navigation() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-emerald-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
                   <img
                     src="/favicon.png"
-                    alt="AA Mods Logo"
-                    className="relative w-12 h-12 object-contain rounded-xl"
+                    alt="AA Mods"
+                    className="relative w-12 h-12 object-contain rounded-xl drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] group-hover:scale-110 transition-transform duration-300"
                     loading="eager"
                     decoding="async"
                   />
