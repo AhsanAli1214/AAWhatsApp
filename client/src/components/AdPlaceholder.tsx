@@ -39,16 +39,9 @@ export function AdPlaceholder({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function(fze){
-              var d = document,
-                  s = d.createElement('script'),
-                  l = d.scripts[d.scripts.length - 1];
-              s.settings = fze || {};
-              s.src = "//flippantaside.com/bjXGV.szdlG/lt0pY/WFcH/QePmF9mumZBU/lzkYPMT_Y/3/N-jKEu5aN/zHEjt/NnjSc/2DMeTCke3RMdgZ";
-              s.async = true;
-              s.referrerPolicy = 'no-referrer-when-downgrade';
-              l.parentNode.insertBefore(s, l);
-              })({})
+              if (window.hilltop) {
+                hilltop('showAd', '10538188');
+              }
             `,
           }}
         />
