@@ -36,22 +36,17 @@ export function BusinessNavbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
-              <div className="relative w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 overflow-hidden">
-                <img
-                  src="/favicon.png"
-                  alt="AA Business"
-                  className="w-10 h-10 object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.5)] group-hover:scale-110 transition-transform duration-300"
-                  loading="eager"
-                  decoding="async"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "https://placehold.co/40x40/3b82f6/ffffff?text=AA";
-                  }}
-                />
-              </div>
-            </div>
+            <img
+              src="/favicon.png"
+              alt="AA Business"
+              className="w-12 h-12 object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.3)] group-hover:scale-110 transition-transform duration-500"
+              loading="eager"
+              decoding="async"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "https://placehold.co/48x48/3b82f6/ffffff?text=AA";
+              }}
+            />
             <div className="flex flex-col">
               <span className="font-black text-xl leading-none tracking-tighter bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent uppercase">
                 AA Business

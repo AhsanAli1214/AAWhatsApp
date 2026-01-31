@@ -27,19 +27,15 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center overflow-hidden">
-              <img 
-                src="/favicon.png" 
-                alt="AA Mods" 
-                className="w-10 h-10 object-contain"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  target.nextElementSibling?.classList.remove('hidden');
-                }}
-              />
-              <MessageSquare className="w-8 h-8 text-primary hidden" />
-            </div>
+            <img 
+              src="/favicon.png" 
+              alt="AA Mods" 
+              className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-500"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "https://placehold.co/48x48/10b981/ffffff?text=AA";
+              }}
+            />
             <div className="flex flex-col">
               <span className="font-bold text-xl leading-tight">AA Mods</span>
               <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">WhatsApp Mod</span>
