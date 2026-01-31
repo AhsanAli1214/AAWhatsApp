@@ -136,28 +136,10 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aa-mods.vercel.app/comparison</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://aa-mods.vercel.app/aa-whatsapp-apk</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business-whatsapp</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/business-download</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aa-mods.vercel.app/download</loc>
@@ -170,12 +152,6 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <lastmod>${new_status_date}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/faq</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://aa-mods.vercel.app/support</loc>
@@ -198,18 +174,6 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
   <url>
     <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-latest-version-download</loc>
     <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-business-whatsapp-features-guide</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-business-whatsapp-vs-whatsapp-business</loc>
-    <lastmod>2026-01-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -298,6 +262,9 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <priority>0.8</priority>
   </url>
 </urlset>`.trim();
+    res.type("application/xml");
+    res.status(200).send(sitemap);
+  });
     res.type("application/xml");
     res.status(200).send(sitemap);
   });
