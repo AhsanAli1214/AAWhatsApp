@@ -53,6 +53,10 @@ export function Navigation() {
                     className="relative w-12 h-12 object-contain rounded-xl drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] group-hover:scale-110 transition-transform duration-300"
                     loading="eager"
                     decoding="async"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/favicon.png';
+                    }}
                   />
                 </div>
                 <div className="flex flex-col">
