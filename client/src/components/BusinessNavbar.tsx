@@ -29,8 +29,12 @@ export function BusinessNavbar() {
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
-              <div className="relative w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
-                <Briefcase className="w-6 h-6 text-blue-500" />
+              <div className="relative w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 overflow-hidden">
+                <img
+                  src="/favicon.png"
+                  alt="AA Business"
+                  className="w-8 h-8 object-contain"
+                />
               </div>
             </div>
             <div className="flex flex-col">
