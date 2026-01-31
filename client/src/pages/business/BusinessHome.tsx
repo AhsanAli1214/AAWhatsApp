@@ -156,15 +156,15 @@ export default function BusinessHome() {
             transition={{ duration: 0.8 }}
             className="flex-1 relative"
           >
-            <div className="relative z-10 mx-auto max-w-lg">
+            <div className="relative z-10 mx-auto max-w-xl">
               <img
                 src={businessPerson}
                 alt="AA Business WhatsApp Interface V1.0"
-                className="w-full h-auto rounded-[2rem] shadow-2xl shadow-blue-500/20 border border-blue-500/20"
+                className="w-full h-auto rounded-[2.5rem] shadow-2xl shadow-blue-500/20 border border-blue-500/20 scale-110"
                 loading="eager"
               />
             </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px] -z-10" />
           </motion.div>
         </div>
 

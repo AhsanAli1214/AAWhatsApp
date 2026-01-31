@@ -119,13 +119,6 @@ export function BusinessNavbar() {
                 Telegram
               </Button>
             </a>
-
-            <Link href="/aa-business/download">
-              <Button size="sm" className="bg-blue-500 hover:bg-blue-600">
-                <Download className="w-4 h-4 mr-2" />
-                Download
-              </Button>
-            </Link>
           </div>
 
           <button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
@@ -148,15 +141,6 @@ export function BusinessNavbar() {
                 </Link>
               ))}
               <hr className="my-2 border-border" />
-              <Link href="/aa-business/download">
-                <Button
-                  className="w-full bg-blue-500 hover:bg-blue-600"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  Download
-                </Button>
-              </Link>
             </div>
           </div>
         )}
