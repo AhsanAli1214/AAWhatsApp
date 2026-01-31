@@ -271,6 +271,7 @@ export default function Home() {
                 title="Advanced Media Delivery System"
                 className="rounded-3xl shadow-2xl border border-primary/20 w-full"
                 loading="lazy"
+                decoding="async"
                 width="800"
                 height="800"
               />
@@ -325,6 +326,7 @@ export default function Home() {
                 title="Visual Customization Hub"
                 className="rounded-3xl shadow-2xl border border-primary/20 w-full"
                 loading="lazy"
+                decoding="async"
                 width="800"
                 height="800"
               />
@@ -378,6 +380,7 @@ export default function Home() {
                 title="Elite Privacy Command Center"
                 className="rounded-3xl shadow-2xl border border-primary/20 w-full max-md mx-auto"
                 loading="lazy"
+                decoding="async"
                 width="600"
                 height="600"
               />
@@ -429,6 +432,9 @@ export default function Home() {
                 title="Advanced Account Shield"
                 className="rounded-3xl shadow-2xl border border-primary/20 w-full"
                 loading="lazy"
+                decoding="async"
+                width="800"
+                height="800"
               />
             </motion.div>
           </div>
@@ -770,12 +776,15 @@ export default function Home() {
       <section className="py-24 bg-secondary/20 border-y border-border/50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex-1">
+            <div className="flex-1 relative">
               <img
                 src={comparisonImage}
                 alt="AA WhatsApp Security Comparison"
                 className="w-full h-auto rounded-3xl shadow-2xl"
                 loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
               />
             </div>
             <div className="flex-1 space-y-8 text-center lg:text-left">
