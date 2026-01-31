@@ -13,6 +13,10 @@ export function Footer() {
                   src="/favicon.png"
                   alt="AA Mods"
                   className="w-10 h-10 object-contain"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://placehold.co/48x48/10b981/ffffff?text=AA";
+                  }}
                 />
               </div>
               <span className="font-black text-xl tracking-tighter uppercase">
