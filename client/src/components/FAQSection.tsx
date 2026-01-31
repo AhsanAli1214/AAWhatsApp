@@ -12,7 +12,7 @@ const faqs = [
     a: "Yes, AAWhatsApp is designed with a 'Permission-Clean' infrastructure. It does not require location or media permissions to function, making it significantly safer than other mods like GBWhatsApp.",
   },
   {
-    q: "How does the Anti-Ban v2.0 feature work?",
+    q: "How does the Anti-Ban v1.0 feature work?",
     a: "Our latest anti-ban script uses advanced server-side masking protocols. It identifies your modded client as an official version to WhatsApp's servers, drastically reducing the risk of being banned.",
   },
   {

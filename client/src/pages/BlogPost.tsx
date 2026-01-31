@@ -288,7 +288,7 @@ export default function BlogPost() {
                     </p>
                     <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                       <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-500 text-xs font-bold border border-emerald-500/20">
-                        <CheckCircle2 className="w-3.5 h-3.5" /> Anti-Ban v2.0
+                        <CheckCircle2 className="w-3.5 h-3.5" /> Anti-Ban v1.0
                       </div>
                       <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
                         <ShieldCheck className="w-3.5 h-3.5" /> Secure Build

@@ -98,7 +98,7 @@ export function AdDownloadButton({
                   ) : (
                     <>
                       <Zap className="w-5 h-5 md:w-8 md:h-8 fill-current animate-pulse shrink-0" />
-                      <span className="truncate">Download APK {variant === "business" ? "V1.0" : "V2.0"}</span>
+                      <span className="truncate">Download APK {variant === "business" ? "V1.0" : "V1.0"}</span>
                     </>
                   )}
                 </span>
@@ -107,7 +107,7 @@ export function AdDownloadButton({
               </button>
             </div>
             <p className="text-center mt-4 text-[10px] md:text-xs text-muted-foreground uppercase tracking-[0.3em] font-bold opacity-50">
-              Verified Secure • Anti-Ban v2.0 • 100% Clean
+              Verified Secure • Anti-Ban v1.0 • 100% Clean
             </p>
           </motion.div>
         ) : (

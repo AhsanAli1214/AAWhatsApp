@@ -18,8 +18,8 @@ export default function AppSelector() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Download AAWhatsApp V2.0 & AA Business V1.0 APK | AA Mods Official</title>
-        <meta name="description" content="Choose between AAWhatsApp for personal privacy or AA Business for enterprise tools. Both feature Anti-Ban v2.0 and Privacy Core technology. Safe download 2026." />
+        <title>Download AAWhatsApp V1.0 & AA Business V1.0 APK | AA Mods Official</title>
+        <meta name="description" content="Choose between AAWhatsApp for personal privacy or AA Business for enterprise tools. Both feature Anti-Ban v1.0 and Privacy Core technology. Safe download 2026." />
         <meta name="keywords" content="AA Mods collection, download AAWhatsApp, download AA Business, WhatsApp mod selector, secure whatsapp mods, best whatsapp mods 2026, anti-ban whatsapp apk" />
       </Helmet>
       <Navbar />
@@ -63,7 +63,7 @@ export default function AppSelector() {
                   <div className="space-y-3 mb-8">
                     <div className="flex items-center gap-3">
                       <Shield className="w-5 h-5 text-primary" />
-                      <span className="text-sm">Anti-Ban v2.0 Protection</span>
+                      <span className="text-sm">Anti-Ban v1.0 Protection</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Users className="w-5 h-5 text-primary" />
@@ -85,7 +85,7 @@ export default function AppSelector() {
                     <Link href="/aa-whatsapp/download">
                       <Button variant="outline" className="w-full" size="lg" data-testid="button-aa-whatsapp-download">
                         <Download className="w-5 h-5 mr-2" />
-                        Download V2.0
+                        Download V1.0
                       </Button>
                     </Link>
                   </div>
@@ -115,7 +115,7 @@ export default function AppSelector() {
                     </div>
                     <div className="flex items-center gap-3">
                       <Shield className="w-5 h-5 text-blue-500" />
-                      <span className="text-sm">Anti-Ban v2.0 Protection</span>
+                      <span className="text-sm">Anti-Ban v1.0 Protection</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Download className="w-5 h-5 text-blue-500" />

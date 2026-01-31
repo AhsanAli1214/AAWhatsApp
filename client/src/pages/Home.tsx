@@ -59,8 +59,8 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA Mods | Official AAWhatsApp V2.0 & AA Business V1.0 APK (2026)</title>
-        <meta name="description" content="Official AA Mods. Download the safest Anti-Ban WhatsApp mods. AAWhatsApp V2.0 with Privacy Core™ and AA Business V1.0 for enterprise. Secure & Permission-Clean." />
+        <title>AA Mods | Official AAWhatsApp V1.0 & AA Business V1.0 APK (2026)</title>
+        <meta name="description" content="Official AA Mods. Download the safest Anti-Ban WhatsApp mods. AAWhatsApp V1.0 with Privacy Core™ and AA Business V1.0 for enterprise. Secure & Permission-Clean." />
         <meta name="keywords" content="AA Mods, AA WhatsApp, AA Business WhatsApp, WhatsApp Mod 2026, Anti-Ban WhatsApp APK, Secure WhatsApp, GB WhatsApp Alternative" />
         <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <link rel="preload" as="image" href="/favicon.png" fetchPriority="high" />
@@ -127,7 +127,7 @@ export default function Home() {
               <div className="relative z-10 mx-auto max-w-lg">
                 <img
                   src={heroImage}
-                  alt="AAWhatsApp Interface V2.0 - Secure Messaging with Anti-Ban v2.0"
+                  alt="AAWhatsApp Interface V1.0 - Secure Messaging with Anti-Ban v1.0"
                   title="Official AAWhatsApp Secure Interface"
                   className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/20"
                   loading="eager"
@@ -401,13 +401,13 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-sm font-black">
                 <ShieldCheckIcon className="w-4 h-4" />
-                Anti-Ban V2.0 Certified
+                Anti-Ban V1.0 Certified
               </div>
               <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
                 Hardened <span className="text-primary italic">Anti-Ban</span> Infrastructure
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Our proprietary Anti-Ban v2.0 script is updated daily to synchronize with official WhatsApp security patches. This ensures your account remains 100% stable without the risk of temporary bans or suspensions.
+                Our proprietary Anti-Ban v1.0 script is updated daily to synchronize with official WhatsApp security patches. This ensures your account remains 100% stable without the risk of temporary bans or suspensions.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5">
@@ -852,7 +852,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5" />
-                <span className="text-sm font-bold uppercase tracking-widest">v2.0 Active</span>
+                <span className="text-sm font-bold uppercase tracking-widest">v1.0 Active</span>
               </div>
             </div>
           </div>
