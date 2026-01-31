@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { AdsBanner } from "@/components/AdsBanner";
 import {
   Briefcase,
   Shield,
