@@ -29,6 +29,7 @@ import { Link, useLocation } from "wouter";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { AdDownloadButton } from "@/components/AdDownloadButton";
 import { useState, useEffect } from "react";
+import { VideoAdPlayer } from "@/components/VideoAdPlayer";
 
 const versionInfo = {
   version: "V 2.0",
@@ -424,6 +425,11 @@ export default function DownloadPage() {
               <ShieldAlert className="w-6 h-6" />
               Important Safety Information
             </h2>
+            
+            <div className="mb-8">
+              <VideoAdPlayer adTagUrl="https://profitablebutton.com/d/maFNz.dvG/NgvhZGGZUn/leGmA9GumZ/UblDkePIT/Y-3JN-jZEiyON_zQIYt/NZj/cM2HMGT/IC3/MPwr" />
+            </div>
+
             <div className="space-y-4 text-muted-foreground">
               <p className="leading-relaxed">
                 AAWhatsApp is scanned daily by multiple security engines. Unlike
