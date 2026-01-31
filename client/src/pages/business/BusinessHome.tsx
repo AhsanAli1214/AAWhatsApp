@@ -78,19 +78,40 @@ export default function BusinessHome() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-blue-500/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA Business WhatsApp APK Download V1.0 (2026) - Best Business Mod</title>
+        <title>AA Business WhatsApp APK Download V1.0 (Official) - Professional Mod 2026</title>
         <meta
           name="description"
-          content="Download AA Business WhatsApp APK V1.0 for professional business communication. Auto-reply, customer labels, message statistics, and Anti-Ban v1.0 protection."
+          content="Download AA Business WhatsApp APK V1.0. Professional enterprise tools, Auto-reply, customer labels, and advanced analytics. Built with Anti-Ban v1.0 and Privacy Core™ security."
         />
         <meta
           name="keywords"
-          content="AA Business WhatsApp, Business WhatsApp Mod, WhatsApp Business APK, Auto Reply WhatsApp, Business WhatsApp 2026, AA Business Download"
+          content="AA Business WhatsApp, Business WhatsApp Mod, WhatsApp Business APK, Auto Reply WhatsApp, Business WhatsApp 2026, AA Business Download, professional whatsapp mod"
         />
-        <meta property="og:title" content="AA Business WhatsApp Download V1.0 (2026) - Professional Business Mod" />
-        <meta property="og:description" content="The ultimate WhatsApp mod for businesses with auto-reply, customer labels, and message statistics." />
+        <meta property="og:title" content="AA Business WhatsApp Download V1.0 (Official) - Enterprise Grade Mod" />
+        <meta property="og:description" content="The ultimate WhatsApp mod for businesses. Automate customer responses, track analytics, and secure your data with Privacy Core™." />
+        <meta property="og:image" content="https://aa-mods.vercel.app/favicon.png" />
         <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-business" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "AA Business WhatsApp",
+            "operatingSystem": "Android",
+            "applicationCategory": "BusinessApplication",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "52300"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0.00",
+              "priceCurrency": "USD"
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="fixed inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5 pointer-events-none z-0" />

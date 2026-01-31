@@ -18,9 +18,22 @@ export default function AppSelector() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Download AAWhatsApp V1.0 & AA Business V1.0 APK | AA Mods Official</title>
-        <meta name="description" content="Choose between AAWhatsApp for personal privacy or AA Business for enterprise tools. Both feature Anti-Ban v1.0 and Privacy Core technology. Safe download 2026." />
+        <title>Download AAWhatsApp V2.0 & AA Business V1.0 APK (Official 2026)</title>
+        <meta name="description" content="Official AA Mods hub. Choose AAWhatsApp V2.0 for personal privacy or AA Business V1.0 for professional enterprise tools. Both feature Anti-Ban v1.0 and Privacy Core™ technology." />
         <meta name="keywords" content="AA Mods collection, download AAWhatsApp, download AA Business, WhatsApp mod selector, secure whatsapp mods, best whatsapp mods 2026, anti-ban whatsapp apk" />
+        <meta property="og:title" content="AA Mods Collection - Official AAWhatsApp & AA Business" />
+        <meta property="og:description" content="Select the world's most secure WhatsApp modifications. Anti-Ban protected and Privacy Core™ enabled." />
+        <meta property="og:image" content="https://aa-mods.vercel.app/favicon.png" />
+        <link rel="canonical" href="https://aa-mods.vercel.app/" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "AA Mods Official",
+            "url": "https://aa-mods.vercel.app/",
+            "description": "Premium collection of secure WhatsApp modifications including AAWhatsApp and AA Business."
+          })}
+        </script>
       </Helmet>
       <Navbar />
       <section className="pt-32 pb-20 px-4">
