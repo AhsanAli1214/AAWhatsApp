@@ -76,7 +76,7 @@ export default function BlogPost() {
   }
 
   const handleShare = async () => {
-    const url = `https://aamods.com/blog/${post.slug}`;
+    const url = `https://aa-mods.vercel.app/blog/${post.slug}`;
     if (navigator.share) {
       try {
         await navigator.share({
@@ -98,11 +98,11 @@ export default function BlogPost() {
         <title>{post.metaTitle} | AA Mods</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords.join(", ")} />
-        <link rel="canonical" href={`https://aamods.com/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://aa-mods.vercel.app/blog/${post.slug}`} />
         <meta property="og:title" content={post.metaTitle} />
         <meta property="og:description" content={post.metaDescription} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://aamods.com/blog/${post.slug}`} />
+        <meta property="og:url" content={`https://aa-mods.vercel.app/blog/${post.slug}`} />
         <meta property="article:published_time" content={post.publishedAt} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.metaTitle} />
@@ -121,7 +121,7 @@ export default function BlogPost() {
             "publisher": {
               "@type": "Organization",
               "name": "AA Mods",
-              "url": "https://aamods.com"
+              "url": "https://aa-mods.vercel.app"
             }
           })}
         </script>
