@@ -100,8 +100,6 @@ export default function BusinessDownloadPage() {
         </div>
 
         <div className="max-w-5xl mx-auto space-y-16">
-          <AdPlaceholder format="leaderboard" />
-
           <section className="text-center space-y-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -136,6 +134,7 @@ export default function BusinessDownloadPage() {
             </p>
           </section>
 
+          <AdPlaceholder format="leaderboard" />
           <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((stat, i) => (
               <div

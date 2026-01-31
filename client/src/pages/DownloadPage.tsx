@@ -150,9 +150,6 @@ export default function DownloadPage() {
         </div>
 
         <div className="max-w-5xl mx-auto space-y-16">
-          <AdPlaceholder format="leaderboard" className="mt-8" />
-
-          {/* Hero Header */}
           <section className="text-center space-y-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -186,6 +183,7 @@ export default function DownloadPage() {
             </p>
           </section>
 
+          <AdPlaceholder format="leaderboard" />
           {/* Live Stats */}
           <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((stat, i) => (

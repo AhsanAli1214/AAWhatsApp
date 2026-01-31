@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 
 import { Helmet } from "react-helmet";
 
@@ -38,6 +39,7 @@ export default function AppSelector() {
       <Navbar />
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
+          <AdPlaceholder format="leaderboard" />
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
