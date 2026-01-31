@@ -8,17 +8,15 @@ export function Footer() {
         <div className="flex flex-col items-center mb-12">
           <Link href="/">
             <div className="flex flex-col items-center gap-3 cursor-pointer group">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all border border-primary/20 shadow-lg shadow-primary/5 overflow-hidden">
-                <img
-                  src="/favicon.png"
-                  alt="AA Mods"
-                  className="w-12 h-12 object-contain"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "https://placehold.co/64x64/10b981/ffffff?text=AA";
-                  }}
-                />
-              </div>
+              <img
+                src="/favicon.png"
+                alt="AA Mods"
+                className="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-500"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "https://placehold.co/64x64/10b981/ffffff?text=AA";
+                }}
+              />
               <span className="font-black text-2xl tracking-tighter uppercase">
                 AA Mods
               </span>
