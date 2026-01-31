@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/hooks/useTranslation";
 import { BackToTop } from "@/components/BackToTop";
 
 import Home from "@/pages/Home";
+import AppSelector from "@/pages/AppSelector";
 import AAWhatsAppPage from "@/pages/AAWhatsAppPage";
 import AABusinessWhatsAppPage from "@/pages/AABusinessWhatsAppPage";
 import BusinessDownloadPage from "@/pages/BusinessDownloadPage";
@@ -20,10 +21,35 @@ import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import NotFound from "@/pages/not-found";
 
+import BusinessHome from "@/pages/business/BusinessHome";
+import BusinessAbout from "@/pages/business/BusinessAbout";
+import BusinessFeatures from "@/pages/business/BusinessFeatures";
+import BusinessDownload from "@/pages/business/BusinessDownload";
+import BusinessComparison from "@/pages/business/BusinessComparison";
+import BusinessFAQ from "@/pages/business/BusinessFAQ";
+import BusinessBlog from "@/pages/business/BusinessBlog";
+
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={AppSelector} />
+      <Route path="/aa-whatsapp" component={Home} />
+      <Route path="/aa-whatsapp/about" component={About} />
+      <Route path="/aa-whatsapp/comparison" component={Comparison} />
+      <Route path="/aa-whatsapp/features" component={AAWhatsAppPage} />
+      <Route path="/aa-whatsapp/faq" component={FAQ} />
+      <Route path="/aa-whatsapp/download" component={DownloadPage} />
+      <Route path="/aa-whatsapp/blog" component={Blog} />
+      <Route path="/aa-whatsapp/blog/:slug" component={BlogPost} />
+      
+      <Route path="/aa-business" component={BusinessHome} />
+      <Route path="/aa-business/about" component={BusinessAbout} />
+      <Route path="/aa-business/features" component={BusinessFeatures} />
+      <Route path="/aa-business/download" component={BusinessDownload} />
+      <Route path="/aa-business/comparison" component={BusinessComparison} />
+      <Route path="/aa-business/faq" component={BusinessFAQ} />
+      <Route path="/aa-business/blog" component={BusinessBlog} />
+      
       <Route path="/about" component={About} />
       <Route path="/comparison" component={Comparison} />
       <Route path="/aa-whatsapp-apk" component={AAWhatsAppPage} />
