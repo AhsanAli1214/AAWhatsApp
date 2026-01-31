@@ -15,9 +15,10 @@ import { AdDownloadButton } from "@/components/AdDownloadButton";
 
 const versionHistory = [
   {
-    version: "V 2.0",
+    version: "V 1.0",
     date: "January 2026",
     changes: [
+      "Initial Enterprise Release",
       "Anti-Ban v2.0 technology",
       "Enhanced auto-reply system",
       "New business analytics dashboard",
@@ -25,36 +26,14 @@ const versionHistory = [
       "Performance optimizations"
     ],
     current: true
-  },
-  {
-    version: "V 1.9",
-    date: "October 2025",
-    changes: [
-      "Customer label system",
-      "Scheduled messages",
-      "Quick replies feature",
-      "Bug fixes"
-    ],
-    current: false
-  },
-  {
-    version: "V 1.8",
-    date: "July 2025",
-    changes: [
-      "Message statistics",
-      "Theme customization",
-      "Privacy controls",
-      "Stability improvements"
-    ],
-    current: false
   }
 ];
 
 const packageDetails = {
   name: "AA Business WhatsApp",
-  version: "V 2.0",
-  base: "2.25.36.73",
-  size: "122 MB",
+  version: "V 1.0",
+  base: "2.25.29.77",
+  size: "125 MB",
   android: "5.0+",
   developer: "AA Mods Team",
   updated: "January 2026"
@@ -143,7 +122,7 @@ export default function BusinessDownload() {
             className="flex justify-center mb-12"
           >
             <AdDownloadButton 
-              downloadUrl="https://www.mediafire.com/file/aa-business-whatsapp/AABusinessWhatsApp_v2.0.apk"
+              downloadUrl="https://www.mediafire.com/file/aa-business-whatsapp/AABusinessWhatsApp_v1.0.apk"
               variant="business"
             />
           </motion.div>

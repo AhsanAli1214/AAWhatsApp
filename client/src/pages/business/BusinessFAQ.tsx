@@ -82,6 +82,14 @@ const faqs = [
       {
         q: "How do I update AA Business to the latest version?",
         a: "Simply download the latest version from our download page and install it over your existing installation. Your chats and settings will be preserved. We recommend enabling notifications from our Telegram channel for update alerts."
+      },
+      {
+        q: "What is the size of AA Business WhatsApp V1.0?",
+        a: "The app size is approximately 125MB, optimized for high performance and stability across all Android devices."
+      },
+      {
+        q: "Does AA Business support bulk broadcasting?",
+        a: "Yes, AA Business allows you to send bulk offers to unlimited clients without fear of bans, thanks to our specialized 'Warm-up' algorithm."
       }
     ]
   }

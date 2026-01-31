@@ -19,6 +19,8 @@ import analyticsImage from "@/assets/business-analytics.png";
 import automationImage from "@/assets/business-automation.png";
 import securityImage from "@/assets/security-hero.png";
 import privacyImage from "@/assets/privacy-feature.png";
+import businessPerson from "@/assets/business-person.jpg";
+import businessBg from "@/assets/business-bg.jpg";
 
 const features = [
   {
@@ -76,16 +78,16 @@ export default function BusinessHome() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-blue-500/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA Business WhatsApp APK Download V2.0 (2026) - Best Business Mod</title>
+        <title>AA Business WhatsApp APK Download V1.0 (2026) - Best Business Mod</title>
         <meta
           name="description"
-          content="Download AA Business WhatsApp APK V2.0 for professional business communication. Auto-reply, customer labels, message statistics, and Anti-Ban v2.0 protection."
+          content="Download AA Business WhatsApp APK V1.0 for professional business communication. Auto-reply, customer labels, message statistics, and Anti-Ban v2.0 protection."
         />
         <meta
           name="keywords"
           content="AA Business WhatsApp, Business WhatsApp Mod, WhatsApp Business APK, Auto Reply WhatsApp, Business WhatsApp 2026, AA Business Download"
         />
-        <meta property="og:title" content="AA Business WhatsApp Download V2.0 (2026) - Professional Business Mod" />
+        <meta property="og:title" content="AA Business WhatsApp Download V1.0 (2026) - Professional Business Mod" />
         <meta property="og:description" content="The ultimate WhatsApp mod for businesses with auto-reply, customer labels, and message statistics." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-business" />
@@ -95,6 +97,13 @@ export default function BusinessHome() {
       <BusinessNavbar />
 
       <section className="relative z-10 pt-32 pb-20 lg:pt-48 lg:pb-32 container mx-auto px-4 md:px-6">
+        <div className="absolute inset-0 -z-20">
+          <img 
+            src={businessBg} 
+            alt="Business Background" 
+            className="w-full h-full object-cover opacity-10"
+          />
+        </div>
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -116,8 +125,8 @@ export default function BusinessHome() {
               className="text-5xl lg:text-7xl font-black font-display leading-[1.1] mb-8 tracking-tighter"
             >
               AA Business <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 italic">
-                WhatsApp
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 italic drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]">
+                WhatsApp V1.0
               </span>
             </motion.h1>
 
@@ -129,7 +138,7 @@ export default function BusinessHome() {
               <Link href="/aa-business/download" className="w-full sm:w-auto">
                 <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-blue-500 text-white font-black text-lg shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:-translate-y-1 transition-all duration-500 w-full border border-white/20 uppercase tracking-tight flex items-center justify-center gap-3">
                   <Download className="w-6 h-6" />
-                  Download APK V2.0
+                  Download APK V1.0
                 </button>
               </Link>
               <a href="https://t.me/AaMods" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
@@ -149,8 +158,8 @@ export default function BusinessHome() {
           >
             <div className="relative z-10 mx-auto max-w-lg">
               <img
-                src={heroImage}
-                alt="AA Business WhatsApp Interface V2.0"
+                src={businessPerson}
+                alt="AA Business WhatsApp Interface V1.0"
                 className="w-full h-auto rounded-[2rem] shadow-2xl shadow-blue-500/20 border border-blue-500/20"
                 loading="eager"
               />
@@ -183,15 +192,15 @@ export default function BusinessHome() {
                 </div>
                 <h2 className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-none">
                   AA Business{" "}
-                  <span className="text-blue-500 italic">V 2.0</span>
+                  <span className="text-blue-500 italic">V 1.0</span>
                 </h2>
                 <p className="text-muted-foreground text-lg font-medium max-w-xl leading-relaxed">
                   The latest business-grade WhatsApp modification with professional features for customer management and automated communication.
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
                   {[
-                    { label: "Update", value: "23/01/26" },
-                    { label: "Base", value: "2.25.36.73" },
+                    { label: "Update", value: "31/01/26" },
+                    { label: "Base", value: "2.25.29.77" },
                     { label: "Status", value: "Verified" },
                   ].map((stat, i) => (
                     <div
@@ -222,7 +231,7 @@ export default function BusinessHome() {
                 </div>
                 <div className="text-center">
                   <p className="text-2xl font-black font-mono text-white mb-1 tracking-tight">
-                    V 2.0
+                    V 1.0
                   </p>
                   <p className="text-xs font-bold text-blue-500 uppercase tracking-[0.2em] opacity-70">
                     Business Edition
@@ -327,8 +336,8 @@ export default function BusinessHome() {
                 loading="lazy"
               />
               <div className="absolute -bottom-6 -right-6 p-6 bg-background border border-blue-500/30 rounded-2xl shadow-xl hidden md:block">
-                <p className="text-blue-500 font-bold text-xl">Smart Analytics</p>
-                <p className="text-sm text-muted-foreground">Track Everything</p>
+                <p className="text-blue-500 font-bold text-xl">V1.0 Ready</p>
+                <p className="text-sm text-muted-foreground">Base 2.25.29.77</p>
               </div>
             </motion.div>
           </div>
