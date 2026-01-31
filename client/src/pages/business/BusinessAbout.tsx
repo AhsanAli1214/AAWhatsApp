@@ -1,7 +1,17 @@
 import { motion } from "framer-motion";
-import { 
-  Briefcase, Shield, Users, Award, CheckCircle, Target, 
-  Heart, Zap, Globe, Lock, MessageSquare, BarChart3
+import {
+  Briefcase,
+  Shield,
+  Users,
+  Award,
+  CheckCircle,
+  Target,
+  Heart,
+  Zap,
+  Globe,
+  Lock,
+  MessageSquare,
+  BarChart3,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
@@ -12,37 +22,57 @@ const values = [
   {
     icon: Shield,
     title: "Security First",
-    description: "Your business data is protected with enterprise-grade encryption and privacy controls."
+    description:
+      "Your business data is protected with enterprise-grade encryption and privacy controls.",
   },
   {
     icon: Target,
     title: "Business Focused",
-    description: "Features designed specifically for business communication and customer management."
+    description:
+      "Features designed specifically for business communication and customer management.",
   },
   {
     icon: Heart,
     title: "User Experience",
-    description: "Intuitive interface that makes business communication effortless."
+    description:
+      "Intuitive interface that makes business communication effortless.",
   },
   {
     icon: Zap,
     title: "Performance",
-    description: "Optimized for speed and reliability, even with high message volumes."
-  }
+    description:
+      "Optimized for speed and reliability, even with high message volumes.",
+  },
 ];
 
 const timeline = [
-  { year: "2022", title: "AA Business Launched", description: "Initial release with core business features" },
-  { year: "2023", title: "Auto Reply System", description: "Introduced automated response capabilities" },
-  { year: "2024", title: "Analytics Dashboard", description: "Added message statistics and insights" },
-  { year: "2026", title: "V1.0 Enterprise Release", description: "Official stable release with Anti-Ban v1.0 and CRM tools" }
+  {
+    year: "2022",
+    title: "AA Business Launched",
+    description: "Initial release with core business features",
+  },
+  {
+    year: "2023",
+    title: "Auto Reply System",
+    description: "Introduced automated response capabilities",
+  },
+  {
+    year: "2024",
+    title: "Analytics Dashboard",
+    description: "Added message statistics and insights",
+  },
+  {
+    year: "2026",
+    title: "V1.0 Enterprise Release",
+    description: "Official stable release with Anti-Ban v1.0 and CRM tools",
+  },
 ];
 
 export default function BusinessAbout() {
   return (
     <div className="min-h-screen bg-background">
       <BusinessNavbar />
-      
+
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <motion.div
@@ -54,7 +84,9 @@ export default function BusinessAbout() {
               About <span className="text-blue-500">AA Business</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              AA Business WhatsApp is a professional-grade WhatsApp modification designed specifically for businesses and entrepreneurs who need more from their messaging platform.
+              AA Business WhatsApp is a professional-grade WhatsApp modification
+              designed specifically for businesses and entrepreneurs who need
+              more from their messaging platform.
             </p>
           </motion.div>
 
@@ -66,10 +98,15 @@ export default function BusinessAbout() {
             >
               <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
               <p className="text-muted-foreground mb-4">
-                We believe every business deserves access to professional communication tools without compromising on privacy or security. AA Business WhatsApp empowers small and medium businesses to compete with enterprise-level communication capabilities.
+                We believe every business deserves access to professional
+                communication tools without compromising on privacy or security.
+                AA Business WhatsApp empowers small and medium businesses to
+                compete with enterprise-level communication capabilities.
               </p>
               <p className="text-muted-foreground">
-                Our team of dedicated developers works tirelessly to bring you the latest features while maintaining the highest standards of security and reliability.
+                Our team of dedicated developers works tirelessly to bring you
+                the latest features while maintaining the highest standards of
+                security and reliability.
               </p>
             </motion.div>
 
@@ -83,17 +120,23 @@ export default function BusinessAbout() {
                 { value: "5M+", label: "Business Users" },
                 { value: "50+", label: "Countries" },
                 { value: "99.9%", label: "Uptime" },
-                { value: "4.9", label: "Rating" }
+                { value: "4.9", label: "Rating" },
               ].map((stat, index) => (
                 <Card key={index} className="border-blue-500/20">
                   <CardContent className="p-6 text-center">
-                    <div className="text-3xl font-bold text-blue-500 mb-1">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                    <div className="text-3xl font-bold text-blue-500 mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {stat.label}
+                    </div>
                   </CardContent>
                 </Card>
               ))}
             </motion.div>
           </div>
+
+          <AdsBanner />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -104,25 +147,34 @@ export default function BusinessAbout() {
             <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => (
-                <Card key={index} className="border-blue-500/10 hover:border-blue-500/30 transition-colors">
+                <Card
+                  key={index}
+                  className="border-blue-500/10 hover:border-blue-500/30 transition-colors"
+                >
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
                       <value.icon className="w-6 h-6 text-blue-500" />
                     </div>
                     <h3 className="font-semibold mb-2">{value.title}</h3>
-                    <p className="text-sm text-muted-foreground">{value.description}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {value.description}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </motion.div>
 
+          <AdsBanner />
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">
+              Our Journey
+            </h2>
             <div className="max-w-3xl mx-auto">
               {timeline.map((item, index) => (
                 <div key={index} className="flex gap-4 mb-8 last:mb-0">
