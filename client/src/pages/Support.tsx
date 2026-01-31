@@ -4,6 +4,7 @@ import { Send, ArrowLeft, MessageCircle } from "lucide-react";
 import { SiTelegram } from "react-icons/si";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import { AdsBanner } from "@/components/AdsBanner";
 import { Navigation } from "@/components/Navigation";
 
 export default function Support() {
@@ -52,6 +53,7 @@ export default function Support() {
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 Report any error or bug directly to our team via Telegram for the fastest response.
               </p>
+              <AdsBanner />
 
               <div className="space-y-6">
                 <a 
