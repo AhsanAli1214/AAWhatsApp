@@ -5,6 +5,17 @@ export function Footer() {
   return (
     <footer className="py-12 border-t border-border/50 relative z-10 bg-background/50 backdrop-blur-sm">
       <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center mb-12">
+          <Link href="/">
+            <div className="flex flex-col items-center gap-2 cursor-pointer group">
+              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all border border-primary/20 shadow-lg shadow-primary/5">
+                <span className="font-black text-2xl text-primary">AA</span>
+              </div>
+              <span className="font-black text-xl tracking-tighter uppercase">AA Mods</span>
+            </div>
+          </Link>
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary/50 to-transparent mt-6" />
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div>
             <h4 className="font-bold mb-4">Products</h4>

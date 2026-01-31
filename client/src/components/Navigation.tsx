@@ -45,19 +45,25 @@ export function Navigation() {
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/">
-              <div className="flex items-center gap-3 cursor-pointer">
-                <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 cursor-pointer group">
+                <div className="relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-emerald-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
                   <img
                     src={logoImg}
                     alt="AA Mods Logo"
-                    className="w-16 h-16 object-contain"
+                    className="relative w-12 h-12 object-contain rounded-xl"
                     loading="eager"
                     decoding="async"
                   />
                 </div>
-                <span className="text-xl font-bold font-display tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-                  AA Mods
-                </span>
+                <div className="flex flex-col">
+                  <span className="text-xl font-black font-display tracking-tighter bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent leading-none">
+                    AA Mods
+                  </span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/80 leading-none mt-1">
+                    Official
+                  </span>
+                </div>
               </div>
             </Link>
           </div>
