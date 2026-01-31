@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Download, Send, AlertTriangle, Globe, Briefcase, MessageSquare } from "lucide-react";
+import {
+  Menu,
+  X,
+  Download,
+  Send,
+  AlertTriangle,
+  Globe,
+  Briefcase,
+  MessageSquare,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -31,21 +40,25 @@ export function BusinessNavbar() {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
               <div className="relative w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 overflow-hidden">
                 <img
-                  src="/favicon.png"
+                  src="client/public/favicon.png"
                   alt="AA Business"
                   className="w-8 h-8 object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.5)] group-hover:scale-110 transition-transform duration-300"
                   loading="eager"
                   decoding="async"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = '/favicon.png';
+                    target.src = "/favicon.png";
                   }}
                 />
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-black text-lg leading-none tracking-tighter bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">AA Business</span>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-500/80 leading-none mt-1">Official Mod</span>
+              <span className="font-black text-lg leading-none tracking-tighter bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                AA Business
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-500/80 leading-none mt-1">
+                Official Mod
+              </span>
             </div>
           </Link>
 
@@ -72,13 +85,19 @@ export function BusinessNavbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem>
-                  <Link href="/aa-whatsapp" className="flex items-center gap-2 w-full">
+                  <Link
+                    href="/aa-whatsapp"
+                    className="flex items-center gap-2 w-full"
+                  >
                     <MessageSquare className="w-4 h-4" />
                     AAWhatsApp
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/aa-business" className="flex items-center gap-2 w-full text-blue-500">
+                  <Link
+                    href="/aa-business"
+                    className="flex items-center gap-2 w-full text-blue-500"
+                  >
                     <Briefcase className="w-4 h-4" />
                     AA Business
                   </Link>
@@ -86,8 +105,16 @@ export function BusinessNavbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <a href="https://t.me/AaMods" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="sm" className="border-blue-500/30">
+            <a
+              href="https://t.me/AaMods"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-blue-500/30"
+              >
                 <Send className="w-4 h-4 mr-2" />
                 Telegram
               </Button>
@@ -101,10 +128,7 @@ export function BusinessNavbar() {
             </Link>
           </div>
 
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          <button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -125,7 +149,10 @@ export function BusinessNavbar() {
               ))}
               <hr className="my-2 border-border" />
               <Link href="/aa-business/download">
-                <Button className="w-full bg-blue-500 hover:bg-blue-600" onClick={() => setIsOpen(false)}>
+                <Button
+                  className="w-full bg-blue-500 hover:bg-blue-600"
+                  onClick={() => setIsOpen(false)}
+                >
                   <Download className="w-4 h-4 mr-2" />
                   Download
                 </Button>
