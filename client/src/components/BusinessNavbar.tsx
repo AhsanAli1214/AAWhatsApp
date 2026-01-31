@@ -58,7 +58,7 @@ export function BusinessNavbar() {
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
+            {location !== "/" && navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
                 <Button
                   variant="ghost"
@@ -124,7 +124,7 @@ export function BusinessNavbar() {
         {isOpen && (
           <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
+              {location !== "/" && navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <Button
                     variant="ghost"
