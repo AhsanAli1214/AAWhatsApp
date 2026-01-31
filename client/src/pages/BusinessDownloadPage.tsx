@@ -257,6 +257,19 @@ export default function BusinessDownloadPage() {
                   MediaFire Mirror
                 </Button>
               </a>
+              <a
+                href="https://t.me/AA_ModsOfficial"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="gap-2 border-amber-500/30 hover:bg-amber-500/10 text-white"
+                >
+                  <Send className="w-4 h-4" />
+                  Telegram Channel
+                </Button>
+              </a>
             </div>
           </section>
 
