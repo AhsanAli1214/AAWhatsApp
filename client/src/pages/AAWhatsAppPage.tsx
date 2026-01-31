@@ -414,6 +414,7 @@ export default function AAWhatsAppPage() {
           <div className="max-w-4xl mx-auto">
           </div>
 
+          <AdsBanner />
           <FAQSection />
           <AdsBanner />
           <div className="max-w-4xl mx-auto">
