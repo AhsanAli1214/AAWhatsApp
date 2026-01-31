@@ -427,7 +427,7 @@ export default function DownloadPage() {
             </h2>
             
             <div className="mb-8">
-              <VideoAdPlayer adTagUrl="https://profitablebutton.com/d/maFNz.dvG/NgvhZGGZUn/leGmA9GumZ/UblDkePIT/Y-3JN-jZEiyON_zQIYt/NZj/cM2HMGT/IC3/MPwr" />
+              <VideoAdPlayer adTagUrl={typeof window !== "undefined" ? (window as any).googleAdTag : ""} />
             </div>
 
             <div className="space-y-4 text-muted-foreground">
