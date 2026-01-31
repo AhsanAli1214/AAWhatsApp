@@ -33,9 +33,10 @@ export function AdPlaceholder({
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`w-full overflow-hidden my-8 flex flex-col items-center justify-center relative ${className}`}
+      className={`w-full overflow-hidden my-8 flex flex-col items-center justify-center relative min-h-[100px] rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm ${className}`}
     >
-      <div className="hilltop-banner-container min-h-[90px] w-full flex justify-center">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="hilltop-banner-container min-h-[90px] w-full flex justify-center items-center">
         <script
           dangerouslySetInnerHTML={{
             __html: `

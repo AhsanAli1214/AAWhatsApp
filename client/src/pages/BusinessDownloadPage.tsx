@@ -20,7 +20,9 @@ import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { AdDownloadButton } from "@/components/AdDownloadButton";
+import { VideoAdPlayer } from "@/components/VideoAdPlayer";
 import { useState, useEffect } from "react";
+import { Footer } from "@/components/Footer";
 
 const versionInfo = {
   version: "V 1.0",
@@ -216,50 +218,56 @@ export default function BusinessDownloadPage() {
               </div>
             </div>
 
-            <div className="glass-card p-8 rounded-[2rem] border border-white/5 flex flex-col items-center text-center justify-center">
-              <div className="w-20 h-20 bg-amber-500/10 rounded-3xl flex items-center justify-center mb-6">
-                <Shield className="w-12 h-12 text-amber-500" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">
-                Commercial Grade Safety
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-amber-500">
+              <Shield className="w-6 h-6" />
+              Business Safety Information
+            </h2>
+            
+            <div className="mb-8">
+              <VideoAdPlayer adTagUrl={typeof window !== "undefined" ? (window as any).googleAdTag : ""} />
+            </div>
+
+            <div className="space-y-4 text-muted-foreground">
+              <p className="leading-relaxed">
                 Specifically hardened for high-activity business accounts.
                 Verified 100% clean and safe for corporate use.
               </p>
             </div>
           </section>
 
-          <AdPlaceholder format="leaderboard" />
-
-          <section className="space-y-10">
-            <h2 className="text-3xl md:text-4xl font-black text-center tracking-tighter">
-              Business Setup Guide
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {installSteps.map((step, i) => (
-                <div
-                  key={i}
-                  className="p-6 bg-white/[0.02] rounded-2xl border border-white/5 flex gap-6 group hover:border-amber-500/20 transition-colors"
+          <section className="text-center space-y-6 p-8 rounded-[2rem] bg-white/[0.02] border border-white/5">
+            <h3 className="text-xl font-bold text-white">
+              Need an Alternative Download Link?
+            </h3>
+            <p className="text-muted-foreground">
+              If the main download isn't working, try our backup servers or join
+              our Telegram for direct links.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="https://www.mediafire.com/file/k1gea5lsn04vkad/AA+Business+WhatsApp+V1.0.apk/file"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="gap-2 border-amber-500/30 hover:bg-amber-500/10 text-white"
                 >
-                  <div className="shrink-0 w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 group-hover:bg-amber-500/20 transition-colors">
-                    <step.icon className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl mb-2 text-white">
-                      <span className="text-amber-500">{i + 1}.</span>{" "}
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {step.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                  <Download className="w-4 h-4" />
+                  MediaFire Mirror
+                </Button>
+              </a>
             </div>
           </section>
+
+          <div className="text-center pt-10 border-t border-white/5">
+            <p className="text-xs text-muted-foreground uppercase tracking-widest opacity-40">
+              AA Mods | Version {versionInfo.version} | Build ID: BIZ-2026-SEC
+            </p>
+          </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
