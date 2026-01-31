@@ -36,6 +36,10 @@ export function BusinessNavbar() {
                   className="w-8 h-8 object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.5)] group-hover:scale-110 transition-transform duration-300"
                   loading="eager"
                   decoding="async"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/favicon.png';
+                  }}
                 />
               </div>
             </div>
