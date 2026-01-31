@@ -145,25 +145,18 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <Link href="/download" className="w-full sm:w-auto">
-                <button className="relative group overflow-hidden px-10 py-6 rounded-2xl bg-primary text-primary-foreground font-black text-xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.7)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full border border-white/20 uppercase tracking-tight flex items-center justify-center gap-3" data-testid="button-download-hero">
-                  <Download className="w-7 h-7" />
-                  <span className="relative z-10">Continue to Download</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-primary to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute top-0 left-0 w-full h-1/2 bg-white/10 -skew-y-3 translate-y-[-10%]" />
+              <Link href="/aa-whatsapp-apk" className="w-full sm:w-auto">
+                <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-lg shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:-translate-y-1 transition-all duration-500 w-full border border-white/20 uppercase tracking-tight flex items-center justify-center gap-3">
+                  <ShieldCheck className="w-6 h-6" />
+                  AA WhatsApp
                 </button>
               </Link>
-              <a
-                href="https://t.me/AA_ModsOfficial"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto"
-              >
-                <button className="px-10 py-5 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 hover:bg-secondary/80 text-foreground font-semibold text-lg transition-all w-full flex items-center justify-center gap-2">
-                  <Send className="w-5 h-5" />
-                  Join Telegram
+              <Link href="/aa-business-whatsapp" className="w-full sm:w-auto">
+                <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-amber-500 text-black font-black text-lg shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:-translate-y-1 transition-all duration-500 w-full border border-white/20 uppercase tracking-tight flex items-center justify-center gap-3">
+                  <Shield className="w-6 h-6" />
+                  AA Business
                 </button>
-              </a>
+              </Link>
             </div>
           </motion.div>
 
