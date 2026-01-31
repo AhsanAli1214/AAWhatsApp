@@ -1,6 +1,18 @@
 import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Menu, X, Download, AlertTriangle, Send, Home, Info, Scale, BookOpen, HelpCircle, Shield } from "lucide-react";
+import {
+  Menu,
+  X,
+  Download,
+  AlertTriangle,
+  Send,
+  Home,
+  Info,
+  Scale,
+  BookOpen,
+  HelpCircle,
+  Shield,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -48,14 +60,14 @@ export function Navigation() {
                 <div className="relative">
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-emerald-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
                   <img
-                    src="/favicon.png"
+                    src="client/public/favicon.png"
                     alt="AA Mods"
                     className="relative w-12 h-12 object-contain rounded-xl drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] group-hover:scale-110 transition-transform duration-300"
                     loading="eager"
                     decoding="async"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      target.src = '/favicon.png';
+                      target.src = "/favicon.png";
                     }}
                   />
                 </div>
@@ -76,7 +88,9 @@ export function Navigation() {
             <div className="flex items-center gap-6 mr-4">
               {navLinks.map((link) => (
                 <Link key={link.name} href={link.href ?? "#"}>
-                  <span className={`text-sm font-medium transition-colors cursor-pointer ${location === link.href ? "text-primary" : "text-muted-foreground hover:text-primary"}`}>
+                  <span
+                    className={`text-sm font-medium transition-colors cursor-pointer ${location === link.href ? "text-primary" : "text-muted-foreground hover:text-primary"}`}
+                  >
                     {link.name}
                   </span>
                 </Link>
@@ -112,7 +126,11 @@ export function Navigation() {
           <div className="md:hidden flex items-center gap-3">
             <LanguageSwitcher />
             <Link href="/support">
-              <Button size="icon" variant="ghost" className="text-muted-foreground">
+              <Button
+                size="icon"
+                variant="ghost"
+                className="text-muted-foreground"
+              >
                 <AlertTriangle className="w-5 h-5" />
               </Button>
             </Link>
@@ -128,9 +146,15 @@ export function Navigation() {
             const isActive = location === link.href;
             return (
               <Link key={link.name} href={link.href}>
-                <div className={`flex flex-col items-center gap-1.5 transition-all duration-300 ${isActive ? "text-primary" : "text-muted-foreground hover:text-primary"}`}>
-                  <div className={`p-2 rounded-xl transition-all ${isActive ? "bg-primary/10 scale-110 shadow-[0_0_15px_rgba(16,185,129,0.2)]" : ""}`}>
-                    <Icon className={`w-5 h-5 ${isActive ? "stroke-[2.5px]" : "stroke-[2px]"}`} />
+                <div
+                  className={`flex flex-col items-center gap-1.5 transition-all duration-300 ${isActive ? "text-primary" : "text-muted-foreground hover:text-primary"}`}
+                >
+                  <div
+                    className={`p-2 rounded-xl transition-all ${isActive ? "bg-primary/10 scale-110 shadow-[0_0_15px_rgba(16,185,129,0.2)]" : ""}`}
+                  >
+                    <Icon
+                      className={`w-5 h-5 ${isActive ? "stroke-[2.5px]" : "stroke-[2px]"}`}
+                    />
                   </div>
                   <span className="text-[10px] font-bold uppercase tracking-tighter leading-none">
                     {link.name === "AA APK" ? "APK" : link.name}
@@ -139,14 +163,20 @@ export function Navigation() {
               </Link>
             );
           })}
-          
+
           {/* More Menu Trigger */}
-          <button 
+          <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`flex flex-col items-center gap-1.5 transition-all ${mobileOpen ? "text-primary" : "text-muted-foreground"}`}
           >
-            <div className={`p-2 rounded-xl transition-all ${mobileOpen ? "bg-primary/10 scale-110" : ""}`}>
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <div
+              className={`p-2 rounded-xl transition-all ${mobileOpen ? "bg-primary/10 scale-110" : ""}`}
+            >
+              {mobileOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </div>
             <span className="text-[10px] font-bold uppercase tracking-tighter leading-none">
               More
@@ -157,12 +187,14 @@ export function Navigation() {
 
       {/* Full Screen Mobile Menu Overlay */}
       {mobileOpen && (
-        <div 
+        <div
           className="md:hidden fixed inset-0 z-[45] bg-background/95 backdrop-blur-2xl animate-in fade-in duration-300 p-8 flex flex-col justify-center gap-8"
           onClick={() => setMobileOpen(false)}
         >
           <div className="space-y-6">
-            <p className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-8 text-center">Main Navigation</p>
+            <p className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-8 text-center">
+              Main Navigation
+            </p>
             {navLinks.map((link) => {
               const Icon = link.icon;
               return (
@@ -184,13 +216,20 @@ export function Navigation() {
 
           <div className="grid grid-cols-1 gap-4">
             <AdPlaceholder format="mobile" className="mb-2" />
-            <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://t.me/AA_ModsOfficial"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="w-full h-16 rounded-2xl bg-primary text-primary-foreground font-bold text-xl flex items-center justify-center gap-3">
                 <Send className="w-6 h-6" /> Join Telegram
               </Button>
             </a>
             <Link href="/support">
-              <Button variant="outline" className="w-full h-16 rounded-2xl border-destructive/30 text-destructive font-bold text-xl">
+              <Button
+                variant="outline"
+                className="w-full h-16 rounded-2xl border-destructive/30 text-destructive font-bold text-xl"
+              >
                 <AlertTriangle className="w-6 h-6 mr-3" /> Report Bug
               </Button>
             </Link>
