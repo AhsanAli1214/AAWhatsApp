@@ -11,13 +11,14 @@ declare global {
 }
 
 export function VideoAdPlayer({ adTagUrl }: VideoAdPlayerProps) {
+  const finalAdTagUrl = adTagUrl || (typeof window !== "undefined" && (window as any).googleAdTag) || "";
   const videoElementRef = useRef<HTMLVideoElement>(null);
   const adContainerRef = useRef<HTMLDivElement>(null);
   const adsLoaderRef = useRef<any>(null);
   const adsManagerRef = useRef<any>(null);
 
   useEffect(() => {
-    if (!window.google) return;
+    if (!window.google || !finalAdTagUrl) return;
 
     const videoElement = videoElementRef.current;
     const adContainer = adContainerRef.current;
@@ -64,7 +65,7 @@ export function VideoAdPlayer({ adTagUrl }: VideoAdPlayerProps) {
     );
 
     const adsRequest = new window.google.ima.AdsRequest();
-    adsRequest.adTagUrl = adTagUrl;
+    adsRequest.adTagUrl = finalAdTagUrl;
     adsRequest.linearAdSlotWidth = 640;
     adsRequest.linearAdSlotHeight = 360;
     adsRequest.nonLinearAdSlotWidth = 640;
@@ -83,7 +84,7 @@ export function VideoAdPlayer({ adTagUrl }: VideoAdPlayerProps) {
         adsManagerRef.current.destroy();
       }
     };
-  }, [adTagUrl]);
+  }, [finalAdTagUrl]);
 
   return (
     <div className="relative w-full max-w-2xl mx-auto aspect-video bg-black rounded-xl overflow-hidden shadow-2xl border border-white/10 group">
