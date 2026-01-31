@@ -1,11 +1,28 @@
 import { Helmet } from "react-helmet";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { 
-  Briefcase, Shield, Download, CheckCircle2, Star, Users, 
-  MessageSquare, Clock, Bot, BarChart3, Tags, Smartphone,
-  ArrowRight, Zap, Globe, Lock, ChevronDown, Database,
-  ShieldCheck, Send, XCircle
+import {
+  Briefcase,
+  Shield,
+  Download,
+  CheckCircle2,
+  Star,
+  Users,
+  MessageSquare,
+  Clock,
+  Bot,
+  BarChart3,
+  Tags,
+  Smartphone,
+  ArrowRight,
+  Zap,
+  Globe,
+  Lock,
+  ChevronDown,
+  Database,
+  ShieldCheck,
+  Send,
+  XCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -25,51 +42,91 @@ const features = [
   {
     icon: Bot,
     title: "Auto Reply",
-    description: "Set up automatic responses for when you're away or busy"
+    description: "Set up automatic responses for when you're away or busy",
   },
   {
     icon: Tags,
     title: "Customer Labels",
-    description: "Organize contacts with custom labels and categories"
+    description: "Organize contacts with custom labels and categories",
   },
   {
     icon: BarChart3,
     title: "Message Statistics",
-    description: "Track message delivery, read rates, and response times"
+    description: "Track message delivery, read rates, and response times",
   },
   {
     icon: Clock,
     title: "Scheduled Messages",
-    description: "Schedule messages to be sent at specific times"
+    description: "Schedule messages to be sent at specific times",
   },
   {
     icon: MessageSquare,
     title: "Quick Replies",
-    description: "Save and reuse frequently sent messages"
+    description: "Save and reuse frequently sent messages",
   },
   {
     icon: Globe,
     title: "Catalog Support",
-    description: "Showcase your products and services directly in chat"
-  }
+    description: "Showcase your products and services directly in chat",
+  },
 ];
 
 const stats = [
   { value: "5M+", label: "Business Users" },
   { value: "4.9/5", label: "User Rating" },
   { value: "99.9%", label: "Uptime" },
-  { value: "24/7", label: "Support" }
+  { value: "24/7", label: "Support" },
 ];
 
 const comparisonData = [
-  { feature: "Auto Reply System", aaBusiness: true, official: true, gbBusiness: true },
-  { feature: "Anti-Ban Protection", aaBusiness: true, official: false, gbBusiness: false },
-  { feature: "Custom Themes", aaBusiness: true, official: false, gbBusiness: true },
-  { feature: "Message Scheduler", aaBusiness: true, official: false, gbBusiness: true },
-  { feature: "Privacy Core", aaBusiness: true, official: false, gbBusiness: false },
-  { feature: "No Bank Data Access", aaBusiness: true, official: true, gbBusiness: false },
-  { feature: "Dual Accounts", aaBusiness: true, official: false, gbBusiness: true },
-  { feature: "Regular Updates", aaBusiness: true, official: true, gbBusiness: false }
+  {
+    feature: "Auto Reply System",
+    aaBusiness: true,
+    official: true,
+    gbBusiness: true,
+  },
+  {
+    feature: "Anti-Ban Protection",
+    aaBusiness: true,
+    official: false,
+    gbBusiness: false,
+  },
+  {
+    feature: "Custom Themes",
+    aaBusiness: true,
+    official: false,
+    gbBusiness: true,
+  },
+  {
+    feature: "Message Scheduler",
+    aaBusiness: true,
+    official: false,
+    gbBusiness: true,
+  },
+  {
+    feature: "Privacy Core",
+    aaBusiness: true,
+    official: false,
+    gbBusiness: false,
+  },
+  {
+    feature: "No Bank Data Access",
+    aaBusiness: true,
+    official: true,
+    gbBusiness: false,
+  },
+  {
+    feature: "Dual Accounts",
+    aaBusiness: true,
+    official: false,
+    gbBusiness: true,
+  },
+  {
+    feature: "Regular Updates",
+    aaBusiness: true,
+    official: true,
+    gbBusiness: false,
+  },
 ];
 
 export default function BusinessHome() {
@@ -77,7 +134,10 @@ export default function BusinessHome() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-blue-500/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA Business WhatsApp APK Download V1.0 (Official) - Professional Mod 2026</title>
+        <title>
+          AA Business WhatsApp APK Download V1.0 (Official) - Professional Mod
+          2026
+        </title>
         <meta
           name="description"
           content="Download AA Business WhatsApp APK V1.0. Professional enterprise tools, Auto-reply, customer labels, and advanced analytics. Built with Anti-Ban v1.0 and Privacy Core™ security."
@@ -86,9 +146,18 @@ export default function BusinessHome() {
           name="keywords"
           content="AA Business WhatsApp, Business WhatsApp Mod, WhatsApp Business APK, Auto Reply WhatsApp, Business WhatsApp 2026, AA Business Download, professional whatsapp mod"
         />
-        <meta property="og:title" content="AA Business WhatsApp Download V1.0 (Official) - Enterprise Grade Mod" />
-        <meta property="og:description" content="The ultimate WhatsApp mod for businesses. Automate customer responses, track analytics, and secure your data with Privacy Core™." />
-        <meta property="og:image" content="https://aa-mods.vercel.app/favicon.png" />
+        <meta
+          property="og:title"
+          content="AA Business WhatsApp Download V1.0 (Official) - Enterprise Grade Mod"
+        />
+        <meta
+          property="og:description"
+          content="The ultimate WhatsApp mod for businesses. Automate customer responses, track analytics, and secure your data with Privacy Core™."
+        />
+        <meta
+          property="og:image"
+          content="https://aa-mods.vercel.app/favicon.png"
+        />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-business" />
@@ -96,19 +165,19 @@ export default function BusinessHome() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "AA Business WhatsApp",
-            "operatingSystem": "Android",
-            "applicationCategory": "BusinessApplication",
-            "aggregateRating": {
+            name: "AA Business WhatsApp",
+            operatingSystem: "Android",
+            applicationCategory: "BusinessApplication",
+            aggregateRating: {
               "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "52300"
+              ratingValue: "4.8",
+              reviewCount: "52300",
             },
-            "offers": {
+            offers: {
               "@type": "Offer",
-              "price": "0.00",
-              "priceCurrency": "USD"
-            }
+              price: "0.00",
+              priceCurrency: "USD",
+            },
           })}
         </script>
       </Helmet>
@@ -118,9 +187,9 @@ export default function BusinessHome() {
 
       <section className="relative z-10 pt-32 pb-20 lg:pt-48 lg:pb-32 container mx-auto px-4 md:px-6">
         <div className="absolute inset-0 -z-20">
-          <img 
-            src={businessBg} 
-            alt="Business Background" 
+          <img
+            src={businessBg}
+            alt="Business Background"
             className="w-full h-full object-cover opacity-10"
           />
         </div>
@@ -151,7 +220,8 @@ export default function BusinessHome() {
             </motion.h1>
 
             <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              The ultimate WhatsApp mod for businesses. Manage customers, automate responses, and grow your business with advanced features.
+              The ultimate WhatsApp mod for businesses. Manage customers,
+              automate responses, and grow your business with advanced features.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -161,7 +231,12 @@ export default function BusinessHome() {
                   Download APK V1.0
                 </button>
               </Link>
-              <a href="https://t.me/AaMods" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a
+                href="https://t.me/AaMods"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
                 <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-transparent border-2 border-blue-500/50 text-blue-500 font-black text-lg hover:-translate-y-1 transition-all duration-500 w-full uppercase tracking-tight flex items-center justify-center gap-3 hover:bg-blue-500/10">
                   <Send className="w-6 h-6" />
                   Join Telegram
@@ -215,7 +290,9 @@ export default function BusinessHome() {
                   <span className="text-blue-500 italic">V 1.0</span>
                 </h2>
                 <p className="text-muted-foreground text-lg font-medium max-w-xl leading-relaxed">
-                  The latest business-grade WhatsApp modification with professional features for customer management and automated communication.
+                  The latest business-grade WhatsApp modification with
+                  professional features for customer management and automated
+                  communication.
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
                   {[
@@ -263,8 +340,7 @@ export default function BusinessHome() {
         </div>
       </section>
 
-      <div className="container px-4 relative z-10 mb-16">
-      </div>
+      <div className="container px-4 relative z-10 mb-16"></div>
 
       <section className="py-20 px-4 bg-blue-500/5">
         <div className="container mx-auto max-w-6xl">
@@ -278,7 +354,8 @@ export default function BusinessHome() {
               Business <span className="text-blue-500">Features</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Everything you need to manage your business communications professionally
+              Everything you need to manage your business communications
+              professionally
             </p>
           </motion.div>
 
@@ -297,7 +374,9 @@ export default function BusinessHome() {
                       <feature.icon className="w-7 h-7 text-blue-500" />
                     </div>
                     <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <p className="text-muted-foreground">
+                      {feature.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -319,7 +398,9 @@ export default function BusinessHome() {
                 Smart <span className="text-blue-500">Analytics Dashboard</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Track every message, monitor delivery rates, and analyze response times. Get detailed insights into your business communication patterns.
+                Track every message, monitor delivery rates, and analyze
+                response times. Get detailed insights into your business
+                communication patterns.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-blue-500/5 border border-blue-500/10">
@@ -328,7 +409,10 @@ export default function BusinessHome() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">Real-time Statistics</h4>
-                    <p className="text-muted-foreground">Monitor message delivery, read rates, and customer engagement in real-time.</p>
+                    <p className="text-muted-foreground">
+                      Monitor message delivery, read rates, and customer
+                      engagement in real-time.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-blue-500/5 border border-blue-500/10">
@@ -337,7 +421,10 @@ export default function BusinessHome() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">Response Analytics</h4>
-                    <p className="text-muted-foreground">Track average response times and identify peak communication hours.</p>
+                    <p className="text-muted-foreground">
+                      Track average response times and identify peak
+                      communication hours.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -348,9 +435,9 @@ export default function BusinessHome() {
               viewport={{ once: true }}
               className="relative"
             >
-              <img 
-                src={analyticsImage} 
-                alt="AA Business WhatsApp Analytics Dashboard" 
+              <img
+                src={analyticsImage}
+                alt="AA Business WhatsApp Analytics Dashboard"
                 className="rounded-3xl shadow-2xl border border-blue-500/20 w-full"
                 loading="lazy"
               />
@@ -376,18 +463,33 @@ export default function BusinessHome() {
                 Powerful <span className="text-blue-500">Automation</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Automate your business responses with smart auto-reply, message scheduling, and quick reply templates. Never miss a customer inquiry.
+                Automate your business responses with smart auto-reply, message
+                scheduling, and quick reply templates. Never miss a customer
+                inquiry.
               </p>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {['Auto Reply System', 'Message Scheduler', 'Quick Templates', 'Away Messages', 'Greeting Messages', 'Custom Triggers'].map((feat) => (
-                  <li key={feat} className="flex items-center gap-2 text-foreground font-medium">
+                {[
+                  "Auto Reply System",
+                  "Message Scheduler",
+                  "Quick Templates",
+                  "Away Messages",
+                  "Greeting Messages",
+                  "Custom Triggers",
+                ].map((feat) => (
+                  <li
+                    key={feat}
+                    className="flex items-center gap-2 text-foreground font-medium"
+                  >
                     <Zap className="w-4 h-4 text-blue-500" />
                     {feat}
                   </li>
                 ))}
               </ul>
               <Link href="/aa-business/features">
-                <Button size="lg" className="rounded-full px-8 text-lg font-bold bg-blue-500 hover:bg-blue-600">
+                <Button
+                  size="lg"
+                  className="rounded-full px-8 text-lg font-bold bg-blue-500 hover:bg-blue-600"
+                >
                   Explore Features
                 </Button>
               </Link>
@@ -398,9 +500,9 @@ export default function BusinessHome() {
               viewport={{ once: true }}
               className="lg:order-1"
             >
-              <img 
-                src={automationImage} 
-                alt="AA Business WhatsApp Automation Features" 
+              <img
+                src={automationImage}
+                alt="AA Business WhatsApp Automation Features"
                 className="rounded-3xl shadow-2xl border border-blue-500/20 w-full"
                 loading="lazy"
               />
@@ -423,19 +525,30 @@ export default function BusinessHome() {
                 Anti-Ban V1.0 Certified
               </div>
               <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
-                Enterprise-Grade <span className="text-blue-500 italic">Security</span>
+                Enterprise-Grade{" "}
+                <span className="text-blue-500 italic">Security</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Our proprietary Anti-Ban v1.0 technology protects your business account. Combined with Privacy Core, your business data stays completely secure.
+                Our proprietary Anti-Ban v1.0 technology protects your business
+                account. Combined with Privacy Core, your business data stays
+                completely secure.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-6 rounded-2xl bg-blue-500/5 border border-blue-500/10">
-                  <h4 className="text-blue-500 font-black text-2xl mb-1">0.1%</h4>
-                  <p className="text-xs text-muted-foreground uppercase tracking-widest">Ban Rate 2026</p>
+                  <h4 className="text-blue-500 font-black text-2xl mb-1">
+                    0.1%
+                  </h4>
+                  <p className="text-xs text-muted-foreground uppercase tracking-widest">
+                    Ban Rate 2026
+                  </p>
                 </div>
                 <div className="p-6 rounded-2xl bg-blue-500/5 border border-blue-500/10">
-                  <h4 className="text-blue-500 font-black text-2xl mb-1">Daily</h4>
-                  <p className="text-xs text-muted-foreground uppercase tracking-widest">Security Updates</p>
+                  <h4 className="text-blue-500 font-black text-2xl mb-1">
+                    Daily
+                  </h4>
+                  <p className="text-xs text-muted-foreground uppercase tracking-widest">
+                    Security Updates
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -445,9 +558,9 @@ export default function BusinessHome() {
               viewport={{ once: true }}
               className="relative"
             >
-              <img 
-                src={securityImage} 
-                alt="AA Business WhatsApp Security Technology" 
+              <img
+                src={securityImage}
+                alt="AA Business WhatsApp Security Technology"
                 className="rounded-3xl shadow-2xl border border-blue-500/20 w-full"
                 loading="lazy"
               />
@@ -455,6 +568,7 @@ export default function BusinessHome() {
           </div>
         </div>
       </section>
+      <AdsBanner />
 
       <section className="py-24 bg-blue-500/5">
         <div className="container px-4">
@@ -486,16 +600,31 @@ export default function BusinessHome() {
                 <div className="text-center">GB Business</div>
               </div>
               {comparisonData.map((row, index) => (
-                <div key={index} className="grid grid-cols-4 gap-4 p-4 border-t border-border/50">
+                <div
+                  key={index}
+                  className="grid grid-cols-4 gap-4 p-4 border-t border-border/50"
+                >
                   <div className="text-sm">{row.feature}</div>
                   <div className="flex justify-center">
-                    {row.aaBusiness ? <CheckCircle2 className="text-blue-500 w-5 h-5" /> : <XCircle className="text-destructive w-5 h-5" />}
+                    {row.aaBusiness ? (
+                      <CheckCircle2 className="text-blue-500 w-5 h-5" />
+                    ) : (
+                      <XCircle className="text-destructive w-5 h-5" />
+                    )}
                   </div>
                   <div className="flex justify-center">
-                    {row.official ? <CheckCircle2 className="text-blue-500 w-5 h-5" /> : <XCircle className="text-destructive w-5 h-5" />}
+                    {row.official ? (
+                      <CheckCircle2 className="text-blue-500 w-5 h-5" />
+                    ) : (
+                      <XCircle className="text-destructive w-5 h-5" />
+                    )}
                   </div>
                   <div className="flex justify-center">
-                    {row.gbBusiness ? <CheckCircle2 className="text-blue-500 w-5 h-5" /> : <XCircle className="text-destructive w-5 h-5" />}
+                    {row.gbBusiness ? (
+                      <CheckCircle2 className="text-blue-500 w-5 h-5" />
+                    ) : (
+                      <XCircle className="text-destructive w-5 h-5" />
+                    )}
                   </div>
                 </div>
               ))}
@@ -508,14 +637,19 @@ export default function BusinessHome() {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-              Ready to Scale Your <span className="text-blue-500 italic">Business?</span>
+              Ready to Scale Your{" "}
+              <span className="text-blue-500 italic">Business?</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Join thousands of businesses already using AA Business WhatsApp to manage their customer relationships securely.
+              Join thousands of businesses already using AA Business WhatsApp to
+              manage their customer relationships securely.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/aa-business/download" className="w-full sm:w-auto">
-                <Button size="lg" className="px-12 py-8 rounded-2xl bg-blue-500 hover:bg-blue-600 text-white font-black text-xl shadow-2xl shadow-blue-500/20">
+                <Button
+                  size="lg"
+                  className="px-12 py-8 rounded-2xl bg-blue-500 hover:bg-blue-600 text-white font-black text-xl shadow-2xl shadow-blue-500/20"
+                >
                   Download APK Now
                 </Button>
               </Link>

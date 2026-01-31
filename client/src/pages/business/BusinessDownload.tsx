@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { AdsBanner } from "@/components/AdsBanner";
 import {
   Download,
   Shield,
@@ -131,6 +132,7 @@ export default function BusinessDownload() {
               </Card>
             ))}
           </motion.div>
+          <AdsBanner />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -202,6 +204,7 @@ export default function BusinessDownload() {
               </Card>
             </motion.div>
           </div>
+          <AdsBanner />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
