@@ -62,6 +62,8 @@ export default function Home() {
         <title>AA Mods | Official AAWhatsApp V2.0 & AA Business V1.0 APK (2026)</title>
         <meta name="description" content="Official AA Mods. Download the safest Anti-Ban WhatsApp mods. AAWhatsApp V2.0 with Privacy Core™ and AA Business V1.0 for enterprise. Secure & Permission-Clean." />
         <meta name="keywords" content="AA Mods, AA WhatsApp, AA Business WhatsApp, WhatsApp Mod 2026, Anti-Ban WhatsApp APK, Secure WhatsApp, GB WhatsApp Alternative" />
+        <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
+        <link rel="preload" as="image" href="/favicon.png" fetchPriority="high" />
         <link rel="canonical" href="https://aa-mods.vercel.app/" />
         <meta name="robots" content="index, follow" />
       </Helmet>
@@ -116,25 +118,25 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 relative"
-          >
-            <div className="relative z-10 mx-auto max-w-lg">
-              <img
-                src={heroImage}
-                alt="AAWhatsApp Interface V2.0 - Secure Messaging with Anti-Ban v2.0"
-                title="Official AAWhatsApp Secure Interface"
-                className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/20"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                width="1200"
-                height="675"
-              />
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.8 }}
+              className="flex-1 relative"
+            >
+              <div className="relative z-10 mx-auto max-w-lg">
+                <img
+                  src={heroImage}
+                  alt="AAWhatsApp Interface V2.0 - Secure Messaging with Anti-Ban v2.0"
+                  title="Official AAWhatsApp Secure Interface"
+                  className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/20"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  width="1200"
+                  height="675"
+                />
+              </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10" />
           </motion.div>
         </div>
