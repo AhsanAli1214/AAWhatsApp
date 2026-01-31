@@ -164,6 +164,7 @@ export default function Home() {
         <div className="mt-20">
           <AdsBanner />
         </div>
+        <AdsBanner />
         <div className="flex justify-center mt-20">
           <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
         </div>
