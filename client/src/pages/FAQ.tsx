@@ -111,7 +111,7 @@ export default function FAQ() {
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       <Helmet>
         <title>AA WhatsApp FAQ (2026) – Anti-Ban & Security Support Guide</title>
-        <meta name="description" content="Official AA WhatsApp support page. Master Anti-Ban v2.0, fix common errors, learn installation steps, and explore privacy features in AA WhatsApp V2.0. The definitive support guide for 2026." />
+        <meta name="description" content="Official AA WhatsApp support page. Master Anti-Ban v1.0, fix common errors, learn installation steps, and explore privacy features in AA WhatsApp V1.0. The definitive support guide for 2026." />
         <meta name="keywords" content="AA WhatsApp support, AA WhatsApp help, fix whatsapp mod ban, install aa whatsapp, aa whatsapp official faq, whatsapp mod troubleshooting, AA WhatsApp guide 2026" />
         <link rel="canonical" href="https://aa-mods.vercel.app/faq" />
         <meta name="robots" content="index, follow" />
@@ -164,7 +164,7 @@ export default function FAQ() {
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-2">Verified Safety Support</h3>
-            <p className="text-muted-foreground leading-relaxed">Our support guides are updated daily to reflect the latest Anti-Ban v2.0 protocols. Rest assured that all solutions provided here are tested for security and stability.</p>
+            <p className="text-muted-foreground leading-relaxed">Our support guides are updated daily to reflect the latest Anti-Ban v1.0 protocols. Rest assured that all solutions provided here are tested for security and stability.</p>
           </div>
         </div>
 

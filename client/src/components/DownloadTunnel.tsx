@@ -69,7 +69,7 @@ export function DownloadTunnel({ onComplete }: { onComplete: () => void }) {
               <div className="absolute top-0 left-0 w-full h-1/2 bg-white/10 -skew-y-3 translate-y-[-10%]" />
             </button>
             <p className="text-center mt-4 text-xs text-muted-foreground uppercase tracking-[0.3em] font-bold opacity-50">
-              Verified Secure • Anti-Ban v2.0 • 100% Clean
+              Verified Secure • Anti-Ban v1.0 • 100% Clean
             </p>
           </motion.div>
         ) : (

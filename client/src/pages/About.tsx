@@ -214,7 +214,7 @@ export default function About() {
                   <div className="grid gap-4">
                     {[
                       "End-to-End Encryption preserved",
-                      "Anti-ban technology v2.0 included",
+                      "Anti-ban technology v1.0 included",
                       "Regular security patches & updates",
                       "Privacy Core™ blocks invasive trackers"
                     ].map((item, i) => (

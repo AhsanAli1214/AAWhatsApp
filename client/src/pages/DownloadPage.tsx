@@ -48,7 +48,7 @@ const changelog = [
     base: "2.25.36.73",
     isLatest: true,
     changes: [
-      "New Anti-Ban v2.0 script for 2026 security protocols",
+      "New Anti-Ban v1.0 script for 2026 security protocols",
       "Surgically removed 5 more invasive Android permissions",
       "Enhanced Privacy Core technology",
       "Fixed media download issues on Android 14+",
@@ -128,9 +128,9 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>Download AAWhatsApp V2.0 APK (2026) – Official Secure Anti-Ban Link</title>
-        <meta name="description" content="Direct download for AAWhatsApp V2.0. Featuring Anti-Ban v2.0, Privacy Core™ protection, and 100% security verification. The definitive WhatsApp mod choice for 2026." />
-        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, secure WhatsApp mod, anti-ban apk 2026, best whatsapp mod" />
+        <title>Download AAWhatsApp V1.0 APK (2026) – Official Secure Anti-Ban Link</title>
+        <meta name="description" content="Direct download for AAWhatsApp V1.0. Featuring Anti-Ban v1.0, Privacy Core™ protection, and 100% security verification. The definitive WhatsApp mod choice for 2026." />
+        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V1.0, download AA WhatsApp, secure WhatsApp mod, anti-ban apk 2026, best whatsapp mod" />
         <link rel="canonical" href="https://aa-mods.vercel.app/download" />
       </Helmet>
 
@@ -175,7 +175,7 @@ export default function DownloadPage() {
             </motion.h1>
 
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The world's most secure WhatsApp mod with Anti-Ban v2.0
+              The world's most secure WhatsApp mod with Anti-Ban v1.0
               protection.
               <span className="text-primary font-bold">
                 {" "}
@@ -234,7 +234,7 @@ export default function DownloadPage() {
 
               <div className="mb-10 w-full flex justify-center px-2">
                 <AdDownloadButton
-                  downloadUrl="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
+                  downloadUrl="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V1.0.apk/file"
                   buttonClassName="w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-2 md:gap-3 border border-white/20 text-center leading-tight overflow-hidden"
                 />
               </div>
@@ -242,7 +242,7 @@ export default function DownloadPage() {
               <div className="mb-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col md:flex-row items-center justify-center gap-8 text-sm font-bold">
                 <div className="flex items-center gap-2 text-emerald-400">
                   <ShieldCheck className="w-5 h-5" />
-                  Anti-Ban v2.0
+                  Anti-Ban v1.0
                 </div>
                 <div className="flex items-center gap-2 text-blue-400">
                   <LockIcon className="w-5 h-5" />
@@ -327,7 +327,7 @@ export default function DownloadPage() {
                   Virus-Free
                 </span>
                 <span className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
-                  Anti-Ban v2.0
+                  Anti-Ban v1.0
                 </span>
                 <span className="px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold border border-blue-500/20">
                   Privacy Core
@@ -459,7 +459,7 @@ export default function DownloadPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
+                href="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V1.0.apk/file"
                 target="_blank"
                 rel="noopener noreferrer"
               >
