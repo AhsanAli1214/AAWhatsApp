@@ -32,16 +32,29 @@ export default function AppSelector() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm text-primary font-medium">Choose Your WhatsApp Experience</span>
+            <div className="flex flex-col items-center mb-16">
+              <div className="w-24 h-24 rounded-3xl bg-primary/10 flex items-center justify-center border border-primary/20 shadow-2xl shadow-primary/10 mb-8 overflow-hidden group hover:scale-105 transition-transform duration-500">
+                <img 
+                  src="/favicon.png" 
+                  alt="AA Mods Logo" 
+                  className="w-16 h-16 object-contain"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://placehold.co/100x100/10b981/ffffff?text=AA";
+                  }}
+                />
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                <Sparkles className="w-4 h-4 text-primary" />
+                <span className="text-sm text-primary font-medium">Choose Your WhatsApp Experience</span>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                AA Mods <span className="text-primary italic">Collection</span>
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Select the perfect WhatsApp modification for your needs. Personal use or business - we've got you covered.
+              </p>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              AA Mods <span className="text-primary italic">Collection</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Select the perfect WhatsApp modification for your needs. Personal use or business - we've got you covered.
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
