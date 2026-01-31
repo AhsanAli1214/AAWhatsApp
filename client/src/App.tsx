@@ -8,6 +8,7 @@ import { BackToTop } from "@/components/BackToTop";
 import Home from "@/pages/Home";
 import AAWhatsAppPage from "@/pages/AAWhatsAppPage";
 import AABusinessWhatsAppPage from "@/pages/AABusinessWhatsAppPage";
+import BusinessDownloadPage from "@/pages/BusinessDownloadPage";
 import About from "@/pages/About";
 import Comparison from "@/pages/Comparison";
 import FAQ from "@/pages/FAQ";
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/comparison" component={Comparison} />
       <Route path="/aa-whatsapp-apk" component={AAWhatsAppPage} />
       <Route path="/aa-business-whatsapp" component={AABusinessWhatsAppPage} />
+      <Route path="/business-download" component={BusinessDownloadPage} />
       <Route path="/faq" component={FAQ} />
       <Route path="/download" component={DownloadPage} />
       <Route path="/privacy" component={PrivacyPolicy} />

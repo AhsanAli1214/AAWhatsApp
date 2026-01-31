@@ -95,7 +95,7 @@ export default function AABusinessWhatsAppPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/download" className="w-full sm:w-auto">
+              <Link href="/business-download" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full px-8 py-7 rounded-2xl bg-amber-500 hover:bg-amber-600 text-black font-black text-xl shadow-xl shadow-amber-500/20 flex items-center gap-3">
                   <Download className="w-6 h-6" />
                   Download AA Business v1.0
