@@ -1,76 +1,100 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { 
-  Bot, Tags, BarChart3, Clock, MessageSquare, Globe,
-  Shield, Lock, Eye, EyeOff, Palette, Download, CheckCircle,
-  Users, Smartphone, Bell, Image, FileText, Mic, Video
+import {
+  Bot,
+  Tags,
+  BarChart3,
+  Clock,
+  MessageSquare,
+  Globe,
+  Shield,
+  Lock,
+  Eye,
+  EyeOff,
+  Palette,
+  Download,
+  CheckCircle,
+  Users,
+  Smartphone,
+  Bell,
+  Image,
+  FileText,
+  Mic,
+  Video,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
+import { AdsBanner } from "@/components/AdsBanner";
 
 const businessFeatures = [
   {
     icon: Bot,
     title: "Auto Reply",
-    description: "Set up automatic responses for when you're away, busy, or outside business hours. Create custom messages for different scenarios.",
-    badge: "Popular"
+    description:
+      "Set up automatic responses for when you're away, busy, or outside business hours. Create custom messages for different scenarios.",
+    badge: "Popular",
   },
   {
     icon: Tags,
     title: "Customer Labels",
-    description: "Organize your contacts with custom labels like 'New Lead', 'VIP Customer', 'Pending Payment', and more.",
-    badge: null
+    description:
+      "Organize your contacts with custom labels like 'New Lead', 'VIP Customer', 'Pending Payment', and more.",
+    badge: null,
   },
   {
     icon: BarChart3,
     title: "Message Statistics",
-    description: "Track delivery rates, read receipts, response times, and customer engagement metrics.",
-    badge: "Pro"
+    description:
+      "Track delivery rates, read receipts, response times, and customer engagement metrics.",
+    badge: "Pro",
   },
   {
     icon: Clock,
     title: "Scheduled Messages",
-    description: "Plan and schedule messages to be sent at optimal times. Perfect for marketing campaigns.",
-    badge: "Popular"
+    description:
+      "Plan and schedule messages to be sent at optimal times. Perfect for marketing campaigns.",
+    badge: "Popular",
   },
   {
     icon: MessageSquare,
     title: "Quick Replies",
-    description: "Save frequently used messages and send them with a single tap. Great for FAQs and common responses.",
-    badge: null
+    description:
+      "Save frequently used messages and send them with a single tap. Great for FAQs and common responses.",
+    badge: null,
   },
   {
     icon: Globe,
     title: "Product Catalog",
-    description: "Showcase your products and services directly in WhatsApp. Link to your online store.",
-    badge: null
-  }
+    description:
+      "Showcase your products and services directly in WhatsApp. Link to your online store.",
+    badge: null,
+  },
 ];
 
 const privacyFeatures = [
   {
     icon: Eye,
     title: "Hide Online Status",
-    description: "Appear offline while still using the app"
+    description: "Appear offline while still using the app",
   },
   {
     icon: EyeOff,
     title: "Hide Blue Ticks",
-    description: "Read messages without sending read receipts"
+    description: "Read messages without sending read receipts",
   },
   {
     icon: Lock,
     title: "App Lock",
-    description: "Secure app with PIN, pattern, or fingerprint"
+    description: "Secure app with PIN, pattern, or fingerprint",
   },
   {
     icon: Shield,
     title: "Anti-Ban v1.0",
-    description: "Advanced protection against account restrictions"
-  }
+    description: "Advanced protection against account restrictions",
+  },
 ];
 
 const customizationFeatures = [
@@ -79,14 +103,14 @@ const customizationFeatures = [
   "Custom fonts",
   "Icon packs",
   "Notification styles",
-  "Widget customization"
+  "Widget customization",
 ];
 
 export default function BusinessFeatures() {
   return (
     <div className="min-h-screen bg-background">
       <BusinessNavbar />
-      
+
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <motion.div
@@ -101,12 +125,15 @@ export default function BusinessFeatures() {
               AA Business <span className="text-blue-500">Features</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover all the powerful features that make AA Business WhatsApp the ultimate choice for professional communication.
+              Discover all the powerful features that make AA Business WhatsApp
+              the ultimate choice for professional communication.
             </p>
           </motion.div>
 
           <div className="mb-20">
-            <h2 className="text-2xl font-bold mb-8 text-center">Business Features</h2>
+            <h2 className="text-2xl font-bold mb-8 text-center">
+              Business Features
+            </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {businessFeatures.map((feature, index) => (
                 <motion.div
@@ -123,19 +150,27 @@ export default function BusinessFeatures() {
                           <feature.icon className="w-6 h-6 text-blue-500" />
                         </div>
                         {feature.badge && (
-                          <Badge variant="secondary" className="bg-blue-500/10 text-blue-500">
+                          <Badge
+                            variant="secondary"
+                            className="bg-blue-500/10 text-blue-500"
+                          >
                             {feature.badge}
                           </Badge>
                         )}
                       </div>
-                      <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                      <p className="text-muted-foreground text-sm">{feature.description}</p>
+                      <h3 className="text-lg font-semibold mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {feature.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>
               ))}
             </div>
           </div>
+          <AdsBanner />
 
           <div className="grid md:grid-cols-2 gap-12 mb-20">
             <motion.div
@@ -153,7 +188,9 @@ export default function BusinessFeatures() {
                       </div>
                       <div>
                         <h4 className="font-medium text-sm">{feature.title}</h4>
-                        <p className="text-xs text-muted-foreground">{feature.description}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {feature.description}
+                        </p>
                       </div>
                     </CardContent>
                   </Card>
@@ -190,7 +227,8 @@ export default function BusinessFeatures() {
           >
             <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Download AA Business WhatsApp now and transform your business communication.
+              Download AA Business WhatsApp now and transform your business
+              communication.
             </p>
             <Link href="/aa-business/download">
               <Button size="lg" className="bg-blue-500 hover:bg-blue-600">
