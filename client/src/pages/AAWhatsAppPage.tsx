@@ -387,7 +387,7 @@ export default function AAWhatsAppPage() {
 
               <div className="glass-card p-12 rounded-[3.5rem] border border-primary/20 relative group">
                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-primary text-primary-foreground font-bold text-xs uppercase tracking-[0.3em] shadow-xl">
-                  Official Build V 2.0
+                  Latest Build V 2.0
                 </div>
                 <div className="grid md:grid-cols-4 gap-6 mb-12">
                   {[

@@ -34,7 +34,7 @@ const timeline = [
   { year: "2022", title: "AA Business Launched", description: "Initial release with core business features" },
   { year: "2023", title: "Auto Reply System", description: "Introduced automated response capabilities" },
   { year: "2024", title: "Analytics Dashboard", description: "Added message statistics and insights" },
-  { year: "2025", title: "V2.0 Release", description: "Major update with enhanced security and features" }
+  { year: "2026", title: "V1.0 Enterprise Release", description: "Official stable release with Anti-Ban v2.0 and CRM tools" }
 ];
 
 export default function BusinessAbout() {

@@ -24,11 +24,11 @@ import { useState, useEffect } from "react";
 
 const versionInfo = {
   version: "V 1.0",
-  date: "January 30, 2026",
-  size: "120 MB",
+  date: "January 31, 2026",
+  size: "125 MB",
   android: "5.0+",
   status: "Verified Safe",
-  base: "2.25.36.73",
+  base: "2.25.29.77",
   packageName: "com.aa.business",
   developer: "AA Mods Official",
 };
