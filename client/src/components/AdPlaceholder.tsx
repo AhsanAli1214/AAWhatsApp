@@ -22,16 +22,12 @@ const AD_CONFIGS = {
 };
 
 /**
- * AdPlaceholder - Correctly integrates specific ad images with link.
+ * AdPlaceholder - Integrated with Hilltop banner script
  */
 export function AdPlaceholder({
   format = "rectangle",
   className = "",
 }: AdPlaceholderProps) {
-  const config = AD_CONFIGS[format];
-  const adImage = AD_IMAGES[format];
-  const adLink = "https://otieu.com/4/10538188";
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -39,26 +35,24 @@ export function AdPlaceholder({
       viewport={{ once: true }}
       className={`w-full overflow-hidden my-8 flex flex-col items-center justify-center relative ${className}`}
     >
-      <a
-        href={adLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block group transition-all duration-500"
-      >
-        <img
-          src={adImage}
-          alt="Verified Sponsor Advertisement"
-          loading="eager"
-          decoding="async"
-          style={{
-            height: format === "mobile" ? "50px" : "auto",
-            maxHeight: format === "rectangle" ? "250px" : "90px",
-            maxWidth: "100%",
-            width: "auto",
+      <div className="hilltop-banner-container min-h-[90px] w-full flex justify-center">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(fze){
+              var d = document,
+                  s = d.createElement('script'),
+                  l = d.scripts[d.scripts.length - 1];
+              s.settings = fze || {};
+              s.src = "\\/\\/flippantaside.com\\/bjXGV.szdlG\\/lt0pY\\/WFcH\\/QePmF9mumZBU\\/lzkYPMT_Y\\/3\\/N-jKEu5aN\\/zHEjt\\/NnjSc\\/2DMeTCke3RMdgZ";
+              s.async = true;
+              s.referrerPolicy = 'no-referrer-when-downgrade';
+              l.parentNode.insertBefore(s, l);
+              })({})
+            `,
           }}
-          className="relative z-10 object-contain"
         />
-      </a>
+      </div>
     </motion.div>
   );
 }
