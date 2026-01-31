@@ -10,7 +10,7 @@ export function Footer() {
             <div className="flex flex-col items-center gap-2 cursor-pointer group">
               <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all border border-primary/20 shadow-lg shadow-primary/5 overflow-hidden">
                 <img
-                  src="client/public/favicon.png"
+                  src="/favicon.png"
                   alt="AA Mods"
                   className="w-10 h-10 object-contain"
                 />
