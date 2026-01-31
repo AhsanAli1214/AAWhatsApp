@@ -28,8 +28,6 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
-import logoImg from "@/assets/logo.png";
-
 export default function FAQ() {
   const faqs = [
     {
@@ -267,7 +265,7 @@ export default function FAQ() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
               <img
-                src={logoImg}
+                src="/favicon.png"
                 alt="AA Mods"
                 className="w-16 h-16 object-contain"
               />

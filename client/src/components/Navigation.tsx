@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Menu, X, Download, AlertTriangle, Send, Home, Info, Scale, BookOpen, HelpCircle, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImg from "@/assets/logo.png";
 import { Link, useLocation } from "wouter";
 import { useTranslation } from "@/hooks/useTranslation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
