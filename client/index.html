@@ -208,6 +208,22 @@
       })({})
     </script>
     <!-- Hilltop Popup Zone #10538188 -->
+    <style>
+      /* Ensure ads don't disrupt the header/navbar layout */
+      body > script + div, 
+      body > iframe,
+      .flippantaside-ad,
+      [id^="flippantaside"],
+      div[style*="position: fixed"][style*="top: 0"],
+      div[style*="position: absolute"][style*="top: 0"] {
+        z-index: 40 !important; /* Below navbar (z-50) */
+        pointer-events: auto;
+      }
+      #root {
+        position: relative;
+        z-index: 10;
+      }
+    </style>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
