@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Menu, X, Download, AlertTriangle, Send, Home, Info, Scale, BookOpen, HelpCircle } from "lucide-react";
+import { Menu, X, Download, AlertTriangle, Send, Home, Info, Scale, BookOpen, HelpCircle, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoImg from "@/assets/logo.png";
 import { Link, useLocation } from "wouter";
@@ -27,6 +27,7 @@ export function Navigation() {
     { name: "About", href: "/about", icon: Info },
     { name: "Comparison", href: "/comparison", icon: Scale },
     { name: "AA APK", href: "/aa-whatsapp-apk", icon: Download },
+    { name: "Business", href: "/aa-business-whatsapp", icon: Shield },
     { name: "Blog", href: "/blog", icon: BookOpen },
     { name: "FAQ", href: "/faq", icon: HelpCircle },
     { name: "Support", href: "/support", icon: AlertTriangle },
