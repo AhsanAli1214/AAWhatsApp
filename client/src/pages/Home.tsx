@@ -152,7 +152,7 @@ export default function Home() {
                 </button>
               </Link>
               <Link href="/aa-business-whatsapp" className="w-full sm:w-auto">
-                <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-amber-500 text-black font-black text-lg shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:-translate-y-1 transition-all duration-500 w-full border border-white/20 uppercase tracking-tight flex items-center justify-center gap-3">
+                <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-amber-500 text-black font-black text-lg shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:-translate-y-1 transition-all duration-500 w-full border border-amber-500/50 uppercase tracking-tight flex items-center justify-center gap-3">
                   <Shield className="w-6 h-6" />
                   AA Business
                 </button>

@@ -7,22 +7,17 @@ import {
   Zap,
   CheckCircle2,
   ArrowLeft,
-  Clock,
-  HardDrive,
   Smartphone,
   Settings,
-  Calendar,
   Package,
   Star,
   Users,
   Shield,
   Sparkles,
-  History,
-  ExternalLink,
   Lock as LockIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { AdDownloadButton } from "@/components/AdDownloadButton";
 import { useState, useEffect } from "react";
@@ -37,23 +32,6 @@ const versionInfo = {
   packageName: "com.aa.business",
   developer: "AA Mods Official",
 };
-
-const changelog = [
-  {
-    version: "V 1.0",
-    date: "January 30, 2026",
-    base: "2.25.36.73",
-    isLatest: true,
-    changes: [
-      "Initial Release of AA Business WhatsApp",
-      "Enterprise-Grade Anti-Ban Shield",
-      "Bulk Broadcasting Tool with Warm-up algorithm",
-      "Automated Offline CRM & Catalog Management",
-      "Zero-Access Privacy Core™ integration",
-      "Custom Branding & Professional Themes",
-    ],
-  },
-];
 
 const stats = [
   { label: "Business Installs", value: "50K+", icon: Download },
@@ -99,10 +77,14 @@ export default function BusinessDownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-amber-500/30">
       <Helmet>
-        <title>Download AA Business WhatsApp APK V1.0 (2026) – Official Enterprise Link</title>
+        <title>Download AA Business WhatsApp APK V1.0 (2026 Official) – Best WhatsApp Business Mod</title>
         <meta
           name="description"
-          content="Official Download for AA Business WhatsApp V1.0. Enterprise-grade security, Bulk Broadcasting, and Anti-Ban protection. Secure your business chats now."
+          content="Official Download for AA Business WhatsApp V1.0. Enterprise-grade security, Bulk Broadcasting, and Anti-Ban protection. Secure your business chats now with the best WhatsApp Business mod."
+        />
+        <meta
+          name="keywords"
+          content="AA Business WhatsApp, Download AA Business WhatsApp, WhatsApp Business Mod, Secure WA Business APK, Anti-Ban Business WhatsApp, AA Mods Business, Best WhatsApp Business Mod 2026, WhatsApp Business Mod Anti-Ban, Secure Enterprise WhatsApp, Permission Clean WhatsApp Business"
         />
       </Helmet>
 
