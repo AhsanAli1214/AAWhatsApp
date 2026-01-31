@@ -59,13 +59,39 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <AdBlockDetector />
       <Helmet>
-        <title>AA Mods | Official AAWhatsApp V1.0 & AA Business V1.0 APK (2026)</title>
-        <meta name="description" content="Official AA Mods. Download the safest Anti-Ban WhatsApp mods. AAWhatsApp V1.0 with Privacy Core™ and AA Business V1.0 for enterprise. Secure & Permission-Clean." />
-        <meta name="keywords" content="AA Mods, AA WhatsApp, AA Business WhatsApp, WhatsApp Mod 2026, Anti-Ban WhatsApp APK, Secure WhatsApp, GB WhatsApp Alternative" />
+        <title>AAWhatsApp APK Download V2.0 (Official) - Anti-Ban WhatsApp 2026</title>
+        <meta name="description" content="Official AAWhatsApp V2.0 Download. The most secure WhatsApp mod with Privacy Core™, Anti-Ban v1.0, and 4000+ themes. 100% safe, no invasive permissions. Get the latest 2026 update." />
+        <meta name="keywords" content="AAWhatsApp, AA WhatsApp APK, AA Mods, download AAWhatsApp, Anti-Ban WhatsApp, secure WhatsApp mod, best WhatsApp mod 2026, AAWhatsApp V2.0" />
+        <meta property="og:title" content="AAWhatsApp APK Download V2.0 (Official) - Secure Anti-Ban Mod" />
+        <meta property="og:description" content="Download the latest AAWhatsApp V2.0 with enhanced privacy, themes, and 100% Anti-Ban protection. The safest choice for 2026." />
+        <meta property="og:image" content="https://aa-mods.vercel.app/favicon.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AAWhatsApp APK Download V2.0 - Official AA Mods" />
+        <meta name="twitter:description" content="The world's most secure WhatsApp mod. Privacy Core™ technology, HD media sharing, and daily security updates." />
         <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <link rel="preload" as="image" href="/favicon.png" fetchPriority="high" />
-        <link rel="canonical" href="https://aa-mods.vercel.app/" />
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp" />
         <meta name="robots" content="index, follow" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "AAWhatsApp",
+            "operatingSystem": "Android",
+            "applicationCategory": "CommunicationApplication",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "104520"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0.00",
+              "priceCurrency": "USD"
+            }
+          })}
+        </script>
       </Helmet>
       <div className="fixed inset-0 hero-gradient pointer-events-none z-0" />
       <Navigation />
