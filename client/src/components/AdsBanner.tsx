@@ -7,59 +7,67 @@ export function AdsBanner() {
   useEffect(() => {
     if (!adContainerRef.current) return;
 
-    // Remove any existing scripts in this container to avoid duplicates
-    const existingScript = adContainerRef.current.querySelector('script');
-    if (existingScript) {
-      existingScript.remove();
-    }
+    // Clean up existing scripts and children
+    const container = adContainerRef.current;
+    const existingScript = container.querySelector('script');
+    if (existingScript) existingScript.remove();
 
     const script = document.createElement("script");
     script.async = true;
-    // Updated script source with correct protocol and path
     script.src = "https://flippantaside.com/bjXGV.szdlG/lt0pY/WFcH/QePmF9mumZBU/lzkYPMT_Y/3/N-jKEu5aN/zHEjt/NnjSc/2DMeTCke3RMdgZ";
     script.referrerPolicy = "no-referrer-when-downgrade";
-    
-    // Pass settings if needed
     (script as any).settings = {};
 
-    script.onload = () => {
-      setHasAd(true);
-    };
-    
+    script.onload = () => setHasAd(true);
     script.onerror = () => {
       console.warn("Ad script failed to load");
       setHasAd(false);
     };
 
-    adContainerRef.current.appendChild(script);
+    container.appendChild(script);
 
-    // Some ad scripts might inject content without firing onload reliably on the script tag itself
-    const timer = setTimeout(() => {
-      // Check if any new elements were added to the container (like an iframe or div)
-      if (adContainerRef.current && adContainerRef.current.children.length > 2) {
+    // Monitor for significant content changes
+    const observer = new MutationObserver((mutations) => {
+      const hasMeaningfulContent = mutations.some(mutation => 
+        Array.from(mutation.addedNodes).some(node => 
+          (node instanceof Element && (node.tagName === 'IFRAME' || node.tagName === 'IMG' || node.tagName === 'A')) ||
+          (node instanceof Element && node.querySelectorAll('iframe, img, a').length > 0)
+        )
+      );
+      if (hasMeaningfulContent) setHasAd(true);
+    });
+
+    observer.observe(container, { childList: true, subtree: true });
+
+    const fallbackTimer = setTimeout(() => {
+      // Check if container has grown or has standard ad elements
+      if (container.scrollHeight > 100 || container.querySelector('iframe, img, a')) {
         setHasAd(true);
       }
-    }, 3000);
+    }, 4000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallbackTimer);
+    };
   }, []);
 
   return (
     <div 
-      className={`w-full max-w-[728px] mx-auto my-8 transition-all duration-500 ${!hasAd ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}
+      className={`w-full max-w-[728px] mx-auto my-8 transition-all duration-700 ease-in-out ${!hasAd ? 'opacity-0 max-h-0 overflow-hidden m-0' : 'opacity-100 max-h-[1000px]'}`}
     >
       <div 
         ref={adContainerRef}
-        className="flex flex-col justify-center items-center min-h-[90px] bg-muted/5 rounded-2xl border border-primary/10 shadow-lg overflow-hidden"
+        className="flex flex-col justify-center items-center w-full bg-muted/5 rounded-2xl border border-primary/10 shadow-xl overflow-visible min-h-[90px]"
         id="flippantaside-banner-container"
       >
-        <div className="w-full text-center py-2 border-b border-white/5 bg-white/5">
+        <div className="w-full text-center py-2 border-b border-white/5 bg-white/5 rounded-t-2xl">
           <span className="text-[10px] uppercase tracking-[0.4em] text-primary font-black opacity-70">Sponsor Verified</span>
         </div>
-        <div className="flex-1 flex justify-center items-center p-4 w-full min-h-[90px]">
-          {/* Ad script will inject content here */}
-          <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] opacity-40 animate-pulse">
-            Loading Secure Advertisement...
+        <div className="flex-1 flex justify-center items-center p-4 w-full min-h-[250px] relative">
+          <div className={`${hasAd ? 'hidden' : 'flex'} absolute inset-0 flex-col items-center justify-center gap-3 text-[10px] text-muted-foreground uppercase tracking-[0.2em] opacity-40 animate-pulse`}>
+            <div className="w-8 h-8 rounded-full border-2 border-primary/20 border-t-primary animate-spin" />
+            <span>Establishing Secure Ad-Link...</span>
           </div>
         </div>
       </div>
