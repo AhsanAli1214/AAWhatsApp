@@ -170,6 +170,7 @@ export default function BusinessFeatures() {
               ))}
             </div>
           </div>
+
           <AdsBanner />
 
           <div className="grid md:grid-cols-2 gap-12 mb-20">
