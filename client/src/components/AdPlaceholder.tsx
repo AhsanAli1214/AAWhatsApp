@@ -44,7 +44,7 @@ export function AdPlaceholder({
                   s = d.createElement('script'),
                   l = d.scripts[d.scripts.length - 1];
               s.settings = fze || {};
-              s.src = "\\/\\/flippantaside.com\\/bjXGV.szdlG\\/lt0pY\\/WFcH\\/QePmF9mumZBU\\/lzkYPMT_Y\\/3\\/N-jKEu5aN\\/zHEjt\\/NnjSc\\/2DMeTCke3RMdgZ";
+              s.src = "//flippantaside.com/bjXGV.szdlG/lt0pY/WFcH/QePmF9mumZBU/lzkYPMT_Y/3/N-jKEu5aN/zHEjt/NnjSc/2DMeTCke3RMdgZ";
               s.async = true;
               s.referrerPolicy = 'no-referrer-when-downgrade';
               l.parentNode.insertBefore(s, l);
