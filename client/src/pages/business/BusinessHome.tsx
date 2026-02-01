@@ -28,7 +28,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
-import { AdsBanner } from "@/components/AdsBanner";
 
 import heroImage from "@/assets/business-hero.png";
 import analyticsImage from "@/assets/business-analytics.png";
@@ -38,12 +37,7 @@ import privacyImage from "@/assets/privacy-feature.png";
 import businessPerson from "@/assets/business-person.jpg";
 import businessBg from "@/assets/business-bg.jpg";
 
-function AdsBanner() { return null; }
-
-export default function BusinessHome() {
-  return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-blue-500/30">
-      <Helmet>
+const features = [
   {
     icon: Bot,
     title: "Auto Reply",
@@ -265,9 +259,6 @@ export default function BusinessHome() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px] -z-10" />
           </motion.div>
         </div>
-        <div className="mt-20">
-          <AdsBanner />
-        </div>
         <div className="flex justify-center mt-20">
           <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
         </div>
@@ -275,7 +266,6 @@ export default function BusinessHome() {
 
       <section className="py-12 relative z-10">
         <div className="container mx-auto px-4">
-          <AdsBanner />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -387,9 +377,6 @@ export default function BusinessHome() {
                 </Card>
               </motion.div>
             ))}
-          </div>
-          <div className="mt-12">
-            <AdsBanner />
           </div>
         </div>
       </section>
@@ -569,7 +556,7 @@ export default function BusinessHome() {
             >
               <img
                 src={securityImage}
-                alt="AA Business WhatsApp Security Technology"
+                alt="AA Business WhatsApp Security Protocols"
                 className="rounded-3xl shadow-2xl border border-blue-500/20 w-full"
                 loading="lazy"
               />
@@ -577,91 +564,63 @@ export default function BusinessHome() {
           </div>
         </div>
       </section>
-      <AdsBanner />
+      <Footer />
+    </div>
+  );
+}
 
-      <section className="py-24 bg-blue-500/5">
         <div className="container px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              How We <span className="text-blue-500">Compare</span>
+              Built for <span className="text-blue-500">Performance</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              See why AA Business WhatsApp is the best choice for your business
+            <p className="text-muted-foreground text-lg">
+              Optimized for high-volume business communication
             </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="bg-background rounded-2xl border border-blue-500/20 overflow-hidden">
-              <div className="grid grid-cols-4 gap-4 p-4 bg-blue-500/10 font-bold text-sm">
-                <div>Feature</div>
-                <div className="text-center text-blue-500">AA Business</div>
-                <div className="text-center">Official Business</div>
-                <div className="text-center">GB Business</div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <div key={i} className="text-center p-8 rounded-3xl bg-background border border-blue-500/10">
+                <div className="text-3xl md:text-5xl font-black text-blue-500 mb-2">{stat.value}</div>
+                <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest">{stat.label}</div>
               </div>
-              {comparisonData.map((row, index) => (
-                <div
-                  key={index}
-                  className="grid grid-cols-4 gap-4 p-4 border-t border-border/50"
-                >
-                  <div className="text-sm">{row.feature}</div>
-                  <div className="flex justify-center">
-                    {row.aaBusiness ? (
-                      <CheckCircle2 className="text-blue-500 w-5 h-5" />
-                    ) : (
-                      <XCircle className="text-destructive w-5 h-5" />
-                    )}
-                  </div>
-                  <div className="flex justify-center">
-                    {row.official ? (
-                      <CheckCircle2 className="text-blue-500 w-5 h-5" />
-                    ) : (
-                      <XCircle className="text-destructive w-5 h-5" />
-                    )}
-                  </div>
-                  <div className="flex justify-center">
-                    {row.gbBusiness ? (
-                      <CheckCircle2 className="text-blue-500 w-5 h-5" />
-                    ) : (
-                      <XCircle className="text-destructive w-5 h-5" />
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="py-24 relative overflow-hidden bg-background">
         <div className="container px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-              Ready to Scale Your{" "}
-              <span className="text-blue-500 italic">Business?</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Join thousands of businesses already using AA Business WhatsApp to
-              manage their customer relationships securely.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/aa-business/download" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="px-12 py-8 rounded-2xl bg-blue-500 hover:bg-blue-600 text-white font-black text-xl shadow-2xl shadow-blue-500/20"
-                >
-                  Download APK Now
-                </Button>
-              </Link>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                Why Choose <span className="text-blue-500">AA Business</span>?
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                The most advanced business tools for 2026
+              </p>
+            </div>
+            <div className="overflow-x-auto rounded-3xl border border-blue-500/10 bg-blue-500/5">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b border-blue-500/10">
+                    <th className="p-6 font-bold text-lg">Features</th>
+                    <th className="p-6 font-bold text-lg text-blue-500">AA Business</th>
+                    <th className="p-6 font-bold text-lg">Official</th>
+                    <th className="p-6 font-bold text-lg">GB Business</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonData.map((row, i) => (
+                    <tr key={i} className="border-b border-blue-500/10 last:border-0 hover:bg-blue-500/10 transition-colors">
+                      <td className="p-6 font-medium">{row.feature}</td>
+                      <td className="p-6"><CheckCircle2 className="w-6 h-6 text-blue-500" /></td>
+                      <td className="p-6">{row.official ? <CheckCircle2 className="w-6 h-6 text-blue-500" /> : <XCircle className="w-6 h-6 text-muted-foreground" />}</td>
+                      <td className="p-6">{row.gbBusiness ? <CheckCircle2 className="w-6 h-6 text-blue-500" /> : <XCircle className="w-6 h-6 text-muted-foreground" />}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

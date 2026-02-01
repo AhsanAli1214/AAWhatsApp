@@ -28,7 +28,6 @@ import {
 import heroImage from "@assets/generated_images/modern_professional_blog_hero_image_for_aawhatsapp_mod..png";
 import featuresImage from "@assets/generated_images/smartphone_mockup_displaying_aawhatsapp_media_sharing_features..png";
 import privacyImage from "@assets/generated_images/futuristic_illustration_of_privacy_features_for_aawhatsapp..png";
-import { AdsBanner } from "@/components/AdsBanner";
 
 export default function About() {
   return (
@@ -96,7 +95,6 @@ export default function About() {
                 you want to hide your online status, protect chats, or send
                 large files without limits, AA WhatsApp has you covered.
               </p>
-              <AdsBanner />
               <div className="flex gap-4 pt-4">
                 <Link href="/download">
                   <Button

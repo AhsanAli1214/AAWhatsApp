@@ -19,8 +19,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
-import { AdsBanner } from "@/components/AdsBanner";
-import { AdDownloadButton } from "@/components/AdDownloadButton";
 import { useState, useEffect } from "react";
 import { Footer } from "@/components/Footer";
 
@@ -161,13 +159,13 @@ export default function BusinessDownloadPage() {
             </p>
 
             <div className="flex flex-col items-center gap-6 mb-12">
-              <AdDownloadButton
-                downloadUrl="https://ahsanali.short.gy/aa-wa-pro"
+              <Button
+                onClick={() => window.open("https://ahsanali.short.gy/aa-wa-pro", "_blank")}
                 className="w-full max-w-md h-auto py-6 rounded-2xl bg-amber-500 hover:bg-amber-600 text-black font-black text-2xl shadow-xl shadow-amber-500/20"
               >
                 <Download className="w-8 h-8 mr-3" />
                 Deploy AA Business v1.0
-              </AdDownloadButton>
+              </Button>
               <p className="text-xs text-muted-foreground uppercase tracking-widest font-bold">
                 100% Secure Enterprise Mirror
               </p>
@@ -223,7 +221,6 @@ export default function BusinessDownloadPage() {
             
 
             <div className="space-y-4 text-muted-foreground">
-              <AdsBanner />
               <p className="leading-relaxed">
                 Specifically hardened for high-activity business accounts.
                 Verified 100% clean and safe for corporate use.

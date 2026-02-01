@@ -3,7 +3,6 @@ import { Link } from "wouter";
 import { HelpCircle, Download, MessageSquare, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { AdsBanner } from "@/components/AdsBanner";
 import {
   Accordion,
   AccordionContent,
@@ -151,7 +150,6 @@ export default function BusinessFAQ() {
               </motion.div>
             ))}
           </div>
-          <AdsBanner />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

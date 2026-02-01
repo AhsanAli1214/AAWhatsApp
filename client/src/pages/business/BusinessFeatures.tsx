@@ -27,7 +27,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
-import { AdsBanner } from "@/components/AdsBanner";
 
 const businessFeatures = [
   {
@@ -168,9 +167,6 @@ export default function BusinessFeatures() {
                   </Card>
                 </motion.div>
               ))}
-            </div>
-            <div className="max-w-4xl mx-auto my-12">
-              <AdsBanner />
             </div>
           </div>
 

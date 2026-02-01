@@ -21,7 +21,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { AdDownloadButton } from "@/components/AdsBanner";
 import { useState, useEffect } from "react";
 
 const versionInfo = {
