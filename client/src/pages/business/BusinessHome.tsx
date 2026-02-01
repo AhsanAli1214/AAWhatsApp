@@ -34,8 +34,9 @@ export default function BusinessHome() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-48 pb-32 container mx-auto px-4 overflow-hidden">
-        <div className="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2" />
+      <section className="relative pt-48 pb-32 container mx-auto px-4 overflow-hidden selection:bg-blue-500/30">
+        <div className="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-blue-500/15 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute top-1/2 left-0 -z-10 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px] -translate-x-1/2" />
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -127,37 +128,37 @@ export default function BusinessHome() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-background/50 backdrop-blur-sm border-blue-500/10 hover:border-blue-500/40 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px]">
-              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8">
+            <Card className="bg-background/50 backdrop-blur-sm border-blue-500/20 hover:border-blue-500/60 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px] shadow-xl shadow-blue-500/5 group">
+              <div className="w-16 h-16 bg-blue-500/15 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <Zap className="text-blue-500 w-8 h-8" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Enterprise Automation</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Deploy AI-powered chatbots that handle 80% of routine customer inquiries 24/7 without human intervention.
               </p>
-              <img src="/images/business-automation-new.png" className="rounded-2xl w-full h-48 object-cover opacity-80" alt="Automation" />
+              <img src="/images/business-automation-new.png" className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Automation" />
             </Card>
 
-            <Card className="bg-background/50 backdrop-blur-sm border-blue-500/10 hover:border-blue-500/40 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px]">
-              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8">
+            <Card className="bg-background/50 backdrop-blur-sm border-blue-500/20 hover:border-blue-500/60 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px] shadow-xl shadow-blue-500/5 group">
+              <div className="w-16 h-16 bg-blue-500/15 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <BarChart3 className="text-blue-500 w-8 h-8" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Real-Time Analytics</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Comprehensive dashboards showing conversion rates, heatmaps, and campaign ROI directly inside the application.
               </p>
-              <img src="/images/business-analytics-new.png" className="rounded-2xl w-full h-48 object-cover opacity-80" alt="Analytics" />
+              <img src="/images/business-analytics-new.png" className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Analytics" />
             </Card>
 
-            <Card className="bg-background/50 backdrop-blur-sm border-blue-500/10 hover:border-blue-500/40 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px]">
-              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8">
+            <Card className="bg-background/50 backdrop-blur-sm border-blue-500/20 hover:border-blue-500/60 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px] shadow-xl shadow-blue-500/5 group">
+              <div className="w-16 h-16 bg-blue-500/15 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <ShieldCheck className="text-blue-500 w-8 h-8" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Privacy Core™ Stealth</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 End-to-end encrypted mod with built-in VPN and anti-ban protection to keep your business data untouchable.
               </p>
-              <img src="/images/business-security-new.jpg" className="rounded-2xl w-full h-48 object-cover opacity-80" alt="Security" />
+              <img src="/images/business-security-new.jpg" className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Security" />
             </Card>
           </div>
         </div>
@@ -230,34 +231,34 @@ export default function BusinessHome() {
               </p>
             </div>
             
-            <div className="overflow-x-auto rounded-[32px] border border-border bg-background shadow-2xl">
+            <div className="overflow-x-auto rounded-[32px] border border-blue-500/20 bg-background shadow-2xl shadow-blue-500/10">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="border-b border-border bg-muted/50">
-                    <th className="p-8 font-black text-lg uppercase tracking-widest">Capabilities</th>
-                    <th className="p-8 font-black text-lg text-blue-500 uppercase tracking-widest bg-blue-500/5">AA Business</th>
+                  <tr className="border-b border-blue-500/10 bg-blue-500/5">
+                    <th className="p-8 font-black text-lg uppercase tracking-widest text-blue-900 dark:text-blue-100">Capabilities</th>
+                    <th className="p-8 font-black text-lg text-blue-600 uppercase tracking-widest bg-blue-500/10">AA Business</th>
                     <th className="p-8 font-black text-lg uppercase tracking-widest opacity-50 text-center">Official App</th>
                     <th className="p-8 font-black text-lg uppercase tracking-widest opacity-50 text-center">GB Business</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-border">
+                <tbody className="divide-y divide-blue-500/10">
                   {comparisonData.map((row, i) => (
-                    <tr key={i} className="group hover:bg-muted/50 transition-colors">
-                      <td className="p-8 font-bold text-lg">{row.feature}</td>
+                    <tr key={i} className="group hover:bg-blue-500/5 transition-colors">
+                      <td className="p-8 font-bold text-lg group-hover:text-blue-600 transition-colors">{row.feature}</td>
                       <td className="p-8 bg-blue-500/5">
                         <div className="flex items-center gap-3">
-                          <CheckCircle2 className="w-8 h-8 text-blue-500 fill-blue-500/10" />
-                          <span className="text-sm font-black text-blue-500 uppercase">UNLOCKED</span>
+                          <CheckCircle2 className="w-8 h-8 text-blue-600 fill-blue-500/20" />
+                          <span className="text-sm font-black text-blue-600 uppercase">UNLOCKED</span>
                         </div>
                       </td>
                       <td className="p-8">
                         <div className="flex justify-center">
-                          {row.official ? <CheckCircle2 className="w-6 h-6 text-blue-500 opacity-40" /> : <XCircle className="w-6 h-6 text-destructive opacity-40" />}
+                          {row.official ? <CheckCircle2 className="w-6 h-6 text-blue-500/40" /> : <XCircle className="w-6 h-6 text-destructive/40" />}
                         </div>
                       </td>
                       <td className="p-8">
                         <div className="flex justify-center">
-                          {row.gbBusiness ? <CheckCircle2 className="w-6 h-6 text-blue-500 opacity-40" /> : <XCircle className="w-6 h-6 text-destructive opacity-40" />}
+                          {row.gbBusiness ? <CheckCircle2 className="w-6 h-6 text-blue-500/40" /> : <XCircle className="w-6 h-6 text-destructive/40" />}
                         </div>
                       </td>
                     </tr>
