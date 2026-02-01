@@ -62,6 +62,15 @@ const installSteps = [
 
 export default function BusinessDownload() {
   const [downloadCount, setDownloadCount] = useState(5247853);
+  const [downloadStep, setDownloadStep] = useState(0);
+
+  const handleDownload = (e: React.MouseEvent) => {
+    if (downloadStep === 0) {
+      e.preventDefault();
+      setDownloadStep(1);
+      window.open("https://otieu.com/4/10538189", "_blank");
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -165,16 +174,23 @@ export default function BusinessDownload() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex justify-center mb-12"
+            className="flex flex-col items-center mb-12 gap-4"
           >
+            {downloadStep === 0 && (
+              <div className="flex items-center gap-2 text-blue-500 font-bold animate-pulse text-sm">
+                <AlertTriangle className="w-4 h-4" />
+                Note: First click opens verified advertisement to support servers
+              </div>
+            )}
             <a
-              href="https://www.mediafire.com/file/uuw00r0kdjuns97/AA_Business_WhatsApp_V1.0.apk/file"
-              target="_blank"
+              href={downloadStep === 0 ? "#" : "https://www.mediafire.com/file/uuw00r0kdjuns97/AA_Business_WhatsApp_V1.0.apk/file"}
+              onClick={handleDownload}
+              target={downloadStep === 0 ? "_self" : "_blank"}
               rel="noopener noreferrer"
-              className="relative group overflow-hidden px-12 py-6 rounded-[2rem] bg-blue-500 text-white font-black text-2xl shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full max-w-md border border-white/20 uppercase tracking-tight flex items-center justify-center gap-4"
+              className="relative group overflow-hidden px-12 py-6 rounded-[2rem] bg-blue-500 text-white font-black text-2xl shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full max-w-md border border-white/20 uppercase tracking-tight flex items-center justify-center gap-4 text-center"
             >
               <Download className="w-8 h-8" />
-              Download APK V1.0
+              {downloadStep === 0 ? "Start Secure Download" : "Download from MediaFire"}
             </a>
           </motion.div>
 

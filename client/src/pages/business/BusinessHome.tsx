@@ -15,6 +15,9 @@ import businessAnalyticsJpg from "@/assets/business-analytics.png";
 import businessSecurityJpg from "@/assets/security-analysis.png";
 import businessTeamPng from "@/assets/community-group.png";
 
+const AD_LINK = "https://otieu.com/4/10538189";
+const MEDIAFIRE_LINK = "https://www.mediafire.com/file/aabusiness_v1.0.apk";
+
 const comparisonData = [
   { feature: "Bulk Messaging (10k+)", official: false, gbBusiness: true, aaBusiness: true },
   { feature: "AI Auto-Reply Bot", official: true, gbBusiness: true, aaBusiness: true },

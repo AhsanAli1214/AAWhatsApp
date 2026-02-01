@@ -118,6 +118,16 @@ export default function DownloadPage() {
     },
   ];
 
+  const [downloadStep, setDownloadStep] = useState(0);
+
+  const handleDownload = (e: React.MouseEvent) => {
+    if (downloadStep === 0) {
+      e.preventDefault();
+      setDownloadStep(1);
+      window.open("https://otieu.com/4/10538189", "_blank");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
@@ -242,15 +252,22 @@ export default function DownloadPage() {
                 scanned by 60+ antivirus engines.
               </p>
 
-              <div className="mb-10 w-full flex justify-center px-2">
+              <div className="mb-10 w-full flex flex-col items-center gap-4 px-2">
+                {downloadStep === 0 && (
+                  <div className="flex items-center gap-2 text-amber-500 font-bold animate-pulse text-sm">
+                    <ShieldAlert className="w-4 h-4" />
+                    Note: First click opens verified advertisement to support servers
+                  </div>
+                )}
                 <a
-                  href="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
-                  target="_blank"
+                  href={downloadStep === 0 ? "#" : "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"}
+                  onClick={handleDownload}
+                  target={downloadStep === 0 ? "_self" : "_blank"}
                   rel="noopener noreferrer"
                   className="w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-2 md:gap-3 border border-white/20 text-center leading-tight overflow-hidden"
                 >
                   <Download className="w-6 h-6" />
-                  Download Now
+                  {downloadStep === 0 ? "Start Secure Download" : "Download from MediaFire"}
                 </a>
               </div>
 
