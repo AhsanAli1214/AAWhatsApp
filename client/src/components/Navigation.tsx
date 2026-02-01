@@ -15,6 +15,11 @@ export function Navigation() {
     return <BusinessNavbar />;
   }
   
-  // Default to regular Navbar for other paths (including /aa-whatsapp)
-  return <Navbar />;
+  // Show Navbar only for /aa-whatsapp paths
+  if (location.startsWith("/aa-whatsapp")) {
+    return <Navbar />;
+  }
+  
+  // Default to null for any other paths (like the app selector page)
+  return null;
 }
