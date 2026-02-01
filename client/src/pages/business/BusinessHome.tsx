@@ -564,11 +564,8 @@ export default function BusinessHome() {
           </div>
         </div>
       </section>
-      <Footer />
-    </div>
-  );
-}
 
+      <section className="py-24 relative overflow-hidden bg-background">
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
