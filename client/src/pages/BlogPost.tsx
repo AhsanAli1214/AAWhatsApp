@@ -95,15 +95,17 @@ export default function BlogPost() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>{post.metaTitle} | AA Mods</title>
-        <meta name="description" content={post.metaDescription} />
-        <meta name="keywords" content={post.keywords.join(", ")} />
+        <title>{post.metaTitle} | Ultimate AA WhatsApp Guide 2026</title>
+        <meta name="description" content={`${post.metaDescription} Read the definitive 2026 guide by AA Mods specialists.`} />
+        <meta name="keywords" content={`${post.keywords.join(", ")}, AA WhatsApp, 2026 update, anti-ban guide`} />
         <link rel="canonical" href={`https://aa-mods.vercel.app/blog/${post.slug}`} />
-        <meta property="og:title" content={post.metaTitle} />
+        <meta property="og:title" content={`${post.metaTitle} – AA Mods Official`} />
         <meta property="og:description" content={post.metaDescription} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://aa-mods.vercel.app/blog/${post.slug}`} />
+        <meta property="og:image" content={`https://aa-mods.vercel.app/blog-og/${post.slug}.png`} />
         <meta property="article:published_time" content={post.publishedAt} />
+        <meta property="article:author" content="AA Mods Security Team" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.metaTitle} />
         <meta name="twitter:description" content={post.metaDescription} />
@@ -113,15 +115,25 @@ export default function BlogPost() {
             "@type": "Article",
             "headline": post.title,
             "description": post.metaDescription,
-            "datePublished": post.publishedAt,
+            "image": `https://aa-mods.vercel.app/blog-og/${post.slug}.png`,
             "author": {
               "@type": "Organization",
-              "name": "AA Mods"
+              "name": "AA Mods Security Team",
+              "url": "https://aa-mods.vercel.app/blog"
             },
             "publisher": {
               "@type": "Organization",
               "name": "AA Mods",
-              "url": "https://aa-mods.vercel.app"
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://aa-mods.vercel.app/favicon.png"
+              }
+            },
+            "datePublished": post.publishedAt,
+            "dateModified": "2026-02-01",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://aa-mods.vercel.app/blog/${post.slug}`
             }
           })}
         </script>

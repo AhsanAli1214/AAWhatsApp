@@ -92,9 +92,31 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>{isBusiness ? "AA Business WhatsApp Blog" : "AA WhatsApp Blog"} 2026 – Anti-Ban & Security</title>
-        <meta name="description" content={`Explore the official AA ${isBusiness ? "Business " : ""}WhatsApp blog for the latest updates, security guides, and Anti-Ban technology insights.`} />
+        <title>{isBusiness ? "AA Business WhatsApp Blog" : "AA WhatsApp Blog"} 2026 – Ultimate Anti-Ban, Privacy & Mod Security Guides</title>
+        <meta name="description" content={`The definitive authority for AA ${isBusiness ? "Business " : ""}WhatsApp mod security. Discover expert guides, Anti-Ban technology insights, and the latest privacy updates for 2026.`} />
+        <meta name="keywords" content={`AA WhatsApp, AA Business WhatsApp, WhatsApp Mod 2026, Anti-Ban WhatsApp, Private WhatsApp, Secure WhatsApp Mod, AAWhatsApp Update, WhatsApp Privacy Guides`} />
         <link rel="canonical" href={`https://aa-mods.vercel.app/blog${isBusiness ? "?type=business" : ""}`} />
+        <meta property="og:title" content={`${isBusiness ? "AA Business" : "AA"} WhatsApp Security Hub – Official Blog 2026`} />
+        <meta property="og:description" content="Master your WhatsApp privacy with our definitive guides on security, mod technology, and 2026 updates." />
+        <meta property="og:image" content="https://aa-mods.vercel.app/og-blog.png" />
+        <meta name="twitter:title" content={`${isBusiness ? "AA Business" : "AA"} WhatsApp Blog – The Security Authority`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": `AA ${isBusiness ? "Business " : ""}WhatsApp Security Hub`,
+            "description": `The official resource for AA ${isBusiness ? "Business " : ""}WhatsApp security and updates.`,
+            "url": `https://aa-mods.vercel.app/blog${isBusiness ? "?type=business" : ""}`,
+            "publisher": {
+              "@type": "Organization",
+              "name": "AA Mods",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://aa-mods.vercel.app/favicon.png"
+              }
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="fixed inset-0 hero-gradient pointer-events-none z-0" />
