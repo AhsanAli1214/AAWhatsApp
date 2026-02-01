@@ -136,24 +136,23 @@ export default function BusinessHome() {
       <AdBlockDetector />
       <Helmet>
         <title>
-          AA Business WhatsApp APK Download V1.0 (Official) - Professional Mod
-          2026
+          AA Business WhatsApp APK Download V1.0 - Secure Alternative to Official Business 2026
         </title>
         <meta
           name="description"
-          content="Download AA Business WhatsApp APK V1.0. Professional enterprise tools, Auto-reply, customer labels, and advanced analytics. Built with Anti-Ban v1.0 and Privacy Core™ security."
+          content="Download AA Business WhatsApp APK V1.0. The complete secure WhatsApp mod for businesses. Alternative to GB Business with enterprise tools, Anti-Ban v1.0, and Privacy Core™ security."
         />
         <meta
           name="keywords"
-          content="AA Business WhatsApp, Business WhatsApp Mod, WhatsApp Business APK, Auto Reply WhatsApp, Business WhatsApp 2026, AA Business Download, professional whatsapp mod"
+          content="AA Business WhatsApp, alternative to GB Business, complete secure whatsapp mod, Business WhatsApp Mod, WhatsApp Business APK, Auto Reply WhatsApp, AA Business Download, professional whatsapp mod"
         />
         <meta
           property="og:title"
-          content="AA Business WhatsApp Download V1.0 (Official) - Enterprise Grade Mod"
+          content="AA Business WhatsApp V1.0 - Secure Alternative to GB Business"
         />
         <meta
           property="og:description"
-          content="The ultimate WhatsApp mod for businesses. Automate customer responses, track analytics, and secure your data with Privacy Core™."
+          content="The complete secure WhatsApp mod for businesses. A powerful alternative to GB Business with automation, analytics, and Anti-Ban v1.0."
         />
         <meta
           property="og:image"
@@ -214,9 +213,9 @@ export default function BusinessHome() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-5xl lg:text-7xl font-black font-display leading-[1.1] mb-8 tracking-tighter"
             >
-              AA Business <br />
+              The Complete <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 italic drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]">
-                WhatsApp V1.0
+                Secure WhatsApp Mod
               </span>
             </motion.h1>
 
