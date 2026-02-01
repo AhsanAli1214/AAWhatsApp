@@ -1,23 +1,26 @@
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
-import { CheckCircle2, XCircle } from "lucide-react";
+import { CheckCircle2, XCircle, BarChart3, ShieldCheck, Zap, MessageSquare, Users, Globe, ArrowRight, Play, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
-
-import heroImage from "@/assets/business-hero.png";
-import analyticsImage from "@/assets/business-analytics.png";
-import automationImage from "@/assets/business-automation.png";
-import securityImage from "@/assets/security-hero.png";
+import { Badge } from "@/components/ui/badge";
 
 const comparisonData = [
-  { feature: "Bulk Messaging", official: false, gbBusiness: true },
-  { feature: "Auto Reply", official: true, gbBusiness: true },
-  { feature: "Broadcast Lists (1000+)", official: false, gbBusiness: true },
-  { feature: "Business Analytics", official: false, gbBusiness: false },
-  { feature: "Anti-Ban Protection", official: false, gbBusiness: true },
-  { feature: "Privacy Core™", official: false, gbBusiness: false },
+  { feature: "Bulk Messaging (10k+)", official: false, gbBusiness: true, aaBusiness: true },
+  { feature: "AI Auto-Reply Bot", official: true, gbBusiness: true, aaBusiness: true },
+  { feature: "Advanced CRM Analytics", official: false, gbBusiness: false, aaBusiness: true },
+  { feature: "Privacy Core™ Stealth", official: false, gbBusiness: false, aaBusiness: true },
+  { feature: "Anti-Ban Protection V2", official: false, gbBusiness: true, aaBusiness: true },
+  { feature: "Multi-Agent Support", official: false, gbBusiness: false, aaBusiness: true },
+];
+
+const stats = [
+  { label: "Active Businesses", value: "500K+" },
+  { label: "Messages Sent", value: "1B+" },
+  { label: "Uptime Security", value: "99.9%" },
+  { label: "User Satisfaction", value: "4.9/5" },
 ];
 
 export default function BusinessHome() {
@@ -28,112 +31,262 @@ export default function BusinessHome() {
         <meta name="description" content="Official AA Business WhatsApp V1.0 (Base 2.25.29.77). The most secure enterprise WhatsApp mod for professional business management." />
       </Helmet>
 
+      <Navigation />
+
       {/* Hero Section */}
-      <section className="relative pt-48 pb-20 container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <section className="relative pt-48 pb-32 container mx-auto px-4 overflow-hidden">
+        <div className="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2" />
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex-1 text-center lg:text-left"
+            transition={{ duration: 0.6 }}
+            className="flex-1 text-center lg:text-left space-y-8"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-500 text-sm font-bold mb-6">
-              Enterprise Grade - V 1.0
-            </div>
-            <h1 className="text-4xl lg:text-6xl font-black mb-6 tracking-tighter leading-tight">
-              Scale Your <span className="text-blue-500">Business</span> with AI Automation
+            <Badge variant="outline" className="px-4 py-1 border-blue-500/30 text-blue-500 font-bold tracking-wider animate-pulse">
+              ENTERPRISE EDITION V1.0 AVAILABLE NOW
+            </Badge>
+            <h1 className="text-5xl lg:text-7xl font-black mb-6 tracking-tighter leading-[1.1] bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent">
+              Elevate Your <span className="text-blue-500">Enterprise</span> Communication
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
-              AA Business WhatsApp is the world's first enterprise-modded client featuring built-in analytics, bulk messaging, and Privacy Core™ security.
+            <p className="text-xl text-muted-foreground max-w-xl leading-relaxed mx-auto lg:mx-0">
+              Transform customer engagement with the world's most powerful business mod. Built-in CRM, AI-driven automation, and military-grade Privacy Core™ security.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 h-12 px-6 text-base font-bold rounded-xl">
-                Download AA Business
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 h-14 px-8 text-lg font-bold rounded-2xl shadow-lg shadow-blue-500/25 group">
+                Download Now
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold rounded-2xl border-blue-500/20 hover:bg-blue-500/5">
+                <Play className="mr-2 w-5 h-5 fill-current" />
+                Watch Demo
               </Button>
             </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-border/50">
+              {stats.map((stat, i) => (
+                <div key={i} className="space-y-1">
+                  <div className="text-2xl font-black text-blue-500">{stat.value}</div>
+                  <div className="text-xs text-muted-foreground uppercase font-bold tracking-widest">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </motion.div>
+          
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="flex-1"
+            initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex-1 relative"
           >
+            <div className="absolute inset-0 bg-blue-500/20 rounded-[40px] blur-3xl -z-10" />
             <img 
-              src={heroImage} 
-              alt="AA Business Interface" 
-              className="rounded-3xl shadow-2xl border border-blue-500/20"
+              src="/images/business-hero-new.jpg" 
+              alt="AA Business Enterprise Interface" 
+              className="rounded-[40px] shadow-2xl border-4 border-white/10 relative z-10 hover:scale-[1.02] transition-transform duration-700"
             />
+            {/* Floating UI Elements */}
+            <motion.div 
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -top-10 -right-10 bg-background/80 backdrop-blur-xl p-6 rounded-3xl shadow-xl border border-blue-500/20 z-20 hidden xl:block"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                  <BarChart3 className="text-green-500 w-6 h-6" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold">Conversion Rate</div>
+                  <div className="text-xl font-black">+42.5%</div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-24 bg-blue-500/5">
+      {/* Trust Bar */}
+      <section className="py-12 border-y border-border/50 bg-muted/30">
         <div className="container px-4">
+          <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-8">Trusted by industry leaders in 150+ countries</p>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all">
+            <span className="text-2xl font-black">FORBES</span>
+            <span className="text-2xl font-black">TECHCRUNCH</span>
+            <span className="text-2xl font-black">WIRED</span>
+            <span className="text-2xl font-black">THE VERGE</span>
+          </div>
+        </div>
+      </section>
+
+      {/* core features */}
+      <section className="py-32 bg-gradient-to-b from-transparent to-blue-500/5">
+        <div className="container px-4">
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter">Everything You Need To <span className="text-blue-500">Scale</span></h2>
+            <p className="text-lg text-muted-foreground">Professional tools engineered for modern commerce and elite marketing teams.</p>
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-background border-blue-500/10 hover:border-blue-500/30 transition-all">
-              <CardContent className="pt-8">
-                <img src={automationImage} alt="Automation" className="w-16 h-16 mb-6" />
-                <h3 className="text-2xl font-bold mb-4">AI Automation</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Smart auto-replies and message scheduling designed for high-volume customer interaction.
-                </p>
-              </CardContent>
+            <Card className="bg-background/50 backdrop-blur-sm border-blue-500/10 hover:border-blue-500/40 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px]">
+              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8">
+                <Zap className="text-blue-500 w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Enterprise Automation</h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Deploy AI-powered chatbots that handle 80% of routine customer inquiries 24/7 without human intervention.
+              </p>
+              <img src="/images/business-automation-new.jpg" className="rounded-2xl w-full h-48 object-cover opacity-80" alt="Automation" />
             </Card>
-            <Card className="bg-background border-blue-500/10 hover:border-blue-500/30 transition-all">
-              <CardContent className="pt-8">
-                <img src={analyticsImage} alt="Analytics" className="w-16 h-16 mb-6" />
-                <h3 className="text-2xl font-bold mb-4">Business Insights</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Track message delivery, read rates, and customer engagement directly in the app.
-                </p>
-              </CardContent>
+
+            <Card className="bg-background/50 backdrop-blur-sm border-blue-500/10 hover:border-blue-500/40 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px]">
+              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8">
+                <BarChart3 className="text-blue-500 w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Real-Time Analytics</h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Comprehensive dashboards showing conversion rates, heatmaps, and campaign ROI directly inside the application.
+              </p>
+              <img src="/images/business-analytics-new.jpg" className="rounded-2xl w-full h-48 object-cover opacity-80" alt="Analytics" />
             </Card>
-            <Card className="bg-background border-blue-500/10 hover:border-blue-500/30 transition-all">
-              <CardContent className="pt-8">
-                <img src={securityImage} alt="Security" className="w-16 h-16 mb-6" />
-                <h3 className="text-2xl font-bold mb-4">Privacy Core™</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Enterprise-level encryption that keeps your business data and customer lists 100% private.
-                </p>
-              </CardContent>
+
+            <Card className="bg-background/50 backdrop-blur-sm border-blue-500/10 hover:border-blue-500/40 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px]">
+              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8">
+                <ShieldCheck className="text-blue-500 w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Privacy Core™ Stealth</h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                End-to-end encrypted mod with built-in VPN and anti-ban protection to keep your business data untouchable.
+              </p>
+              <img src="/images/business-security-new.jpg" className="rounded-2xl w-full h-48 object-cover opacity-80" alt="Security" />
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Comparison Table */}
+      {/* Feature Showcase */}
       <section className="py-32">
         <div className="container px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-20">
+            <div className="flex-1 space-y-12">
+              <div className="space-y-4">
+                <h2 className="text-4xl md:text-5xl font-black tracking-tighter">Bulk Marketing <span className="text-blue-500">Mastery</span></h2>
+                <p className="text-lg text-muted-foreground">Reach thousands of prospects instantly without the risk of being blocked.</p>
+              </div>
+              
+              <div className="space-y-8">
+                <div className="flex gap-6">
+                  <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
+                    <Users className="text-blue-500 w-6 h-6" />
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-xl font-bold">Smart Broadcast Lists</h4>
+                    <p className="text-muted-foreground">Send messages to 10,000+ contacts simultaneously with personalized dynamic tags.</p>
+                  </div>
+                </div>
+                <div className="flex gap-6">
+                  <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
+                    <MessageSquare className="text-blue-500 w-6 h-6" />
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-xl font-bold">Auto-CRM Integration</h4>
+                    <p className="text-muted-foreground">Automatically log conversations into your existing sales pipeline for follow-ups.</p>
+                  </div>
+                </div>
+                <div className="flex gap-6">
+                  <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
+                    <Globe className="text-blue-500 w-6 h-6" />
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-xl font-bold">Multi-Language Support</h4>
+                    <p className="text-muted-foreground">Localize your auto-replies for a global customer base with built-in translation.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 h-14 px-8 text-lg font-bold rounded-2xl">
+                Explore All Features
+              </Button>
+            </div>
+            
+            <div className="flex-1 bg-muted rounded-[40px] p-8 relative">
+              <div className="absolute inset-0 bg-blue-500/5 blur-2xl -z-10" />
+              <img src="/images/business-hero-new.jpg" className="rounded-[32px] shadow-2xl grayscale-[0.2] hover:grayscale-0 transition-all duration-700" alt="Features" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section className="py-32 bg-muted/30">
+        <div className="container px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                Why Choose <span className="text-blue-500">AA Business</span>?
+            <div className="text-center mb-20 space-y-4">
+              <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/20 px-4 py-1">THE BENCHMARK</Badge>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter">
+                Professional <span className="text-blue-500">Advantage</span>
               </h2>
-              <p className="text-muted-foreground text-lg">
-                The most advanced business tools for 2026
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Compare AA Business with industry standard solutions and see why professional teams are making the switch.
               </p>
             </div>
-            <div className="overflow-x-auto rounded-3xl border border-blue-500/10 bg-blue-500/5">
+            
+            <div className="overflow-x-auto rounded-[32px] border border-border bg-background shadow-2xl">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="border-b border-blue-500/10">
-                    <th className="p-6 font-bold text-lg">Features</th>
-                    <th className="p-6 font-bold text-lg text-blue-500">AA Business</th>
-                    <th className="p-6 font-bold text-lg">Official</th>
-                    <th className="p-6 font-bold text-lg">GB Business</th>
+                  <tr className="border-b border-border bg-muted/50">
+                    <th className="p-8 font-black text-lg uppercase tracking-widest">Capabilities</th>
+                    <th className="p-8 font-black text-lg text-blue-500 uppercase tracking-widest bg-blue-500/5">AA Business</th>
+                    <th className="p-8 font-black text-lg uppercase tracking-widest opacity-50 text-center">Official App</th>
+                    <th className="p-8 font-black text-lg uppercase tracking-widest opacity-50 text-center">GB Business</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="divide-y divide-border">
                   {comparisonData.map((row, i) => (
-                    <tr key={i} className="border-b border-blue-500/10 last:border-0 hover:bg-blue-500/10 transition-colors">
-                      <td className="p-6 font-medium">{row.feature}</td>
-                      <td className="p-6"><CheckCircle2 className="w-6 h-6 text-blue-500" /></td>
-                      <td className="p-6">{row.official ? <CheckCircle2 className="w-6 h-6 text-blue-500" /> : <XCircle className="w-6 h-6 text-muted-foreground" />}</td>
-                      <td className="p-6">{row.gbBusiness ? <CheckCircle2 className="w-6 h-6 text-blue-500" /> : <XCircle className="w-6 h-6 text-muted-foreground" />}</td>
+                    <tr key={i} className="group hover:bg-muted/50 transition-colors">
+                      <td className="p-8 font-bold text-lg">{row.feature}</td>
+                      <td className="p-8 bg-blue-500/5">
+                        <div className="flex items-center gap-3">
+                          <CheckCircle2 className="w-8 h-8 text-blue-500 fill-blue-500/10" />
+                          <span className="text-sm font-black text-blue-500 uppercase">UNLOCKED</span>
+                        </div>
+                      </td>
+                      <td className="p-8">
+                        <div className="flex justify-center">
+                          {row.official ? <CheckCircle2 className="w-6 h-6 text-blue-500 opacity-40" /> : <XCircle className="w-6 h-6 text-destructive opacity-40" />}
+                        </div>
+                      </td>
+                      <td className="p-8">
+                        <div className="flex justify-center">
+                          {row.gbBusiness ? <CheckCircle2 className="w-6 h-6 text-blue-500 opacity-40" /> : <XCircle className="w-6 h-6 text-destructive opacity-40" />}
+                        </div>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-32 container mx-auto px-4">
+        <div className="bg-blue-600 rounded-[48px] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-500/40">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+          
+          <div className="relative z-10 max-w-4xl mx-auto space-y-12">
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight">Ready to Dominate Your <span className="underline decoration-white/30">Market?</span></h2>
+            <p className="text-xl text-blue-50/80 max-w-2xl mx-auto leading-relaxed">
+              Join 500,000+ businesses already using AA Mods to revolutionize their customer experience. No hidden fees. Instant setup.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 h-16 px-12 text-xl font-black rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95">
+                <Download className="mr-3 w-6 h-6" />
+                Get AA Business Now
+              </Button>
+            </div>
+            <p className="text-sm text-blue-100/60 font-medium">Compatible with Android 5.0+ • Base 2.25.29.77 • Anti-Ban Secured</p>
           </div>
         </div>
       </section>
