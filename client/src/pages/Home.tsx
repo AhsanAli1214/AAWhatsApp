@@ -31,24 +31,6 @@ import securityComparisonImage from "@assets/Gemini_Generated_Image_leenipleenip
 import securityImage from "@assets/Gemini_Generated_Image_q9qqs4q9qqs4q9qq_(1)_1768930866856.png";
 import comparisonImage from "@assets/generated_images/clean_comparison_illustration_showing_aawhatsapp_vs_other_mods..png";
 
-const ShieldCheckIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-    <path d="m9 12 2 2 4-4" />
-  </svg>
-);
-
 export default function Home() {
   const { t } = useTranslation();
   return (
@@ -294,7 +276,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Another Info Section with Image */}
       <section className="py-24 bg-primary/5">
         <div className="container px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -345,7 +326,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Privacy Deep-Dive Section */}
       <section className="py-24 relative z-10 bg-secondary/20">
         <div className="container px-4">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
@@ -399,7 +379,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* New Anti-Ban Tech Section */}
       <section className="py-24 relative overflow-hidden bg-background">
         <div className="container px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -410,7 +389,7 @@ export default function Home() {
               className="space-y-8"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-sm font-black">
-                <ShieldCheckIcon className="w-4 h-4" />
+                <ShieldCheck className="w-4 h-4" />
                 Anti-Ban V1.0 Certified
               </div>
               <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
@@ -451,7 +430,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Global Performance Benchmarks Section */}
       <section className="py-24 bg-primary/5 border-y border-white/5">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
@@ -477,14 +455,12 @@ export default function Home() {
                 { title: "Reduced RAM Usage", desc: "Proprietary memory management system for low-end devices." },
                 { title: "Battery Optimization", desc: "Smart background activity control to preserve energy." }
               ].map((item, i) => (
-                <div key={i} className="flex gap-4 p-6 rounded-2xl bg-background/50 border border-white/5">
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center shrink-0">
-                    <Zap className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg">{item.title}</h4>
-                    <p className="text-muted-foreground">{item.desc}</p>
-                  </div>
+                <div key={i} className="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-primary/20 transition-all">
+                  <h4 className="font-bold text-lg mb-2 flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                    {item.title}
+                  </h4>
+                  <p className="text-muted-foreground text-sm">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -492,35 +468,96 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 bg-background">
+      {/* Comparison with Official */}
+      <section className="py-32 relative overflow-hidden">
         <div className="container px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-black text-center mb-16 tracking-tight">Common Questions</h2>
-            <div className="space-y-4">
-              {[
-                {
-                  q: "Is AAWhatsApp safer than GB WhatsApp?",
-                  a: "Yes. Unlike GB WhatsApp, AAWhatsApp features Privacy Core™ which prevents access to your contacts, location, and banking data. It's the only mod verified by independent security researchers in 2026."
-                },
-                {
-                  q: "Will I get banned for using AAWhatsApp?",
-                  a: "Our Anti-Ban v1.0 technology is specifically designed to bypass the latest detection systems. We have a 99.9% account safety record across 10 million users."
-                },
-                {
-                  q: "How do I update AAWhatsApp without losing chats?",
-                  a: "Simply download the latest V2.0 APK from this site and install it over your existing version. Your chats will be automatically preserved."
-                }
-              ].map((faq, i) => (
-                <div key={i} className="p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-primary/30 transition-colors">
-                  <h3 className="text-xl font-bold mb-3">{faq.q}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
-                </div>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-20 space-y-4">
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Ultimate <span className="text-primary italic">Comparison</span></h2>
+              <p className="text-xl text-muted-foreground">Why AAWhatsApp dominates the official and other modded clients.</p>
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="glass-card rounded-[2.5rem] border border-white/5 overflow-hidden shadow-2xl">
+                <table className="w-full text-left">
+                  <thead className="bg-white/[0.02] border-b border-white/5">
+                    <tr>
+                      <th className="p-6 font-bold text-xs uppercase tracking-widest text-muted-foreground">Feature</th>
+                      <th className="p-6 font-bold text-xs uppercase tracking-widest text-primary">AAWhatsApp</th>
+                      <th className="p-6 font-bold text-xs uppercase tracking-widest text-muted-foreground">Official</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/5">
+                    {[
+                      { f: "Anti-Ban Tech", aa: true, off: false },
+                      { f: "Custom Themes", aa: true, off: false },
+                      { f: "Large File Sharing", aa: true, off: false },
+                      { f: "Privacy Core", aa: true, off: false },
+                      { f: "Anti-Delete", aa: true, off: false }
+                    ].map((row, i) => (
+                      <tr key={i} className="hover:bg-white/[0.01] transition-colors">
+                        <td className="p-6 text-sm font-medium">{row.f}</td>
+                        <td className="p-6"><CheckCircle2 className="w-5 h-5 text-primary" /></td>
+                        <td className="p-6"><XCircle className="w-5 h-5 text-muted-foreground opacity-30" /></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <img 
+                  src={comparisonImage} 
+                  alt="AAWhatsApp vs Official WhatsApp Feature Comparison Table" 
+                  className="rounded-3xl shadow-2xl border border-primary/10"
+                  loading="lazy"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Global CTA */}
+      <section className="py-32 container mx-auto px-4">
+        <div className="glass-card rounded-[4rem] p-12 md:p-24 text-center border border-primary/30 relative overflow-hidden bg-gradient-to-br from-primary/20 via-background to-emerald-900/20">
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+          <div className="relative z-10 max-w-4xl mx-auto space-y-12">
+            <div className="space-y-6">
+              <h2 className="text-5xl md:text-8xl font-black font-display tracking-tighter leading-none">
+                Start Your <br />
+                <span className="text-primary text-glow italic">Secure Journey</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+                Join millions of users worldwide who trust AAWhatsApp for their daily communication. 100% free, 100% secure.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link href="/download" className="w-full sm:w-auto">
+                <button className="px-12 py-6 rounded-3xl bg-primary text-primary-foreground font-black text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_60px_rgba(16,185,129,0.5)] hover:-translate-y-1 transition-all w-full flex items-center justify-center gap-4 group">
+                  Download Now
+                  <Send className="group-hover:translate-x-2 transition-transform w-8 h-8" />
+                </button>
+              </Link>
+              <Link href="/aa-whatsapp/about" className="w-full sm:w-auto">
+                <button className="px-12 py-6 rounded-3xl bg-secondary/50 backdrop-blur-sm border border-white/10 hover:border-primary/30 text-foreground font-bold text-xl transition-all w-full h-full">
+                  Learn More
+                </button>
+              </Link>
+            </div>
+            <div className="flex flex-wrap justify-center gap-8 pt-8">
+              {['V 2.0 STABLE', '118MB APK', 'ANTI-BAN 2026', 'ZERO TRACKERS'].map((badge) => (
+                <span key={badge} className="text-xs font-black tracking-[0.3em] text-primary/60 border-b border-primary/20 pb-1">{badge}</span>
               ))}
             </div>
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
