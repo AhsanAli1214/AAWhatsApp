@@ -24,7 +24,7 @@ import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
 import { Footer } from "@/components/Footer";
-import heroImage from "@/assets/security-hero.png";
+import heroImage from "@/assets/security-hero-new.png";
 import privacyImage from "@/assets/privacy-feature.png";
 import themesImage from "@assets/generated_images/creative_visual_showing_multiple_whatsapp_theme_styles_for_aawhatsapp..png";
 import mediaImage from "@/assets/media-feature.png";
@@ -47,8 +47,8 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AAWhatsApp V2.0 - Secure Alternative to GB WhatsApp" />
         <meta name="twitter:description" content="The world's most complete secure WhatsApp mod. Privacy Core™ technology, HD media sharing, and the best alternative to GB WhatsApp." />
-        <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
-        <link rel="preload" as="image" href="/favicon.png" fetchPriority="high" />
+        <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
+        <link rel="preload" as="image" href="/favicon.png" fetchpriority="high" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
@@ -105,13 +105,37 @@ export default function Home() {
               {t("hero_subtitle")}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-12">
               <Link href="/aa-whatsapp-apk" className="w-full sm:w-auto">
                 <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-lg shadow-[0_20px_40px_rgba(16,185,129,0.25)] hover:-translate-y-1 hover:shadow-[0_25px_50px_rgba(16,185,129,0.35)] transition-all duration-500 w-full border border-white/20 uppercase tracking-wider flex items-center justify-center gap-3">
                   <ShieldCheck className="w-6 h-6" />
                   Get AA WhatsApp V2.0
                 </button>
               </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-primary/10">
+              <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <ShieldCheck className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg text-foreground">Anti-Ban v2.0</h3>
+                <p className="text-sm text-muted-foreground">Advanced 2026 security protocols to keep your account 100% safe.</p>
+              </div>
+              <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg text-foreground">Ghost Mode</h3>
+                <p className="text-sm text-muted-foreground">Read messages and view statuses without leaving any digital footprint.</p>
+              </div>
+              <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <Palette className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg text-foreground">Custom Themes</h3>
+                <p className="text-sm text-muted-foreground">Access 5000+ premium themes and fonts to personalize your experience.</p>
+              </div>
             </div>
           </motion.div>
 

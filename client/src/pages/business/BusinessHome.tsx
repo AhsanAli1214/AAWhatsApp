@@ -8,10 +8,10 @@ import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
 
-import businessHeroJpg from "@/assets/business-hero.png";
+import businessHeroJpg from "@/assets/security-hero-new.png";
 import businessDashboardPng from "@/assets/business-dashboard.png";
 import businessAutomationJpg from "@/assets/business-automation.png";
-import businessAnalyticsJpg from "@/assets/business-analytics.png";
+import businessAnalyticsJpg from "@/assets/business-analytics-premium.png";
 import businessSecurityJpg from "@/assets/security-analysis.png";
 import businessTeamPng from "@/assets/community-group.png";
 
@@ -104,23 +104,34 @@ export default function BusinessHome() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
               <Link href="/aa-business/download" className="w-full sm:w-auto">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 h-16 px-10 text-xl font-black rounded-2xl shadow-xl shadow-blue-500/25 group w-full uppercase tracking-wider">
-                  Download Now
+                  Get AA Business V1.0
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="h-16 px-10 text-xl font-black rounded-2xl border-blue-500/20 hover:bg-blue-500/5 group">
-                <Play className="mr-2 w-6 h-6 fill-current group-hover:scale-110 transition-transform" />
-                Watch Demo
-              </Button>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-border/50">
-              {stats.map((stat, i) => (
-                <div key={i} className="space-y-1">
-                  <div className="text-2xl font-black text-blue-500">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground uppercase font-bold tracking-widest">{stat.label}</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-blue-500/10">
+              <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
+                <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center">
+                  <ShieldCheck className="w-6 h-6 text-blue-500" />
                 </div>
-              ))}
+                <h3 className="font-bold text-lg text-foreground">Anti-Ban v2.0</h3>
+                <p className="text-sm text-muted-foreground">Enterprise-grade security protocols for 100% account safety.</p>
+              </div>
+              <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
+                <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center">
+                  <BarChart3 className="w-6 h-6 text-blue-500" />
+                </div>
+                <h3 className="font-bold text-lg text-foreground">Smart Analytics</h3>
+                <p className="text-sm text-muted-foreground">Track message delivery and engagement with detailed CRM metrics.</p>
+              </div>
+              <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
+                <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-blue-500" />
+                </div>
+                <h3 className="font-bold text-lg text-foreground">Bulk Broadcast</h3>
+                <p className="text-sm text-muted-foreground">Reach 20k+ members with advanced broadcasting features.</p>
+              </div>
             </div>
           </motion.div>
           
