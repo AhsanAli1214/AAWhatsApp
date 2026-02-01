@@ -23,10 +23,23 @@ export function AdsBanner() {
 
     script.onload = () => {
       // Check if the script actually created content or if it's an error frame
-      setTimeout(() => {
-        const hasContent = adContainerRef.current && adContainerRef.current.innerHTML.length > 100;
-        setHasAd(!!hasContent);
-      }, 1000);
+      const checkContent = () => {
+        const hasContent = adContainerRef.current && (
+          adContainerRef.current.innerHTML.length > 200 || 
+          adContainerRef.current.querySelectorAll('iframe, ins, div').length > 0
+        );
+        
+        // Final sanity check for "connection was reset" style error frames
+        const innerText = adContainerRef.current?.innerText || "";
+        const isErrorFrame = innerText.includes("connection was reset") || innerText.includes("refused to connect");
+        
+        setHasAd(!!hasContent && !isErrorFrame);
+      };
+
+      // Check multiple times as ads can load asynchronously
+      setTimeout(checkContent, 1000);
+      setTimeout(checkContent, 3000);
+      setTimeout(checkContent, 5000);
     };
     script.onerror = () => setHasAd(false);
 

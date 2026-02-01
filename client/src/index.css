@@ -87,7 +87,15 @@
 
   /* Force hide elements that show connection errors */
   iframe:empty, 
-  iframe[src="about:blank"] {
+  iframe[src="about:blank"],
+  .flippantaside-ad:empty,
+  [id*="flippantaside"]:empty {
     display: none !important;
   }
+}
+
+/* Specific fix for error messages inside ad containers */
+#flippantaside-banner-container:contains("connection was reset"),
+#flippantaside-banner-container:contains("refused to connect") {
+  display: none !important;
 }
