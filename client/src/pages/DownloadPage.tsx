@@ -174,7 +174,8 @@ export default function DownloadPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-7xl font-black tracking-tighter"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-5xl md:text-8xl font-black tracking-tighter leading-[1] mb-8"
             >
               Download <span className="text-primary italic">AAWhatsApp</span>
               <br />

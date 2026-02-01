@@ -81,10 +81,11 @@ export default function AAWhatsAppPage() {
             <motion.h1
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-[1.1] mb-4"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-5xl md:text-8xl font-black font-display tracking-tighter leading-[1.1] mb-6"
             >
               AA WhatsApp <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
                 {t('hero_title')}
               </span>
             </motion.h1>

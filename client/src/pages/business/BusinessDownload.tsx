@@ -112,9 +112,17 @@ export default function BusinessDownload() {
             <Badge className="mb-6 bg-blue-500/10 text-blue-500 border-blue-500/20">
               Official Download Page
             </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Download <span className="text-blue-500 italic">AA Business</span>
-            </h1>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-5xl md:text-8xl font-black font-display tracking-tighter leading-[1] mb-8"
+            >
+              Enterprise <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-glow-blue italic">
+                Download Portal
+              </span>
+            </motion.h1>
             <p className="text-xl text-muted-foreground mb-2">
               Version {packageDetails.version} | Base {packageDetails.base}
             </p>

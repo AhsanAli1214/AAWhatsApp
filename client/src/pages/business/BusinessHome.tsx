@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { CheckCircle2, XCircle, BarChart3, ShieldCheck, Zap, MessageSquare, Users, Globe, ArrowRight, Play, Download } from "lucide-react";
@@ -71,22 +72,34 @@ export default function BusinessHome() {
             transition={{ duration: 0.6 }}
             className="flex-1 text-center lg:text-left space-y-8"
           >
-            <Badge variant="outline" className="px-4 py-1 border-blue-500/30 text-blue-500 font-bold tracking-wider animate-pulse">
+            <Badge variant="outline" className="px-4 py-1 border-blue-500/30 text-blue-500 font-bold tracking-wider animate-pulse mb-6">
               ENTERPRISE EDITION V1.0 AVAILABLE NOW
             </Badge>
-            <h1 className="text-5xl lg:text-7xl font-black mb-6 tracking-tighter leading-[1.1] bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent">
-              Elevate Your <span className="text-blue-500">Enterprise</span> Communication
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-xl leading-relaxed mx-auto lg:mx-0">
-              Transform customer engagement with the world's most powerful business mod. Built-in CRM, AI-driven automation, and military-grade Privacy Core™ security.
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="text-5xl lg:text-8xl font-black font-display leading-[1] mb-8 tracking-tighter"
+            >
+              The Elite <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-glow-blue italic">
+                Enterprise WhatsApp Mod
+              </span>
+            </motion.h1>
+
+            <p className="text-lg lg:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+              Transform your business communication with the world's most secure and feature-rich professional WhatsApp modification.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 h-14 px-8 text-lg font-bold rounded-2xl shadow-lg shadow-blue-500/25 group">
-                Download Now
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold rounded-2xl border-blue-500/20 hover:bg-blue-500/5">
-                <Play className="mr-2 w-5 h-5 fill-current" />
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+              <Link href="/aa-business/download" className="w-full sm:w-auto">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 h-16 px-10 text-xl font-black rounded-2xl shadow-xl shadow-blue-500/25 group w-full uppercase tracking-wider">
+                  Download Now
+                  <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Button size="lg" variant="outline" className="h-16 px-10 text-xl font-black rounded-2xl border-blue-500/20 hover:bg-blue-500/5 group">
+                <Play className="mr-2 w-6 h-6 fill-current group-hover:scale-110 transition-transform" />
                 Watch Demo
               </Button>
             </div>
