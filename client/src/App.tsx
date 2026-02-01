@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/hooks/useTranslation";
 import { BackToTop } from "@/components/BackToTop";
+import ScrollToTop from "@/components/ScrollToTop";
 
 import Home from "@/pages/Home";
 import AppSelector from "@/pages/AppSelector";
@@ -72,6 +73,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         <TooltipProvider>
+          <ScrollToTop />
           <Router />
           <BackToTop />
         </TooltipProvider>
