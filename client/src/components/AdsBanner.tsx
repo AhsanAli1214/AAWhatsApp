@@ -10,20 +10,15 @@ export function AdsBanner() {
     // Clear the container
     adContainerRef.current.innerHTML = "";
 
-    // Load both scripts (VAST and Banner) as requested
-    const scripts = [
-      "//flippantaside.com/b.XKVJsudjGNlk0MYbWdcN/MeTmi9NuAZDUel-kjP_TiYh3SNdj/E/yQMGjqYitnN/jqcr2IMPTvI/ykN_wd",
-      "//flippantaside.com/b.X/V-sNdnGelY0uYAWVcS/UePmr9MuLZKUulBkKP/TEYx3ANnjXE/5wNzzZEgt-NQjSc/2gMeTlkZ3/MNgO"
-    ];
+    // Load only the banner script here
+    const src = "//flippantaside.com/b.X/V-sNdnGelY0uYAWVcS/UePmr9MuLZKUulBkKP/TEYx3ANnjXE/5wNzzZEgt-NQjSc/2gMeTlkZ3/MNgO";
 
-    scripts.forEach(src => {
-      const script = document.createElement("script");
-      script.async = true;
-      script.src = src;
-      script.referrerPolicy = "no-referrer-when-downgrade";
-      (script as any).settings = {};
-      adContainerRef.current?.appendChild(script);
-    });
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = src;
+    script.referrerPolicy = "no-referrer-when-downgrade";
+    (script as any).settings = {};
+    adContainerRef.current.appendChild(script);
 
     // Ad content detection logic
     const checkContent = () => {
