@@ -36,18 +36,13 @@ export function Footer() {
               AA Mods provides the world's most secure and feature-rich WhatsApp modifications. Our focus on privacy, security, and user experience makes us the #1 choice for millions of users worldwide.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <Facebook className="w-5 h-5" />
+              <a href="https://t.me/AaMods" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 group">
+                <Send className="w-6 h-6 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="https://t.me/AaMods" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <Send className="w-5 h-5" />
-              </a>
+              <div className="flex flex-col">
+                <span className="text-sm font-bold">Join Channel</span>
+                <span className="text-[10px] text-muted-foreground uppercase tracking-widest">Official Telegram</span>
+              </div>
             </div>
           </div>
 
@@ -103,26 +98,36 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-4 space-y-6">
-            <h4 className="font-bold text-sm uppercase tracking-widest text-foreground/80">Newsletter</h4>
-            <p className="text-sm text-muted-foreground">
-              Stay updated with the latest security patches and features.
+            <h4 className="font-bold text-sm uppercase tracking-widest text-foreground/80">Stay Updated</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Enable notifications via OneSignal or join our Telegram channel for the latest security patches and feature updates.
             </p>
-            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-              <div className="relative flex-1">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="w-full bg-muted/50 border border-border rounded-md py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                />
-              </div>
-              <button className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-bold hover:opacity-90 transition-opacity">
-                Join
+            <div className="flex flex-col gap-3">
+              <a 
+                href="https://t.me/AaMods" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-primary text-primary-foreground py-3 rounded-xl font-bold hover:opacity-90 transition-all shadow-lg shadow-primary/20"
+              >
+                <Send className="w-5 h-5" />
+                Join Telegram Channel
+              </a>
+              <button 
+                onClick={() => {
+                  // Logic for OneSignal notification subscription
+                  if (typeof window !== 'undefined' && (window as any).OneSignal) {
+                    (window as any).OneSignal.showNativePrompt();
+                  }
+                }}
+                className="flex items-center justify-center gap-3 bg-muted border border-border py-3 rounded-xl font-bold hover:bg-muted/80 transition-all"
+              >
+                <Lock className="w-5 h-5 text-primary" />
+                Enable Push Notifications
               </button>
-            </form>
-            <div className="flex items-center gap-2 text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">
-              <Lock className="w-3 h-3" />
-              Verified Secure & Spam-Free
+            </div>
+            <div className="flex items-center gap-2 text-[10px] text-muted-foreground uppercase font-bold tracking-tighter justify-center">
+              <Shield className="w-3 h-3 text-primary" />
+              Direct Developer Updates • Zero Spam
             </div>
           </div>
         </div>
