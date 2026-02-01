@@ -126,7 +126,6 @@ export default function BusinessHome() {
               alt="AA Business Enterprise Interface" 
               className="rounded-[40px] shadow-2xl border-4 border-white/10 relative z-10 hover:scale-[1.02] transition-transform duration-700"
               loading="eager"
-              fetchPriority="high"
               decoding="async"
             />
             {/* Floating UI Elements */}
