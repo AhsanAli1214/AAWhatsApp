@@ -76,4 +76,18 @@
   .animate-scan {
     animation: scan 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
+
+  /* Global fix for broken ad frames */
+  iframe[src*="flippantaside"], 
+  .flippantaside-ad,
+  [id*="flippantaside"] {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Force hide elements that show connection errors */
+  iframe:empty, 
+  iframe[src="about:blank"] {
+    display: none !important;
+  }
 }
