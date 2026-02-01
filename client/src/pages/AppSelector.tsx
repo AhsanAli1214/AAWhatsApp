@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { MessageSquare, Briefcase, Shield, Download, Sparkles, Users, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Navbar } from "@/components/Navbar";
+import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
 import { Helmet } from "react-helmet";
@@ -35,7 +35,7 @@ export default function AppSelector() {
           })}
         </script>
       </Helmet>
-      <Navbar />
+      <Navigation />
 
       <section className="pt-8 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">

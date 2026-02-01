@@ -28,8 +28,6 @@ export default function BusinessHome() {
         <meta name="description" content="Official AA Business WhatsApp V1.0 (Base 2.25.29.77). The most secure enterprise WhatsApp mod for professional business management." />
       </Helmet>
 
-      <Navigation />
-
       {/* Hero Section */}
       <section className="relative pt-48 pb-20 container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">

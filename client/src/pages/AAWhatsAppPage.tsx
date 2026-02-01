@@ -59,7 +59,6 @@ export default function AAWhatsAppPage() {
         </script>
       </Helmet>
 
-      <Navigation />
 
       <main className="relative z-10 pt-32 pb-20 container mx-auto px-4">
         <div className="max-w-4xl mx-auto mb-8">
