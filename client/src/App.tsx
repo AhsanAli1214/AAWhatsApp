@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/hooks/useTranslation";
 import { BackToTop } from "@/components/BackToTop";
 import ScrollToTop from "@/components/ScrollToTop";
+import { AdBlockDetector } from "@/components/AdBlockDetector";
 
 import Home from "@/pages/Home";
 import AppSelector from "@/pages/AppSelector";
@@ -74,6 +75,7 @@ function App() {
       <LanguageProvider>
         <TooltipProvider>
           <ScrollToTop />
+          <AdBlockDetector />
           <Router />
           <BackToTop />
         </TooltipProvider>
