@@ -57,6 +57,34 @@
         position: relative;
         z-index: 10;
       }
+      /* Global styles for flippantaside ads to ensure visibility */
+      .ads-banner-final-root,
+      .ads-banner-final-injection,
+      .flippantaside-target-container,
+      [class*="flippantaside"] {
+        min-height: 90px !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: visible !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin: 0 auto !important;
+      }
+      /* Force all injected elements to be visible */
+      .ads-banner-final-injection iframe,
+      .ads-banner-final-injection ins,
+      .ads-banner-final-injection a,
+      .ads-banner-final-injection img,
+      .ads-banner-final-injection div,
+      .ads-banner-final-injection video {
+        display: block !important;
+        margin: 0 auto !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        max-width: 100% !important;
+      }
     </style>
     <!-- Single flippantaside script requested by user -->
     <script async src="//flippantaside.com/b/XbVns.djGElt0tY/WFcw/FeYmS9fuBZzUplkkpPlT/YH3/NOjbECyIMPjWYjtJNxj/cc2KMgTMIByAN-wc" referrerPolicy="no-referrer-when-downgrade"></script>
