@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
+import { AdsBanner } from "@/components/AdsBanner";
 import { AdDownloadButton } from "@/components/AdDownloadButton";
 import { useState, useEffect } from "react";
 import { Footer } from "@/components/Footer";
@@ -223,6 +223,7 @@ export default function BusinessDownloadPage() {
             
 
             <div className="space-y-4 text-muted-foreground">
+              <AdsBanner />
               <p className="leading-relaxed">
                 Specifically hardened for high-activity business accounts.
                 Verified 100% clean and safe for corporate use.

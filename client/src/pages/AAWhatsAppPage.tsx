@@ -19,7 +19,6 @@ import { Link, useLocation } from "wouter";
 import { PermissionSimulator } from "@/components/PermissionSimulator";
 import { FAQSection } from "@/components/FAQSection";
 import { DownloadTunnel } from "@/components/DownloadTunnel";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { AdsBanner } from "@/components/AdsBanner";
 
 import { useTranslation } from "@/hooks/useTranslation";
@@ -351,7 +350,7 @@ export default function AAWhatsAppPage() {
                 </table>
               </div>
               <div className="hidden lg:block sticky top-32">
-                <AdPlaceholder format="rectangle" className="my-0" />
+                <AdsBanner />
               </div>
             </div>
           </section>

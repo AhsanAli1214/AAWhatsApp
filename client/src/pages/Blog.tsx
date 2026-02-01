@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { blogPosts, BlogPost } from "@/data/blogPosts";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
+import { AdsBanner } from "@/components/AdsBanner";
 
 const categoryIcons: Record<string, React.ReactNode> = {
   download: <Download className="w-4 h-4" />,

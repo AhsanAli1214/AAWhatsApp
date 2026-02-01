@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { useTranslation } from "@/hooks/useTranslation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
+import { AdsBanner } from "@/components/AdsBanner";
 
 export function Navigation() {
   const { t } = useTranslation();
@@ -215,7 +215,7 @@ export function Navigation() {
           <div className="h-px bg-white/5 w-full" />
 
           <div className="grid grid-cols-1 gap-4">
-            <AdPlaceholder format="mobile" className="mb-2" />
+            <AdsBanner />
             <a
               href="https://t.me/AA_ModsOfficial"
               target="_blank"
