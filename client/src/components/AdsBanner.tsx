@@ -21,14 +21,19 @@ export function AdsBanner() {
     // Pass settings if needed
     (script as any).settings = {};
 
-    script.onload = () => setHasAd(true);
+    script.onload = () => {
+      // Check if the script actually created content or if it's an error frame
+      setTimeout(() => {
+        const hasContent = adContainerRef.current && adContainerRef.current.innerHTML.length > 100;
+        setHasAd(!!hasContent);
+      }, 1000);
+    };
     script.onerror = () => setHasAd(false);
 
     adContainerRef.current.appendChild(script);
-
-    // Initial state set to true to allow script to load, 
-    // but the container will collapse if script fails via onload/onerror
-    setHasAd(true); 
+    
+    // Default to false and let onload/setTimeout enable it if successful
+    setHasAd(false); 
   }, []);
 
   return (
