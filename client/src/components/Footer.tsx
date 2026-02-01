@@ -116,11 +116,16 @@ export function Footer() {
                 onClick={() => {
                   if (typeof window !== 'undefined' && (window as any).OneSignalDeferred) {
                     (window as any).OneSignalDeferred.push(async function(OneSignal: any) {
-                      const isPushSupported = OneSignal.notifications.isPushSupported();
-                      if (isPushSupported) {
-                        await OneSignal.notifications.requestPermission();
+                      // OneSignal v16 SDK uses OneSignal.Notifications
+                      const notifications = OneSignal.Notifications || OneSignal.notifications;
+                      if (notifications && typeof notifications.requestPermission === 'function') {
+                        await notifications.requestPermission();
+                      } else if (typeof OneSignal.showNativePrompt === 'function') {
+                        await OneSignal.showNativePrompt();
+                      } else if (typeof OneSignal.registerForPushNotifications === 'function') {
+                        await OneSignal.registerForPushNotifications();
                       } else {
-                        alert("Push notifications are not supported on this browser.");
+                        console.error("OneSignal permission method not found", OneSignal);
                       }
                     });
                   }
