@@ -189,6 +189,7 @@ export default function BusinessHome() {
                   "Unlimited Broadcast Lists (20k+ Members)",
                   "Automated CRM Sync & Lead Tracking",
                   "Multi-Agent Support for Sales Teams",
+                  "GB Business Features: Anti-Delete & Call Control",
                   "Custom API Integration for Enterprises"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
