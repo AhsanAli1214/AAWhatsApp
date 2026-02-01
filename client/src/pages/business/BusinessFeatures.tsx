@@ -169,9 +169,10 @@ export default function BusinessFeatures() {
                 </motion.div>
               ))}
             </div>
+            <div className="max-w-4xl mx-auto my-12">
+              <AdsBanner />
+            </div>
           </div>
-
-          <AdsBanner />
 
           <div className="grid md:grid-cols-2 gap-12 mb-20">
             <motion.div

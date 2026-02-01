@@ -132,7 +132,9 @@ export default function BusinessDownload() {
               </Card>
             ))}
           </motion.div>
-          <AdsBanner />
+          <div className="max-w-4xl mx-auto my-12">
+            <AdsBanner />
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -204,7 +206,9 @@ export default function BusinessDownload() {
               </Card>
             </motion.div>
           </div>
-          <AdsBanner />
+          <div className="max-w-4xl mx-auto my-12">
+            <AdsBanner />
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

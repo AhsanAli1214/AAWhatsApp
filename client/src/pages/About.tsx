@@ -96,6 +96,7 @@ export default function About() {
                 you want to hide your online status, protect chats, or send
                 large files without limits, AA WhatsApp has you covered.
               </p>
+              <AdsBanner />
               <div className="flex gap-4 pt-4">
                 <Link href="/download">
                   <Button
