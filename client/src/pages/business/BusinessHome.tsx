@@ -108,13 +108,51 @@ export default function BusinessHome() {
 
       {/* Trust Bar */}
       <section className="py-12 border-y border-border/50 bg-muted/30">
-        <div className="container px-4">
-          <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-8">Trusted by industry leaders in 150+ countries</p>
+        <div className="container px-4 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-8">Trusted by industry leaders in 150+ countries</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all">
             <span className="text-2xl font-black">FORBES</span>
             <span className="text-2xl font-black">TECHCRUNCH</span>
             <span className="text-2xl font-black">WIRED</span>
             <span className="text-2xl font-black">THE VERGE</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Data Section */}
+      <section className="py-32 bg-background">
+        <div className="container px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="flex-1 relative">
+              <img 
+                src="/images/business-dashboard.png" 
+                alt="Business Dashboard" 
+                className="rounded-[40px] shadow-2xl border-4 border-blue-500/10"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-blue-600 text-white p-8 rounded-3xl shadow-2xl">
+                <div className="text-4xl font-black">99.9%</div>
+                <div className="text-xs uppercase font-bold tracking-widest opacity-80">System Uptime</div>
+              </div>
+            </div>
+            <div className="flex-1 space-y-8">
+              <h2 className="text-4xl md:text-5xl font-black tracking-tighter">Global <span className="text-blue-500">Reach</span>, Local Presence</h2>
+              <p className="text-lg text-muted-foreground">
+                AA Business WhatsApp bridges the gap between your brand and customers. Manage unlimited broadcast lists, track message delivery in real-time, and automate your sales funnel with precision.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Unlimited Broadcast Lists (20k+ Members)",
+                  "Automated CRM Sync & Lead Tracking",
+                  "Multi-Agent Support for Sales Teams",
+                  "Custom API Integration for Enterprises"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <CheckCircle2 className="text-blue-500 w-5 h-5" />
+                    <span className="font-bold">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -211,7 +249,7 @@ export default function BusinessHome() {
             
             <div className="flex-1 bg-muted rounded-[40px] p-8 relative">
               <div className="absolute inset-0 bg-blue-500/5 blur-2xl -z-10" />
-              <img src="/images/business-hero-new.png" className="rounded-[32px] shadow-2xl grayscale-[0.2] hover:grayscale-0 transition-all duration-700" alt="Features" />
+              <img src="/images/business-team.png" className="rounded-[32px] shadow-2xl grayscale-[0.2] hover:grayscale-0 transition-all duration-700" alt="Features" />
             </div>
           </div>
         </div>
