@@ -133,7 +133,7 @@ export default function DownloadPage() {
         <div className="max-w-5xl mx-auto mb-8">
           <Button
             variant="ghost"
-            onClick={() => setLocation("/aa-whatsapp-apk")}
+            onClick={() => setLocation("/aa-whatsapp")}
             className="hover:bg-primary/10 gap-2 text-muted-foreground hover:text-primary"
             data-testid="button-back-info"
           >
