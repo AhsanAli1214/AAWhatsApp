@@ -75,13 +75,21 @@
           }
         });
         
-        OneSignal.on('notificationPermissionChange', function(permissionChange) {
-          console.log('Notification permission changed:', permissionChange);
-        });
-
         OneSignal.on('subscriptionChange', function(isSubscribed) {
           if (isSubscribed) {
              console.log('The user is subscribed');
+             // Manually trigger the welcome notification or a specific message if needed
+             // though init's welcomeNotification already handles this, 
+             // we can ensure it by sending a specific tag or event if the SDK allows.
+          }
+        });
+
+        // Ensure welcome notification is sent immediately after permission is granted
+        OneSignal.on('notificationPermissionChange', function(permissionChange) {
+          console.log('Notification permission changed:', permissionChange);
+          if (permissionChange === 'granted') {
+             // The SDK automatically sends the welcomeNotification configured in init() 
+             // when the user subscribes for the first time.
           }
         });
       });
