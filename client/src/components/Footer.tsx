@@ -4,13 +4,14 @@ import { Send, Facebook, Twitter, Instagram, Shield, Zap, Lock, Mail, ExternalLi
 export function Footer() {
   const [location] = useLocation();
   const isBusiness = location.startsWith("/aa-business");
-  const themeColor = isBusiness ? "blue-500" : "primary";
+  const themeColor = isBusiness ? "blue-600" : "primary";
+  const secondaryColor = isBusiness ? "blue-400" : "emerald-400";
 
   return (
-    <footer className={`py-16 border-t border-border/50 relative z-10 bg-background/80 backdrop-blur-md overflow-hidden ${isBusiness ? 'selection:bg-blue-500/30' : ''}`}>
+    <footer className={`py-16 border-t border-border/50 relative z-10 bg-background/80 backdrop-blur-md overflow-hidden ${isBusiness ? 'selection:bg-blue-600/30' : ''}`}>
       {/* Decorative background elements */}
-      <div className={`absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[100px] -z-10 ${isBusiness ? 'bg-blue-500/5' : 'bg-primary/5'}`} />
-      <div className={`absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[100px] -z-10 ${isBusiness ? 'bg-blue-600/5' : 'bg-blue-500/5'}`} />
+      <div className={`absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[100px] -z-10 ${isBusiness ? 'bg-blue-600/5' : 'bg-primary/5'}`} />
+      <div className={`absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[100px] -z-10 ${isBusiness ? 'bg-blue-400/5' : 'bg-emerald-400/5'}`} />
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           {/* Brand Column */}
