@@ -11,7 +11,6 @@ export function Footer() {
       {/* Decorative background elements */}
       <div className={`absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[100px] -z-10 ${isBusiness ? 'bg-blue-500/5' : 'bg-primary/5'}`} />
       <div className={`absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[100px] -z-10 ${isBusiness ? 'bg-blue-600/5' : 'bg-blue-500/5'}`} />
-
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           {/* Brand Column */}
@@ -19,7 +18,7 @@ export function Footer() {
             <Link href="/">
               <div className="flex items-center gap-3 cursor-pointer group">
                 <img
-                  src="/favicon.png"
+                  src="https://i.postimg.cc/mrqq6LxP/favicon.png"
                   alt="AA Mods"
                   className="w-12 h-12 object-contain group-hover:rotate-12 transition-transform duration-500"
                 />
