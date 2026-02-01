@@ -15,7 +15,7 @@ export function AdsBanner() {
 
     const script = document.createElement("script");
     script.async = true;
-    script.src = "//flippantaside.com/bjXGV.szdlG/lt0pY/WFcH/QePmF9mumZBU/lzkYPMT_Y/3/N-jKEu5aN/zHEjt/NnjSc/2DMeTCke3RMdgZ";
+    script.src = "//flippantaside.com/b.X/V-sNdnGelY0uYAWVcS/UePmr9MuLZKUulBkKP/TEYx3ANnjXE/5wNzzZEgt-NQjSc/2gMeTlkZ3/MNgO";
     script.referrerPolicy = "no-referrer-when-downgrade";
     
     // Pass settings if needed
