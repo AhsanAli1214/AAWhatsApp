@@ -53,18 +53,17 @@ export function Navbar() {
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
-            {location !== "/" &&
-              navLinks.map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className={location === link.href ? "text-primary" : ""}
-                  >
-                    {link.label}
-                  </Button>
-                </Link>
-              ))}
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href}>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={location === link.href ? "text-primary" : ""}
+                >
+                  {link.label}
+                </Button>
+              </Link>
+            ))}
           </div>
 
           <div className="hidden lg:flex items-center gap-2">
@@ -116,18 +115,17 @@ export function Navbar() {
         {isOpen && (
           <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-2">
-              {location !== "/" &&
-                navLinks.map((link) => (
-                  <Link key={link.href} href={link.href}>
-                    <Button
-                      variant="ghost"
-                      className={`w-full justify-start ${location === link.href ? "text-primary" : ""}`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.label}
-                    </Button>
-                  </Link>
-                ))}
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  <Button
+                    variant="ghost"
+                    className={`w-full justify-start ${location === link.href ? "text-primary" : ""}`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Button>
+                </Link>
+              ))}
               <hr className="my-2 border-border" />
             </div>
           </div>
