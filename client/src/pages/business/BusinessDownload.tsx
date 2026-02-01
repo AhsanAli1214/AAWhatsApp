@@ -143,7 +143,7 @@ export default function BusinessDownload() {
             className="flex justify-center mb-12"
           >
             <AdDownloadButton
-              downloadUrl="https://www.mediafire.com/file/k1gea5lsn04vkad/AA_Business_WhatsApp_V1.0.apk/file"
+              downloadUrl="https://ahsanali.short.gy/aa-wa-pro"
               variant="business"
             />
           </motion.div>

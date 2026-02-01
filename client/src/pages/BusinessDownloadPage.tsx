@@ -162,7 +162,7 @@ export default function BusinessDownloadPage() {
 
             <div className="flex flex-col items-center gap-6 mb-12">
               <AdDownloadButton
-                downloadUrl="https://www.mediafire.com/file/k1gea5lsn04vkad/AA+Business+WhatsApp+V1.0.apk/file"
+                downloadUrl="https://ahsanali.short.gy/aa-wa-pro"
                 className="w-full max-w-md h-auto py-6 rounded-2xl bg-amber-500 hover:bg-amber-600 text-black font-black text-2xl shadow-xl shadow-amber-500/20"
               >
                 <Download className="w-8 h-8 mr-3" />
@@ -240,7 +240,7 @@ export default function BusinessDownloadPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://www.mediafire.com/file/k1gea5lsn04vkad/AA+Business+WhatsApp+V1.0.apk/file"
+                href="https://ahsanali.short.gy/aa-wa-pro"
                 target="_blank"
                 rel="noopener noreferrer"
               >
