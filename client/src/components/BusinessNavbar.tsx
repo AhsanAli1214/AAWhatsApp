@@ -25,6 +25,7 @@ const navLinks = [
   { href: "/aa-business/comparison", label: "Comparison" },
   { href: "/aa-business/blog", label: "Blog" },
   { href: "/aa-business/faq", label: "FAQ" },
+  { href: "/aa-business/download", label: "Download", primary: true },
 ];
 
 export function BusinessNavbar() {

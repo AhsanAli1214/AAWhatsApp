@@ -66,6 +66,8 @@ function Router() {
   );
 }
 
+import { Navigation } from "@/components/Navigation";
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -73,6 +75,7 @@ function App() {
         <TooltipProvider>
           <ScrollToTop />
           <AdBlockDetector />
+          <Navigation />
           <Router />
           <BackToTop />
         </TooltipProvider>

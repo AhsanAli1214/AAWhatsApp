@@ -24,6 +24,7 @@ const navLinks = [
   { href: "/aa-whatsapp/comparison", label: "Comparison" },
   { href: "/aa-whatsapp/blog", label: "Blog" },
   { href: "/aa-whatsapp/faq", label: "FAQ" },
+  { href: "/aa-whatsapp/download", label: "Download", primary: true },
 ];
 
 export function Navbar() {
