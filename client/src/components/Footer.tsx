@@ -1,126 +1,153 @@
-import { Link } from "wouter";
-import { Send } from "lucide-react";
+import { Link, useLocation } from "wouter";
+import { Send, Facebook, Twitter, Instagram, Shield, Zap, Lock, Mail, ExternalLink } from "lucide-react";
 
 export function Footer() {
+  const [location] = useLocation();
+  const isBusiness = location.startsWith("/aa-business");
+
   return (
-    <footer className="py-12 border-t border-border/50 relative z-10 bg-background/50 backdrop-blur-sm">
+    <footer className="py-16 border-t border-border/50 relative z-10 bg-background/80 backdrop-blur-md overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-10" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px] -z-10" />
+
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center mb-12">
-          <Link href="/">
-            <div className="flex flex-col items-center gap-3 cursor-pointer group">
-              <img
-                src="https://i.postimg.cc/mrqq6LxP/favicon.png"
-                alt="AA Mods"
-                className="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-500"
-              />
-              <span className="font-black text-2xl tracking-tighter uppercase">
-                AA Mods
-              </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+          {/* Brand Column */}
+          <div className="lg:col-span-4 space-y-6">
+            <Link href="/">
+              <div className="flex items-center gap-3 cursor-pointer group">
+                <img
+                  src="https://i.postimg.cc/mrqq6LxP/favicon.png"
+                  alt="AA Mods"
+                  className="w-12 h-12 object-contain group-hover:rotate-12 transition-transform duration-500"
+                />
+                <div className="flex flex-col">
+                  <span className="font-black text-2xl tracking-tighter uppercase leading-none">
+                    AA Mods
+                  </span>
+                  <span className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] font-bold mt-1">
+                    Premium WhatsApp Solutions
+                  </span>
+                </div>
+              </div>
+            </Link>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
+              AA Mods provides the world's most secure and feature-rich WhatsApp modifications. Our focus on privacy, security, and user experience makes us the #1 choice for millions of users worldwide.
+            </p>
+            <div className="flex items-center gap-4">
+              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://t.me/AaMods" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                <Send className="w-5 h-5" />
+              </a>
             </div>
-          </Link>
-          <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary/50 to-transparent mt-6" />
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h4 className="font-bold mb-4">Products</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+          </div>
+
+          {/* Links Columns */}
+          <div className="lg:col-span-2 space-y-6">
+            <h4 className="font-bold text-sm uppercase tracking-widest text-foreground/80">Products</h4>
+            <ul className="space-y-4 text-sm">
               <li>
-                <Link
-                  href="/aa-whatsapp"
-                  className="hover:text-primary transition-colors"
-                >
+                <Link href="/aa-whatsapp" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-primary/60" />
                   AAWhatsApp
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/aa-business"
-                  className="hover:text-blue-500 transition-colors"
-                >
+                <Link href="/aa-business" className="text-muted-foreground hover:text-blue-500 transition-colors flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-blue-500/60" />
                   AA Business
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/download"
-                  className="hover:text-primary transition-colors"
-                >
-                  Download
+                <Link href={isBusiness ? "/aa-business/download" : "/aa-whatsapp/download"} className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 font-semibold">
+                  <ExternalLink className="w-4 h-4" />
+                  Download Latest
                 </Link>
               </li>
             </ul>
           </div>
-          <div>
-            <h4 className="font-bold mb-4">Resources</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+
+          <div className="lg:col-span-2 space-y-6">
+            <h4 className="font-bold text-sm uppercase tracking-widest text-foreground/80">Resources</h4>
+            <ul className="space-y-4 text-sm">
               <li>
-                <Link
-                  href="/blog"
-                  className="hover:text-primary transition-colors"
-                >
-                  Blog
+                <Link href={isBusiness ? "/aa-business/blog" : "/aa-whatsapp/blog"} className="text-muted-foreground hover:text-primary transition-colors">
+                  Insights & Blog
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/faq"
-                  className="hover:text-primary transition-colors"
-                >
-                  FAQ
+                <Link href={isBusiness ? "/aa-business/faq" : "/aa-whatsapp/faq"} className="text-muted-foreground hover:text-primary transition-colors">
+                  Help Center (FAQ)
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/support"
-                  className="hover:text-primary transition-colors"
-                >
-                  Support
+                <Link href="/support" className="text-muted-foreground hover:text-primary transition-colors">
+                  Community Support
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
+                  Security Analysis
                 </Link>
               </li>
             </ul>
           </div>
-          <div>
-            <h4 className="font-bold mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <Link
-                  href="/privacy"
-                  className="hover:text-primary transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="hover:text-primary transition-colors"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-bold mb-4">Connect</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a
-                  href="https://t.me/AaMods"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors flex items-center gap-2"
-                >
-                  <Send className="w-4 h-4" />
-                  Telegram
-                </a>
-              </li>
-            </ul>
+
+          <div className="lg:col-span-4 space-y-6">
+            <h4 className="font-bold text-sm uppercase tracking-widest text-foreground/80">Newsletter</h4>
+            <p className="text-sm text-muted-foreground">
+              Stay updated with the latest security patches and features.
+            </p>
+            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
+              <div className="relative flex-1">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  className="w-full bg-muted/50 border border-border rounded-md py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                />
+              </div>
+              <button className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-bold hover:opacity-90 transition-opacity">
+                Join
+              </button>
+            </form>
+            <div className="flex items-center gap-2 text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">
+              <Lock className="w-3 h-3" />
+              Verified Secure & Spam-Free
+            </div>
           </div>
         </div>
-        <div className="border-t border-border/50 pt-8 text-center text-sm text-muted-foreground">
-          <p>AA Mods {new Date().getFullYear()}. All rights reserved.</p>
-          <p className="mt-2 text-xs">
-            AAWhatsApp is not affiliated with WhatsApp Inc.
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col md:items-start items-center gap-1">
+            <p className="text-sm text-muted-foreground font-medium">
+              &copy; {new Date().getFullYear()} AA Mods Research & Development.
+            </p>
+            <p className="text-[10px] text-muted-foreground/60 uppercase tracking-widest font-bold">
+              Precision Engineering • Maximum Privacy • Unrivaled Security
+            </p>
+          </div>
+          
+          <div className="flex items-center gap-6 text-xs font-bold uppercase tracking-widest">
+            <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy</Link>
+            <Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors">Terms</Link>
+            <Link href="/support" className="text-muted-foreground hover:text-primary transition-colors">Cookies</Link>
+          </div>
+        </div>
+
+        <div className="mt-8 text-center">
+          <p className="text-[10px] text-muted-foreground/40 max-w-2xl mx-auto italic">
+            Disclaimer: AA Mods is an independent modification of the WhatsApp application. We are not affiliated with, endorsed by, or associated with Meta, WhatsApp Inc., or any of their subsidiaries. WhatsApp is a registered trademark of Meta Platforms, Inc.
           </p>
         </div>
       </div>
