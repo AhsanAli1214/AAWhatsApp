@@ -8,6 +8,7 @@ import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
 
 const comparisonData = [
+  { feature: "Bulk Messaging", aaBusiness: true, official: false, gbBusiness: true, fmBusiness: false },
   { feature: "Auto Reply", aaBusiness: true, official: true, gbBusiness: true, fmBusiness: false },
   { feature: "Customer Labels", aaBusiness: true, official: true, gbBusiness: true, fmBusiness: true },
   { feature: "Message Statistics", aaBusiness: true, official: false, gbBusiness: false, fmBusiness: false },

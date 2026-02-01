@@ -138,7 +138,7 @@ export default function BusinessDownload() {
             className="flex justify-center mb-12"
           >
             <a
-              href="https://ahsanali.short.gy/aa-wa-pro"
+              href="https://www.mediafire.com/file/uuw00r0kdjuns97/AA_Business_WhatsApp_V1.0.apk/file"
               target="_blank"
               rel="noopener noreferrer"
               className="relative group overflow-hidden px-12 py-6 rounded-[2rem] bg-blue-500 text-white font-black text-2xl shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full max-w-md border border-white/20 uppercase tracking-tight flex items-center justify-center gap-4"

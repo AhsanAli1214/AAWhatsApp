@@ -164,7 +164,7 @@ export default function BusinessFAQ() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://t.me/AaMods"
+                href="https://t.me/AA_ModsOfficial"
                 target="_blank"
                 rel="noopener noreferrer"
               >

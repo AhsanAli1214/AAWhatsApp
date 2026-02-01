@@ -101,7 +101,7 @@ export function BusinessNavbar() {
             </DropdownMenu>
 
             <a
-              href="https://t.me/AaMods"
+              href="https://t.me/AA_ModsOfficial"
               target="_blank"
               rel="noopener noreferrer"
             >

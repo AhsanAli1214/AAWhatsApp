@@ -218,7 +218,7 @@ export default function BusinessBlog() {
             <p className="text-muted-foreground mb-4">
               Want to stay updated with the latest news and tutorials?
             </p>
-            <a href="https://t.me/AaMods" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer">
               <Button className="bg-blue-500 hover:bg-blue-600">
                 Join Our Telegram
                 <ArrowRight className="w-4 h-4 ml-2" />

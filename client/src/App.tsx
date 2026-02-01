@@ -52,11 +52,8 @@ function Router() {
       <Route path="/aa-business/faq" component={BusinessFAQ} />
       <Route path="/aa-business/blog" component={BusinessBlog} />
       
-      <Route path="/about" component={About} />
-      <Route path="/comparison" component={Comparison} />
-      <Route path="/aa-whatsapp-apk" component={AAWhatsAppPage} />
-      <Route path="/aa-business-whatsapp" component={AABusinessWhatsAppPage} />
-      <Route path="/business-download" component={BusinessDownloadPage} />
+      <Route path="/aa-business-whatsapp" component={BusinessHome} />
+      <Route path="/business-download" component={BusinessDownload} />
       <Route path="/faq" component={FAQ} />
       <Route path="/download" component={DownloadPage} />
       <Route path="/privacy" component={PrivacyPolicy} />
