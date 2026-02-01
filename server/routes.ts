@@ -282,6 +282,18 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <priority>0.6</priority>
   </url>
 
+  url>
+    <loc>https://aa-mods.vercel.app/aa-whatsapp/blog</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/aa-business/blog</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Blog Content -->
   <url>
     <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-latest-version-download</loc>
