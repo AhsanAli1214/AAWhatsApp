@@ -23,15 +23,27 @@ export function AdsBanner() {
     innerContainer.style.alignItems = "center";
     adContainerRef.current.appendChild(innerContainer);
 
-    // Implementation of the exact script logic provided by the user
-    // (function(tyetyd){...})({})
+    // Implementation of the exact script provided by the user
     const script = document.createElement("script");
-    script.async = true;
-    script.src = "//flippantaside.com/b.X/V-sNdnGelY0uYAWVcS/UePmr9MuLZKUulBkKP/TEYx3ANnjXE/5wNzzZEgt-NQjSc/2gMeTlkZ3/MNgO";
-    script.referrerPolicy = "no-referrer-when-downgrade";
-    (script as any).settings = {};
+    script.innerHTML = `
+      (function(tyetyd){
+        var d = document,
+            s = d.createElement('script'),
+            l = d.scripts[d.scripts.length - 1];
+        s.settings = tyetyd || {};
+        s.src = "//flippantaside.com/b.X/V-sNdnGelY0uYAWVcS/UePmr9MuLZKUulBkKP/TEYx3ANnjXE/5wNzzZEgt-NQjSc/2gMeTlkZ3/MNgO";
+        s.async = true;
+        s.referrerPolicy = 'no-referrer-when-downgrade';
+        // In React environment, we insert it into our container
+        var target = document.querySelector('.flippantaside-banner-container');
+        if (target) {
+          target.appendChild(s);
+        } else {
+          d.head.appendChild(s);
+        }
+      })({})
+    `;
     
-    // Using parentNode.insertBefore(s, l) logic equivalent in a React ref
     adContainerRef.current.appendChild(script);
 
     return () => {
