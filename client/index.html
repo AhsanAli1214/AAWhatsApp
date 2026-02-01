@@ -45,9 +45,38 @@
             enable: true,
           },
           welcomeNotification: {
-            "title": "Welcome to AA Mods!",
-            "message": "Thanks for subscribing! You'll receive updates on the latest WhatsApp mods.",
-            "url": "https://aa-mods.vercel.app"
+            "title": "Welcome to AA Mods! 🚀",
+            "message": "You're now subscribed to the most secure WhatsApp updates. Get ready for premium features!",
+            "url": "https://aa-mods.vercel.app/aa-whatsapp/blog"
+          },
+          promptOptions: {
+            slidedown: {
+              prompts: [
+                {
+                  type: "push",
+                  autoPrompt: true,
+                  text: {
+                    actionMessage: "Would you like to receive the latest AA WhatsApp security updates and feature releases?",
+                    acceptButton: "Allow Updates",
+                    cancelButton: "Later"
+                  },
+                  delay: {
+                    pageViews: 1,
+                    timeDelay: 5
+                  }
+                }
+              ]
+            }
+          }
+        });
+        
+        OneSignal.on('notificationPermissionChange', function(permissionChange) {
+          console.log('Notification permission changed:', permissionChange);
+        });
+
+        OneSignal.on('subscriptionChange', function(isSubscribed) {
+          if (isSubscribed) {
+             console.log('The user is subscribed');
           }
         });
       });

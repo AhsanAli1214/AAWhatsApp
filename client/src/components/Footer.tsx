@@ -114,14 +114,18 @@ export function Footer() {
               </a>
               <button 
                 onClick={() => {
-                  // Logic for OneSignal notification subscription
                   if (typeof window !== 'undefined' && (window as any).OneSignalDeferred) {
                     (window as any).OneSignalDeferred.push(async function(OneSignal: any) {
-                      await OneSignal.registerForPushNotifications();
+                      const isPushSupported = OneSignal.notifications.isPushSupported();
+                      if (isPushSupported) {
+                        await OneSignal.notifications.requestPermission();
+                      } else {
+                        alert("Push notifications are not supported on this browser.");
+                      }
                     });
                   }
                 }}
-                className="flex items-center justify-center gap-3 bg-muted border border-border py-3 rounded-xl font-bold hover:bg-muted/80 transition-all"
+                className="flex items-center justify-center gap-3 bg-muted border border-border py-3 rounded-xl font-bold hover:bg-muted/80 transition-all active:scale-95 shadow-inner"
               >
                 <Lock className={`w-5 h-5 ${isBusiness ? 'text-blue-500' : 'text-primary'}`} />
                 Enable Push Notifications
