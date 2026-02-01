@@ -10,16 +10,10 @@ export function AdsBanner() {
     // Clear the container
     adContainerRef.current.innerHTML = "";
 
-    // The script provided uses document.scripts[document.scripts.length - 1]
-    // which fails in dynamic injection because the "last script" isn't our 
-    // dynamically created one at execution time.
-    
-    // We'll execute the script logic directly, mimicking the environment 
-    // the script expects.
-    
+    // The script provided for VAST
     const script = document.createElement("script");
     script.async = true;
-    script.src = "//flippantaside.com/b.X/V-sNdnGelY0uYAWVcS/UePmr9MuLZKUulBkKP/TEYx3ANnjXE/5wNzzZEgt-NQjSc/2gMeTlkZ3/MNgO";
+    script.src = "//flippantaside.com/b.XKVJsudjGNlk0MYbWdcN/MeTmi9NuAZDUel-kjP_TiYh3SNdj/E/yQMGjqYitnN/jqcr2IMPTvI/ykN_wd";
     script.referrerPolicy = "no-referrer-when-downgrade";
     
     // HilltopAds / Flippantaside dynamic settings
@@ -30,11 +24,9 @@ export function AdsBanner() {
       if (!adContainerRef.current) return;
       
       // Look for iframes, specific div IDs, or substantial HTML changes
-      // HilltopAds often injects iframes or specific classes
       const hasVisibleContent = adContainerRef.current.querySelectorAll('iframe, ins, a, img, video, div:not(:empty)').length > 0;
       const innerHTML = adContainerRef.current.innerHTML;
       
-      // In development/testing, console shows VAST responses. 
       // If we see anything injected, we show the container.
       if (hasVisibleContent || innerHTML.length > 50) {
         setHasAd(true);
