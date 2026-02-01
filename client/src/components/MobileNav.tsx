@@ -1,5 +1,12 @@
 import { Link, useLocation } from "wouter";
-import { Home, Download, BookOpen, HelpCircle, LayoutGrid, Zap } from "lucide-react";
+import { 
+  Home, 
+  DownloadCloud, 
+  Rss, 
+  LifeBuoy, 
+  Layers, 
+  Sparkles 
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function MobileNav() {
@@ -7,12 +14,12 @@ export function MobileNav() {
   const isBusiness = location.startsWith("/aa-business");
 
   const navItems = [
-    { href: "/", icon: LayoutGrid, label: "Apps" },
+    { href: "/", icon: Layers, label: "Apps" },
     { href: isBusiness ? "/aa-business" : "/aa-whatsapp", icon: Home, label: "Home" },
-    { href: isBusiness ? "/aa-business/features" : "/aa-whatsapp/features", icon: Zap, label: "Features" },
-    { href: isBusiness ? "/aa-business/download" : "/aa-whatsapp/download", icon: Download, label: "Get Mod", highlight: true },
-    { href: isBusiness ? "/aa-business/blog" : "/aa-whatsapp/blog", icon: BookOpen, label: "Updates" },
-    { href: isBusiness ? "/aa-business/faq" : "/aa-whatsapp/faq", icon: HelpCircle, label: "Support" },
+    { href: isBusiness ? "/aa-business/features" : "/aa-whatsapp/features", icon: Sparkles, label: "Features" },
+    { href: isBusiness ? "/aa-business/download" : "/aa-whatsapp/download", icon: DownloadCloud, label: "Get Mod" },
+    { href: isBusiness ? "/aa-business/blog" : "/aa-whatsapp/blog", icon: Rss, label: "Updates" },
+    { href: isBusiness ? "/aa-business/faq" : "/aa-whatsapp/faq", icon: LifeBuoy, label: "Support" },
   ];
 
   return (
