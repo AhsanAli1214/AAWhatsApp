@@ -90,13 +90,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/support" className="text-muted-foreground hover:text-primary transition-colors">
-                  Community Support
+                <Link href="/aa-whatsapp/comparison" className="text-muted-foreground hover:text-primary transition-colors">
+                  Comparison Matrix
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
-                  Security Analysis
+                <Link href="/aa-whatsapp/features" className="text-muted-foreground hover:text-primary transition-colors">
+                  Feature Analysis
                 </Link>
               </li>
             </ul>
@@ -139,9 +139,10 @@ export function Footer() {
           </div>
           
           <div className="flex items-center gap-6 text-xs font-bold uppercase tracking-widest">
+            <Link href="/aa-whatsapp/about" className="text-muted-foreground hover:text-primary transition-colors">About</Link>
             <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy</Link>
             <Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors">Terms</Link>
-            <Link href="/support" className="text-muted-foreground hover:text-primary transition-colors">Cookies</Link>
+            <Link href="/support" className="text-muted-foreground hover:text-primary transition-colors">Support</Link>
           </div>
         </div>
 
