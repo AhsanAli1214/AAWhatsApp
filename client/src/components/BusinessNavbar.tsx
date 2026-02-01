@@ -9,6 +9,7 @@ import {
   Globe,
   Briefcase,
   MessageSquare,
+  LayoutGrid,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -59,6 +60,17 @@ export function BusinessNavbar() {
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
+            <Link href="/">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="flex items-center gap-2 text-muted-foreground hover:text-blue-500"
+              >
+                <LayoutGrid className="w-4 h-4" />
+                App Selector
+              </Button>
+            </Link>
+            <div className="h-4 w-px bg-border mx-2" />
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
                 <Button
@@ -125,6 +137,17 @@ export function BusinessNavbar() {
         {isOpen && (
           <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-2">
+              <Link href="/">
+                <Button
+                  variant="ghost"
+                  className="w-full justify-start gap-2 text-muted-foreground"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <LayoutGrid className="w-4 h-4" />
+                  App Selector
+                </Button>
+              </Link>
+              <hr className="my-2 border-border" />
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <Button
