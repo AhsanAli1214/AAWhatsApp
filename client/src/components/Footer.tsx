@@ -9,13 +9,9 @@ export function Footer() {
           <Link href="/">
             <div className="flex flex-col items-center gap-3 cursor-pointer group">
               <img
-                src="/favicon.png"
+                src="https://i.postimg.cc/mrqq6LxP/favicon.png"
                 alt="AA Mods"
                 className="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-500"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = "https://i.postimg.cc/mrqq6LxP/favicon.png";
-                }}
               />
               <span className="font-black text-2xl tracking-tighter uppercase">
                 AA Mods
