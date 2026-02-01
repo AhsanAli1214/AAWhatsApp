@@ -114,7 +114,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-primary/10">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-12 border-t border-primary/10">
               <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
                   <ShieldCheck className="w-6 h-6 text-primary" />
@@ -135,6 +135,13 @@ export default function Home() {
                 </div>
                 <h3 className="font-bold text-lg text-foreground">Custom Themes</h3>
                 <p className="text-sm text-muted-foreground">Access 5000+ premium themes and fonts to personalize your experience.</p>
+              </div>
+              <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <Lock className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg text-foreground">Chat Lock</h3>
+                <p className="text-sm text-muted-foreground">Secure your private conversations with fingerprint or PIN protection.</p>
               </div>
             </div>
           </motion.div>

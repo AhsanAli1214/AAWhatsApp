@@ -36,7 +36,7 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 group">
             <img
               src="/favicon.png"
               alt="AA Mods"
@@ -47,7 +47,7 @@ export function Navbar() {
               }}
             />
             <div className="flex flex-col">
-              <span className="font-bold text-xl leading-tight">AA Mods</span>
+              <span className="font-bold text-xl leading-tight group-hover:text-primary transition-colors">AA Mods</span>
               <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">
                 WhatsApp Mod
               </span>

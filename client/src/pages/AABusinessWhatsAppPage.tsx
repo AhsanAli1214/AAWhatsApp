@@ -108,14 +108,21 @@ export default function AABusinessWhatsAppPage() {
               </a>
             </div>
 
-            {/* Visual Mockup Placeholder */}
             <div className="relative mt-16 group">
               <div className="absolute inset-0 bg-amber-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity" />
               <div className="relative glass-card border-amber-500/20 p-8 rounded-[2rem] aspect-video flex items-center justify-center overflow-hidden">
-                 <div className="flex flex-col items-center gap-4 text-amber-500/40">
-                    <Shield className="w-24 h-24 animate-pulse" />
-                    <span className="font-mono text-sm tracking-[0.5em] uppercase">Business Tools Interface v1.0</span>
-                 </div>
+                 <img 
+                   src="/client/public/images/business-hero-new.png" 
+                   alt="AA Business Interface"
+                   className="w-full h-full object-cover rounded-2xl"
+                   onError={(e) => {
+                     const target = e.target as HTMLImageElement;
+                     target.parentElement!.innerHTML = `<div class="flex flex-col items-center gap-4 text-amber-500/40">
+                        <svg class="w-24 h-24 animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                        <span class="font-mono text-sm tracking-[0.5em] uppercase">Business Tools Interface v1.0</span>
+                     </div>`;
+                   }}
+                 />
               </div>
             </div>
           </section>
