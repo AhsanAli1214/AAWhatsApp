@@ -79,16 +79,16 @@ export default function About() {
                 <Info className="w-4 h-4" />
                 Who We Are
               </div>
-              <h1 className="text-5xl md:text-7xl font-black font-display tracking-tight leading-[1.1]">
+              <h1 className="text-4xl md:text-6xl font-black font-display tracking-tight leading-[1.1]">
                 About{" "}
                 <span className="text-primary text-glow">AA WhatsApp</span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-medium">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-medium">
                 AA WhatsApp is a powerful modified version of the official
                 WhatsApp designed for users who want more features, enhanced
                 privacy, and customization options.
               </p>
-              <p className="text-lg text-muted-foreground/80 leading-relaxed">
+              <p className="text-base text-muted-foreground/80 leading-relaxed">
                 Unlike the official app, AA WhatsApp provides unlimited media
                 sharing, advanced privacy controls, and personalized themes,
                 making it one of the most popular WhatsApp mods in 2026. Whether
@@ -99,9 +99,9 @@ export default function About() {
                 <Link href="/download">
                   <Button
                     size="lg"
-                    className="rounded-2xl px-8 h-16 text-xl font-bold shadow-lg shadow-primary/20"
+                    className="rounded-xl px-6 h-12 text-lg font-bold shadow-md shadow-primary/15"
                   >
-                    Download Now <Download className="ml-2 w-6 h-6" />
+                    Download Now <Download className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
               </div>

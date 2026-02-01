@@ -82,27 +82,27 @@ export default function AABusinessWhatsAppPage() {
               <Shield className="w-3 h-3" /> Enterprise Protocol Active
             </motion.div>
             
-            <h1 className="text-5xl md:text-7xl font-black font-display tracking-tighter leading-tight mb-4">
+            <h1 className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-tight mb-4">
               AA Business WhatsApp – <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 text-glow-amber">
                 The Secure Fortress
               </span>
             </h1>
             
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
               Run your business on a ghost protocol. Client data secured. Zero-access architecture. Business tools unlocked.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/business-download" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full px-8 py-7 rounded-2xl bg-amber-500 hover:bg-amber-600 text-black font-black text-xl shadow-xl shadow-amber-500/20 flex items-center gap-3">
-                  <Download className="w-6 h-6" />
+                <Button size="lg" className="w-full px-6 py-6 rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-bold text-lg shadow-lg shadow-amber-500/15 flex items-center gap-2">
+                  <Download className="w-5 h-5" />
                   Download AA Business v1.0
                 </Button>
               </Link>
               <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="w-full px-8 py-7 rounded-2xl border-amber-500/50 hover:bg-amber-500/10 text-amber-500 font-bold text-xl flex items-center gap-3">
-                  <Send className="w-6 h-6" />
+                <Button variant="outline" size="lg" className="w-full px-6 py-6 rounded-xl border-amber-500/50 hover:bg-amber-500/10 text-amber-500 font-bold text-lg flex items-center gap-2">
+                  <Send className="w-5 h-5" />
                   Join Telegram
                 </Button>
               </a>

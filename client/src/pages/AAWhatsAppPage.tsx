@@ -78,28 +78,28 @@ export default function AAWhatsAppPage() {
           className="max-w-4xl mx-auto space-y-16"
         >
           {/* H1 Header */}
-          <section className="text-center space-y-8">
+          <section className="text-center space-y-6">
             <motion.h1
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-5xl md:text-8xl font-black font-display tracking-tighter leading-[0.9] mb-4"
+              className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-[1.1] mb-4"
             >
               AA WhatsApp <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow">
                 {t('hero_title')}
               </span>
             </motion.h1>
-            <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-sm font-bold uppercase tracking-widest animate-pulse">
-              <span className="w-2 h-2 rounded-full bg-primary" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-xs font-bold uppercase tracking-widest animate-pulse">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
               Build 2.0.26 - Stable
             </div>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
               {t('hero_subtitle')}
             </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <Link href="/download" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full px-10 py-7 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3" data-testid="link-download-apk">
-                <Download className="w-6 h-6" />
+              <Button size="lg" className="w-full px-8 py-6 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg shadow-lg shadow-primary/15 transition-all flex items-center justify-center gap-2" data-testid="link-download-apk">
+                <Download className="w-5 h-5" />
                 Go to Download Page
               </Button>
             </Link>
@@ -107,11 +107,11 @@ export default function AAWhatsAppPage() {
           </section>
 
           {/* Intro Text */}
-          <section className="glass-card p-10 rounded-[2.5rem] border border-white/5 space-y-6">
-            <h2 className="text-3xl font-bold tracking-tight">
+          <section className="glass-card p-6 md:p-8 rounded-[1.5rem] border border-white/5 space-y-4">
+            <h2 className="text-2xl font-bold tracking-tight">
               What Is AA WhatsApp?
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               AA WhatsApp is a next-generation WhatsApp mod designed for users
               who value privacy and security. Unlike GB WhatsApp, AA WhatsApp
               does NOT require location access or unnecessary media permissions.

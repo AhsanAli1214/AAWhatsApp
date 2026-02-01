@@ -23,6 +23,7 @@ import { FeatureCard } from "@/components/FeatureCard";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
+import { Footer } from "@/components/Footer";
 import heroImage from "@/assets/security-hero.png";
 import privacyImage from "@/assets/privacy-feature.png";
 import themesImage from "@assets/generated_images/creative_visual_showing_multiple_whatsapp_theme_styles_for_aawhatsapp..png";
@@ -93,7 +94,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl lg:text-7xl font-black font-display leading-[1.1] mb-8 tracking-tighter"
+              className="text-4xl lg:text-6xl font-black font-display leading-[1.1] mb-6 tracking-tighter"
             >
               The Secure <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
@@ -101,14 +102,14 @@ export default function Home() {
               </span>
             </motion.h1>
 
-            <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-base lg:text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               {t("hero_subtitle")}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link href="/aa-whatsapp-apk" className="w-full sm:w-auto">
-                <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-lg shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:-translate-y-1 transition-all duration-500 w-full border border-white/20 uppercase tracking-tight flex items-center justify-center gap-3">
-                  <ShieldCheck className="w-6 h-6" />
+                <button className="relative group overflow-hidden px-6 py-4 rounded-xl bg-primary text-primary-foreground font-bold text-base shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:-translate-y-0.5 transition-all duration-300 w-full border border-white/10 uppercase tracking-tight flex items-center justify-center gap-2">
+                  <ShieldCheck className="w-5 h-5" />
                   AA WhatsApp
                 </button>
               </Link>
@@ -121,12 +122,12 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="flex-1 relative"
             >
-              <div className="relative z-10 mx-auto max-w-xl">
+              <div className="relative z-10 mx-auto max-w-lg">
                 <img
                   src={heroImage}
                   alt="AAWhatsApp Interface V1.0 - Secure Messaging with Anti-Ban v1.0"
                   title="Official AAWhatsApp Secure Interface"
-                  className="w-full h-auto rounded-[2.5rem] shadow-2xl shadow-primary/20 border border-primary/20 scale-110"
+                  className="w-full h-auto rounded-[2rem] shadow-xl shadow-primary/10 border border-primary/20 scale-105"
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
@@ -134,7 +135,7 @@ export default function Home() {
                   height="675"
                 />
               </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10" />
           </motion.div>
         </div>
         <div className="flex justify-center mt-20">
@@ -152,23 +153,23 @@ export default function Home() {
             className="relative group"
           >
             <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-[3rem] -z-10 group-hover:bg-primary/10 transition-colors duration-700" />
-            <div className="glass-card rounded-[2.5rem] p-8 md:p-12 border border-white/5 relative overflow-hidden flex flex-col lg:flex-row items-center gap-12">
+            <div className="glass-card rounded-[1.5rem] p-6 md:p-8 border border-white/5 relative overflow-hidden flex flex-col lg:flex-row items-center gap-8">
               <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-scan" />
 
-              <div className="flex-1 space-y-6 text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black uppercase tracking-[0.3em]">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <div className="flex-1 space-y-4 text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-black uppercase tracking-[0.2em]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                   System Protocol Active
                 </div>
-                <h2 className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-none">
+                <h2 className="text-3xl md:text-5xl font-black font-display tracking-tighter leading-none">
                   AAWhatsApp{" "}
                   <span className="text-primary text-glow italic">V 2.0</span>
                 </h2>
-                <p className="text-muted-foreground text-lg font-medium max-w-xl leading-relaxed">
+                <p className="text-muted-foreground text-base font-medium max-w-lg leading-relaxed">
                   The latest iteration of AAWhatsApp is now synchronized. Built
                   on a hardened codebase with zero-access privacy protocols.
                 </p>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+                <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
                   {[
                     { label: "Update", value: "23/01/26" },
                     { label: "Stability", value: "99.9%" },
@@ -176,12 +177,12 @@ export default function Home() {
                   ].map((stat, i) => (
                     <div
                       key={i}
-                      className="px-5 py-3 rounded-2xl bg-white/[0.03] border border-white/5 flex flex-col items-center lg:items-start min-w-[120px]"
+                      className="px-4 py-2 rounded-xl bg-white/[0.03] border border-white/5 flex flex-col items-center lg:items-start min-w-[100px]"
                     >
-                      <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold mb-1">
+                      <span className="text-[9px] uppercase tracking-widest text-muted-foreground font-bold mb-0.5">
                         {stat.label}
                       </span>
-                      <span className="text-sm font-black text-primary font-mono">
+                      <span className="text-xs font-black text-primary font-mono">
                         {stat.value}
                       </span>
                     </div>
@@ -191,20 +192,20 @@ export default function Home() {
 
               <div className="w-px h-32 bg-gradient-to-b from-transparent via-white/10 to-transparent hidden lg:block" />
 
-              <div className="shrink-0 flex flex-col items-center gap-6">
+            <div className="shrink-0 flex flex-col items-center gap-4">
                 <div className="relative">
-                  <div className="w-32 h-32 rounded-[2.5rem] bg-primary/10 flex items-center justify-center border border-primary/20 shadow-2xl shadow-primary/10">
-                    <Database className="w-14 h-14 text-primary" />
+                  <div className="w-24 h-24 rounded-[2rem] bg-primary/10 flex items-center justify-center border border-primary/20 shadow-xl shadow-primary/10">
+                    <Database className="w-10 h-10 text-primary" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-background border-2 border-primary flex items-center justify-center shadow-xl">
-                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                  <div className="absolute -top-1.5 -right-1.5 w-8 h-8 rounded-full bg-background border-2 border-primary flex items-center justify-center shadow-lg">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
                   </div>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl font-black font-mono text-white mb-1 tracking-tight">
+                  <p className="text-xl font-black font-mono text-white mb-0.5 tracking-tight">
                     V 2.0
                   </p>
-                  <p className="text-xs font-bold text-primary uppercase tracking-[0.2em] opacity-70">
+                  <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] opacity-70">
                     Current Mainframe Version
                   </p>
                 </div>

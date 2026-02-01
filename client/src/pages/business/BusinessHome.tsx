@@ -41,14 +41,14 @@ export default function BusinessHome() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-500 text-sm font-bold mb-6">
               Enterprise Grade - V 1.0
             </div>
-            <h1 className="text-5xl lg:text-7xl font-black mb-8 tracking-tighter leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-black mb-6 tracking-tighter leading-tight">
               Scale Your <span className="text-blue-500">Business</span> with AI Automation
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
               AA Business WhatsApp is the world's first enterprise-modded client featuring built-in analytics, bulk messaging, and Privacy Core™ security.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 h-14 px-8 text-lg font-bold">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 h-12 px-6 text-base font-bold rounded-xl">
                 Download AA Business
               </Button>
             </div>
