@@ -162,6 +162,7 @@ export default function AAWhatsAppPage() {
             <h2 className="text-3xl font-bold">
               AA WhatsApp Anti-Ban Protection
             </h2>
+          </section>
 
           <div className="max-w-[320px] mx-auto my-12">
           </div>
