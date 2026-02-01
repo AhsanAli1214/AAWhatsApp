@@ -47,7 +47,9 @@ export function Navbar() {
               }}
             />
             <div className="flex flex-col">
-              <span className="font-bold text-xl leading-tight group-hover:text-primary transition-colors">AA Mods</span>
+              <span className="font-bold text-xl leading-tight group-hover:text-primary transition-colors">
+                AA Mods
+              </span>
               <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">
                 WhatsApp Mod
               </span>
@@ -109,7 +111,7 @@ export function Navbar() {
             </DropdownMenu>
 
             <a
-              href="https://t.me/AaMods"
+              href="https://t.me/AA_ModsOfficial"
               target="_blank"
               rel="noopener noreferrer"
             >
