@@ -38,7 +38,7 @@ export function Footer() {
               The world's most secure modifications. Focused on privacy and unrivaled user experience for millions.
             </p>
             <div className="flex items-center gap-3 pt-1">
-              <a href="https://t.me/AaMods" target="_blank" rel="noopener noreferrer" className={`w-10 h-10 rounded-full bg-muted flex items-center justify-center transition-all duration-300 group ${isBusiness ? 'hover:bg-blue-600 hover:text-white' : 'hover:bg-primary hover:text-primary-foreground'}`}>
+              <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer" className={`w-10 h-10 rounded-full bg-muted flex items-center justify-center transition-all duration-300 group ${isBusiness ? 'hover:bg-blue-600 hover:text-white' : 'hover:bg-primary hover:text-primary-foreground'}`}>
                 <Send className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
               <div className="flex flex-col">
@@ -103,7 +103,7 @@ export function Footer() {
             <h4 className="font-bold text-[10px] uppercase tracking-widest text-foreground/60">Stay Connected</h4>
             <div className="flex flex-row md:flex-col gap-2">
               <a 
-                href="https://t.me/AaMods" 
+                href="https://t.me/AA_ModsOfficial" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-xs font-bold hover:opacity-90 transition-all shadow-sm ${isBusiness ? 'bg-blue-600 text-white shadow-blue-500/10' : 'bg-primary text-primary-foreground shadow-primary/10'}`}
