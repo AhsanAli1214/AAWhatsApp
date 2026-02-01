@@ -34,6 +34,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="script" href="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" />
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "38db6760-af2d-4370-a1da-eced0fcd268f",
+          safari_web_id: "web.onesignal.auto.07146831-e5cf-4801-bde7-1fd4b21ac045",
+          notifyButton: {
+            enable: true,
+          },
+          welcomeNotification: {
+            "title": "Welcome to AA Mods!",
+            "message": "Thanks for subscribing! You'll receive updates on the latest WhatsApp mods.",
+            "url": "https://aa-mods.vercel.app"
+          }
+        });
+      });
+    </script>
     <meta charset="UTF-8" />
     <meta
       name="viewport"

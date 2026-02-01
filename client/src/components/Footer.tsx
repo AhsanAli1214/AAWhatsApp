@@ -115,8 +115,10 @@ export function Footer() {
               <button 
                 onClick={() => {
                   // Logic for OneSignal notification subscription
-                  if (typeof window !== 'undefined' && (window as any).OneSignal) {
-                    (window as any).OneSignal.showNativePrompt();
+                  if (typeof window !== 'undefined' && (window as any).OneSignalDeferred) {
+                    (window as any).OneSignalDeferred.push(async function(OneSignal: any) {
+                      await OneSignal.registerForPushNotifications();
+                    });
                   }
                 }}
                 className="flex items-center justify-center gap-3 bg-muted border border-border py-3 rounded-xl font-bold hover:bg-muted/80 transition-all"
