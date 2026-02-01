@@ -264,6 +264,9 @@ export default function BusinessHome() {
           </motion.div>
         </div>
 
+        <div className="mt-20">
+          <AdsBanner />
+        </div>
         <div className="flex justify-center mt-20">
           <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
         </div>
@@ -271,6 +274,7 @@ export default function BusinessHome() {
 
       <section className="py-12 relative z-10">
         <div className="container mx-auto px-4">
+          <AdsBanner />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -382,6 +386,9 @@ export default function BusinessHome() {
                 </Card>
               </motion.div>
             ))}
+          </div>
+          <div className="mt-12">
+            <AdsBanner />
           </div>
         </div>
       </section>
