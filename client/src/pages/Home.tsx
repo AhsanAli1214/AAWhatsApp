@@ -23,7 +23,7 @@ import { FeatureCard } from "@/components/FeatureCard";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
-import { AdBlockDetector } from "@/components/AdBlockDetector";
+import { AdsBanner, AdPlaceholder } from "@/components/AdsBanner";
 
 import heroImage from "@/assets/security-hero.png";
 import privacyImage from "@/assets/privacy-feature.png";
@@ -32,8 +32,9 @@ import mediaImage from "@/assets/media-feature.png";
 import securityComparisonImage from "@assets/Gemini_Generated_Image_leenipleenipleen_(1)_1768930872554.png";
 import securityImage from "@assets/Gemini_Generated_Image_q9qqs4q9qqs4q9qq_(1)_1768930866856.png";
 import comparisonImage from "@assets/generated_images/clean_comparison_illustration_showing_aawhatsapp_vs_other_mods..png";
-import ctaImage from "@assets/generated_images/call-to-action_image_for_downloading_aawhatsapp_apk..png";
-import { AdsBanner } from "@/components/AdsBanner";
+
+function AdsBanner() { return null; }
+function AdPlaceholder() { return null; }
 
 const ShieldCheckIcon = ({ className }: { className?: string }) => (
   <svg
@@ -57,7 +58,6 @@ export default function Home() {
   const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
-      <AdBlockDetector />
       <Helmet>
         <title>AAWhatsApp APK Download V2.0 (Official) - Secure Alternative to GB WhatsApp 2026</title>
         <meta name="description" content="Official AAWhatsApp V2.0 Download. The most secure WhatsApp mod alternative to GB WhatsApp and FM WhatsApp. Features Privacy Core™, Anti-Ban v1.0, and 100% data safety. Get the latest 2026 update." />
@@ -159,8 +159,6 @@ export default function Home() {
               </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] -z-10" />
           </motion.div>
-        </div>
-        <div className="mt-20">
           <AdsBanner />
         </div>
         <AdsBanner />
@@ -305,6 +303,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className="mt-20">
+        <AdsBanner />
+      </div>
 
       {/* Another Info Section with Image */}
       <section className="py-24 bg-primary/5">

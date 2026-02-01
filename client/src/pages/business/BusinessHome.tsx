@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { AdsBanner } from "@/components/AdsBanner";
 import {
   Briefcase,
   Shield,
@@ -29,7 +28,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
-import { AdBlockDetector } from "@/components/AdBlockDetector";
+import { AdsBanner } from "@/components/AdsBanner";
 
 import heroImage from "@/assets/business-hero.png";
 import analyticsImage from "@/assets/business-analytics.png";
@@ -39,7 +38,12 @@ import privacyImage from "@/assets/privacy-feature.png";
 import businessPerson from "@/assets/business-person.jpg";
 import businessBg from "@/assets/business-bg.jpg";
 
-const features = [
+function AdsBanner() { return null; }
+
+export default function BusinessHome() {
+  return (
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-blue-500/30">
+      <Helmet>
   {
     icon: Bot,
     title: "Auto Reply",
@@ -133,7 +137,6 @@ const comparisonData = [
 export default function BusinessHome() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-blue-500/30">
-      <AdBlockDetector />
       <Helmet>
         <title>
           AA Business WhatsApp APK Download V1.0 - Secure Alternative to Official Business 2026
@@ -262,7 +265,6 @@ export default function BusinessHome() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px] -z-10" />
           </motion.div>
         </div>
-
         <div className="mt-20">
           <AdsBanner />
         </div>

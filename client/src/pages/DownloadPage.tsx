@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
-import { AdsBanner } from "@/components/AdsBanner";
 import {
   Download,
   ShieldCheck,
@@ -22,7 +21,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { AdDownloadButton } from "@/components/AdDownloadButton";
+import { AdDownloadButton } from "@/components/AdsBanner";
 import { useState, useEffect } from "react";
 
 const versionInfo = {
@@ -225,10 +224,15 @@ export default function DownloadPage() {
               </p>
 
               <div className="mb-10 w-full flex justify-center px-2">
-                <AdDownloadButton
-                  downloadUrl="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V1.0.apk/file"
-                  buttonClassName="w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-2 md:gap-3 border border-white/20 text-center leading-tight overflow-hidden"
-                />
+                <a
+                  href="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V1.0.apk/file"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-2 md:gap-3 border border-white/20 text-center leading-tight overflow-hidden"
+                >
+                  <Download className="w-6 h-6" />
+                  Download Now
+                </a>
               </div>
 
               <div className="mb-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col md:flex-row items-center justify-center gap-8 text-sm font-bold">
@@ -246,7 +250,6 @@ export default function DownloadPage() {
                 </div>
               </div>
 
-              <AdsBanner />
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5">
                   <Package className="w-4 h-4" /> 118 MB

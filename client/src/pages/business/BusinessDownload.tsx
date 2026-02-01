@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { AdsBanner } from "@/components/AdsBanner";
 import {
   Download,
   Shield,
@@ -24,7 +23,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
-import { AdDownloadButton } from "@/components/AdDownloadButton";
+import { AdDownloadButton } from "@/components/AdsBanner";
 
 const versionHistory = [
   {
@@ -132,9 +131,6 @@ export default function BusinessDownload() {
               </Card>
             ))}
           </motion.div>
-          <div className="max-w-4xl mx-auto my-12">
-            <AdsBanner />
-          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -142,10 +138,15 @@ export default function BusinessDownload() {
             transition={{ delay: 0.3 }}
             className="flex justify-center mb-12"
           >
-            <AdDownloadButton
-              downloadUrl="https://ahsanali.short.gy/aa-wa-pro"
-              variant="business"
-            />
+            <a
+              href="https://ahsanali.short.gy/aa-wa-pro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative group overflow-hidden px-12 py-6 rounded-[2rem] bg-blue-500 text-white font-black text-2xl shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full max-w-md border border-white/20 uppercase tracking-tight flex items-center justify-center gap-4"
+            >
+              <Download className="w-8 h-8" />
+              Download APK V1.0
+            </a>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -205,9 +206,6 @@ export default function BusinessDownload() {
                 </CardContent>
               </Card>
             </motion.div>
-          </div>
-          <div className="max-w-4xl mx-auto my-12">
-            <AdsBanner />
           </div>
 
           <motion.div
