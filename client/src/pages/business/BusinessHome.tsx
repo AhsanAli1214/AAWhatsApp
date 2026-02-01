@@ -9,7 +9,7 @@ import { Navigation } from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
 
 import businessHeroJpg from "@/assets/business-hero.png";
-import businessDashboardPng from "/images/business-dashboard.png";
+import businessDashboardPng from "@/assets/business-dashboard.png";
 import businessAutomationJpg from "@/assets/business-automation.png";
 import businessAnalyticsJpg from "@/assets/business-analytics.png";
 import businessSecurityJpg from "@/assets/security-analysis.png";
