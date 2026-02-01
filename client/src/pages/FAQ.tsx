@@ -18,6 +18,7 @@ import {
   UserCheck
 } from "lucide-react";
 import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
 import {
   Accordion,
