@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 /**
  * AdsBanner - Dynamic flippantaside banner component
- * Loads the specific ad script requested by the user.
+ * Loads the specific ad script provided by the user.
  */
 export function AdsBanner() {
   const adContainerRef = useRef<HTMLDivElement>(null);
@@ -13,21 +13,25 @@ export function AdsBanner() {
     // Clear previous content
     adContainerRef.current.innerHTML = "";
 
-    // Create a target div for the script to find
-    const target = document.createElement("div");
-    target.className = "flippantaside-target-container";
-    target.style.minHeight = "90px";
-    target.style.width = "100%";
-    adContainerRef.current.appendChild(target);
+    // Create a specific container for the banner
+    const innerContainer = document.createElement("div");
+    innerContainer.className = "flippantaside-banner-container";
+    innerContainer.style.minHeight = "90px";
+    innerContainer.style.width = "100%";
+    innerContainer.style.display = "flex";
+    innerContainer.style.justifyContent = "center";
+    innerContainer.style.alignItems = "center";
+    adContainerRef.current.appendChild(innerContainer);
 
-    // Load the script
+    // Implementation of the exact script logic provided by the user
+    // (function(tyetyd){...})({})
     const script = document.createElement("script");
     script.async = true;
-    script.src = "//flippantaside.com/b/XbVns.djGElt0tY/WFcw/FeYmS9fuBZzUplkkpPlT/YH3/NOjbECyIMPjWYjtJNxj/cc2KMgTMIByAN-wc";
+    script.src = "//flippantaside.com/b.X/V-sNdnGelY0uYAWVcS/UePmr9MuLZKUulBkKP/TEYx3ANnjXE/5wNzzZEgt-NQjSc/2gMeTlkZ3/MNgO";
     script.referrerPolicy = "no-referrer-when-downgrade";
     (script as any).settings = {};
     
-    // Append script to the root container
+    // Using parentNode.insertBefore(s, l) logic equivalent in a React ref
     adContainerRef.current.appendChild(script);
 
     return () => {
@@ -39,12 +43,12 @@ export function AdsBanner() {
 
   return (
     <div 
-      className="w-full flex justify-center items-center my-8 min-h-[90px] ads-banner-final-root bg-white/5 rounded-xl border border-white/10"
+      className="w-full flex justify-center items-center my-8 min-h-[90px] ads-banner-root bg-white/5 rounded-xl border border-white/10"
       style={{ display: 'flex', minHeight: '90px', width: '100%', overflow: 'visible' }}
     >
       <div 
         ref={adContainerRef}
-        className="w-full flex justify-center items-center ads-banner-final-injection"
+        className="w-full flex justify-center items-center ads-banner-injection-point"
         style={{ minHeight: '90px', width: '100%', display: 'flex', justifyContent: 'center' }}
       >
       </div>
