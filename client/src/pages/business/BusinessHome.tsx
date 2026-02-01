@@ -4,6 +4,7 @@ import { CheckCircle2, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Footer } from "@/components/Footer";
+import { Navigation } from "@/components/Navigation";
 
 import heroImage from "@/assets/business-hero.png";
 import analyticsImage from "@/assets/business-analytics.png";
@@ -27,8 +28,10 @@ export default function BusinessHome() {
         <meta name="description" content="Official AA Business WhatsApp V1.0 (Base 2.25.29.77). The most secure enterprise WhatsApp mod for professional business management." />
       </Helmet>
 
+      <Navigation />
+
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 container mx-auto px-4">
+      <section className="relative pt-48 pb-20 container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
