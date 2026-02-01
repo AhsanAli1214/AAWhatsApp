@@ -8,10 +8,10 @@ export function MobileNav() {
 
   const navItems = [
     { href: isBusiness ? "/aa-business" : "/aa-whatsapp", icon: Home, label: "Home" },
-    { href: isBusiness ? "/aa-business/features" : "/aa-whatsapp/features", icon: LayoutGrid, label: "Features" },
+    { href: isBusiness ? "/aa-business/about" : "/aa-whatsapp/about", icon: HelpCircle, label: "About" },
     { href: isBusiness ? "/aa-business/download" : "/aa-whatsapp/download", icon: Download, label: "Download", highlight: true },
+    { href: isBusiness ? "/aa-business/features" : "/aa-whatsapp/features", icon: LayoutGrid, label: "Features" },
     { href: isBusiness ? "/aa-business/blog" : "/aa-whatsapp/blog", icon: BookOpen, label: "Blog" },
-    { href: isBusiness ? "/aa-business/faq" : "/aa-whatsapp/faq", icon: HelpCircle, label: "FAQ" },
   ];
 
   return (
