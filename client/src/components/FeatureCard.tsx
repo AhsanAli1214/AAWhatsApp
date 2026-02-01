@@ -15,20 +15,20 @@ export function FeatureCard({ icon: Icon, title, description, delay = 0 }: Featu
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="group relative p-6 rounded-3xl bg-secondary/40 border border-white/5 hover:bg-secondary/60 hover:border-primary/20 transition-all duration-300 hover:-translate-y-1"
+      className="group relative p-8 rounded-[2rem] glass-card hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 premium-glow"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 rounded-[2rem] transition-opacity duration-700" />
       
       <div className="relative z-10">
-        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/20 to-emerald-500/10 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform duration-300">
-          <Icon className="w-6 h-6" />
+        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-500 shadow-lg shadow-primary/5">
+          <Icon className="w-7 h-7" />
         </div>
         
-        <h3 className="text-xl font-bold mb-2 font-display text-foreground group-hover:text-primary transition-colors">
+        <h3 className="text-2xl font-bold mb-3 font-display text-foreground group-hover:text-primary transition-colors tracking-tight">
           {title}
         </h3>
         
-        <p className="text-muted-foreground leading-relaxed">
+        <p className="text-muted-foreground leading-relaxed text-base">
           {description}
         </p>
       </div>

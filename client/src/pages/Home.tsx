@@ -92,8 +92,8 @@ export default function Home() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl lg:text-6xl font-black font-display leading-[1.1] mb-6 tracking-tighter"
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="text-5xl lg:text-8xl font-black font-display leading-[1] mb-8 tracking-tighter"
             >
               The Secure <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
@@ -101,15 +101,15 @@ export default function Home() {
               </span>
             </motion.h1>
 
-            <p className="text-base lg:text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-lg lg:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
               {t("hero_subtitle")}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
               <Link href="/aa-whatsapp-apk" className="w-full sm:w-auto">
-                <button className="relative group overflow-hidden px-6 py-4 rounded-xl bg-primary text-primary-foreground font-bold text-base shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:-translate-y-0.5 transition-all duration-300 w-full border border-white/10 uppercase tracking-tight flex items-center justify-center gap-2">
-                  <ShieldCheck className="w-5 h-5" />
-                  AA WhatsApp
+                <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-lg shadow-[0_20px_40px_rgba(16,185,129,0.25)] hover:-translate-y-1 hover:shadow-[0_25px_50px_rgba(16,185,129,0.35)] transition-all duration-500 w-full border border-white/20 uppercase tracking-wider flex items-center justify-center gap-3">
+                  <ShieldCheck className="w-6 h-6" />
+                  Get AA WhatsApp V2.0
                 </button>
               </Link>
             </div>
