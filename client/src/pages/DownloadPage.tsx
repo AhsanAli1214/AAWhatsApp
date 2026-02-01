@@ -121,9 +121,9 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>Download AAWhatsApp V1.0 APK (2026) – Official Secure Anti-Ban Link</title>
-        <meta name="description" content="Direct download for AAWhatsApp V1.0. Featuring Anti-Ban v1.0, Privacy Core™ protection, and 100% security verification. The definitive WhatsApp mod choice for 2026." />
-        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V1.0, download AA WhatsApp, secure WhatsApp mod, anti-ban apk 2026, best whatsapp mod" />
+        <title>Download AAWhatsApp V2.0 APK (2026) – Official Secure Anti-Ban Link</title>
+        <meta name="description" content="Direct download for AAWhatsApp V2.0. Featuring Anti-Ban v1.0, Privacy Core™ protection, and 100% security verification. The definitive WhatsApp mod choice for 2026." />
+        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, secure WhatsApp mod, anti-ban apk 2026, best whatsapp mod" />
         <link rel="canonical" href="https://aa-mods.vercel.app/download" />
       </Helmet>
 
@@ -224,7 +224,7 @@ export default function DownloadPage() {
 
               <div className="mb-10 w-full flex justify-center px-2">
                 <a
-                  href="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V1.0.apk/file"
+                  href="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-2 md:gap-3 border border-white/20 text-center leading-tight overflow-hidden"
@@ -451,7 +451,7 @@ export default function DownloadPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V1.0.apk/file"
+                href="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
                 target="_blank"
                 rel="noopener noreferrer"
               >

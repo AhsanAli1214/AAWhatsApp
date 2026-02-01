@@ -22,7 +22,7 @@ const OPTIONS: DownloadOption[] = [
   {
     name: "MediaFire",
     icon: Download,
-    url: "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V1.0.apk/file",
+    url: "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file",
     platform: "android",
     version: "latest",
   },
@@ -50,7 +50,7 @@ export function DownloadCard() {
     
     // Use the updated MediaFire link if it's the MediaFire option
     const downloadUrl = option.name === "MediaFire" 
-      ? "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V1.0.apk/file"
+      ? "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
       : option.url;
 
     window.open(downloadUrl, "_blank");
