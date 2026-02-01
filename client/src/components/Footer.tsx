@@ -8,14 +8,14 @@ export function Footer() {
   const secondaryColor = isBusiness ? "blue-400" : "emerald-400";
 
   return (
-    <footer className={`py-16 border-t border-border/50 relative z-10 bg-background/80 backdrop-blur-md overflow-hidden ${isBusiness ? 'selection:bg-blue-600/30' : ''}`}>
+    <footer className={`py-10 md:py-16 border-t border-border/50 relative z-10 bg-background/80 backdrop-blur-md overflow-hidden ${isBusiness ? 'selection:bg-blue-600/30' : ''}`}>
       {/* Decorative background elements */}
       <div className={`absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[100px] -z-10 ${isBusiness ? 'bg-blue-600/5' : 'bg-primary/5'}`} />
       <div className={`absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[100px] -z-10 ${isBusiness ? 'bg-blue-400/5' : 'bg-emerald-400/5'}`} />
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12 mb-10 md:mb-16">
           {/* Brand Column */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-4 space-y-4 md:space-y-6">
             <Link href="/">
               <div className="flex items-center gap-3 cursor-pointer group">
                 <img
@@ -48,9 +48,9 @@ export function Footer() {
           </div>
 
           {/* Links Columns */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-4 md:space-y-6">
             <h4 className="font-bold text-sm uppercase tracking-widest text-foreground/80">Products</h4>
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-3 md:space-y-4 text-sm">
               <li>
                 <Link href="/aa-whatsapp" className={`text-muted-foreground transition-colors flex items-center gap-2 ${isBusiness ? 'hover:text-primary' : 'hover:text-primary'}`}>
                   <Zap className={`w-4 h-4 ${isBusiness ? 'text-primary/60' : 'text-primary/60'}`} />
@@ -72,9 +72,9 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-4 md:space-y-6">
             <h4 className="font-bold text-sm uppercase tracking-widest text-foreground/80">Resources</h4>
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-3 md:space-y-4 text-sm">
               <li>
                 <Link href={isBusiness ? "/aa-business/blog" : "/aa-whatsapp/blog"} className={`text-muted-foreground transition-colors ${isBusiness ? 'hover:text-blue-500' : 'hover:text-primary'}`}>
                   Insights & Blog
@@ -98,7 +98,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-4 space-y-4 md:space-y-6">
             <h4 className="font-bold text-sm uppercase tracking-widest text-foreground/80">Stay Updated</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Enable notifications via OneSignal or join our Telegram channel for the latest security patches and feature updates.
@@ -145,7 +145,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-6 md:pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
           <div className="flex flex-col md:items-start items-center gap-1">
             <p className="text-sm text-muted-foreground font-medium">
               &copy; {new Date().getFullYear()} AA Mods Research & Development.
@@ -163,7 +163,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-6 md:mt-8 text-center">
           <p className="text-[10px] text-muted-foreground/40 max-w-2xl mx-auto italic">
             Disclaimer: AA Mods is an independent modification of the WhatsApp application. We are not affiliated with, endorsed by, or associated with Meta, WhatsApp Inc., or any of their subsidiaries. WhatsApp is a registered trademark of Meta Platforms, Inc.
           </p>
