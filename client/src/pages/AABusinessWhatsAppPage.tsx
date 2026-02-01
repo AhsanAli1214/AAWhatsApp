@@ -43,15 +43,39 @@ export default function AABusinessWhatsAppPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-amber-500/30">
       <Helmet>
-        <title>AA Business WhatsApp APK Download v1.0 | Official Secure Enterprise Mod 2026</title>
+        <title>AA Business WhatsApp APK V1.0 Download (Official) - Secure Enterprise Mod 2026</title>
         <meta
           name="description"
-          content="Official Download for AA Business WhatsApp V1.0. Most secure WhatsApp Business mod with Bulk Broadcasting, Anti-Ban Shield, and Zero-Access architecture. Best for professional privacy."
+          content="Official AA Business WhatsApp V1.0 Download. The ultimate secure enterprise modification with Bulk Broadcasting, Anti-Ban Shield, and zero-access privacy for professional use."
         />
         <meta
           name="keywords"
-          content="AA Business WhatsApp, WhatsApp Business Mod 2026, Secure WA Business APK, Anti-Ban Business WhatsApp, AA Mods Business, WhatsApp Business Mod Anti-Ban, Secure Enterprise WhatsApp, Permission Clean WhatsApp Business"
+          content="AA Business WhatsApp, WhatsApp Business Mod, AA Business APK, secure WhatsApp business mod, Anti-Ban WhatsApp Business, enterprise WhatsApp mod, AA Mods Business"
         />
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-business" />
+        <meta property="og:title" content="AA Business WhatsApp V1.0 - Secure Enterprise Messaging" />
+        <meta property="og:description" content="Protect your business communications with AA Business WhatsApp. Anti-Ban, Bulk Messaging, and enhanced privacy controls." />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "AA Business WhatsApp",
+            "operatingSystem": "Android",
+            "applicationCategory": "BusinessApplication",
+            "downloadUrl": "https://aa-mods.vercel.app/business-download",
+            "softwareVersion": "1.0",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "24500"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0.00",
+              "priceCurrency": "USD"
+            }
+          })}
+        </script>
       </Helmet>
 
       <Navigation />

@@ -33,34 +33,27 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       <Helmet>
-        <title>
-          About AA WhatsApp – Features, Safety & Download Guide 2026
-        </title>
+        <title>About AA WhatsApp - Official Safety & Security Features 2026</title>
         <meta
           name="description"
-          content="Learn everything about AA WhatsApp, the best WhatsApp mod of 2026. Explore its features, privacy, security, and download the latest version safely."
+          content="Discover why AA WhatsApp is the world's most secure WhatsApp mod. Explore our Privacy Core™ technology, Anti-Ban v2.0 protocols, and commitment to user safety."
         />
         <meta
           name="keywords"
-          content="AA WhatsApp, WhatsApp mod 2026, best WhatsApp mod, AA WhatsApp features, AA WhatsApp safety, AA WhatsApp download"
+          content="About AA WhatsApp, AA WhatsApp safety, secure WhatsApp features, AA Mods mission, anti-ban technology explained"
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/about" />
-        <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "AboutPage",
-              "name": "About AA WhatsApp",
-              "description": "Information about AA WhatsApp features, safety, and security protocols.",
-              "mainEntity": {
-                "@type": "SoftwareApplication",
-                "name": "AA WhatsApp",
-                "operatingSystem": "Android",
-                "applicationCategory": "CommunicationApplication"
-              }
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "About AA WhatsApp",
+            "description": "In-depth look at AA WhatsApp features and security protocols.",
+            "publisher": {
+              "@type": "Organization",
+              "name": "AA Mods"
             }
-          `}
+          })}
         </script>
       </Helmet>
 

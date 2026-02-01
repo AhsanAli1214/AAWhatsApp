@@ -37,20 +37,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>AAWhatsApp APK Download V2.0 (Official) - Secure Alternative to GB WhatsApp 2026</title>
-        <meta name="description" content="Official AAWhatsApp V2.0 Download. The most secure WhatsApp mod alternative to GB WhatsApp and FM WhatsApp. Features Privacy Core™, Anti-Ban v1.0, and 100% data safety. Get the latest 2026 update." />
-        <meta name="keywords" content="AAWhatsApp, alternative to GB WhatsApp, secure WhatsApp mod, AA WhatsApp APK, AA Mods, download AAWhatsApp, Anti-Ban WhatsApp, complete secure whatsapp mod, best WhatsApp mod 2026, AAWhatsApp V2.0" />
-        <meta property="og:title" content="AAWhatsApp APK Download V2.0 - Secure GB WhatsApp Alternative" />
-        <meta property="og:description" content="Download AAWhatsApp V2.0: The complete secure WhatsApp mod. A powerful alternative to GB WhatsApp with enhanced privacy and 100% Anti-Ban protection." />
-        <meta property="og:image" content="https://aa-mods.vercel.app/favicon.png" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AAWhatsApp V2.0 - Secure Alternative to GB WhatsApp" />
-        <meta name="twitter:description" content="The world's most complete secure WhatsApp mod. Privacy Core™ technology, HD media sharing, and the best alternative to GB WhatsApp." />
-        <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
-        <link rel="preload" as="image" href="/favicon.png" fetchpriority="high" />
+        <title>AAWhatsApp APK Download V2.0 (Official) 2026 - Anti-Ban & Privacy Core™</title>
+        <meta name="description" content="Download Official AAWhatsApp V2.0 (2026 Update). The most secure WhatsApp mod with Anti-Ban v2.0, Ghost Mode, and Privacy Core™. Superior alternative to GB WhatsApp and FM WhatsApp. 100% Secure APK." />
+        <meta name="keywords" content="AAWhatsApp, AA WhatsApp APK, download AAWhatsApp, WhatsApp mod 2026, secure WhatsApp mod, Anti-Ban WhatsApp, GB WhatsApp alternative, FM WhatsApp alternative, Privacy Core WhatsApp, AA Mods" />
+        <meta property="og:title" content="AAWhatsApp APK Download V2.0 (Official) - Secure GB Alternative" />
+        <meta property="og:description" content="Get the latest AAWhatsApp V2.0. Experience ultimate privacy with Ghost Mode, Anti-Ban v2.0, and 5000+ custom themes. The world's most secure WhatsApp mod." />
+        <meta property="og:url" content="https://aa-mods.vercel.app/aa-whatsapp" />
+        <meta name="twitter:title" content="AAWhatsApp V2.0 Official Download - Most Secure WhatsApp Mod" />
+        <meta name="twitter:description" content="Level up your privacy with AAWhatsApp V2.0. Anti-Ban, Ghost Mode, and HD media sharing. Download the official 2026 update now." />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp" />
-        <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -58,16 +53,20 @@ export default function Home() {
             "name": "AAWhatsApp",
             "operatingSystem": "Android",
             "applicationCategory": "CommunicationApplication",
+            "downloadUrl": "https://aa-mods.vercel.app/aa-whatsapp-apk",
+            "softwareVersion": "2.0",
+            "fileSize": "65MB",
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.9",
-              "reviewCount": "104520"
+              "reviewCount": "128450"
             },
             "offers": {
               "@type": "Offer",
               "price": "0.00",
               "priceCurrency": "USD"
-            }
+            },
+            "description": "AAWhatsApp is a secure, high-performance WhatsApp modification featuring advanced privacy protocols and custom themes."
           })}
         </script>
       </Helmet>
