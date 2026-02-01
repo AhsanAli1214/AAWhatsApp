@@ -82,10 +82,22 @@ export default function BusinessDownload() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Download AA Business WhatsApp V1.0 APK (Official) – Secure Anti-Ban 2026</title>
-        <meta name="description" content="Official AA Business WhatsApp V1.0 (Base 2.25.29.77). Enterprise-grade security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging." />
-        <meta name="keywords" content="AA Business WhatsApp Download, Business WhatsApp APK, AA Business V1.0, Enterprise WhatsApp Mod Download" />
-        <link rel="canonical" href="https://aa-mods.vercel.app/aa-business/download" />
+        <title>
+          Download AA Business WhatsApp V1.0 APK (Official) – Secure Anti-Ban
+          2026
+        </title>
+        <meta
+          name="description"
+          content="Official AA Business WhatsApp V1.0 (Base 2.25.29.77). Enterprise-grade security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging."
+        />
+        <meta
+          name="keywords"
+          content="AA Business WhatsApp Download, Business WhatsApp APK, AA Business V1.0, Enterprise WhatsApp Mod Download"
+        />
+        <link
+          rel="canonical"
+          href="https://aa-mods.vercel.app/aa-business/download"
+        />
         <script type="application/ld+json">
           {`
             {
@@ -121,7 +133,7 @@ export default function BusinessDownload() {
             <Badge className="mb-6 bg-blue-500/10 text-blue-500 border-blue-500/20">
               Official Download Page
             </Badge>
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -179,18 +191,23 @@ export default function BusinessDownload() {
             {downloadStep === 0 && (
               <div className="flex items-center gap-2 text-blue-500 font-bold animate-pulse text-sm">
                 <AlertTriangle className="w-4 h-4" />
-                Note: First click opens verified advertisement to support servers
+                Note: First click opens verified advertisement to support
+                servers
               </div>
             )}
             <a
-              href={downloadStep === 0 ? "#" : "https://www.mediafire.com/file/uuw00r0kdjuns97/AA_Business_WhatsApp_V1.0.apk/file"}
+              href={
+                downloadStep === 0 ? "#" : "https://ahsanali.short.gy/aa-wa-pro"
+              }
               onClick={handleDownload}
               target={downloadStep === 0 ? "_self" : "_blank"}
               rel="noopener noreferrer"
               className="relative group overflow-hidden px-12 py-6 rounded-[2rem] bg-blue-500 text-white font-black text-2xl shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 w-full max-w-md border border-white/20 uppercase tracking-tight flex items-center justify-center gap-4 text-center"
             >
               <Download className="w-8 h-8" />
-              {downloadStep === 0 ? "Start Secure Download" : "Download from MediaFire"}
+              {downloadStep === 0
+                ? "Start Secure Download"
+                : "Download from MediaFire"}
             </a>
           </motion.div>
 
