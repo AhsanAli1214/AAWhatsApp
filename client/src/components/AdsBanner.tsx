@@ -10,8 +10,9 @@ export function AdsBanner() {
     // Clear the container
     adContainerRef.current.innerHTML = "";
 
-    // Load only the banner script here
-    const src = "//flippantaside.com/b.X/V-sNdnGelY0uYAWVcS/UePmr9MuLZKUulBkKP/TEYx3ANnjXE/5wNzzZEgt-NQjSc/2gMeTlkZ3/MNgO";
+    // Load the specific flippantaside script requested by the user
+    // This is the SAME script as in index.html, but injected here to target this container
+    const src = "//flippantaside.com/b/XbVns.djGElt0tY/WFcw/FeYmS9fuBZzUplkkpPlT/YH3/NOjbECyIMPjWYjtJNxj/cc2KMgTMIByAN-wc";
 
     const script = document.createElement("script");
     script.async = true;
@@ -45,7 +46,7 @@ export function AdsBanner() {
 
   return (
     <div 
-      className={`w-full max-w-[728px] mx-auto flex justify-center items-center my-8 transition-opacity duration-700 overflow-hidden ${!hasAd ? 'h-0 opacity-0' : 'min-h-[90px] opacity-100'}`}
+      className={`w-full max-w-[728px] mx-auto flex justify-center items-center my-8 transition-opacity duration-700 overflow-hidden ${!hasAd ? 'min-h-[90px]' : 'min-h-[90px] opacity-100'}`}
     >
       <div 
         ref={adContainerRef}
