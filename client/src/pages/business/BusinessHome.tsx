@@ -122,7 +122,7 @@ export default function BusinessHome() {
           >
             <div className="absolute inset-0 bg-blue-500/20 rounded-[40px] blur-3xl -z-10" />
             <img 
-              src="/images/business-hero-new.png" 
+              src="/images/business-hero-new.jpg" 
               alt="AA Business Enterprise Interface" 
               className="rounded-[40px] shadow-2xl border-4 border-white/10 relative z-10 hover:scale-[1.02] transition-transform duration-700"
             />
@@ -214,7 +214,7 @@ export default function BusinessHome() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Deploy AI-powered chatbots that handle 80% of routine customer inquiries 24/7 without human intervention.
               </p>
-              <img src="/images/business-automation-new.png" className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Automation" />
+              <img src="/images/business-automation-new.jpg" className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Automation" />
             </Card>
 
             <Card className="bg-background/50 backdrop-blur-sm border-blue-500/20 hover:border-blue-500/60 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px] shadow-xl shadow-blue-500/5 group">
@@ -225,7 +225,7 @@ export default function BusinessHome() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Comprehensive dashboards showing conversion rates, heatmaps, and campaign ROI directly inside the application.
               </p>
-              <img src="/images/business-analytics-new.png" className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Analytics" />
+              <img src="/images/business-analytics-new.jpg" className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Analytics" />
             </Card>
 
             <Card className="bg-background/50 backdrop-blur-sm border-blue-500/20 hover:border-blue-500/60 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px] shadow-xl shadow-blue-500/5 group">
