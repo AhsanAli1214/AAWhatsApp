@@ -122,9 +122,28 @@ export default function DownloadPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
         <title>Download AAWhatsApp V2.0 APK (2026) – Official Secure Anti-Ban Link</title>
-        <meta name="description" content="Direct download for AAWhatsApp V2.0. Featuring Anti-Ban v1.0, Privacy Core™ protection, and 100% security verification. The definitive WhatsApp mod choice for 2026." />
-        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, secure WhatsApp mod, anti-ban apk 2026, best whatsapp mod" />
+        <meta name="description" content="Direct download for AAWhatsApp V2.0. Featuring Anti-Ban v2.0, Privacy Core™ protection, and 100% security verification. The definitive WhatsApp mod choice for 2026." />
+        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, secure WhatsApp mod, anti-ban apk 2026, best whatsapp mod, AAWhatsApp V2.0 Download" />
         <link rel="canonical" href="https://aa-mods.vercel.app/download" />
+        <meta property="og:title" content="Download AAWhatsApp V2.0 - Official Secure Link" />
+        <meta property="og:description" content="Get the latest AAWhatsApp V2.0 with enhanced Anti-Ban and Privacy Core™ technology. 100% safe and verified." />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "DownloadPage",
+              "name": "AAWhatsApp Download",
+              "description": "Official download page for AAWhatsApp V2.0 APK",
+              "mainEntity": {
+                "@type": "SoftwareApplication",
+                "name": "AAWhatsApp",
+                "softwareVersion": "2.0",
+                "fileSize": "118MB",
+                "operatingSystem": "Android"
+              }
+            }
+          `}
+        </script>
       </Helmet>
 
       <Navigation />

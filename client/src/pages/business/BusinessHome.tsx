@@ -28,7 +28,34 @@ export default function BusinessHome() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-blue-500/30">
       <Helmet>
         <title>AA Business WhatsApp V1.0 - Professional Enterprise WhatsApp Mod 2026</title>
-        <meta name="description" content="Official AA Business WhatsApp V1.0 (Base 2.25.29.77). The most secure enterprise WhatsApp mod for professional business management." />
+        <meta name="description" content="Official AA Business WhatsApp V1.0 (Base 2.25.29.77). Enterprise-grade security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging." />
+        <meta name="keywords" content="AA Business WhatsApp, Enterprise WhatsApp Mod, Bulk Messaging WhatsApp, AA Business APK, Business WhatsApp Mod 2026, Secure Business Messaging" />
+        <meta property="og:title" content="AA Business WhatsApp V1.0 - Elite Enterprise Edition" />
+        <meta property="og:description" content="Transform your business communication with AA Business WhatsApp. Advanced automation, analytics, and Anti-Ban v2.0." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-business" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "AA Business WhatsApp",
+              "operatingSystem": "Android",
+              "applicationCategory": "BusinessApplication",
+              "softwareVersion": "1.0",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "ratingCount": "85420"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            }
+          `}
+        </script>
       </Helmet>
 
       <Navigation />

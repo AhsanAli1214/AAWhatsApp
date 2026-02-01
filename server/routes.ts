@@ -128,7 +128,9 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
 
   app.get("/sitemap.xml", (req, res) => {
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
   <!-- Main Entry Points -->
   <url>
     <loc>https://aa-mods.vercel.app/</loc>
@@ -230,12 +232,6 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <changefreq>always</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp/blog</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
 
   <!-- AA Business Specific Pages -->
   <url>
@@ -266,12 +262,6 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <loc>https://aa-mods.vercel.app/aa-business/faq</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business/blog</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
