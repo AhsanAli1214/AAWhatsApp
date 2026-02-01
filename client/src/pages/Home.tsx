@@ -124,7 +124,7 @@ export default function Home() {
               <div className="relative z-10 mx-auto max-w-lg">
                 <img
                   src={heroImage}
-                  alt="AAWhatsApp Interface V1.0 - Secure Messaging with Anti-Ban v1.0"
+                  alt="AAWhatsApp Interface V2.0 - Secure Messaging with Anti-Ban v2.0"
                   title="Official AAWhatsApp Secure Interface"
                   className="w-full h-auto rounded-[2rem] shadow-xl shadow-primary/10 border border-primary/20 scale-105"
                   loading="eager"
@@ -390,7 +390,7 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-sm font-black">
                 <ShieldCheck className="w-4 h-4" />
-                Anti-Ban V1.0 Certified
+                Anti-Ban V2.0 Certified
               </div>
               <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
                 Hardened <span className="text-primary italic">Anti-Ban</span> Infrastructure

@@ -109,7 +109,7 @@ export default function AppSelector() {
                     <Link href="/aa-whatsapp/download">
                       <Button variant="outline" className="w-full" size="lg" data-testid="button-aa-whatsapp-download">
                         <Download className="w-5 h-5 mr-2" />
-                        Download V1.0
+                        Download V2.0
                       </Button>
                     </Link>
                   </div>
