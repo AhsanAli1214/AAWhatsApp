@@ -154,10 +154,10 @@ export default function Home() {
             >
               <div className="relative z-10 mx-auto max-w-lg">
                 <img
-                  src={heroImage}
-                  alt="AAWhatsApp Interface V2.0 - Secure Messaging with Anti-Ban v2.0"
+                  src="/images/whatsapp-realtime-hero.jpg"
+                  alt="AAWhatsApp Real-time Interface V2.0 - Secure Messaging with Anti-Ban v2.0"
                   title="Official AAWhatsApp Secure Interface"
-                  className="w-full h-auto rounded-[2rem] shadow-xl shadow-primary/10 border border-primary/20 scale-105"
+                  className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/30 scale-105"
                   loading="eager"
                   decoding="async"
                   width="1200"

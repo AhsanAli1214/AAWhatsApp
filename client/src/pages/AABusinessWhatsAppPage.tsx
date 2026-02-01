@@ -112,9 +112,9 @@ export default function AABusinessWhatsAppPage() {
               <div className="absolute inset-0 bg-amber-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity" />
               <div className="relative glass-card border-amber-500/20 p-8 rounded-[2rem] aspect-video flex items-center justify-center overflow-hidden">
                  <img 
-                   src="/client/public/images/business-hero-new.png" 
-                   alt="AA Business Interface"
-                   className="w-full h-full object-cover rounded-2xl"
+                   src="/images/business-realtime-hero.jpg" 
+                   alt="AA Business Real-time Interface"
+                   className="w-full h-full object-cover rounded-2xl shadow-2xl"
                    onError={(e) => {
                      const target = e.target as HTMLImageElement;
                      target.parentElement!.innerHTML = `<div class="flex flex-col items-center gap-4 text-amber-500/40">
