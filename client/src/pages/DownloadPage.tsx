@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { useState, useEffect } from "react";
+import { Footer } from "@/components/Footer";
 
 const versionInfo = {
   version: "V 2.0",
@@ -527,51 +527,7 @@ export default function DownloadPage() {
         </div>
       </main>
 
-      <footer className="py-12 border-t border-border/50 relative z-10 bg-background/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-3">
-              <img
-                src="/favicon.png"
-                alt="AA Mods"
-                className="w-16 h-16 object-contain"
-              />
-              <span className="text-xl font-bold font-display tracking-tight text-foreground/80">
-                AA Mods
-              </span>
-            </div>
-            <div className="flex flex-wrap justify-center gap-8 text-sm font-medium text-muted-foreground">
-              <Link
-                href="/privacy"
-                className="hover:text-primary transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="hover:text-primary transition-colors"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                href="/support"
-                className="hover:text-primary transition-colors"
-              >
-                Support
-              </Link>
-              <Link
-                href="/blog"
-                className="hover:text-primary transition-colors"
-              >
-                Blog
-              </Link>
-            </div>
-            <div className="text-sm text-muted-foreground font-mono">
-              © 2026 AA Mods. All rights reserved.
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
