@@ -16,7 +16,6 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
-import { AdsBanner } from "@/components/AdsBanner";
 
 const values = [
   {
@@ -136,8 +135,6 @@ export default function BusinessAbout() {
             </motion.div>
           </div>
 
-          <AdsBanner />
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -164,8 +161,6 @@ export default function BusinessAbout() {
               ))}
             </div>
           </motion.div>
-
-          <AdsBanner />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

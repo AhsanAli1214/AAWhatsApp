@@ -123,7 +123,6 @@ export default function About() {
             </motion.div>
           </div>
         </section>
-        <AdsBanner />
 
         {/* Features Grid */}
         <section className="bg-secondary/10 py-24 relative overflow-hidden">
@@ -375,7 +374,6 @@ export default function About() {
             </div>
           </div>
         </section>
-        <AdsBanner />
 
         {/* Call to Action */}
         <section className="py-24 container mx-auto px-4">

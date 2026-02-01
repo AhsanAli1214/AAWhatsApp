@@ -18,8 +18,6 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link, useLocation } from "wouter";
 import { PermissionSimulator } from "@/components/PermissionSimulator";
 import { FAQSection } from "@/components/FAQSection";
-import { DownloadTunnel } from "@/components/DownloadTunnel";
-import { AdsBanner } from "@/components/AdsBanner";
 
 import { useTranslation } from "@/hooks/useTranslation";
 
@@ -164,15 +162,6 @@ export default function AAWhatsAppPage() {
             <h2 className="text-3xl font-bold">
               AA WhatsApp Anti-Ban Protection
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Our V 2.0 release includes the latest anti-ban script that works
-              in 2026. This technology masks your modded client as an official
-              version during server-side verification, drastically reducing the
-              risk of temporary or permanent account suspensions.
-            </p>
-          </section>
-
-          <AdsBanner />
 
           <div className="max-w-[320px] mx-auto my-12">
           </div>
@@ -300,7 +289,7 @@ export default function AAWhatsAppPage() {
             <h2 className="text-3xl font-bold text-center">
               AA WhatsApp vs GB WhatsApp Comparison
             </h2>
-            <div className="grid lg:grid-cols-[1fr,300px] gap-8 items-start">
+            <div className="grid lg:grid-cols-1 gap-8 items-start">
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
@@ -348,9 +337,6 @@ export default function AAWhatsAppPage() {
                     ))}
                   </tbody>
                 </table>
-              </div>
-              <div className="hidden lg:block sticky top-32">
-                <AdsBanner />
               </div>
             </div>
           </section>
@@ -413,9 +399,7 @@ export default function AAWhatsAppPage() {
           <div className="max-w-4xl mx-auto">
           </div>
 
-          <AdsBanner />
           <FAQSection />
-          <AdsBanner />
           <div className="max-w-4xl mx-auto">
           </div>
 
