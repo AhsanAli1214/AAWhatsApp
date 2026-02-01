@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { FAQSection } from "@/components/FAQSection";
 import { useTranslation } from "@/hooks/useTranslation";
+import businessHero from "@/assets/business-hero.png";
 
 export default function AABusinessWhatsAppPage() {
   const { t } = useTranslation();
@@ -136,7 +137,7 @@ export default function AABusinessWhatsAppPage() {
               <div className="absolute inset-0 bg-amber-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity" />
               <div className="relative glass-card border-amber-500/20 p-8 rounded-[2rem] aspect-video flex items-center justify-center overflow-hidden">
                  <img 
-                   src="https://i.postimg.cc/pT3Y3S3S/whatsapp-hero.png" 
+                   src={businessHero} 
                    alt="AA Business Real-time Interface"
                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
                  />

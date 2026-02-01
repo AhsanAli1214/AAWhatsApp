@@ -31,6 +31,7 @@ import mediaImage from "@/assets/media-feature.png";
 import securityComparisonImage from "@assets/Gemini_Generated_Image_leenipleenipleen_(1)_1768930872554.png";
 import securityImage from "@assets/Gemini_Generated_Image_q9qqs4q9qqs4q9qq_(1)_1768930866856.png";
 import comparisonImage from "@assets/generated_images/clean_comparison_illustration_showing_aawhatsapp_vs_other_mods..png";
+import whatsappHero from "@/assets/security-hero-new.png";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -153,7 +154,7 @@ export default function Home() {
             >
               <div className="relative z-10 mx-auto max-w-lg">
                 <img
-                  src="https://i.postimg.cc/pT3Y3S3S/whatsapp-hero.png"
+                  src={whatsappHero}
                   alt="AAWhatsApp Real-time Interface V2.0 - Secure Messaging with Anti-Ban v2.0"
                   title="Official AAWhatsApp Secure Interface"
                   className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/30 scale-105"
