@@ -120,7 +120,7 @@ export function Navbar() {
             </a>
           </div>
 
-          <button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
+          <button className="hidden p-2" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>

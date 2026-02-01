@@ -1,6 +1,7 @@
 import { useLocation } from "wouter";
 import { Navbar } from "./Navbar";
 import { BusinessNavbar } from "./BusinessNavbar";
+import { MobileNav } from "./MobileNav";
 
 export function Navigation() {
   const [location] = useLocation();
@@ -10,16 +11,10 @@ export function Navigation() {
     return null;
   }
   
-  // Show BusinessNavbar for all /aa-business paths
-  if (location.startsWith("/aa-business")) {
-    return <BusinessNavbar />;
-  }
-  
-  // Show Navbar only for /aa-whatsapp paths
-  if (location.startsWith("/aa-whatsapp")) {
-    return <Navbar />;
-  }
-  
-  // Default to null for any other paths (like the app selector page)
-  return null;
+  return (
+    <>
+      {location.startsWith("/aa-business") ? <BusinessNavbar /> : <Navbar />}
+      <MobileNav />
+    </>
+  );
 }
