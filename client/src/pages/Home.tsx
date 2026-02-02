@@ -47,6 +47,9 @@ export default function Home() {
         <meta name="twitter:title" content="AAWhatsApp V2.0 Official Download - Most Secure WhatsApp Mod" />
         <meta name="twitter:description" content="Level up your privacy with AAWhatsApp V2.0. Anti-Ban, Ghost Mode, and HD media sharing. Download the official 2026 update now." />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" as="image" href={whatsappHero} fetchPriority="high" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
