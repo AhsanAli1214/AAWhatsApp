@@ -151,43 +151,43 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <loc>https://aa-mods.vercel.app/aa-whatsapp/blog</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aa-mods.vercel.app/aa-business/blog</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aa-mods.vercel.app/blog</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aa-mods.vercel.app/aa-whatsapp/download</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>always</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aa-mods.vercel.app/aa-business/download</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>always</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://aa-mods.vercel.app/privacy</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.1</priority>
   </url>
   <url>
     <loc>https://aa-mods.vercel.app/terms</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.1</priority>
   </url>
   <url>
     <loc>https://aa-mods.vercel.app/support</loc>
@@ -199,6 +199,7 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
 
     res.header("Content-Type", "application/xml");
     res.header("X-Content-Type-Options", "nosniff");
+    res.header("Cache-Control", "no-cache, no-store, must-revalidate");
     res.status(200).send(sitemap);
   });
 
