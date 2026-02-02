@@ -96,6 +96,8 @@ app.use((req, res, next) => {
   if (process.env.NODE_ENV === "production") {
     serveStatic(app);
   } else {
+    // Move robots.txt and sitemap.xml routes here to ensure they are handled BEFORE Vite in dev
+    // and BEFORE serveStatic in production if they are being registered in registerRoutes
     const { setupVite } = await import("./vite");
     await setupVite(httpServer, app);
   }
