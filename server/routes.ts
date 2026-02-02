@@ -5,6 +5,8 @@ import { Resend } from "resend";
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
+import { generateSitemap } from "./lib/sitemap";
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express
@@ -127,76 +129,7 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
   });
 
   app.get("/sitemap.xml", (req, res) => {
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://aa-mods.vercel.app/</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp/blog</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business/blog</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp/download</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business/download</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/privacy</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.1</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/terms</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.1</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/support</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-</urlset>`.trim();
-
+    const sitemap = generateSitemap();
     res.header("Content-Type", "application/xml");
     res.header("X-Content-Type-Options", "nosniff");
     res.header("Cache-Control", "no-cache, no-store, must-revalidate");
