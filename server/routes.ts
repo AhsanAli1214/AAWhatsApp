@@ -128,6 +128,11 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     res.status(200).send(robots);
   });
 
+  app.get("/88eae1744d0947619ec188fec7ff3b06.txt", (req, res) => {
+    res.type("text/plain");
+    res.status(200).send("88eae1744d0947619ec188fec7ff3b06");
+  });
+
   app.get("/sitemap.xml", (req, res) => {
     try {
       const sitemap = generateSitemap();
