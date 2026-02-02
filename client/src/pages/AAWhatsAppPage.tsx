@@ -22,6 +22,7 @@ import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
 
 import { useTranslation } from "@/hooks/useTranslation";
+import whatsappHero from "@/assets/security-hero-new.png";
 
 export default function AAWhatsAppPage() {
   const { t } = useTranslation();
@@ -33,6 +34,9 @@ export default function AAWhatsAppPage() {
         <meta name="description" content="Official AAWhatsApp V2.0 (Base 2.25.36.73). The most complete secure WhatsApp mod and best alternative to GB WhatsApp. Featuring Privacy Core™ and Anti-Ban v2.0." />
         <meta name="keywords" content="AAWhatsApp APK, Complete Secure WhatsApp Mod, alternative to GB WhatsApp, Download AAWhatsApp, AA WhatsApp V2.0, Privacy WhatsApp, Anti-Ban WhatsApp 2026, FM WhatsApp Alternative" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp-apk" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="preload" as="image" href={whatsappHero} fetchPriority="high" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {`
