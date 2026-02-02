@@ -123,7 +123,10 @@ export async function registerRoutes(
   app.get("/robots.txt", (req, res) => {
     const robots = `User-agent: *
 Allow: /
-Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
+Sitemap: https://aa-mods.vercel.app/sitemap.xml
+
+User-agent: Bingbot
+Crawl-delay: 1`;
     res.type("text/plain");
     res.status(200).send(robots);
   });
