@@ -198,6 +198,7 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
 </urlset>`.trim();
 
     res.header("Content-Type", "application/xml");
+    res.header("X-Content-Type-Options", "nosniff");
     res.status(200).send(sitemap);
   });
 
