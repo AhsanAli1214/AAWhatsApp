@@ -132,8 +132,8 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>Download AAWhatsApp V2.0 APK (2026) – Official Secure Anti-Ban Link</title>
-        <meta name="description" content="Download AAWhatsApp V2.0 APK (Base 2.25.36.73). Official safe download link with Anti-Ban v2.0 and Privacy Core™ technology. Verified secure for Android devices in 2026." />
+        <title>Download AAWhatsApp V2.0 APK (2026) - Official Anti-Ban Link</title>
+        <meta name="description" content="Download AAWhatsApp V2.0 APK. Official safe download link with Anti-Ban v2.0 and Privacy Core technology. Verified secure for Android devices in 2026." />
         <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK Official, AA WhatsApp V2.0 Download, download AA WhatsApp 2026, secure WhatsApp mod apk, anti-ban whatsapp download, AAWhatsApp V2.0" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp/download" />
         <meta property="og:title" content="Download AAWhatsApp V2.0 - Official Secure APK" />
