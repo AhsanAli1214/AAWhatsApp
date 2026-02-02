@@ -129,11 +129,16 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
   });
 
   app.get("/sitemap.xml", (req, res) => {
-    const sitemap = generateSitemap();
-    res.header("Content-Type", "application/xml");
-    res.header("X-Content-Type-Options", "nosniff");
-    res.header("Cache-Control", "no-cache, no-store, must-revalidate");
-    res.status(200).send(sitemap);
+    try {
+      const sitemap = generateSitemap();
+      res.header("Content-Type", "application/xml");
+      res.header("X-Content-Type-Options", "nosniff");
+      res.header("Cache-Control", "no-cache, no-store, must-revalidate");
+      res.status(200).send(sitemap);
+    } catch (error) {
+      console.error("Sitemap generation error:", error);
+      res.status(500).send("Error generating sitemap");
+    }
   });
 
   return httpServer;
