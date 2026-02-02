@@ -39,7 +39,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
         <title>AAWhatsApp APK Download V2.0 Official 2026 - Anti-Ban Mod</title>
-        <meta name="description" content="Download Official AAWhatsApp V2.0 (2026). Secure WhatsApp mod with Anti-Ban v2.0, Ghost Mode, and Privacy Core. The best safe alternative to GB WhatsApp." />
+        <meta name="description" content="Download Official AAWhatsApp V2.0 (2026). Secure WhatsApp mod with Anti-Ban v2.0, Ghost Mode, and Privacy Core. The safest alternative to GB WhatsApp." />
         <meta name="keywords" content="AAWhatsApp, AA WhatsApp APK, download AAWhatsApp, WhatsApp mod 2026, secure WhatsApp mod, Anti-Ban WhatsApp, GB WhatsApp alternative, FM WhatsApp alternative, Privacy Core WhatsApp, AA Mods" />
         <meta property="og:title" content="AAWhatsApp APK Download V2.0 (Official) - Secure GB Alternative" />
         <meta property="og:description" content="Get the latest AAWhatsApp V2.0. Experience ultimate privacy with Ghost Mode, Anti-Ban v2.0, and 5000+ custom themes. The world's most secure WhatsApp mod." />

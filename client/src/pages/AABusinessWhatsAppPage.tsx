@@ -44,10 +44,10 @@ export default function AABusinessWhatsAppPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-amber-500/30">
       <Helmet>
-        <title>AA Business WhatsApp APK V1.0 Download (Official) - Secure Enterprise Mod 2026</title>
+        <title>AA Business WhatsApp APK V1.0 - Secure Enterprise Mod 2026</title>
         <meta
           name="description"
-          content="Official AA Business WhatsApp V1.0 Download. The ultimate secure enterprise modification with Bulk Broadcasting, Anti-Ban Shield, and zero-access privacy for professional use."
+          content="Official AA Business WhatsApp V1.0 Download. Ultimate secure enterprise mod with Bulk Broadcasting, Anti-Ban Shield, and zero-access privacy."
         />
         <meta
           name="keywords"
