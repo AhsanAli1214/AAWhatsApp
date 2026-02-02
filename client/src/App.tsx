@@ -61,7 +61,7 @@ function Router() {
       <Route path="/support" component={Support} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
-      <Route component={NotFound} />
+      <Route path="/:rest*" component={Home} />
     </Switch>
   );
 }

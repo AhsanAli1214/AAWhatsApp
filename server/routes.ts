@@ -125,7 +125,7 @@ export async function registerRoutes(
 Allow: /
 Sitemap: https://aa-mods.vercel.app/sitemap.xml
 
-User-agent: Bingbot
+User-agent: bingbot
 Crawl-delay: 1`;
     res.type("text/plain");
     res.status(200).send(robots);
