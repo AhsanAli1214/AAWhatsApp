@@ -38,6 +38,7 @@ export default function AAWhatsAppPage() {
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="preload" as="image" href={whatsappHero} fetchPriority="high" />
         <meta name="robots" content="index, follow" />
+        <meta name="rating" content="general" />
         <script type="application/ld+json">
           {`
             {

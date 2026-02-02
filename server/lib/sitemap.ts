@@ -3,7 +3,7 @@ import { blogPosts } from "../../client/src/data/blogPosts";
 export function generateSitemap() {
   try {
     const baseUrl = "https://aa-mods.vercel.app";
-    const today = new Date().toISOString().split('T')[0];
+    const today = new Date().toISOString(); // Use full ISO string for better precision if needed, but keeping it simple as per guidelines
 
     // Static routes with specific priorities
     const routes = [

@@ -158,9 +158,9 @@ export default function Home() {
               className="flex-1 relative"
             >
               <div className="relative z-10 mx-auto max-w-lg">
-                <img
+                  <img
                   src={whatsappHero}
-                  alt="AAWhatsApp Real-time Interface V2.0 - Secure Messaging with Anti-Ban v2.0"
+                  alt="AAWhatsApp V2.0 Interface - Official Most Secure WhatsApp Mod with Anti-Ban"
                   title="Official AAWhatsApp Secure Interface"
                   className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/30 scale-105"
                   loading="eager"
