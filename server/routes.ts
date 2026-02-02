@@ -148,28 +148,34 @@ Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aa-mods.vercel.app/aa-whatsapp/blog</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/aa-business/blog</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://aa-mods.vercel.app/blog</loc>
+    <lastmod>${new_status_date}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://aa-mods.vercel.app/aa-whatsapp/download</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>always</changefreq>
-    <priority>1.0</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://aa-mods.vercel.app/aa-business/download</loc>
     <lastmod>${new_status_date}</lastmod>
     <changefreq>always</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp/blog</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business/blog</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aa-mods.vercel.app/privacy</loc>
