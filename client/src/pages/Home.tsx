@@ -43,10 +43,10 @@ export default function Home() {
         <meta name="keywords" content="AAWhatsApp, AA WhatsApp APK, download AAWhatsApp, WhatsApp mod 2026, secure WhatsApp mod, Anti-Ban WhatsApp, GB WhatsApp alternative, FM WhatsApp alternative, Privacy Core WhatsApp, AA Mods" />
         <meta property="og:title" content="AAWhatsApp APK Download V2.0 (Official) - Secure GB Alternative" />
         <meta property="og:description" content="Get the latest AAWhatsApp V2.0. Experience ultimate privacy with Ghost Mode, Anti-Ban v2.0, and 5000+ custom themes. The world's most secure WhatsApp mod." />
-        <meta property="og:url" content="https://aa-mods.vercel.app/aa-whatsapp" />
+        <meta property="og:url" content="https://aa-mods.vercel.app/" />
         <meta name="twitter:title" content="AAWhatsApp V2.0 Official Download - Most Secure WhatsApp Mod" />
         <meta name="twitter:description" content="Level up your privacy with AAWhatsApp V2.0. Anti-Ban, Ghost Mode, and HD media sharing. Download the official 2026 update now." />
-        <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp" />
+        <link rel="canonical" href="https://aa-mods.vercel.app/" />
         <link rel="preload" as="image" href={whatsappHero} fetchPriority="high" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
