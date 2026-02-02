@@ -33,21 +33,30 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="script" href="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" />
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <link
+      rel="preload"
+      as="script"
+      href="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+    />
+    <script
+      src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+      defer
+    ></script>
     <script>
       window.OneSignalDeferred = window.OneSignalDeferred || [];
-      OneSignalDeferred.push(async function(OneSignal) {
+      OneSignalDeferred.push(async function (OneSignal) {
         await OneSignal.init({
           appId: "38db6760-af2d-4370-a1da-eced0fcd268f",
-          safari_web_id: "web.onesignal.auto.07146831-e5cf-4801-bde7-1fd4b21ac045",
+          safari_web_id:
+            "web.onesignal.auto.07146831-e5cf-4801-bde7-1fd4b21ac045",
           notifyButton: {
             enable: true,
           },
           welcomeNotification: {
-            "title": "Access Granted: AA Mods Elite 🔓",
-            "message": "Protocol initialized. You are now synced with the world's most secure WhatsApp mainframe. Stay tuned for zero-day updates.",
-            "url": "https://aa-mods.vercel.app/aa-whatsapp/features"
+            title: "Access Granted: AA Mods Elite 🔓",
+            message:
+              "Protocol initialized. You are now synced with the world's most secure WhatsApp mainframe. Stay tuned for zero-day updates.",
+            url: "https://aa-mods.vercel.app/aa-whatsapp/features",
           },
           promptOptions: {
             slidedown: {
@@ -56,42 +65,46 @@
                   type: "push",
                   autoPrompt: true,
                   text: {
-                    actionMessage: "Sync your device with the AA Mods Security Mainframe? You'll receive real-time Anti-Ban patches and Elite feature releases.",
+                    actionMessage:
+                      "Sync your device with the AA Mods Security Mainframe? You'll receive real-time Anti-Ban patches and Elite feature releases.",
                     acceptButton: "Initialize Sync",
-                    cancelButton: "Stay Offline"
+                    cancelButton: "Stay Offline",
                   },
                   delay: {
                     pageViews: 1,
-                    timeDelay: 3
-                  }
-                }
-              ]
-            }
+                    timeDelay: 3,
+                  },
+                },
+              ],
+            },
           },
           persistence: {
-            "title": "AA Mods Security Status",
-            "message": "Elite subscription active. Mainframe sync: Online.",
-            "url": "https://aa-mods.vercel.app"
-          }
+            title: "AA Mods Security Status",
+            message: "Elite subscription active. Mainframe sync: Online.",
+            url: "https://aa-mods.vercel.app",
+          },
         });
-        
-        OneSignal.on('subscriptionChange', function(isSubscribed) {
+
+        OneSignal.on("subscriptionChange", function (isSubscribed) {
           if (isSubscribed) {
-             console.log('The user is subscribed');
-             // Manually trigger the welcome notification or a specific message if needed
-             // though init's welcomeNotification already handles this, 
-             // we can ensure it by sending a specific tag or event if the SDK allows.
+            console.log("The user is subscribed");
+            // Manually trigger the welcome notification or a specific message if needed
+            // though init's welcomeNotification already handles this,
+            // we can ensure it by sending a specific tag or event if the SDK allows.
           }
         });
 
         // Ensure welcome notification is sent immediately after permission is granted
-        OneSignal.on('notificationPermissionChange', function(permissionChange) {
-          console.log('Notification permission changed:', permissionChange);
-          if (permissionChange === 'granted') {
-             // The SDK automatically sends the welcomeNotification configured in init() 
-             // when the user subscribes for the first time.
-          }
-        });
+        OneSignal.on(
+          "notificationPermissionChange",
+          function (permissionChange) {
+            console.log("Notification permission changed:", permissionChange);
+            if (permissionChange === "granted") {
+              // The SDK automatically sends the welcomeNotification configured in init()
+              // when the user subscribes for the first time.
+            }
+          },
+        );
       });
     </script>
     <meta charset="UTF-8" />
@@ -100,6 +113,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1"
     />
     <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="msvalidate.01" content="49FC5303EEFCFD38FE4943CF7F6186F1" />
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
