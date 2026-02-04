@@ -126,7 +126,10 @@ Allow: /
 Sitemap: https://aa-mods.vercel.app/sitemap.xml
 
 User-agent: bingbot
-Crawl-delay: 1`;
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /`;
     res.type("text/plain");
     res.status(200).send(robots);
   });
