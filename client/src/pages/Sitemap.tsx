@@ -19,16 +19,25 @@ export default function HTMLSitemap() {
     {
       title: "AA WhatsApp (Personal)",
       links: [
-        { label: "App Info", href: "/aa-whatsapp", icon: ShieldCheck },
-        { label: "Download Page", href: "/aa-whatsapp/download", icon: Download },
-        { label: "Security Blog", href: "/blog", icon: BookOpen },
+        { label: "Main Info", href: "/aa-whatsapp", icon: ShieldCheck },
+        { label: "About Personal Mod", href: "/aa-whatsapp/about", icon: Info },
+        { label: "Feature Matrix", href: "/aa-whatsapp/features", icon: Zap },
+        { label: "Comparison Table", href: "/aa-whatsapp/comparison", icon: ShieldCheck },
+        { label: "Download APK", href: "/aa-whatsapp/download", icon: Download },
+        { label: "FAQ Support", href: "/aa-whatsapp/faq", icon: HelpCircle },
+        { label: "Security Blog", href: "/aa-whatsapp/blog", icon: BookOpen },
       ]
     },
     {
       title: "AA Business WhatsApp",
       links: [
         { label: "Enterprise Info", href: "/aa-business", icon: Briefcase },
-        { label: "Business Download", href: "/aa-business/download", icon: Download },
+        { label: "About Business Mod", href: "/aa-business/about", icon: Info },
+        { label: "Business Features", href: "/aa-business/features", icon: Zap },
+        { label: "Comparison Table", href: "/aa-business/comparison", icon: ShieldCheck },
+        { label: "Enterprise Download", href: "/aa-business/download", icon: Download },
+        { label: "Business FAQ", href: "/aa-business/faq", icon: HelpCircle },
+        { label: "Enterprise Blog", href: "/aa-business/blog", icon: BookOpen },
       ]
     },
     {

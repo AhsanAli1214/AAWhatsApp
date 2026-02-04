@@ -9,15 +9,27 @@ export function generateSitemap() {
     const routes = [
       { path: "/", priority: "1.0", changefreq: "daily" },
       { path: "/aa-whatsapp", priority: "0.9", changefreq: "daily" },
-      { path: "/aa-business", priority: "0.9", changefreq: "daily" },
+      { path: "/aa-whatsapp/about", priority: "0.7", changefreq: "weekly" },
+      { path: "/aa-whatsapp/comparison", priority: "0.8", changefreq: "weekly" },
+      { path: "/aa-whatsapp/features", priority: "0.8", changefreq: "weekly" },
+      { path: "/aa-whatsapp/faq", priority: "0.8", changefreq: "daily" },
       { path: "/aa-whatsapp/download", priority: "1.0", changefreq: "daily" },
+      { path: "/aa-whatsapp/blog", priority: "0.8", changefreq: "daily" },
+      
+      { path: "/aa-business", priority: "0.9", changefreq: "daily" },
+      { path: "/aa-business/about", priority: "0.7", changefreq: "weekly" },
+      { path: "/aa-business/features", priority: "0.8", changefreq: "weekly" },
       { path: "/aa-business/download", priority: "1.0", changefreq: "daily" },
-      { path: "/blog", priority: "0.8", changefreq: "daily" },
+      { path: "/aa-business/comparison", priority: "0.8", changefreq: "weekly" },
+      { path: "/aa-business/faq", priority: "0.8", changefreq: "daily" },
+      { path: "/aa-business/blog", priority: "0.8", changefreq: "daily" },
+      
       { path: "/faq", priority: "0.8", changefreq: "daily" },
-      { path: "/about", priority: "0.7", changefreq: "weekly" },
-      { path: "/support", priority: "0.5", changefreq: "weekly" },
+      { path: "/download", priority: "1.0", changefreq: "daily" },
       { path: "/privacy", priority: "0.3", changefreq: "monthly" },
       { path: "/terms", priority: "0.3", changefreq: "monthly" },
+      { path: "/support", priority: "0.5", changefreq: "weekly" },
+      { path: "/blog", priority: "0.8", changefreq: "daily" },
       { path: "/sitemap", priority: "0.5", changefreq: "monthly" },
     ];
 
