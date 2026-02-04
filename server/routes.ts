@@ -142,9 +142,7 @@ Allow: /`;
   app.get("/sitemap.xml", (req, res) => {
     try {
       const sitemap = generateSitemap();
-      res.set("Content-Type", "text/xml");
-      res.set("X-Content-Type-Options", "nosniff");
-      res.set("Cache-Control", "no-cache, no-store, must-revalidate");
+      res.header("Content-Type", "application/xml");
       res.status(200).send(sitemap);
     } catch (error) {
       console.error("Sitemap generation error:", error);

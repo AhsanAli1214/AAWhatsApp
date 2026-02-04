@@ -145,6 +145,7 @@ export function Footer() {
           </div>
           
           <div className="flex items-center gap-5 text-[10px] font-bold uppercase tracking-widest">
+            <Link href="/sitemap" className="text-muted-foreground hover:text-foreground transition-colors">Sitemap</Link>
             <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy</Link>
             <Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors">Terms</Link>
             <Link href="/support" className="text-muted-foreground hover:text-foreground transition-colors">Support</Link>

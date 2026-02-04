@@ -3,7 +3,7 @@ import { blogPosts } from "../../client/src/data/blogPosts";
 export function generateSitemap() {
   try {
     const baseUrl = "https://aa-mods.vercel.app";
-    const today = new Date().toISOString(); // Use full ISO string for better precision if needed, but keeping it simple as per guidelines
+    const today = new Date().toISOString();
 
     // Static routes with specific priorities
     const routes = [
@@ -13,11 +13,12 @@ export function generateSitemap() {
       { path: "/aa-whatsapp/download", priority: "1.0", changefreq: "daily" },
       { path: "/aa-business/download", priority: "1.0", changefreq: "daily" },
       { path: "/blog", priority: "0.8", changefreq: "daily" },
-      { path: "/aa-whatsapp/blog", priority: "0.8", changefreq: "daily" },
-      { path: "/aa-business/blog", priority: "0.8", changefreq: "daily" },
+      { path: "/faq", priority: "0.8", changefreq: "daily" },
+      { path: "/about", priority: "0.7", changefreq: "weekly" },
       { path: "/support", priority: "0.5", changefreq: "weekly" },
       { path: "/privacy", priority: "0.3", changefreq: "monthly" },
       { path: "/terms", priority: "0.3", changefreq: "monthly" },
+      { path: "/sitemap", priority: "0.5", changefreq: "monthly" },
     ];
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
