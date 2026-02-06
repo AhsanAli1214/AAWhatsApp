@@ -95,6 +95,8 @@ app.use((req, res, next) => {
     // setting up all the other routes so the catch-all route
     // doesn't interfere with the other routes
     if (process.env.NODE_ENV === "production") {
+      // Register routes BEFORE serveStatic to ensure sitemap/robots work in production
+      // and aren't intercepted by the SPA catch-all
       serveStatic(app);
     } else {
       const { setupVite } = await import("./vite");
