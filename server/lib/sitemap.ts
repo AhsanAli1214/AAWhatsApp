@@ -24,6 +24,9 @@ export function generateSitemap() {
       { path: "/aa-business/faq", priority: "0.8", changefreq: "daily" },
       { path: "/aa-business/blog", priority: "0.8", changefreq: "daily" },
       
+      { path: "/aa-business-whatsapp", priority: "0.9", changefreq: "daily" },
+      { path: "/business-download", priority: "1.0", changefreq: "daily" },
+      
       { path: "/faq", priority: "0.8", changefreq: "daily" },
       { path: "/download", priority: "1.0", changefreq: "daily" },
       { path: "/privacy", priority: "0.3", changefreq: "monthly" },
