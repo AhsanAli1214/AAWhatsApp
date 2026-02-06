@@ -155,7 +155,7 @@ export default function DownloadPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
         <title>Download AAWhatsApp V3.0 APK (2026) - Official Anti-Ban Link</title>
-        <meta name="description" content="Download AAWhatsApp V3.0 APK. Official safe link with Anti-Ban v2.0 and Privacy Core. Verified secure for Android devices in 2026." />
+        <meta name="description" content="Download AAWhatsApp V3.0 APK. Official safe link with Anti-Ban v3.0 and Privacy Core. Verified secure for Android devices in 2026." />
         <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK Official, AA WhatsApp V3.0 Download, download AA WhatsApp 2026, secure WhatsApp mod apk, anti-ban whatsapp download, AAWhatsApp V3.0" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp/download" />
         <meta property="og:title" content="Download AAWhatsApp V3.0 - Official Secure APK" />
@@ -305,7 +305,7 @@ export default function DownloadPage() {
               <div className="mb-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col md:flex-row items-center justify-center gap-8 text-sm font-bold">
                 <div className="flex items-center gap-2 text-emerald-400">
                   <ShieldCheck className="w-5 h-5" />
-                  Anti-Ban v1.0
+                  Anti-Ban v3.0
                 </div>
                 <div className="flex items-center gap-2 text-blue-400">
                   <LockIcon className="w-5 h-5" />
@@ -390,7 +390,7 @@ export default function DownloadPage() {
                   Virus-Free
                 </span>
                 <span className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
-                  Anti-Ban v1.0
+                  Anti-Ban v3.0
                 </span>
                 <span className="px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold border border-blue-500/20">
                   Privacy Core

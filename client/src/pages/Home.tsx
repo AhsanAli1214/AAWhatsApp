@@ -124,7 +124,7 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
                   <ShieldCheck className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-bold text-lg text-foreground">Anti-Ban v2.0</h3>
+                <h3 className="font-bold text-lg text-foreground">Anti-Ban v3.0</h3>
                 <p className="text-sm text-muted-foreground">Advanced 2026 security protocols to keep your account 100% safe.</p>
               </div>
               <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
@@ -160,7 +160,7 @@ export default function Home() {
               <div className="relative z-10 mx-auto max-w-lg">
                   <img
                   src={whatsappHero}
-                  alt="AAWhatsApp V2.0 Interface - Official Most Secure WhatsApp Mod with Anti-Ban"
+                  alt="AAWhatsApp V3.0 Interface - Official Most Secure WhatsApp Mod with Anti-Ban"
                   title="Official AAWhatsApp Secure Interface"
                   className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/30 scale-105"
                   loading="eager"
@@ -434,7 +434,7 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-sm font-black">
                 <ShieldCheck className="w-4 h-4" />
-                Anti-Ban V2.0 Certified
+                Anti-Ban V3.0 Certified
               </div>
               <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
                 Hardened <span className="text-primary italic">Anti-Ban</span> Infrastructure

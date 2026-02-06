@@ -325,12 +325,7 @@ export default function AAWhatsAppPage() {
                         aa: "Zero Invasive Access",
                         gb: "Full Disk Access",
                       },
-                      { f: "Anti-Ban", aa: "V 2.0 Enhanced", gb: "Standard" },
-                      {
-                        f: "Privacy",
-                        aa: "Security Focused",
-                        gb: "Feature Focused",
-                      },
+                      { label: "Privacy", value: "Security Focused", gb: "Feature Focused" },
                     ].map((row, i) => (
                       <tr
                         key={i}
@@ -405,6 +400,9 @@ export default function AAWhatsAppPage() {
           </section>
 
           <div className="max-w-4xl mx-auto">
+            <p className="text-xs text-muted-foreground uppercase tracking-widest opacity-40 text-center">
+              AA Mods | Version V 3.0 | Base 2.25.36.73 | Build ID: PRO-2026-SEC
+            </p>
           </div>
 
           <FAQSection />
