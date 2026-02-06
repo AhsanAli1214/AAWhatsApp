@@ -25,8 +25,8 @@ import { Link, useLocation } from "wouter";
 import { Footer } from "@/components/Footer";
 
 const versionInfo = {
-  version: "V 2.0",
-  date: "January 27, 2026",
+  version: "V 3.0",
+  date: "February 06, 2026",
   size: "118 MB",
   android: "5.0+",
   status: "Verified Safe",
@@ -37,10 +37,32 @@ const versionInfo = {
 
 const changelog = [
   {
+    version: "V 3.0",
+    date: "February 06, 2026",
+    base: "2.25.36.73",
+    isLatest: true,
+    changes: [
+      { type: "new", text: "Profile Cover Photo support for enhanced personalization 🖼️" },
+      { type: "new", text: "Status notification alerts when contacts post new updates 🔔" },
+      { type: "new", text: "Fresh icons added to home screen & chat options for faster navigation 📲" },
+      { type: "new", text: "Improved profile customization controls 🎨" },
+      { type: "new", text: "Additional hidden & experimental WhatsApp features unlocked 🧪" },
+      { type: "improved", text: "Message sending & receiving delays fully resolved ⚡" },
+      { type: "improved", text: "Anti-ban & account protection system 🛡️" },
+      { type: "improved", text: "Overall performance, speed & responsiveness 🚀" },
+      { type: "improved", text: "UI navigation clarity with icon-based actions ✨" },
+      { type: "improved", text: "Stability across low-end & high-end devices 📱" },
+      { type: "fixed", text: "Delayed message delivery issues ⏳" },
+      { type: "fixed", text: "Random lag during chats & status viewing 🧹" },
+      { type: "fixed", text: "Minor crashes affecting some devices 🔧" },
+      { type: "fixed", text: "UI inconsistencies and navigation glitches 🧼" },
+    ],
+  },
+  {
     version: "V 2.0",
     date: "January 27, 2026",
     base: "2.25.36.73",
-    isLatest: true,
+    isLatest: false,
     changes: [
       "New Anti-Ban v1.0 script for 2026 security protocols",
       "Surgically removed 5 more invasive Android permissions",
@@ -132,12 +154,12 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>Download AAWhatsApp V2.0 APK (2026) - Official Anti-Ban Link</title>
-        <meta name="description" content="Download AAWhatsApp V2.0 APK. Official safe link with Anti-Ban v2.0 and Privacy Core. Verified secure for Android devices in 2026." />
-        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK Official, AA WhatsApp V2.0 Download, download AA WhatsApp 2026, secure WhatsApp mod apk, anti-ban whatsapp download, AAWhatsApp V2.0" />
+        <title>Download AAWhatsApp V3.0 APK (2026) - Official Anti-Ban Link</title>
+        <meta name="description" content="Download AAWhatsApp V3.0 APK. Official safe link with Anti-Ban v2.0 and Privacy Core. Verified secure for Android devices in 2026." />
+        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK Official, AA WhatsApp V3.0 Download, download AA WhatsApp 2026, secure WhatsApp mod apk, anti-ban whatsapp download, AAWhatsApp V3.0" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp/download" />
-        <meta property="og:title" content="Download AAWhatsApp V2.0 - Official Secure APK" />
-        <meta property="og:description" content="Get the latest AAWhatsApp V2.0 with Anti-Ban and Privacy Core™. 100% safe, verified, and free download for Android." />
+        <meta property="og:title" content="Download AAWhatsApp V3.0 - Official Secure APK" />
+        <meta property="og:description" content="Get the latest AAWhatsApp V3.0 with Anti-Ban and Privacy Core™. 100% safe, verified, and free download for Android." />
         <script type="application/ld+json">
           {`
             {
@@ -156,10 +178,10 @@ export default function DownloadPage() {
                 "price": "0.00",
                 "priceCurrency": "USD"
               },
-              "softwareVersion": "2.0",
+              "softwareVersion": "3.0",
               "downloadUrl": "https://aa-mods.vercel.app/aa-whatsapp/download",
               "featureList": "Anti-Ban, Privacy Core, Ghost Mode, Message Scheduler",
-              "releaseDate": "2026-01-27"
+              "releaseDate": "2026-02-06"
             }
           `}
         </script>
@@ -408,15 +430,32 @@ export default function DownloadPage() {
                     </span>
                   </div>
                   <ul className="space-y-2">
-                    {release.changes.map((change, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-3 text-muted-foreground"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-1 shrink-0" />
-                        <span>{change}</span>
-                      </li>
-                    ))}
+                    {release.changes.map((change, i) => {
+                      const isObject = typeof change === 'object';
+                      const text = isObject ? change.text : change;
+                      const type = isObject ? change.type : null;
+                      
+                      return (
+                        <li
+                          key={i}
+                          className="flex items-start gap-3 text-muted-foreground"
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-primary mt-1 shrink-0" />
+                          <div className="flex flex-wrap items-center gap-2">
+                            {type === 'new' && (
+                              <span className="px-2 py-0.5 rounded text-[10px] font-black bg-primary/20 text-primary border border-primary/20 uppercase tracking-wider">NEW</span>
+                            )}
+                            {type === 'improved' && (
+                              <span className="px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-400 border border-blue-500/20 uppercase tracking-wider">IMPROVED</span>
+                            )}
+                            {type === 'fixed' && (
+                              <span className="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider">FIXED</span>
+                            )}
+                            <span>{text}</span>
+                          </div>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </motion.div>
               ))}

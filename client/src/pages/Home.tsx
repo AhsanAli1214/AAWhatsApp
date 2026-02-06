@@ -38,14 +38,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>AAWhatsApp APK Download V2.0 Official 2026 - Anti-Ban Mod</title>
-        <meta name="description" content="Download Official AAWhatsApp V2.0 (2026). Secure WhatsApp mod with Anti-Ban v2.0, Ghost Mode, and Privacy Core. The safest alternative to GB WhatsApp." />
+        <title>AAWhatsApp APK Download V3.0 Official 2026 - Anti-Ban Mod</title>
+        <meta name="description" content="Download Official AAWhatsApp V3.0 (2026). Secure WhatsApp mod with Anti-Ban v2.0, Ghost Mode, and Privacy Core. The safest alternative to GB WhatsApp." />
         <meta name="keywords" content="AAWhatsApp, AA WhatsApp APK, download AAWhatsApp, WhatsApp mod 2026, secure WhatsApp mod, Anti-Ban WhatsApp, GB WhatsApp alternative, FM WhatsApp alternative, Privacy Core WhatsApp, AA Mods" />
-        <meta property="og:title" content="AAWhatsApp APK Download V2.0 (Official) - Secure GB Alternative" />
-        <meta property="og:description" content="Get the latest AAWhatsApp V2.0. Experience ultimate privacy with Ghost Mode, Anti-Ban v2.0, and 5000+ custom themes. The world's most secure WhatsApp mod." />
+        <meta property="og:title" content="AAWhatsApp APK Download V3.0 (Official) - Secure GB Alternative" />
+        <meta property="og:description" content="Get the latest AAWhatsApp V3.0. Experience ultimate privacy with Ghost Mode, Anti-Ban v2.0, and 5000+ custom themes. The world's most secure WhatsApp mod." />
         <meta property="og:url" content="https://aa-mods.vercel.app/" />
-        <meta name="twitter:title" content="AAWhatsApp V2.0 Official Download - Most Secure WhatsApp Mod" />
-        <meta name="twitter:description" content="Level up your privacy with AAWhatsApp V2.0. Anti-Ban, Ghost Mode, and HD media sharing. Download the official 2026 update now." />
+        <meta name="twitter:title" content="AAWhatsApp V3.0 Official Download - Most Secure WhatsApp Mod" />
+        <meta name="twitter:description" content="Level up your privacy with AAWhatsApp V3.0. Anti-Ban, Ghost Mode, and HD media sharing. Download the official 2026 update now." />
         <link rel="canonical" href="https://aa-mods.vercel.app/" />
         <link rel="preload" as="image" href={whatsappHero} fetchPriority="high" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -60,7 +60,7 @@ export default function Home() {
             "operatingSystem": "Android",
             "applicationCategory": "CommunicationApplication",
             "downloadUrl": "https://aa-mods.vercel.app/aa-whatsapp-apk",
-            "softwareVersion": "2.0",
+            "softwareVersion": "3.0",
             "fileSize": "65MB",
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -114,7 +114,7 @@ export default function Home() {
               <Link href="/aa-whatsapp-apk" className="w-full sm:w-auto">
                 <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-lg shadow-[0_20px_40px_rgba(16,185,129,0.25)] hover:-translate-y-1 hover:shadow-[0_25px_50px_rgba(16,185,129,0.35)] transition-all duration-500 w-full border border-white/20 uppercase tracking-wider flex items-center justify-center gap-3">
                   <ShieldCheck className="w-6 h-6" />
-                  Get AA WhatsApp V2.0
+                  Get AA WhatsApp V3.0
                 </button>
               </Link>
             </div>
@@ -197,7 +197,7 @@ export default function Home() {
                 </div>
                 <h2 className="text-3xl md:text-5xl font-black font-display tracking-tighter leading-none">
                   AAWhatsApp{" "}
-                  <span className="text-primary text-glow italic">V 2.0</span>
+                  <span className="text-primary text-glow italic">V 3.0</span>
                 </h2>
                 <p className="text-muted-foreground text-base font-medium max-w-lg leading-relaxed">
                   The latest iteration of AAWhatsApp is now synchronized. Built
@@ -237,7 +237,7 @@ export default function Home() {
                 </div>
                 <div className="text-center">
                   <p className="text-xl font-black font-mono text-white mb-0.5 tracking-tight">
-                    V 2.0
+                    V 3.0
                   </p>
                   <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] opacity-70">
                     Current Mainframe Version

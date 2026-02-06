@@ -28,7 +28,7 @@ export async function registerRoutes(
         from: "AAWhatsApp Support <onboarding@resend.dev>",
         to: ["a67515346@gmail.com"],
         replyTo: email,
-        subject: `🚨 Bug Report (V 2.0): ${reportSubject}`,
+        subject: `🚨 Bug Report (V 3.0): ${reportSubject}`,
         html: `
           <!DOCTYPE html>
           <html>
@@ -62,7 +62,7 @@ export async function registerRoutes(
                   <div class="content">
                     <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 24px;">
                       <div class="status-badge">Action Required</div>
-                      <div class="version-badge">VERSION V 2.0</div>
+                      <div class="version-badge">VERSION V 3.0</div>
                     </div>
                     
                     <div class="field">
