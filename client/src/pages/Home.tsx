@@ -205,7 +205,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
                   {[
-                    { label: "Update", value: "23/01/26" },
+                    { label: "Update", value: "06/02/2026" },
                     { label: "Stability", value: "99.9%" },
                     { label: "Status", value: "Verified" },
                   ].map((stat, i) => (
