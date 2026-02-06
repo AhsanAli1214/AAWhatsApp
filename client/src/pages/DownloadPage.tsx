@@ -291,7 +291,7 @@ export default function DownloadPage() {
                   </div>
                 )}
                 <a
-                  href={downloadStep === 0 ? "#" : "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"}
+                  href={downloadStep === 0 ? "#" : "https://ahsanali.short.gy/aa-whatsapp"}
                   onClick={handleDownload}
                   target={downloadStep === 0 ? "_self" : "_blank"}
                   rel="noopener noreferrer"
@@ -536,7 +536,7 @@ export default function DownloadPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
+                href="https://ahsanali.short.gy/aa-whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
               >
