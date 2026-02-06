@@ -31,7 +31,7 @@ export default function AAWhatsAppPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
         <title>AAWhatsApp V3.0 APK Download - Secure WhatsApp Mod 2026</title>
-        <meta name="description" content="Official AAWhatsApp V3.0. The most complete secure WhatsApp mod for 2026. Featuring Privacy Core, Anti-Ban v2.0, and advanced stealth features." />
+        <meta name="description" content="Official AAWhatsApp V3.0. The most complete secure WhatsApp mod for 2026. Featuring Privacy Core, Anti-Ban v3.0, and advanced stealth features." />
         <meta name="keywords" content="AAWhatsApp APK, Complete Secure WhatsApp Mod, alternative to GB WhatsApp, Download AAWhatsApp, AA WhatsApp V3.0, Privacy WhatsApp, Anti-Ban WhatsApp 2026, FM WhatsApp Alternative" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
