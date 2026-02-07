@@ -54,6 +54,28 @@ export default function Comparison() {
     <div className={`min-h-screen bg-background text-foreground ${isBusiness ? "selection:bg-amber-500/30" : "selection:bg-primary/30"}`}>
       <Helmet>
         <title>{isBusiness ? "AA Business vs Official Comparison" : "AA WhatsApp Comparison 2026"}</title>
+        <meta
+          name="description"
+          content={isBusiness
+            ? "Compare AA Business WhatsApp with the official app. See enterprise features like bulk broadcasting, anti-ban, and analytics."
+            : "Compare AA WhatsApp with official, GB, and FM WhatsApp. Review privacy, anti-ban, and customization differences for 2026."}
+        />
+        <meta
+          name="keywords"
+          content={isBusiness
+            ? "AA Business comparison, WhatsApp Business mod vs official, enterprise WhatsApp features, Anti-Ban business WhatsApp"
+            : "AA WhatsApp comparison, GB WhatsApp vs AA WhatsApp, FM WhatsApp vs AA WhatsApp, secure WhatsApp mod 2026"}
+        />
+        <meta
+          property="og:title"
+          content={isBusiness ? "AA Business vs Official WhatsApp Comparison" : "AA WhatsApp vs GB/FM WhatsApp Comparison"}
+        />
+        <meta
+          property="og:description"
+          content={isBusiness
+            ? "See how AA Business outperforms official WhatsApp Business with enterprise-grade tools."
+            : "See how AA WhatsApp compares to GB and FM WhatsApp across privacy, anti-ban, and features."}
+        />
         <link rel="canonical" href={`https://aa-mods.vercel.app/aa-whatsapp/comparison${isBusiness ? "?type=business" : ""}`} />
       </Helmet>
       

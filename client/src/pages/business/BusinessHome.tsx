@@ -149,6 +149,9 @@ export default function BusinessHome() {
               className="rounded-[40px] shadow-2xl border-4 border-white/10 relative z-10 hover:scale-[1.02] transition-transform duration-700"
               loading="eager"
               decoding="async"
+              fetchPriority="high"
+              width="1200"
+              height="720"
             />
             {/* Floating UI Elements */}
             <motion.div 
@@ -194,6 +197,8 @@ export default function BusinessHome() {
                 className="rounded-[40px] shadow-2xl border-4 border-blue-500/10"
                 loading="lazy"
                 decoding="async"
+                width="1200"
+                height="800"
               />
               <div className="absolute -bottom-6 -left-6 bg-blue-600 text-white p-8 rounded-3xl shadow-2xl">
                 <div className="text-4xl font-black">99.9%</div>
@@ -241,7 +246,7 @@ export default function BusinessHome() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Deploy AI-powered chatbots that handle 80% of routine customer inquiries 24/7 without human intervention.
               </p>
-              <img src={businessAutomationJpg} className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Automation" loading="lazy" decoding="async" />
+              <img src={businessAutomationJpg} className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Automation" loading="lazy" decoding="async" width="320" height="192" />
             </Card>
 
             <Card className="bg-background/50 backdrop-blur-sm border-blue-500/20 hover:border-blue-500/60 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px] shadow-xl shadow-blue-500/5 group">
@@ -252,7 +257,7 @@ export default function BusinessHome() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Comprehensive dashboards showing conversion rates, heatmaps, and campaign ROI directly inside the application.
               </p>
-              <img src={businessAnalyticsJpg} className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Analytics" loading="lazy" decoding="async" />
+              <img src={businessAnalyticsJpg} className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Analytics" loading="lazy" decoding="async" width="320" height="192" />
             </Card>
 
             <Card className="bg-background/50 backdrop-blur-sm border-blue-500/20 hover:border-blue-500/60 hover:-translate-y-2 transition-all duration-500 p-8 rounded-[32px] shadow-xl shadow-blue-500/5 group">
@@ -263,7 +268,7 @@ export default function BusinessHome() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 End-to-end encrypted mod with built-in VPN and anti-ban protection to keep your business data untouchable.
               </p>
-              <img src={businessSecurityJpg} className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Security" loading="lazy" decoding="async" />
+              <img src={businessSecurityJpg} className="rounded-2xl w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Security" loading="lazy" decoding="async" width="320" height="192" />
             </Card>
           </div>
         </div>
@@ -316,7 +321,7 @@ export default function BusinessHome() {
             
             <div className="flex-1 bg-muted rounded-[40px] p-8 relative">
               <div className="absolute inset-0 bg-blue-500/5 blur-2xl -z-10" />
-              <img src={businessTeamPng} className="rounded-[32px] shadow-2xl grayscale-[0.2] hover:grayscale-0 transition-all duration-700" alt="Features" loading="lazy" decoding="async" />
+              <img src={businessTeamPng} className="rounded-[32px] shadow-2xl grayscale-[0.2] hover:grayscale-0 transition-all duration-700" alt="Features" loading="lazy" decoding="async" width="900" height="700" />
             </div>
           </div>
         </div>

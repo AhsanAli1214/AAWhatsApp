@@ -73,6 +73,14 @@ export default function BusinessAbout() {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>About AA Business WhatsApp - Professional Features</title>
+        <meta
+          name="description"
+          content="Learn about AA Business WhatsApp, its enterprise security, analytics, and professional communication tools for 2026."
+        />
+        <meta
+          name="keywords"
+          content="About AA Business WhatsApp, enterprise WhatsApp mod, business messaging features, AA Business security"
+        />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-business/about" />
       </Helmet>
       <BusinessNavbar />

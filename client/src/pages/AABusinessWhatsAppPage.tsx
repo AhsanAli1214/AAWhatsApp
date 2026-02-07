@@ -140,6 +140,11 @@ export default function AABusinessWhatsAppPage() {
                    src={businessHero} 
                    alt="AA Business Real-time Interface"
                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                   loading="eager"
+                   decoding="async"
+                   fetchPriority="high"
+                   width="1200"
+                   height="675"
                  />
               </div>
             </div>

@@ -76,9 +76,13 @@ export default function AppSelector() {
                 src="/favicon.png"
                 alt="AA Mods Logo"
                 className="w-48 h-48 md:w-56 md:h-56 mt-[30px] mb-[30px] object-contain group-hover:scale-110 transition-transform duration-500"
+                loading="eager"
+                decoding="async"
+                width="224"
+                height="224"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = "https://i.postimg.cc/mrqq6LxP/favicon.png";
+                  target.src = "/favicon.png";
                 }}
               />
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">

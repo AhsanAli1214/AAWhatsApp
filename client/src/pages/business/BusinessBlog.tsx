@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet";
 import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -89,6 +90,50 @@ export default function BusinessBlog() {
   
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>AA Business WhatsApp Blog 2026 - Enterprise Guides & Tutorials</title>
+        <meta
+          name="description"
+          content="AA Business WhatsApp blog with enterprise guides, automation tutorials, and privacy updates. Learn how to grow and secure your business messaging."
+        />
+        <meta
+          name="keywords"
+          content="AA Business WhatsApp blog, business WhatsApp guides, enterprise WhatsApp tutorials, AA Business updates, WhatsApp business automation"
+        />
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-business/blog" />
+        <meta property="og:title" content="AA Business WhatsApp Blog - Enterprise Guides 2026" />
+        <meta
+          property="og:description"
+          content="Enterprise guides and tutorials for AA Business WhatsApp, including automation, security, and growth strategies."
+        />
+        <meta property="og:url" content="https://aa-mods.vercel.app/aa-business/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://aa-mods.vercel.app/images/business-hero-new.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AA Business WhatsApp Blog - Enterprise Guides" />
+        <meta
+          name="twitter:description"
+          content="Enterprise WhatsApp tutorials and security updates for AA Business."
+        />
+        <meta name="twitter:image" content="https://aa-mods.vercel.app/images/business-hero-new.png" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "AA Business WhatsApp Blog",
+            "description": "Enterprise guides, tutorials, and updates for AA Business WhatsApp.",
+            "url": "https://aa-mods.vercel.app/aa-business/blog",
+            "publisher": {
+              "@type": "Organization",
+              "name": "AA Mods",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://aa-mods.vercel.app/favicon.png"
+              }
+            }
+          })}
+        </script>
+      </Helmet>
       <BusinessNavbar />
       
       <section className="pt-32 pb-20 px-4">

@@ -20,9 +20,13 @@ export function Footer() {
             <Link href="/">
               <div className="flex items-center gap-2.5 cursor-pointer group">
                 <img
-                  src="https://i.postimg.cc/mrqq6LxP/favicon.png"
+                  src="/favicon.png"
                   alt="AA Mods"
                   className="w-8 h-8 object-contain group-hover:rotate-12 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                  width="32"
+                  height="32"
                 />
                 <div className="flex flex-col">
                   <span className="font-black text-lg tracking-tighter uppercase leading-none">

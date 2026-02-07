@@ -54,6 +54,10 @@ export default function HTMLSitemap() {
       <Helmet>
         <title>Sitemap - AA WhatsApp Official (2026)</title>
         <meta name="description" content="Complete directory of all pages on the AA Mods website. Easily navigate to downloads, security guides, and support." />
+        <meta
+          name="keywords"
+          content="AA Mods sitemap, AA WhatsApp sitemap, AA Business sitemap, website directory, AA Mods pages"
+        />
         <link rel="canonical" href="https://aa-mods.vercel.app/sitemap" />
       </Helmet>
 
