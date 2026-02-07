@@ -39,7 +39,17 @@ const categoryColors: Record<string, string> = {
   update: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
 };
 
-function BlogCard({ post, index, accentColor = "primary" }: { post: BlogPost; index: number; accentColor?: "primary" | "amber" }) {
+function BlogCard({
+  post,
+  index,
+  basePath,
+  accentColor = "primary",
+}: {
+  post: BlogPost;
+  index: number;
+  basePath: string;
+  accentColor?: "primary" | "amber";
+}) {
   const isAmber = accentColor === "amber";
   return (
     <motion.div
@@ -47,7 +57,7 @@ function BlogCard({ post, index, accentColor = "primary" }: { post: BlogPost; in
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
     >
-      <Link href={`/blog/${post.slug}`}>
+      <Link href={`${basePath}/${post.slug}`}>
         <Card className={`h-full bg-card/50 border-border/50 hover-elevate cursor-pointer transition-all duration-300 group`}>
           <CardHeader className="pb-3">
             <div className="flex items-center gap-2 mb-3">
@@ -86,7 +96,10 @@ function BlogCard({ post, index, accentColor = "primary" }: { post: BlogPost; in
 
 export default function Blog() {
   const [location] = useLocation();
-  const isBusiness = location.includes('type=business') || window.location.search.includes('type=business');
+  const isBusiness = location.includes("type=business");
+  const path = location.split("?")[0];
+  const basePath = path.startsWith("/aa-whatsapp/blog") ? "/aa-whatsapp/blog" : "/blog";
+  const canonicalUrl = `https://aa-mods.vercel.app${basePath}`;
   const otherPosts = blogPosts.slice(1);
 
   return (
@@ -95,7 +108,7 @@ export default function Blog() {
         <title>{isBusiness ? "AA Business WhatsApp Blog" : "AA WhatsApp Blog"} 2026 - Anti-Ban Guides</title>
         <meta name="description" content={`Official AA ${isBusiness ? "Business " : ""}WhatsApp security hub. Expert guides, Anti-Ban technology insights, and the latest privacy updates for 2026.`} />
         <meta name="keywords" content={`AA WhatsApp, AA Business WhatsApp, WhatsApp Mod 2026, Anti-Ban WhatsApp, Private WhatsApp, Secure WhatsApp Mod, AAWhatsApp Update, WhatsApp Privacy Guides`} />
-        <link rel="canonical" href={`https://aa-mods.vercel.app/blog${isBusiness ? "?type=business" : ""}`} />
+        <link rel="canonical" href={canonicalUrl} />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -103,7 +116,7 @@ export default function Blog() {
         <meta property="og:title" content={`${isBusiness ? "AA Business" : "AA"} WhatsApp Security Hub – Official Blog 2026`} />
         <meta property="og:description" content="Master your WhatsApp privacy with our definitive guides on security, mod technology, and 2026 updates." />
         <meta property="og:image" content="https://aa-mods.vercel.app/og-blog.png" />
-        <meta property="og:url" content={`https://aa-mods.vercel.app/blog${isBusiness ? "?type=business" : ""}`} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${isBusiness ? "AA Business" : "AA"} WhatsApp Blog – The Security Authority`} />
         <meta name="twitter:description" content="Official AA WhatsApp blog with security, anti-ban, and privacy guides for 2026." />
@@ -114,7 +127,7 @@ export default function Blog() {
             "@type": "Blog",
             "name": `AA ${isBusiness ? "Business " : ""}WhatsApp Security Hub`,
             "description": `The official resource for AA ${isBusiness ? "Business " : ""}WhatsApp security and updates.`,
-            "url": `https://aa-mods.vercel.app/blog${isBusiness ? "?type=business" : ""}`,
+            "url": canonicalUrl,
             "publisher": {
               "@type": "Organization",
               "name": "AA Mods",
@@ -132,7 +145,7 @@ export default function Blog() {
             "itemListElement": blogPosts.map((post, index) => ({
               "@type": "ListItem",
               "position": index + 1,
-              "url": `https://aa-mods.vercel.app/blog/${post.slug}`,
+              "url": `https://aa-mods.vercel.app${basePath}/${post.slug}`,
               "name": post.title
             }))
           })}
@@ -168,7 +181,7 @@ export default function Blog() {
           </motion.div>
 
           <div className="mb-12 flex justify-center gap-4">
-            <Link href="/blog">
+            <Link href={basePath}>
               <Button 
                 variant={!isBusiness ? "default" : "outline"} 
                 className={!isBusiness ? "bg-primary" : ""}
@@ -176,7 +189,7 @@ export default function Blog() {
                 Personal Mod
               </Button>
             </Link>
-            <Link href="/blog?type=business">
+            <Link href={`${basePath}?type=business`}>
               <Button 
                 variant={isBusiness ? "default" : "outline"}
                 className={isBusiness ? "bg-amber-500 text-black" : ""}
@@ -188,7 +201,13 @@ export default function Blog() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {(isBusiness ? otherPosts.slice(0, 6) : otherPosts).map((post, index) => (
-              <BlogCard key={post.id} post={post} index={index} accentColor={isBusiness ? "amber" : "primary"} />
+              <BlogCard
+                key={post.id}
+                post={post}
+                index={index}
+                basePath={basePath}
+                accentColor={isBusiness ? "amber" : "primary"}
+              />
             ))}
           </div>
         </div>

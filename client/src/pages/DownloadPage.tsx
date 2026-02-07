@@ -108,7 +108,8 @@ const stats = [
 ];
 
 export default function DownloadPage() {
-  const [, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
+  const canonicalUrl = `https://aa-mods.vercel.app${location.split("?")[0]}`;
   const [downloadCount, setDownloadCount] = useState(10247853);
 
   useEffect(() => {
@@ -157,8 +158,8 @@ export default function DownloadPage() {
         <title>Download AAWhatsApp V3.0 APK (2026) - Official Anti-Ban Link</title>
         <meta name="description" content="Download AAWhatsApp V3.0 APK. Official safe link with Anti-Ban v3.0 and Privacy Core. Verified secure for Android devices in 2026." />
         <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK Official, AA WhatsApp V3.0 Download, download AA WhatsApp 2026, secure WhatsApp mod apk, anti-ban whatsapp download, AAWhatsApp V3.0" />
-        <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp/download" />
-        <link rel="alternate" href="https://aa-mods.vercel.app/aa-whatsapp/download" hrefLang="en" />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" href={canonicalUrl} hrefLang="en" />
         <meta property="og:title" content="Download AAWhatsApp V3.0 - Official Secure APK" />
         <meta property="og:description" content="Get the latest AAWhatsApp V3.0 with Anti-Ban and Privacy Core™. 100% safe, verified, and free download for Android." />
         <script type="application/ld+json">
@@ -180,7 +181,7 @@ export default function DownloadPage() {
                 "priceCurrency": "USD"
               },
               "softwareVersion": "3.0",
-              "downloadUrl": "https://aa-mods.vercel.app/aa-whatsapp/download",
+              "downloadUrl": "${canonicalUrl}",
               "featureList": "Anti-Ban, Privacy Core, Ghost Mode, Message Scheduler",
               "releaseDate": "2026-02-06"
             }

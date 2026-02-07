@@ -31,6 +31,7 @@ export async function generateSitemap() {
       { path: "/aa-whatsapp/blog", priority: "0.8", changefreq: "daily" },
       { path: "/blog", priority: "0.8", changefreq: "daily" },
       { path: "/sitemap", priority: "0.3", changefreq: "monthly" },
+      { path: "/sitemap.xml", priority: "0.3", changefreq: "monthly" },
       
       { path: "/aa-business", priority: "0.9", changefreq: "daily" },
       { path: "/aa-business/about", priority: "0.7", changefreq: "monthly" },
@@ -63,22 +64,25 @@ export async function generateSitemap() {
   </url>`;
     });
 
-    // Add blog posts with highest priority
+    // Add blog posts for both blog entry points
     const blogPosts = await loadBlogPosts();
     if (Array.isArray(blogPosts)) {
+      const blogPrefixes = ["/blog", "/aa-whatsapp/blog"];
       blogPosts.forEach(post => {
         if (post && post.slug) {
           const publishedDate = new Date(post.publishedAt || today);
           const lastmod = Number.isNaN(publishedDate.getTime())
             ? today
             : publishedDate.toISOString().split("T")[0];
-          xml += `
+          blogPrefixes.forEach(prefix => {
+            xml += `
   <url>
-    <loc>${baseUrl}/blog/${post.slug}</loc>
+    <loc>${baseUrl}${prefix}/${post.slug}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>`;
+          });
         }
       });
     }
