@@ -118,6 +118,10 @@ export default function About() {
                 src={heroImage}
                 alt="About AA WhatsApp"
                 className="rounded-[3rem] shadow-2xl border border-white/10"
+                loading="lazy"
+                decoding="async"
+                width="1200"
+                height="800"
               />
               <div className="absolute -bottom-10 -left-10 bg-background/80 backdrop-blur-xl border border-primary/20 p-8 rounded-[2.5rem] shadow-2xl hidden md:block">
                 <p className="text-primary font-black text-4xl mb-1">#1</p>
@@ -330,6 +334,10 @@ export default function About() {
                   src={privacyImage}
                   alt="AA WhatsApp Safety"
                   className="rounded-[3rem] shadow-2xl border border-white/10"
+                  loading="lazy"
+                  decoding="async"
+                  width="1000"
+                  height="800"
                 />
               </motion.div>
             </div>

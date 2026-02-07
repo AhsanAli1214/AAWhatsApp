@@ -41,9 +41,13 @@ export function Navbar() {
               src="/favicon.png"
               alt="AA Mods"
               className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-500"
+              loading="eager"
+              decoding="async"
+              width="48"
+              height="48"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = "https://i.postimg.cc/mrqq6LxP/favicon.png";
+                target.src = "/favicon.png";
               }}
             />
             <div className="flex flex-col">

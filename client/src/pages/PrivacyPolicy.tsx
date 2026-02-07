@@ -10,6 +10,14 @@ export default function PrivacyPolicy() {
     <div className="container mx-auto py-12 px-4 max-w-4xl">
       <Helmet>
         <title>Privacy Policy - AA Mods</title>
+        <meta
+          name="description"
+          content="Read the AA Mods privacy policy to understand how we protect your data, handle support requests, and secure your account information."
+        />
+        <meta
+          name="keywords"
+          content="AA Mods privacy policy, AA WhatsApp privacy, data protection, secure WhatsApp mod, user data safety"
+        />
         <link rel="canonical" href="https://aa-mods.vercel.app/privacy" />
       </Helmet>
       <div className="mb-8">
