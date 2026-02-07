@@ -40,7 +40,10 @@ export default function BusinessHome() {
       <Helmet>
         <title>AA Business WhatsApp V1.0 - Professional Enterprise WhatsApp Mod 2026</title>
         <meta name="description" content="Official AA Business WhatsApp V1.0 (Base 2.25.29.77). Enterprise-grade security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging." />
-        <meta name="keywords" content="AA Business WhatsApp, Enterprise WhatsApp Mod, Bulk Messaging WhatsApp, AA Business APK, Business WhatsApp Mod 2026, Secure Business Messaging" />
+        <meta
+          name="keywords"
+          content="AA Business WhatsApp, Enterprise WhatsApp mod, Bulk messaging WhatsApp, AA Business APK, Business WhatsApp mod 2026, Secure business messaging, anti-ban business WhatsApp, WhatsApp CRM features"
+        />
         <meta property="og:title" content="AA Business WhatsApp V1.0 - Elite Enterprise Edition" />
         <meta property="og:description" content="Transform your business communication with AA Business WhatsApp. Advanced automation, analytics, and Anti-Ban v2.0." />
         <meta property="og:type" content="website" />

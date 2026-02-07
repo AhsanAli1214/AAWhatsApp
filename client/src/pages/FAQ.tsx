@@ -17,7 +17,7 @@ import {
   Layout,
   UserCheck
 } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
 import {
@@ -29,6 +29,8 @@ import {
 import { Footer } from "@/components/Footer";
 
 export default function FAQ() {
+  const [location] = useLocation();
+  const canonicalUrl = `https://aa-mods.vercel.app${location.split("?")[0]}`;
   const faqs = [
     {
       question: "What is AA WhatsApp?",
@@ -112,8 +114,11 @@ export default function FAQ() {
       <Helmet>
         <title>AA WhatsApp FAQ (2026) - Anti-Ban & Security Support Guide</title>
         <meta name="description" content="Official AA WhatsApp support. Master Anti-Ban v1.0, fix errors, learn installation steps, and explore privacy features. The definitive support guide." />
-        <meta name="keywords" content="AA WhatsApp support, AA WhatsApp help, fix whatsapp mod ban, install aa whatsapp, aa whatsapp official faq, whatsapp mod troubleshooting, AA WhatsApp guide 2026" />
-        <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp/faq" />
+        <meta
+          name="keywords"
+          content="AA WhatsApp support, AA WhatsApp help, WhatsApp mod FAQ, fix WhatsApp mod ban, install AA WhatsApp, AA WhatsApp official FAQ, WhatsApp mod troubleshooting, anti-ban help, AA WhatsApp guide 2026"
+        />
+        <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify({

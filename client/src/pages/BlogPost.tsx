@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
-import { Link, useParams } from "wouter";
+import { Link, useLocation, useParams } from "wouter";
 import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, BookOpen, Download, Settings, HelpCircle, RefreshCw, Scale, ChevronRight, ChevronDown, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
@@ -33,9 +33,9 @@ const categoryColors: Record<string, string> = {
   update: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
 };
 
-function RelatedPostCard({ post }: { post: BlogPostType }) {
+function RelatedPostCard({ post, basePath }: { post: BlogPostType; basePath: string }) {
   return (
-    <Link href={`/blog/${post.slug}`}>
+    <Link href={`${basePath}/${post.slug}`}>
       <Card className="bg-card/50 border-border/50 hover-elevate cursor-pointer group h-full">
         <CardContent className="p-4">
           <Badge variant="outline" className={`${categoryColors[post.category]} border mb-3 text-xs`}>
@@ -54,6 +54,9 @@ function RelatedPostCard({ post }: { post: BlogPostType }) {
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
+  const [location] = useLocation();
+  const path = location.split("?")[0];
+  const basePath = path.startsWith("/aa-whatsapp/blog") ? "/aa-whatsapp/blog" : "/blog";
   const post = getBlogPostBySlug(params.slug || "");
   const relatedPosts = post ? getRelatedPosts(post.slug, 3) : [];
 
@@ -64,7 +67,7 @@ export default function BlogPost() {
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Article Not Found</h1>
           <p className="text-muted-foreground mb-6">The article you're looking for doesn't exist.</p>
-          <Link href="/blog">
+          <Link href={basePath}>
             <Button data-testid="button-back-to-blog">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Blog
@@ -76,7 +79,7 @@ export default function BlogPost() {
   }
 
   const handleShare = async () => {
-    const url = `https://aa-mods.vercel.app/blog/${post.slug}`;
+    const url = `https://aa-mods.vercel.app${basePath}/${post.slug}`;
     if (navigator.share) {
       try {
         await navigator.share({
@@ -97,12 +100,15 @@ export default function BlogPost() {
       <Helmet>
         <title>{post.metaTitle} | Ultimate AA WhatsApp Guide 2026</title>
         <meta name="description" content={`${post.metaDescription} Read the definitive 2026 guide by AA Mods specialists.`} />
-        <meta name="keywords" content={`${post.keywords.join(", ")}, AA WhatsApp, 2026 update, anti-ban guide`} />
-        <link rel="canonical" href={`https://aa-mods.vercel.app/blog/${post.slug}`} />
+        <meta
+          name="keywords"
+          content={`${post.keywords.join(", ")}, AA WhatsApp, WhatsApp mod guide, WhatsApp mod tutorial, WhatsApp privacy tips, Anti-Ban WhatsApp, 2026 update`}
+        />
+        <link rel="canonical" href={`https://aa-mods.vercel.app${basePath}/${post.slug}`} />
         <meta property="og:title" content={`${post.metaTitle} – AA Mods Official`} />
         <meta property="og:description" content={post.metaDescription} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://aa-mods.vercel.app/blog/${post.slug}`} />
+        <meta property="og:url" content={`https://aa-mods.vercel.app${basePath}/${post.slug}`} />
         <meta property="og:image" content={`https://aa-mods.vercel.app/blog-og/${post.slug}.png`} />
         <meta property="article:published_time" content={post.publishedAt} />
         <meta property="article:author" content="AA Mods Security Team" />
@@ -119,7 +125,7 @@ export default function BlogPost() {
             "author": {
               "@type": "Organization",
               "name": "AA Mods Security Team",
-              "url": "https://aa-mods.vercel.app/blog"
+                "url": `https://aa-mods.vercel.app${basePath}`
             },
             "publisher": {
               "@type": "Organization",
@@ -133,7 +139,7 @@ export default function BlogPost() {
             "dateModified": "2026-02-01",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://aa-mods.vercel.app/blog/${post.slug}`
+              "@id": `https://aa-mods.vercel.app${basePath}/${post.slug}`
             }
           })}
         </script>
@@ -170,7 +176,7 @@ export default function BlogPost() {
                 <span className="hover:text-primary transition-colors cursor-pointer">Home</span>
               </Link>
               <ChevronRight className="w-4 h-4" />
-              <Link href="/blog">
+              <Link href={basePath}>
                 <span className="hover:text-primary transition-colors cursor-pointer">Blog</span>
               </Link>
               <ChevronRight className="w-4 h-4" />
@@ -321,14 +327,14 @@ export default function BlogPost() {
                   <h3 className="text-2xl font-bold mb-6">Related Articles</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {relatedPosts.map((relatedPost) => (
-                      <RelatedPostCard key={relatedPost.id} post={relatedPost} />
+                      <RelatedPostCard key={relatedPost.id} post={relatedPost} basePath={basePath} />
                     ))}
                   </div>
                 </section>
               )}
 
               <div className="flex justify-between items-center mt-12 pt-8 border-t border-border/50">
-                <Link href="/blog">
+                <Link href={basePath}>
                   <Button variant="outline" data-testid="button-all-articles">
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     All Articles

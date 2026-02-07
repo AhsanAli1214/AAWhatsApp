@@ -35,7 +35,7 @@ export default function AppSelector() {
         />
         <meta
           name="keywords"
-          content="AA Mods collection, download AAWhatsApp, download AA Business, WhatsApp mod selector, secure whatsapp mods, best whatsapp mods 2026, anti-ban whatsapp apk"
+          content="AA Mods collection, download AAWhatsApp, download AA Business, WhatsApp mod selector, secure WhatsApp mods, best WhatsApp mods 2026, anti-ban WhatsApp apk, official WhatsApp mod hub"
         />
         <meta
           property="og:title"
@@ -78,6 +78,7 @@ export default function AppSelector() {
                 className="w-48 h-48 md:w-56 md:h-56 mt-[30px] mb-[30px] object-contain group-hover:scale-110 transition-transform duration-500"
                 loading="eager"
                 decoding="async"
+                fetchPriority="high"
                 width="224"
                 height="224"
                 onError={(e) => {

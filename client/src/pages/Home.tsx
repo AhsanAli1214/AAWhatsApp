@@ -40,7 +40,10 @@ export default function Home() {
       <Helmet>
         <title>AAWhatsApp APK Download V3.0 Official 2026 - Anti-Ban Mod</title>
         <meta name="description" content="Download Official AAWhatsApp V3.0 (2026). Secure WhatsApp mod with Anti-Ban v2.0, Ghost Mode, and Privacy Core. The safest alternative to GB WhatsApp." />
-        <meta name="keywords" content="AAWhatsApp, AA WhatsApp APK, download AAWhatsApp, WhatsApp mod 2026, secure WhatsApp mod, Anti-Ban WhatsApp, GB WhatsApp alternative, FM WhatsApp alternative, Privacy Core WhatsApp, AA Mods" />
+        <meta
+          name="keywords"
+          content="AAWhatsApp, AA WhatsApp APK, download AAWhatsApp, latest WhatsApp mod 2026, secure WhatsApp mod, Anti-Ban WhatsApp, best WhatsApp mod, GB WhatsApp alternative, FM WhatsApp alternative, WhatsApp Plus alternative, Privacy Core WhatsApp, custom themes WhatsApp, HD media WhatsApp, AA Mods"
+        />
         <meta property="og:title" content="AAWhatsApp APK Download V3.0 (Official) - Secure GB Alternative" />
         <meta property="og:description" content="Get the latest AAWhatsApp V3.0. Experience ultimate privacy with Ghost Mode, Anti-Ban v2.0, and 5000+ custom themes. The world's most secure WhatsApp mod." />
         <meta property="og:url" content="https://aa-mods.vercel.app/" />
@@ -49,6 +52,8 @@ export default function Home() {
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp" />
         <link rel="alternate" href="https://aa-mods.vercel.app/aa-whatsapp" hrefLang="en" />
         <link rel="preload" as="image" href={whatsappHero} fetchPriority="high" />
+        <link rel="preload" as="image" href={mediaImage} />
+        <link rel="preload" as="image" href={themesImage} />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -166,6 +171,7 @@ export default function Home() {
                   className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/30 scale-105"
                   loading="eager"
                   decoding="async"
+                  fetchPriority="high"
                   width="1200"
                   height="675"
                 />
