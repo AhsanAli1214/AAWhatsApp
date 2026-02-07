@@ -24,6 +24,7 @@ import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
 import { Footer } from "@/components/Footer";
+import { APP_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 import heroImage from "@/assets/security-hero-new.png";
 import privacyImage from "@/assets/privacy-feature.png";
 import themesImage from "@assets/generated_images/creative_visual_showing_multiple_whatsapp_theme_styles_for_aawhatsapp..png";
@@ -38,17 +39,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>AAWhatsApp APK Download V3.0 Official 2026 - Anti-Ban Mod</title>
-        <meta name="description" content="Download Official AAWhatsApp V3.0 (2026). Secure WhatsApp mod with Anti-Ban v2.0, Ghost Mode, and Privacy Core. The safest alternative to GB WhatsApp." />
+        <title>AAWhatsApp APK Download {APP_VERSIONS.aaWhatsApp} Official 2026 - Anti-Ban Mod</title>
+        <meta name="description" content={`Download Official AAWhatsApp ${APP_VERSIONS.aaWhatsApp} (2026). Secure WhatsApp mod with Anti-Ban v2.0, Ghost Mode, and Privacy Core. The safest alternative to GB WhatsApp.`} />
         <meta
           name="keywords"
           content="AAWhatsApp, AA WhatsApp APK, download AAWhatsApp, latest WhatsApp mod 2026, secure WhatsApp mod, Anti-Ban WhatsApp, best WhatsApp mod, GB WhatsApp alternative, FM WhatsApp alternative, WhatsApp Plus alternative, Privacy Core WhatsApp, custom themes WhatsApp, HD media WhatsApp, AA Mods"
         />
-        <meta property="og:title" content="AAWhatsApp APK Download V3.0 (Official) - Secure GB Alternative" />
-        <meta property="og:description" content="Get the latest AAWhatsApp V3.0. Experience ultimate privacy with Ghost Mode, Anti-Ban v2.0, and 5000+ custom themes. The world's most secure WhatsApp mod." />
+        <meta property="og:title" content={`AAWhatsApp APK Download ${APP_VERSIONS.aaWhatsApp} (Official) - Secure GB Alternative`} />
+        <meta property="og:description" content={`Get the latest AAWhatsApp ${APP_VERSIONS.aaWhatsApp}. Experience ultimate privacy with Ghost Mode, Anti-Ban v2.0, and 5000+ custom themes. The world's most secure WhatsApp mod.`} />
         <meta property="og:url" content="https://aa-mods.vercel.app/" />
-        <meta name="twitter:title" content="AAWhatsApp V3.0 Official Download - Most Secure WhatsApp Mod" />
-        <meta name="twitter:description" content="Level up your privacy with AAWhatsApp V3.0. Anti-Ban, Ghost Mode, and HD media sharing. Download the official 2026 update now." />
+        <meta name="twitter:title" content={`AAWhatsApp ${APP_VERSIONS.aaWhatsApp} Official Download - Most Secure WhatsApp Mod`} />
+        <meta name="twitter:description" content={`Level up your privacy with AAWhatsApp ${APP_VERSIONS.aaWhatsApp}. Anti-Ban, Ghost Mode, and HD media sharing. Download the official 2026 update now.`} />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp" />
         <link rel="alternate" href="https://aa-mods.vercel.app/aa-whatsapp" hrefLang="en" />
         <link rel="preload" as="image" href={whatsappHero} fetchPriority="high" />
@@ -65,8 +66,8 @@ export default function Home() {
             "name": "AAWhatsApp",
             "operatingSystem": "Android",
             "applicationCategory": "CommunicationApplication",
-            "downloadUrl": "https://aa-mods.vercel.app/aa-whatsapp-apk",
-            "softwareVersion": "3.0",
+            "downloadUrl": APP_DOWNLOAD_LINKS.aaWhatsApp,
+            "softwareVersion": APP_VERSION_LOWER.aaWhatsApp.replace("v", ""),
             "fileSize": "65MB",
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -120,7 +121,7 @@ export default function Home() {
               <Link href="/aa-whatsapp-apk" className="w-full sm:w-auto">
                 <button className="relative group overflow-hidden px-8 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-lg shadow-[0_20px_40px_rgba(16,185,129,0.25)] hover:-translate-y-1 hover:shadow-[0_25px_50px_rgba(16,185,129,0.35)] transition-all duration-500 w-full border border-white/20 uppercase tracking-wider flex items-center justify-center gap-3">
                   <ShieldCheck className="w-6 h-6" />
-                  Get AA WhatsApp V3.0
+                  Get AA WhatsApp {APP_VERSIONS.aaWhatsApp}
                 </button>
               </Link>
             </div>
@@ -130,7 +131,7 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
                   <ShieldCheck className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-bold text-lg text-foreground">Anti-Ban v3.0</h3>
+                <h3 className="font-bold text-lg text-foreground">Anti-Ban {APP_VERSION_LOWER.aaWhatsApp}</h3>
                 <p className="text-sm text-muted-foreground">Advanced 2026 security protocols to keep your account 100% safe.</p>
               </div>
               <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-left">
@@ -166,7 +167,7 @@ export default function Home() {
               <div className="relative z-10 mx-auto max-w-lg">
                   <img
                   src={whatsappHero}
-                  alt="AAWhatsApp V3.0 Interface - Official Most Secure WhatsApp Mod with Anti-Ban"
+                  alt={`AAWhatsApp ${APP_VERSIONS.aaWhatsApp} Interface - Official Most Secure WhatsApp Mod with Anti-Ban`}
                   title="Official AAWhatsApp Secure Interface"
                   className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/30 scale-105"
                   loading="eager"
@@ -441,7 +442,7 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-sm font-black">
                 <ShieldCheck className="w-4 h-4" />
-                Anti-Ban V3.0 Certified
+                Anti-Ban {APP_VERSIONS.aaWhatsApp} Certified
               </div>
               <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
                 Hardened <span className="text-primary italic">Anti-Ban</span> Infrastructure

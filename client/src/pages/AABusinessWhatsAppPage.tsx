@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { FAQSection } from "@/components/FAQSection";
 import { useTranslation } from "@/hooks/useTranslation";
+import { APP_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 import businessHero from "@/assets/business-hero.png";
 
 export default function AABusinessWhatsAppPage() {
@@ -44,17 +45,17 @@ export default function AABusinessWhatsAppPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-amber-500/30">
       <Helmet>
-        <title>AA Business WhatsApp APK V1.0 - Secure Enterprise Mod 2026</title>
+        <title>AA Business WhatsApp APK {APP_VERSIONS.aaBusiness} - Secure Enterprise Mod 2026</title>
         <meta
           name="description"
-          content="Official AA Business WhatsApp V1.0 Download. Ultimate secure enterprise mod with Bulk Broadcasting, Anti-Ban Shield, and zero-access privacy."
+          content={`Official AA Business WhatsApp ${APP_VERSIONS.aaBusiness} Download. Ultimate secure enterprise mod with Bulk Broadcasting, Anti-Ban Shield, and zero-access privacy.`}
         />
         <meta
           name="keywords"
           content="AA Business WhatsApp, WhatsApp Business Mod, AA Business APK, secure WhatsApp business mod, Anti-Ban WhatsApp Business, enterprise WhatsApp mod, AA Mods Business"
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-business" />
-        <meta property="og:title" content="AA Business WhatsApp V1.0 - Secure Enterprise Messaging" />
+        <meta property="og:title" content={`AA Business WhatsApp ${APP_VERSIONS.aaBusiness} - Secure Enterprise Messaging`} />
         <meta property="og:description" content="Protect your business communications with AA Business WhatsApp. Anti-Ban, Bulk Messaging, and enhanced privacy controls." />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -63,8 +64,8 @@ export default function AABusinessWhatsAppPage() {
             "name": "AA Business WhatsApp",
             "operatingSystem": "Android",
             "applicationCategory": "BusinessApplication",
-            "downloadUrl": "https://aa-mods.vercel.app/business-download",
-            "softwareVersion": "1.0",
+            "downloadUrl": APP_DOWNLOAD_LINKS.aaBusiness,
+            "softwareVersion": APP_VERSION_LOWER.aaBusiness.replace("v", ""),
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.8",
@@ -122,7 +123,7 @@ export default function AABusinessWhatsAppPage() {
               <Link href="/business-download" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full px-6 py-6 rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-bold text-lg shadow-lg shadow-amber-500/15 flex items-center gap-2">
                   <Download className="w-5 h-5" />
-                  Download AA Business v1.0
+                  Download AA Business {APP_VERSION_LOWER.aaBusiness}
                 </Button>
               </Link>
               <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">

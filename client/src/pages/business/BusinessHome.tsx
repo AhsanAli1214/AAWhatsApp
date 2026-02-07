@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
+import { APP_MIRROR_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 
 import businessHeroJpg from "@/assets/security-hero-new.png";
 import businessDashboardPng from "@/assets/business-dashboard.png";
@@ -16,7 +17,7 @@ import businessSecurityJpg from "@/assets/security-analysis.png";
 import businessTeamPng from "@/assets/community-group.png";
 
 const AD_LINK = "https://otieu.com/4/10538189";
-const MEDIAFIRE_LINK = "https://www.mediafire.com/file/aabusiness_v1.0.apk";
+const MEDIAFIRE_LINK = APP_MIRROR_DOWNLOAD_LINKS.aaBusiness;
 
 const comparisonData = [
   { feature: "Bulk Messaging (10k+)", official: false, gbBusiness: true, aaBusiness: true },
@@ -38,13 +39,13 @@ export default function BusinessHome() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-blue-500/30">
       <Helmet>
-        <title>AA Business WhatsApp V1.0 - Professional Enterprise WhatsApp Mod 2026</title>
-        <meta name="description" content="Official AA Business WhatsApp V1.0 (Base 2.25.29.77). Enterprise-grade security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging." />
+        <title>AA Business WhatsApp {APP_VERSIONS.aaBusiness} - Professional Enterprise WhatsApp Mod 2026</title>
+        <meta name="description" content={`Official AA Business WhatsApp ${APP_VERSIONS.aaBusiness} (Base 2.25.29.77). Enterprise-grade security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging.`} />
         <meta
           name="keywords"
           content="AA Business WhatsApp, Enterprise WhatsApp mod, Bulk messaging WhatsApp, AA Business APK, Business WhatsApp mod 2026, Secure business messaging, anti-ban business WhatsApp, WhatsApp CRM features"
         />
-        <meta property="og:title" content="AA Business WhatsApp V1.0 - Elite Enterprise Edition" />
+        <meta property="og:title" content={`AA Business WhatsApp ${APP_VERSIONS.aaBusiness} - Elite Enterprise Edition`} />
         <meta property="og:description" content="Transform your business communication with AA Business WhatsApp. Advanced automation, analytics, and Anti-Ban v2.0." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-business" />
@@ -57,7 +58,7 @@ export default function BusinessHome() {
               "name": "AA Business WhatsApp",
               "operatingSystem": "Android",
               "applicationCategory": "BusinessApplication",
-              "softwareVersion": "1.0",
+              "softwareVersion": "${APP_VERSION_LOWER.aaBusiness.replace("v", "")}",
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
@@ -87,7 +88,7 @@ export default function BusinessHome() {
             className="flex-1 text-center lg:text-left space-y-8"
           >
             <Badge variant="outline" className="px-4 py-1 border-blue-500/30 text-blue-500 font-bold tracking-wider animate-pulse mb-6">
-              ENTERPRISE EDITION V1.0 AVAILABLE NOW
+              ENTERPRISE EDITION {APP_VERSIONS.aaBusiness} AVAILABLE NOW
             </Badge>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -108,7 +109,7 @@ export default function BusinessHome() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
               <Link href="/aa-business/download" className="w-full sm:w-auto">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 h-16 px-10 text-xl font-black rounded-2xl shadow-xl shadow-blue-500/25 group w-full uppercase tracking-wider">
-                  Get AA Business V1.0
+                  Get AA Business {APP_VERSIONS.aaBusiness}
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>

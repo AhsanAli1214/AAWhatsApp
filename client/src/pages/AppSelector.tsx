@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { APP_VERSIONS } from "@/config/appConfig";
 
 import { Helmet } from "react-helmet";
 
@@ -27,11 +28,11 @@ export default function AppSelector() {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>
-          Download AAWhatsApp V2.0 & AA Business V1.0 APK (Official 2026)
+          Download AAWhatsApp {APP_VERSIONS.aaWhatsApp} & AA Business {APP_VERSIONS.aaBusiness} APK (Official 2026)
         </title>
         <meta
           name="description"
-          content="Official AA Mods hub. Choose AAWhatsApp V2.0 for personal privacy or AA Business V1.0 for professional enterprise tools. Both feature Anti-Ban v1.0 and Privacy Core™ technology."
+          content={`Official AA Mods hub. Choose AAWhatsApp ${APP_VERSIONS.aaWhatsApp} for personal privacy or AA Business ${APP_VERSIONS.aaBusiness} for professional enterprise tools. Both feature Anti-Ban v1.0 and Privacy Core™ technology.`}
         />
         <meta
           name="keywords"
@@ -153,7 +154,7 @@ export default function AppSelector() {
                         data-testid="button-aa-whatsapp-download"
                       >
                         <Download className="w-5 h-5 mr-2" />
-                        Download V3.0
+                        Download {APP_VERSIONS.aaWhatsApp}
                       </Button>
                     </Link>
                   </div>
@@ -213,7 +214,7 @@ export default function AppSelector() {
                         data-testid="button-aa-business-download"
                       >
                         <Download className="w-5 h-5 mr-2" />
-                        Download V1.0
+                        Download {APP_VERSIONS.aaBusiness}
                       </Button>
                     </Link>
                   </div>

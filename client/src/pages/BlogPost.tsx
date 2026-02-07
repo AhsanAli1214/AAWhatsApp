@@ -110,17 +110,26 @@ export default function BlogPost() {
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://aa-mods.vercel.app${basePath}/${post.slug}`} />
         <meta property="og:image" content={`https://aa-mods.vercel.app/blog-og/${post.slug}.png`} />
+        <meta property="og:site_name" content="AA Mods" />
         <meta property="article:published_time" content={post.publishedAt} />
+        <meta property="article:section" content={post.category} />
+        {post.keywords.map((keyword) => (
+          <meta key={keyword} property="article:tag" content={keyword} />
+        ))}
         <meta property="article:author" content="AA Mods Security Team" />
+        <meta name="robots" content="index,follow" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.metaTitle} />
         <meta name="twitter:description" content={post.metaDescription} />
+        <meta name="twitter:site" content="@AAModsOfficial" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": post.title,
             "description": post.metaDescription,
+            "keywords": post.keywords.join(", "),
+            "articleSection": post.category,
             "image": `https://aa-mods.vercel.app/blog-og/${post.slug}.png`,
             "author": {
               "@type": "Organization",
@@ -136,11 +145,37 @@ export default function BlogPost() {
               }
             },
             "datePublished": post.publishedAt,
-            "dateModified": "2026-02-01",
+            "dateModified": post.publishedAt,
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": `https://aa-mods.vercel.app${basePath}/${post.slug}`
             }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://aa-mods.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": `https://aa-mods.vercel.app${basePath}`
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": post.title,
+                "item": `https://aa-mods.vercel.app${basePath}/${post.slug}`
+              }
+            ]
           })}
         </script>
         {post.faqs && post.faqs.length > 0 && (

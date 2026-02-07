@@ -18,6 +18,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { APP_VERSIONS } from "@/config/appConfig";
 
 const navLinks = [
   { href: "/aa-business", label: "Home" },
@@ -56,7 +57,7 @@ export function BusinessNavbar() {
                 AA Business
               </span>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-500/80 leading-none mt-1">
-                Official Mod V1.0
+                Official Mod {APP_VERSIONS.aaBusiness}
               </span>
             </div>
           </Link>

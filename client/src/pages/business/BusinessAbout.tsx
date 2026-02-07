@@ -17,6 +17,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet";
+import { APP_VERSIONS } from "@/config/appConfig";
 
 const values = [
   {
@@ -63,7 +64,7 @@ const timeline = [
   },
   {
     year: "2026",
-    title: "V1.0 Enterprise Release",
+    title: `${APP_VERSIONS.aaBusiness} Enterprise Release`,
     description: "Official stable release with Anti-Ban v1.0 and CRM tools",
   },
 ];

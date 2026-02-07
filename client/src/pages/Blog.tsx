@@ -111,6 +111,7 @@ export default function Blog() {
           name="keywords"
           content="AA WhatsApp blog, AA Business WhatsApp blog, WhatsApp Mod 2026, Anti-Ban WhatsApp tips, WhatsApp privacy guides, secure WhatsApp mod, WhatsApp mod tutorials, WhatsApp mod updates, WhatsApp mod download guide, best WhatsApp mod 2026"
         />
+        <meta name="robots" content="index,follow" />
         <link rel="canonical" href={canonicalUrl} />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
@@ -118,12 +119,15 @@ export default function Blog() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta property="og:title" content={`${isBusiness ? "AA Business" : "AA"} WhatsApp Security Hub – Official Blog 2026`} />
         <meta property="og:description" content="Master your WhatsApp privacy with our definitive guides on security, mod technology, and 2026 updates." />
+        <meta property="og:type" content="website" />
         <meta property="og:image" content="https://aa-mods.vercel.app/og-blog.png" />
         <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:site_name" content="AA Mods" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${isBusiness ? "AA Business" : "AA"} WhatsApp Blog – The Security Authority`} />
         <meta name="twitter:description" content="Official AA WhatsApp blog with security, anti-ban, and privacy guides for 2026." />
         <meta name="twitter:image" content="https://aa-mods.vercel.app/og-blog.png" />
+        <meta name="twitter:site" content="@AAModsOfficial" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

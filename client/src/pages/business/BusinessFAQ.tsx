@@ -12,6 +12,7 @@ import {
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet";
+import { APP_VERSIONS } from "@/config/appConfig";
 
 const faqs = [
   {
@@ -85,7 +86,7 @@ const faqs = [
         a: "Simply download the latest version from our download page and install it over your existing installation. Your chats and settings will be preserved. We recommend enabling notifications from our Telegram channel for update alerts.",
       },
       {
-        q: "What is the size of AA Business WhatsApp V1.0?",
+        q: `What is the size of AA Business WhatsApp ${APP_VERSIONS.aaBusiness}?`,
         a: "The app size is approximately 125MB, optimized for high performance and stability across all Android devices.",
       },
       {

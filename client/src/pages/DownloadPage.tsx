@@ -23,9 +23,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { Footer } from "@/components/Footer";
+import { APP_DIRECT_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 
 const versionInfo = {
-  version: "V 3.0",
+  version: APP_VERSIONS.aaWhatsApp.replace("V", "V "),
   date: "February 06, 2026",
   size: "118 MB",
   android: "5.0+",
@@ -155,16 +156,16 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>Download AAWhatsApp V3.0 APK (2026) - Official Anti-Ban Link</title>
-        <meta name="description" content="Download AAWhatsApp V3.0 APK. Official safe link with Anti-Ban v3.0 and Privacy Core. Verified secure for Android devices in 2026." />
+        <title>Download AAWhatsApp {APP_VERSIONS.aaWhatsApp} APK (2026) - Official Anti-Ban Link</title>
+        <meta name="description" content={`Download AAWhatsApp ${APP_VERSIONS.aaWhatsApp} APK. Official safe link with Anti-Ban ${APP_VERSION_LOWER.aaWhatsApp} and Privacy Core. Verified secure for Android devices in 2026.`} />
         <meta
           name="keywords"
-          content="AA WhatsApp download, AAWhatsApp APK official, AA WhatsApp V3.0 download, latest AA WhatsApp APK, secure WhatsApp mod apk, anti-ban WhatsApp download, best WhatsApp mod 2026, safe APK download"
+          content={`AA WhatsApp download, AAWhatsApp APK official, AA WhatsApp ${APP_VERSIONS.aaWhatsApp} download, latest AA WhatsApp APK, secure WhatsApp mod apk, anti-ban WhatsApp download, best WhatsApp mod 2026, safe APK download`}
         />
         <link rel="canonical" href={canonicalUrl} />
         <link rel="alternate" href={canonicalUrl} hrefLang="en" />
-        <meta property="og:title" content="Download AAWhatsApp V3.0 - Official Secure APK" />
-        <meta property="og:description" content="Get the latest AAWhatsApp V3.0 with Anti-Ban and Privacy Core™. 100% safe, verified, and free download for Android." />
+        <meta property="og:title" content={`Download AAWhatsApp ${APP_VERSIONS.aaWhatsApp} - Official Secure APK`} />
+        <meta property="og:description" content={`Get the latest AAWhatsApp ${APP_VERSIONS.aaWhatsApp} with Anti-Ban and Privacy Core™. 100% safe, verified, and free download for Android.`} />
         <script type="application/ld+json">
           {`
             {
@@ -183,7 +184,7 @@ export default function DownloadPage() {
                 "price": "0.00",
                 "priceCurrency": "USD"
               },
-              "softwareVersion": "3.0",
+              "softwareVersion": "${APP_VERSION_LOWER.aaWhatsApp.replace("v", "")}",
               "downloadUrl": "${canonicalUrl}",
               "featureList": "Anti-Ban, Privacy Core, Ghost Mode, Message Scheduler",
               "releaseDate": "2026-02-06"
@@ -296,7 +297,7 @@ export default function DownloadPage() {
                   </div>
                 )}
                 <a
-                  href={downloadStep === 0 ? "#" : "https://ahsanali.short.gy/aa-whatsapp"}
+                  href={downloadStep === 0 ? "#" : APP_DIRECT_DOWNLOAD_LINKS.aaWhatsApp}
                   onClick={handleDownload}
                   target={downloadStep === 0 ? "_self" : "_blank"}
                   rel="noopener noreferrer"
@@ -310,7 +311,7 @@ export default function DownloadPage() {
               <div className="mb-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col md:flex-row items-center justify-center gap-8 text-sm font-bold">
                 <div className="flex items-center gap-2 text-emerald-400">
                   <ShieldCheck className="w-5 h-5" />
-                  Anti-Ban v3.0
+                  Anti-Ban {APP_VERSION_LOWER.aaWhatsApp}
                 </div>
                 <div className="flex items-center gap-2 text-blue-400">
                   <LockIcon className="w-5 h-5" />
@@ -395,7 +396,7 @@ export default function DownloadPage() {
                   Virus-Free
                 </span>
                 <span className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
-                  Anti-Ban v3.0
+                  Anti-Ban {APP_VERSION_LOWER.aaWhatsApp}
                 </span>
                 <span className="px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold border border-blue-500/20">
                   Privacy Core
@@ -541,7 +542,7 @@ export default function DownloadPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://ahsanali.short.gy/aa-whatsapp"
+                href={APP_DIRECT_DOWNLOAD_LINKS.aaWhatsApp}
                 target="_blank"
                 rel="noopener noreferrer"
               >

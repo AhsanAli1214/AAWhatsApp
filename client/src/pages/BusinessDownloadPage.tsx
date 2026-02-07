@@ -21,10 +21,11 @@ import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import { useState, useEffect } from "react";
 import { Footer } from "@/components/Footer";
+import { APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 import whatsappHero from "@/assets/security-hero-new.png";
 
 const versionInfo = {
-  version: "V 1.0",
+  version: APP_VERSIONS.aaBusiness.replace("V", "V "),
   date: "January 31, 2026",
   size: "125 MB",
   android: "5.0+",
@@ -78,8 +79,8 @@ export default function BusinessDownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-amber-500/30">
       <Helmet>
-        <title>Download AA Business WhatsApp V1.0 APK Official - Anti-Ban 2026</title>
-        <meta name="description" content="Official AA Business WhatsApp V1.0. Enterprise security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging." />
+        <title>Download AA Business WhatsApp {APP_VERSIONS.aaBusiness} APK Official - Anti-Ban 2026</title>
+        <meta name="description" content={`Official AA Business WhatsApp ${APP_VERSIONS.aaBusiness}. Enterprise security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging.`} />
         <meta name="keywords" content="AA Business WhatsApp, Download AA Business, Business WhatsApp Mod, Secure WA Business, Anti-Ban Business WhatsApp, Enterprise WhatsApp APK, AA Mods Business" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-business/download" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -168,7 +169,7 @@ export default function BusinessDownloadPage() {
                 className="w-full max-w-md h-auto py-6 rounded-2xl bg-amber-500 hover:bg-amber-600 text-black font-black text-2xl shadow-xl shadow-amber-500/20"
               >
                 <Download className="w-8 h-8 mr-3" />
-                Deploy AA Business v1.0
+                Deploy AA Business {APP_VERSION_LOWER.aaBusiness}
               </Button>
               <p className="text-xs text-muted-foreground uppercase tracking-widest font-bold">
                 100% Secure Enterprise Mirror

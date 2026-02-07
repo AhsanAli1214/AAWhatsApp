@@ -24,14 +24,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
+import { APP_DIRECT_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 
 const versionHistory = [
   {
-    version: "V 1.0",
+    version: APP_VERSIONS.aaBusiness.replace("V", "V "),
     date: "January 2026",
     changes: [
       "Initial Enterprise Release",
-      "Anti-Ban v1.0 technology",
+      `Anti-Ban ${APP_VERSION_LOWER.aaBusiness} technology`,
       "Enhanced auto-reply system",
       "New business analytics dashboard",
       "Improved catalog management",
@@ -83,16 +84,16 @@ export default function BusinessDownload() {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>
-          Download AA Business WhatsApp V1.0 APK (Official) – Secure Anti-Ban
+          Download AA Business WhatsApp {APP_VERSIONS.aaBusiness} APK (Official) – Secure Anti-Ban
           2026
         </title>
         <meta
           name="description"
-          content="Download AA Business WhatsApp V1.0 APK (Base 2.25.29.77). Official safe download with Anti-Ban protection, Bulk Broadcasting, and Smart Analytics. Verified enterprise messaging for business users."
+          content={`Download AA Business WhatsApp ${APP_VERSIONS.aaBusiness} APK (Base 2.25.29.77). Official safe download with Anti-Ban protection, Bulk Broadcasting, and Smart Analytics. Verified enterprise messaging for business users.`}
         />
         <meta
           name="keywords"
-          content="AA Business WhatsApp Download, Business WhatsApp APK Official, AA Business V1.0 Download, Enterprise WhatsApp Mod 2026, Secure Business WhatsApp Mod, download business whatsapp mod apk"
+          content={`AA Business WhatsApp Download, Business WhatsApp APK Official, AA Business ${APP_VERSIONS.aaBusiness} Download, Enterprise WhatsApp Mod 2026, Secure Business WhatsApp Mod, download business whatsapp mod apk`}
         />
         <link
           rel="canonical"
@@ -163,7 +164,7 @@ export default function BusinessDownload() {
               Version {packageDetails.version} | Base {packageDetails.base}
             </p>
             <p className="text-muted-foreground">
-              Professional WhatsApp mod for businesses with Anti-Ban v1.0
+              Professional WhatsApp mod for businesses with Anti-Ban {APP_VERSION_LOWER.aaBusiness}
               protection.
             </p>
             <p className="text-blue-500 font-semibold mt-4">
@@ -212,7 +213,7 @@ export default function BusinessDownload() {
             )}
             <a
               href={
-                downloadStep === 0 ? "#" : "https://ahsanali.short.gy/aa-wa-pro"
+                downloadStep === 0 ? "#" : APP_DIRECT_DOWNLOAD_LINKS.aaBusiness
               }
               onClick={handleDownload}
               target={downloadStep === 0 ? "_self" : "_blank"}
@@ -270,7 +271,7 @@ export default function BusinessDownload() {
                 <CardContent className="space-y-3">
                   {[
                     "Verified by AA Mods Team",
-                    "Anti-Ban v1.0 Protected",
+                    `Anti-Ban ${APP_VERSION_LOWER.aaBusiness} Protected`,
                     "No Malware or Spyware",
                     "Privacy Core Technology",
                     "Regular Security Updates",

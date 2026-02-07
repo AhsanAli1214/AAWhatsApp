@@ -22,6 +22,7 @@ import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
 
 import { useTranslation } from "@/hooks/useTranslation";
+import { APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 import whatsappHero from "@/assets/security-hero-new.png";
 
 export default function AAWhatsAppPage() {
@@ -30,11 +31,11 @@ export default function AAWhatsAppPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>AAWhatsApp V3.0 APK Download - Secure WhatsApp Mod 2026</title>
-        <meta name="description" content="Official AAWhatsApp V3.0. The most complete secure WhatsApp mod for 2026. Featuring Privacy Core, Anti-Ban v3.0, and advanced stealth features." />
+        <title>AAWhatsApp {APP_VERSIONS.aaWhatsApp} APK Download - Secure WhatsApp Mod 2026</title>
+        <meta name="description" content={`Official AAWhatsApp ${APP_VERSIONS.aaWhatsApp}. The most complete secure WhatsApp mod for 2026. Featuring Privacy Core, Anti-Ban ${APP_VERSION_LOWER.aaWhatsApp}, and advanced stealth features.`} />
         <meta
           name="keywords"
-          content="AAWhatsApp APK, secure WhatsApp mod, alternative to GB WhatsApp, Download AAWhatsApp, AA WhatsApp V3.0, Privacy WhatsApp, Anti-Ban WhatsApp 2026, FM WhatsApp alternative, best WhatsApp mod 2026, custom themes WhatsApp"
+          content={`AAWhatsApp APK, secure WhatsApp mod, alternative to GB WhatsApp, Download AAWhatsApp, AA WhatsApp ${APP_VERSIONS.aaWhatsApp}, Privacy WhatsApp, Anti-Ban WhatsApp 2026, FM WhatsApp alternative, best WhatsApp mod 2026, custom themes WhatsApp`}
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp/features" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -50,7 +51,7 @@ export default function AAWhatsAppPage() {
               "name": "AA WhatsApp",
               "operatingSystem": "Android",
               "applicationCategory": "CommunicationApplication",
-              "softwareVersion": "3.0",
+              "softwareVersion": "${APP_VERSION_LOWER.aaWhatsApp.replace("v", "")}",
               "fileSize": "118 MB",
               "aggregateRating": {
                 "@type": "AggregateRating",

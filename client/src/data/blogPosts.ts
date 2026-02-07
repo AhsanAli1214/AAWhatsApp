@@ -1,3 +1,5 @@
+import { APP_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+
 export interface BlogPost {
   id: string;
   slug: string;
@@ -13,37 +15,46 @@ export interface BlogPost {
   faqs?: { question: string; answer: string }[];
 }
 
-export const blogPosts: BlogPost[] = [
+const APP_PLACEHOLDERS = {
+  aaVersion: "{{AA_VERSION}}",
+  aaVersionLower: "{{AA_VERSION_LOWER}}",
+  aaBusinessVersion: "{{AA_BUSINESS_VERSION}}",
+  aaBusinessVersionLower: "{{AA_BUSINESS_VERSION_LOWER}}",
+  aaDownloadUrl: "{{AA_DOWNLOAD_URL}}",
+  aaBusinessDownloadUrl: "{{AA_BUSINESS_DOWNLOAD_URL}}",
+} as const;
+
+const rawBlogPosts: BlogPost[] = [
 
   {
     id: "1",
     slug: "aa-whatsapp-latest-version-download",
-    title: "AA WhatsApp Latest Version Download 2026 – Official APK v1.0",
-    metaTitle: "AA WhatsApp Download 2026 v1.0 – Official Safe APK | AA Mods",
-    metaDescription: "Download AA WhatsApp APK v1.0 official latest version 2026. Anti-ban protection, 50+ premium features, privacy controls, 1000+ themes. 100% safe & verified.",
-    keywords: ["AA WhatsApp download 2026", "AA WhatsApp APK", "AA WhatsApp latest version", "AA WhatsApp v1.0", "WhatsApp mod download", "AA Mods APK", "secure WhatsApp mod", "anti-ban WhatsApp", "AA WhatsApp official", "download AA WhatsApp free", "AA WhatsApp for Android", "WhatsApp mod 2026"],
+    title: "AA WhatsApp Latest Version Download 2026 – Official APK {{AA_VERSION_LOWER}}",
+    metaTitle: "AA WhatsApp Download 2026 {{AA_VERSION_LOWER}} – Official Safe APK | AA Mods",
+    metaDescription: "Download AA WhatsApp APK {{AA_VERSION_LOWER}} official latest version 2026. Anti-ban protection, 50+ premium features, privacy controls, 1000+ themes. 100% safe & verified.",
+    keywords: ["AA WhatsApp download 2026", "AA WhatsApp APK", "AA WhatsApp latest version", "AA WhatsApp {{AA_VERSION_LOWER}}", "WhatsApp mod download", "AA Mods APK", "secure WhatsApp mod", "anti-ban WhatsApp", "AA WhatsApp official", "download AA WhatsApp free", "AA WhatsApp for Android", "WhatsApp mod 2026"],
     category: "download",
-    excerpt: "Download AA WhatsApp APK v1.0 latest version 2026 with anti-ban protection, 50+ premium features, complete privacy controls, and 1000+ themes. 100% safe and officially verified.",
+    excerpt: "Download AA WhatsApp APK {{AA_VERSION_LOWER}} latest version 2026 with anti-ban protection, 50+ premium features, complete privacy controls, and 1000+ themes. 100% safe and officially verified.",
     content: `AA WhatsApp has established itself as the most trusted and secure WhatsApp modification available in 2026. With over 10 million active users worldwide, it offers unparalleled privacy features, extensive customization options, and a superior messaging experience that the official WhatsApp simply cannot match. Download the latest version directly from AA Mods – your official source for 100% safe and malware-free APK files.
 
-## AA WhatsApp v1.0 – Complete Version Information
+## AA WhatsApp {{AA_VERSION_LOWER}} – Complete Version Information
 
 | Parameter | Specification |
 |-----------|---------------|
 | **Application Name** | AA WhatsApp |
-| **Version** | v1.0 (Latest 2026) |
+| **Version** | {{AA_VERSION_LOWER}} (Latest 2026) |
 | **Base Version** | 2.25.36.73 |
 | **APK File Size** | 118 MB |
 | **Package Name** | com.gbwhatsapp |
-| **Anti-Ban** | v1.0 (Verified) |
+| **Anti-Ban** | {{AA_VERSION_LOWER}} (Verified) |
 | **Developer** | AA Mods Official |
 | **Minimum Android** | 5.0+ |
 | **License** | Free |
 | **Updated** | January 2026 |
 
-## Why AA WhatsApp v1.0 is the Top WhatsApp Mod in 2026
+## Why AA WhatsApp {{AA_VERSION_LOWER}} is the Top WhatsApp Mod in 2026
 
-In a market flooded with mods like GB WhatsApp and FM WhatsApp, AA WhatsApp stands out for its Privacy Core™ technology and Anti-Ban v1.0 infrastructure. Unlike other versions that might compromise your data, AA Mods prioritizes security above all else.
+In a market flooded with mods like GB WhatsApp and FM WhatsApp, AA WhatsApp stands out for its Privacy Core™ technology and Anti-Ban {{AA_VERSION_LOWER}} infrastructure. Unlike other versions that might compromise your data, AA Mods prioritizes security above all else.
 
 ### 1. Industry-Leading Permission Safety
 
@@ -64,17 +75,17 @@ This means AA WhatsApp cannot and will not:
 - Monitor your phone calls
 - Spy on your other apps
 
-### 2. Revolutionary Anti-Ban Technology v1.0
+### 2. Revolutionary Anti-Ban Technology {{AA_VERSION_LOWER}}
 
-Our latest Anti-Ban v1.0 system represents a complete redesign of account protection:
+Our latest Anti-Ban {{AA_VERSION_LOWER}} system represents a complete redesign of account protection:
 
-**How Anti-Ban v1.0 Works:**
+**How Anti-Ban {{AA_VERSION_LOWER}} Works:**
 
 **Ban Rate Comparison (2025-2026 Data):**
 
 ### 3. Complete Feature Arsenal
 
-AA WhatsApp v1.0 comes loaded with over 50 premium features:
+AA WhatsApp {{AA_VERSION_LOWER}} comes loaded with over 50 premium features:
 
 **Privacy Control Suite:**
 - Hide online status from everyone or specific contacts
@@ -170,7 +181,7 @@ For Android 5.0 - 7.1:
 4. Wait for the download to complete fully
 
 **Step 2.2: Verify Download**
-- File name should be: AAWhatsApp_v1.0.apk
+- File name should be: AAWhatsApp_{{AA_VERSION_LOWER}}.apk
 - File size should be approximately 55 MB
 - If size differs significantly, delete and re-download
 
@@ -186,7 +197,7 @@ If using the same phone number:
 **Step 3.2: Install AA WhatsApp**
 1. Open your File Manager app
 2. Navigate to the **Downloads** folder
-3. Tap the **AAWhatsApp_v1.0.apk** file
+3. Tap the **AAWhatsApp_{{AA_VERSION_LOWER}}.apk** file
 4. If prompted about permissions, tap **Settings** and enable
 5. Tap **Install** on the installation screen
 6. Wait 30-60 seconds for completion
@@ -239,7 +250,7 @@ If using the same phone number:
 | Specification | Details |
 |--------------|---------|
 | Application Name | AA WhatsApp |
-| Current Version | v1.0 (January 2026 Release) |
+| Current Version | {{AA_VERSION_LOWER}} (January 2026 Release) |
 | APK File Size | 118 MB |
 | Developer | AA Mods Official Team |
 | Minimum Android | Android 5.0 (Lollipop) and above |
@@ -247,14 +258,14 @@ If using the same phone number:
 | Total Downloads | 10,000,000+ |
 | License | Completely Free |
 | Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v1.0 (Latest) |
+| Anti-Ban Version | {{AA_VERSION_LOWER}} (Latest) |
 
 ## Why Download from AA Mods Only?
 
 | Specification | Details |
 |--------------|---------|
 | Application Name | AA WhatsApp |
-| Current Version | v1.0 (January 2026 Release) |
+| Current Version | {{AA_VERSION_LOWER}} (January 2026 Release) |
 | APK File Size | 118 MB |
 | Developer | AA Mods Official Team |
 | Minimum Android | Android 5.0 (Lollipop) and above |
@@ -262,18 +273,18 @@ If using the same phone number:
 | Total Downloads | 10,000,000+ |
 | License | Completely Free |
 | Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v1.0 (Latest) |
+| Anti-Ban Version | {{AA_VERSION_LOWER}} (Latest) |
 
-## Download AA WhatsApp v1.0 Now
+## Download AA WhatsApp {{AA_VERSION_LOWER}} Now
 
 Join over 10 million users who trust AA WhatsApp for secure, feature-rich messaging. Download now and experience WhatsApp the way it should be.
 
-**Current Version:** v1.0 | **File Size:** 118 MB | **Updated:** January 2026 | **Android:** 5.0+`,
+**Current Version:** {{AA_VERSION_LOWER}} | **File Size:** 118 MB | **Updated:** January 2026 | **Android:** 5.0+`,
     publishedAt: "2026-01-20",
     readTime: 15,
     faqs: [
       { question: "Is AA WhatsApp APK safe to download and install?", answer: "Yes, AA WhatsApp is 100% safe when downloaded from the official AA Mods website. Every APK release is scanned by 70+ antivirus engines and manually verified by our security team." },
-      { question: "Will I get banned for using AA WhatsApp?", answer: "AA WhatsApp has the industry's lowest ban rate at just 0.1% thanks to Anti-Ban v1.0 technology. Following our safety guidelines further minimizes any risk." },
+      { question: "Will I get banned for using AA WhatsApp?", answer: "AA WhatsApp has the industry's lowest ban rate at just 0.1% thanks to Anti-Ban {{AA_VERSION_LOWER}} technology. Following our safety guidelines further minimizes any risk." },
       { question: "Can I keep my existing chats when switching to AA WhatsApp?", answer: "Absolutely! Simply backup your current WhatsApp to Google Drive before installing AA WhatsApp, then restore during setup. All your messages, media, and groups will transfer." },
       { question: "What's the difference between AA WhatsApp and official WhatsApp?", answer: "AA WhatsApp offers 50+ additional features including complete privacy controls, 1000+ themes, extended media sharing (1GB vs 16MB), message scheduling, and Ghost Mode - all while maintaining the same encryption." },
       { question: "How do I update AA WhatsApp to the latest version?", answer: "Download the new version from AA Mods and install over the existing app without uninstalling. Your chats and settings will be preserved automatically." },
@@ -293,13 +304,11 @@ Join over 10 million users who trust AA WhatsApp for secure, feature-rich messag
 
 **Choose your device setup:** [Android guide](#android-setup) | [iOS guide](#ios-setup)
 
----
 
 ## What Is WhatsApp Link Device?
 
 WhatsApp Link Device (Multi‑Device) connects up to **4 additional devices** to a single WhatsApp account. You can link another phone, a tablet, WhatsApp Web, or the WhatsApp Desktop app—all with **end‑to‑end encryption** and full account security.
 
----
 
 ## Important Things to Know Before Linking
 
@@ -309,7 +318,6 @@ WhatsApp Link Device (Multi‑Device) connects up to **4 additional devices** to
 - You can unlink devices anytime
 - Your WhatsApp number stays the same
 
----
 
 ## How WhatsApp Multi‑Device Works
 
@@ -320,7 +328,6 @@ WhatsApp Link Device (Multi‑Device) connects up to **4 additional devices** to
 
 If you don’t open WhatsApp on your primary phone for **14 days**, linked devices are logged out automatically for security.
 
----
 
 ## Android Setup
 
@@ -342,7 +349,6 @@ If you don’t open WhatsApp on your primary phone for **14 days**, linked devic
 
 ✅ Your Android devices are now linked.
 
----
 
 ## iOS Setup
 
@@ -362,7 +368,6 @@ If you don’t open WhatsApp on your primary phone for **14 days**, linked devic
 
 ✅ Your iOS devices are now linked and synced.
 
----
 
 ## Link WhatsApp to a PC or Laptop
 
@@ -374,7 +379,6 @@ If you don’t open WhatsApp on your primary phone for **14 days**, linked devic
 
 For a faster experience, install **WhatsApp Desktop**.
 
----
 
 ## Check Linked Devices
 
@@ -383,7 +387,6 @@ For a faster experience, install **WhatsApp Desktop**.
 
 You’ll see the device type and last active time.
 
----
 
 ## Remove or Unlink a Device
 
@@ -393,7 +396,6 @@ You’ll see the device type and last active time.
 
 This is important if you lose a phone or used a public computer.
 
----
 
 ## Common Problems & Solutions
 
@@ -419,13 +421,11 @@ This is important if you lose a phone or used a public computer.
 - Use a stable connection on all devices
 - Grant WhatsApp required permissions
 
----
 
 ## Is WhatsApp Link Device Safe?
 
 Yes. WhatsApp uses end‑to‑end encryption, device‑based verification, and manual device control. Only devices you approve can access your account.
 
----
 
 ## Best‑Practice Tips
 
@@ -434,7 +434,6 @@ Yes. WhatsApp uses end‑to‑end encryption, device‑based verification, and m
 - Use screen locks on all linked devices
 - Avoid linking on shared computers
 
----
 
 ## Final Words
 
@@ -468,7 +467,7 @@ AA WhatsApp's 50+ features are organized into five major categories:
 | Specification | Details |
 |--------------|---------|
 | Application Name | AA WhatsApp |
-| Current Version | v1.0 (January 2026 Release) |
+| Current Version | {{AA_VERSION_LOWER}} (January 2026 Release) |
 | APK File Size | 118 MB |
 | Developer | AA Mods Official Team |
 | Minimum Android | Android 5.0 (Lollipop) and above |
@@ -476,7 +475,7 @@ AA WhatsApp's 50+ features are organized into five major categories:
 | Total Downloads | 10,000,000+ |
 | License | Completely Free |
 | Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v1.0 (Latest) |
+| Anti-Ban Version | {{AA_VERSION_LOWER}} (Latest) |
 
 ## Privacy Controls – Complete Online Presence Management
 
@@ -497,7 +496,7 @@ Ghost Mode is our flagship privacy feature, unavailable in any other WhatsApp mo
 | Specification | Details |
 |--------------|---------|
 | Application Name | AA WhatsApp |
-| Current Version | v1.0 (January 2026 Release) |
+| Current Version | {{AA_VERSION_LOWER}} (January 2026 Release) |
 | APK File Size | 118 MB |
 | Developer | AA Mods Official Team |
 | Minimum Android | Android 5.0 (Lollipop) and above |
@@ -505,7 +504,7 @@ Ghost Mode is our flagship privacy feature, unavailable in any other WhatsApp mo
 | Total Downloads | 10,000,000+ |
 | License | Completely Free |
 | Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v1.0 (Latest) |
+| Anti-Ban Version | {{AA_VERSION_LOWER}} (Latest) |
 
 **Use Cases:**
 - Read messages without anyone knowing
@@ -520,7 +519,7 @@ Beyond Ghost Mode, granular online status management:
 | Specification | Details |
 |--------------|---------|
 | Application Name | AA WhatsApp |
-| Current Version | v1.0 (January 2026 Release) |
+| Current Version | {{AA_VERSION_LOWER}} (January 2026 Release) |
 | APK File Size | 118 MB |
 | Developer | AA Mods Official Team |
 | Minimum Android | Android 5.0 (Lollipop) and above |
@@ -528,7 +527,7 @@ Beyond Ghost Mode, granular online status management:
 | Total Downloads | 10,000,000+ |
 | License | Completely Free |
 | Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v1.0 (Latest) |
+| Anti-Ban Version | {{AA_VERSION_LOWER}} (Latest) |
 
 ### Last Seen Management
 
@@ -544,7 +543,7 @@ Complete control over your last seen timestamp:
 | Specification | Details |
 |--------------|---------|
 | Application Name | AA WhatsApp |
-| Current Version | v1.0 (January 2026 Release) |
+| Current Version | {{AA_VERSION_LOWER}} (January 2026 Release) |
 | APK File Size | 118 MB |
 | Developer | AA Mods Official Team |
 | Minimum Android | Android 5.0 (Lollipop) and above |
@@ -552,7 +551,7 @@ Complete control over your last seen timestamp:
 | Total Downloads | 10,000,000+ |
 | License | Completely Free |
 | Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v1.0 (Latest) |
+| Anti-Ban Version | {{AA_VERSION_LOWER}} (Latest) |
 
 ### Typing & Recording Indicators
 
@@ -617,7 +616,7 @@ AA WhatsApp's theme engine is one of the most powerful available:
 | Specification | Details |
 |--------------|---------|
 | Application Name | AA WhatsApp |
-| Current Version | v1.0 (January 2026 Release) |
+| Current Version | {{AA_VERSION_LOWER}} (January 2026 Release) |
 | APK File Size | 118 MB |
 | Developer | AA Mods Official Team |
 | Minimum Android | Android 5.0 (Lollipop) and above |
@@ -625,7 +624,7 @@ AA WhatsApp's theme engine is one of the most powerful available:
 | Total Downloads | 10,000,000+ |
 | License | Completely Free |
 | Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v1.0 (Latest) |
+| Anti-Ban Version | {{AA_VERSION_LOWER}} (Latest) |
 
 ### Chat Bubble Styles
 
@@ -657,7 +656,7 @@ AA WhatsApp's theme engine is one of the most powerful available:
 | Specification | Details |
 |--------------|---------|
 | Application Name | AA WhatsApp |
-| Current Version | v1.0 (January 2026 Release) |
+| Current Version | {{AA_VERSION_LOWER}} (January 2026 Release) |
 | APK File Size | 118 MB |
 | Developer | AA Mods Official Team |
 | Minimum Android | Android 5.0 (Lollipop) and above |
@@ -665,7 +664,7 @@ AA WhatsApp's theme engine is one of the most powerful available:
 | Total Downloads | 10,000,000+ |
 | License | Completely Free |
 | Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v1.0 (Latest) |
+| Anti-Ban Version | {{AA_VERSION_LOWER}} (Latest) |
 
 ### Image Quality Control
 
@@ -679,7 +678,7 @@ AA WhatsApp's theme engine is one of the most powerful available:
 | Specification | Details |
 |--------------|---------|
 | Application Name | AA WhatsApp |
-| Current Version | v1.0 (January 2026 Release) |
+| Current Version | {{AA_VERSION_LOWER}} (January 2026 Release) |
 | APK File Size | 118 MB |
 | Developer | AA Mods Official Team |
 | Minimum Android | Android 5.0 (Lollipop) and above |
@@ -687,7 +686,7 @@ AA WhatsApp's theme engine is one of the most powerful available:
 | Total Downloads | 10,000,000+ |
 | License | Completely Free |
 | Package Name | com.gbwhatsapp |
-| Anti-Ban Version | v1.0 (Latest) |
+| Anti-Ban Version | {{AA_VERSION_LOWER}} (Latest) |
 
 ### Message Scheduling
 
@@ -762,7 +761,7 @@ Schedule messages for future delivery:
 
 ## Security Architecture – Your Safety First
 
-### Anti-Ban Technology v1.0
+### Anti-Ban Technology {{AA_VERSION_LOWER}}
 
 The most advanced protection system for any WhatsApp mod:
 
@@ -875,7 +874,7 @@ AA WhatsApp continues to evolve with weekly updates, ensuring you always have th
       { question: "What is Ghost Mode in AA WhatsApp?", answer: "Ghost Mode is an exclusive AA WhatsApp feature that makes you completely invisible while using the app. No one can see your online status, typing indicator, or recording status, but you can still see theirs." },
       { question: "How many themes does AA WhatsApp have?", answer: "AA WhatsApp includes over 1000 professionally designed themes in its Theme Store, with 50+ new themes added monthly. You can also create your own custom themes." },
       { question: "What's the maximum file size I can send with AA WhatsApp?", answer: "AA WhatsApp allows you to send files up to 1GB (videos, documents) and 100MB (audio), compared to the official app's 16MB video and 100MB document limits." },
-      { question: "How does Anti-Ban v1.0 protect my account?", answer: "Anti-Ban v1.0 uses five layers of protection: signature masking, behavior analysis, API filtering, pattern randomization, and real-time cloud updates, resulting in just 0.1% ban rate." },
+      { question: "How does Anti-Ban {{AA_VERSION_LOWER}} protect my account?", answer: "Anti-Ban {{AA_VERSION_LOWER}} uses five layers of protection: signature masking, behavior analysis, API filtering, pattern randomization, and real-time cloud updates, resulting in just 0.1% ban rate." },
       { question: "Can I use AA WhatsApp for business purposes?", answer: "Yes, AA WhatsApp includes features like message scheduling, auto-reply, and unlimited broadcasts that are perfect for business use, all while maintaining strong privacy." }
     ]
   },
@@ -1296,7 +1295,7 @@ AA WhatsApp has earned the top position through its unique combination of maximu
 - Regular security audits
 
 **Anti-Ban Excellence:**
-- Anti-Ban v1.0 technology
+- Anti-Ban {{AA_VERSION_LOWER}} technology
 - 0.1% ban rate (50x-100x lower than competitors)
 - Real-time protection updates
 - Signature rotation and behavior mimicking
@@ -1319,7 +1318,6 @@ AA WhatsApp has earned the top position through its unique combination of maximu
 
 ### Download: aa-mods.vercel.app
 
----
 
 ## #2: FM WhatsApp – Best Lightweight Option
 
@@ -1360,7 +1358,6 @@ FM WhatsApp focuses on providing essential mod features while maintaining a smal
 - Performance-focused users
 - Minimalists who want basic mod features
 
----
 
 ## #3: YoWhatsApp – Best for Design
 
@@ -1400,7 +1397,6 @@ YoWhatsApp (YoWA) is known for its clean, material design-inspired interface. It
 - Material Design enthusiasts
 - Those wanting balanced features/risk
 
----
 
 ## #4: GB WhatsApp – Most Features (With Risks)
 
@@ -1451,7 +1447,6 @@ GB WhatsApp is the most popular WhatsApp mod by download count. It offers the mo
 
 Many GB WhatsApp APKs from unofficial sources contain malware. Only use if you verify the source carefully.
 
----
 
 ## #5: WhatsApp Plus – Not Recommended
 
@@ -1481,7 +1476,6 @@ WhatsApp Plus was once popular but has declined significantly due to security is
 
 ### Alternative: Choose AA WhatsApp or FM WhatsApp
 
----
 
 ## #6: OGWhatsApp – For Dual Accounts Only
 
@@ -1505,7 +1499,6 @@ OGWhatsApp was created specifically for running two WhatsApp accounts on one dev
 
 Only consider OGWhatsApp if you specifically need dual accounts and cannot use AA WhatsApp for the secondary number.
 
----
 
 ## Complete Feature Comparison
 
@@ -1521,7 +1514,7 @@ Only consider OGWhatsApp if you specifically need dual accounts and cannot use A
 | Media Limit | 1GB | 500MB | 700MB | 700MB |
 | Status Length | 7min | 5min | 5min | 5min |
 | Privacy Dashboard | Yes | No | No | No |
-| Anti-Ban Version | v1.0 | Basic | Moderate | Basic |
+| Anti-Ban Version | {{AA_VERSION_LOWER}} | Basic | Moderate | Basic |
 
 ## Complete Security Comparison
 
@@ -1573,7 +1566,7 @@ Don't compromise your account and data for a few extra themes. Choose AA WhatsAp
     faqs: [
       { question: "What is the safest WhatsApp mod in 2026?", answer: "AA WhatsApp is the safest with only 8 permissions, 0.1% ban rate, verified source, and weekly security updates. It's the only mod we fully recommend." },
       { question: "Is GB WhatsApp better than AA WhatsApp?", answer: "GB WhatsApp has more themes (4000+ vs 1000+) but AA WhatsApp is far safer with 0.1% vs 5-10% ban rate, 8 vs 23+ permissions, and verified source vs many fake/malware versions." },
-      { question: "Why do some mods have higher ban rates?", answer: "Higher ban rates result from weaker anti-ban technology, more detectable modifications, and less frequent security updates. AA WhatsApp's Anti-Ban v1.0 provides superior protection." },
+      { question: "Why do some mods have higher ban rates?", answer: "Higher ban rates result from weaker anti-ban technology, more detectable modifications, and less frequent security updates. AA WhatsApp's Anti-Ban {{AA_VERSION_LOWER}} provides superior protection." },
       { question: "Can I use multiple WhatsApp mods?", answer: "Yes, you can use different mods with different phone numbers on the same device. Each mod installs separately with its own package name." },
       { question: "What happens if I get banned using a mod?", answer: "Temporary bans last 24-72 hours. Permanent bans require a new number. AA WhatsApp's 0.1% ban rate makes this extremely unlikely if you follow safety guidelines." }
     ]
@@ -1598,7 +1591,7 @@ Don't compromise your account and data for a few extra themes. Choose AA WhatsAp
 | Malware/Virus | Clean (verified) | 10/10 |
 | Encryption | Preserved (E2E) | 10/10 |
 | Permissions | Minimal (8 only) | 10/10 |
-| Anti-Ban | Advanced (v1.0) | 10/10 |
+| Anti-Ban | Advanced ({{AA_VERSION_LOWER}}) | 10/10 |
 | Data Privacy | Excellent | 9.5/10 |
 | Source Trust | Official verified | 10/10 |
 | **Overall Safety** | **Excellent** | **9.8/10** |
@@ -1647,11 +1640,11 @@ Permissions determine what an app can access on your device. AA WhatsApp takes a
 
 **Conclusion:** AA WhatsApp has fewer permissions than even the official WhatsApp app, and zero dangerous permissions.
 
-### 2. Anti-Ban Technology v1.0 – Account Protection
+### 2. Anti-Ban Technology {{AA_VERSION_LOWER}} – Account Protection
 
-The biggest concern with WhatsApp mods is getting banned. AA WhatsApp's Anti-Ban v1.0 provides industry-leading protection.
+The biggest concern with WhatsApp mods is getting banned. AA WhatsApp's Anti-Ban {{AA_VERSION_LOWER}} provides industry-leading protection.
 
-**How Anti-Ban v1.0 Works:**
+**How Anti-Ban {{AA_VERSION_LOWER}} Works:**
 
 | Protection Layer | Technical Function | Effectiveness |
 |-----------------|-------------------|---------------|
@@ -1719,7 +1712,7 @@ The biggest concern with WhatsApp mods is getting banned. AA WhatsApp's Anti-Ban
 | 5 | Network analysis | No suspicious connections |
 | 6 | Signature verification | Valid AA Mods signature |
 
-**Verification Results for v1.0:**
+**Verification Results for {{AA_VERSION_LOWER}}:**
 - VirusTotal: 0/70 detections
 - Malwarebytes: Clean
 - Kaspersky: Clean
@@ -1789,7 +1782,7 @@ The biggest concern with WhatsApp mods is getting banned. AA WhatsApp's Anti-Ban
 
 ### "Can WhatsApp detect I'm using a mod?"
 
-AA WhatsApp's Anti-Ban v1.0 mimics official app behavior so closely that detection is extremely difficult. The 0.1% ban rate proves this effectiveness.
+AA WhatsApp's Anti-Ban {{AA_VERSION_LOWER}} mimics official app behavior so closely that detection is extremely difficult. The 0.1% ban rate proves this effectiveness.
 
 ### "Will my data be stolen?"
 
@@ -2001,7 +1994,7 @@ WhatsApp mods are not on the Play Store, so you need to allow installation from 
 **Step 3.4:** Wait for download to complete (check notification bar)
 
 **Step 3.5:** Verify download:
-- File name: AAWhatsApp_v1.0.apk (or current version)
+- File name: AAWhatsApp_{{AA_VERSION_LOWER}}.apk (or current version)
 - File size: Approximately 55 MB
 
 ### Download Verification
@@ -2040,7 +2033,7 @@ Skip uninstallation. You can have multiple WhatsApp apps with different numbers.
 
 **Step 5.2:** Navigate to **Downloads** folder
 
-**Step 5.3:** Tap the **AAWhatsApp_v1.0.apk** file
+**Step 5.3:** Tap the **AAWhatsApp_{{AA_VERSION_LOWER}}.apk** file
 
 **Step 5.4:** If prompted:
 - "For your security...": Tap **Settings**, enable installation, go back
@@ -2459,7 +2452,7 @@ Settings → About → Version
 
 | Version | Key Changes |
 |---------|-------------|
-| v1.0 | Anti-Ban v1.0, Privacy Dashboard |
+| {{AA_VERSION_LOWER}} | Anti-Ban {{AA_VERSION_LOWER}}, Privacy Dashboard |
 | v20.75 | Performance improvements |
 | v20.70 | New theme engine |
 | v20.65 | Extended media limits |
@@ -2976,7 +2969,7 @@ Real data from 100,000+ users each (2025-2026):
 
 | Risk Factor | Level | Mitigation |
 |-------------|-------|------------|
-| Account ban | Very Low (0.1%) | Anti-Ban v1.0 |
+| Account ban | Very Low (0.1%) | Anti-Ban {{AA_VERSION_LOWER}} |
 | Malware | Very Low | Verified source |
 | Data theft | Very Low | Minimal permissions |
 | Privacy breach | Very Low | No invasive access |
@@ -3498,7 +3491,7 @@ In AA WhatsApp:
 
 ## Why AA WhatsApp is Safest
 
-### Anti-Ban v1.0 Features
+### Anti-Ban {{AA_VERSION_LOWER}} Features
 
 | Protection | Function |
 |-----------|----------|
@@ -3625,17 +3618,17 @@ Most VoIP numbers don't work:
   {
     id: "15",
     slug: "aa-whatsapp-v20-80-update",
-    title: "AA WhatsApp v1.0 Update – Complete Changelog & New Features",
-    metaTitle: "AA WhatsApp v1.0 Update 2026 – What's New | AA Mods",
-    metaDescription: "Complete changelog for AA WhatsApp v1.0. Discover Anti-Ban v1.0, Privacy Dashboard, performance improvements, bug fixes, and all new features.",
-    keywords: ["AA WhatsApp v1.0", "AA WhatsApp update 2026", "WhatsApp mod changelog", "AA WhatsApp new features", "AA WhatsApp latest version"],
+    title: "AA WhatsApp {{AA_VERSION_LOWER}} Update – Complete Changelog & New Features",
+    metaTitle: "AA WhatsApp {{AA_VERSION_LOWER}} Update 2026 – What's New | AA Mods",
+    metaDescription: "Complete changelog for AA WhatsApp {{AA_VERSION_LOWER}}. Discover Anti-Ban {{AA_VERSION_LOWER}}, Privacy Dashboard, performance improvements, bug fixes, and all new features.",
+    keywords: ["AA WhatsApp {{AA_VERSION_LOWER}}", "AA WhatsApp update 2026", "WhatsApp mod changelog", "AA WhatsApp new features", "AA WhatsApp latest version"],
     category: "update",
-    excerpt: "Complete changelog for AA WhatsApp v1.0 featuring Anti-Ban v1.0, Privacy Dashboard, Ghost Mode improvements, performance boosts, and security patches.",
-    content: `AA WhatsApp v1.0 is our most significant update yet! This version brings major security improvements, exclusive new features, and significant performance enhancements.
+    excerpt: "Complete changelog for AA WhatsApp {{AA_VERSION_LOWER}} featuring Anti-Ban {{AA_VERSION_LOWER}}, Privacy Dashboard, Ghost Mode improvements, performance boosts, and security patches.",
+    content: `AA WhatsApp {{AA_VERSION_LOWER}} is our most significant update yet! This version brings major security improvements, exclusive new features, and significant performance enhancements.
 
 ## Headline Features
 
-### 1. Anti-Ban v1.0
+### 1. Anti-Ban {{AA_VERSION_LOWER}}
 
 Complete redesign of our protection system:
 
@@ -3690,7 +3683,7 @@ Enhanced invisibility:
 - Privacy quick actions
 
 ### Security Updates
-- Anti-Ban v1.0
+- Anti-Ban {{AA_VERSION_LOWER}}
 - Updated encryption
 - Better session handling
 - Certificate pinning
@@ -3720,10 +3713,10 @@ Enhanced invisibility:
 
 ### Direct Update (Recommended)
 1. Backup chats
-2. Download v1.0 from AA Mods
+2. Download {{AA_VERSION_LOWER}} from AA Mods
 3. Install over existing (don't uninstall)
 4. Open and verify
-5. Enable Anti-Ban v1.0
+5. Enable Anti-Ban {{AA_VERSION_LOWER}}
 
 ### After Updating
 1. Go to Mod Settings → Anti-Ban
@@ -3736,7 +3729,7 @@ Enhanced invisibility:
 
 | Detail | Value |
 |--------|-------|
-| Version | v1.0 |
+| Version | {{AA_VERSION_LOWER}} |
 | Size | 55 MB |
 | Released | January 2026 |
 | Android | 5.0+ |
@@ -3745,10 +3738,10 @@ Download now from AA Mods!`,
     publishedAt: "2026-01-06",
     readTime: 8,
     faqs: [
-      { question: "What's new in AA WhatsApp v1.0?", answer: "Major updates include Anti-Ban v1.0 (0.1% ban rate), Privacy Dashboard, improved Ghost Mode, 40% faster startup, and many bug fixes." },
+      { question: "What's new in AA WhatsApp {{AA_VERSION_LOWER}}?", answer: "Major updates include Anti-Ban {{AA_VERSION_LOWER}} (0.1% ban rate), Privacy Dashboard, improved Ghost Mode, 40% faster startup, and many bug fixes." },
       { question: "Do I need to backup before updating?", answer: "We recommend backing up, but direct updates (installing over existing) automatically preserve all your data." },
       { question: "Will my settings reset after updating?", answer: "Most settings are preserved with direct updates. You may need to configure new features like Privacy Dashboard." },
-      { question: "Is v1.0 compatible with my themes?", answer: "Most themes work perfectly. The new theme engine improves compatibility and makes it easy to find alternatives if needed." }
+      { question: "Is {{AA_VERSION_LOWER}} compatible with my themes?", answer: "Most themes work perfectly. The new theme engine improves compatibility and makes it easy to find alternatives if needed." }
     ]
   },
   {
@@ -3784,16 +3777,16 @@ Download now from AA Mods!`,
 
 ## Recent Patch Notes
 
-### Security Fixes (v1.0)
+### Security Fixes ({{AA_VERSION_LOWER}})
 
 | Fix | Description |
 |-----|-------------|
-| Anti-Ban v1.0 | Completely redesigned protection |
+| Anti-Ban {{AA_VERSION_LOWER}} | Completely redesigned protection |
 | Signature Rotation | Auto-changes to avoid detection |
 | API Masking | Hides mod-specific calls |
 | Session Security | Better token handling |
 
-### Bug Fixes (v1.0)
+### Bug Fixes ({{AA_VERSION_LOWER}})
 
 | Bug | Status |
 |-----|--------|
@@ -3867,43 +3860,72 @@ Stay updated, stay protected!`,
   {
     id: "3",
     slug: "aa-business-whatsapp-v1-release",
-    title: "AA Business WhatsApp V1.0 Released – Enterprise Security Redefined",
-    metaTitle: "AA Business WhatsApp V1.0 Release Guide – Official Enterprise Mod",
-    metaDescription: "AA Business WhatsApp V1.0 is here. Explore the new Anti-Ban v1.0, Bulk Broadcasting, and Smart Analytics. Download the safest business mod of 2026.",
-    keywords: ["AA Business WhatsApp V1.0", "Business WhatsApp Mod 2026", "Enterprise WhatsApp APK", "Secure Business WhatsApp"],
+    title: "AA Business WhatsApp {{AA_BUSINESS_VERSION}} Released – Enterprise Security Redefined",
+    metaTitle: "AA Business WhatsApp {{AA_BUSINESS_VERSION}} Release Guide – Official Enterprise Mod",
+    metaDescription: "AA Business WhatsApp {{AA_BUSINESS_VERSION}} is here. Explore the new Anti-Ban {{AA_BUSINESS_VERSION_LOWER}}, Bulk Broadcasting, and Smart Analytics. Download the safest business mod of 2026.",
+    keywords: ["AA Business WhatsApp {{AA_BUSINESS_VERSION}}", "Business WhatsApp Mod 2026", "Enterprise WhatsApp APK", "Secure Business WhatsApp"],
     category: "update",
-    excerpt: "AA Business WhatsApp V1.0 has arrived with enterprise-grade security, Anti-Ban v1.0, and powerful automation tools for businesses.",
-    content: `We are thrilled to announce the official release of AA Business WhatsApp V1.0. This version represents a milestone in professional communication, focusing on security, privacy, and productivity.
+    excerpt: "AA Business WhatsApp {{AA_BUSINESS_VERSION}} has arrived with enterprise-grade security, Anti-Ban {{AA_BUSINESS_VERSION_LOWER}}, and powerful automation tools for businesses.",
+    content: `We are thrilled to announce the official release of AA Business WhatsApp {{AA_BUSINESS_VERSION}}. This version represents a milestone in professional communication, focusing on security, privacy, and productivity.
 
 | **Application Name** | AA Business WhatsApp |
-| **Version** | V1.0 (Latest) |
+| **Version** | {{AA_VERSION}} (Latest) |
 | **Base Version** | 2.25.29.77 |
 | **APK File Size** | 125 MB |
 | **Package Name** | com.aa.business |
-| **Anti-Ban** | v1.0 (Verified) |
+| **Anti-Ban** | {{AA_VERSION_LOWER}} (Verified) |
 | **Developer** | AA Mods Official |
 | **Minimum Android** | 5.0+ |
 | **License** | Free |
 | **Updated** | January 2026 |
 
-## Key Features in V1.0
+## Key Features in {{AA_VERSION}}
 
-- **Anti-Ban v1.0**: The most advanced protection for business accounts.
+- **Anti-Ban {{AA_VERSION_LOWER}}**: The most advanced protection for business accounts.
 - **Bulk Broadcasting**: Send messages to unlimited contacts safely.
 - **Smart Analytics**: Track your business engagement in real-time.
 - **Privacy Core**: Zero harvesting of your business data.
 
 ## Why Upgrade?
 
-AA Business WhatsApp V1.0 is built on the latest base version 2.25.29.77, ensuring compatibility with all current WhatsApp features while adding our unique modifications.`,
+AA Business WhatsApp {{AA_BUSINESS_VERSION}} is built on the latest base version 2.25.29.77, ensuring compatibility with all current WhatsApp features while adding our unique modifications.`,
     publishedAt: "2026-01-31",
     readTime: 10,
     faqs: [
-      { question: "What is the base version of AA Business V1.0?", answer: "The base version is 2.25.29.77." },
-      { question: "How large is the AA Business V1.0 APK?", answer: "The app size is approximately 125MB." }
+      { question: "What is the base version of AA Business {{AA_BUSINESS_VERSION}}?", answer: "The base version is 2.25.29.77." },
+      { question: "How large is the AA Business {{AA_BUSINESS_VERSION}} APK?", answer: "The app size is approximately 125MB." }
     ]
   }
 ];
+
+function replaceAppPlaceholders(text: string, isBusinessPost: boolean): string {
+  return text
+    .replaceAll(APP_PLACEHOLDERS.aaVersion, APP_VERSIONS.aaWhatsApp)
+    .replaceAll(APP_PLACEHOLDERS.aaVersionLower, APP_VERSION_LOWER.aaWhatsApp)
+    .replaceAll(APP_PLACEHOLDERS.aaDownloadUrl, APP_DOWNLOAD_LINKS.aaWhatsApp)
+    .replaceAll(APP_PLACEHOLDERS.aaBusinessVersion, APP_VERSIONS.aaBusiness)
+    .replaceAll(APP_PLACEHOLDERS.aaBusinessVersionLower, APP_VERSION_LOWER.aaBusiness)
+    .replaceAll(APP_PLACEHOLDERS.aaBusinessDownloadUrl, APP_DOWNLOAD_LINKS.aaBusiness);
+}
+
+function applyAppConfigToPost(post: BlogPost): BlogPost {
+  const isBusinessPost = post.slug.includes("aa-business") || post.title.includes("AA Business");
+  return {
+    ...post,
+    title: replaceAppPlaceholders(post.title, isBusinessPost),
+    metaTitle: replaceAppPlaceholders(post.metaTitle, isBusinessPost),
+    metaDescription: replaceAppPlaceholders(post.metaDescription, isBusinessPost),
+    excerpt: replaceAppPlaceholders(post.excerpt, isBusinessPost),
+    content: replaceAppPlaceholders(post.content, isBusinessPost),
+    keywords: post.keywords.map((keyword) => replaceAppPlaceholders(keyword, isBusinessPost)),
+    faqs: post.faqs?.map((faq) => ({
+      question: replaceAppPlaceholders(faq.question, isBusinessPost),
+      answer: replaceAppPlaceholders(faq.answer, isBusinessPost),
+    })),
+  };
+}
+
+export const blogPosts: BlogPost[] = rawBlogPosts.map(applyAppConfigToPost);
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find(post => post.slug === slug);
