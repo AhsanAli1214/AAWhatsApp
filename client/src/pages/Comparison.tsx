@@ -26,7 +26,8 @@ import {
 
 export default function Comparison() {
   const [location] = useLocation();
-  const isBusiness = location.includes('type=business') || window.location.search.includes('type=business');
+  const isBusiness = location.includes("type=business");
+  const canonicalUrl = `https://aa-mods.vercel.app${location.split(\"?\")[0]}`;
   
   const personalComparison = [
     { feature: "Hide Online Status", aa: "✅", gb: "✅", fm: "✅", off: "❌" },
@@ -76,7 +77,7 @@ export default function Comparison() {
             ? "See how AA Business outperforms official WhatsApp Business with enterprise-grade tools."
             : "See how AA WhatsApp compares to GB and FM WhatsApp across privacy, anti-ban, and features."}
         />
-        <link rel="canonical" href={`https://aa-mods.vercel.app/aa-whatsapp/comparison${isBusiness ? "?type=business" : ""}`} />
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
       
       <Navigation />

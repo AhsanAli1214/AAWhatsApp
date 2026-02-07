@@ -166,6 +166,7 @@ export default function Home() {
                   className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/30 scale-105"
                   loading="eager"
                   decoding="async"
+                  fetchPriority="high"
                   width="1200"
                   height="675"
                 />

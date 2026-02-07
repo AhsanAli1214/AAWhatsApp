@@ -42,6 +42,7 @@ export default function About() {
           name="keywords"
           content="About AA WhatsApp, AA WhatsApp safety, secure WhatsApp features, AA Mods mission, anti-ban technology explained"
         />
+        <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp/about" />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -118,8 +119,9 @@ export default function About() {
                 src={heroImage}
                 alt="About AA WhatsApp"
                 className="rounded-[3rem] shadow-2xl border border-white/10"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
+                fetchPriority="high"
                 width="1200"
                 height="800"
               />
