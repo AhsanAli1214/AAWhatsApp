@@ -24,16 +24,14 @@ export function generateSitemap() {
       { path: "/aa-business/faq", priority: "0.8", changefreq: "daily" },
       { path: "/aa-business/blog", priority: "0.8", changefreq: "daily" },
       
-      { path: "/aa-business-whatsapp", priority: "0.9", changefreq: "daily" },
-      { path: "/business-download", priority: "1.0", changefreq: "daily" },
-      
       { path: "/faq", priority: "0.8", changefreq: "daily" },
       { path: "/download", priority: "1.0", changefreq: "daily" },
       { path: "/privacy", priority: "0.3", changefreq: "monthly" },
       { path: "/terms", priority: "0.3", changefreq: "monthly" },
       { path: "/support", priority: "0.5", changefreq: "weekly" },
       { path: "/blog", priority: "0.8", changefreq: "daily" },
-      { path: "/sitemap", priority: "0.5", changefreq: "monthly" },
+      { path: "/aa-business-whatsapp", priority: "0.9", changefreq: "daily" },
+      { path: "/business-download", priority: "1.0", changefreq: "daily" },
     ];
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
