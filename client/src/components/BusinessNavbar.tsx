@@ -39,14 +39,16 @@ export function BusinessNavbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-3 group">
             <img
-              src="/favicon.png"
+              src="/favicon.svg"
               alt="AA Business"
               className="w-12 h-12 object-contain drop-shadow-[0_0_8px_rgba(59,130,246,0.3)] group-hover:scale-110 transition-transform duration-500"
               loading="eager"
               decoding="async"
+              width="48"
+              height="48"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = "https://i.postimg.cc/mrqq6LxP/favicon.png";
+                target.src = "/favicon.svg";
               }}
             />
             <div className="flex flex-col">

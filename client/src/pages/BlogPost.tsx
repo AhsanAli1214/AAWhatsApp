@@ -126,7 +126,7 @@ export default function BlogPost() {
               "name": "AA Mods",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://aa-mods.vercel.app/favicon.png"
+                "url": "https://aa-mods.vercel.app/favicon.svg"
               }
             },
             "datePublished": post.publishedAt,

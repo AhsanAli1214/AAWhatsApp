@@ -103,7 +103,11 @@ export default function Blog() {
         <meta property="og:title" content={`${isBusiness ? "AA Business" : "AA"} WhatsApp Security Hub – Official Blog 2026`} />
         <meta property="og:description" content="Master your WhatsApp privacy with our definitive guides on security, mod technology, and 2026 updates." />
         <meta property="og:image" content="https://aa-mods.vercel.app/og-blog.png" />
+        <meta property="og:url" content={`https://aa-mods.vercel.app/blog${isBusiness ? "?type=business" : ""}`} />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${isBusiness ? "AA Business" : "AA"} WhatsApp Blog – The Security Authority`} />
+        <meta name="twitter:description" content="Official AA WhatsApp blog with security, anti-ban, and privacy guides for 2026." />
+        <meta name="twitter:image" content="https://aa-mods.vercel.app/og-blog.png" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -116,9 +120,21 @@ export default function Blog() {
               "name": "AA Mods",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://aa-mods.vercel.app/favicon.png"
+                "url": "https://aa-mods.vercel.app/favicon.svg"
               }
             }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": blogPosts.map((post, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "url": `https://aa-mods.vercel.app/blog/${post.slug}`,
+              "name": post.title
+            }))
           })}
         </script>
       </Helmet>
