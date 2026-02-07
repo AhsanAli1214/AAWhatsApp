@@ -54,6 +54,7 @@ export default function Comparison() {
     <div className={`min-h-screen bg-background text-foreground ${isBusiness ? "selection:bg-amber-500/30" : "selection:bg-primary/30"}`}>
       <Helmet>
         <title>{isBusiness ? "AA Business vs Official Comparison" : "AA WhatsApp Comparison 2026"}</title>
+        <link rel="canonical" href={`https://aa-mods.vercel.app/aa-whatsapp/comparison${isBusiness ? "?type=business" : ""}`} />
       </Helmet>
       
       <Navigation />

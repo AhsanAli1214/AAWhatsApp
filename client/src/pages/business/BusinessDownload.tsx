@@ -98,6 +98,11 @@ export default function BusinessDownload() {
           rel="canonical"
           href="https://aa-mods.vercel.app/aa-business/download"
         />
+        <link
+          rel="alternate"
+          href="https://aa-mods.vercel.app/aa-business/download"
+          hrefLang="en"
+        />
         <script type="application/ld+json">
           {`
             {

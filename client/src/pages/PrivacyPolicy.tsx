@@ -2,11 +2,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShieldCheck, Lock, Eye, ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet";
 
 export default function PrivacyPolicy() {
   const [, setLocation] = useLocation();
   return (
     <div className="container mx-auto py-12 px-4 max-w-4xl">
+      <Helmet>
+        <title>Privacy Policy - AA Mods</title>
+        <link rel="canonical" href="https://aa-mods.vercel.app/privacy" />
+      </Helmet>
       <div className="mb-8">
         <Button 
           variant="ghost" 
