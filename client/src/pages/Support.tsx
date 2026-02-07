@@ -18,6 +18,7 @@ export default function Support() {
       <Helmet>
         <title>Support - AA Mods | Report Bug & Error</title>
         <meta name="description" content="Need help with AAWhatsApp? Use our official bug reporting form or join our Telegram channel for direct support." />
+        <link rel="canonical" href="https://aa-mods.vercel.app/support" />
       </Helmet>
       <div className="fixed inset-0 hero-gradient opacity-40 pointer-events-none z-0" />
       <div className="fixed top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent z-50" />

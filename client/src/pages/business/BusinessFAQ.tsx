@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
+import { Helmet } from "react-helmet";
 
 const faqs = [
   {
@@ -98,6 +99,10 @@ const faqs = [
 export default function BusinessFAQ() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>AA Business WhatsApp FAQ - Support & Guides</title>
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-business/faq" />
+      </Helmet>
       <BusinessNavbar />
 
       <section className="pt-32 pb-20 px-4">

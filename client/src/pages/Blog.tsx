@@ -92,10 +92,14 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>{isBusiness ? "AA Business WhatsApp Blog" : "AA WhatsApp Blog"} 2026 – Ultimate Anti-Ban, Privacy & Mod Security Guides</title>
-        <meta name="description" content={`The definitive authority for AA ${isBusiness ? "Business " : ""}WhatsApp mod security. Discover expert guides, Anti-Ban technology insights, and the latest privacy updates for 2026.`} />
+        <title>{isBusiness ? "AA Business WhatsApp Blog" : "AA WhatsApp Blog"} 2026 - Anti-Ban Guides</title>
+        <meta name="description" content={`Official AA ${isBusiness ? "Business " : ""}WhatsApp security hub. Expert guides, Anti-Ban technology insights, and the latest privacy updates for 2026.`} />
         <meta name="keywords" content={`AA WhatsApp, AA Business WhatsApp, WhatsApp Mod 2026, Anti-Ban WhatsApp, Private WhatsApp, Secure WhatsApp Mod, AAWhatsApp Update, WhatsApp Privacy Guides`} />
         <link rel="canonical" href={`https://aa-mods.vercel.app/blog${isBusiness ? "?type=business" : ""}`} />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta property="og:title" content={`${isBusiness ? "AA Business" : "AA"} WhatsApp Security Hub – Official Blog 2026`} />
         <meta property="og:description" content="Master your WhatsApp privacy with our definitive guides on security, mod technology, and 2026 updates." />
         <meta property="og:image" content="https://aa-mods.vercel.app/og-blog.png" />

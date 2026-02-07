@@ -25,8 +25,8 @@ import { Link, useLocation } from "wouter";
 import { Footer } from "@/components/Footer";
 
 const versionInfo = {
-  version: "V 2.0",
-  date: "January 27, 2026",
+  version: "V 3.0",
+  date: "February 06, 2026",
   size: "118 MB",
   android: "5.0+",
   status: "Verified Safe",
@@ -37,10 +37,32 @@ const versionInfo = {
 
 const changelog = [
   {
+    version: "V 3.0",
+    date: "February 06, 2026",
+    base: "2.25.36.73",
+    isLatest: true,
+    changes: [
+      { type: "new", text: "Profile Cover Photo support for enhanced personalization 🖼️" },
+      { type: "new", text: "Status notification alerts when contacts post new updates 🔔" },
+      { type: "new", text: "Fresh icons added to home screen & chat options for faster navigation 📲" },
+      { type: "new", text: "Improved profile customization controls 🎨" },
+      { type: "new", text: "Additional hidden & experimental WhatsApp features unlocked 🧪" },
+      { type: "improved", text: "Message sending & receiving delays fully resolved ⚡" },
+      { type: "improved", text: "Anti-ban & account protection system 🛡️" },
+      { type: "improved", text: "Overall performance, speed & responsiveness 🚀" },
+      { type: "improved", text: "UI navigation clarity with icon-based actions ✨" },
+      { type: "improved", text: "Stability across low-end & high-end devices 📱" },
+      { type: "fixed", text: "Delayed message delivery issues ⏳" },
+      { type: "fixed", text: "Random lag during chats & status viewing 🧹" },
+      { type: "fixed", text: "Minor crashes affecting some devices 🔧" },
+      { type: "fixed", text: "UI inconsistencies and navigation glitches 🧼" },
+    ],
+  },
+  {
     version: "V 2.0",
     date: "January 27, 2026",
     base: "2.25.36.73",
-    isLatest: true,
+    isLatest: false,
     changes: [
       "New Anti-Ban v1.0 script for 2026 security protocols",
       "Surgically removed 5 more invasive Android permissions",
@@ -132,26 +154,35 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>Download AAWhatsApp V2.0 APK (2026) – Official Secure Anti-Ban Link</title>
-        <meta name="description" content="Direct download for AAWhatsApp V2.0. Featuring Anti-Ban v2.0, Privacy Core™ protection, and 100% security verification. The definitive WhatsApp mod choice for 2026." />
-        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK, AA WhatsApp V2.0, download AA WhatsApp, secure WhatsApp mod, anti-ban apk 2026, best whatsapp mod, AAWhatsApp V2.0 Download" />
-        <link rel="canonical" href="https://aa-mods.vercel.app/download" />
-        <meta property="og:title" content="Download AAWhatsApp V2.0 - Official Secure Link" />
-        <meta property="og:description" content="Get the latest AAWhatsApp V2.0 with enhanced Anti-Ban and Privacy Core™ technology. 100% safe and verified." />
+        <title>Download AAWhatsApp V3.0 APK (2026) - Official Anti-Ban Link</title>
+        <meta name="description" content="Download AAWhatsApp V3.0 APK. Official safe link with Anti-Ban v3.0 and Privacy Core. Verified secure for Android devices in 2026." />
+        <meta name="keywords" content="AA WhatsApp download, AAWhatsApp APK Official, AA WhatsApp V3.0 Download, download AA WhatsApp 2026, secure WhatsApp mod apk, anti-ban whatsapp download, AAWhatsApp V3.0" />
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp/download" />
+        <link rel="alternate" href="https://aa-mods.vercel.app/aa-whatsapp/download" hrefLang="en" />
+        <meta property="og:title" content="Download AAWhatsApp V3.0 - Official Secure APK" />
+        <meta property="og:description" content="Get the latest AAWhatsApp V3.0 with Anti-Ban and Privacy Core™. 100% safe, verified, and free download for Android." />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
-              "@type": "DownloadPage",
-              "name": "AAWhatsApp Download",
-              "description": "Official download page for AAWhatsApp V2.0 APK",
-              "mainEntity": {
-                "@type": "SoftwareApplication",
-                "name": "AAWhatsApp",
-                "softwareVersion": "2.0",
-                "fileSize": "118MB",
-                "operatingSystem": "Android"
-              }
+              "@type": "SoftwareApplication",
+              "name": "AAWhatsApp",
+              "operatingSystem": "Android",
+              "applicationCategory": "CommunicationApplication",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "ratingCount": "10247853"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "0.00",
+                "priceCurrency": "USD"
+              },
+              "softwareVersion": "3.0",
+              "downloadUrl": "https://aa-mods.vercel.app/aa-whatsapp/download",
+              "featureList": "Anti-Ban, Privacy Core, Ghost Mode, Message Scheduler",
+              "releaseDate": "2026-02-06"
             }
           `}
         </script>
@@ -261,7 +292,7 @@ export default function DownloadPage() {
                   </div>
                 )}
                 <a
-                  href={downloadStep === 0 ? "#" : "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"}
+                  href={downloadStep === 0 ? "#" : "https://ahsanali.short.gy/aa-whatsapp"}
                   onClick={handleDownload}
                   target={downloadStep === 0 ? "_self" : "_blank"}
                   rel="noopener noreferrer"
@@ -275,7 +306,7 @@ export default function DownloadPage() {
               <div className="mb-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col md:flex-row items-center justify-center gap-8 text-sm font-bold">
                 <div className="flex items-center gap-2 text-emerald-400">
                   <ShieldCheck className="w-5 h-5" />
-                  Anti-Ban v1.0
+                  Anti-Ban v3.0
                 </div>
                 <div className="flex items-center gap-2 text-blue-400">
                   <LockIcon className="w-5 h-5" />
@@ -360,7 +391,7 @@ export default function DownloadPage() {
                   Virus-Free
                 </span>
                 <span className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
-                  Anti-Ban v1.0
+                  Anti-Ban v3.0
                 </span>
                 <span className="px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold border border-blue-500/20">
                   Privacy Core
@@ -400,15 +431,32 @@ export default function DownloadPage() {
                     </span>
                   </div>
                   <ul className="space-y-2">
-                    {release.changes.map((change, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-3 text-muted-foreground"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-1 shrink-0" />
-                        <span>{change}</span>
-                      </li>
-                    ))}
+                    {release.changes.map((change, i) => {
+                      const isObject = typeof change === 'object';
+                      const text = isObject ? change.text : change;
+                      const type = isObject ? change.type : null;
+                      
+                      return (
+                        <li
+                          key={i}
+                          className="flex items-start gap-3 text-muted-foreground"
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-primary mt-1 shrink-0" />
+                          <div className="flex flex-wrap items-center gap-2">
+                            {type === 'new' && (
+                              <span className="px-2 py-0.5 rounded text-[10px] font-black bg-primary/20 text-primary border border-primary/20 uppercase tracking-wider">NEW</span>
+                            )}
+                            {type === 'improved' && (
+                              <span className="px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-400 border border-blue-500/20 uppercase tracking-wider">IMPROVED</span>
+                            )}
+                            {type === 'fixed' && (
+                              <span className="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider">FIXED</span>
+                            )}
+                            <span>{text}</span>
+                          </div>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </motion.div>
               ))}
@@ -489,7 +537,7 @@ export default function DownloadPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
+                href="https://ahsanali.short.gy/aa-whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
               >

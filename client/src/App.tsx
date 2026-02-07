@@ -31,6 +31,8 @@ import BusinessComparison from "@/pages/business/BusinessComparison";
 import BusinessFAQ from "@/pages/business/BusinessFAQ";
 import BusinessBlog from "@/pages/business/BusinessBlog";
 
+import Sitemap from "@/pages/Sitemap";
+
 function Router() {
   return (
     <Switch>
@@ -61,7 +63,8 @@ function Router() {
       <Route path="/support" component={Support} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
-      <Route component={NotFound} />
+      <Route path="/sitemap" component={Sitemap} />
+      <Route path="/:rest*" component={Home} />
     </Switch>
   );
 }

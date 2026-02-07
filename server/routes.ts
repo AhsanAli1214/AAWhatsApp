@@ -5,6 +5,8 @@ import { Resend } from "resend";
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
+import { generateSitemap } from "./lib/sitemap";
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express
@@ -26,7 +28,7 @@ export async function registerRoutes(
         from: "AAWhatsApp Support <onboarding@resend.dev>",
         to: ["a67515346@gmail.com"],
         replyTo: email,
-        subject: `🚨 Bug Report (V 2.0): ${reportSubject}`,
+        subject: `🚨 Bug Report (V 3.0): ${reportSubject}`,
         html: `
           <!DOCTYPE html>
           <html>
@@ -60,7 +62,7 @@ export async function registerRoutes(
                   <div class="content">
                     <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 24px;">
                       <div class="status-badge">Action Required</div>
-                      <div class="version-badge">VERSION V 2.0</div>
+                      <div class="version-badge">VERSION V 3.0</div>
                     </div>
                     
                     <div class="field">
@@ -121,259 +123,31 @@ export async function registerRoutes(
   app.get("/robots.txt", (req, res) => {
     const robots = `User-agent: *
 Allow: /
-Sitemap: https://aa-mods.vercel.app/sitemap.xml`;
-    res.header("Content-Type", "text/plain");
+Sitemap: https://aa-mods.vercel.app/sitemap.xml
+
+User-agent: bingbot
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /`;
+    res.type("text/plain");
     res.status(200).send(robots);
   });
 
+  app.get("/88eae1744d0947619ec188fec7ff3b06.txt", (req, res) => {
+    res.type("text/plain");
+    res.status(200).send("88eae1744d0947619ec188fec7ff3b06");
+  });
+
   app.get("/sitemap.xml", (req, res) => {
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
-        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
-  <!-- 🚀 Main Authority Pages -->
-  <url>
-    <loc>https://aa-mods.vercel.app/</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <!-- 📥 Strategic Download Flow -->
-  <url>
-    <loc>https://aa-mods.vercel.app/download</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp/download</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business/download</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- 📚 Knowledge & Security Centers -->
-  <url>
-    <loc>https://aa-mods.vercel.app/blog</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp/blog</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business/blog</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/faq</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp/faq</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business/faq</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- 🔍 Comparison & Analysis -->
-  <url>
-    <loc>https://aa-mods.vercel.app/comparison</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp/comparison</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business/comparison</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp/features</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business/features</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ⚖️ Trust & Legal -->
-  <url>
-    <loc>https://aa-mods.vercel.app/about</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-whatsapp/about</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/aa-business/about</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/privacy</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/terms</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/support</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- 📰 High-Traffic Blog Articles -->
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-latest-version-download</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-features-security</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-vs-official</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-vs-gb-whatsapp</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-vs-fm-whatsapp</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/best-whatsapp-mods-2026</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/best-whatsapp-mods-privacy</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-installation-guide</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-update-guide</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-app-not-installed-fix</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-ban-recovery-guide</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-verification-fix</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-general-troubleshooting</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-v2-changelog</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aa-mods.vercel.app/blog/aa-whatsapp-security-patches-explained</loc>
-    <lastmod>${new_status_date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-</urlset>`.trim();
-    res.type("application/xml");
-    res.status(200).send(sitemap);
+    try {
+      const sitemap = generateSitemap();
+      res.header("Content-Type", "application/xml; charset=utf-8");
+      res.status(200).send(sitemap);
+    } catch (error) {
+      console.error("Sitemap generation error:", error);
+      res.status(500).send("Error generating sitemap");
+    }
   });
 
   return httpServer;

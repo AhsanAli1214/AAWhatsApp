@@ -2,11 +2,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, CheckCircle, AlertCircle, ArrowLeft } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet";
 
 export default function TermsOfService() {
   const [, setLocation] = useLocation();
   return (
     <div className="container mx-auto py-12 px-4 max-w-4xl">
+      <Helmet>
+        <title>Terms of Service - AA Mods</title>
+        <link rel="canonical" href="https://aa-mods.vercel.app/terms" />
+      </Helmet>
       <div className="mb-8">
         <Button 
           variant="ghost" 

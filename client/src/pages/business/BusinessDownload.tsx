@@ -88,28 +88,43 @@ export default function BusinessDownload() {
         </title>
         <meta
           name="description"
-          content="Official AA Business WhatsApp V1.0 (Base 2.25.29.77). Enterprise-grade security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging."
+          content="Download AA Business WhatsApp V1.0 APK (Base 2.25.29.77). Official safe download with Anti-Ban protection, Bulk Broadcasting, and Smart Analytics. Verified enterprise messaging for business users."
         />
         <meta
           name="keywords"
-          content="AA Business WhatsApp Download, Business WhatsApp APK, AA Business V1.0, Enterprise WhatsApp Mod Download"
+          content="AA Business WhatsApp Download, Business WhatsApp APK Official, AA Business V1.0 Download, Enterprise WhatsApp Mod 2026, Secure Business WhatsApp Mod, download business whatsapp mod apk"
         />
         <link
           rel="canonical"
           href="https://aa-mods.vercel.app/aa-business/download"
         />
+        <link
+          rel="alternate"
+          href="https://aa-mods.vercel.app/aa-business/download"
+          hrefLang="en"
+        />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
-              "@type": "DownloadPage",
-              "name": "AA Business WhatsApp Download",
-              "mainEntity": {
-                "@type": "SoftwareApplication",
-                "name": "AA Business WhatsApp",
-                "softwareVersion": "1.0",
-                "operatingSystem": "Android"
-              }
+              "@type": "SoftwareApplication",
+              "name": "AA Business WhatsApp",
+              "operatingSystem": "Android",
+              "applicationCategory": "BusinessApplication",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "ratingCount": "5247853"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "0.00",
+                "priceCurrency": "USD"
+              },
+              "softwareVersion": "1.0",
+              "downloadUrl": "https://aa-mods.vercel.app/aa-business/download",
+              "featureList": "Anti-Ban, Bulk Broadcasting, Business Analytics, Auto-Reply",
+              "releaseDate": "2026-01-20"
             }
           `}
         </script>

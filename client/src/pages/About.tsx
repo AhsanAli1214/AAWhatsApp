@@ -42,7 +42,7 @@ export default function About() {
           name="keywords"
           content="About AA WhatsApp, AA WhatsApp safety, secure WhatsApp features, AA Mods mission, anti-ban technology explained"
         />
-        <link rel="canonical" href="https://aa-mods.vercel.app/about" />
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp/about" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

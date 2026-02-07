@@ -114,31 +114,8 @@
     />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     <meta name="msvalidate.01" content="49FC5303EEFCFD38FE4943CF7F6186F1" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <script>
-      (function (s) {
-        ((s.dataset.zone = "10507760"),
-          (s.src = "https://gizokraijaw.net/vignette.min.js"));
-      })(
-        [document.documentElement, document.body]
-          .filter(Boolean)
-          .pop()
-          .appendChild(document.createElement("script")),
-      );
-    </script>
-    <script>
-      (function (s) {
-        ((s.dataset.zone = "10507738"),
-          (s.src = "https://al5sm.com/tag.min.js"));
-      })(
-        [document.documentElement, document.body]
-          .filter(Boolean)
-          .pop()
-          .appendChild(document.createElement("script")),
-      );
-    </script>
+    <script type="module" crossorigin src="/assets/index-BWsQ-ell.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D76WKjDc.css">
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -152,6 +129,5 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

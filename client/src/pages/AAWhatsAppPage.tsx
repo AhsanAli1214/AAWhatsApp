@@ -22,6 +22,7 @@ import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
 
 import { useTranslation } from "@/hooks/useTranslation";
+import whatsappHero from "@/assets/security-hero-new.png";
 
 export default function AAWhatsAppPage() {
   const { t } = useTranslation();
@@ -29,11 +30,15 @@ export default function AAWhatsAppPage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
       <Helmet>
-        <title>AAWhatsApp V2.0 APK Download - Complete Secure WhatsApp Mod 2026</title>
-        <meta name="description" content="Official AAWhatsApp V2.0 (Base 2.25.36.73). The most complete secure WhatsApp mod and best alternative to GB WhatsApp. Featuring Privacy Core™ and Anti-Ban v2.0." />
-        <meta name="keywords" content="AAWhatsApp APK, Complete Secure WhatsApp Mod, alternative to GB WhatsApp, Download AAWhatsApp, AA WhatsApp V2.0, Privacy WhatsApp, Anti-Ban WhatsApp 2026, FM WhatsApp Alternative" />
-        <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp-apk" />
+        <title>AAWhatsApp V3.0 APK Download - Secure WhatsApp Mod 2026</title>
+        <meta name="description" content="Official AAWhatsApp V3.0. The most complete secure WhatsApp mod for 2026. Featuring Privacy Core, Anti-Ban v3.0, and advanced stealth features." />
+        <meta name="keywords" content="AAWhatsApp APK, Complete Secure WhatsApp Mod, alternative to GB WhatsApp, Download AAWhatsApp, AA WhatsApp V3.0, Privacy WhatsApp, Anti-Ban WhatsApp 2026, FM WhatsApp Alternative" />
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp/features" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="preload" as="image" href={whatsappHero} fetchPriority="high" />
         <meta name="robots" content="index, follow" />
+        <meta name="rating" content="general" />
         <script type="application/ld+json">
           {`
             {
@@ -42,7 +47,7 @@ export default function AAWhatsAppPage() {
               "name": "AA WhatsApp",
               "operatingSystem": "Android",
               "applicationCategory": "CommunicationApplication",
-              "softwareVersion": "2.0",
+              "softwareVersion": "3.0",
               "fileSize": "118 MB",
               "aggregateRating": {
                 "@type": "AggregateRating",
@@ -91,7 +96,7 @@ export default function AAWhatsAppPage() {
             </motion.h1>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-xs font-bold uppercase tracking-widest animate-pulse">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              Build 2.0.26 - Stable
+              Build 3.0.26 - Stable
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
               {t('hero_subtitle')}
@@ -282,7 +287,7 @@ export default function AAWhatsAppPage() {
               <ShieldCheck className="w-20 h-20 text-primary mx-auto mb-6 opacity-40" />
               <h3 className="text-xl font-bold mb-2">Privacy Core Active</h3>
               <p className="text-sm text-muted-foreground">
-                Version V 2.0 Security Protocols Enabled
+                Version V 3.0 Security Protocols Enabled
               </p>
             </div>
           </section>
@@ -320,12 +325,7 @@ export default function AAWhatsAppPage() {
                         aa: "Zero Invasive Access",
                         gb: "Full Disk Access",
                       },
-                      { f: "Anti-Ban", aa: "V 2.0 Enhanced", gb: "Standard" },
-                      {
-                        f: "Privacy",
-                        aa: "Security Focused",
-                        gb: "Feature Focused",
-                      },
+                      { label: "Privacy", value: "Security Focused", gb: "Feature Focused" },
                     ].map((row, i) => (
                       <tr
                         key={i}
@@ -360,11 +360,11 @@ export default function AAWhatsAppPage() {
 
               <div className="glass-card p-12 rounded-[3.5rem] border border-primary/20 relative group">
                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-primary text-primary-foreground font-bold text-xs uppercase tracking-[0.3em] shadow-xl">
-                  Latest Build V 2.0
+                  Latest Build V 3.0
                 </div>
                 <div className="grid md:grid-cols-4 gap-6 mb-12">
                   {[
-                    { label: "Version", value: "V 2.0" },
+                    { label: "Version", value: "V 3.0" },
                     { label: "Base", value: "2.25.36.73" },
                     { label: "File Size", value: "118 MB" },
                     { label: "Android", value: "5.0+" }
@@ -400,6 +400,9 @@ export default function AAWhatsAppPage() {
           </section>
 
           <div className="max-w-4xl mx-auto">
+            <p className="text-xs text-muted-foreground uppercase tracking-widest opacity-40 text-center">
+              AA Mods | Version V 3.0 | Base 2.25.36.73 | Build ID: PRO-2026-SEC
+            </p>
           </div>
 
           <FAQSection />

@@ -45,6 +45,7 @@ export default function BusinessHome() {
         <meta property="og:description" content="Transform your business communication with AA Business WhatsApp. Advanced automation, analytics, and Anti-Ban v2.0." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-business" />
+        <link rel="alternate" href="https://aa-mods.vercel.app/aa-business" hrefLang="en" />
         <script type="application/ld+json">
           {`
             {

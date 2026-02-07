@@ -16,6 +16,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
+import { Helmet } from "react-helmet";
 
 const values = [
   {
@@ -70,6 +71,10 @@ const timeline = [
 export default function BusinessAbout() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>About AA Business WhatsApp - Professional Features</title>
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-business/about" />
+      </Helmet>
       <BusinessNavbar />
 
       <section className="pt-32 pb-20 px-4">
