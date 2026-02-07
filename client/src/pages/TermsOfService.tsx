@@ -10,6 +10,14 @@ export default function TermsOfService() {
     <div className="container mx-auto py-12 px-4 max-w-4xl">
       <Helmet>
         <title>Terms of Service - AA Mods</title>
+        <meta
+          name="description"
+          content="Review the AA Mods terms of service covering acceptable use, licensing, updates, and support for AA WhatsApp and AA Business."
+        />
+        <meta
+          name="keywords"
+          content="AA Mods terms of service, AA WhatsApp terms, AA Business terms, mod usage policy, app license"
+        />
         <link rel="canonical" href="https://aa-mods.vercel.app/terms" />
       </Helmet>
       <div className="mb-8">

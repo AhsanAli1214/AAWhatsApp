@@ -492,6 +492,9 @@ export default function Home() {
                 alt="AAWhatsApp Performance Benchmarks - Fast and Lightweight" 
                 className="rounded-3xl shadow-2xl border border-white/10"
                 loading="lazy"
+                decoding="async"
+                width="800"
+                height="800"
               />
             </motion.div>
             <div className="space-y-6">
@@ -559,6 +562,9 @@ export default function Home() {
                   alt="AAWhatsApp vs Official WhatsApp Feature Comparison Table" 
                   className="rounded-3xl shadow-2xl border border-primary/10"
                   loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="800"
                 />
               </motion.div>
             </div>
