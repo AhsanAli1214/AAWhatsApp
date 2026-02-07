@@ -101,6 +101,14 @@ export default function BusinessFAQ() {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>AA Business WhatsApp FAQ - Support & Guides</title>
+        <meta
+          name="description"
+          content="Answers to common questions about AA Business WhatsApp, including bulk messaging, security, and enterprise features."
+        />
+        <meta
+          name="keywords"
+          content="AA Business FAQ, WhatsApp Business mod help, enterprise WhatsApp support, bulk messaging FAQ, AA Business troubleshooting"
+        />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-business/faq" />
       </Helmet>
       <BusinessNavbar />

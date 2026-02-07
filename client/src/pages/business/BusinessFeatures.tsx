@@ -27,6 +27,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
+import { Helmet } from "react-helmet";
 
 const businessFeatures = [
   {
@@ -108,6 +109,18 @@ const customizationFeatures = [
 export default function BusinessFeatures() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>AA Business Features - Enterprise WhatsApp Tools 2026</title>
+        <meta
+          name="description"
+          content="Explore AA Business WhatsApp features like automation, analytics, privacy controls, and anti-ban protection built for enterprise teams."
+        />
+        <meta
+          name="keywords"
+          content="AA Business features, WhatsApp Business mod tools, enterprise messaging features, AA Business automation, Anti-Ban business WhatsApp"
+        />
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-business/features" />
+      </Helmet>
       <BusinessNavbar />
 
       <section className="pt-32 pb-20 px-4">

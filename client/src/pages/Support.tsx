@@ -18,6 +18,10 @@ export default function Support() {
       <Helmet>
         <title>Support - AA Mods | Report Bug & Error</title>
         <meta name="description" content="Need help with AAWhatsApp? Use our official bug reporting form or join our Telegram channel for direct support." />
+        <meta
+          name="keywords"
+          content="AA WhatsApp support, AA Mods help, report bug AA WhatsApp, Telegram support, WhatsApp mod troubleshooting"
+        />
         <link rel="canonical" href="https://aa-mods.vercel.app/support" />
       </Helmet>
       <div className="fixed inset-0 hero-gradient opacity-40 pointer-events-none z-0" />

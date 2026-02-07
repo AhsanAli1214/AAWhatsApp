@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/hooks/useTranslation";
 import { BackToTop } from "@/components/BackToTop";
 import ScrollToTop from "@/components/ScrollToTop";
 import { AdBlockDetector } from "@/components/AdBlockDetector";
+import { Helmet } from "react-helmet";
 
 import Home from "@/pages/Home";
 import AppSelector from "@/pages/AppSelector";
@@ -76,6 +77,28 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         <TooltipProvider>
+          <Helmet>
+            <meta name="robots" content="index, follow" />
+            <meta name="theme-color" content="#0f172a" />
+            <meta property="og:site_name" content="AA Mods" />
+            <meta property="og:image" content="https://aa-mods.vercel.app/images/whatsapp-realtime-hero.jpg" />
+            <meta property="og:type" content="website" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@aa_mods" />
+            <meta name="twitter:creator" content="@aa_mods" />
+            <script type="application/ld+json">
+              {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "AA Mods",
+                "url": "https://aa-mods.vercel.app",
+                "logo": "https://aa-mods.vercel.app/favicon.png",
+                "sameAs": [
+                  "https://t.me/AAWhatsAppOfficial"
+                ]
+              })}
+            </script>
+          </Helmet>
           <ScrollToTop />
           <AdBlockDetector />
           <Navigation />
