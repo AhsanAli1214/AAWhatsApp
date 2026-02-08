@@ -35,14 +35,6 @@
       "dest": "/favicon.png"
     },
     {
-      "src": "/OneSignalSDKWorker.js",
-      "dest": "/OneSignalSDKWorker.js"
-    },
-    {
-      "src": "/OneSignalSDK-v16-ServiceWorker/(.*)",
-      "dest": "/OneSignalSDK-v16-ServiceWorker/$1"
-    },
-    {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
     },

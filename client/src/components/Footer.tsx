@@ -115,24 +115,6 @@ export function Footer() {
                 <Send className="w-4 h-4" />
                 Join Telegram
               </a>
-              <button 
-                onClick={() => {
-                  if (typeof window !== 'undefined' && (window as any).OneSignalDeferred) {
-                    (window as any).OneSignalDeferred.push(async function(OneSignal: any) {
-                      const notifications = OneSignal.Notifications || OneSignal.notifications;
-                      if (notifications && typeof notifications.requestPermission === 'function') {
-                        await notifications.requestPermission();
-                      } else {
-                        await OneSignal.showNativePrompt();
-                      }
-                    });
-                  }
-                }}
-                className="flex-1 flex items-center justify-center gap-2 bg-muted border border-border/50 py-2.5 rounded-lg text-xs font-bold hover:bg-muted/80 transition-all active:scale-95 shadow-sm"
-              >
-                <Lock className={`w-4 h-4 ${isBusiness ? 'text-blue-500' : 'text-primary'}`} />
-                Push Alerts
-              </button>
             </div>
           </div>
         </div>

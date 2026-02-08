@@ -23,81 +23,41 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { Footer } from "@/components/Footer";
-import { APP_DIRECT_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+import { APP_BASE_VERSIONS, APP_CHANGELOGS, APP_DIRECT_DOWNLOAD_LINKS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS, APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS, APP_WHATSAPP_PACKAGE_NAMES } from "@/config/appConfig";
 
 const versionInfo = {
   version: APP_VERSIONS.aaWhatsApp.replace("V", "V "),
-  date: "February 06, 2026",
+  date: APP_UPDATE_DATES.aaWhatsApp.display,
   size: "118 MB",
   android: "5.0+",
   status: "Verified Safe",
-  base: "2.25.36.73",
-  packageName: "com.gbwhatsapp",
+  base: APP_BASE_VERSIONS.aaWhatsApp,
+  packageName: APP_WHATSAPP_PACKAGE_NAMES.modern,
   developer: "AA Mods Official",
 };
 
+const parseChangelogLines = (changelog: string) =>
+  changelog
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const [rawTag, ...rest] = line.split(":");
+      const tag = rawTag.trim().toLowerCase();
+      const text = rest.length ? rest.join(":").trim() : line;
+      if (tag === "new" || tag === "improved" || tag === "fixed") {
+        return { type: tag, text };
+      }
+      return { type: null, text: line };
+    });
+
 const changelog = [
   {
-    version: "V 3.0",
-    date: "February 06, 2026",
-    base: "2.25.36.73",
+    version: APP_VERSIONS.aaWhatsApp.replace("V", "V "),
+    date: APP_UPDATE_DATES.aaWhatsApp.display,
+    base: APP_BASE_VERSIONS.aaWhatsApp,
     isLatest: true,
-    changes: [
-      { type: "new", text: "Profile Cover Photo support for enhanced personalization 🖼️" },
-      { type: "new", text: "Status notification alerts when contacts post new updates 🔔" },
-      { type: "new", text: "Fresh icons added to home screen & chat options for faster navigation 📲" },
-      { type: "new", text: "Improved profile customization controls 🎨" },
-      { type: "new", text: "Additional hidden & experimental WhatsApp features unlocked 🧪" },
-      { type: "improved", text: "Message sending & receiving delays fully resolved ⚡" },
-      { type: "improved", text: "Anti-ban & account protection system 🛡️" },
-      { type: "improved", text: "Overall performance, speed & responsiveness 🚀" },
-      { type: "improved", text: "UI navigation clarity with icon-based actions ✨" },
-      { type: "improved", text: "Stability across low-end & high-end devices 📱" },
-      { type: "fixed", text: "Delayed message delivery issues ⏳" },
-      { type: "fixed", text: "Random lag during chats & status viewing 🧹" },
-      { type: "fixed", text: "Minor crashes affecting some devices 🔧" },
-      { type: "fixed", text: "UI inconsistencies and navigation glitches 🧼" },
-    ],
-  },
-  {
-    version: "V 2.0",
-    date: "January 27, 2026",
-    base: "2.25.36.73",
-    isLatest: false,
-    changes: [
-      "New Anti-Ban v1.0 script for 2026 security protocols",
-      "Surgically removed 5 more invasive Android permissions",
-      "Enhanced Privacy Core technology",
-      "Fixed media download issues on Android 14+",
-      "Improved dark mode contrast for AMOLED screens",
-      "Updated base to WhatsApp 2.25.36.73",
-    ],
-  },
-  {
-    version: "V 1.9",
-    date: "December 15, 2025",
-    base: "2.24.25.87",
-    isLatest: false,
-    changes: [
-      "Privacy Dashboard with real-time monitoring",
-      "Ghost Mode v2 with scheduled invisibility",
-      "40% faster app startup performance",
-      "New theme engine with 500+ themes",
-      "Bug fixes for message scheduling",
-    ],
-  },
-  {
-    version: "V 1.8",
-    date: "November 20, 2025",
-    base: "2.24.20.76",
-    isLatest: false,
-    changes: [
-      "Anti-Ban v1.5 improvements",
-      "View deleted messages feature",
-      "Custom fonts support",
-      "Status downloader enhancement",
-      "Memory optimization",
-    ],
+    changes: parseChangelogLines(APP_CHANGELOGS.aaWhatsApp),
   },
 ];
 
@@ -187,7 +147,7 @@ export default function DownloadPage() {
               "softwareVersion": "${APP_VERSION_LOWER.aaWhatsApp.replace("v", "")}",
               "downloadUrl": "${canonicalUrl}",
               "featureList": "Anti-Ban, Privacy Core, Ghost Mode, Message Scheduler",
-              "releaseDate": "2026-02-06"
+              "releaseDate": "${APP_UPDATE_DATES.aaWhatsApp.iso}"
             }
           `}
         </script>
@@ -296,16 +256,48 @@ export default function DownloadPage() {
                     Note: First click opens verified advertisement to support servers
                   </div>
                 )}
-                <a
-                  href={downloadStep === 0 ? "#" : APP_DIRECT_DOWNLOAD_LINKS.aaWhatsApp}
-                  onClick={handleDownload}
-                  target={downloadStep === 0 ? "_self" : "_blank"}
-                  rel="noopener noreferrer"
-                  className="w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-2 md:gap-3 border border-white/20 text-center leading-tight overflow-hidden"
-                >
-                  <Download className="w-6 h-6" />
-                  {downloadStep === 0 ? "Start Secure Download" : "Download from MediaFire"}
-                </a>
+                <div className="flex w-full flex-col items-center gap-4">
+                  <a
+                    href={downloadStep === 0 ? "#" : APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS.modern}
+                    onClick={handleDownload}
+                    target={downloadStep === 0 ? "_self" : "_blank"}
+                    rel="noopener noreferrer"
+                    className="w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-2 md:gap-3 border border-white/20 text-center leading-tight overflow-hidden"
+                  >
+                    <Download className="w-6 h-6" />
+                    {downloadStep === 0 ? "Start Secure Download" : "Download AAWhatsApp"}
+                  </a>
+                  <div className="text-xs text-muted-foreground">
+                    Primary package: <span className="font-semibold">{APP_WHATSAPP_PACKAGE_NAMES.modern}</span>
+                  </div>
+                </div>
+                <div className="flex w-full flex-col items-center gap-3">
+                  <a
+                    href={APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS.legacy}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full max-w-md h-auto py-3 md:py-4 px-4 md:px-8 rounded-2xl border border-white/20 bg-white/5 text-foreground font-bold text-base md:text-lg hover:bg-white/10 hover:-translate-y-1 active:scale-95 transition-all duration-500 flex items-center justify-center gap-2 md:gap-3 text-center"
+                    data-testid="button-legacy-download"
+                  >
+                    <Download className="w-5 h-5" />
+                    Legacy Package Download
+                  </a>
+                  <div className="text-[11px] text-muted-foreground">
+                    Temporary legacy package: <span className="font-semibold">{APP_WHATSAPP_PACKAGE_NAMES.legacy}</span>
+                  </div>
+                  <div className="w-full max-w-md rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4 text-xs text-amber-100 leading-relaxed">
+                    <p className="font-bold text-amber-200">Final Legacy Notice</p>
+                    <p className="mt-2">
+                      This is the final update of AA WhatsApp for this package ({APP_WHATSAPP_PACKAGE_NAMES.legacy}).
+                    </p>
+                    <p className="mt-2">No future updates will be provided for this package.</p>
+                    <p className="mt-2">
+                      To continue receiving updates, new features, and security improvements, please download and use the official AA WhatsApp package:
+                    </p>
+                    <p className="mt-2 font-semibold text-amber-200">{APP_WHATSAPP_PACKAGE_NAMES.modern}</p>
+                    <p className="mt-2">Thank you for your support.</p>
+                  </div>
+                </div>
               </div>
 
               <div className="mb-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col md:flex-row items-center justify-center gap-8 text-sm font-bold">
@@ -537,22 +529,36 @@ export default function DownloadPage() {
               Need an Alternative Download Link?
             </h3>
             <p className="text-muted-foreground">
-              If the main download isn't working, try our backup servers or join
-              our Telegram for direct links.
+              If the main download isn't working, use the package-specific links
+              or join our Telegram for direct links.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href={APP_DIRECT_DOWNLOAD_LINKS.aaWhatsApp}
+                href={APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS.modern}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button
                   variant="outline"
                   className="gap-2"
-                  data-testid="button-mediafire-download"
+                  data-testid="button-modern-download"
                 >
                   <ExternalLink className="w-4 h-4" />
-                  MediaFire Mirror
+                  com.aawhatsapp
+                </Button>
+              </a>
+              <a
+                href={APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS.legacy}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="gap-2"
+                  data-testid="button-legacy-download-alt"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  com.gbwhatsapp (Legacy)
                 </Button>
               </a>
               <a

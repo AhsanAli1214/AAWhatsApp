@@ -1,4 +1,4 @@
-import { APP_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+import { APP_BASE_VERSIONS, APP_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 
 export interface BlogPost {
   id: string;
@@ -20,6 +20,8 @@ const APP_PLACEHOLDERS = {
   aaVersionLower: "{{AA_VERSION_LOWER}}",
   aaBusinessVersion: "{{AA_BUSINESS_VERSION}}",
   aaBusinessVersionLower: "{{AA_BUSINESS_VERSION_LOWER}}",
+  aaBaseVersion: "{{AA_BASE_VERSION}}",
+  aaBusinessBaseVersion: "{{AA_BUSINESS_BASE_VERSION}}",
   aaDownloadUrl: "{{AA_DOWNLOAD_URL}}",
   aaBusinessDownloadUrl: "{{AA_BUSINESS_DOWNLOAD_URL}}",
 } as const;
@@ -43,7 +45,7 @@ const rawBlogPosts: BlogPost[] = [
 |-----------|---------------|
 | **Application Name** | AA WhatsApp |
 | **Version** | {{AA_VERSION_LOWER}} (Latest 2026) |
-| **Base Version** | 2.25.36.73 |
+| **Base Version** | {{AA_BASE_VERSION}} |
 | **APK File Size** | 118 MB |
 | **Package Name** | com.gbwhatsapp |
 | **Anti-Ban** | {{AA_VERSION_LOWER}} (Verified) |
@@ -3870,7 +3872,7 @@ Stay updated, stay protected!`,
 
 | **Application Name** | AA Business WhatsApp |
 | **Version** | {{AA_VERSION}} (Latest) |
-| **Base Version** | 2.25.29.77 |
+| **Base Version** | {{AA_BUSINESS_BASE_VERSION}} |
 | **APK File Size** | 125 MB |
 | **Package Name** | com.aa.business |
 | **Anti-Ban** | {{AA_VERSION_LOWER}} (Verified) |
@@ -3888,11 +3890,11 @@ Stay updated, stay protected!`,
 
 ## Why Upgrade?
 
-AA Business WhatsApp {{AA_BUSINESS_VERSION}} is built on the latest base version 2.25.29.77, ensuring compatibility with all current WhatsApp features while adding our unique modifications.`,
+AA Business WhatsApp {{AA_BUSINESS_VERSION}} is built on the latest base version {{AA_BUSINESS_BASE_VERSION}}, ensuring compatibility with all current WhatsApp features while adding our unique modifications.`,
     publishedAt: "2026-01-31",
     readTime: 10,
     faqs: [
-      { question: "What is the base version of AA Business {{AA_BUSINESS_VERSION}}?", answer: "The base version is 2.25.29.77." },
+      { question: "What is the base version of AA Business {{AA_BUSINESS_VERSION}}?", answer: "The base version is {{AA_BUSINESS_BASE_VERSION}}." },
       { question: "How large is the AA Business {{AA_BUSINESS_VERSION}} APK?", answer: "The app size is approximately 125MB." }
     ]
   }
@@ -3902,9 +3904,11 @@ function replaceAppPlaceholders(text: string, isBusinessPost: boolean): string {
   return text
     .replaceAll(APP_PLACEHOLDERS.aaVersion, APP_VERSIONS.aaWhatsApp)
     .replaceAll(APP_PLACEHOLDERS.aaVersionLower, APP_VERSION_LOWER.aaWhatsApp)
+    .replaceAll(APP_PLACEHOLDERS.aaBaseVersion, APP_BASE_VERSIONS.aaWhatsApp)
     .replaceAll(APP_PLACEHOLDERS.aaDownloadUrl, APP_DOWNLOAD_LINKS.aaWhatsApp)
     .replaceAll(APP_PLACEHOLDERS.aaBusinessVersion, APP_VERSIONS.aaBusiness)
     .replaceAll(APP_PLACEHOLDERS.aaBusinessVersionLower, APP_VERSION_LOWER.aaBusiness)
+    .replaceAll(APP_PLACEHOLDERS.aaBusinessBaseVersion, APP_BASE_VERSIONS.aaBusiness)
     .replaceAll(APP_PLACEHOLDERS.aaBusinessDownloadUrl, APP_DOWNLOAD_LINKS.aaBusiness);
 }
 

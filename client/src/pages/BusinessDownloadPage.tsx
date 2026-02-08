@@ -21,16 +21,16 @@ import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import { useState, useEffect } from "react";
 import { Footer } from "@/components/Footer";
-import { APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+import { APP_BASE_VERSIONS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 import whatsappHero from "@/assets/security-hero-new.png";
 
 const versionInfo = {
   version: APP_VERSIONS.aaBusiness.replace("V", "V "),
-  date: "January 31, 2026",
+  date: APP_UPDATE_DATES.aaBusiness.display,
   size: "125 MB",
   android: "5.0+",
   status: "Verified Safe",
-  base: "2.25.29.77",
+  base: APP_BASE_VERSIONS.aaBusiness,
   packageName: "com.aa.business",
   developer: "AA Mods Official",
 };

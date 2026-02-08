@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
-import { APP_MIRROR_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+import { APP_BASE_VERSIONS, APP_MIRROR_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 
 import businessHeroJpg from "@/assets/security-hero-new.png";
 import businessDashboardPng from "@/assets/business-dashboard.png";
@@ -40,7 +40,7 @@ export default function BusinessHome() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-blue-500/30">
       <Helmet>
         <title>AA Business WhatsApp {APP_VERSIONS.aaBusiness} - Professional Enterprise WhatsApp Mod 2026</title>
-        <meta name="description" content={`Official AA Business WhatsApp ${APP_VERSIONS.aaBusiness} (Base 2.25.29.77). Enterprise-grade security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging.`} />
+        <meta name="description" content={`Official AA Business WhatsApp ${APP_VERSIONS.aaBusiness} (Base ${APP_BASE_VERSIONS.aaBusiness}). Enterprise-grade security, Bulk Broadcasting, and Smart Analytics. The safest choice for business messaging.`} />
         <meta
           name="keywords"
           content="AA Business WhatsApp, Enterprise WhatsApp mod, Bulk messaging WhatsApp, AA Business APK, Business WhatsApp mod 2026, Secure business messaging, anti-ban business WhatsApp, WhatsApp CRM features"
@@ -401,7 +401,7 @@ export default function BusinessHome() {
                 Get AA Business Now
               </Button>
             </div>
-            <p className="text-sm text-blue-100/60 font-medium">Compatible with Android 5.0+ • Base 2.25.29.77 • Anti-Ban Secured</p>
+            <p className="text-sm text-blue-100/60 font-medium">Compatible with Android 5.0+ • Base {APP_BASE_VERSIONS.aaBusiness} • Anti-Ban Secured</p>
           </div>
         </div>
       </section>
