@@ -15,13 +15,17 @@ export const APP_BASE_VERSIONS = {
 
 export const APP_CHANGELOGS = {
   aaWhatsApp: `NEW: Profile cover photo support for enhanced personalization
+NEW: Status character limit increased up to 500 characters
 NEW: Status notification alerts when contacts post new updates
-NEW: Fresh icons added to home screen & chat options for faster navigation
-IMPROVED: Message sending & receiving delays fully resolved
-IMPROVED: Anti-ban & account protection system
-IMPROVED: Overall performance, speed & responsiveness
+NEW: Read receipt notifications fully restored and improved
+NEW: Fresh icons added to home screen and chat options for faster navigation
+IMPROVED: Voice message clarity and playback stability
+IMPROVED: Message sending and receiving speed with delays fully resolved
+IMPROVED: Anti-ban and account protection system
+IMPROVED: Overall performance, responsiveness, and app stability
 FIXED: Delayed message delivery issues
-FIXED: Random lag during chats & status viewing
+FIXED: Random lag during chats and status viewing
+FIXED: Voice message playback and recording bugs
 FIXED: Minor crashes affecting some devices`,
   aaBusiness: `NEW: Enterprise deployment toolkit for faster onboarding
 NEW: Advanced bulk broadcasting segmentation controls
@@ -32,9 +36,9 @@ FIXED: Minor sync issues in catalog management`,
 
 export const APP_UPDATE_DATES = {
   aaWhatsApp: {
-    display: "February 06, 2026",
-    short: "06/02/2026",
-    iso: "2026-02-06",
+    display: "February 08, 2026",
+    short: "08/02/2026",
+    iso: "2026-02-08",
   },
   aaBusiness: {
     display: "January 31, 2026",
@@ -55,11 +59,11 @@ export const APP_WHATSAPP_PACKAGE_NAMES = {
 
 export const APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS = {
   legacy: "https://ahsanali.short.gy/aa-whatsapp",
-  modern: "https://ahsanali.short.gy/aa-whatsapp-new",
+  modern: "https://ahsanali.short.gy/aa-wa-latest",
 } as const;
 
 export const APP_DIRECT_DOWNLOAD_LINKS = {
-  aaWhatsApp: "https://ahsanali.short.gy/aa-whatsapp",
+  aaWhatsApp: "https://ahsanali.short.gy/aa-wa-latest",
   aaBusiness: "https://ahsanali.short.gy/aa-wa-pro",
 } as const;
 
