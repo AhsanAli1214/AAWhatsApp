@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
+import { APP_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 import { Link, useLocation } from "wouter";
 import { PermissionSimulator } from "@/components/PermissionSimulator";
 import { FAQSection } from "@/components/FAQSection";
@@ -405,7 +406,7 @@ export default function AAWhatsAppPage() {
 
           <div className="max-w-4xl mx-auto">
             <p className="text-xs text-muted-foreground uppercase tracking-widest opacity-40 text-center">
-              AA Mods | Version V 3.0 | Base 2.25.36.73 | Build ID: PRO-2026-SEC
+              AA Mods | Version {APP_VERSIONS.aaWhatsApp} | Base 2.25.36.73 | Build ID: PRO-2026-SEC
             </p>
           </div>
 
