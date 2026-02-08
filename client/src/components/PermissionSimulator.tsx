@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, ShieldAlert, XCircle, CheckCircle2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { APP_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 
 export function PermissionSimulator() {
   const permissions = [
@@ -73,7 +74,7 @@ export function PermissionSimulator() {
             Privacy Core™ Active
           </div>
           <div className="text-muted-foreground">
-            Protocol Version: 2.0 | Base: 2.25.36.73
+            Protocol Version: {APP_VERSIONS.aaWhatsApp} | Base: 2.25.36.73
           </div>
         </div>
       </div>
