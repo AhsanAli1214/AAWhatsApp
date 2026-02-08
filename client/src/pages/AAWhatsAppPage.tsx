@@ -292,7 +292,7 @@ export default function AAWhatsAppPage() {
               <ShieldCheck className="w-20 h-20 text-primary mx-auto mb-6 opacity-40" />
               <h3 className="text-xl font-bold mb-2">Privacy Core Active</h3>
               <p className="text-sm text-muted-foreground">
-                Version V 3.0 Security Protocols Enabled
+                Version V {APP_VERSIONS.aaWhatsApp} Security Protocols Enabled
               </p>
             </div>
           </section>
@@ -365,11 +365,11 @@ export default function AAWhatsAppPage() {
 
               <div className="glass-card p-12 rounded-[3.5rem] border border-primary/20 relative group">
                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-primary text-primary-foreground font-bold text-xs uppercase tracking-[0.3em] shadow-xl">
-                  Latest Build V 3.0
+                  Latest Build V {APP_VERSIONS.aaWhatsApp}
                 </div>
                 <div className="grid md:grid-cols-4 gap-6 mb-12">
                   {[
-                    { label: "Version", value: "V 3.0" },
+                    { label: "Version", value: "Latest" },
                     { label: "Base", value: "2.25.36.73" },
                     { label: "File Size", value: "118 MB" },
                     { label: "Android", value: "5.0+" }
