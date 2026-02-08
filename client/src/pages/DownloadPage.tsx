@@ -280,7 +280,7 @@ export default function DownloadPage() {
                     data-testid="button-legacy-download"
                   >
                     <Download className="w-5 h-5" />
-                    Legacy Package Download
+                    AA WhatsApp (com.gbwhatsapp)
                   </a>
                   <div className="text-[11px] text-muted-foreground">
                     Temporary legacy package: <span className="font-semibold">{APP_WHATSAPP_PACKAGE_NAMES.legacy}</span>
