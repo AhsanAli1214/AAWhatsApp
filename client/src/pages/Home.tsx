@@ -205,7 +205,7 @@ export default function Home() {
                 </div>
                 <h2 className="text-3xl md:text-5xl font-black font-display tracking-tighter leading-none">
                   AAWhatsApp{" "}
-                  <span className="text-primary text-glow italic">V 3.0</span>
+                  <span className="text-primary text-glow italic">{APP_VERSIONS.aaWhatsApp}</span>
                 </h2>
                 <p className="text-muted-foreground text-base font-medium max-w-lg leading-relaxed">
                   The latest iteration of AAWhatsApp is now synchronized. Built
@@ -607,7 +607,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="flex flex-wrap justify-center gap-8 pt-8">
-              {['V 2.0 STABLE', '118MB APK', 'ANTI-BAN 2026', 'ZERO TRACKERS'].map((badge) => (
+              {['{APP_VERSIONS.aaWhatsApp} STABLE', '118MB APK', 'ANTI-BAN 2026', 'ZERO TRACKERS'].map((badge) => (
                 <span key={badge} className="text-xs font-black tracking-[0.3em] text-primary/60 border-b border-primary/20 pb-1">{badge}</span>
               ))}
             </div>
