@@ -16,14 +16,13 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
-import { APP_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+import { APP_BASE_VERSIONS, APP_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 import { Link, useLocation } from "wouter";
 import { PermissionSimulator } from "@/components/PermissionSimulator";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
 
 import { useTranslation } from "@/hooks/useTranslation";
-import { APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 import whatsappHero from "@/assets/security-hero-new.png";
 
 export default function AAWhatsAppPage() {
@@ -370,7 +369,7 @@ export default function AAWhatsAppPage() {
                 <div className="grid md:grid-cols-4 gap-6 mb-12">
                   {[
                     { label: "Version", value: "Latest" },
-                    { label: "Base", value: "2.25.36.73" },
+                    { label: "Base", value: APP_BASE_VERSIONS.aaWhatsApp },
                     { label: "File Size", value: "118 MB" },
                     { label: "Android", value: "5.0+" }
                   ].map((spec, i) => (
@@ -406,7 +405,7 @@ export default function AAWhatsAppPage() {
 
           <div className="max-w-4xl mx-auto">
             <p className="text-xs text-muted-foreground uppercase tracking-widest opacity-40 text-center">
-              AA Mods | Version {APP_VERSIONS.aaWhatsApp} | Base 2.25.36.73 | Build ID: PRO-2026-SEC
+              AA Mods | Version {APP_VERSIONS.aaWhatsApp} | Base {APP_BASE_VERSIONS.aaWhatsApp} | Build ID: PRO-2026-SEC
             </p>
           </div>
 

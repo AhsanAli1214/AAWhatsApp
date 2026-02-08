@@ -24,20 +24,28 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
-import { APP_DIRECT_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+import { APP_BASE_VERSIONS, APP_CHANGELOGS, APP_DIRECT_DOWNLOAD_LINKS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+
+const parseChangelogLines = (changelog: string) =>
+  changelog
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const [rawTag, ...rest] = line.split(":");
+      const tag = rawTag.trim().toLowerCase();
+      const text = rest.length ? rest.join(":").trim() : line;
+      if (tag === "new" || tag === "improved" || tag === "fixed") {
+        return { type: tag, text };
+      }
+      return { type: null, text: line };
+    });
 
 const versionHistory = [
   {
     version: APP_VERSIONS.aaBusiness.replace("V", "V "),
-    date: "January 2026",
-    changes: [
-      "Initial Enterprise Release",
-      `Anti-Ban ${APP_VERSION_LOWER.aaBusiness} technology`,
-      "Enhanced auto-reply system",
-      "New business analytics dashboard",
-      "Improved catalog management",
-      "Performance optimizations",
-    ],
+    date: APP_UPDATE_DATES.aaBusiness.display,
+    changes: parseChangelogLines(APP_CHANGELOGS.aaBusiness),
     current: true,
   },
 ];
@@ -45,11 +53,11 @@ const versionHistory = [
 const packageDetails = {
   name: "AA Business WhatsApp",
   version: "V 1.0",
-  base: "2.25.29.77",
+  base: APP_BASE_VERSIONS.aaBusiness,
   size: "125 MB",
   android: "5.0+",
   developer: "AA Mods Team",
-  updated: "January 2026",
+  updated: APP_UPDATE_DATES.aaBusiness.display,
 };
 
 const installSteps = [
@@ -89,7 +97,7 @@ export default function BusinessDownload() {
         </title>
         <meta
           name="description"
-          content={`Download AA Business WhatsApp ${APP_VERSIONS.aaBusiness} APK (Base 2.25.29.77). Official safe download with Anti-Ban protection, Bulk Broadcasting, and Smart Analytics. Verified enterprise messaging for business users.`}
+          content={`Download AA Business WhatsApp ${APP_VERSIONS.aaBusiness} APK (Base ${APP_BASE_VERSIONS.aaBusiness}). Official safe download with Anti-Ban protection, Bulk Broadcasting, and Smart Analytics. Verified enterprise messaging for business users.`}
         />
         <meta
           name="keywords"
@@ -125,7 +133,7 @@ export default function BusinessDownload() {
               "softwareVersion": "1.0",
               "downloadUrl": "https://aa-mods.vercel.app/aa-business/download",
               "featureList": "Anti-Ban, Bulk Broadcasting, Business Analytics, Auto-Reply",
-              "releaseDate": "2026-01-20"
+              "releaseDate": "${APP_UPDATE_DATES.aaBusiness.iso}"
             }
           `}
         </script>
@@ -346,13 +354,36 @@ export default function BusinessDownload() {
                         <span className="text-sm">{release.date}</span>
                       </div>
                     </div>
-                    <ul className="grid md:grid-cols-2 gap-2">
-                      {release.changes.map((change, i) => (
-                        <li key={i} className="flex items-center gap-2 text-sm">
-                          <CheckCircle className="w-4 h-4 text-blue-500" />
-                          {change}
-                        </li>
-                      ))}
+                    <ul className="grid md:grid-cols-2 gap-3">
+                      {release.changes.map((change, i) => {
+                        const isObject = typeof change === "object";
+                        const text = isObject ? change.text : change;
+                        const type = isObject ? change.type : null;
+
+                        return (
+                          <li key={i} className="flex items-start gap-3 text-sm">
+                            <CheckCircle className="w-4 h-4 text-blue-500 mt-0.5" />
+                            <div className="flex flex-wrap items-center gap-2">
+                              {type === "new" && (
+                                <span className="px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/15 text-blue-400 border border-blue-500/20 uppercase tracking-wider">
+                                  NEW
+                                </span>
+                              )}
+                              {type === "improved" && (
+                                <span className="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider">
+                                  IMPROVED
+                                </span>
+                              )}
+                              {type === "fixed" && (
+                                <span className="px-2 py-0.5 rounded text-[10px] font-black bg-amber-500/15 text-amber-400 border border-amber-500/20 uppercase tracking-wider">
+                                  FIXED
+                                </span>
+                              )}
+                              <span>{text}</span>
+                            </div>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </CardContent>
                 </Card>

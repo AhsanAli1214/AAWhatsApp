@@ -24,7 +24,7 @@ import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "@/hooks/useTranslation";
 import { Footer } from "@/components/Footer";
-import { APP_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+import { APP_DOWNLOAD_LINKS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 import heroImage from "@/assets/security-hero-new.png";
 import privacyImage from "@/assets/privacy-feature.png";
 import themesImage from "@assets/generated_images/creative_visual_showing_multiple_whatsapp_theme_styles_for_aawhatsapp..png";
@@ -213,7 +213,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
                   {[
-                    { label: "Update", value: "06/02/2026" },
+                    { label: "Update", value: APP_UPDATE_DATES.aaWhatsApp.short },
                     { label: "Stability", value: "99.9%" },
                     { label: "Status", value: "Verified" },
                   ].map((stat, i) => (

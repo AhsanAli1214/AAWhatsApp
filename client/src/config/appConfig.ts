@@ -8,9 +8,54 @@ export const APP_VERSION_LOWER = {
   aaBusiness: APP_VERSIONS.aaBusiness.toLowerCase(),
 } as const;
 
+export const APP_BASE_VERSIONS = {
+  aaWhatsApp: "2.25.36.73",
+  aaBusiness: "2.25.29.77",
+} as const;
+
+export const APP_CHANGELOGS = {
+  aaWhatsApp: `NEW: Profile cover photo support for enhanced personalization
+NEW: Status notification alerts when contacts post new updates
+NEW: Fresh icons added to home screen & chat options for faster navigation
+IMPROVED: Message sending & receiving delays fully resolved
+IMPROVED: Anti-ban & account protection system
+IMPROVED: Overall performance, speed & responsiveness
+FIXED: Delayed message delivery issues
+FIXED: Random lag during chats & status viewing
+FIXED: Minor crashes affecting some devices`,
+  aaBusiness: `NEW: Enterprise deployment toolkit for faster onboarding
+NEW: Advanced bulk broadcasting segmentation controls
+IMPROVED: Auto-reply accuracy and scheduling reliability
+IMPROVED: Analytics dashboards with clearer KPI breakdowns
+FIXED: Minor sync issues in catalog management`,
+} as const;
+
+export const APP_UPDATE_DATES = {
+  aaWhatsApp: {
+    display: "February 06, 2026",
+    short: "06/02/2026",
+    iso: "2026-02-06",
+  },
+  aaBusiness: {
+    display: "January 31, 2026",
+    short: "31/01/2026",
+    iso: "2026-01-31",
+  },
+} as const;
+
 export const APP_DOWNLOAD_LINKS = {
   aaWhatsApp: "https://aa-mods.vercel.app/aa-whatsapp/download",
   aaBusiness: "https://aa-mods.vercel.app/aa-business/download",
+} as const;
+
+export const APP_WHATSAPP_PACKAGE_NAMES = {
+  legacy: "com.gbwhatsapp",
+  modern: "com.aawhatsapp",
+} as const;
+
+export const APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS = {
+  legacy: "https://ahsanali.short.gy/aa-whatsapp",
+  modern: "https://ahsanali.short.gy/aa-whatsapp-new",
 } as const;
 
 export const APP_DIRECT_DOWNLOAD_LINKS = {
