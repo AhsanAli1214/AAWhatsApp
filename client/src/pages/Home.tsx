@@ -245,7 +245,7 @@ export default function Home() {
                 </div>
                 <div className="text-center">
                   <p className="text-xl font-black font-mono text-white mb-0.5 tracking-tight">
-                    V 3.0
+                    {APP_VERSIONS.aaWhatsApp}
                   </p>
                   <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] opacity-70">
                     Current Mainframe Version
@@ -607,7 +607,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="flex flex-wrap justify-center gap-8 pt-8">
-              {['{APP_VERSIONS.aaWhatsApp} STABLE', '118MB APK', 'ANTI-BAN 2026', 'ZERO TRACKERS'].map((badge) => (
+              {['STABLE', '118MB APK', 'ANTI-BAN 2026', 'ZERO TRACKERS'].map((badge) => (
                 <span key={badge} className="text-xs font-black tracking-[0.3em] text-primary/60 border-b border-primary/20 pb-1">{badge}</span>
               ))}
             </div>
