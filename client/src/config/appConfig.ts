@@ -1,5 +1,5 @@
 export const APP_VERSIONS = {
-  aaWhatsApp: "V3.0",
+  aaWhatsApp: "V3.50",
   aaBusiness: "V1.0",
 } as const;
 
