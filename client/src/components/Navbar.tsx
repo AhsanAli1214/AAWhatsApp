@@ -17,7 +17,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { PwaInstallButton } from "@/components/PwaInstallButton";
 
 const navLinks = [
   { href: "/aa-whatsapp", label: "Home" },
@@ -115,9 +114,6 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <div className="navbar-install">
-              <PwaInstallButton variant="navbar" />
-            </div>
             <a
               href="https://t.me/AA_ModsOfficial"
               target="_blank"

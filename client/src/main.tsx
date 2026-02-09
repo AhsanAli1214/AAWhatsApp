@@ -12,11 +12,3 @@ if (window.location.protocol !== "https:" && !isLocalhost) {
 }
 
 createRoot(document.getElementById("root")!).render(<App />);
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js").catch(() => {
-      // Service worker registration is best-effort in constrained environments.
-    });
-  });
-}
