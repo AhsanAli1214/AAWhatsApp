@@ -7,7 +7,6 @@ import { BackToTop } from "@/components/BackToTop";
 import ScrollToTop from "@/components/ScrollToTop";
 import { AdBlockDetector } from "@/components/AdBlockDetector";
 import { Helmet } from "react-helmet";
-import { SoftCursor } from "@/components/SoftCursor";
 import { OfflineBanner } from "@/components/OfflineBanner";
 import { PageTransition } from "@/components/PageTransition";
 import { TapFeedback } from "@/components/TapFeedback";
@@ -97,7 +96,7 @@ function App() {
                 "@type": "Organization",
                 "name": "AA Mods",
                 "url": "https://aa-mods.vercel.app",
-                "logo": "https://aa-mods.vercel.app/favicon.png",
+                "logo": "https://i.postimg.cc/yYtyRHRZ/cropped_circle_image.png",
                 "sameAs": [
                   "https://t.me/AA_ModsOfficial"
                 ]
@@ -121,7 +120,6 @@ function App() {
           <TapFeedback />
           <ScrollToTop />
           <AdBlockDetector />
-          <SoftCursor />
           <OfflineBanner />
           <Navigation />
           <PageTransition>
