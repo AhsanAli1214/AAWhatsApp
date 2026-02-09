@@ -10,7 +10,6 @@ const CORE_ASSETS = [
   "/aa-whatsapp/",
   "/aa-whatsapp",
   "/manifest.webmanifest",
-  "/offline.html",
   "/favicon.png"
 ];
 

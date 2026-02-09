@@ -68,12 +68,16 @@ export function PwaInstallButton({ variant = "navbar" }: PwaInstallButtonProps) 
 
   const classes = `pwa-install-button tap-target ${variant === "mobile" ? "pwa-install-button--mobile" : ""}`;
 
+  if (!installPrompt && !isInstalled) {
+    return null;
+  }
+
   return (
     <button
       className={classes}
       onClick={handleClick}
       aria-label={label}
-      title={!installPrompt && !isInstalled ? "Use your browser menu to add to home screen." : undefined}
+      data-testid={`button-pwa-install-${variant}`}
     >
       {isInstalled ? <Smartphone className="h-4 w-4" /> : <Download className="h-4 w-4" />}
       <span>{label}</span>
