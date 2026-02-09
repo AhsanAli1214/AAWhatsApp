@@ -7,7 +7,6 @@ import { BackToTop } from "@/components/BackToTop";
 import ScrollToTop from "@/components/ScrollToTop";
 import { AdBlockDetector } from "@/components/AdBlockDetector";
 import { Helmet } from "react-helmet";
-import { OfflineBanner } from "@/components/OfflineBanner";
 import { PageTransition } from "@/components/PageTransition";
 import { TapFeedback } from "@/components/TapFeedback";
 import { AppSplash } from "@/components/AppSplash";
@@ -120,7 +119,6 @@ function App() {
           <TapFeedback />
           <ScrollToTop />
           <AdBlockDetector />
-          <OfflineBanner />
           <Navigation />
           <PageTransition>
             <Router />
