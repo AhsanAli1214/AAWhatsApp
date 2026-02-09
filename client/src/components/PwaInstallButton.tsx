@@ -20,7 +20,7 @@ export function PwaInstallButton({ variant = "navbar" }: PwaInstallButtonProps) 
   const [isInstalled, setIsInstalled] = useState(false);
 
   useEffect(() => {
-    setIsInstalled(isStandaloneDisplay());
+    setIsInstalled(isStandaloneDisplay() || false);
 
     const handleBeforeInstall = (event: Event) => {
       event.preventDefault();
@@ -49,20 +49,31 @@ export function PwaInstallButton({ variant = "navbar" }: PwaInstallButtonProps) 
 
   const handleClick = async () => {
     if (isInstalled) {
-      window.location.href = "/aa-whatsapp";
+      // In some cases, we might want to just show it's already installed
+      // but if the user clicks it, they expect an action.
+      // For a PWA, "Open" usually means switching context if possible, 
+      // but since we are in the browser, we just navigate to home.
+      window.location.href = "/";
       return;
     }
 
     if (!installPrompt) {
+      console.log("Install prompt not available yet");
       return;
     }
 
-    // Trigger the native Add to Home Screen prompt.
-    await installPrompt.prompt();
-    const choice = await installPrompt.userChoice;
-    if (choice.outcome === "accepted") {
-      setIsInstalled(true);
-      setInstallPrompt(null);
+    try {
+      // Trigger the native Add to Home Screen prompt.
+      await installPrompt.prompt();
+      const choice = await installPrompt.userChoice;
+      console.log(`User response to install prompt: ${choice.outcome}`);
+      
+      if (choice.outcome === "accepted") {
+        setIsInstalled(true);
+        setInstallPrompt(null);
+      }
+    } catch (err) {
+      console.error("Error during PWA installation:", err);
     }
   };
 
