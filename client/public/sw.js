@@ -7,6 +7,8 @@ const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const CORE_ASSETS = [
   "/",
   "/index.html",
+  "/aa-whatsapp/",
+  "/aa-whatsapp",
   "/manifest.webmanifest",
   "/offline.html",
   "/favicon.png"

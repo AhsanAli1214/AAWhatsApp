@@ -1,23 +1,30 @@
 {
   "name": "AA Mods",
   "short_name": "AA Mods",
-  "start_url": "/aa-whatsapp?source=pwa",
-  "scope": "/",
+  "id": "/aa-whatsapp/",
+  "start_url": "/aa-whatsapp/?source=pwa",
+  "scope": "/aa-whatsapp/",
   "display": "standalone",
-  "orientation": "portrait",
+  "display_override": ["standalone", "window-controls-overlay"],
   "background_color": "#030712",
   "theme_color": "#030712",
   "description": "AA Mods official app for secure WhatsApp mod updates, changelogs, and FAQs.",
   "icons": [
     {
-      "src": "/favicon.png",
-      "sizes": "any",
+      "src": "https://i.postimg.cc/yYtyRHRZ/cropped_circle_image.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/favicon.png",
-      "sizes": "any",
+      "src": "https://i.postimg.cc/yYtyRHRZ/cropped_circle_image.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://i.postimg.cc/yYtyRHRZ/cropped_circle_image.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
