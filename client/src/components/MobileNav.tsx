@@ -8,6 +8,7 @@ import {
   Sparkles 
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { PwaInstallButton } from "@/components/PwaInstallButton";
 
 export function MobileNav() {
   const [location] = useLocation();
@@ -26,6 +27,9 @@ export function MobileNav() {
     <div className="lg:hidden fixed bottom-0 left-0 right-0 z-[60] pb-safe">
       {/* Background container with ultra-premium blur and border */}
       <div className="relative border-t border-white/5 bg-background/40 backdrop-blur-[32px] px-1 pt-2 pb-3 shadow-[0_-20px_60px_rgba(0,0,0,0.6)] ring-1 ring-inset ring-white/10">
+        <div className="mobile-install-cta">
+          <PwaInstallButton variant="mobile" />
+        </div>
         <nav className="flex items-center justify-around max-w-lg mx-auto h-14">
           {navItems.map((item) => {
             const Icon = item.icon;

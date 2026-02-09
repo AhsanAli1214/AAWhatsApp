@@ -1,0 +1,25 @@
+{
+  "name": "AA Mods",
+  "short_name": "AA Mods",
+  "start_url": "/aa-whatsapp?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#030712",
+  "theme_color": "#030712",
+  "description": "AA Mods official app for secure WhatsApp mod updates, changelogs, and FAQs.",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
