@@ -1,87 +1,31 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-KP3HR8BD");
-    </script>
-    <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-339VLBF7PM"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-339VLBF7PM");
-    </script>
-    <link rel="preconnect" href="https://flippantaside.com" />
-    <link rel="dns-prefetch" href="https://flippantaside.com" />
-    <link rel="preconnect" href="https://gizokraijaw.net" />
-    <link rel="dns-prefetch" href="https://gizokraijaw.net" />
-    <link rel="preconnect" href="https://al5sm.com" />
-    <link rel="dns-prefetch" href="https://al5sm.com" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover"
     />
+    <meta name="theme-color" content="#030712" />
+    <meta name="background-color" content="#030712" />
+    <meta name="application-name" content="AA Mods" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="AA Mods" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     <meta name="msvalidate.01" content="49FC5303EEFCFD38FE4943CF7F6186F1" />
     <link
       rel="icon"
       type="image/png"
       sizes="48x48"
-      href="https://i.postimg.cc/yYtyRHRZ/cropped-circle-image.png"
+      href="/favicon.png"
     />
-    <script>
-      function loadDeferredScript(src, zone) {
-        const load = () => {
-          const script = document.createElement("script");
-          script.src = src;
-          script.async = true;
-          script.dataset.zone = zone;
-          (document.head || document.body).appendChild(script);
-        };
-
-        if ("requestIdleCallback" in window) {
-          window.requestIdleCallback(load, { timeout: 2000 });
-        } else {
-          window.setTimeout(load, 1500);
-        }
-      }
-
-      loadDeferredScript("https://gizokraijaw.net/vignette.min.js", "10507760");
-      loadDeferredScript("https://al5sm.com/tag.min.js", "10507738");
-    </script>
+    <link rel="apple-touch-icon" href="/favicon.png" />
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-KP3HR8BD"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

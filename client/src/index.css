@@ -109,3 +109,261 @@
 #flippantaside-banner-container:contains("refused to connect") {
   display: none !important;
 }
+
+/* Soft cursor experience */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
+
+.soft-cursor,
+.soft-cursor-glow,
+.soft-cursor-ripple {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.soft-cursor--visible {
+  opacity: 1;
+}
+
+.soft-cursor {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.85), rgba(124, 248, 255, 0.35) 40%, rgba(37, 211, 102, 0.2) 70%);
+  box-shadow: 0 0 24px rgba(37, 211, 102, 0.35), 0 0 42px rgba(6, 182, 212, 0.35);
+  mix-blend-mode: screen;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.soft-cursor--hover {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.soft-cursor-glow {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(37, 211, 102, 0.35), rgba(6, 182, 212, 0.08) 55%, transparent 70%);
+  filter: blur(6px);
+  mix-blend-mode: screen;
+}
+
+.soft-cursor-ripple {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 249, 255, 0.6);
+  box-shadow: 0 0 20px rgba(125, 249, 255, 0.5);
+  transform: translate(-50%, -50%) scale(0.4);
+  opacity: 0;
+}
+
+.soft-cursor-ripple--active {
+  animation: soft-cursor-ripple 0.7s ease-out forwards;
+}
+
+@keyframes soft-cursor-ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}
+
+@media (pointer: coarse) {
+  .soft-cursor {
+    width: 22px;
+    height: 22px;
+  }
+
+  .soft-cursor-glow {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 240 5% 2%;
+    --secondary: 240 5% 8%;
+    --muted: 240 5% 10%;
+    --border: 240 5% 15%;
+  }
+}
+
+.page-transition {
+  animation: page-enter 240ms ease-out;
+}
+
+@keyframes page-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pwa-install-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.25), rgba(6, 182, 212, 0.25));
+  border: 1px solid rgba(125, 249, 255, 0.3);
+  color: #e2e8f0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  touch-action: manipulation;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pwa-install-button--mobile {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.pwa-install-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.offline-banner {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(15, 23, 42, 0.95);
+  color: #f8fafc;
+  font-size: 0.85rem;
+  z-index: 9997;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-install {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-install-cta {
+  max-width: 320px;
+  margin: 0.25rem auto 0.5rem;
+  padding: 0 0.75rem;
+}
+
+.app-splash {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(37, 211, 102, 0.2), transparent 55%), #020617;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 9999;
+  animation: splash-fade 0.9s ease forwards;
+}
+
+.app-splash__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #f8fafc;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.app-splash p {
+  color: rgba(226, 232, 240, 0.8);
+  font-size: 0.95rem;
+}
+
+@keyframes splash-fade {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.tap-ripple-active,
+.tap-press {
+  position: relative;
+  overflow: hidden;
+}
+
+.tap-ripple-active::after {
+  content: "";
+  position: absolute;
+  left: var(--ripple-x, 50%);
+  top: var(--ripple-y, 50%);
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, rgba(125, 249, 255, 0.5), transparent 60%);
+  border-radius: 999px;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+  animation: tap-ripple 0.6s ease-out;
+}
+
+.tap-press {
+  transform: scale(0.98);
+}
+
+@keyframes tap-ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(8);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition,
+  .tap-ripple-active::after,
+  .app-splash {
+    animation: none;
+  }
+
+  .tap-press {
+    transform: none;
+  }
+}
