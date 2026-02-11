@@ -1,1 +1,1 @@
-{'ver1':'3', 'ver2':'50', 'ver3':'\n• Base updated to 2.25.36.73\n• Enjoy new features and improvements\n• Performance and stability enhancements\n• Smooth and secure experience\n' , 'dli':'https://aa-mods.vercel.app/'}
+{'ver1':'3', 'ver2':'50', 'ver3':'\n• Base updated to Latest Play Store\n• Enjoy new features and improvements\n• Performance and stability enhancements\n• Smooth and secure experience\n' , 'dli':'https://aa-mods.vercel.app/'}
