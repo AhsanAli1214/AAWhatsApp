@@ -1,7 +1,7 @@
-{
-  "ver1": 3,
-  "ver2": 50,
-  "ver3": "• Base 2.25.36.73\n• Enabled New Features\n• Fix Link A Device\n• Fix Unofficial Login Problem\n• Expiration Extended",
-  "dli": "https://aa-mods.vercel.app/",
-  "exp350": 9999
-}
+{'ver1':'51', 'ver2':'1', 'ver3':'
+•Base 2.25.36.73.
+•Enabled New Features.
+•[New] Fix Link A Device.
+• [Improvement] 100% Fix Unofficial Login Problem.
+•Extend Expiration date.
+' , 'dli':'https://youtu.be/IjuHY_fNcY8?si=a3a1_wC_XyfRbRvO'}
