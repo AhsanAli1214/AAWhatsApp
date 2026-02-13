@@ -67,7 +67,7 @@ export async function generateSitemap() {
     // Add blog posts for both blog entry points
     const blogPosts = await loadBlogPosts();
     if (Array.isArray(blogPosts)) {
-      const blogPrefixes = ["/blog", "/aa-whatsapp/blog"];
+      const blogPrefixes = ["/blog", "/aa-whatsapp/blog", "/aa-business/blog"];
       blogPosts.forEach(post => {
         if (post && post.slug) {
           const publishedDate = new Date(post.publishedAt || today);

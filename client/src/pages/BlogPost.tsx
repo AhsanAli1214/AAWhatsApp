@@ -56,7 +56,12 @@ export default function BlogPost() {
   const params = useParams<{ slug: string }>();
   const [location] = useLocation();
   const path = location.split("?")[0];
-  const basePath = path.startsWith("/aa-whatsapp/blog") ? "/aa-whatsapp/blog" : "/blog";
+  let basePath = "/blog";
+  if (path.startsWith("/aa-whatsapp/blog")) {
+    basePath = "/aa-whatsapp/blog";
+  } else if (path.startsWith("/aa-business/blog")) {
+    basePath = "/aa-business/blog";
+  }
   const post = getBlogPostBySlug(params.slug || "");
   const relatedPosts = post ? getRelatedPosts(post.slug, 3) : [];
 

@@ -123,6 +123,7 @@ export default function DownloadPage() {
           content={`AA WhatsApp download, AAWhatsApp APK official, AA WhatsApp ${APP_VERSIONS.aaWhatsApp} download, latest AA WhatsApp APK, secure WhatsApp mod apk, anti-ban WhatsApp download, best WhatsApp mod 2026, safe APK download`}
         />
         <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
         <link rel="alternate" href={canonicalUrl} hrefLang="en" />
         <meta property="og:title" content={`Download AAWhatsApp ${APP_VERSIONS.aaWhatsApp} - Official Secure APK`} />
         <meta property="og:description" content={`Get the latest AAWhatsApp ${APP_VERSIONS.aaWhatsApp} with Anti-Ban and Privacy Core™. 100% safe, verified, and free download for Android.`} />

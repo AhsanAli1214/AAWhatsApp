@@ -55,6 +55,7 @@ export default function AABusinessWhatsAppPage() {
           content="AA Business WhatsApp, WhatsApp Business Mod, AA Business APK, secure WhatsApp business mod, Anti-Ban WhatsApp Business, enterprise WhatsApp mod, AA Mods Business"
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-business" />
+        <meta name="robots" content="index, follow" />
         <meta property="og:title" content={`AA Business WhatsApp ${APP_VERSIONS.aaBusiness} - Secure Enterprise Messaging`} />
         <meta property="og:description" content="Protect your business communications with AA Business WhatsApp. Anti-Ban, Bulk Messaging, and enhanced privacy controls." />
         <script type="application/ld+json">
