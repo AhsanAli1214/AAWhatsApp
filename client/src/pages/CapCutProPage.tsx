@@ -69,12 +69,12 @@ export default function CapCutProPage() {
         <meta name="description" content={`Download CapCut Pro MOD APK ${APP_VERSIONS.capcutPro} by Ahsan Ali. Fully unlocked AI tools, premium templates, 4K export, no watermark, and no internet error. The best professional video editor.`} />
         <meta name="keywords" content="CapCut Pro MOD APK, download CapCut Pro, CapCut unlocked, CapCut no watermark, CapCut AI features working, best video editor mod, Ahsan Ali mods, AA Mods CapCut" />
         <meta property="og:title" content="CapCut Pro MOD APK - Ultimate Video Editing Suite" />
-        <meta property="og:image" content="https://aa-mods.vercel.app/images/capcut-pro-hero.png" />
+        <meta property="og:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:description" content="CapCut Pro MOD APK by AA Mods with unlocked premium features, AI tools, templates, and no-watermark export." />
         <meta name="twitter:title" content="CapCut Pro MOD APK (Stable, No Watermark) | AA Mods" />
         <meta name="twitter:description" content="Fully unlocked CapCut Pro MOD APK by AA Mods with working AI tools and smooth 4K exports." />
-        <meta name="twitter:image" content="https://aa-mods.vercel.app/images/capcut-pro-hero.png" />
+        <meta name="twitter:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
         <link rel="canonical" href={canonicalUrl} />
               </Helmet>
 
@@ -135,7 +135,7 @@ export default function CapCutProPage() {
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative">
             <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full -z-10" />
             <img 
-              src="/images/capcut-pro-hero.png" 
+              src="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" 
               alt="CapCut Pro Interface" 
               className="rounded-[2.5rem] shadow-2xl border border-primary/20 scale-105"
               loading="lazy"

@@ -93,7 +93,13 @@ export function MobileNav() {
 
   return (
     <div className="lg:hidden fixed bottom-0 left-0 right-0 z-[60] pb-safe">
-      <div className="relative border-t border-white/5 bg-background/40 backdrop-blur-[32px] px-1 pt-2 pb-3 shadow-[0_-20px_60px_rgba(0,0,0,0.6)] ring-1 ring-inset ring-white/10">
+      <div
+        className={`relative border-t border-white/5 px-1 pt-2 pb-3 shadow-[0_-20px_60px_rgba(0,0,0,0.6)] ring-1 ring-inset ring-white/10 ${
+          isCapCut
+            ? "bg-background/95 supports-[backdrop-filter]:bg-background/85 supports-[backdrop-filter]:backdrop-blur-xl"
+            : "bg-background/40 backdrop-blur-[32px]"
+        }`}
+      >
         <nav className="flex items-center justify-around max-w-lg mx-auto h-14">
           {navItems.map((item) => {
             const isActive = item.hash ? location === item.href.split("#")[0] : location === item.href;

@@ -47,14 +47,14 @@ export default function CapCutDownloadPage() {
           content="Secure one-button, 2-step download page for CapCut Pro MOD APK with stable optimized package."
         />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content="https://aa-mods.vercel.app/images/capcut-pro-hero.png" />
+        <meta property="og:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Download CapCut Pro MOD APK | AA Mods" />
         <meta
           name="twitter:description"
           content="Fast and secure CapCut Pro MOD APK download with unlocked premium features and 2-step protection flow."
         />
-        <meta name="twitter:image" content="https://aa-mods.vercel.app/images/capcut-pro-hero.png" />
+        <meta name="twitter:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
 
@@ -82,33 +82,34 @@ export default function CapCutDownloadPage() {
                   </p>
                 </div>
 
-                <a
-                  href={APP_DIRECT_DOWNLOAD_LINKS.capcutPro}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={handleDownloadClick}
-                  className="block"
+                <Button
+                  asChild
+                  size="lg"
+                  className={`w-full min-h-24 md:min-h-28 text-base md:text-2xl font-black rounded-[1.7rem] shadow-2xl transition-all duration-300 px-3 md:px-4 py-4 ${downloadStep === 0 ? "shadow-primary/30" : "shadow-emerald-500/30 ring-2 ring-emerald-400/40"}`}
                 >
-                  <Button
-                    size="lg"
-                    className={`w-full h-24 md:h-28 text-lg md:text-2xl font-black rounded-[1.7rem] shadow-2xl transition-all duration-300 ${downloadStep === 0 ? "shadow-primary/30" : "shadow-emerald-500/30 ring-2 ring-emerald-400/40"}`}
+                  <a
+                    href={APP_DIRECT_DOWNLOAD_LINKS.capcutPro}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={handleDownloadClick}
+                    className="w-full"
                   >
-                    <div className="w-full flex items-center justify-between px-2 md:px-4 gap-3">
-                      <div className="flex items-center gap-3 md:gap-4 text-left">
-                        <Download className={`h-8 w-8 md:h-10 md:w-10 ${downloadStep === 1 ? "animate-bounce" : ""}`} />
-                        <div>
-                          <span className="block leading-tight">{ctaLabel}</span>
-                          <span className="text-[11px] md:text-xs font-bold uppercase tracking-widest opacity-75">
+                    <div className="w-full flex items-center justify-between gap-2 md:gap-3">
+                      <div className="flex items-center gap-2 md:gap-4 text-left min-w-0">
+                        <Download className={`h-6 w-6 md:h-10 md:w-10 shrink-0 ${downloadStep === 1 ? "animate-bounce" : ""}`} />
+                        <div className="min-w-0">
+                          <span className="block leading-tight break-words">{ctaLabel}</span>
+                          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.16em] opacity-75 leading-tight">
                             {downloadStep === 0 ? "Verification required" : "Official AA Mods package"}
                           </span>
                         </div>
                       </div>
-                      <Badge className="bg-white/20 text-white font-black px-3 py-1">
+                      <Badge className="bg-white/20 text-white font-black px-2.5 py-1 shrink-0">
                         {downloadStep === 0 ? "1/2" : "2/2"}
                       </Badge>
                     </div>
-                  </Button>
-                </a>
+                  </a>
+                </Button>
 
                 <div className="text-center text-xs text-muted-foreground font-medium">
                   {downloadStep === 0
