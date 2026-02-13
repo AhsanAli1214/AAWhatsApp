@@ -44,6 +44,7 @@ export default function About() {
         />
         <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <link rel="canonical" href="https://aa-mods.vercel.app/aa-whatsapp/about" />
+        <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

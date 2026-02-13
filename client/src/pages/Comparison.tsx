@@ -78,6 +78,7 @@ export default function Comparison() {
             : "See how AA WhatsApp compares to GB and FM WhatsApp across privacy, anti-ban, and features."}
         />
         <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       
       <Navigation />

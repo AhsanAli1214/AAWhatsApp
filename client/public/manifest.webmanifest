@@ -1,0 +1,23 @@
+{
+  "name": "AA WhatsApp",
+  "short_name": "AAMods",
+  "description": "The most secure WhatsApp modification with Anti-Ban and Privacy Core.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

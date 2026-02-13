@@ -19,6 +19,7 @@ export default function TermsOfService() {
           content="AA Mods terms of service, AA WhatsApp terms, AA Business terms, mod usage policy, app license"
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/terms" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <div className="mb-8">
         <Button 

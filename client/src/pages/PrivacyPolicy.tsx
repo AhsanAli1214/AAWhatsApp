@@ -19,6 +19,7 @@ export default function PrivacyPolicy() {
           content="AA Mods privacy policy, AA WhatsApp privacy, data protection, secure WhatsApp mod, user data safety"
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/privacy" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <div className="mb-8">
         <Button 
