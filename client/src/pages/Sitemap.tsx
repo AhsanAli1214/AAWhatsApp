@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Link } from "wouter";
-import { BookOpen, Download, HelpCircle, Info, ShieldCheck, Zap, ArrowRight, MessageSquare, Briefcase } from "lucide-react";
+import { BookOpen, Download, HelpCircle, Info, ShieldCheck, Zap, ArrowRight, MessageSquare, Briefcase, Video } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HTMLSitemap() {
@@ -38,6 +38,13 @@ export default function HTMLSitemap() {
         { label: "Enterprise Download", href: "/aa-business/download", icon: Download },
         { label: "Business FAQ", href: "/aa-business/faq", icon: HelpCircle },
         { label: "Enterprise Blog", href: "/aa-business/blog", icon: BookOpen },
+      ]
+    },
+    {
+      title: "CapCut Pro (Video Editor)",
+      links: [
+        { label: "CapCut Pro Info", href: "/capcut-pro", icon: Video },
+        { label: "Secure Download", href: "/capcut-pro/download", icon: Download },
       ]
     },
     {

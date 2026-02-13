@@ -8,6 +8,8 @@ import {
   Sparkles,
   Users,
   Building2,
+  Video,
+  CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -103,7 +105,7 @@ export default function AppSelector() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -155,6 +157,64 @@ export default function AppSelector() {
                       >
                         <Download className="w-5 h-5 mr-2" />
                         Download {APP_VERSIONS.aaWhatsApp}
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Card className="h-full border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 group overflow-visible">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Video className="w-8 h-8 text-primary" />
+                  </div>
+                  <h2 className="text-2xl font-bold mb-3">CapCut Pro</h2>
+                  <p className="text-muted-foreground mb-6">
+                    Professional video editing unlocked. No watermarks, 
+                    full AI tools, and premium templates for creators.
+                  </p>
+
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-center gap-3">
+                      <Sparkles className="w-5 h-5 text-primary" />
+                      <span className="text-sm">AI Features Unlocked</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                      <span className="text-sm">No Watermark Export</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Shield className="w-5 h-5 text-primary" />
+                      <span className="text-sm">Stable Mod (Ahsan Ali)</span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-3">
+                    <Link href="/capcut-pro">
+                      <Button
+                        className="w-full bg-primary hover:bg-primary/90"
+                        size="lg"
+                        data-testid="button-capcut-pro"
+                      >
+                        <Video className="w-5 h-5 mr-2" />
+                        Explore CapCut Pro
+                      </Button>
+                    </Link>
+                    <Link href="/capcut-pro/download">
+                      <Button
+                        variant="outline"
+                        className="w-full"
+                        size="lg"
+                        data-testid="button-capcut-pro-download"
+                      >
+                        <Download className="w-5 h-5 mr-2" />
+                        Download {APP_VERSIONS.capcutPro}
                       </Button>
                     </Link>
                   </div>

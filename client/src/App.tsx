@@ -19,6 +19,8 @@ const Home = lazy(() => import("@/pages/Home"));
 const AppSelector = lazy(() => import("@/pages/AppSelector"));
 const AAWhatsAppPage = lazy(() => import("@/pages/AAWhatsAppPage"));
 const AABusinessWhatsAppPage = lazy(() => import("@/pages/AABusinessWhatsAppPage"));
+const CapCutProPage = lazy(() => import("@/pages/CapCutProPage"));
+const CapCutDownloadPage = lazy(() => import("@/pages/CapCutDownloadPage"));
 const BusinessDownloadPage = lazy(() => import("@/pages/BusinessDownloadPage"));
 const About = lazy(() => import("@/pages/About"));
 const Comparison = lazy(() => import("@/pages/Comparison"));
@@ -66,6 +68,8 @@ function Router() {
         <Route path="/aa-whatsapp/blog/:slug" component={BlogPost} />
 
         <Route path="/aa-business" component={BusinessHome} />
+        <Route path="/capcut-pro" component={CapCutProPage} />
+        <Route path="/capcut-pro/download" component={CapCutDownloadPage} />
         <Route path="/aa-business/about" component={BusinessAbout} />
         <Route path="/aa-business/features" component={BusinessFeatures} />
         <Route path="/aa-business/download" component={BusinessDownload} />

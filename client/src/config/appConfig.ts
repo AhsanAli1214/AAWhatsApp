@@ -1,16 +1,19 @@
 export const APP_VERSIONS = {
   aaWhatsApp: "V3.50",
   aaBusiness: "V1.0",
+  capcutPro: "V13.0.0",
 } as const;
 
 export const APP_VERSION_LOWER = {
   aaWhatsApp: APP_VERSIONS.aaWhatsApp.toLowerCase(),
   aaBusiness: APP_VERSIONS.aaBusiness.toLowerCase(),
+  capcutPro: APP_VERSIONS.aaBusiness.toLowerCase(),
 } as const;
 
 export const APP_BASE_VERSIONS = {
   aaWhatsApp: "2.25.36.73",
   aaBusiness: "2.25.29.77",
+  capcutPro: "v13.0.0 Stable",
 } as const;
 
 export const APP_CHANGELOGS = {
@@ -32,6 +35,17 @@ NEW: Advanced bulk broadcasting segmentation controls
 IMPROVED: Auto-reply accuracy and scheduling reliability
 IMPROVED: Analytics dashboards with clearer KPI breakdowns
 FIXED: Minor sync issues in catalog management`,
+  capcutPro: `✅ AI features working
+✅ All templates unlocked
+✅ Business creator mode enabled
+✅ Security notice removed
+✅ Multiple languages available
+✅ Regional restrictions removed
+✅ No internet connection error
+✅ No watermark on export
+✅ Optimized & cleaned resources
+✅ Faster loading & smooth UI
+✅ Battery & performance optimized`,
 } as const;
 
 export const APP_UPDATE_DATES = {
@@ -45,11 +59,17 @@ export const APP_UPDATE_DATES = {
     short: "31/01/2026",
     iso: "2026-01-31",
   },
+  capcutPro: {
+    display: "February 13, 2026",
+    short: "13/02/2026",
+    iso: "2026-02-13",
+  },
 } as const;
 
 export const APP_DOWNLOAD_LINKS = {
   aaWhatsApp: "https://aa-mods.vercel.app/aa-whatsapp/download",
   aaBusiness: "https://aa-mods.vercel.app/aa-business/download",
+  capcutPro: "https://aa-mods.vercel.app/capcut-pro/download",
 } as const;
 
 export const APP_WHATSAPP_PACKAGE_NAMES = {
@@ -65,8 +85,10 @@ export const APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS = {
 export const APP_DIRECT_DOWNLOAD_LINKS = {
   aaWhatsApp: "https://ahsanali.short.gy/aa-wa-latest",
   aaBusiness: "https://ahsanali.short.gy/aa-wa-pro",
+  capcutPro: "https://ahsanali.short.gy/capcut-pro-latest",
 } as const;
 
 export const APP_MIRROR_DOWNLOAD_LINKS = {
   aaBusiness: "https://www.mediafire.com/file/aabusiness_v1.0.apk",
+  capcutPro: "https://www.mediafire.com/file/capcutpro_v13.0.apk",
 } as const;
