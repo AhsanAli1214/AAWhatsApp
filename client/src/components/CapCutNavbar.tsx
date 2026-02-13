@@ -10,6 +10,7 @@ import {
   MessageSquare,
   Briefcase,
   LayoutGrid,
+  CircleHelp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,6 +22,7 @@ import {
 
 const navLinks = [
   { href: "/capcut-pro", label: "Home" },
+  { href: "/capcut-pro/features", label: "Features" },
   { href: "/capcut-pro/download", label: "Download", primary: true },
 ];
 
@@ -106,6 +108,12 @@ export function CapCutNavbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            <a href="/capcut-pro/features#capcut-faq">
+              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
+                <CircleHelp className="w-4 h-4 mr-2" />
+                FAQ
+              </Button>
+            </a>
             <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="sm" className="border-primary/30">
                 <Send className="w-4 h-4 mr-2" />
@@ -144,6 +152,11 @@ export function CapCutNavbar() {
                   </Button>
                 </Link>
               ))}
+              <a href="/capcut-pro/features#capcut-faq" onClick={() => setIsOpen(false)}>
+                <Button variant="ghost" className="w-full justify-start">
+                  FAQ
+                </Button>
+              </a>
             </div>
           </div>
         )}

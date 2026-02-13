@@ -1,98 +1,148 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Download, Shield, Zap, AlertTriangle, CheckCircle2, Lock, Cpu, History } from "lucide-react";
-import { APP_VERSIONS, APP_DIRECT_DOWNLOAD_LINKS, APP_MIRROR_DOWNLOAD_LINKS, APP_UPDATE_DATES, APP_BASE_VERSIONS } from "@/config/appConfig";
+import { Download, Shield, CheckCircle2, Cpu, History, ArrowRight, Sparkles } from "lucide-react";
+import { APP_VERSIONS, APP_DIRECT_DOWNLOAD_LINKS, APP_UPDATE_DATES, APP_BASE_VERSIONS } from "@/config/appConfig";
 import { Helmet } from "react-helmet";
-import { useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { Footer } from "@/components/Footer";
+import { Link } from "wouter";
 
 export default function CapCutDownloadPage() {
-  const [downloadReady, setDownloadReady] = useState(false);
-  const [countdown, setCountdown] = useState(10);
+  const canonicalUrl = "https://aa-mods.vercel.app/capcut-pro/download";
+  const [downloadStep, setDownloadStep] = useState<0 | 1>(0);
 
-  useEffect(() => {
-    if (countdown > 0) {
-      const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
-      return () => clearTimeout(timer);
-    } else {
-      setDownloadReady(true);
+  const ctaLabel = useMemo(
+    () =>
+      downloadStep === 0
+        ? "Step 1: Unlock Download"
+        : `Step 2: Download CapCut Pro MOD ${APP_VERSIONS.capcutPro}`,
+    [downloadStep],
+  );
+
+  const handleDownloadClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (downloadStep === 0) {
+      e.preventDefault();
+      setDownloadStep(1);
+      window.open("https://otieu.com/4/10538189", "_blank", "noopener,noreferrer");
     }
-  }, [countdown]);
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 pb-32">
       <Helmet>
         <title>Download CapCut Pro MOD APK {APP_VERSIONS.capcutPro} | AA Mods</title>
-        <meta name="description" content={`Official download page for CapCut Pro MOD APK ${APP_VERSIONS.capcutPro}. Secure, fast servers, no watermarks, and all premium features unlocked by Ahsan Ali.`} />
+        <meta
+          name="description"
+          content={`Official download page for CapCut Pro MOD APK ${APP_VERSIONS.capcutPro}. One secure button, 2-step unlock flow, no watermark export, and all premium features enabled.`}
+        />
+        <meta
+          name="keywords"
+          content="download capcut pro mod apk, capcut mod aa mods, capcut no watermark download, capcut ai tools working"
+        />
+        <meta property="og:title" content="Download CapCut Pro MOD APK | AA Mods" />
+        <meta
+          property="og:description"
+          content="Secure one-button, 2-step download page for CapCut Pro MOD APK with stable optimized package."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content="https://aa-mods.vercel.app/images/capcut-pro-hero.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Download CapCut Pro MOD APK | AA Mods" />
+        <meta
+          name="twitter:description"
+          content="Fast and secure CapCut Pro MOD APK download with unlocked premium features and 2-step protection flow."
+        />
+        <meta name="twitter:image" content="https://aa-mods.vercel.app/images/capcut-pro-hero.png" />
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
 
-      <div className="container mx-auto px-4 pt-32 max-w-4xl">
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-4 pt-32 max-w-5xl">
+        <div className="text-center mb-14">
           <Badge className="mb-6 px-4 py-1 bg-primary/10 text-primary border-primary/20 uppercase tracking-widest font-black">
-            Secure Download Gateway
+            Official CapCut Pro Download Gateway
           </Badge>
           <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tighter uppercase">
-            CapCut <span className="text-primary italic">Pro</span> {APP_VERSIONS.capcutPro}
+            Download CapCut <span className="text-primary italic">Pro</span> MOD APK
           </h1>
-          <p className="text-muted-foreground text-lg font-medium">Released: {APP_UPDATE_DATES.capcutPro.display}</p>
+          <p className="text-muted-foreground text-lg font-medium">
+            Latest stable by AA Mods • Updated: {APP_UPDATE_DATES.capcutPro.display}
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          {/* Main Download Card */}
-          <div className="lg:col-span-2 space-y-6">
-            {!downloadReady ? (
-              <Card className="rounded-[2.5rem] border-white/5 bg-primary/5 py-20 text-center relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-scan" />
-                <CardContent>
-                  <div className="relative inline-block mb-8">
-                    <Zap className="h-20 w-20 text-primary animate-pulse" />
-                    <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full" />
-                  </div>
-                  <h3 className="text-2xl font-black mb-2 uppercase italic tracking-widest">Protocol Initializing</h3>
-                  <p className="text-muted-foreground font-medium mb-6">Bypassing security checks and preparing secure servers...</p>
-                  <div className="text-5xl font-black text-primary font-mono">{countdown}s</div>
-                </CardContent>
-              </Card>
-            ) : (
-              <div className="space-y-4">
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-                  <a href={APP_DIRECT_DOWNLOAD_LINKS.capcutPro} target="_blank" rel="noopener noreferrer">
-                    <Button size="lg" className="w-full h-24 text-2xl font-black rounded-[2rem] shadow-2xl shadow-primary/30 group">
-                      <div className="flex items-center justify-between w-full px-4">
-                        <div className="flex items-center gap-4">
-                          <Download className="h-10 w-10 group-hover:bounce" />
-                          <div className="text-left">
-                            <span className="block">Deploy Server 1</span>
-                            <span className="text-xs font-bold uppercase tracking-widest opacity-60">High-Speed CDN</span>
-                          </div>
-                        </div>
-                        <Badge className="bg-white/20 text-white font-black">FAST</Badge>
-                      </div>
-                    </Button>
-                  </a>
-                </motion.div>
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-                  <a href={APP_MIRROR_DOWNLOAD_LINKS.capcutPro} target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" size="lg" className="w-full h-20 text-xl font-black rounded-[1.5rem] border-primary/20 hover:bg-primary/5">
-                      <Download className="mr-3 h-6 w-6" /> Cloud Mirror (Server 2)
-                    </Button>
-                  </a>
-                </motion.div>
-              </div>
-            )}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
+          <Card className="rounded-[2rem] border-primary/20 bg-primary/5 p-4 md:p-6">
+            <CardContent className="p-0">
+              <div className="flex flex-col gap-4">
+                <div className="text-center">
+                  <h2 className="text-xl md:text-2xl font-black mb-1">Single Download Button • 2-Step Security Flow</h2>
+                  <p className="text-sm text-muted-foreground">
+                    Click once to unlock. Click again to start the official APK download.
+                  </p>
+                </div>
 
-            {/* Version Info Table */}
+                <a
+                  href={APP_DIRECT_DOWNLOAD_LINKS.capcutPro}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleDownloadClick}
+                  className="block"
+                >
+                  <Button
+                    size="lg"
+                    className={`w-full h-24 md:h-28 text-lg md:text-2xl font-black rounded-[1.7rem] shadow-2xl transition-all duration-300 ${downloadStep === 0 ? "shadow-primary/30" : "shadow-emerald-500/30 ring-2 ring-emerald-400/40"}`}
+                  >
+                    <div className="w-full flex items-center justify-between px-2 md:px-4 gap-3">
+                      <div className="flex items-center gap-3 md:gap-4 text-left">
+                        <Download className={`h-8 w-8 md:h-10 md:w-10 ${downloadStep === 1 ? "animate-bounce" : ""}`} />
+                        <div>
+                          <span className="block leading-tight">{ctaLabel}</span>
+                          <span className="text-[11px] md:text-xs font-bold uppercase tracking-widest opacity-75">
+                            {downloadStep === 0 ? "Verification required" : "Official AA Mods package"}
+                          </span>
+                        </div>
+                      </div>
+                      <Badge className="bg-white/20 text-white font-black px-3 py-1">
+                        {downloadStep === 0 ? "1/2" : "2/2"}
+                      </Badge>
+                    </div>
+                  </Button>
+                </a>
+
+                <div className="text-center text-xs text-muted-foreground font-medium">
+                  {downloadStep === 0
+                    ? "First click opens verification tab. Return and click again for direct APK download."
+                    : "Verified. Click the button now to start direct APK download."}
+                </div>
+
+                <div className="text-center text-xs text-muted-foreground/80 font-medium">
+                  No login required • No VPN required • No root required
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          <div className="lg:col-span-2 space-y-6">
             <Card className="rounded-[2rem] border-white/5 bg-secondary/20">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg font-black uppercase tracking-widest italic">
                   <History className="h-5 w-5 text-primary" /> Package Intelligence
                 </CardTitle>
+                <CardDescription>
+                  Verified release details for the current stable CapCut Pro MOD package.
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex justify-between items-center py-2 border-b border-white/5">
                   <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest">App Name</span>
-                  <span className="font-black">CapCut Pro MOD</span>
+                  <span className="font-black">CapCut Pro MOD APK</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-white/5">
+                  <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Version</span>
+                  <span className="font-mono font-bold">{APP_VERSIONS.capcutPro}</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-white/5">
                   <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Base Version</span>
@@ -108,9 +158,27 @@ export default function CapCutDownloadPage() {
                 </div>
               </CardContent>
             </Card>
+
+            <Card className="rounded-[2rem] border-border/60 bg-background/60">
+              <CardHeader>
+                <CardTitle className="text-xl font-black">Quick Install Steps</CardTitle>
+              </CardHeader>
+              <CardContent className="grid sm:grid-cols-2 gap-3 text-sm">
+                {[
+                  "Download CapCut Pro MOD APK by AA Mods",
+                  "Enable Install from Unknown Sources",
+                  "Install APK file and open the app",
+                  "Start editing with premium features unlocked",
+                ].map((step, i) => (
+                  <div key={step} className="rounded-xl border border-border/50 p-3 bg-secondary/30">
+                    <span className="font-black text-primary mr-2">{i + 1}.</span>
+                    {step}
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
           </div>
 
-          {/* Side Panels */}
           <div className="space-y-6">
             <Card className="rounded-[2rem] border-primary/20 bg-primary/5">
               <CardHeader>
@@ -118,14 +186,14 @@ export default function CapCutDownloadPage() {
                   <Shield className="h-5 w-5 text-primary" /> Safety Core
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3">
                 {[
-                  "VirusTotal Scanned (Clean)",
-                  "No Suspicious Permissions",
-                  "Security Notice Removed",
-                  "Play Protect Friendly"
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 text-sm font-bold">
+                  "Security notice removed",
+                  "No suspicious permissions",
+                  "No forced login required",
+                  "Optimized for low/high-end devices",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3 text-sm font-bold">
                     <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                     {item}
                   </div>
@@ -133,26 +201,41 @@ export default function CapCutDownloadPage() {
               </CardContent>
             </Card>
 
-            <Card className="rounded-[2rem] border-white/5 bg-secondary/20 p-8 text-center">
+            <Card className="rounded-[2rem] border-white/5 bg-secondary/20 p-7 text-center">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                 <Cpu className="h-8 w-8 text-primary" />
               </div>
               <h4 className="font-black uppercase tracking-widest text-sm mb-2">Optimized Build</h4>
-              <p className="text-xs text-muted-foreground font-medium">Resources cleaned and compressed for ultra-fast loading on both low and high-end devices.</p>
+              <p className="text-xs text-muted-foreground font-medium">
+                Cleaned resources and tuned performance for faster loading and smoother editing sessions.
+              </p>
+            </Card>
+
+            <Card className="rounded-[2rem] border-primary/20 bg-primary/5 p-5">
+              <div className="flex items-start gap-3">
+                <Sparkles className="h-5 w-5 text-primary mt-0.5" />
+                <div>
+                  <h4 className="font-black text-sm mb-1">Need full details before downloading?</h4>
+                  <Link href="/capcut-pro/features" className="text-sm font-bold text-primary hover:underline inline-flex items-center gap-1">
+                    Open Features & About <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
             </Card>
           </div>
         </div>
 
         <div className="max-w-2xl mx-auto text-center space-y-4">
           <p className="text-sm text-muted-foreground leading-relaxed font-medium">
-            Important: Ensure "Install from Unknown Sources" is enabled in your Android settings before launching the APK. This is a modified version for educational and creative purposes.
+            Important: This is a modified application for educational and personal use. Always download from AA Mods official pages to avoid fake files.
           </p>
           <div className="h-px w-20 bg-primary/20 mx-auto" />
           <p className="text-[10px] uppercase font-black tracking-[0.2em] opacity-30">
-            AA Mods by Ahsan Ali Wadani • Official Stable Release
+            AA Mods by Ahsan Ali • Official Stable Release
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
