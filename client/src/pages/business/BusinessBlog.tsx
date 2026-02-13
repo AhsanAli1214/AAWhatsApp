@@ -176,8 +176,9 @@ export default function BusinessBlog() {
               <h2 className="text-xl font-bold mb-6">Featured Articles</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {featuredPosts.map((post, index) => (
-                  <Card key={index} className="border-blue-500/20 hover:border-blue-500/40 transition-colors group">
-                    <CardHeader>
+                  <Link href={`/aa-business/blog/${post.slug}`}>
+                    <Card key={index} className="border-blue-500/20 hover:border-blue-500/40 transition-colors group cursor-pointer">
+                      <CardHeader>
                       <div className="flex items-center gap-2 mb-2">
                         <Badge variant="secondary" className="bg-blue-500/10 text-blue-500">
                           {post.category}
@@ -209,9 +210,10 @@ export default function BusinessBlog() {
                       </div>
                     </CardContent>
                   </Card>
-                ))}
-              </div>
-            </motion.div>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
           )}
 
           <motion.div
@@ -222,8 +224,9 @@ export default function BusinessBlog() {
             <h2 className="text-xl font-bold mb-6">All Articles</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {blogPosts.map((post, index) => (
-                <Card key={index} className="border-blue-500/10 hover:border-blue-500/30 transition-colors group">
-                  <CardContent className="p-6">
+                <Link key={index} href={`/aa-business/blog/${post.slug}`}>
+                  <Card className="border-blue-500/10 hover:border-blue-500/30 transition-colors group cursor-pointer">
+                    <CardContent className="p-6">
                     <div className="flex items-center gap-2 mb-3">
                       <Badge variant="secondary" className="bg-blue-500/10 text-blue-500 text-xs">
                         {post.category}
@@ -250,9 +253,10 @@ export default function BusinessBlog() {
                     </div>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
-          </motion.div>
+              </Link>
+            ))}
+          </div>
+        </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
