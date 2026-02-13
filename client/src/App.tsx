@@ -52,7 +52,7 @@ function Router() {
       <Route path="/aa-whatsapp/download" component={DownloadPage} />
       <Route path="/aa-whatsapp/blog" component={Blog} />
       <Route path="/aa-whatsapp/blog/:slug" component={BlogPost} />
-      
+
       <Route path="/aa-business" component={BusinessHome} />
       <Route path="/aa-business/about" component={BusinessAbout} />
       <Route path="/aa-business/features" component={BusinessFeatures} />
@@ -60,7 +60,7 @@ function Router() {
       <Route path="/aa-business/comparison" component={BusinessComparison} />
       <Route path="/aa-business/faq" component={BusinessFAQ} />
       <Route path="/aa-business/blog" component={BusinessBlog} />
-      
+
       <Route path="/aa-business-whatsapp" component={BusinessHome} />
       <Route path="/business-download" component={BusinessDownload} />
       <Route path="/faq" component={FAQ} />
@@ -82,7 +82,7 @@ function App() {
   useEffect(() => {
     // Initialize Google Analytics 4
     // Replace with your actual Measurement ID
-    ReactGA.initialize("G-XXXXXXXXXX");
+    ReactGA.initialize("G-339VLBF7PM");
     ReactGA.send({ hitType: "pageview", page: window.location.pathname });
   }, []);
 
@@ -94,7 +94,10 @@ function App() {
             <meta name="robots" content="index, follow" />
             <meta name="theme-color" content="#0f172a" />
             <meta property="og:site_name" content="AA Mods" />
-            <meta property="og:image" content="https://aa-mods.vercel.app/images/whatsapp-realtime-hero.jpg" />
+            <meta
+              property="og:image"
+              content="https://aa-mods.vercel.app/images/whatsapp-realtime-hero.jpg"
+            />
             <meta property="og:type" content="website" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@aa_mods" />
@@ -103,25 +106,24 @@ function App() {
               {JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "Organization",
-                "name": "AA Mods",
-                "url": "https://aa-mods.vercel.app",
-                "logo": "https://i.postimg.cc/yYtyRHRZ/cropped_circle_image.png",
-                "sameAs": [
-                  "https://t.me/AA_ModsOfficial"
-                ]
+                name: "AA Mods",
+                url: "https://aa-mods.vercel.app",
+                logo: "https://i.postimg.cc/yYtyRHRZ/cropped_circle_image.png",
+                sameAs: ["https://t.me/AA_ModsOfficial"],
               })}
             </script>
             <script type="application/ld+json">
               {JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "name": "AA Mods Official",
-                "url": "https://aa-mods.vercel.app",
-                "potentialAction": {
+                name: "AA Mods Official",
+                url: "https://aa-mods.vercel.app",
+                potentialAction: {
                   "@type": "SearchAction",
-                  "target": "https://aa-mods.vercel.app/blog?query={search_term_string}",
-                  "query-input": "required name=search_term_string"
-                }
+                  target:
+                    "https://aa-mods.vercel.app/blog?query={search_term_string}",
+                  "query-input": "required name=search_term_string",
+                },
               })}
             </script>
           </Helmet>
