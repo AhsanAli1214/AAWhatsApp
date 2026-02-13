@@ -1,5 +1,5 @@
-import { Switch, Route } from "wouter";
-import { useEffect } from "react";
+import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Suspense, lazy, useEffect } from "react";
 import ReactGA from "react-ga4";
 import { Analytics } from "@vercel/analytics/react";
 import { queryClient } from "./lib/queryClient";
@@ -13,66 +13,79 @@ import { Helmet } from "react-helmet";
 import { PageTransition } from "@/components/PageTransition";
 import { TapFeedback } from "@/components/TapFeedback";
 import { AppSplash } from "@/components/AppSplash";
+import { Skeleton } from "@/components/ui/skeleton";
 
-import Home from "@/pages/Home";
-import AppSelector from "@/pages/AppSelector";
-import AAWhatsAppPage from "@/pages/AAWhatsAppPage";
-import AABusinessWhatsAppPage from "@/pages/AABusinessWhatsAppPage";
-import BusinessDownloadPage from "@/pages/BusinessDownloadPage";
-import About from "@/pages/About";
-import Comparison from "@/pages/Comparison";
-import FAQ from "@/pages/FAQ";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
-import TermsOfService from "@/pages/TermsOfService";
-import Support from "@/pages/Support";
-import DownloadPage from "@/pages/DownloadPage";
-import Blog from "@/pages/Blog";
-import BlogPost from "@/pages/BlogPost";
-import NotFound from "@/pages/not-found";
+const Home = lazy(() => import("@/pages/Home"));
+const AppSelector = lazy(() => import("@/pages/AppSelector"));
+const AAWhatsAppPage = lazy(() => import("@/pages/AAWhatsAppPage"));
+const AABusinessWhatsAppPage = lazy(() => import("@/pages/AABusinessWhatsAppPage"));
+const BusinessDownloadPage = lazy(() => import("@/pages/BusinessDownloadPage"));
+const About = lazy(() => import("@/pages/About"));
+const Comparison = lazy(() => import("@/pages/Comparison"));
+const FAQ = lazy(() => import("@/pages/FAQ"));
+const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
+const Support = lazy(() => import("@/pages/Support"));
+const DownloadPage = lazy(() => import("@/pages/DownloadPage"));
+const Blog = lazy(() => import("@/pages/Blog"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
+const NotFound = lazy(() => import("@/pages/not-found"));
 
-import BusinessHome from "@/pages/business/BusinessHome";
-import BusinessAbout from "@/pages/business/BusinessAbout";
-import BusinessFeatures from "@/pages/business/BusinessFeatures";
-import BusinessDownload from "@/pages/business/BusinessDownload";
-import BusinessComparison from "@/pages/business/BusinessComparison";
-import BusinessFAQ from "@/pages/business/BusinessFAQ";
-import BusinessBlog from "@/pages/business/BusinessBlog";
+const BusinessHome = lazy(() => import("@/pages/business/BusinessHome"));
+const BusinessAbout = lazy(() => import("@/pages/business/BusinessAbout"));
+const BusinessFeatures = lazy(() => import("@/pages/business/BusinessFeatures"));
+const BusinessDownload = lazy(() => import("@/pages/business/BusinessDownload"));
+const BusinessComparison = lazy(() => import("@/pages/business/BusinessComparison"));
+const BusinessFAQ = lazy(() => import("@/pages/business/BusinessFAQ"));
+const BusinessBlog = lazy(() => import("@/pages/business/BusinessBlog"));
 
-import Sitemap from "@/pages/Sitemap";
+const Sitemap = lazy(() => import("@/pages/Sitemap"));
+
+function PageLoader() {
+  return (
+    <div className="container mx-auto p-8 space-y-4">
+      <Skeleton className="h-12 w-[250px]" />
+      <Skeleton className="h-[200px] w-full" />
+      <Skeleton className="h-[200px] w-full" />
+    </div>
+  );
+}
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={AppSelector} />
-      <Route path="/aa-whatsapp" component={Home} />
-      <Route path="/aa-whatsapp/about" component={About} />
-      <Route path="/aa-whatsapp/comparison" component={Comparison} />
-      <Route path="/aa-whatsapp/features" component={AAWhatsAppPage} />
-      <Route path="/aa-whatsapp/faq" component={FAQ} />
-      <Route path="/aa-whatsapp/download" component={DownloadPage} />
-      <Route path="/aa-whatsapp/blog" component={Blog} />
-      <Route path="/aa-whatsapp/blog/:slug" component={BlogPost} />
+    <Suspense fallback={<PageLoader />}>
+      <Switch>
+        <Route path="/" component={AppSelector} />
+        <Route path="/aa-whatsapp" component={Home} />
+        <Route path="/aa-whatsapp/about" component={About} />
+        <Route path="/aa-whatsapp/comparison" component={Comparison} />
+        <Route path="/aa-whatsapp/features" component={AAWhatsAppPage} />
+        <Route path="/aa-whatsapp/faq" component={FAQ} />
+        <Route path="/aa-whatsapp/download" component={DownloadPage} />
+        <Route path="/aa-whatsapp/blog" component={Blog} />
+        <Route path="/aa-whatsapp/blog/:slug" component={BlogPost} />
 
-      <Route path="/aa-business" component={BusinessHome} />
-      <Route path="/aa-business/about" component={BusinessAbout} />
-      <Route path="/aa-business/features" component={BusinessFeatures} />
-      <Route path="/aa-business/download" component={BusinessDownload} />
-      <Route path="/aa-business/comparison" component={BusinessComparison} />
-      <Route path="/aa-business/faq" component={BusinessFAQ} />
-      <Route path="/aa-business/blog" component={BusinessBlog} />
+        <Route path="/aa-business" component={BusinessHome} />
+        <Route path="/aa-business/about" component={BusinessAbout} />
+        <Route path="/aa-business/features" component={BusinessFeatures} />
+        <Route path="/aa-business/download" component={BusinessDownload} />
+        <Route path="/aa-business/comparison" component={BusinessComparison} />
+        <Route path="/aa-business/faq" component={BusinessFAQ} />
+        <Route path="/aa-business/blog" component={BusinessBlog} />
 
-      <Route path="/aa-business-whatsapp" component={BusinessHome} />
-      <Route path="/business-download" component={BusinessDownload} />
-      <Route path="/faq" component={FAQ} />
-      <Route path="/download" component={DownloadPage} />
-      <Route path="/privacy" component={PrivacyPolicy} />
-      <Route path="/terms" component={TermsOfService} />
-      <Route path="/support" component={Support} />
-      <Route path="/blog" component={Blog} />
-      <Route path="/blog/:slug" component={BlogPost} />
-      <Route path="/sitemap" component={Sitemap} />
-      <Route path="/:rest*" component={Home} />
-    </Switch>
+        <Route path="/aa-business-whatsapp" component={BusinessHome} />
+        <Route path="/business-download" component={BusinessDownload} />
+        <Route path="/faq" component={FAQ} />
+        <Route path="/download" component={DownloadPage} />
+        <Route path="/privacy" component={PrivacyPolicy} />
+        <Route path="/terms" component={TermsOfService} />
+        <Route path="/support" component={Support} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogPost} />
+        <Route path="/sitemap" component={Sitemap} />
+        <Route path="/:rest*" component={Home} />
+      </Switch>
+    </Suspense>
   );
 }
 

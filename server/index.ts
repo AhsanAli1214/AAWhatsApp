@@ -29,7 +29,7 @@ app.use((req, res, next) => {
   res.setHeader("X-XSS-Protection", "1; mode=block");
   res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
   
-  if (req.url.startsWith("/assets") || req.url.startsWith("/attached_assets")) {
+  if (req.url.startsWith("/assets") || req.url.startsWith("/attached_assets") || req.url.match(/\.(jpg|jpeg|png|gif|svg|webp|woff|woff2|ico)$/)) {
     res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
   } else {
     res.setHeader("Cache-Control", "no-cache");
