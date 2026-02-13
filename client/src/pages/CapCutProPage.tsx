@@ -93,7 +93,7 @@ export default function CapCutProPage() {
               Experience the world's most stable, fully unlocked CapCut Mod. No internet errors, no broken AI—just pure professional power.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/capcut-pro/download">
+              <Link href="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png">
                 <Button size="lg" className="h-16 px-10 rounded-2xl text-lg font-bold shadow-2xl shadow-primary/20 hover:scale-105 transition-transform">
                   <Download className="mr-3 h-6 w-6" /> Download Latest Stable
                 </Button>
