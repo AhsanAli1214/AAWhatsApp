@@ -20,6 +20,7 @@ import {
   Zap,
 } from "lucide-react";
 import { APP_VERSIONS } from "@/config/appConfig";
+import { Footer } from "@/components/Footer";
 
 const highlights = [
   "No internet connection error",
@@ -156,14 +157,14 @@ export default function CapCutFeaturesPage() {
           content="All premium features unlocked, AI tools working, templates unlocked, and no watermark export in a stable build by AA Mods."
         />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content="https://aa-mods.vercel.app/images/capcut-pro-hero.png" />
+        <meta property="og:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="CapCut Pro MOD APK Features & About | AA Mods" />
         <meta
           name="twitter:description"
           content="Stable CapCut Pro MOD APK with premium tools, AI features, templates, and watermark-free export."
         />
-        <meta name="twitter:image" content="https://aa-mods.vercel.app/images/capcut-pro-hero.png" />
+        <meta name="twitter:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(softwareSchema)}</script>
       </Helmet>
@@ -214,7 +215,7 @@ export default function CapCutFeaturesPage() {
 
           <Card className="rounded-3xl overflow-hidden border-primary/20">
             <img
-              src="/images/capcut-pro-hero.png"
+              src="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png"
               alt="CapCut Pro MOD by AA Mods"
               className="w-full h-full object-cover min-h-[320px]"
               loading="lazy"

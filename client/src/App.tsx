@@ -14,6 +14,7 @@ import { PageTransition } from "@/components/PageTransition";
 import { TapFeedback } from "@/components/TapFeedback";
 import { AppSplash } from "@/components/AppSplash";
 import { Skeleton } from "@/components/ui/skeleton";
+import CapCutFeaturesPage from "@/pages/CapCutFeaturesPage";
 
 const Home = lazy(() => import("@/pages/Home"));
 const AppSelector = lazy(() => import("@/pages/AppSelector"));
@@ -21,7 +22,6 @@ const AAWhatsAppPage = lazy(() => import("@/pages/AAWhatsAppPage"));
 const AABusinessWhatsAppPage = lazy(() => import("@/pages/AABusinessWhatsAppPage"));
 const CapCutProPage = lazy(() => import("@/pages/CapCutProPage"));
 const CapCutDownloadPage = lazy(() => import("@/pages/CapCutDownloadPage"));
-const CapCutFeaturesPage = lazy(() => import("@/pages/CapCutFeaturesPage"));
 const BusinessDownloadPage = lazy(() => import("@/pages/BusinessDownloadPage"));
 const About = lazy(() => import("@/pages/About"));
 const Comparison = lazy(() => import("@/pages/Comparison"));
