@@ -16,12 +16,15 @@ import {
   Settings2,
   Lock,
   Smartphone,
-  Check
+  Check,
+  ArrowRight,
+  ShieldCheck
 } from "lucide-react";
 import { Link } from "wouter";
-import { APP_VERSIONS, APP_UPDATE_DATES, APP_BASE_VERSIONS } from "@/config/appConfig";
+import { APP_VERSIONS } from "@/config/appConfig";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
+import { Footer } from "@/components/Footer";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -30,6 +33,7 @@ const fadeInUp = {
 };
 
 export default function CapCutProPage() {
+  const canonicalUrl = "https://aa-mods.vercel.app/capcut-pro";
   const mainFeatures = [
     { 
       icon: Sparkles, 
@@ -65,8 +69,14 @@ export default function CapCutProPage() {
         <meta name="description" content={`Download CapCut Pro MOD APK ${APP_VERSIONS.capcutPro} by Ahsan Ali. Fully unlocked AI tools, premium templates, 4K export, no watermark, and no internet error. The best professional video editor.`} />
         <meta name="keywords" content="CapCut Pro MOD APK, download CapCut Pro, CapCut unlocked, CapCut no watermark, CapCut AI features working, best video editor mod, Ahsan Ali mods, AA Mods CapCut" />
         <meta property="og:title" content="CapCut Pro MOD APK - Ultimate Video Editing Suite" />
-        <meta property="og:image" content="/images/capcut-pro-hero.png" />
-      </Helmet>
+        <meta property="og:image" content="https://aa-mods.vercel.app/images/capcut-pro-hero.png" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:description" content="CapCut Pro MOD APK by AA Mods with unlocked premium features, AI tools, templates, and no-watermark export." />
+        <meta name="twitter:title" content="CapCut Pro MOD APK (Stable, No Watermark) | AA Mods" />
+        <meta name="twitter:description" content="Fully unlocked CapCut Pro MOD APK by AA Mods with working AI tools and smooth 4K exports." />
+        <meta name="twitter:image" content="https://aa-mods.vercel.app/images/capcut-pro-hero.png" />
+        <link rel="canonical" href={canonicalUrl} />
+              </Helmet>
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -88,11 +98,11 @@ export default function CapCutProPage() {
                   <Download className="mr-3 h-6 w-6" /> Download Latest Stable
                 </Button>
               </Link>
-              <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer">
+              <Link href="/capcut-pro/features">
                 <Button variant="outline" size="lg" className="h-16 px-10 rounded-2xl text-lg font-bold border-primary/20 hover:bg-primary/5">
-                   Join Telegram Community
+                   Explore Full Features
                 </Button>
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -128,6 +138,12 @@ export default function CapCutProPage() {
               src="/images/capcut-pro-hero.png" 
               alt="CapCut Pro Interface" 
               className="rounded-[2.5rem] shadow-2xl border border-primary/20 scale-105"
+              loading="lazy"
+              fetchPriority="low"
+              decoding="async"
+              width="1200"
+              height="800"
+              sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </motion.div>
         </div>
@@ -192,6 +208,21 @@ export default function CapCutProPage() {
         </Card>
       </section>
 
+      <section className="py-8 container mx-auto px-4 max-w-5xl">
+        <div className="grid md:grid-cols-2 gap-5">
+          <div className="rounded-3xl border border-primary/20 bg-primary/5 p-6">
+            <h3 className="text-xl font-black mb-2 flex items-center gap-2"><ShieldCheck className="h-5 w-5 text-primary" /> Trusted Stable Build</h3>
+            <p className="text-sm text-muted-foreground mb-4">Cleaned resources, smooth template loading, and reliable AI workflow designed for real creators.</p>
+            <Link href="/capcut-pro/features" className="inline-flex items-center gap-1 text-sm font-bold text-primary hover:underline">See full features <ArrowRight className="h-4 w-4" /></Link>
+          </div>
+          <div className="rounded-3xl border border-border bg-secondary/30 p-6">
+            <h3 className="text-xl font-black mb-2">Ready to install now?</h3>
+            <p className="text-sm text-muted-foreground mb-4">Use the one-button 2-step secure download flow on the official CapCut download page.</p>
+            <Link href="/capcut-pro/download" className="inline-flex items-center gap-1 text-sm font-bold text-primary hover:underline">Open download page <ArrowRight className="h-4 w-4" /></Link>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-24 text-center container mx-auto px-4">
         <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} className="max-w-2xl mx-auto space-y-10">
@@ -209,6 +240,7 @@ export default function CapCutProPage() {
           <p className="text-[10px] uppercase font-black tracking-widest opacity-40">AA Mods by Ahsan Ali • 2026 Stable Protocol</p>
         </motion.div>
       </section>
+      <Footer />
     </div>
   );
 }
