@@ -55,6 +55,8 @@ export default function CapCutProPage() {
     }
   ];
 
+  const HERO_IMAGE_URL = "https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png";
+
   const techSpecs = [
     { icon: Smartphone, label: "OS Required", value: "Android 6.0+" },
     { icon: Cpu, label: "Architecture", value: "armeabi-v7a, arm64-v8a" },
@@ -63,20 +65,23 @@ export default function CapCutProPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 pb-20">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       <Helmet>
         <title>CapCut Pro MOD APK {APP_VERSIONS.capcutPro} (Official Stable) - All Features Unlocked | AA Mods</title>
         <meta name="description" content={`Download CapCut Pro MOD APK ${APP_VERSIONS.capcutPro} by Ahsan Ali. Fully unlocked AI tools, premium templates, 4K export, no watermark, and no internet error. The best professional video editor.`} />
         <meta name="keywords" content="CapCut Pro MOD APK, download CapCut Pro, CapCut unlocked, CapCut no watermark, CapCut AI features working, best video editor mod, Ahsan Ali mods, AA Mods CapCut" />
         <meta property="og:title" content="CapCut Pro MOD APK - Ultimate Video Editing Suite" />
-        <meta property="og:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
+        <meta property="og:image" content={HERO_IMAGE_URL} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:description" content="CapCut Pro MOD APK by AA Mods with unlocked premium features, AI tools, templates, and no-watermark export." />
         <meta name="twitter:title" content="CapCut Pro MOD APK (Stable, No Watermark) | AA Mods" />
         <meta name="twitter:description" content="Fully unlocked CapCut Pro MOD APK by AA Mods with working AI tools and smooth 4K exports." />
-        <meta name="twitter:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
+        <meta name="twitter:image" content={HERO_IMAGE_URL} />
         <link rel="canonical" href={canonicalUrl} />
-              </Helmet>
+        <link rel="preconnect" href="https://i.postimg.cc" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://i.postimg.cc" />
+        <link rel="preload" as="image" href={HERO_IMAGE_URL} />
+      </Helmet>
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -93,7 +98,7 @@ export default function CapCutProPage() {
               Experience the world's most stable, fully unlocked CapCut Mod. No internet errors, no broken AI—just pure professional power.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png">
+              <Link href={HERO_IMAGE_URL}>
                 <Button size="lg" className="h-16 px-10 rounded-2xl text-lg font-bold shadow-2xl shadow-primary/20 hover:scale-105 transition-transform">
                   <Download className="mr-3 h-6 w-6" /> Download Latest Stable
                 </Button>
@@ -135,11 +140,11 @@ export default function CapCutProPage() {
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative">
             <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full -z-10" />
             <img 
-              src="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" 
+              src={HERO_IMAGE_URL} 
               alt="CapCut Pro Interface" 
               className="rounded-[2.5rem] shadow-2xl border border-primary/20 scale-105"
-              loading="lazy"
-              fetchPriority="low"
+              loading="eager"
+              fetchPriority="high"
               decoding="async"
               width="1200"
               height="800"

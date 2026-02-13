@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { Link } from "wouter";
 
+const HERO_IMAGE_URL = "https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png";
+
 export default function CapCutDownloadPage() {
   const canonicalUrl = "https://aa-mods.vercel.app/capcut-pro/download";
   const [downloadStep, setDownloadStep] = useState<0 | 1>(0);
@@ -30,7 +32,7 @@ export default function CapCutDownloadPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 pb-32">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       <Helmet>
         <title>Download CapCut Pro MOD APK {APP_VERSIONS.capcutPro} | AA Mods</title>
         <meta
@@ -47,15 +49,17 @@ export default function CapCutDownloadPage() {
           content="Secure one-button, 2-step download page for CapCut Pro MOD APK with stable optimized package."
         />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
+        <meta property="og:image" content={HERO_IMAGE_URL} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Download CapCut Pro MOD APK | AA Mods" />
         <meta
           name="twitter:description"
           content="Fast and secure CapCut Pro MOD APK download with unlocked premium features and 2-step protection flow."
         />
-        <meta name="twitter:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
+        <meta name="twitter:image" content={HERO_IMAGE_URL} />
         <link rel="canonical" href={canonicalUrl} />
+        <link rel="preconnect" href="https://i.postimg.cc" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://i.postimg.cc" />
       </Helmet>
 
       <div className="container mx-auto px-4 pt-32 max-w-5xl">

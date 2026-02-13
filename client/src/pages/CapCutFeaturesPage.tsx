@@ -22,6 +22,8 @@ import {
 import { APP_VERSIONS } from "@/config/appConfig";
 import { Footer } from "@/components/Footer";
 
+const HERO_IMAGE_URL = "https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png";
+
 const highlights = [
   "No internet connection error",
   "All templates unlocked and working",
@@ -78,24 +80,36 @@ const installSteps = [
 
 const faq = [
   {
-    q: "Does AI work without internet?",
-    a: "Yes. AI features are patched to work without server errors in this stable build.",
+    q: "Can I use AI tools without getting internet connection errors?",
+    a: "Yes. This stable build is optimized to keep core AI workflows usable without frequent server-related errors that appear in many other modified builds.",
   },
   {
-    q: "Are all templates unlocked?",
-    a: "Yes. Trending and premium templates are unlocked with no regional or network restriction error.",
+    q: "Are premium templates unlocked and usable?",
+    a: "Yes. Trending and premium templates are unlocked, with improved compatibility across regions and fewer template loading issues.",
   },
   {
-    q: "Is watermark removed?",
-    a: "Yes. Exports are watermark-free for clean professional output.",
+    q: "Will exported videos include a watermark?",
+    a: "No. Exports are watermark-free, giving you cleaner output for social media, client drafts, and business content.",
   },
   {
-    q: "Does it support low-end devices?",
-    a: "Yes. Resources are cleaned and optimized for smoother performance across low and high-end devices.",
+    q: "Does CapCut Pro MOD work on low-end Android devices?",
+    a: "Yes. The package is cleaned and optimized to improve performance on both low-end and high-end Android phones, depending on project complexity.",
   },
   {
-    q: "Is this the official CapCut app?",
-    a: "No. This is a MOD version by AA Mods and is intended for educational and personal use.",
+    q: "Do I need to log in or verify with Play Store before using it?",
+    a: "No. This build is configured to reduce forced login and verification prompts so you can start editing quickly after installation.",
+  },
+  {
+    q: "Which Android version is required?",
+    a: "Android 6.0 or higher is recommended. For the best editing experience, use a device with enough free storage and RAM for video rendering.",
+  },
+  {
+    q: "How do I update safely when a new version is released?",
+    a: "Download the latest version from the official AA Mods download page, back up important projects, then install the new APK over your current version.",
+  },
+  {
+    q: "Is this the official CapCut app from ByteDance?",
+    a: "No. This is a modified build by AA Mods. It is not an official Play Store release from ByteDance.",
   },
 ];
 
@@ -139,7 +153,7 @@ export default function CapCutFeaturesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground pb-20">
+    <div className="min-h-screen bg-background text-foreground">
       <Helmet>
         <title>CapCut Pro MOD APK Features & About (No Watermark, AI Working) | AA Mods</title>
         <meta
@@ -151,20 +165,23 @@ export default function CapCutFeaturesPage() {
           content="CapCut Pro MOD APK, CapCut Pro features, CapCut no watermark, CapCut AI tools unlocked, Ahsan Ali AA Mods"
         />
         <link rel="canonical" href={canonicalUrl} />
+        <link rel="preconnect" href="https://i.postimg.cc" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://i.postimg.cc" />
+        <link rel="preload" as="image" href={HERO_IMAGE_URL} />
         <meta property="og:title" content="CapCut Pro MOD APK – Full Features & About" />
         <meta
           property="og:description"
           content="All premium features unlocked, AI tools working, templates unlocked, and no watermark export in a stable build by AA Mods."
         />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
+        <meta property="og:image" content={HERO_IMAGE_URL} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="CapCut Pro MOD APK Features & About | AA Mods" />
         <meta
           name="twitter:description"
           content="Stable CapCut Pro MOD APK with premium tools, AI features, templates, and watermark-free export."
         />
-        <meta name="twitter:image" content="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png" />
+        <meta name="twitter:image" content={HERO_IMAGE_URL} />
                 <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(softwareSchema)}</script>
       </Helmet>
@@ -215,11 +232,11 @@ export default function CapCutFeaturesPage() {
 
           <Card className="rounded-3xl overflow-hidden border-primary/20">
             <img
-              src="https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png"
+              src={HERO_IMAGE_URL}
               alt="CapCut Pro MOD by AA Mods"
               className="w-full h-full object-cover min-h-[320px]"
-              loading="lazy"
-              fetchPriority="low"
+              loading="eager"
+              fetchPriority="high"
               decoding="async"
               width="1200"
               height="800"
