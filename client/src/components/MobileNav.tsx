@@ -12,14 +12,15 @@ import { motion, AnimatePresence } from "framer-motion";
 export function MobileNav() {
   const [location] = useLocation();
   const isBusiness = location.startsWith("/aa-business");
+  const isCapCut = location.startsWith("/capcut-pro");
 
   const navItems = [
     { href: "/", icon: Layers, label: "Apps" },
-    { href: isBusiness ? "/aa-business" : "/aa-whatsapp", icon: Home, label: "Home" },
-    { href: isBusiness ? "/aa-business/features" : "/aa-whatsapp/features", icon: Sparkles, label: "Features" },
-    { href: isBusiness ? "/aa-business/download" : "/aa-whatsapp/download", icon: DownloadCloud, label: "Get Mod" },
-    { href: isBusiness ? "/aa-business/blog" : "/aa-whatsapp/blog", icon: Rss, label: "Updates" },
-    { href: isBusiness ? "/aa-business/faq" : "/aa-whatsapp/faq", icon: LifeBuoy, label: "Support" },
+    { href: isBusiness ? "/aa-business" : isCapCut ? "/capcut-pro" : "/aa-whatsapp", icon: Home, label: "Home" },
+    { href: isBusiness ? "/aa-business/features" : isCapCut ? "/capcut-pro" : "/aa-whatsapp/features", icon: Sparkles, label: "Features" },
+    { href: isBusiness ? "/aa-business/download" : isCapCut ? "/capcut-pro/download" : "/aa-whatsapp/download", icon: DownloadCloud, label: "Get Mod" },
+    { href: isBusiness ? "/aa-business/blog" : isCapCut ? "/capcut-pro" : "/aa-whatsapp/blog", icon: Rss, label: "Updates" },
+    { href: isBusiness ? "/aa-business/faq" : isCapCut ? "/capcut-pro" : "/aa-whatsapp/faq", icon: LifeBuoy, label: "Support" },
   ];
 
   return (
@@ -30,7 +31,7 @@ export function MobileNav() {
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = location === item.href;
-            const themeColor = isBusiness ? "blue-500" : "primary";
+            const themeColor = isBusiness ? "blue-500" : (isCapCut ? "primary" : "primary");
             
             return (
               <Link key={item.href} href={item.href}>

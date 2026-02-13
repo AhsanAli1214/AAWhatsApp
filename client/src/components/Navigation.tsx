@@ -1,6 +1,7 @@
 import { useLocation } from "wouter";
 import { Navbar } from "./Navbar";
 import { BusinessNavbar } from "./BusinessNavbar";
+import { CapCutNavbar } from "./CapCutNavbar";
 import { MobileNav } from "./MobileNav";
 
 export function Navigation() {
@@ -13,7 +14,13 @@ export function Navigation() {
   
   return (
     <>
-      {location.startsWith("/aa-business") ? <BusinessNavbar /> : <Navbar />}
+      {location.startsWith("/aa-business") ? (
+        <BusinessNavbar />
+      ) : location.startsWith("/capcut-pro") ? (
+        <CapCutNavbar />
+      ) : (
+        <Navbar />
+      )}
       <MobileNav />
     </>
   );
