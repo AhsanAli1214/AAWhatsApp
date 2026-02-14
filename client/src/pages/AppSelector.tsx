@@ -303,23 +303,6 @@ export default function AppSelector() {
 
 
 
-          <section className="mt-14 rounded-3xl border border-primary/20 bg-primary/5 p-6 md:p-10 text-left">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              AA Mods APK without watermark, AI features unlocked, and stable MOD performance
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              AA Mods Pro by Ahsan Ali Mods delivers fast and clean MOD APKs, business mode tools, all templates working support, and secure Android packages built for consistent performance.
-            </p>
-            <h3 className="text-lg font-semibold mb-3">Why users choose Ahsan Ali MOD Apps on AA Mods</h3>
-            <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground list-disc pl-5">
-              <li>Download AA Mods safely from one trusted source</li>
-              <li>AA Mods no internet required workflows in supported tools</li>
-              <li>AA Mods MOD for Android 6+ compatibility focus</li>
-              <li>AA Mods regional restrictions removed on selected releases</li>
-              <li>AA Mods optimized APK delivery and stable updates</li>
-              <li>Best MOD apps by Ahsan Ali with premium features unlocked</li>
-            </ul>
-          </section>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

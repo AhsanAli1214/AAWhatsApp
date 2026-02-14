@@ -4,7 +4,6 @@ export function AppSplash() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    // Short splash screen to mimic native app launch.
     const timeout = window.setTimeout(() => setVisible(false), 3000);
     return () => window.clearTimeout(timeout);
   }, []);

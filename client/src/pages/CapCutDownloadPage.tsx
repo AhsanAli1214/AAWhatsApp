@@ -17,8 +17,8 @@ export default function CapCutDownloadPage() {
   const ctaLabel = useMemo(
     () =>
       downloadStep === 0
-        ? "Step 1: Unlock Download"
-        : `Step 2: Download CapCut Pro MOD ${APP_VERSIONS.capcutPro}`,
+        ? "Step 1: Verify"
+        : `Step 2: Download v${APP_VERSIONS.capcutPro}`,
     [downloadStep],
   );
 
@@ -117,15 +117,15 @@ export default function CapCutDownloadPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={handleDownloadClick}
-                  className={`neon-download-btn w-full min-h-24 md:min-h-28 text-base md:text-2xl px-3 md:px-4 py-4 ${downloadStep === 1 ? "ring-2 ring-emerald-400/40" : ""}`}
+                  className={`neon-download-btn mx-auto w-full max-w-2xl min-h-16 md:min-h-[4.5rem] text-sm md:text-lg px-4 md:px-5 py-3 ${downloadStep === 1 ? "ring-2 ring-emerald-400/40" : ""}`}
                 >
                   <div className="w-full flex items-center justify-between gap-2 md:gap-3">
                     <div className="flex items-center gap-2 md:gap-4 text-left min-w-0">
-                      <Download className={`h-6 w-6 md:h-10 md:w-10 shrink-0 ${downloadStep === 1 ? "animate-bounce" : ""}`} />
+                      <Download className={`h-5 w-5 md:h-6 md:w-6 shrink-0 ${downloadStep === 1 ? "animate-bounce" : ""}`} />
                       <div className="min-w-0">
                         <span className="block leading-tight break-words">{ctaLabel}</span>
                         <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.16em] opacity-75 leading-tight">
-                          {downloadStep === 0 ? "Verification required" : "Official AA Mods package"}
+                          {downloadStep === 0 ? "Secure verification" : "Official package"}
                         </span>
                       </div>
                     </div>
