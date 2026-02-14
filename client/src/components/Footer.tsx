@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Send, Shield, Zap, Lock, BookOpen, HelpCircle, LayoutGrid, Info } from "lucide-react";
+import { Send, Shield, Zap, Lock, BookOpen, HelpCircle, LayoutGrid, Info, Video } from "lucide-react";
 
 export function Footer() {
   const [location] = useLocation();
@@ -33,13 +33,13 @@ export function Footer() {
                     AA Mods
                   </span>
                   <span className="text-[8px] text-muted-foreground uppercase tracking-[0.2em] font-bold mt-0.5">
-                    Premium WhatsApp Mods
+                    Premium Apps & Mods
                   </span>
                 </div>
               </div>
             </Link>
             <p className="text-[12px] text-muted-foreground leading-relaxed max-w-xs">
-              The world's most secure modifications. Focused on privacy and unrivaled user experience for millions.
+              The world's most secure applications and modifications. Focused on privacy and unrivaled user experience for millions.
             </p>
             <div className="flex items-center gap-3 pt-1">
               <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer" className={`w-10 h-10 rounded-full bg-muted flex items-center justify-center transition-all duration-300 group ${isBusiness ? 'hover:bg-blue-600 hover:text-white' : 'hover:bg-primary hover:text-primary-foreground'}`}>
@@ -66,6 +66,12 @@ export function Footer() {
                 <Link href="/aa-business" className="text-muted-foreground transition-colors flex items-center gap-2 hover:text-foreground">
                   <Shield className="w-3.5 h-3.5 text-blue-500/60" />
                   AA Business
+                </Link>
+              </li>
+              <li>
+                <Link href="/capcut-pro" className="text-muted-foreground transition-colors flex items-center gap-2 hover:text-foreground">
+                  <Video className="w-3.5 h-3.5 text-red-500/60" />
+                  CapCut Pro
                 </Link>
               </li>
               <li>
