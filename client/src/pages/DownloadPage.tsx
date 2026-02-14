@@ -263,7 +263,7 @@ export default function DownloadPage() {
                     onClick={handleDownload}
                     target={downloadStep === 0 ? "_self" : "_blank"}
                     rel="noopener noreferrer"
-                    className="w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg md:text-2xl shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] hover:-translate-y-1 active:scale-95 transition-all duration-500 uppercase tracking-tight flex items-center justify-center gap-2 md:gap-3 border border-white/20 text-center leading-tight overflow-hidden"
+                    className="neon-download-btn w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 text-lg md:text-2xl text-center leading-tight overflow-hidden"
                   >
                     <Download className="w-6 h-6" />
                     {downloadStep === 0 ? "Start Secure Download" : "Download AAWhatsApp"}
@@ -277,7 +277,7 @@ export default function DownloadPage() {
                     href={APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS.legacy}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full max-w-md h-auto py-3 md:py-4 px-4 md:px-8 rounded-2xl border border-white/20 bg-white/5 text-foreground font-bold text-base md:text-lg hover:bg-white/10 hover:-translate-y-1 active:scale-95 transition-all duration-500 flex items-center justify-center gap-2 md:gap-3 text-center"
+                    className="neon-download-btn w-full max-w-md h-auto py-3 md:py-4 px-4 md:px-8 text-base md:text-lg text-center"
                     data-testid="button-legacy-download"
                   >
                     <Download className="w-5 h-5" />
