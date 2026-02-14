@@ -1,4 +1,4 @@
-import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
+import { Switch, Route } from "wouter";
 import { Suspense, lazy, useEffect } from "react";
 import ReactGA from "react-ga4";
 import { Analytics } from "@vercel/analytics/react";
@@ -13,7 +13,6 @@ import { Helmet } from "react-helmet";
 import { PageTransition } from "@/components/PageTransition";
 import { TapFeedback } from "@/components/TapFeedback";
 import { Skeleton } from "@/components/ui/skeleton";
-import { AppSplash } from "@/components/AppSplash";
 import CapCutFeaturesPage from "@/pages/CapCutFeaturesPage";
 import { initImageOptimization } from "@/lib/imageOptimization";
 
@@ -99,8 +98,6 @@ function Router() {
 import { Navigation } from "@/components/Navigation";
 
 function App() {
-  const [location] = useLocation();
-
   useEffect(() => {
     // Initialize Google Analytics 4
     // Replace with your actual Measurement ID
@@ -152,7 +149,6 @@ function App() {
               })}
             </script>
           </Helmet>
-          {location !== "/" && <AppSplash />}
           <TapFeedback />
           <ScrollToTop />
           <AdBlockDetector />
