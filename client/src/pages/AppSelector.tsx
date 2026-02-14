@@ -25,6 +25,12 @@ const fadeInUp = {
   transition: { duration: 0.5 },
 };
 
+const AA_WHATSAPP_ICON_URL =
+  "https://i.postimg.cc/N0p0fsf1/81ddf498-7efe-4101-83b1-101a77abf065.jpg";
+const CAPCUT_ICON_URL = "https://i.postimg.cc/mrJgFdCL/Cap-Cut-Pro.png";
+const AA_BUSINESS_ICON_URL =
+  "https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg";
+
 export default function AppSelector() {
   return (
     <div className="min-h-screen bg-background">
@@ -53,6 +59,12 @@ export default function AppSelector() {
           content="https://aa-mods.vercel.app/favicon.png"
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/" />
+        <link rel="preconnect" href="https://i.postimg.cc" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://i.postimg.cc" />
+        <link rel="preload" as="image" href="/favicon.png" fetchPriority="high" />
+        <link rel="preload" as="image" href={AA_WHATSAPP_ICON_URL} />
+        <link rel="preload" as="image" href={CAPCUT_ICON_URL} />
+        <link rel="preload" as="image" href={AA_BUSINESS_ICON_URL} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -97,11 +109,22 @@ export default function AppSelector() {
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                AA Mods <span className="text-primary italic">Ahsan Ali Mods</span>
+                AA Mods
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Download AA Mods safely with the latest AA Mods APK releases. This official Ahsan Ali Mods portal includes stable MOD apps for Android, premium features unlocked tools, and optimized builds for everyday users and creators.
-              </p>
+              <div className="text-xl text-muted-foreground max-w-3xl mx-auto space-y-5">
+                <p>
+                  AA Mods, created by Ahsan Ali, is a trusted platform
+                  delivering high-quality, stable, and optimized MOD apps for
+                  Android. We focus on clean performance, premium features
+                  unlocked, and a smooth user experience without limits.
+                </p>
+                <p>
+                  Every MOD is carefully tested for speed, stability, and
+                  security, ensuring reliable performance across multiple
+                  Android versions.
+                </p>
+                <p>AA Mods stands for quality, trust, and innovation.</p>
+              </div>
             </div>
           </motion.div>
 
@@ -115,11 +138,14 @@ export default function AppSelector() {
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 group-hover:scale-110 transition-transform">
                     <img
-                      src="https://i.postimg.cc/N0p0fsf1/81ddf498-7efe-4101-83b1-101a77abf065.jpg"
+                      src={AA_WHATSAPP_ICON_URL}
                       alt="AAWhatsApp Icon"
                       className="w-full h-full object-cover"
-                      loading="lazy"
+                      loading="eager"
+                      fetchPriority="high"
                       decoding="async"
+                      width="64"
+                      height="64"
                     />
                   </div>
                   <h2 className="text-2xl font-bold mb-3">AAWhatsApp</h2>
@@ -179,11 +205,14 @@ export default function AppSelector() {
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 group-hover:scale-110 transition-transform">
                     <img
-                      src="https://i.postimg.cc/mrJgFdCL/Cap-Cut-Pro.png"
+                      src={CAPCUT_ICON_URL}
                       alt="CapCut Pro Icon"
                       className="w-full h-full object-cover"
-                      loading="lazy"
+                      loading="eager"
+                      fetchPriority="high"
                       decoding="async"
+                      width="64"
+                      height="64"
                     />
                   </div>
                   <h2 className="text-2xl font-bold mb-3">CapCut Pro</h2>
@@ -243,11 +272,14 @@ export default function AppSelector() {
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 group-hover:scale-110 transition-transform">
                     <img
-                      src="https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg"
+                      src={AA_BUSINESS_ICON_URL}
                       alt="AA Business WhatsApp Icon"
                       className="w-full h-full object-cover"
-                      loading="lazy"
+                      loading="eager"
+                      fetchPriority="high"
                       decoding="async"
+                      width="64"
+                      height="64"
                     />
                   </div>
                   <h2 className="text-2xl font-bold mb-3">
