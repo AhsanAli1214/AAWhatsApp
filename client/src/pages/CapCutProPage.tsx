@@ -68,12 +68,14 @@ export default function CapCutProPage() {
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       <Helmet>
         <title>CapCut Pro MOD APK {APP_VERSIONS.capcutPro} (Official Stable) - All Features Unlocked | AA Mods</title>
-        <meta name="description" content={`Download CapCut Pro MOD APK ${APP_VERSIONS.capcutPro} by Ahsan Ali. Fully unlocked AI tools, premium templates, 4K export, no watermark, and no internet error. The best professional video editor.`} />
-        <meta name="keywords" content="CapCut Pro MOD APK, download CapCut Pro, CapCut unlocked, CapCut no watermark, CapCut AI features working, best video editor mod, Ahsan Ali mods, AA Mods CapCut" />
-        <meta property="og:title" content="CapCut Pro MOD APK - Ultimate Video Editing Suite" />
+        <meta name="description" content={`Download CapCut Pro MOD APK ${APP_VERSIONS.capcutPro} by Ahsan Ali. Fully unlocked AI tools, premium templates, 4K export, no watermark, and no internet error. The best professional video editor for Android.`} />
+        <meta name="keywords" content="CapCut Pro MOD APK, download CapCut Pro, CapCut unlocked, CapCut no watermark, CapCut AI features working, best video editor mod, Ahsan Ali mods, AA Mods CapCut, CapCut Pro APK 2026, CapCut premium unlocked" />
+        <meta property="og:title" content="CapCut Pro MOD APK - Ultimate Video Editing Suite | AA Mods" />
         <meta property="og:image" content={HERO_IMAGE_URL} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:description" content="CapCut Pro MOD APK by AA Mods with unlocked premium features, AI tools, templates, and no-watermark export." />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content={`Get the latest CapCut Pro MOD APK ${APP_VERSIONS.capcutPro} with all premium features unlocked. No watermark, AI tools working, and 4K export support.`} />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="CapCut Pro MOD APK (Stable, No Watermark) | AA Mods" />
         <meta name="twitter:description" content="Fully unlocked CapCut Pro MOD APK by AA Mods with working AI tools and smooth 4K exports." />
         <meta name="twitter:image" content={HERO_IMAGE_URL} />
@@ -81,6 +83,26 @@ export default function CapCutProPage() {
         <link rel="preconnect" href="https://i.postimg.cc" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://i.postimg.cc" />
         <link rel="preload" as="image" href={HERO_IMAGE_URL} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://aa-mods.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "CapCut Pro",
+                "item": canonicalUrl
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}

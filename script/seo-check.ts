@@ -67,10 +67,23 @@ async function checkRobots(): Promise<CheckResult[]> {
   ];
 }
 
+async function checkCapCutPages(): Promise<CheckResult[]> {
+  const capcutPage = await readFile("client/src/pages/CapCutProPage.tsx", "utf-8");
+  const capcutFeatures = await readFile("client/src/pages/CapCutFeaturesPage.tsx", "utf-8");
+  const capcutDownload = await readFile("client/src/pages/CapCutDownloadPage.tsx", "utf-8");
+  
+  return [
+    assert(capcutPage.includes('rel="canonical"'), "CapCut Pro page has canonical tag"),
+    assert(capcutFeatures.includes('BreadcrumbList'), "CapCut Features page has BreadcrumbList schema"),
+    assert(capcutDownload.includes('SoftwareApplication') || capcutFeatures.includes('SoftwareApplication'), "CapCut has SoftwareApplication schema"),
+  ];
+}
+
 async function runChecks() {
   const results: CheckResult[] = [];
   results.push(...(await checkSitemapEntries()));
   results.push(...(await checkCanonicalTags()));
+  results.push(...(await checkCapCutPages()));
   results.push(...(await checkRobots()));
 
   const failed = results.filter((result) => !result.passed);

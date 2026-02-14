@@ -48,6 +48,10 @@ export async function generateSitemap() {
       { path: "/privacy", priority: "0.3", changefreq: "monthly" },
       { path: "/terms", priority: "0.3", changefreq: "monthly" },
       { path: "/support", priority: "0.5", changefreq: "weekly" },
+      
+      { path: "/capcut-pro", priority: "0.9", changefreq: "daily" },
+      { path: "/capcut-pro/features", priority: "0.8", changefreq: "weekly" },
+      { path: "/capcut-pro/download", priority: "1.0", changefreq: "daily" },
     ];
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>

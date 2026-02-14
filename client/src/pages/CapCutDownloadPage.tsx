@@ -34,22 +34,23 @@ export default function CapCutDownloadPage() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       <Helmet>
-        <title>Download CapCut Pro MOD APK {APP_VERSIONS.capcutPro} | AA Mods</title>
+        <title>Download CapCut Pro MOD APK {APP_VERSIONS.capcutPro} (No Watermark) | AA Mods</title>
         <meta
           name="description"
-          content={`Official download page for CapCut Pro MOD APK ${APP_VERSIONS.capcutPro}. One secure button, 2-step unlock flow, no watermark export, and all premium features enabled.`}
+          content={`Official download page for CapCut Pro MOD APK ${APP_VERSIONS.capcutPro}. Secure 2-step download, no watermark, 4K export, and AI features unlocked by Ahsan Ali.`}
         />
         <meta
           name="keywords"
-          content="download capcut pro mod apk, capcut mod aa mods, capcut no watermark download, capcut ai tools working"
+          content="download capcut pro mod apk, capcut mod aa mods, capcut no watermark download, capcut ai tools working, capcut premium apk download, Ahsan Ali capcut mod"
         />
         <meta property="og:title" content="Download CapCut Pro MOD APK | AA Mods" />
         <meta
           property="og:description"
-          content="Secure one-button, 2-step download page for CapCut Pro MOD APK with stable optimized package."
+          content={`Get the stable CapCut Pro MOD APK ${APP_VERSIONS.capcutPro} with unlocked premium features and 4K no-watermark export.`}
         />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={HERO_IMAGE_URL} />
+        <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Download CapCut Pro MOD APK | AA Mods" />
         <meta
@@ -60,6 +61,32 @@ export default function CapCutDownloadPage() {
         <link rel="canonical" href={canonicalUrl} />
         <link rel="preconnect" href="https://i.postimg.cc" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://i.postimg.cc" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://aa-mods.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "CapCut Pro",
+                "item": "https://aa-mods.vercel.app/capcut-pro"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Download",
+                "item": canonicalUrl
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div className="container mx-auto px-4 pt-32 max-w-5xl">
