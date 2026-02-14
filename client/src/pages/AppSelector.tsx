@@ -99,8 +99,8 @@ export default function AppSelector() {
                 AA Mods <span className="text-primary italic">Collection</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Select the perfect application for your needs.
-                From communication to creative editing - we've got you covered.
+                Select the perfect application for your needs. From
+                communication to creative editing - we've got you covered.
               </p>
             </div>
           </motion.div>
@@ -114,9 +114,9 @@ export default function AppSelector() {
               <Card className="h-full border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 group overflow-visible">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 group-hover:scale-110 transition-transform">
-                    <img 
-                      src="https://i.postimg.cc/85fVQN7w/7195cbde_0b59_4575_93ac_9ec27827ba4a.jpg" 
-                      alt="AAWhatsApp Icon" 
+                    <img
+                      src="https://i.postimg.cc/N0p0fsf1/81ddf498-7efe-4101-83b1-101a77abf065.jpg"
+                      alt="AAWhatsApp Icon"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -176,16 +176,16 @@ export default function AppSelector() {
               <Card className="h-full border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 group overflow-visible">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 group-hover:scale-110 transition-transform">
-                    <img 
-                      src="https://i.postimg.cc/zGq5LsQX/Cap_Cut_Pro.png" 
-                      alt="CapCut Pro Icon" 
+                    <img
+                      src="https://i.postimg.cc/zGq5LsQX/Cap_Cut_Pro.png"
+                      alt="CapCut Pro Icon"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <h2 className="text-2xl font-bold mb-3">CapCut Pro</h2>
                   <p className="text-muted-foreground mb-6">
-                    Professional video editing unlocked. No watermarks, 
-                    full AI tools, and premium templates for creators.
+                    Professional video editing unlocked. No watermarks, full AI
+                    tools, and premium templates for creators.
                   </p>
 
                   <div className="space-y-3 mb-8">
@@ -238,9 +238,9 @@ export default function AppSelector() {
               <Card className="h-full border-2 border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 group overflow-visible">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 group-hover:scale-110 transition-transform">
-                    <img 
-                      src="https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg" 
-                      alt="AA Business WhatsApp Icon" 
+                    <img
+                      src="https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg"
+                      alt="AA Business WhatsApp Icon"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -302,8 +302,8 @@ export default function AppSelector() {
             className="text-center mt-16"
           >
             <p className="text-muted-foreground">
-              Our apps feature exclusive Privacy Core™ technology - 100%
-              secure with no access to your personal data.
+              Our apps feature exclusive Privacy Core™ technology - 100% secure
+              with no access to your personal data.
             </p>
           </motion.div>
         </div>
