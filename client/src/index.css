@@ -48,6 +48,49 @@
 }
 
 @layer utilities {
+  .neon-download-btn {
+    --download-glow: hsl(var(--primary));
+    --download-border: color-mix(in srgb, var(--download-glow) 75%, white 25%);
+    --download-text: hsl(var(--foreground));
+    --download-shadow: color-mix(in srgb, var(--download-glow) 75%, transparent);
+
+    @apply relative inline-flex items-center justify-center gap-3 rounded-2xl border-2 font-black uppercase tracking-[0.16em] transition-all duration-200;
+    color: var(--download-text);
+    border-color: var(--download-border);
+    background-color: color-mix(in srgb, var(--download-glow) 12%, transparent);
+    text-shadow: 0 0 8px color-mix(in srgb, var(--download-glow) 70%, transparent);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--download-glow) 80%, transparent),
+      0 0 12px 1px color-mix(in srgb, var(--download-glow) 65%, transparent),
+      inset 0 0 0 1px color-mix(in srgb, var(--download-glow) 45%, transparent),
+      inset 0 0 12px 1px color-mix(in srgb, var(--download-glow) 55%, transparent);
+  }
+
+  .neon-download-btn:hover {
+    text-shadow: 0 0 12px color-mix(in srgb, var(--download-glow) 88%, transparent);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--download-glow) 95%, transparent),
+      0 0 18px 2px color-mix(in srgb, var(--download-glow) 80%, transparent),
+      inset 0 0 0 1px color-mix(in srgb, var(--download-glow) 70%, transparent),
+      inset 0 0 28px 2px color-mix(in srgb, var(--download-glow) 78%, transparent);
+    transform: translateY(-4px);
+  }
+
+  .neon-download-btn:active {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--download-glow) 95%, transparent),
+      0 0 26px 2px color-mix(in srgb, var(--download-glow) 92%, transparent),
+      inset 0 0 0 1px color-mix(in srgb, var(--download-glow) 78%, transparent),
+      inset 0 0 30px 2px color-mix(in srgb, var(--download-glow) 82%, transparent);
+    transform: translateY(1px);
+  }
+
+  .neon-download-btn--blue {
+    --download-glow: #3b82f6;
+    --download-border: #93c5fd;
+    --download-text: #eff6ff;
+  }
+
   .text-glow {
     text-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
   }

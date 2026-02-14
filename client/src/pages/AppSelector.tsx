@@ -30,23 +30,23 @@ export default function AppSelector() {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>
-          Download AAWhatsApp, AA Business & CapCut Pro APK (Official 2026)
+          AA Mods – Ahsan Ali MOD APK Latest Version 2026 | AA Mods Download
         </title>
         <meta
           name="description"
-          content={`Official AA Mods hub. Choose AAWhatsApp ${APP_VERSIONS.aaWhatsApp}, AA Business ${APP_VERSIONS.aaBusiness}, or CapCut Pro for the best experience. Both feature Anti-Ban v1.0 and Privacy Core™ technology.`}
+          content={`Download AA Mods by Ahsan Ali Mods. Get AA Mods APK latest version 2026 with premium features unlocked, AI tools enabled, no watermark options, stable performance, and safe Android downloads including AAWhatsApp ${APP_VERSIONS.aaWhatsApp}, AA Business ${APP_VERSIONS.aaBusiness}, and CapCut Pro.`}
         />
         <meta
           name="keywords"
-          content="AA Mods collection, download AAWhatsApp, download AA Business, WhatsApp mod selector, secure WhatsApp mods, best WhatsApp mods 2026, anti-ban WhatsApp apk, official WhatsApp mod hub"
+          content="AA Mods, Ahsan Ali Mods, AA Mods APK, Ahsan Ali MOD Apps, AA Mods Download, AA Mods Pro, AA Mods Latest Version, AA Mods Premium Features, Ahsan Ali MOD Games, AA Mods Android, AA Mods without watermark, AA Mods AI features unlocked, AA Mods stable MOD, Download AA Mods safely, AA Mods all templates working, AA Mods business mode, AA Mods no internet required, AA Mods MOD for Android 6+, AA Mods regional restrictions removed, AA Mods optimized APK, Best MOD apps by Ahsan Ali, Premium features unlocked MODs, Safe AA Mods download site, Fast and clean MOD APKs, Latest AA Mods update 2026, MOD APK for editing apps, All-in-one MOD APK, Secure MOD apps for Android, MOD apps without ads, Ahsan Ali MODs tutorials"
         />
         <meta
           property="og:title"
-          content="AA Mods Collection - Official AAWhatsApp & AA Business"
+          content="AA Mods – Ahsan Ali Mods Official APK Hub (Latest Version 2026)"
         />
         <meta
           property="og:description"
-          content="Select the world's most secure WhatsApp modifications. Anti-Ban protected and Privacy Core™ enabled."
+          content="Official AA Mods by Ahsan Ali: safe MOD APK downloads with premium features unlocked, AI tools, stable builds, and no-watermark options for Android."
         />
         <meta
           property="og:image"
@@ -59,8 +59,9 @@ export default function AppSelector() {
             "@type": "WebSite",
             name: "AA Mods Official",
             url: "https://aa-mods.vercel.app/",
+            alternateName: ["AA Mods", "Ahsan Ali Mods", "Ahsan Mods"],
             description:
-              "Premium collection of secure WhatsApp modifications including AAWhatsApp and AA Business.",
+              "Official AA Mods and Ahsan Ali Mods hub for secure MOD APK downloads with premium features unlocked, AI tools, and optimized Android performance.",
           })}
         </script>
       </Helmet>
@@ -92,15 +93,14 @@ export default function AppSelector() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
                 <Sparkles className="w-4 h-4 text-primary" />
                 <span className="text-sm text-primary font-medium">
-                  Choose Your WhatsApp Experience
+                  AA Mods APK • Ahsan Ali MOD Apps Hub
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                AA Mods <span className="text-primary italic">Collection</span>
+                AA Mods <span className="text-primary italic">Ahsan Ali Mods</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Select the perfect application for your needs. From
-                communication to creative editing - we've got you covered.
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Download AA Mods safely with the latest AA Mods APK releases. This official Ahsan Ali Mods portal includes stable MOD apps for Android, premium features unlocked tools, and optimized builds for everyday users and creators.
               </p>
             </div>
           </motion.div>
@@ -118,6 +118,8 @@ export default function AppSelector() {
                       src="https://i.postimg.cc/N0p0fsf1/81ddf498-7efe-4101-83b1-101a77abf065.jpg"
                       alt="AAWhatsApp Icon"
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <h2 className="text-2xl font-bold mb-3">AAWhatsApp</h2>
@@ -180,6 +182,8 @@ export default function AppSelector() {
                       src="https://i.postimg.cc/mrJgFdCL/Cap-Cut-Pro.png"
                       alt="CapCut Pro Icon"
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <h2 className="text-2xl font-bold mb-3">CapCut Pro</h2>
@@ -242,6 +246,8 @@ export default function AppSelector() {
                       src="https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg"
                       alt="AA Business WhatsApp Icon"
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <h2 className="text-2xl font-bold mb-3">
@@ -294,6 +300,26 @@ export default function AppSelector() {
               </Card>
             </motion.div>
           </div>
+
+
+
+          <section className="mt-14 rounded-3xl border border-primary/20 bg-primary/5 p-6 md:p-10 text-left">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              AA Mods APK without watermark, AI features unlocked, and stable MOD performance
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              AA Mods Pro by Ahsan Ali Mods delivers fast and clean MOD APKs, business mode tools, all templates working support, and secure Android packages built for consistent performance.
+            </p>
+            <h3 className="text-lg font-semibold mb-3">Why users choose Ahsan Ali MOD Apps on AA Mods</h3>
+            <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground list-disc pl-5">
+              <li>Download AA Mods safely from one trusted source</li>
+              <li>AA Mods no internet required workflows in supported tools</li>
+              <li>AA Mods MOD for Android 6+ compatibility focus</li>
+              <li>AA Mods regional restrictions removed on selected releases</li>
+              <li>AA Mods optimized APK delivery and stable updates</li>
+              <li>Best MOD apps by Ahsan Ali with premium features unlocked</li>
+            </ul>
+          </section>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

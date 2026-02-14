@@ -15,6 +15,7 @@ import { TapFeedback } from "@/components/TapFeedback";
 import { AppSplash } from "@/components/AppSplash";
 import { Skeleton } from "@/components/ui/skeleton";
 import CapCutFeaturesPage from "@/pages/CapCutFeaturesPage";
+import { initImageOptimization } from "@/lib/imageOptimization";
 
 const Home = lazy(() => import("@/pages/Home"));
 const AppSelector = lazy(() => import("@/pages/AppSelector"));
@@ -103,6 +104,9 @@ function App() {
     // Replace with your actual Measurement ID
     ReactGA.initialize("G-339VLBF7PM");
     ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+
+    const cleanupImageOptimization = initImageOptimization();
+    return cleanupImageOptimization;
   }, []);
 
   return (

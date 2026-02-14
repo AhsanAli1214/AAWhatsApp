@@ -1,5 +1,4 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download, Shield, CheckCircle2, Cpu, History, ArrowRight, Sparkles } from "lucide-react";
 import { APP_VERSIONS, APP_DIRECT_DOWNLOAD_LINKS, APP_UPDATE_DATES, APP_BASE_VERSIONS } from "@/config/appConfig";
@@ -113,34 +112,28 @@ export default function CapCutDownloadPage() {
                   </p>
                 </div>
 
-                <Button
-                  asChild
-                  size="lg"
-                  className={`w-full min-h-24 md:min-h-28 text-base md:text-2xl font-black rounded-[1.7rem] shadow-2xl transition-all duration-300 px-3 md:px-4 py-4 ${downloadStep === 0 ? "shadow-primary/30" : "shadow-emerald-500/30 ring-2 ring-emerald-400/40"}`}
+                <a
+                  href={APP_DIRECT_DOWNLOAD_LINKS.capcutPro}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleDownloadClick}
+                  className={`neon-download-btn w-full min-h-24 md:min-h-28 text-base md:text-2xl px-3 md:px-4 py-4 ${downloadStep === 1 ? "ring-2 ring-emerald-400/40" : ""}`}
                 >
-                  <a
-                    href={APP_DIRECT_DOWNLOAD_LINKS.capcutPro}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={handleDownloadClick}
-                    className="w-full"
-                  >
-                    <div className="w-full flex items-center justify-between gap-2 md:gap-3">
-                      <div className="flex items-center gap-2 md:gap-4 text-left min-w-0">
-                        <Download className={`h-6 w-6 md:h-10 md:w-10 shrink-0 ${downloadStep === 1 ? "animate-bounce" : ""}`} />
-                        <div className="min-w-0">
-                          <span className="block leading-tight break-words">{ctaLabel}</span>
-                          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.16em] opacity-75 leading-tight">
-                            {downloadStep === 0 ? "Verification required" : "Official AA Mods package"}
-                          </span>
-                        </div>
+                  <div className="w-full flex items-center justify-between gap-2 md:gap-3">
+                    <div className="flex items-center gap-2 md:gap-4 text-left min-w-0">
+                      <Download className={`h-6 w-6 md:h-10 md:w-10 shrink-0 ${downloadStep === 1 ? "animate-bounce" : ""}`} />
+                      <div className="min-w-0">
+                        <span className="block leading-tight break-words">{ctaLabel}</span>
+                        <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.16em] opacity-75 leading-tight">
+                          {downloadStep === 0 ? "Verification required" : "Official AA Mods package"}
+                        </span>
                       </div>
-                      <Badge className="bg-white/20 text-white font-black px-2.5 py-1 shrink-0">
-                        {downloadStep === 0 ? "1/2" : "2/2"}
-                      </Badge>
                     </div>
-                  </a>
-                </Button>
+                    <Badge className="bg-white/20 text-white font-black px-2.5 py-1 shrink-0">
+                      {downloadStep === 0 ? "1/2" : "2/2"}
+                    </Badge>
+                  </div>
+                </a>
 
                 <div className="text-center text-xs text-muted-foreground font-medium">
                   {downloadStep === 0
