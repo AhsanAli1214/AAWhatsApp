@@ -1,7 +1,7 @@
 export const APP_VERSIONS = {
   aaWhatsApp: "V3.50",
   aaBusiness: "V1.0",
-  capcutPro: "V13.0.0",
+  capcutPro: "V17.3.0",
 } as const;
 
 export const APP_VERSION_LOWER = {
