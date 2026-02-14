@@ -13,7 +13,7 @@ export const APP_VERSION_LOWER = {
 export const APP_BASE_VERSIONS = {
   aaWhatsApp: "2.25.36.73",
   aaBusiness: "2.25.29.77",
-  capcutPro: "v13.0.0 Stable",
+  capcutPro: "v17.3.0 Stable",
 } as const;
 
 export const APP_CHANGELOGS = {
@@ -60,9 +60,9 @@ export const APP_UPDATE_DATES = {
     iso: "2026-01-31",
   },
   capcutPro: {
-    display: "February 13, 2026",
-    short: "13/02/2026",
-    iso: "2026-02-13",
+    display: "February 14, 2026",
+    short: "14/02/2026",
+    iso: "2026-02-14",
   },
 } as const;
 
