@@ -85,10 +85,10 @@ export const APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS = {
 export const APP_DIRECT_DOWNLOAD_LINKS = {
   aaWhatsApp: "https://ahsanali.short.gy/aa-wa-latest",
   aaBusiness: "https://ahsanali.short.gy/aa-wa-pro",
-  capcutPro: "https://ahsanali.short.gy/capcut-pro-latest",
+  capcutPro: "https://ahsanali.short.gy/capcut-ahsan",
 } as const;
 
 export const APP_MIRROR_DOWNLOAD_LINKS = {
   aaBusiness: "https://www.mediafire.com/file/aabusiness_v1.0.apk",
-  capcutPro: "https://www.mediafire.com/file/capcutpro_v13.0.apk",
+  capcutPro: "https://ahsanali.short.gy/capcut-ahsan",
 } as const;
