@@ -177,7 +177,7 @@ export default function AppSelector() {
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 group-hover:scale-110 transition-transform">
                     <img
-                      src="https://i.postimg.cc/zGq5LsQX/Cap_Cut_Pro.png"
+                      src="https://i.postimg.cc/mrJgFdCL/Cap-Cut-Pro.png"
                       alt="CapCut Pro Icon"
                       className="w-full h-full object-cover"
                     />
