@@ -23,7 +23,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { Footer } from "@/components/Footer";
-import { APP_BASE_VERSIONS, APP_CHANGELOGS, APP_DIRECT_DOWNLOAD_LINKS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS, APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS, APP_WHATSAPP_PACKAGE_NAMES } from "@/config/appConfig";
+import { APP_BASE_VERSIONS, APP_CHANGELOGS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS, APP_WHATSAPP_PACKAGE_NAMES } from "@/config/appConfig";
+import { SECURE_DOWNLOAD_ASSETS } from "@shared/downloadAssets";
+import { CaptchaDownloadButton } from "@/components/CaptchaDownloadButton";
 
 const versionInfo = {
   version: APP_VERSIONS.aaWhatsApp.replace("V", "V "),
@@ -243,30 +245,25 @@ export default function DownloadPage() {
 
               <div className="mb-10 w-full flex flex-col items-center gap-4 px-2">
                 <div className="flex w-full flex-col items-center gap-4">
-                  <a
-                    href={APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS.modern}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="neon-download-btn w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 text-lg md:text-2xl text-center leading-tight overflow-hidden"
+                  <CaptchaDownloadButton
+                    asset={SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern}
+                    buttonClassName="neon-download-btn w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 text-lg md:text-2xl text-center leading-tight overflow-hidden"
                   >
                     <Download className="w-6 h-6" />
                     Download AAWhatsApp
-                  </a>
+                  </CaptchaDownloadButton>
                   <div className="text-xs text-muted-foreground">
                     Primary package: <span className="font-semibold">{APP_WHATSAPP_PACKAGE_NAMES.modern}</span>
                   </div>
                 </div>
                 <div className="flex w-full flex-col items-center gap-3">
-                  <a
-                    href={APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS.legacy}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="neon-download-btn w-full max-w-md h-auto py-3 md:py-4 px-4 md:px-8 text-base md:text-lg text-center"
-                    data-testid="button-legacy-download"
+                  <CaptchaDownloadButton
+                    asset={SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy}
+                    buttonClassName="neon-download-btn w-full max-w-md h-auto py-3 md:py-4 px-4 md:px-8 text-base md:text-lg text-center"
                   >
                     <Download className="w-5 h-5" />
                     AA WhatsApp (com.gbwhatsapp)
-                  </a>
+                  </CaptchaDownloadButton>
                   <div className="text-[11px] text-muted-foreground">
                     Temporary legacy package: <span className="font-semibold">{APP_WHATSAPP_PACKAGE_NAMES.legacy}</span>
                   </div>
@@ -518,34 +515,20 @@ export default function DownloadPage() {
               or join our Telegram for direct links.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href={APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS.modern}
-                target="_blank"
-                rel="noopener noreferrer"
+              <CaptchaDownloadButton
+                asset={SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern}
+                buttonClassName="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
               >
-                <Button
-                  variant="outline"
-                  className="gap-2"
-                  data-testid="button-modern-download"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  com.aawhatsapp
-                </Button>
-              </a>
-              <a
-                href={APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS.legacy}
-                target="_blank"
-                rel="noopener noreferrer"
+                <ExternalLink className="w-4 h-4" />
+                com.aawhatsapp
+              </CaptchaDownloadButton>
+              <CaptchaDownloadButton
+                asset={SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy}
+                buttonClassName="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
               >
-                <Button
-                  variant="outline"
-                  className="gap-2"
-                  data-testid="button-legacy-download-alt"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  com.gbwhatsapp (Legacy)
-                </Button>
-              </a>
+                <ExternalLink className="w-4 h-4" />
+                com.gbwhatsapp (Legacy)
+              </CaptchaDownloadButton>
               <a
                 href="https://t.me/AA_ModsOfficial"
                 target="_blank"

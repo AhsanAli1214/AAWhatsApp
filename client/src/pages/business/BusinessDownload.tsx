@@ -23,7 +23,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
-import { APP_BASE_VERSIONS, APP_CHANGELOGS, APP_DIRECT_DOWNLOAD_LINKS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+import { APP_BASE_VERSIONS, APP_CHANGELOGS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+import { SECURE_DOWNLOAD_ASSETS } from "@shared/downloadAssets";
+import { CaptchaDownloadButton } from "@/components/CaptchaDownloadButton";
 
 const parseChangelogLines = (changelog: string) =>
   changelog
@@ -202,15 +204,13 @@ export default function BusinessDownload() {
             transition={{ delay: 0.3 }}
             className="flex flex-col items-center mb-12 gap-4"
           >
-            <a
-              href={APP_DIRECT_DOWNLOAD_LINKS.aaBusiness}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="neon-download-btn neon-download-btn--blue relative group overflow-hidden px-12 py-6 text-2xl w-full max-w-md text-center"
+            <CaptchaDownloadButton
+              asset={SECURE_DOWNLOAD_ASSETS.aaBusinessMain}
+              buttonClassName="neon-download-btn neon-download-btn--blue relative group overflow-hidden px-12 py-6 text-2xl w-full max-w-md text-center"
             >
               <Download className="w-8 h-8" />
               Download from MediaFire
-            </a>
+            </CaptchaDownloadButton>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">

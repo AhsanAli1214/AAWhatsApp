@@ -19,4 +19,4 @@ export const APP_DOWNLOAD_REDIRECTS = {
 export type SecureDownloadAsset = keyof typeof APP_DOWNLOAD_REDIRECTS;
 
 export const getSecureDownloadUrl = (asset: SecureDownloadAsset) =>
-  `/secure-download?asset=${encodeURIComponent(asset)}`;
+  APP_DOWNLOAD_REDIRECTS[asset];

@@ -47,7 +47,6 @@ const BusinessFAQ = lazy(() => import("@/pages/business/BusinessFAQ"));
 const BusinessBlog = lazy(() => import("@/pages/business/BusinessBlog"));
 
 const Sitemap = lazy(() => import("@/pages/Sitemap"));
-const SecureDownloadPage = lazy(() => import("@/pages/SecureDownloadPage"));
 
 function PageLoader() {
   return (
@@ -97,7 +96,6 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/sitemap" component={Sitemap} />
-        <Route path="/secure-download" component={SecureDownloadPage} />
         <Route path="/:rest*" component={Home} />
       </Switch>
     </Suspense>
