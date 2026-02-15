@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import reminiLogo from "@assets/download_1771149808669.png";
 import {
   MessageSquare,
   Briefcase,
@@ -10,6 +11,7 @@ import {
   Building2,
   Video,
   CheckCircle2,
+  ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -30,7 +32,7 @@ const AA_WHATSAPP_ICON_URL =
 const CAPCUT_ICON_URL = "https://i.postimg.cc/mrJgFdCL/Cap-Cut-Pro.png";
 const AA_BUSINESS_ICON_URL =
   "https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg";
-const REMINI_ICON_URL = "https://i.postimg.cc/BnzYJGWd/Remini-Mod-removebg-preview.png";
+const REMINI_ICON_URL = reminiLogo;
 
 export default function AppSelector() {
   return (
@@ -130,7 +132,7 @@ export default function AppSelector() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -339,7 +341,7 @@ export default function AppSelector() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <Card className="h-full border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 group overflow-visible">
+              <Card className="h-full border-2 border-[#FF0000]/20 hover:border-[#FF0000]/50 transition-all duration-300 group overflow-visible">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 group-hover:scale-110 transition-transform">
                     <img
@@ -361,15 +363,15 @@ export default function AppSelector() {
 
                   <div className="space-y-3 mb-8">
                     <div className="flex items-center gap-3">
-                      <Sparkles className="w-5 h-5 text-primary" />
+                      <Sparkles className="w-5 h-5 text-[#FF0000]" />
                       <span className="text-sm">Premium Unlocked</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <ShieldCheck className="w-5 h-5 text-primary" />
+                      <ShieldCheck className="w-5 h-5 text-[#FF0000]" />
                       <span className="text-sm">100% Working Build</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Download className="w-5 h-5 text-primary" />
+                      <Download className="w-5 h-5 text-[#FF0000]" />
                       <span className="text-sm">Free Pro Cards</span>
                     </div>
                   </div>
@@ -377,7 +379,7 @@ export default function AppSelector() {
                   <div className="flex flex-col gap-3">
                     <Link href="/remini-mod">
                       <Button
-                        className="w-full bg-primary hover:bg-primary/90"
+                        className="w-full bg-[#FF0000] hover:bg-[#8B0000]"
                         size="lg"
                         data-testid="button-remini-mod"
                       >
@@ -388,7 +390,7 @@ export default function AppSelector() {
                     <Link href="/remini-mod/download">
                       <Button
                         variant="outline"
-                        className="w-full"
+                        className="w-full border-[#FF0000]/30 hover:bg-[#FF0000]/10"
                         size="lg"
                         data-testid="button-remini-download"
                       >
@@ -401,9 +403,6 @@ export default function AppSelector() {
               </Card>
             </motion.div>
           </div>
-
-
-
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

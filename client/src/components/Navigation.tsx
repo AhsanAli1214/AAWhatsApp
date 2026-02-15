@@ -2,6 +2,7 @@ import { useLocation } from "wouter";
 import { Navbar } from "./Navbar";
 import { BusinessNavbar } from "./BusinessNavbar";
 import { CapCutNavbar } from "./CapCutNavbar";
+import { ReminiNavbar } from "./ReminiNavbar";
 import { MobileNav } from "./MobileNav";
 
 export function Navigation() {
@@ -18,6 +19,8 @@ export function Navigation() {
         <BusinessNavbar />
       ) : location.startsWith("/capcut-pro") ? (
         <CapCutNavbar />
+      ) : location.startsWith("/remini-mod") ? (
+        <ReminiNavbar />
       ) : (
         <Navbar />
       )}
