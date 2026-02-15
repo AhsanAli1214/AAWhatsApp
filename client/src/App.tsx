@@ -125,7 +125,7 @@ function App() {
             <meta property="og:site_name" content="AA Mods" />
             <meta
               property="og:image"
-              content="https://aa-mods.vercel.app/images/whatsapp-realtime-hero.jpg"
+              content="https://aa-mods.vercel.app/AA%20Mods.png"
             />
             <meta property="og:type" content="website" />
             <meta name="twitter:card" content="summary_large_image" />
