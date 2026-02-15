@@ -16,46 +16,49 @@ export function AdBlockDetector() {
   const { t } = useTranslation();
 
   useEffect(() => {
+    let isMounted = true;
+
     const checkAdBlock = async () => {
-      // Multiple detection strategies for better reliability
       const adSources = [
         'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
         'https://static.ads-twitter.com/uwt.js',
         'https://connect.facebook.net/en_US/fbevents.js'
       ];
-      
+
       try {
-        // Try to fetch several common ad scripts
         const results = await Promise.all(
-          adSources.map(url => 
+          adSources.map(url =>
             fetch(url, { method: 'HEAD', mode: 'no-cors', cache: 'no-store' })
               .then(() => 'success')
               .catch(() => 'blocked')
           )
         );
 
-        // ONLY trigger if ALL sources are blocked (less aggressive)
         const allBlocked = results.every(res => res === 'blocked');
-        
-        // Final check: check if the exasperatebubblyorthodox script is loaded
         const highPerfBlocked = !document.querySelector('script[src*="exasperatebubblyorthodox.com"]');
-        
-        setIsAdBlockActive(allBlocked && highPerfBlocked);
-      } catch (error) {
-        // Default to false if check fails to avoid false positives
-        setIsAdBlockActive(false);
+
+        if (isMounted) {
+          setIsAdBlockActive(allBlocked && highPerfBlocked);
+        }
+      } catch {
+        if (isMounted) {
+          setIsAdBlockActive(false);
+        }
       }
     };
 
-    // Initial check after 1.5s
-    const timer = setTimeout(checkAdBlock, 1500);
-    
-    // Periodic check every 10 seconds to catch toggle changes
-    const interval = setInterval(checkAdBlock, 10000);
-    
+    const triggerCheck = () => {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(checkAdBlock, { timeout: 3500 });
+      } else {
+        window.setTimeout(checkAdBlock, 1500);
+      }
+    };
+
+    triggerCheck();
+
     return () => {
-      clearTimeout(timer);
-      clearInterval(interval);
+      isMounted = false;
     };
   }, []);
 

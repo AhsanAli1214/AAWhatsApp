@@ -4,7 +4,10 @@ const TAP_SELECTOR = "button, a, [role='button'], .tap-target";
 
 export function TapFeedback() {
   useEffect(() => {
-    // Global tap listener to add ripple + press feedback to interactive elements.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     const handlePointerDown = (event: PointerEvent) => {
       const target = (event.target as HTMLElement | null)?.closest(TAP_SELECTOR) as HTMLElement | null;
       if (!target) return;
@@ -14,10 +17,14 @@ export function TapFeedback() {
       const y = event.clientY - rect.top;
       target.style.setProperty("--ripple-x", `${x}px`);
       target.style.setProperty("--ripple-y", `${y}px`);
+
       target.classList.remove("tap-ripple-active");
       target.classList.add("tap-press");
-      void target.offsetWidth;
-      target.classList.add("tap-ripple-active");
+
+      window.requestAnimationFrame(() => {
+        target.classList.add("tap-ripple-active");
+      });
+
       target.addEventListener(
         "animationend",
         () => {

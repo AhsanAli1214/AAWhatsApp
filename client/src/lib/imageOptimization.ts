@@ -1,9 +1,5 @@
 const preconnectedOrigins = new Set<string>();
-
-const isAboveFold = (img: HTMLImageElement) => {
-  const rect = img.getBoundingClientRect();
-  return rect.top < window.innerHeight * 1.2;
-};
+const optimizedImages = new WeakSet<HTMLImageElement>();
 
 const ensurePreconnect = (src: string) => {
   if (!src.startsWith("http")) return;
@@ -19,27 +15,19 @@ const ensurePreconnect = (src: string) => {
   preconnectedOrigins.add(origin);
 };
 
-const optimizeImage = (img: HTMLImageElement) => {
-  if (img.dataset.imgOptimized === "true") return;
+const optimizeImage = (img: HTMLImageElement, isNearViewport = false) => {
+  if (optimizedImages.has(img)) return;
 
   if (!img.hasAttribute("decoding")) {
     img.setAttribute("decoding", "async");
   }
 
-  if (isAboveFold(img)) {
-    if (!img.hasAttribute("loading")) {
-      img.setAttribute("loading", "eager");
-    }
-    if (!img.hasAttribute("fetchpriority")) {
-      img.setAttribute("fetchpriority", "high");
-    }
-  } else {
-    if (!img.hasAttribute("loading")) {
-      img.setAttribute("loading", "lazy");
-    }
-    if (!img.hasAttribute("fetchpriority")) {
-      img.setAttribute("fetchpriority", "low");
-    }
+  if (!img.hasAttribute("loading")) {
+    img.setAttribute("loading", isNearViewport ? "eager" : "lazy");
+  }
+
+  if (!img.hasAttribute("fetchpriority")) {
+    img.setAttribute("fetchpriority", isNearViewport ? "high" : "low");
   }
 
   const source = img.currentSrc || img.src;
@@ -47,44 +35,67 @@ const optimizeImage = (img: HTMLImageElement) => {
     ensurePreconnect(source);
   }
 
-  img.dataset.imgOptimized = "true";
+  optimizedImages.add(img);
 };
 
-const runOptimizationPass = () => {
-  document.querySelectorAll("img").forEach((node) => {
-    optimizeImage(node as HTMLImageElement);
-  });
+const collectImagesFromNode = (node: Node, bucket: Set<HTMLImageElement>) => {
+  if (node instanceof HTMLImageElement) {
+    bucket.add(node);
+    return;
+  }
+
+  if (node instanceof HTMLElement) {
+    node.querySelectorAll("img").forEach((img) => bucket.add(img));
+  }
 };
 
 export const initImageOptimization = () => {
-  runOptimizationPass();
-
-  const observer = new MutationObserver((mutations) => {
-    for (const mutation of mutations) {
-      if (mutation.type !== "childList") continue;
-
-      mutation.addedNodes.forEach((node) => {
-        if (!(node instanceof HTMLElement)) return;
-
-        if (node.tagName === "IMG") {
-          optimizeImage(node as HTMLImageElement);
-          return;
-        }
-
-        node.querySelectorAll("img").forEach((img) => {
-          optimizeImage(img as HTMLImageElement);
-        });
+  const pendingImages = new Set<HTMLImageElement>();
+  const viewportObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        optimizeImage(entry.target as HTMLImageElement, true);
+        viewportObserver.unobserve(entry.target);
       });
+    },
+    { rootMargin: "240px" }
+  );
+
+  const queueImage = (img: HTMLImageElement) => {
+    if (optimizedImages.has(img)) return;
+    pendingImages.add(img);
+    viewportObserver.observe(img);
+  };
+
+  document.querySelectorAll("img").forEach((img) => queueImage(img as HTMLImageElement));
+
+  const flushQueuedImages = () => {
+    pendingImages.forEach((img) => optimizeImage(img));
+    pendingImages.clear();
+  };
+
+  const mutationObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type !== "childList") return;
+      mutation.addedNodes.forEach((node) => collectImagesFromNode(node, pendingImages));
+    });
+
+    if (pendingImages.size === 0) return;
+
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(flushQueuedImages, { timeout: 600 });
+      return;
     }
+
+    window.setTimeout(flushQueuedImages, 120);
   });
 
-  observer.observe(document.body, { childList: true, subtree: true });
-
-  const onLoad = () => runOptimizationPass();
-  window.addEventListener("load", onLoad);
+  mutationObserver.observe(document.body, { childList: true, subtree: true });
 
   return () => {
-    observer.disconnect();
-    window.removeEventListener("load", onLoad);
+    mutationObserver.disconnect();
+    viewportObserver.disconnect();
+    pendingImages.clear();
   };
 };

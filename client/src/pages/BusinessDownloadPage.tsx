@@ -165,7 +165,7 @@ export default function BusinessDownloadPage() {
 
             <div className="flex flex-col items-center gap-6 mb-12">
               <Button
-                onClick={() => window.open("https://ahsanali.short.gy/aa-wa-pro", "_blank")}
+                onClick={() => window.open(getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMain), "_blank")}
                 className="w-full max-w-md h-auto py-6 rounded-2xl bg-amber-500 hover:bg-amber-600 text-black font-black text-2xl shadow-xl shadow-amber-500/20"
               >
                 <Download className="w-8 h-8 mr-3" />
@@ -243,7 +243,7 @@ export default function BusinessDownloadPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://ahsanali.short.gy/aa-wa-pro"
+                href={getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMirror)}
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -1,3 +1,7 @@
+import { APP_DOWNLOAD_REDIRECTS, SECURE_DOWNLOAD_ASSETS, getSecureDownloadUrl } from "@shared/downloadAssets";
+
+export { APP_DOWNLOAD_REDIRECTS, SECURE_DOWNLOAD_ASSETS, getSecureDownloadUrl };
+
 // AA WhatsApp Configuration
 export const AA_WHATSAPP_CONFIG = {
   version: "V4.0",
@@ -8,7 +12,7 @@ export const AA_WHATSAPP_CONFIG = {
     iso: "2026-02-15",
   },
   downloadLink: "https://aa-mods.vercel.app/aa-whatsapp/download",
-  directDownloadLink: "https://ahsanali.short.gy/aa-wa-latest",
+  directDownloadLink: APP_DOWNLOAD_REDIRECTS[SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern],
   changelog: `FIXED: App Crash Problem When Link Device or Register Number
 NEW: Profile cover photo support for enhanced personalization
 NEW: Status character limit increased up to 500 characters
@@ -35,8 +39,8 @@ export const AA_BUSINESS_CONFIG = {
     iso: "2026-01-31",
   },
   downloadLink: "https://aa-mods.vercel.app/aa-business/download",
-  directDownloadLink: "https://ahsanali.short.gy/aa-wa-pro",
-  mirrorDownloadLink: "https://www.mediafire.com/file/aabusiness_v1.0.apk",
+  directDownloadLink: APP_DOWNLOAD_REDIRECTS[SECURE_DOWNLOAD_ASSETS.aaBusinessMain],
+  mirrorDownloadLink: APP_DOWNLOAD_REDIRECTS[SECURE_DOWNLOAD_ASSETS.aaBusinessMirror],
   changelog: `NEW: Enterprise deployment toolkit for faster onboarding
 NEW: Advanced bulk broadcasting segmentation controls
 IMPROVED: Auto-reply accuracy and scheduling reliability
@@ -54,7 +58,7 @@ export const CAPCUT_PRO_CONFIG = {
     iso: "2026-02-14",
   },
   downloadLink: "https://aa-mods.vercel.app/capcut-pro/download",
-  directDownloadLink: "https://ahsanali.short.gy/capcut-ahsan",
+  directDownloadLink: APP_DOWNLOAD_REDIRECTS[SECURE_DOWNLOAD_ASSETS.capcutProMain],
   features: [
     "AI features working",
     "All templates unlocked",
@@ -80,7 +84,7 @@ export const REMINI_MOD_CONFIG = {
     iso: "2026-02-15",
   },
   downloadLink: "https://aa-mods.vercel.app/remini-mod/download",
-  directDownloadLink: "https://ahsanali.short.gy/remini-ahsan",
+  directDownloadLink: APP_DOWNLOAD_REDIRECTS[SECURE_DOWNLOAD_ASSETS.reminiModMain],
   features: [
     "Premium/VIP Unlocked",
     "Unlimited Pro Cards",
@@ -149,15 +153,15 @@ export const APP_DOWNLOAD_LINKS = {
 } as const;
 
 export const APP_DIRECT_DOWNLOAD_LINKS = {
-  aaWhatsApp: AA_WHATSAPP_CONFIG.directDownloadLink,
-  aaBusiness: AA_BUSINESS_CONFIG.directDownloadLink,
-  capcutPro: CAPCUT_PRO_CONFIG.directDownloadLink,
-  reminiMod: REMINI_MOD_CONFIG.directDownloadLink,
+  aaWhatsApp: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
+  aaBusiness: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMain),
+  capcutPro: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.capcutProMain),
+  reminiMod: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.reminiModMain),
 } as const;
 
 export const APP_MIRROR_DOWNLOAD_LINKS = {
-  aaBusiness: AA_BUSINESS_CONFIG.mirrorDownloadLink,
-  capcutPro: CAPCUT_PRO_CONFIG.directDownloadLink,
+  aaBusiness: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMirror),
+  capcutPro: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.capcutProMain),
 } as const;
 
 export const APP_WHATSAPP_PACKAGE_NAMES = {
@@ -166,18 +170,14 @@ export const APP_WHATSAPP_PACKAGE_NAMES = {
 } as const;
 
 export const APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS = {
-  legacy: "https://ahsanali.short.gy/aa-whatsapp",
-  modern: "https://ahsanali.short.gy/aa-wa-latest",
+  legacy: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy),
+  modern: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
 } as const;
-
 
 // Global Floating Poster Configuration
 export const FLOATING_POSTER_CONFIG = {
-  // Turn this on/off anytime
   enabled: true,
-  // Change this to any poster image link
   imageUrl: "https://i.postimg.cc/NM1ZG8Xj/generated-image-8244a26b-b3ee-487e-ae2c-13604ee32e9c.png",
-  // Optional click destination (leave empty to disable click-through)
   targetUrl: "",
   alt: "AA Mods Poster",
 } as const;
