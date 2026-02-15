@@ -21,7 +21,7 @@ import {
   ShieldCheck
 } from "lucide-react";
 import { Link } from "wouter";
-import { APP_VERSIONS } from "@/config/appConfig";
+import { APP_FEATURES, APP_VERSIONS } from "@/config/appConfig";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
@@ -119,7 +119,15 @@ export default function CapCutProPage() {
             <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
               Experience the world's most stable, fully unlocked CapCut Mod. No internet errors, no broken AI—just pure professional power.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-4xl mx-auto mt-8">
+              {APP_FEATURES.capcutPro.slice(0, 6).map((feature) => (
+                <div key={feature} className="rounded-xl border border-primary/20 bg-primary/5 px-3 py-2 text-sm font-bold">
+                  {feature}
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
               <Link href={HERO_IMAGE_URL}>
                 <Button size="lg" className="h-16 px-10 rounded-2xl text-lg font-bold shadow-2xl shadow-primary/20 hover:scale-105 transition-transform">
                   <Download className="mr-3 h-6 w-6" /> Download Latest Stable

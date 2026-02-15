@@ -1,78 +1,75 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Download, 
-  Shield, 
-  CheckCircle2, 
-  History, 
-  AlertTriangle, 
-  Settings, 
-  Smartphone, 
-  Trash2, 
-  Lock,
-  ChevronRight,
-  ShieldCheck,
-  Zap
-} from "lucide-react";
-import { 
-  APP_VERSIONS, 
-  APP_DIRECT_DOWNLOAD_LINKS, 
-  APP_UPDATE_DATES, 
-  APP_BASE_VERSIONS 
-} from "@/config/appConfig";
 import { Helmet } from "react-helmet";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import {
+  AlertTriangle,
+  Download,
+  ShieldCheck,
+  Users,
+  Trash2,
+  Settings,
+  FolderDown,
+  Wifi,
+  Bug,
+  ImageDown,
+  CheckCircle2,
+} from "lucide-react";
+import {
+  APP_BASE_VERSIONS,
+  APP_DIRECT_DOWNLOAD_LINKS,
+  APP_UPDATE_DATES,
+  APP_VERSIONS,
+  APP_FEATURES,
+} from "@/config/appConfig";
 import reminiLogo from "@assets/download_1771149808669.png";
 
 export default function ReminiDownloadPage() {
   const canonicalUrl = "https://aa-mods.vercel.app/remini-mod/download";
   const [downloadStep, setDownloadStep] = useState<0 | 1>(0);
+  const heroImageUrl = "https://i.postimg.cc/W4hMbDm9/image-1771089734969956.png";
 
   const handleDownloadClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (downloadStep === 0) {
       e.preventDefault();
       setDownloadStep(1);
-      window.open("https://ahsanali.short.gy/remini-ad-redirect", "_blank", "noopener,noreferrer");
+      window.open("https://otieu.com/4/10538189", "_blank", "noopener,noreferrer");
     }
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-[#8B0000]/30">
       <Helmet>
-        <title>Download Remini Mod APK {APP_VERSIONS.reminiMod} (Premium Unlocked) Safe Guide</title>
-        <meta name="description" content="Safely download and install our community-tested Remini Mod APK. 100% working premium features, ad-free experience, and step-by-step installation guide." />
-        <meta name="keywords" content="Remini Mod APK download, install Remini Mod APK, safe APK download, modded APK risks, App not installed error, Remini troubleshooting, Android installation guide, community support, AA Mods" />
+        <title>Download & Install Remini Mod APK (Safe Guide & Troubleshooting)</title>
+        <meta
+          name="description"
+          content="Learn how to safely download and install our community-tested Remini Mod APK. This page provides a step-by-step guide, discusses risks, and offers detailed troubleshooting for common errors."
+        />
+        <meta
+          name="keywords"
+          content="Remini Mod APK download, install Remini Mod APK, safe APK download, modded APK risks, App not installed error, Remini troubleshooting, Android installation guide, community support"
+        />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content="Download & Install Remini Mod APK | AA Mods" />
-        <meta property="og:description" content="Official, safe download link for Remini Mod APK with premium features unlocked." />
-        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Download & Install Remini Mod APK (Safe Guide)" />
+        <meta property="og:description" content="Step-by-step Remini Mod APK install guide with troubleshooting, safety notes, and feature verification." />
+        <meta property="og:image" content={heroImageUrl} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Remini Mod APK Download Guide" />
+        <meta name="twitter:description" content="Safe install steps, known issues, and fixes for Remini Mod APK users." />
+        <meta name="twitter:image" content={heroImageUrl} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://aa-mods.vercel.app/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Remini Mod",
-                "item": "https://aa-mods.vercel.app/remini-mod"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Download",
-                "item": canonicalUrl
-              }
+            "@type": "HowTo",
+            name: "How to install Remini Mod APK",
+            step: [
+              {"@type": "HowToStep", name: "Uninstall official Remini app"},
+              {"@type": "HowToStep", name: "Enable install from unknown sources"},
+              {"@type": "HowToStep", name: "Install APK and grant required permissions"}
             ]
           })}
         </script>
@@ -80,142 +77,237 @@ export default function ReminiDownloadPage() {
 
       <Navigation />
 
-      <div className="container mx-auto px-4 pt-32 max-w-5xl">
-        <div className="text-center mb-14">
-          <img src={reminiLogo} alt="Remini Logo" className="w-24 h-24 mx-auto mb-8 rounded-3xl shadow-xl border-4 border-[#FF0000]/20" />
-          <Badge className="mb-6 px-4 py-1 bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 uppercase tracking-widest font-black">
-            Official AA Mods Repository
+      <div className="container mx-auto px-4 pt-32 pb-24 max-w-6xl">
+        <div className="text-center mb-10">
+          <img src={reminiLogo} alt="Remini" className="w-24 h-24 mx-auto mb-6 rounded-3xl border-4 border-[#FF0000]/20" />
+          <Badge className="mb-4 bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 uppercase tracking-widest font-black px-4 py-1">
+            Responsible Download Guide
           </Badge>
-          <h1 className="text-5xl md:text-8xl font-black mb-4 tracking-tighter uppercase leading-none text-foreground">
-            Download Remini <span className="text-[#FF0000] italic">Mod</span> APK
+          <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tight leading-none mb-4">
+            Download & Install <span className="text-[#FF0000] italic">Remini Mod APK</span>
           </h1>
-          <p className="text-muted-foreground text-xl font-bold flex items-center justify-center gap-2">
-            <span className="text-foreground">Version {APP_VERSIONS.reminiMod}</span>
-            <span className="opacity-20">•</span>
-            <span>{APP_UPDATE_DATES.reminiMod.display}</span>
+          <p className="text-muted-foreground text-lg font-medium max-w-4xl mx-auto">
+            This guide explains how to install the Remini Mod APK from AA Mods in a safer way, with full transparency about risks, compatibility, and known troubleshooting steps.
           </p>
         </div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-16">
-          <Card className="rounded-[2.5rem] border-[#FF0000]/20 bg-[#FF0000]/5 p-8 border-4 overflow-hidden relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-            <CardContent className="p-0 text-center relative z-10">
-              <Button
-                asChild
-                size="lg"
-                className="w-full min-h-[120px] text-3xl md:text-5xl font-black rounded-[2rem] shadow-2xl shadow-[#FF0000]/30 transition-all active:scale-[0.98] bg-[#FF0000] hover:bg-[#8B0000] border-4 border-white/20"
-              >
-                <a href={APP_DIRECT_DOWNLOAD_LINKS.reminiMod} target="_blank" rel="noopener noreferrer" onClick={handleDownloadClick}>
-                  <div className="flex flex-col md:flex-row items-center gap-6">
-                    <Download className="h-16 w-16 animate-bounce" />
-                    <div className="text-left leading-none">
-                      <span className="block uppercase tracking-tighter">{downloadStep === 0 ? "1. VERIFY LINK" : "2. START DOWNLOAD"}</span>
-                      <span className="text-xs font-black opacity-80 uppercase tracking-[0.3em] mt-3 block italic text-white/90">Premium Cloud Server #1</span>
-                    </div>
-                  </div>
-                </a>
-              </Button>
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-8 text-xs font-black uppercase tracking-[0.2em] text-muted-foreground">
-                <span className="flex items-center gap-2"><Shield className="h-4 w-4 text-emerald-500" /> Virus Scanned</span>
-                <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> Community Approved</span>
-                <span className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#FF0000]" /> High Speed</span>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
+        <Card className="rounded-[2rem] border-[#FF0000]/20 bg-[#FF0000]/5 p-6 md:p-8 mb-10">
+          <CardContent className="p-0">
+            <div className="text-center mb-4">
+              <h2 className="text-xl md:text-3xl font-black uppercase tracking-tight mb-1">One Button • 2-Step Secure Download</h2>
+              <p className="text-sm text-muted-foreground font-medium">
+                First click opens sponsored verification. Second click downloads the official APK package.
+              </p>
+            </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <Card className="rounded-[2rem] bg-secondary/20 border-white/5 overflow-hidden">
-            <CardHeader className="bg-[#FF0000]/5 border-b border-[#FF0000]/10">
-              <CardTitle className="flex items-center gap-2 uppercase tracking-tight font-black text-foreground">
-                <History className="h-5 w-5 text-[#FF0000]" /> Package Information
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="grid gap-3 p-6">
-              {[
-                { l: "Base Version", v: APP_BASE_VERSIONS.reminiMod },
-                { l: "Mod Version", v: APP_VERSIONS.reminiMod },
-                { l: "Architecture", v: "arm64-v8a" },
-                { l: "File Size", v: "145 MB" },
-                { l: "Requirement", v: "Android 6.0+" }
-              ].map((item, i) => (
-                <div key={i} className="flex justify-between items-center p-4 rounded-xl bg-background/40 border border-white/5">
-                  <span className="text-[10px] text-muted-foreground uppercase font-black tracking-widest">{item.l}</span>
-                  <span className="font-bold text-foreground text-sm">{item.v}</span>
+            <div className="flex justify-center">
+              <a
+                href={downloadStep === 0 ? "#" : APP_DIRECT_DOWNLOAD_LINKS.reminiMod}
+                target={downloadStep === 0 ? "_self" : "_blank"}
+                rel="noopener noreferrer"
+                onClick={handleDownloadClick}
+                className={`neon-download-btn [--download-glow:#FF0000] [--download-border:#ff8a8a] [--download-text:#ffffff] w-full max-w-3xl min-h-[84px] md:min-h-[102px] px-4 md:px-6 py-3 md:py-4 text-sm md:text-xl ${downloadStep === 1 ? "ring-2 ring-[#FF0000]/40" : ""}`}
+              >
+                <div className="w-full flex items-center justify-between gap-2 md:gap-4">
+                  <div className="flex items-center gap-2 md:gap-4 text-left min-w-0">
+                  <Download className={`h-5 w-5 md:h-7 md:w-7 shrink-0 ${downloadStep === 1 ? "animate-bounce" : ""}`} />
+                  <div className="min-w-0">
+                    <span className="block leading-tight break-words">
+                      {downloadStep === 0 ? "Step 1: Verify" : `Step 2: Download Remini v${APP_VERSIONS.reminiMod}`}
+                    </span>
+                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.16em] opacity-75 leading-tight">
+                      {downloadStep === 0 ? "Sponsored verification" : "Official package"}
+                    </span>
+                  </div>
+                  </div>
+                  <Badge className="bg-white/20 text-white font-black px-2.5 py-1 shrink-0">
+                  {downloadStep === 0 ? "1/2" : "2/2"}
+                  </Badge>
+                </div>
+              </a>
+            </div>
+
+            <div className="text-center text-xs text-muted-foreground font-medium mt-4">
+              {downloadStep === 0
+                ? "Click once to complete verification in a new tab, then return here and click again."
+                : "Verification complete. Click the button now to start APK download."}
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs font-semibold text-muted-foreground">
+              <span className="inline-flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-[#FF0000]" /> No login required</span>
+              <span className="opacity-50">•</span>
+              <span className="inline-flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-[#FF0000]" /> No VPN required</span>
+              <span className="opacity-50">•</span>
+              <span className="inline-flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-[#FF0000]" /> No root required</span>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-3 mt-4 text-center text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              <p>Version: {APP_VERSIONS.reminiMod}</p>
+              <p>Base: {APP_BASE_VERSIONS.reminiMod}</p>
+              <p>Updated: {APP_UPDATE_DATES.reminiMod.display}</p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4">
+              {APP_FEATURES.reminiMod.map((feature) => (
+                <div key={feature} className="rounded-xl border border-[#FF0000]/20 bg-background/40 px-3 py-2 text-xs font-bold text-center">
+                  {feature}
                 </div>
               ))}
-            </CardContent>
-          </Card>
+            </div>
 
-          <Card className="rounded-[2rem] bg-emerald-500/5 border-emerald-500/20 border-2">
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-3xl border-amber-500/30 bg-amber-500/5 mb-10">
+          <CardHeader>
+            <CardTitle className="text-xl font-black uppercase tracking-tight text-amber-600 flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5" /> Disclaimer
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground font-medium leading-relaxed">
+              This is a modified app and is not affiliated with Bending Spoons (official Remini developer). Using modded APKs has security risks, may violate terms of service, and could raise legal/copyright concerns depending on your region.
+            </p>
+          </CardContent>
+        </Card>
+
+
+        <section className="mb-12">
+          <Card className="rounded-3xl border-[#FF0000]/20 bg-[#FF0000]/5">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 uppercase tracking-tight font-black text-emerald-500"><ShieldCheck className="h-5 w-5" /> Safety Verification</CardTitle>
+              <CardTitle className="text-xl font-black uppercase tracking-tight text-[#FF0000] flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5" /> Feature Highlights
+              </CardTitle>
+              <p className="text-sm text-muted-foreground font-medium">
+                Live features synced from app config for Remini Mod v{APP_VERSIONS.reminiMod}.
+              </p>
             </CardHeader>
-            <CardContent className="space-y-6 text-foreground p-6">
-              <div className="flex gap-4 items-start p-4 rounded-2xl bg-background/40 border border-emerald-500/10">
-                <Smartphone className="h-8 w-8 text-emerald-500 shrink-0" />
-                <div>
-                  <h4 className="font-black text-sm uppercase tracking-tight mb-1">Device Tested</h4>
-                  <p className="text-xs font-medium text-muted-foreground leading-relaxed">Verified on Pixel 8, Samsung S24 Series, and OnePlus 12. 100% stable performance.</p>
-                </div>
-              </div>
-              <div className="flex gap-4 items-start p-4 rounded-2xl bg-background/40 border border-emerald-500/10">
-                <Lock className="h-8 w-8 text-emerald-500 shrink-0" />
-                <div>
-                  <h4 className="font-black text-sm uppercase tracking-tight mb-1">Encrypted Payload</h4>
-                  <p className="text-xs font-medium text-muted-foreground leading-relaxed">Secure server-to-device encrypted connection ensured for all APK transfers.</p>
-                </div>
+            <CardContent>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {APP_FEATURES.reminiMod.map((feature) => (
+                  <div key={feature} className="rounded-xl border border-[#FF0000]/20 bg-background/50 p-3 text-sm font-bold flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-[#FF0000] mt-0.5 shrink-0" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
-        </div>
+        </section>
 
-        <section className="pb-24">
-          <h2 className="text-4xl font-black mb-10 tracking-tighter uppercase text-center text-foreground">Step-By-Step <span className="text-[#FF0000] italic">Installation</span> Guide</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        <Card className="rounded-3xl border-[#FF0000]/20 bg-muted/20 mb-10">
+          <CardHeader>
+            <CardTitle className="text-xl font-black uppercase tracking-tight">Pre-Install Safety Checklist</CardTitle>
+          </CardHeader>
+          <CardContent className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm font-medium">
             {[
-              { t: "Step 1", icon: Trash2, title: "Uninstall Original", desc: "You must uninstall any version of Remini from the Play Store. Modded APKs have different signatures and will conflict, causing 'App not installed' errors." },
-              { t: "Step 2", icon: Settings, title: "Enable Sources", desc: "Go to Settings > Security and enable 'Install unknown apps' for your browser or file manager. Disable this immediately after installation." },
-              { t: "Step 3", icon: Download, title: "Download & Install", desc: "Download the Mod APK from our secure link. Open your file manager, navigate to 'Downloads', tap the APK, and select 'Install'." }
-            ].map((step, i) => (
-              <Card key={i} className="rounded-3xl border-[#FF0000]/10 bg-muted/30 relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-full h-1 bg-[#FF0000]/20 group-hover:bg-[#FF0000] transition-colors" />
+              "Backup important media before installing",
+              "Keep at least 1 GB free storage",
+              "Disable unknown source access after setup",
+              "Use only official AA Mods links"
+            ].map((item) => (
+              <div key={item} className="rounded-xl border border-[#FF0000]/15 bg-background/50 p-3 flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-[#FF0000] mt-0.5 shrink-0" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+
+        <section className="grid md:grid-cols-2 gap-6 mb-12">
+          {[
+            { icon: ShieldCheck, t: "Security Scanned", d: "Files are checked before listing using multi-engine scanning workflows." },
+            { icon: Users, t: "Community Approved", d: "Users report functionality feedback so unstable builds can be flagged quickly." },
+          ].map((item, idx) => (
+            <Card key={idx} className="rounded-3xl border-[#FF0000]/15 bg-muted/20">
+              <CardHeader>
+                <CardTitle className="font-black uppercase tracking-tight text-lg flex items-center gap-2">
+                  <item.icon className="h-5 w-5 text-[#FF0000]" /> {item.t}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground font-medium">{item.d}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-6">Step-by-Step Installation Guide</h2>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                icon: Trash2,
+                t: "Step 1: Uninstall Official App",
+                d: "Remove the Play Store Remini first. Signature mismatch causes 'App not installed' errors.",
+              },
+              {
+                icon: Settings,
+                t: "Step 2: Enable Unknown Sources",
+                d: "Settings > Security/Apps > Install unknown apps. Enable only for your browser or file manager.",
+              },
+              {
+                icon: FolderDown,
+                t: "Step 3: Install APK",
+                d: "Open Downloads, tap APK, and install. For split builds, use SAI installer if required.",
+              },
+            ].map((item, idx) => (
+              <Card key={idx} className="rounded-3xl border-[#FF0000]/15">
                 <CardHeader>
-                  <Badge className="w-fit mb-4 bg-[#FF0000] text-white border-none font-black uppercase tracking-widest text-[10px]">{step.t}</Badge>
-                  <CardTitle className="text-xl font-black uppercase tracking-tight flex items-center gap-2 text-foreground">
-                    <step.icon className="h-6 w-6 text-[#FF0000]" /> {step.title}
+                  <CardTitle className="font-black uppercase tracking-tight text-lg flex items-center gap-2">
+                    <item.icon className="h-5 w-5 text-[#FF0000]" /> {item.t}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-sm font-medium leading-relaxed">{step.desc}</p>
+                  <p className="text-sm text-muted-foreground font-medium">{item.d}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground mt-3 font-semibold">
+            Important: Disable unknown-source permission again after installation.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-6">Troubleshooting & FAQ</h2>
+          <div className="grid md:grid-cols-2 gap-5">
+            {[
+              {
+                icon: Bug,
+                q: "'App not installed' / 'Error parsing package'",
+                a: "Uninstall official Remini, free storage, re-download APK, and verify Android version compatibility.",
+              },
+              {
+                icon: AlertTriangle,
+                q: "App crashes or black screen",
+                a: "Clear cache/data, restart device, and close heavy background apps before relaunching.",
+              },
+              {
+                icon: Wifi,
+                q: "Network error: 'Oops, something went wrong'",
+                a: "Check internet stability, disable VPN, and retry later if Remini servers are overloaded.",
+              },
+              {
+                icon: ImageDown,
+                q: "Enhanced photos are not saving",
+                a: "Grant storage/files permission and ensure there is enough free space on your phone.",
+              },
+            ].map((item, idx) => (
+              <Card key={idx} className="rounded-3xl border-[#FF0000]/15 bg-muted/20">
+                <CardHeader>
+                  <CardTitle className="font-black tracking-tight text-lg flex items-center gap-2">
+                    <item.icon className="h-5 w-5 text-[#FF0000]" /> {item.q}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground font-medium">{item.a}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </section>
-
-        <Card className="rounded-[2.5rem] bg-red-500/5 border-red-500/20 mb-24 p-10 border-2">
-          <CardHeader className="text-center">
-            <AlertTriangle className="h-16 w-16 text-[#FF0000] mx-auto mb-6 animate-pulse" />
-            <CardTitle className="text-4xl font-black uppercase tracking-tighter text-[#FF0000]">Troubleshooting & Support</CardTitle>
-          </CardHeader>
-          <CardContent className="grid md:grid-cols-2 gap-10 mt-6">
-            <div className="space-y-4">
-              <h4 className="font-black uppercase tracking-tight text-xl text-foreground flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-[#FF0000]/10 flex items-center justify-center text-[#FF0000] text-sm">Q</span>
-                'App Not Installed'?
-              </h4>
-              <p className="text-muted-foreground font-medium leading-relaxed">This is almost always due to an existing official installation. You must uninstall the original Remini app completely, clear system cache, and ensure 1GB+ free space before trying again.</p>
-            </div>
-            <div className="space-y-4">
-              <h4 className="font-black uppercase tracking-tight text-xl text-foreground flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-[#FF0000]/10 flex items-center justify-center text-[#FF0000] text-sm">Q</span>
-                Server-Side Features?
-              </h4>
-              <p className="text-muted-foreground italic font-medium leading-relaxed">Note: Remini processes some filters on their own servers. Our mod unlocks all premium UI, Pro Cards, and unlimited usage, but specific AI-generation filters may vary based on server availability.</p>
-            </div>
-          </CardContent>
-        </Card>
       </div>
 
       <Footer />

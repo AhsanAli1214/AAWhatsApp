@@ -1,240 +1,217 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Download, 
-  CheckCircle2, 
-  Shield, 
-  Zap, 
-  Sparkles, 
-  Image as ImageIcon, 
-  History,
-  ShieldCheck,
-  ArrowRight,
-  ShieldAlert,
-  Users,
-  Star,
-  Lock,
-  EyeOff,
-  Infinity,
-  Camera,
-  Layers,
-  Clock
-} from "lucide-react";
-import { Link } from "wouter";
-import { APP_VERSIONS, APP_UPDATE_DATES } from "@/config/appConfig";
+import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
-import { Footer } from "@/components/Footer";
+import { Link } from "wouter";
+import {
+  ShieldCheck,
+  Users,
+  Zap,
+  Lock,
+  Infinity,
+  EyeOff,
+  Camera,
+  Sparkles,
+  Layers,
+  ArrowRight,
+  Clock,
+  Star,
+} from "lucide-react";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { APP_VERSIONS, APP_UPDATE_DATES, APP_FEATURES } from "@/config/appConfig";
 import reminiLogo from "@assets/download_1771149808669.png";
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
 
 export default function ReminiModPage() {
   const canonicalUrl = "https://aa-mods.vercel.app/remini-mod";
-  const HERO_IMAGE_URL = "https://i.postimg.cc/W4hMbDm9/image-1771089734969956.png";
   const version = APP_VERSIONS.reminiMod;
   const updateDate = APP_UPDATE_DATES.reminiMod.display;
+  const heroImageUrl = "https://i.postimg.cc/W4hMbDm9/image-1771089734969956.png";
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-[#8B0000]/30">
       <Helmet>
-        <title>Remini Mod APK {version} Download (100% Working, Premium Unlocked) 2026</title>
-        <meta name="description" content={`Download the latest, community-tested Remini Mod APK for free. Our secure, virus-scanned mod transforms old photos into HD masterpieces with all premium features unlocked, no ads, and no watermarks.`} />
-        <meta name="keywords" content="Remini Mod APK, Remini Pro APK, Remini Mod APK download, safe Remini mod, 100% working mod, AI photo enhancer, video enhancement, premium unlocked, free photo editor, unblur photos, photo restoration, Remini Mod APK latest version, AA Mods" />
+        <title>Remini Mod APK v{version} Download (100% Working, Premium Unlocked)</title>
+        <meta
+          name="description"
+          content="Download the latest, community-tested Remini Mod APK for free. Our secure, virus-scanned mod transforms old photos into HD masterpieces with all premium features unlocked, no ads, and no watermarks."
+        />
+        <meta
+          name="keywords"
+          content="Remini Mod APK, Remini Pro APK, Remini Mod APK download, safe Remini mod, 100% working mod, AI photo enhancer, video enhancement, premium unlocked, free photo editor, unblur photos, photo restoration, Remini Mod APK latest version"
+        />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content={`Remini Mod APK ${version} Download (100% Working, Premium Unlocked) | AA Mods`} />
-        <meta property="og:description" content="Download the latest, community-tested Remini Mod APK for free. Secure, virus-scanned mod with all premium features unlocked." />
-        <meta property="og:image" content={HERO_IMAGE_URL} />
+        <meta property="og:title" content={`Remini Mod APK v${version} Download (100% Working, Premium Unlocked)`} />
+        <meta
+          property="og:description"
+          content="AA Mods verified Remini Mod APK with premium unlocked, unlimited edits, no ads, and no watermarks."
+        />
+        <meta property="og:image" content={heroImageUrl} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remini Mod APK - Ultimate AI Photo Enhancer | AA Mods" />
-        <meta name="twitter:description" content="Transform old photos into HD masterpieces with all premium features unlocked." />
-        <meta name="twitter:image" content={HERO_IMAGE_URL} />
+        <meta name="twitter:title" content={`Remini Mod APK v${version} by AA Mods`} />
+        <meta name="twitter:description" content="Restore old photos in HD with premium Remini tools unlocked, ad-free workflow, and no watermark exports." />
+        <meta name="twitter:image" content={heroImageUrl} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "Remini Mod APK",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "Android",
-            "softwareVersion": version,
-            "offers": { 
-              "@type": "Offer", 
-              "price": "0", 
-              "priceCurrency": "USD" 
-            },
-            "author": {
-              "@type": "Person",
-              "name": "Ahsan Ali"
-            }
-          })}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://aa-mods.vercel.app/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Remini Mod",
-                "item": canonicalUrl
-              }
-            ]
+            name: "Remini Mod APK",
+            applicationCategory: "MultimediaApplication",
+            operatingSystem: "Android",
+            softwareVersion: version,
+            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+            aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", ratingCount: "25000" }
           })}
         </script>
       </Helmet>
 
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FF0000]/5 via-background to-background -z-10" />
-        <div className="container mx-auto px-4 text-center">
-          <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
-            <div className="w-32 h-32 mx-auto mb-8 rounded-3xl overflow-hidden shadow-2xl border-4 border-[#FF0000]/20">
-              <img src={reminiLogo} alt="Remini Mod Logo" className="w-full h-full object-cover" />
-            </div>
-            <Badge variant="outline" className="mb-6 px-4 py-1 text-[#FF0000] border-[#FF0000]/50 bg-[#FF0000]/10 font-black uppercase tracking-widest">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} className="text-center">
+            <img
+              src={reminiLogo}
+              alt="Remini Mod APK"
+              className="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-3xl border-4 border-[#FF0000]/20 shadow-2xl mb-6"
+            />
+            <Badge className="mb-6 bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 uppercase tracking-widest font-black px-4 py-1">
               AA Mods Verified
             </Badge>
-            <h1 className="text-5xl md:text-8xl font-black mb-6 tracking-tighter leading-none uppercase">
-              Remini <span className="text-[#FF0000] italic">Mod</span> APK
+            <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tight leading-none mb-5">
+              Unlock Your Memories with the
+              <span className="text-[#FF0000] italic"> 100% Working </span>
+              Remini Mod APK
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto font-medium leading-relaxed">
-              In a world where memories are captured digitally, the quality of our photos and videos is paramount. Remini Mod APK breathes new life into your visual memories by providing unrestricted access to premium features for free.
+            <p className="text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed font-medium">
+              At AA Mods, every Remini Mod APK is rigorously tested by our team and verified by our community to ensure it is safe and fully functional. Remini uses advanced AI to restore blurry, old, and faded media, while this premium-unlocked mod removes limits, ads, and watermarks.
             </p>
-            <div className="bg-[#FF0000]/5 border border-[#FF0000]/10 p-6 rounded-2xl mb-10 max-w-3xl mx-auto text-left">
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Remini is an AI-powered photo and video enhancement tool designed to restore and improve the quality of your media. While the standard version has significant limitations like a daily cap of five free enhancements and intrusive ads, the Remini Mod APK unlocks the full suite of "Pro" features.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
               <Link href="/remini-mod/download">
-                <Button size="lg" className="h-16 px-10 rounded-2xl text-lg font-bold shadow-xl shadow-[#FF0000]/20 bg-[#FF0000] hover:bg-[#8B0000]">
-                  <Download className="mr-3 h-6 w-6" /> Download Remini Mod
+                <Button size="lg" className="h-14 px-8 rounded-2xl font-bold bg-[#FF0000] hover:bg-[#c30000]">
+                  Download Now <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link href="/remini-mod/features">
-                <Button variant="outline" size="lg" className="h-16 px-10 rounded-2xl text-lg font-bold backdrop-blur-sm border-[#FF0000]/30 hover:bg-[#FF0000]/10">
-                   Explore All Features
+                <Button variant="outline" size="lg" className="h-14 px-8 rounded-2xl font-bold border-[#FF0000]/30 hover:bg-[#FF0000]/5">
+                  Explore Features
                 </Button>
               </Link>
             </div>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="py-20 border-y border-border/50 bg-[#FF0000]/5">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             {[
-              { icon: Users, label: "Active Users", value: "10M+" },
-              { icon: Star, label: "Rating", value: "4.9/5" },
-              { icon: Shield, label: "Safety Score", value: "100%" },
-              { icon: Clock, label: "Last Update", value: updateDate },
-            ].map((stat, i) => (
-              <div key={i} className="flex flex-col items-center text-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-[#FF0000]/10 flex items-center justify-center">
-                  <stat.icon className="w-6 h-6 text-[#FF0000]" />
-                </div>
-                <p className="text-2xl font-black">{stat.value}</p>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">{stat.label}</p>
-              </div>
+              { l: "Latest Version", v: `v${version}`, i: Star },
+              { l: "Last Update", v: updateDate, i: Clock },
+              { l: "Working Status", v: "100%", i: Zap },
+              { l: "Community", v: "Active", i: Users },
+            ].map((item, idx) => (
+              <Card key={idx} className="rounded-2xl border-[#FF0000]/15 bg-[#FF0000]/5">
+                <CardContent className="p-4 text-center">
+                  <item.i className="h-6 w-6 mx-auto text-[#FF0000] mb-2" />
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground font-bold">{item.l}</p>
+                  <p className="font-black text-lg">{item.v}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <Badge className="mb-4 bg-[#FF0000]/20 text-[#FF0000] border-none">Our Commitment</Badge>
-              <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight uppercase leading-none">
-                Why Choose <span className="text-[#FF0000] italic">AA Mods</span>?
-              </h2>
-              <div className="space-y-6">
-                <div className="flex gap-4 p-4 rounded-2xl bg-background/50 border border-[#FF0000]/10">
-                  <div className="h-12 w-12 rounded-xl bg-[#FF0000]/10 flex items-center justify-center shrink-0">
-                    <ShieldCheck className="h-6 w-6 text-[#FF0000]" />
-                  </div>
-                  <div>
-                    <h3 className="font-black text-xl mb-1 uppercase tracking-tight">Safety First</h3>
-                    <p className="text-muted-foreground">Our files are scanned with multiple top-tier antivirus engines before being listed. We are the safest source.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4 p-4 rounded-2xl bg-background/50 border border-[#FF0000]/10">
-                  <div className="h-12 w-12 rounded-xl bg-[#FF0000]/10 flex items-center justify-center shrink-0">
-                    <Zap className="h-6 w-6 text-[#FF0000]" />
-                  </div>
-                  <div>
-                    <h3 className="font-black text-xl mb-1 uppercase tracking-tight">100% Working</h3>
-                    <p className="text-muted-foreground">Tested by us and our community to ensure features like unlimited Pro Cards function as advertised.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4 p-4 rounded-2xl bg-background/50 border border-[#FF0000]/10">
-                  <div className="h-12 w-12 rounded-xl bg-[#FF0000]/10 flex items-center justify-center shrink-0">
-                    <Users className="h-6 w-6 text-[#FF0000]" />
-                  </div>
-                  <div>
-                    <h3 className="font-black text-xl mb-1 uppercase tracking-tight">Community Driven</h3>
-                    <p className="text-muted-foreground">Join a community that values quality and trust. Get real-time updates and active support.</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative">
-              <div className="absolute -inset-4 bg-[#FF0000]/20 blur-3xl rounded-full opacity-50 -z-10" />
-              <img src={HERO_IMAGE_URL} alt="Remini Mod AI Enhancement" className="rounded-[2.5rem] shadow-2xl border border-[#FF0000]/20 relative" />
-              <div className="absolute -bottom-6 -right-6 p-6 bg-background border border-[#FF0000]/30 rounded-2xl shadow-xl hidden md:block">
-                <p className="text-[#FF0000] font-black text-xl">PRO UNLOCKED</p>
-                <p className="text-[10px] text-muted-foreground uppercase font-bold">Verified Working</p>
-              </div>
-            </motion.div>
+      <section className="py-10 md:py-16 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-3 gap-6">
+          {[
+            {
+              icon: ShieldCheck,
+              title: "Safety First",
+              desc: "Files are scanned through multiple antivirus engines before publishing. We prioritize transparency and safer distribution.",
+            },
+            {
+              icon: Zap,
+              title: "100% Working Mods",
+              desc: "Our team and users validate core unlocks like premium tools, unlimited pro cards, no ads, and clean export experience.",
+            },
+            {
+              icon: Users,
+              title: "Community Driven",
+              desc: "Get help, report issues, and share your results with an actively moderated user community built around trust.",
+            },
+          ].map((item, idx) => (
+            <Card key={idx} className="rounded-3xl border-[#FF0000]/15 bg-background">
+              <CardHeader>
+                <CardTitle className="text-xl font-black uppercase tracking-tight flex items-center gap-2">
+                  <item.icon className="h-5 w-5 text-[#FF0000]" />
+                  {item.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground font-medium leading-relaxed">{item.desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-center mb-12">
+            Key Benefits of Our <span className="text-[#FF0000] italic">Remini Mod APK</span>
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {APP_FEATURES.reminiMod.map((feature, idx) => {
+              const iconByFeature = [Lock, Infinity, EyeOff, Sparkles, Layers, Camera][idx] ?? Sparkles;
+              const descriptionMap: Record<string, string> = {
+                "Premium/VIP Unlocked": "Access paid pro tools and AI filters without weekly subscription costs.",
+                "Unlimited Pro Cards": "No daily cap. Enhance as many photos and videos as you need.",
+                "No Ads, No Watermarks": "Smooth workflow with clean exports and no intrusive interruptions.",
+                "Advanced AI Technology": "Intelligent AI detects imperfections and improves facial and scene detail.",
+                "High-Resolution Output": "Export enhanced media in high quality, including large-format output.",
+                "100% Working & Safe": "Community-tested package with stable behavior and safer distribution checks.",
+              };
+              const Icon = iconByFeature;
+              return (
+                <Card key={feature} className="rounded-3xl border-[#FF0000]/15 bg-muted/20">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-black uppercase tracking-tight flex items-center gap-2">
+                      <Icon className="h-5 w-5 text-[#FF0000]" />
+                      {feature}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground font-medium">{descriptionMap[feature] ?? "Premium Remini capability enabled in this configured build."}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-24 container mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tight uppercase text-[#FF0000]">Key Benefits</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            { icon: Lock, title: "Premium/VIP Unlocked", desc: "Access all pro tools and unlimited enhancements without any cost." },
-            { icon: Infinity, title: "Unlimited Pro Cards", desc: "Edit as many photos and videos as you want without daily limits." },
-            { icon: EyeOff, title: "No Ads, No Watermarks", desc: "Enjoy an uninterrupted experience and export creations without branding." },
-            { icon: Camera, title: "Transform Low-Quality", desc: "Turn blurry and low-resolution media into crystal-clear HD." },
-            { icon: Sparkles, title: "Advanced AI Technology", desc: "Sophisticated artificial intelligence detects and fixes imperfections." },
-            { icon: Layers, title: "High-Resolution Output", desc: "Export enhanced media in high definition up to 4K." },
-          ].map((benefit, i) => (
-            <Card key={i} className="rounded-3xl border-[#FF0000]/10 bg-muted/50 hover:border-[#FF0000]/40 transition-all border-2 group">
-              <CardHeader className="items-center pb-2">
-                <div className="w-16 h-16 rounded-2xl bg-[#FF0000]/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <benefit.icon className="h-8 w-8 text-[#FF0000]" />
-                </div>
-                <CardTitle className="font-black text-2xl uppercase tracking-tight">{benefit.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground font-medium">{benefit.desc}</p>
-              </CardContent>
-            </Card>
-          ))}
+      <section className="pb-16">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <Card className="rounded-3xl border-[#FF0000]/20 bg-[#FF0000]/5">
+            <CardHeader>
+              <CardTitle className="text-2xl font-black uppercase tracking-tight">Who Should Use Remini Mod APK?</CardTitle>
+            </CardHeader>
+            <CardContent className="grid md:grid-cols-3 gap-4 text-sm">
+              <div className="rounded-2xl border border-[#FF0000]/15 bg-background/60 p-4">
+                <p className="font-black uppercase tracking-tight mb-1">Family Archives</p>
+                <p className="text-muted-foreground font-medium">Restore old portraits and faded family photos before printing or sharing.</p>
+              </div>
+              <div className="rounded-2xl border border-[#FF0000]/15 bg-background/60 p-4">
+                <p className="font-black uppercase tracking-tight mb-1">Creators & Editors</p>
+                <p className="text-muted-foreground font-medium">Clean up low-quality media for reels, thumbnails, and visual storytelling.</p>
+              </div>
+              <div className="rounded-2xl border border-[#FF0000]/15 bg-background/60 p-4">
+                <p className="font-black uppercase tracking-tight mb-1">Everyday Users</p>
+                <p className="text-muted-foreground font-medium">One-tap enhancement for blurry moments without subscriptions or limits.</p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
