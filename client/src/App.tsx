@@ -10,7 +10,6 @@ import { BackToTop } from "@/components/BackToTop";
 import ScrollToTop from "@/components/ScrollToTop";
 import { AdBlockDetector } from "@/components/AdBlockDetector";
 import { FloatingPoster } from "@/components/FloatingPoster";
-import { GlobalAdBanner } from "@/components/GlobalAdBanner";
 import { Helmet } from "react-helmet";
 import { PageTransition } from "@/components/PageTransition";
 import { TapFeedback } from "@/components/TapFeedback";
@@ -107,13 +106,26 @@ import { Navigation } from "@/components/Navigation";
 
 function App() {
   useEffect(() => {
-    // Initialize Google Analytics 4
-    // Replace with your actual Measurement ID
-    ReactGA.initialize("G-339VLBF7PM");
-    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+    const initAnalytics = () => {
+      ReactGA.initialize("G-339VLBF7PM");
+      ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+    };
+
+    const idleHandle =
+      "requestIdleCallback" in window
+        ? window.requestIdleCallback(initAnalytics, { timeout: 2000 })
+        : window.setTimeout(initAnalytics, 500);
 
     const cleanupImageOptimization = initImageOptimization();
-    return cleanupImageOptimization;
+
+    return () => {
+      if ("cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleHandle as number);
+      } else {
+        window.clearTimeout(idleHandle as number);
+      }
+      cleanupImageOptimization();
+    };
   }, []);
 
   return (
@@ -165,7 +177,6 @@ function App() {
           <PageTransition>
             <Router />
           </PageTransition>
-          <GlobalAdBanner />
           <BackToTop />
           <Analytics />
         </TooltipProvider>

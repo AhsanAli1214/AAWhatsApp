@@ -1,7 +1,6 @@
-import { Download, Server, ShieldCheck, HardDrive } from "lucide-react";
+import { Download, Server, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTrackDownload } from "@/hooks/use-downloads";
-import { useState, useEffect } from "react";
 
 interface DownloadOption {
   name: string;
@@ -15,7 +14,7 @@ const OPTIONS: DownloadOption[] = [
   {
     name: "Fast Server",
     icon: Server,
-    url: "https://otieu.com/4/10272561",
+    url: "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file",
     platform: "android",
     version: "latest",
   },
@@ -30,37 +29,18 @@ const OPTIONS: DownloadOption[] = [
 
 export function DownloadCard() {
   const { mutate: track } = useTrackDownload();
-  const [clickCount, setClickCount] = useState(0);
 
   const handleDownload = (option: DownloadOption) => {
-    const newCount = clickCount + 1;
-    setClickCount(newCount);
-
-    if (newCount === 1) {
-      // First click: show "best ads"
-      window.open("https://otieu.com/4/10272561", "_blank");
-      return;
-    }
-
-    // Second click or more: open the actual link
     track({
       version: option.version,
       platform: option.platform,
     });
-    
-    // Use the updated MediaFire link if it's the MediaFire option
-    const downloadUrl = option.name === "MediaFire" 
-      ? "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file"
-      : option.url;
 
-    window.open(downloadUrl, "_blank");
-    // Reset after successful download open
-    setClickCount(0);
+    window.open(option.url, "_blank");
   };
 
   return (
     <div className="glass-card rounded-3xl p-8 max-w-md w-full mx-auto relative overflow-hidden">
-      {/* Decorative background glow */}
       <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 blur-3xl rounded-full" />
       <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-accent/20 blur-3xl rounded-full" />
 
@@ -71,9 +51,7 @@ export function DownloadCard() {
           </div>
           <div>
             <h3 className="text-2xl font-bold font-display">Download APK</h3>
-            <p className="text-sm text-primary font-medium">
-              Latest Version • Safe • Secure
-            </p>
+            <p className="text-sm text-primary font-medium">Latest Version • Safe • Secure</p>
           </div>
         </div>
 

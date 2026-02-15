@@ -12,7 +12,6 @@ import {
   Smartphone,
   FileText,
   ArrowLeft,
-  AlertTriangle,
   Zap,
   Package,
   Calendar,
@@ -71,15 +70,6 @@ const installSteps = [
 
 export default function BusinessDownload() {
   const [downloadCount, setDownloadCount] = useState(5247853);
-  const [downloadStep, setDownloadStep] = useState(0);
-
-  const handleDownload = (e: React.MouseEvent) => {
-    if (downloadStep === 0) {
-      e.preventDefault();
-      setDownloadStep(1);
-      window.open("https://otieu.com/4/10538189", "_blank");
-    }
-  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -212,26 +202,14 @@ export default function BusinessDownload() {
             transition={{ delay: 0.3 }}
             className="flex flex-col items-center mb-12 gap-4"
           >
-            {downloadStep === 0 && (
-              <div className="flex items-center gap-2 text-blue-500 font-bold animate-pulse text-sm">
-                <AlertTriangle className="w-4 h-4" />
-                Note: First click opens verified advertisement to support
-                servers
-              </div>
-            )}
             <a
-              href={
-                downloadStep === 0 ? "#" : APP_DIRECT_DOWNLOAD_LINKS.aaBusiness
-              }
-              onClick={handleDownload}
-              target={downloadStep === 0 ? "_self" : "_blank"}
+              href={APP_DIRECT_DOWNLOAD_LINKS.aaBusiness}
+              target="_blank"
               rel="noopener noreferrer"
               className="neon-download-btn neon-download-btn--blue relative group overflow-hidden px-12 py-6 text-2xl w-full max-w-md text-center"
             >
               <Download className="w-8 h-8" />
-              {downloadStep === 0
-                ? "Start Secure Download"
-                : "Download from MediaFire"}
+              Download from MediaFire
             </a>
           </motion.div>
 

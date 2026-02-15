@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
-import { APP_BASE_VERSIONS, APP_MIRROR_DOWNLOAD_LINKS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
+import { APP_BASE_VERSIONS, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 
 import businessHeroJpg from "@/assets/security-hero-new.png";
 import businessDashboardPng from "@/assets/business-dashboard.png";
@@ -16,8 +16,6 @@ import businessAnalyticsJpg from "@/assets/business-analytics-premium.png";
 import businessSecurityJpg from "@/assets/security-analysis.png";
 import businessTeamPng from "@/assets/community-group.png";
 
-const AD_LINK = "https://otieu.com/4/10538189";
-const MEDIAFIRE_LINK = APP_MIRROR_DOWNLOAD_LINKS.aaBusiness;
 
 const comparisonData = [
   { feature: "Bulk Messaging (10k+)", official: false, gbBusiness: true, aaBusiness: true },

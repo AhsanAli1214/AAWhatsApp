@@ -6,6 +6,8 @@ import { createServer } from "http";
 const app = express();
 const httpServer = createServer(app);
 
+app.disable("x-powered-by");
+
 declare module "http" {
   interface IncomingMessage {
     rawBody: unknown;
@@ -14,26 +16,66 @@ declare module "http" {
 
 app.use(
   express.json({
+    limit: "1mb",
     verify: (req, _res, buf) => {
       req.rawBody = buf;
     },
   }),
 );
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false, limit: "1mb" }));
 
 // Security and Performance Headers
 app.use((req, res, next) => {
+  const isProduction = process.env.NODE_ENV === "production";
+
   res.setHeader("X-Content-Type-Options", "nosniff");
   res.setHeader("X-Frame-Options", "DENY");
-  res.setHeader("X-XSS-Protection", "1; mode=block");
-  res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
-  
-  if (req.url.startsWith("/assets") || req.url.startsWith("/attached_assets") || req.url.match(/\.(jpg|jpeg|png|gif|svg|webp|woff|woff2|ico)$/)) {
+  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self)");
+  res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+  res.setHeader("Cross-Origin-Resource-Policy", "same-site");
+  res.setHeader("X-Permitted-Cross-Domain-Policies", "none");
+  res.setHeader("X-DNS-Prefetch-Control", "off");
+  res.setHeader("Origin-Agent-Cluster", "?1");
+  if (isProduction) {
+    res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+  }
+
+  const scriptSrc = isProduction
+    ? "script-src 'self' 'unsafe-inline' https:"
+    : "script-src 'self' 'unsafe-inline' 'unsafe-eval' https:";
+  const connectSrc = isProduction
+    ? "connect-src 'self' https:"
+    : "connect-src 'self' https: ws: wss:";
+
+  const csp = [
+    "default-src 'self' https: data: blob:",
+    "base-uri 'self'",
+    "frame-ancestors 'none'",
+    "object-src 'none'",
+    "img-src 'self' https: data: blob:",
+    "font-src 'self' https: data:",
+    "style-src 'self' 'unsafe-inline' https:",
+    scriptSrc,
+    connectSrc,
+    "upgrade-insecure-requests",
+  ].join("; ");
+
+  res.setHeader("Content-Security-Policy", csp);
+
+  if (
+    req.url.startsWith("/assets") ||
+    req.url.startsWith("/attached_assets") ||
+    req.url.match(/\.(jpg|jpeg|png|gif|svg|webp|woff|woff2|ico)$/)
+  ) {
     res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+  } else if (req.url === "/" || req.url.endsWith(".html")) {
+    res.setHeader("Cache-Control", "public, max-age=300, must-revalidate");
   } else {
     res.setHeader("Cache-Control", "no-cache");
   }
+
   next();
 });
 
