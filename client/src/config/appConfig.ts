@@ -72,8 +72,8 @@ export const CAPCUT_PRO_CONFIG = {
 
 // Remini Mod Configuration
 export const REMINI_MOD_CONFIG = {
-  version: "v3.7.701",
-  baseVersion: "3.7.701.2024",
+  version: "v3.7.1260",
+  baseVersion: "3.7.1260.202519018",
   updateDate: {
     display: "February 15, 2026",
     short: "15/02/2026",
@@ -176,7 +176,7 @@ export const FLOATING_POSTER_CONFIG = {
   // Turn this on/off anytime
   enabled: true,
   // Change this to any poster image link
-  imageUrl: "https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png",
+  imageUrl: "https://i.postimg.cc/NM1ZG8Xj/generated-image-8244a26b-b3ee-487e-ae2c-13604ee32e9c.png",
   // Optional click destination (leave empty to disable click-through)
   targetUrl: "",
   alt: "AA Mods Poster",
