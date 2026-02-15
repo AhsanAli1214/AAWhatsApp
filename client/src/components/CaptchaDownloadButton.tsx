@@ -2,8 +2,14 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { Loader2, ShieldCheck } from "lucide-react";
 import type { SecureDownloadAsset } from "@shared/downloadAssets";
+import { getSecureDownloadUrl } from "@shared/downloadAssets";
+import { APP_SECURITY_CONFIG } from "@/config/appConfig";
 
-const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || "0x4AAAAAACdQRmOK43MRBy2f";
+const TURNSTILE_SITE_KEY = APP_SECURITY_CONFIG.turnstileSiteKey;
+const TURNSTILE_ACTION = APP_SECURITY_CONFIG.turnstileAction;
+const CAPTCHA_ENABLED =
+  (import.meta.env.VITE_ENABLE_DOWNLOAD_CAPTCHA ?? `${APP_SECURITY_CONFIG.enableDownloadCaptcha}`) !== "false";
+const RESOLVED_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || TURNSTILE_SITE_KEY;
 
 declare global {
   interface Window {
@@ -49,8 +55,8 @@ export function CaptchaDownloadButton({
       if (!container) return;
 
       const id = window.turnstile.render(container, {
-        sitekey: TURNSTILE_SITE_KEY,
-        action: `download_${asset}`,
+        sitekey: RESOLVED_SITE_KEY,
+        action: TURNSTILE_ACTION,
         callback: (receivedToken: string) => {
           setToken(receivedToken);
           setError(null);
@@ -98,6 +104,11 @@ export function CaptchaDownloadButton({
   }, []);
 
   const handleVerifyAndDownload = async () => {
+    if (!CAPTCHA_ENABLED) {
+      window.location.href = getSecureDownloadUrl(asset);
+      return;
+    }
+
     if (!token) {
       setError("Please complete CAPTCHA verification first.");
       return;
@@ -149,13 +160,19 @@ export function CaptchaDownloadButton({
     <div className="w-full flex flex-col items-center gap-3">
       <button
         type="button"
-        onClick={() => setShowCaptcha(true)}
+        onClick={() => {
+          if (CAPTCHA_ENABLED) {
+            setShowCaptcha(true);
+            return;
+          }
+          void handleVerifyAndDownload();
+        }}
         className={buttonClassName}
       >
         {children}
       </button>
 
-      {showCaptcha ? (
+      {showCaptcha && CAPTCHA_ENABLED ? (
         <div className={panelClassName || "w-full max-w-md rounded-2xl border border-primary/30 bg-background/70 p-4 space-y-3"}>
           <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground font-semibold uppercase tracking-wider">
             <ShieldCheck className="w-4 h-4 text-primary" /> Verify before download
