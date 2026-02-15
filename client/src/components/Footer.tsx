@@ -75,6 +75,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/remini-mod" className="text-muted-foreground transition-colors flex items-center gap-2 hover:text-foreground">
+                  <Sparkles className="w-3.5 h-3.5 text-primary/60" />
+                  Remini Mod
+                </Link>
+              </li>
+              <li>
                 <Link href="/" className="text-muted-foreground transition-colors flex items-center gap-2 hover:text-foreground">
                   <LayoutGrid className="w-3.5 h-3.5 text-muted-foreground/40" />
                   App Selector

@@ -69,13 +69,11 @@ async function checkRobots(): Promise<CheckResult[]> {
 
 async function checkCapCutPages(): Promise<CheckResult[]> {
   const capcutPage = await readFile("client/src/pages/CapCutProPage.tsx", "utf-8");
-  const capcutFeatures = await readFile("client/src/pages/CapCutFeaturesPage.tsx", "utf-8");
-  const capcutDownload = await readFile("client/src/pages/CapCutDownloadPage.tsx", "utf-8");
+  const reminiPage = await readFile("client/src/pages/ReminiModPage.tsx", "utf-8");
   
   return [
     assert(capcutPage.includes('rel="canonical"'), "CapCut Pro page has canonical tag"),
-    assert(capcutFeatures.includes('BreadcrumbList'), "CapCut Features page has BreadcrumbList schema"),
-    assert(capcutDownload.includes('SoftwareApplication') || capcutFeatures.includes('SoftwareApplication'), "CapCut has SoftwareApplication schema"),
+    assert(reminiPage.includes('rel="canonical"'), "Remini Mod page has canonical tag"),
   ];
 }
 

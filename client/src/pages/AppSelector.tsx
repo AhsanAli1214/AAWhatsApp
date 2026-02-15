@@ -65,6 +65,7 @@ export default function AppSelector() {
         <link rel="preload" as="image" href={AA_WHATSAPP_ICON_URL} />
         <link rel="preload" as="image" href={CAPCUT_ICON_URL} />
         <link rel="preload" as="image" href={AA_BUSINESS_ICON_URL} />
+        <link rel="preload" as="image" href="https://i.postimg.cc/BnzYJGWd/Remini-Mod-removebg-preview.png" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -325,6 +326,73 @@ export default function AppSelector() {
                       >
                         <Download className="w-5 h-5 mr-2" />
                         Download {APP_VERSIONS.aaBusiness}
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <Card className="h-full border-2 border-primary/20 hover:border-primary/50 transition-all duration-300 group overflow-visible">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 group-hover:scale-110 transition-transform">
+                    <img
+                      src="https://i.postimg.cc/BnzYJGWd/Remini-Mod-removebg-preview.png"
+                      alt="Remini Mod Icon"
+                      className="w-full h-full object-cover"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                      width="64"
+                      height="64"
+                    />
+                  </div>
+                  <h2 className="text-2xl font-bold mb-3">Remini Mod</h2>
+                  <p className="text-muted-foreground mb-6">
+                    AI Photo Enhancer. Unblur, restore, and enhance old photos
+                    into high-definition masterpieces instantly.
+                  </p>
+
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-center gap-3">
+                      <Sparkles className="w-5 h-5 text-primary" />
+                      <span className="text-sm">Premium Unlocked</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <ShieldCheck className="w-5 h-5 text-primary" />
+                      <span className="text-sm">100% Working Build</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Download className="w-5 h-5 text-primary" />
+                      <span className="text-sm">Free Pro Cards</span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-3">
+                    <Link href="/remini-mod">
+                      <Button
+                        className="w-full bg-primary hover:bg-primary/90"
+                        size="lg"
+                        data-testid="button-remini-mod"
+                      >
+                        <Sparkles className="w-5 h-5 mr-2" />
+                        Explore Remini Mod
+                      </Button>
+                    </Link>
+                    <Link href="/remini-mod/download">
+                      <Button
+                        variant="outline"
+                        className="w-full"
+                        size="lg"
+                        data-testid="button-remini-download"
+                      >
+                        <Download className="w-5 h-5 mr-2" />
+                        Download {APP_VERSIONS.reminiMod}
                       </Button>
                     </Link>
                   </div>

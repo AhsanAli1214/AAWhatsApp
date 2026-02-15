@@ -2,18 +2,21 @@ export const APP_VERSIONS = {
   aaWhatsApp: "V4.0",
   aaBusiness: "V1.0",
   capcutPro: "V17.3.0",
+  reminiMod: "v3.7.701",
 } as const;
 
 export const APP_VERSION_LOWER = {
   aaWhatsApp: APP_VERSIONS.aaWhatsApp.toLowerCase(),
   aaBusiness: APP_VERSIONS.aaBusiness.toLowerCase(),
   capcutPro: APP_VERSIONS.aaBusiness.toLowerCase(),
+  reminiMod: "v3.7.701",
 } as const;
 
 export const APP_BASE_VERSIONS = {
   aaWhatsApp: "2.25.36.73",
   aaBusiness: "2.25.29.77",
   capcutPro: "v17.3.0 Stable",
+  reminiMod: "3.7.701.2024",
 } as const;
 
 export const APP_CHANGELOGS = {
@@ -47,6 +50,12 @@ FIXED: Minor sync issues in catalog management`,
 ✅ Optimized & cleaned resources
 ✅ Faster loading & smooth UI
 ✅ Battery & performance optimized`,
+  reminiMod: `✅ Premium/VIP Unlocked
+✅ Unlimited Pro Cards
+✅ No Ads, No Watermarks
+✅ Advanced AI Technology
+✅ High-Resolution Output
+✅ 100% Working & Safe`,
 } as const;
 
 export const APP_UPDATE_DATES = {
@@ -65,12 +74,18 @@ export const APP_UPDATE_DATES = {
     short: "14/02/2026",
     iso: "2026-02-14",
   },
+  reminiMod: {
+    display: "February 15, 2026",
+    short: "15/02/2026",
+    iso: "2026-02-15",
+  },
 } as const;
 
 export const APP_DOWNLOAD_LINKS = {
   aaWhatsApp: "https://aa-mods.vercel.app/aa-whatsapp/download",
   aaBusiness: "https://aa-mods.vercel.app/aa-business/download",
   capcutPro: "https://aa-mods.vercel.app/capcut-pro/download",
+  reminiMod: "https://aa-mods.vercel.app/remini-mod/download",
 } as const;
 
 export const APP_WHATSAPP_PACKAGE_NAMES = {
@@ -87,6 +102,7 @@ export const APP_DIRECT_DOWNLOAD_LINKS = {
   aaWhatsApp: "https://ahsanali.short.gy/aa-wa-latest",
   aaBusiness: "https://ahsanali.short.gy/aa-wa-pro",
   capcutPro: "https://ahsanali.short.gy/capcut-ahsan",
+  reminiMod: "https://ahsanali.short.gy/remini-ahsan",
 } as const;
 
 export const APP_MIRROR_DOWNLOAD_LINKS = {
