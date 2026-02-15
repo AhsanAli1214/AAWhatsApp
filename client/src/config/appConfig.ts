@@ -55,17 +55,19 @@ export const CAPCUT_PRO_CONFIG = {
   },
   downloadLink: "https://aa-mods.vercel.app/capcut-pro/download",
   directDownloadLink: "https://ahsanali.short.gy/capcut-ahsan",
-  changelog: `✅ AI features working
-✅ All templates unlocked
-✅ Business creator mode enabled
-✅ Security notice removed
-✅ Multiple languages available
-✅ Regional restrictions removed
-✅ No internet connection error
-✅ No watermark on export
-✅ Optimized & cleaned resources
-✅ Faster loading & smooth UI
-✅ Battery & performance optimized`,
+  features: [
+    "AI features working",
+    "All templates unlocked",
+    "Business creator mode enabled",
+    "Security notice removed",
+    "Multiple languages available",
+    "Regional restrictions removed",
+    "No internet connection error",
+    "No watermark on export",
+    "Optimized & cleaned resources",
+    "Faster loading & smooth UI",
+    "Battery & performance optimized",
+  ],
 };
 
 // Remini Mod Configuration
@@ -79,12 +81,14 @@ export const REMINI_MOD_CONFIG = {
   },
   downloadLink: "https://aa-mods.vercel.app/remini-mod/download",
   directDownloadLink: "https://ahsanali.short.gy/remini-ahsan",
-  changelog: `✅ Premium/VIP Unlocked
-✅ Unlimited Pro Cards
-✅ No Ads, No Watermarks
-✅ Advanced AI Technology
-✅ High-Resolution Output
-✅ 100% Working & Safe`,
+  features: [
+    "Premium/VIP Unlocked",
+    "Unlimited Pro Cards",
+    "No Ads, No Watermarks",
+    "Advanced AI Technology",
+    "High-Resolution Output",
+    "100% Working & Safe",
+  ],
 };
 
 // Legacy Exports for Backward Compatibility
@@ -109,11 +113,25 @@ export const APP_BASE_VERSIONS = {
   reminiMod: REMINI_MOD_CONFIG.baseVersion,
 } as const;
 
+const splitLines = (value: string) =>
+  value
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => line.replace(/^(NEW:|IMPROVED:|FIXED:|✅)\s*/i, "").trim());
+
+export const APP_FEATURES = {
+  aaWhatsApp: splitLines(AA_WHATSAPP_CONFIG.changelog),
+  aaBusiness: splitLines(AA_BUSINESS_CONFIG.changelog),
+  capcutPro: CAPCUT_PRO_CONFIG.features,
+  reminiMod: REMINI_MOD_CONFIG.features,
+} as const;
+
 export const APP_CHANGELOGS = {
   aaWhatsApp: AA_WHATSAPP_CONFIG.changelog,
   aaBusiness: AA_BUSINESS_CONFIG.changelog,
-  capcutPro: CAPCUT_PRO_CONFIG.changelog,
-  reminiMod: REMINI_MOD_CONFIG.changelog,
+  capcutPro: CAPCUT_PRO_CONFIG.features.join("\n"),
+  reminiMod: REMINI_MOD_CONFIG.features.join("\n"),
 } as const;
 
 export const APP_UPDATE_DATES = {

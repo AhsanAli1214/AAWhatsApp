@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Download, Shield, CheckCircle2, Cpu, History, ArrowRight, Sparkles } from "lucide-react";
-import { APP_VERSIONS, APP_DIRECT_DOWNLOAD_LINKS, APP_UPDATE_DATES, APP_BASE_VERSIONS } from "@/config/appConfig";
+import { APP_VERSIONS, APP_DIRECT_DOWNLOAD_LINKS, APP_UPDATE_DATES, APP_BASE_VERSIONS, APP_FEATURES } from "@/config/appConfig";
 import { Helmet } from "react-helmet";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
@@ -149,6 +149,30 @@ export default function CapCutDownloadPage() {
           </Card>
         </motion.div>
 
+
+        <section className="mb-12">
+          <Card className="rounded-[2rem] border-primary/20 bg-primary/5">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-xl font-black uppercase tracking-widest">
+                <Sparkles className="h-5 w-5 text-primary" /> Feature Highlights
+              </CardTitle>
+              <CardDescription>
+                Config-synced premium features for CapCut Pro MOD ({APP_VERSIONS.capcutPro}).
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {APP_FEATURES.capcutPro.map((feature) => (
+                  <div key={feature} className="rounded-xl border border-primary/20 bg-background/50 p-3 text-sm font-bold flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           <div className="lg:col-span-2 space-y-6">
             <Card className="rounded-[2rem] border-white/5 bg-secondary/20">
@@ -212,12 +236,7 @@ export default function CapCutDownloadPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                {[
-                  "Security notice removed",
-                  "No suspicious permissions",
-                  "No forced login required",
-                  "Optimized for low/high-end devices",
-                ].map((item) => (
+                {APP_FEATURES.capcutPro.slice(0, 6).map((item) => (
                   <div key={item} className="flex items-center gap-3 text-sm font-bold">
                     <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                     {item}

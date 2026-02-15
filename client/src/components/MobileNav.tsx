@@ -16,13 +16,13 @@ type NavItem = {
   hash?: boolean;
 };
 
-function NavTab({ item, isActive, isBusiness }: { item: NavItem; isActive: boolean; isBusiness: boolean }) {
+function NavTab({ item, isActive, isBusiness, isRemini }: { item: NavItem; isActive: boolean; isBusiness: boolean; isRemini: boolean }) {
   const Icon = item.icon;
 
   const content = (
     <div
       className={`relative flex flex-col items-center justify-center min-w-[56px] h-full transition-all duration-500 active:scale-90 ${
-        isActive ? "text-primary" : "text-muted-foreground/40"
+        isActive ? (isBusiness ? "text-blue-400" : isRemini ? "text-[#FF0000]" : "text-primary") : (isRemini ? "text-[#ff8c8c]/65" : "text-muted-foreground/40")
       }`}
     >
       <div className="flex flex-col items-center group">
@@ -49,6 +49,8 @@ function NavTab({ item, isActive, isBusiness }: { item: NavItem; isActive: boole
               className={`absolute -bottom-1 w-4 h-0.5 rounded-full ${
                 isBusiness
                   ? "bg-blue-400 shadow-[0_0_12px_rgba(96,165,250,1)]"
+                  : isRemini
+                  ? "bg-[#FF0000] shadow-[0_0_12px_rgba(255,0,0,0.9)]"
                   : "bg-primary shadow-[0_0_12px_rgba(16,185,129,1)]"
               }`}
             />
@@ -103,15 +105,18 @@ export function MobileNav() {
     <div className="lg:hidden fixed bottom-0 left-0 right-0 z-[60] pb-safe">
       <div
         className={`relative border-t border-white/5 px-1 pt-2 pb-3 shadow-[0_-20px_60px_rgba(0,0,0,0.6)] ring-1 ring-inset ring-white/10 ${
-          isCapCut || isRemini
+          isCapCut
             ? "bg-background/95 supports-[backdrop-filter]:bg-background/85 supports-[backdrop-filter]:backdrop-blur-xl"
+            : isRemini
+            ? "bg-gradient-to-b from-[#2a0000]/95 via-[#160000]/95 to-background/95 supports-[backdrop-filter]:backdrop-blur-xl border-[#FF0000]/30 ring-[#FF0000]/20"
             : "bg-background/40 backdrop-blur-[32px]"
         }`}
       >
+        {isRemini && <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#FF0000]/70 to-transparent" />}
         <nav className="flex items-center justify-around max-w-lg mx-auto h-14">
           {navItems.map((item) => {
             const isActive = item.hash ? location === item.href.split("#")[0] : location === item.href;
-            return <NavTab key={item.href} item={item} isActive={isActive} isBusiness={isBusiness} />;
+            return <NavTab key={item.href} item={item} isActive={isActive} isBusiness={isBusiness} isRemini={isRemini} />;
           })}
         </nav>
       </div>

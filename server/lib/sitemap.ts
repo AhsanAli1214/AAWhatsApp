@@ -19,20 +19,18 @@ export async function generateSitemap() {
     const baseUrl = "https://aa-mods.vercel.app";
     const today = new Date().toISOString().split("T")[0];
 
-    // Static routes with specific priorities
+    // Static routes mapped from client/src/App.tsx (+ sitemap.xml endpoint)
     const routes = [
       { path: "/", priority: "1.0", changefreq: "daily" },
+
       { path: "/aa-whatsapp", priority: "0.9", changefreq: "daily" },
-      { path: "/aa-whatsapp/features", priority: "0.8", changefreq: "weekly" },
       { path: "/aa-whatsapp/about", priority: "0.7", changefreq: "monthly" },
       { path: "/aa-whatsapp/comparison", priority: "0.8", changefreq: "weekly" },
+      { path: "/aa-whatsapp/features", priority: "0.8", changefreq: "weekly" },
       { path: "/aa-whatsapp/faq", priority: "0.8", changefreq: "daily" },
       { path: "/aa-whatsapp/download", priority: "1.0", changefreq: "daily" },
       { path: "/aa-whatsapp/blog", priority: "0.8", changefreq: "daily" },
-      { path: "/blog", priority: "0.8", changefreq: "daily" },
-      { path: "/sitemap", priority: "0.3", changefreq: "monthly" },
-      { path: "/sitemap.xml", priority: "0.3", changefreq: "monthly" },
-      
+
       { path: "/aa-business", priority: "0.9", changefreq: "daily" },
       { path: "/aa-business/about", priority: "0.7", changefreq: "monthly" },
       { path: "/aa-business/features", priority: "0.8", changefreq: "weekly" },
@@ -40,22 +38,27 @@ export async function generateSitemap() {
       { path: "/aa-business/comparison", priority: "0.8", changefreq: "weekly" },
       { path: "/aa-business/faq", priority: "0.8", changefreq: "daily" },
       { path: "/aa-business/blog", priority: "0.8", changefreq: "daily" },
+
+      { path: "/capcut-pro", priority: "0.9", changefreq: "daily" },
+      { path: "/capcut-pro/features", priority: "0.8", changefreq: "weekly" },
+      { path: "/capcut-pro/download", priority: "1.0", changefreq: "daily" },
+
+      { path: "/remini-mod", priority: "0.9", changefreq: "daily" },
+      { path: "/remini-mod/features", priority: "0.8", changefreq: "weekly" },
+      { path: "/remini-mod/download", priority: "1.0", changefreq: "daily" },
+
+      // legacy/shortcut routes still served in App.tsx
       { path: "/aa-business-whatsapp", priority: "0.7", changefreq: "monthly" },
       { path: "/business-download", priority: "0.7", changefreq: "monthly" },
       { path: "/faq", priority: "0.7", changefreq: "weekly" },
       { path: "/download", priority: "0.8", changefreq: "daily" },
-      
+      { path: "/blog", priority: "0.8", changefreq: "daily" },
+
       { path: "/privacy", priority: "0.3", changefreq: "monthly" },
       { path: "/terms", priority: "0.3", changefreq: "monthly" },
       { path: "/support", priority: "0.5", changefreq: "weekly" },
-      
-      { path: "/capcut-pro", priority: "0.9", changefreq: "daily" },
-      { path: "/capcut-pro/features", priority: "0.8", changefreq: "weekly" },
-      { path: "/capcut-pro/download", priority: "1.0", changefreq: "daily" },
-      
-      { path: "/remini-mod", priority: "0.9", changefreq: "daily" },
-      { path: "/remini-mod/features", priority: "0.8", changefreq: "weekly" },
-      { path: "/remini-mod/download", priority: "1.0", changefreq: "daily" },
+      { path: "/sitemap", priority: "0.3", changefreq: "monthly" },
+      { path: "/sitemap.xml", priority: "0.3", changefreq: "monthly" },
     ];
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -75,7 +78,7 @@ export async function generateSitemap() {
     // Add blog posts for both blog entry points
     const blogPosts = await loadBlogPosts();
     if (Array.isArray(blogPosts)) {
-      const blogPrefixes = ["/blog", "/aa-whatsapp/blog", "/aa-business/blog"];
+      const blogPrefixes = ["/blog", "/aa-whatsapp/blog"];
       blogPosts.forEach(post => {
         if (post && post.slug) {
           const publishedDate = new Date(post.publishedAt || today);

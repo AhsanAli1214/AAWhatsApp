@@ -1,68 +1,64 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Sparkles,
-  ShieldCheck,
-  Zap,
-  Bot,
-  Baby,
-  Clock,
-  UserCheck,
-  Layers,
-  Eraser,
-  Image as ImageIcon,
-  Scan,
-  Palette,
-  Eye,
-  Trash2,
-  ShieldAlert,
-  Scissors
-} from "lucide-react";
 import { Helmet } from "react-helmet";
-import { Footer } from "@/components/Footer";
-import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import {
+  Scan,
+  Eye,
+  Palette,
+  Layers,
+  UserCheck,
+  Eraser,
+  Sparkles,
+  Scissors,
+  Baby,
+  Zap,
+  Clock,
+  Heart,
+  Lock,
+  Infinity,
+  ShieldCheck,
+  EyeOff,
+  AlertTriangle,
+} from "lucide-react";
+import { APP_FEATURES, APP_UPDATE_DATES } from "@/config/appConfig";
 import reminiLogo from "@assets/download_1771149808669.png";
 
 export default function ReminiFeaturesPage() {
   const canonicalUrl = "https://aa-mods.vercel.app/remini-mod/features";
-  const HERO_IMAGE_URL = "https://i.postimg.cc/W4hMbDm9/image-1771089734969956.png";
+  const verifiedDate = APP_UPDATE_DATES.reminiMod.display;
+  const heroImageUrl = "https://i.postimg.cc/W4hMbDm9/image-1771089734969956.png";
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-[#8B0000]/30">
       <Helmet>
         <title>Remini Mod APK Features | Pro Unlocked (Verified Working), AI Filters</title>
-        <meta name="description" content="Explore the powerful, community-verified features of Remini Mod APK. From AI-powered photo restoration to fun filters like the baby generator and hairstyle feature." />
-        <meta name="keywords" content="Remini Mod APK features, AI filters, video enhancer, photo restoration, unblur, color correction, AI art generator, premium unlocked, unlimited pro cards, hairstyle feature, community tested mod, AA Mods" />
+        <meta
+          name="description"
+          content="Explore the powerful, community-verified features of Remini Mod APK. From AI-powered photo restoration to fun filters like the baby generator and hairstyle feature, discover everything you get with our tested and working premium unlocked version."
+        />
+        <meta
+          name="keywords"
+          content="Remini Mod APK features, AI filters, video enhancer, photo restoration, unblur, color correction, AI art generator, premium unlocked, unlimited pro cards, hairstyle feature, community tested mod"
+        />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content="Remini Mod APK Features | Pro Unlocked (Verified Working) | AA Mods" />
-        <meta property="og:description" content="Discover everything you get with our tested and working premium unlocked version of Remini." />
-        <meta property="og:image" content={HERO_IMAGE_URL} />
+        <meta property="og:title" content="Remini Mod APK Features | Pro Unlocked (Verified Working)" />
+        <meta property="og:description" content="Explore tested Remini enhancement tools, AI creative filters, and premium unlocked benefits in one complete guide." />
+        <meta property="og:image" content={heroImageUrl} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Remini Mod APK Features Guide" />
+        <meta name="twitter:description" content="Complete verified feature list: restoration tools, AI filters, and premium unlocked capabilities." />
+        <meta name="twitter:image" content={heroImageUrl} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://aa-mods.vercel.app/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Remini Mod",
-                "item": "https://aa-mods.vercel.app/remini-mod"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Features",
-                "item": canonicalUrl
-              }
+            "@type": "FAQPage",
+            mainEntity: [
+              {"@type": "Question", name: "Are all Remini premium features always unlocked?", acceptedAnswer: {"@type": "Answer", text: "Most client-side features are unlocked, but some server-side actions may vary by build and server checks."}},
+              {"@type": "Question", name: "Can Remini Mod improve very old photos?", acceptedAnswer: {"@type": "Answer", text: "Yes, core tools can sharpen, denoise, color-correct, and upscale many old images."}}
             ]
           })}
         </script>
@@ -70,112 +66,115 @@ export default function ReminiFeaturesPage() {
 
       <Navigation />
 
-      <section className="pt-32 pb-12 container mx-auto px-4 max-w-6xl">
-        <div className="text-center">
-          <img src={reminiLogo} alt="Remini Logo" className="w-20 h-20 mx-auto mb-6 rounded-2xl shadow-lg border-2 border-[#FF0000]/20" />
-          <Badge className="mb-5 bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 uppercase tracking-widest font-black px-4 py-1">
-            Verified & Tested Features
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase leading-none">
-            In-Depth <span className="text-[#FF0000] italic">Features</span>
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto font-medium leading-relaxed">
-            Remini Mod APK is packed with a diverse set of tools that cater to both professional and casual users. By leveraging the power of artificial intelligence, this modified application provides a comprehensive suite of features to enhance, restore, and creatively transform your photos and videos.
-          </p>
-        </div>
+      <section className="pt-32 pb-12 container mx-auto px-4 max-w-6xl text-center">
+        <img src={reminiLogo} alt="Remini" className="w-20 h-20 mx-auto mb-5 rounded-2xl border-2 border-[#FF0000]/20" />
+        <Badge className="mb-4 bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 uppercase tracking-widest font-black px-4 py-1">
+          Verified & Tested
+        </Badge>
+        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4">
+          In-Depth Features of <span className="text-[#FF0000] italic">Remini Mod APK</span>
+        </h1>
+        <p className="text-muted-foreground max-w-4xl mx-auto font-medium">
+          Remini Mod APK combines professional restoration tools with creative AI filters. Our list below is structured with clear verification labels so users know what has been tested and what can vary by server-side processing.
+        </p>
       </section>
 
-      <section className="container mx-auto px-4 max-w-6xl pb-24">
-        <div className="grid md:grid-cols-2 gap-12 mb-20">
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-black mb-8 uppercase tracking-tight flex items-center gap-3">
-              <ImageIcon className="text-[#FF0000]" /> Core Restoration & Enhancement
-            </h2>
-            <div className="grid gap-6">
-              {[
-                { title: "Photo & Video Restoration (Tested)", desc: "Flagship feature that repairs old, pixelated, or damaged media by upscaling and adding pixels intelligently.", icon: Scan },
-                { title: "Unblur & Sharpen (Verified)", desc: "Say goodbye to blurry images. The app intelligently removes motion blur and sharpens details for high-definition clarity.", icon: Eye },
-                { title: "Auto Color & Colorize", desc: "Revive faded photos with Auto Color, and colorize historic black and white images with community-confirmed accuracy.", icon: Palette },
-                { title: "Denoising", desc: "Effectively removes grain and noise from old photos for a smoother professional look.", icon: Layers },
-                { title: "Face Enhancer", desc: "Portrait mode focus that clears blemishes, enhances details, and applies studio lighting.", icon: UserCheck },
-                { title: "Object Removal", desc: "Advanced tools to modify, remove, or replace backgrounds and unwanted objects.", icon: Trash2 }
-              ].map((f, i) => (
-                <Card key={i} className="rounded-2xl border-[#FF0000]/10 hover:border-[#FF0000]/40 transition-all group border-2">
-                  <CardHeader className="p-6">
-                    <div className="flex items-start justify-between mb-2">
-                      <CardTitle className="text-xl font-black group-hover:text-[#FF0000] transition-colors leading-tight">
-                        {f.title}
-                      </CardTitle>
-                      <f.icon className="h-6 w-6 text-[#FF0000]/40 group-hover:text-[#FF0000] transition-colors" />
-                    </div>
-                    <CardDescription className="text-muted-foreground font-medium">{f.desc}</CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-          </motion.div>
+      <section className="container mx-auto px-4 max-w-6xl pb-24 grid md:grid-cols-2 gap-6">
+        <Card className="rounded-3xl border-[#FF0000]/15 bg-muted/20">
+          <CardHeader>
+            <CardTitle className="font-black uppercase tracking-tight text-2xl">Core Enhancement & Restoration</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {[
+              { icon: Scan, t: "Photo & Video Restoration (Tested & Working)", d: "Repairs old, pixelated, and damaged visuals, including upscale and scratch recovery." },
+              { icon: Eye, t: `Unblur & Sharpen (Verified on ${verifiedDate})`, d: "Improves detail clarity and reduces motion blur for crisper output." },
+              { icon: Palette, t: "Auto Color & Colorize (Community Confirmed)", d: "Revives faded photos and colorizes black-and-white media with AI-assisted tones." },
+              { icon: Layers, t: "Denoising", d: "Removes grain and digital noise to produce cleaner images." },
+              { icon: UserCheck, t: "Face Enhancer & Portrait Mode", d: "Boosts facial detail, smooths blemishes, and improves portrait lighting." },
+              { icon: Eraser, t: "Background & Object Removal", d: "Some builds include quick tools to remove objects or replace backgrounds." },
+            ].map((item, idx) => (
+              <div key={idx} className="p-4 rounded-2xl border border-[#FF0000]/10 bg-background/60">
+                <p className="font-black text-sm uppercase tracking-tight flex items-center gap-2 mb-1">
+                  <item.icon className="h-4 w-4 text-[#FF0000]" /> {item.t}
+                </p>
+                <p className="text-sm text-muted-foreground font-medium">{item.d}</p>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
 
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-black mb-8 uppercase tracking-tight flex items-center gap-3">
-              <Bot className="text-[#FF0000]" /> Creative AI Playground
-            </h2>
-            <div className="grid gap-6">
-              {[
-                { title: "AI Art Generator", desc: "Transform photos into stylized avatars or various artistic styles instantly.", icon: Sparkles },
-                { title: "AI Baby Generator", desc: "Viral feature that analyzes photos to generate realistic potential baby images.", icon: Baby },
-                { title: "Hairstyle Feature", desc: "Experiment with different hairstyles and colors using AI salon filters.", icon: Scissors },
-                { title: "Aging Video Feature", desc: "High-resolution time-lapse or static image of how you might age.", icon: Clock },
-                { title: "Wedding & Pregnant Filters", desc: "Visualize yourself in a wedding look or with a baby bump fun filters.", icon: Sparkles },
-                { title: "Gender Swap", desc: "Alter facial structure and hairstyle to see a different side of yourself.", icon: Bot }
-              ].map((f, i) => (
-                <Card key={i} className="rounded-2xl border-[#FF0000]/10 hover:border-[#FF0000]/40 transition-all group border-2">
-                  <CardHeader className="p-6">
-                    <div className="flex items-start justify-between mb-2">
-                      <CardTitle className="text-xl font-black group-hover:text-[#FF0000] transition-colors leading-tight">
-                        {f.title}
-                      </CardTitle>
-                      <f.icon className="h-6 w-6 text-[#FF0000]/40 group-hover:text-[#FF0000] transition-colors" />
-                    </div>
-                    <CardDescription className="text-muted-foreground font-medium">{f.desc}</CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+        <Card className="rounded-3xl border-[#FF0000]/15 bg-muted/20">
+          <CardHeader>
+            <CardTitle className="font-black uppercase tracking-tight text-2xl">Creative AI-Powered Filters</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {[
+              { icon: Sparkles, t: "AI Art Generator & Avatars", d: "Generate artistic portraits and stylized avatar looks from your photos." },
+              { icon: Scissors, t: "Hairstyle Feature", d: "Try virtual haircuts and colors using Remini’s AI hair simulation tools." },
+              { icon: Baby, t: "AI Baby Generator", d: "Create potential baby predictions from selected photos." },
+              { icon: Zap, t: "Gender Swap", d: "View alternate facial structure and style transformations." },
+              { icon: Clock, t: "Aging Video Feature", d: "Preview age progression through high-resolution time-lapse style outputs." },
+              { icon: Heart, t: "AI Wedding & Pregnant Filters", d: "Use fun scenario-based filters for social content and edits." },
+            ].map((item, idx) => (
+              <div key={idx} className="p-4 rounded-2xl border border-[#FF0000]/10 bg-background/60">
+                <p className="font-black text-sm uppercase tracking-tight flex items-center gap-2 mb-1">
+                  <item.icon className="h-4 w-4 text-[#FF0000]" /> {item.t}
+                </p>
+                <p className="text-sm text-muted-foreground font-medium">{item.d}</p>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
 
-        <Card className="rounded-[3rem] border-[#FF0000]/20 bg-[#FF0000]/5 p-10 md:p-16 overflow-hidden relative border-4">
-          <div className="absolute top-0 right-0 p-12 opacity-10">
-            <ShieldCheck className="w-80 h-80 text-[#FF0000]" />
-          </div>
-          <div className="relative z-10">
-            <Badge className="mb-6 bg-[#FF0000] text-white px-4 py-1 uppercase font-black">Premium Unlocked</Badge>
-            <h2 className="text-5xl md:text-6xl font-black mb-10 uppercase tracking-tighter leading-none">Exclusive Mod <span className="text-[#FF0000] italic">Benefits</span></h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { title: "VIP Unlocked", icon: UserCheck, desc: "All pro features free" },
-                { title: "Unlimited Cards", icon: Layers, desc: "No daily processing limits" },
-                { title: "Ad-Free", icon: ShieldCheck, desc: "Zero interruptions" },
-                { title: "No Watermark", icon: Eraser, desc: "Clean HD exports" }
-              ].map((b, i) => (
-                <div key={i} className="flex flex-col gap-4 bg-background/80 backdrop-blur-sm p-8 rounded-3xl border border-[#FF0000]/10 shadow-xl">
-                  <b.icon className="h-10 w-10 text-[#FF0000]" />
-                  <div>
-                    <span className="block font-black uppercase tracking-tight text-xl mb-1 leading-none">{b.title}</span>
-                    <span className="text-xs text-muted-foreground font-bold uppercase tracking-widest">{b.desc}</span>
-                  </div>
+        <Card className="rounded-3xl border-[#FF0000]/15 bg-[#FF0000]/5 md:col-span-2">
+          <CardHeader>
+            <CardTitle className="font-black uppercase tracking-tight text-2xl">Exclusive Mod APK Benefits (Premium Unlocked)</CardTitle>
+          </CardHeader>
+          <CardContent className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {APP_FEATURES.reminiMod.map((feature, idx) => {
+              const icons = [Lock, Infinity, EyeOff, Sparkles, Layers, ShieldCheck];
+              const Icon = icons[idx] ?? ShieldCheck;
+              return (
+                <div key={feature} className="rounded-2xl p-4 border border-[#FF0000]/15 bg-background/70 text-center">
+                  <Icon className="h-5 w-5 text-[#FF0000] mx-auto mb-2" />
+                  <p className="font-black text-sm uppercase tracking-tight">{feature}</p>
                 </div>
-              ))}
+              );
+            })}
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-3xl border-[#FF0000]/15 bg-muted/20 md:col-span-2">
+          <CardHeader>
+            <CardTitle className="font-black uppercase tracking-tight text-2xl">Best-Use Workflow (Quick Tips)</CardTitle>
+          </CardHeader>
+          <CardContent className="grid md:grid-cols-3 gap-4 text-sm">
+            <div className="rounded-2xl border border-[#FF0000]/10 bg-background/60 p-4">
+              <p className="font-black uppercase mb-1">1. Start with Restore</p>
+              <p className="text-muted-foreground font-medium">Use restoration + unblur first before applying creative AI filters.</p>
             </div>
-            
-            <div className="mt-12 p-6 rounded-2xl bg-background/40 border border-[#FF0000]/20">
-              <p className="text-sm font-bold text-muted-foreground flex items-center gap-2">
-                <ShieldAlert className="h-4 w-4 text-[#FF0000]" />
-                <span className="uppercase tracking-widest">Transparency Promise:</span>
-                Some premium features are server-sided. We aim for 100% functionality but server processing may vary.
-              </p>
+            <div className="rounded-2xl border border-[#FF0000]/10 bg-background/60 p-4">
+              <p className="font-black uppercase mb-1">2. Apply Color Tools</p>
+              <p className="text-muted-foreground font-medium">Run colorize and denoise for cleaner skin tones and texture balance.</p>
             </div>
-          </div>
+            <div className="rounded-2xl border border-[#FF0000]/10 bg-background/60 p-4">
+              <p className="font-black uppercase mb-1">3. Export High Quality</p>
+              <p className="text-muted-foreground font-medium">Export after final sharpening to preserve maximum visual clarity.</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-3xl border-amber-500/30 bg-amber-500/5 md:col-span-2">
+          <CardHeader>
+            <CardTitle className="font-black uppercase tracking-tight text-xl text-amber-600 flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5" /> Important Caveat (Transparency Promise)
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground font-medium leading-relaxed">
+              Some premium Remini actions are server-sided. In certain app builds, those specific server-validated features may remain partially locked, even when UI unlocks, unlimited cards, and ad removal are working. We publish this clearly so users have realistic expectations.
+            </p>
+          </CardContent>
         </Card>
       </section>
 
