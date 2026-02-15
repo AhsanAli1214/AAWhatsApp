@@ -30,6 +30,7 @@ const AA_WHATSAPP_ICON_URL =
 const CAPCUT_ICON_URL = "https://i.postimg.cc/mrJgFdCL/Cap-Cut-Pro.png";
 const AA_BUSINESS_ICON_URL =
   "https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg";
+const REMINI_ICON_URL = "https://i.postimg.cc/BnzYJGWd/Remini-Mod-removebg-preview.png";
 
 export default function AppSelector() {
   return (
@@ -65,7 +66,7 @@ export default function AppSelector() {
         <link rel="preload" as="image" href={AA_WHATSAPP_ICON_URL} />
         <link rel="preload" as="image" href={CAPCUT_ICON_URL} />
         <link rel="preload" as="image" href={AA_BUSINESS_ICON_URL} />
-        <link rel="preload" as="image" href="https://i.postimg.cc/BnzYJGWd/Remini-Mod-removebg-preview.png" />
+        <link rel="preload" as="image" href={REMINI_ICON_URL} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -342,7 +343,7 @@ export default function AppSelector() {
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden mb-6 group-hover:scale-110 transition-transform">
                     <img
-                      src="https://i.postimg.cc/BnzYJGWd/Remini-Mod-removebg-preview.png"
+                      src={REMINI_ICON_URL}
                       alt="Remini Mod Icon"
                       className="w-full h-full object-cover"
                       loading="eager"

@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Send, Shield, Zap, Lock, BookOpen, HelpCircle, LayoutGrid, Info, Video } from "lucide-react";
+import { Send, Shield, Zap, Lock, BookOpen, HelpCircle, LayoutGrid, Info, Video, Sparkles } from "lucide-react";
 
 export function Footer() {
   const [location] = useLocation();
