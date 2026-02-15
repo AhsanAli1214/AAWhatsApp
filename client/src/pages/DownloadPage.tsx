@@ -17,7 +17,6 @@ import {
   Shield,
   Sparkles,
   History,
-  ExternalLink,
   Lock as LockIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,7 +24,7 @@ import { Link, useLocation } from "wouter";
 import { Footer } from "@/components/Footer";
 import { APP_BASE_VERSIONS, APP_CHANGELOGS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS, APP_WHATSAPP_PACKAGE_NAMES } from "@/config/appConfig";
 import { SECURE_DOWNLOAD_ASSETS } from "@shared/downloadAssets";
-import { CaptchaDownloadButton } from "@/components/CaptchaDownloadButton";
+import { DirectDownloadButton } from "@/components/DirectDownloadButton";
 
 const versionInfo = {
   version: APP_VERSIONS.aaWhatsApp.replace("V", "V "),
@@ -176,7 +175,7 @@ export default function DownloadPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-5xl md:text-8xl font-black tracking-tighter leading-[1] mb-8"
+              className="text-4xl md:text-8xl font-black tracking-tighter leading-[1] mb-8"
             >
               Download <span className="text-primary italic">AAWhatsApp</span>
               <br />
@@ -245,39 +244,15 @@ export default function DownloadPage() {
 
               <div className="mb-10 w-full flex flex-col items-center gap-4 px-2">
                 <div className="flex w-full flex-col items-center gap-4">
-                  <CaptchaDownloadButton
+                  <DirectDownloadButton
                     asset={SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern}
-                    buttonClassName="neon-download-btn w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 text-lg md:text-2xl text-center leading-tight overflow-hidden"
+                    buttonClassName="neon-download-btn w-full max-w-md h-auto py-4 md:py-6 px-4 md:px-8 text-base md:text-2xl text-center leading-tight overflow-hidden"
                   >
                     <Download className="w-6 h-6" />
                     Download AAWhatsApp
-                  </CaptchaDownloadButton>
+                  </DirectDownloadButton>
                   <div className="text-xs text-muted-foreground">
                     Primary package: <span className="font-semibold">{APP_WHATSAPP_PACKAGE_NAMES.modern}</span>
-                  </div>
-                </div>
-                <div className="flex w-full flex-col items-center gap-3">
-                  <CaptchaDownloadButton
-                    asset={SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy}
-                    buttonClassName="neon-download-btn w-full max-w-md h-auto py-3 md:py-4 px-4 md:px-8 text-base md:text-lg text-center"
-                  >
-                    <Download className="w-5 h-5" />
-                    AA WhatsApp (com.gbwhatsapp)
-                  </CaptchaDownloadButton>
-                  <div className="text-[11px] text-muted-foreground">
-                    Temporary legacy package: <span className="font-semibold">{APP_WHATSAPP_PACKAGE_NAMES.legacy}</span>
-                  </div>
-                  <div className="w-full max-w-md rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4 text-xs text-amber-100 leading-relaxed">
-                    <p className="font-bold text-amber-200">Final Legacy Notice</p>
-                    <p className="mt-2">
-                      This is the final update of AA WhatsApp for this package ({APP_WHATSAPP_PACKAGE_NAMES.legacy}).
-                    </p>
-                    <p className="mt-2">No future updates will be provided for this package.</p>
-                    <p className="mt-2">
-                      To continue receiving updates, new features, and security improvements, please download and use the official AA WhatsApp package:
-                    </p>
-                    <p className="mt-2 font-semibold text-amber-200">{APP_WHATSAPP_PACKAGE_NAMES.modern}</p>
-                    <p className="mt-2">Thank you for your support.</p>
                   </div>
                 </div>
               </div>
@@ -502,47 +477,6 @@ export default function DownloadPage() {
                   No Hidden Malware
                 </span>
               </div>
-            </div>
-          </section>
-
-          {/* Alternative Download */}
-          <section className="text-center space-y-6 p-8 rounded-[2rem] bg-white/[0.02] border border-white/5">
-            <h3 className="text-xl font-bold">
-              Need an Alternative Download Link?
-            </h3>
-            <p className="text-muted-foreground">
-              If the main download isn't working, use the package-specific links
-              or join our Telegram for direct links.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <CaptchaDownloadButton
-                asset={SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern}
-                buttonClassName="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                com.aawhatsapp
-              </CaptchaDownloadButton>
-              <CaptchaDownloadButton
-                asset={SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy}
-                buttonClassName="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
-              >
-                <ExternalLink className="w-4 h-4" />
-                com.gbwhatsapp (Legacy)
-              </CaptchaDownloadButton>
-              <a
-                href="https://t.me/AA_ModsOfficial"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="gap-2"
-                  data-testid="button-telegram-link"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  Telegram Channel
-                </Button>
-              </a>
             </div>
           </section>
 

@@ -23,7 +23,7 @@ import { useState, useEffect } from "react";
 import { Footer } from "@/components/Footer";
 import { APP_BASE_VERSIONS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 import { SECURE_DOWNLOAD_ASSETS } from "@shared/downloadAssets";
-import { CaptchaDownloadButton } from "@/components/CaptchaDownloadButton";
+import { DirectDownloadButton } from "@/components/DirectDownloadButton";
 import whatsappHero from "@/assets/security-hero-new.png";
 
 const versionInfo = {
@@ -166,15 +166,13 @@ export default function BusinessDownloadPage() {
             </p>
 
             <div className="flex flex-col items-center gap-6 mb-12">
-              <CaptchaDownloadButton
+              <DirectDownloadButton
                 asset={SECURE_DOWNLOAD_ASSETS.aaBusinessMain}
-                buttonClassName="w-full max-w-md h-auto py-6 rounded-2xl bg-amber-500 hover:bg-amber-600 text-black font-black text-2xl shadow-xl shadow-amber-500/20 inline-flex items-center justify-center"
-                panelClassName="w-full max-w-md rounded-2xl border border-amber-500/30 bg-background/70 p-4 space-y-3"
-                continueButtonClassName="w-full rounded-xl font-bold bg-amber-500 hover:bg-amber-600 text-black"
+                buttonClassName="w-full max-w-md h-auto py-4 md:py-6 rounded-2xl bg-amber-500 hover:bg-amber-600 text-black font-black text-lg md:text-2xl shadow-xl shadow-amber-500/20 inline-flex items-center justify-center"
               >
                 <Download className="w-8 h-8 mr-3" />
                 Deploy AA Business {APP_VERSION_LOWER.aaBusiness}
-              </CaptchaDownloadButton>
+              </DirectDownloadButton>
               <p className="text-xs text-muted-foreground uppercase tracking-widest font-bold">
                 100% Secure Enterprise Mirror
               </p>
@@ -234,40 +232,6 @@ export default function BusinessDownloadPage() {
                 Specifically hardened for high-activity business accounts.
                 Verified 100% clean and safe for corporate use.
               </p>
-            </div>
-          </section>
-
-          <section className="text-center space-y-6 p-8 rounded-[2rem] bg-white/[0.02] border border-white/5">
-            <h3 className="text-xl font-bold text-white">
-              Need an Alternative Download Link?
-            </h3>
-            <p className="text-muted-foreground">
-              If the main download isn't working, try our backup servers or join
-              our Telegram for direct links.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <CaptchaDownloadButton
-                asset={SECURE_DOWNLOAD_ASSETS.aaBusinessMirror}
-                buttonClassName="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-amber-500/30 bg-background hover:bg-amber-500/10 h-10 px-4 py-2 text-white"
-                panelClassName="w-full max-w-md rounded-2xl border border-amber-500/30 bg-background/70 p-4 space-y-3"
-                continueButtonClassName="w-full rounded-xl font-bold bg-amber-500 hover:bg-amber-600 text-black"
-              >
-                <Download className="w-4 h-4" />
-                MediaFire Mirror
-              </CaptchaDownloadButton>
-              <a
-                href="https://t.me/AA_ModsOfficial"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="gap-2 border-amber-500/30 hover:bg-amber-500/10 text-white"
-                >
-                  <Send className="w-4 h-4" />
-                  Telegram Channel
-                </Button>
-              </a>
             </div>
           </section>
 

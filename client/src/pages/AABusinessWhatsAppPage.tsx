@@ -262,10 +262,9 @@ export default function AABusinessWhatsAppPage() {
                   <p className="text-xl text-muted-foreground">Download the AA Business WhatsApp Package.</p>
                </div>
 
-               <div className="grid sm:grid-cols-2 gap-6">
+               <div className="grid sm:grid-cols-1 gap-6">
                   {[
-                    { name: "Fast Server (Primary)", type: "Direct Download", color: "amber", href: "/business-download" },
-                    { name: "MediaFire (Mirror)", type: "Cloud Mirror", color: "white", href: "/business-download" }
+                    { name: "Fast Server (Primary)", type: "Direct Download", color: "amber", href: "/business-download" }
                   ].map((mirror, i) => (
                     <div key={i} className={`p-8 rounded-[2.5rem] border ${mirror.color === 'amber' ? 'border-amber-500/20 bg-amber-500/5' : 'border-white/10 bg-white/5'} flex flex-col items-center text-center gap-6 group hover-elevate`}>
                        <div className={`p-4 rounded-2xl ${mirror.color === 'amber' ? 'bg-amber-500/10 text-amber-500' : 'bg-white/10 text-white'}`}>

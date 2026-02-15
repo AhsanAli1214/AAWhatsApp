@@ -24,7 +24,7 @@ import {
 } from "@/config/appConfig";
 import reminiLogo from "@assets/download_1771149808669.png";
 import { SECURE_DOWNLOAD_ASSETS } from "@shared/downloadAssets";
-import { CaptchaDownloadButton } from "@/components/CaptchaDownloadButton";
+import { DirectDownloadButton } from "@/components/DirectDownloadButton";
 
 export default function ReminiDownloadPage() {
   const canonicalUrl = "https://aa-mods.vercel.app/remini-mod/download";
@@ -93,9 +93,9 @@ export default function ReminiDownloadPage() {
             </div>
 
             <div className="flex justify-center">
-              <CaptchaDownloadButton
+              <DirectDownloadButton
                 asset={SECURE_DOWNLOAD_ASSETS.reminiModMain}
-                buttonClassName="neon-download-btn [--download-glow:#FF0000] [--download-border:#ff8a8a] [--download-text:#ffffff] w-full max-w-3xl min-h-[84px] md:min-h-[102px] px-4 md:px-6 py-3 md:py-4 text-sm md:text-xl"
+                buttonClassName="neon-download-btn [--download-glow:#FF0000] [--download-border:#ff8a8a] [--download-text:#ffffff] w-full max-w-3xl min-h-[74px] md:min-h-[102px] px-4 md:px-6 py-3 md:py-4 text-sm md:text-xl"
               >
                 <div className="w-full flex items-center justify-between gap-2 md:gap-4">
                   <div className="flex items-center gap-2 md:gap-4 text-left min-w-0">
@@ -113,7 +113,7 @@ export default function ReminiDownloadPage() {
                   Direct
                   </Badge>
                 </div>
-              </CaptchaDownloadButton>
+              </DirectDownloadButton>
             </div>
 
             <div className="text-center text-xs text-muted-foreground font-medium mt-4">

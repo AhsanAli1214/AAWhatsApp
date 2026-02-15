@@ -25,7 +25,7 @@ import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
 import { APP_BASE_VERSIONS, APP_CHANGELOGS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS } from "@/config/appConfig";
 import { SECURE_DOWNLOAD_ASSETS } from "@shared/downloadAssets";
-import { CaptchaDownloadButton } from "@/components/CaptchaDownloadButton";
+import { DirectDownloadButton } from "@/components/DirectDownloadButton";
 
 const parseChangelogLines = (changelog: string) =>
   changelog
@@ -204,13 +204,13 @@ export default function BusinessDownload() {
             transition={{ delay: 0.3 }}
             className="flex flex-col items-center mb-12 gap-4"
           >
-            <CaptchaDownloadButton
+            <DirectDownloadButton
               asset={SECURE_DOWNLOAD_ASSETS.aaBusinessMain}
               buttonClassName="neon-download-btn neon-download-btn--blue relative group overflow-hidden px-12 py-6 text-2xl w-full max-w-md text-center"
             >
               <Download className="w-8 h-8" />
-              Download from MediaFire
-            </CaptchaDownloadButton>
+              Download AA Business
+            </DirectDownloadButton>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">

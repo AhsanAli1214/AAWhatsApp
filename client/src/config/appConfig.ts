@@ -1,5 +1,4 @@
 import { APP_DOWNLOAD_REDIRECTS, SECURE_DOWNLOAD_ASSETS, getSecureDownloadUrl } from "@shared/downloadAssets";
-import { TURNSTILE_DEFAULT_SITE_KEY, TURNSTILE_DOWNLOAD_ACTION } from "@shared/security";
 
 export { APP_DOWNLOAD_REDIRECTS, SECURE_DOWNLOAD_ASSETS, getSecureDownloadUrl };
 
@@ -13,7 +12,7 @@ export const AA_WHATSAPP_CONFIG = {
     iso: "2026-02-15",
   },
   downloadLink: "https://aa-mods.vercel.app/aa-whatsapp/download",
-  directDownloadLink: APP_DOWNLOAD_REDIRECTS[SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern],
+  directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
   changelog: `FIXED: App Crash Problem When Link Device or Register Number
 NEW: Profile cover photo support for enhanced personalization
 NEW: Status character limit increased up to 500 characters
@@ -40,8 +39,8 @@ export const AA_BUSINESS_CONFIG = {
     iso: "2026-01-31",
   },
   downloadLink: "https://aa-mods.vercel.app/aa-business/download",
-  directDownloadLink: APP_DOWNLOAD_REDIRECTS[SECURE_DOWNLOAD_ASSETS.aaBusinessMain],
-  mirrorDownloadLink: APP_DOWNLOAD_REDIRECTS[SECURE_DOWNLOAD_ASSETS.aaBusinessMirror],
+  directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMain),
+  mirrorDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMirror),
   changelog: `NEW: Enterprise deployment toolkit for faster onboarding
 NEW: Advanced bulk broadcasting segmentation controls
 IMPROVED: Auto-reply accuracy and scheduling reliability
@@ -59,7 +58,7 @@ export const CAPCUT_PRO_CONFIG = {
     iso: "2026-02-14",
   },
   downloadLink: "https://aa-mods.vercel.app/capcut-pro/download",
-  directDownloadLink: APP_DOWNLOAD_REDIRECTS[SECURE_DOWNLOAD_ASSETS.capcutProMain],
+  directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.capcutProMain),
   features: [
     "AI features working",
     "All templates unlocked",
@@ -85,7 +84,7 @@ export const REMINI_MOD_CONFIG = {
     iso: "2026-02-15",
   },
   downloadLink: "https://aa-mods.vercel.app/remini-mod/download",
-  directDownloadLink: APP_DOWNLOAD_REDIRECTS[SECURE_DOWNLOAD_ASSETS.reminiModMain],
+  directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.reminiModMain),
   features: [
     "Premium/VIP Unlocked",
     "Unlimited Pro Cards",
@@ -173,12 +172,6 @@ export const APP_WHATSAPP_PACKAGE_NAMES = {
 export const APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS = {
   legacy: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy),
   modern: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
-} as const;
-
-export const APP_SECURITY_CONFIG = {
-  enableDownloadCaptcha: true,
-  turnstileSiteKey: TURNSTILE_DEFAULT_SITE_KEY,
-  turnstileAction: TURNSTILE_DOWNLOAD_ACTION,
 } as const;
 
 // Global Floating Poster Configuration

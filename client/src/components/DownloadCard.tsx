@@ -19,13 +19,6 @@ const OPTIONS: DownloadOption[] = [
     platform: "android",
     version: "latest",
   },
-  {
-    name: "MediaFire",
-    icon: Download,
-    url: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
-    platform: "android",
-    version: "latest",
-  },
 ];
 
 export function DownloadCard() {
@@ -71,7 +64,7 @@ export function DownloadCard() {
                 <span className="flex flex-col items-start">
                   <span className="leading-none mb-1">{opt.name}</span>
                   <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
-                    Official Mirror
+                    Official Download
                   </span>
                 </span>
               </span>

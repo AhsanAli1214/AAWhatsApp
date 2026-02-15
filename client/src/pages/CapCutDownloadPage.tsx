@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Download, Shield, CheckCircle2, Cpu, History, ArrowRight, Sparkles } from "lucide-react";
 import { APP_VERSIONS, APP_UPDATE_DATES, APP_BASE_VERSIONS, APP_FEATURES } from "@/config/appConfig";
 import { SECURE_DOWNLOAD_ASSETS } from "@shared/downloadAssets";
-import { CaptchaDownloadButton } from "@/components/CaptchaDownloadButton";
+import { DirectDownloadButton } from "@/components/DirectDownloadButton";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
@@ -95,7 +95,7 @@ export default function CapCutDownloadPage() {
                   </p>
                 </div>
 
-                <CaptchaDownloadButton
+                <DirectDownloadButton
                   asset={SECURE_DOWNLOAD_ASSETS.capcutProMain}
                   buttonClassName="neon-download-btn mx-auto w-full max-w-2xl min-h-16 md:min-h-[4.5rem] text-sm md:text-lg px-4 md:px-5 py-3"
                 >
@@ -111,7 +111,7 @@ export default function CapCutDownloadPage() {
                     </div>
                     <Badge className="bg-white/20 text-white font-black px-2.5 py-1 shrink-0">Direct</Badge>
                   </div>
-                </CaptchaDownloadButton>
+                </DirectDownloadButton>
 
                 <div className="text-center text-xs text-muted-foreground font-medium">
                   Click the button to start direct APK download.

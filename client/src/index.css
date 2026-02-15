@@ -226,3 +226,27 @@
     transform: none;
   }
 }
+
+/* Mobile performance + visual clarity tuning */
+@media (max-width: 640px) {
+  .neon-download-btn {
+    letter-spacing: 0.08em;
+    border-width: 1px;
+    text-shadow: none;
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--download-glow) 60%, transparent),
+      0 0 8px 1px color-mix(in srgb, var(--download-glow) 45%, transparent);
+  }
+
+  .neon-download-btn:hover,
+  .neon-download-btn:active {
+    transform: none;
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--download-glow) 65%, transparent),
+      0 0 10px 1px color-mix(in srgb, var(--download-glow) 50%, transparent);
+  }
+
+  .glass-card {
+    backdrop-filter: blur(12px);
+  }
+}
