@@ -59,7 +59,7 @@ export default function AppSelector() {
         />
         <meta
           property="og:image"
-          content="https://aa-mods.vercel.app/favicon.png"
+          content="https://aa-mods.vercel.app/AA%20Mods.png"
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/" />
         <link

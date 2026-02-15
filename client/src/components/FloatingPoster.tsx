@@ -61,13 +61,7 @@ export function FloatingPoster() {
           <X className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
 
-        {FLOATING_POSTER_CONFIG.targetUrl ? (
-          <a href={FLOATING_POSTER_CONFIG.targetUrl} target="_blank" rel="noopener noreferrer" className="block">
-            {posterImage}
-          </a>
-        ) : (
-          posterImage
-        )}
+        {posterImage}
       </div>
     </div>
   );
