@@ -10,7 +10,6 @@ import { BackToTop } from "@/components/BackToTop";
 import ScrollToTop from "@/components/ScrollToTop";
 import { AdBlockDetector } from "@/components/AdBlockDetector";
 import { FloatingPoster } from "@/components/FloatingPoster";
-import { GlobalAdBanner } from "@/components/GlobalAdBanner";
 import { Helmet } from "react-helmet";
 import { PageTransition } from "@/components/PageTransition";
 import { TapFeedback } from "@/components/TapFeedback";
@@ -165,7 +164,6 @@ function App() {
           <PageTransition>
             <Router />
           </PageTransition>
-          <GlobalAdBanner />
           <BackToTop />
           <Analytics />
         </TooltipProvider>
