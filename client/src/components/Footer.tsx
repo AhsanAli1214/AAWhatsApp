@@ -4,12 +4,13 @@ import { Send, Shield, Zap, Lock, BookOpen, HelpCircle, LayoutGrid, Info, Video,
 export function Footer() {
   const [location] = useLocation();
   const isBusiness = location.startsWith("/aa-business");
+  const isRemini = location.startsWith("/remini-mod");
 
   return (
     <footer className={`py-6 md:py-8 border-t border-border/30 relative z-10 bg-background/40 backdrop-blur-md overflow-hidden ${isBusiness ? 'selection:bg-blue-600/30' : ''}`}>
       {/* Decorative background elements */}
-      <div className={`absolute top-0 left-1/4 w-64 h-64 rounded-full blur-[70px] -z-10 ${isBusiness ? 'bg-blue-600/5' : 'bg-primary/5'}`} />
-      <div className={`absolute bottom-0 right-1/4 w-64 h-64 rounded-full blur-[70px] -z-10 ${isBusiness ? 'bg-blue-400/5' : 'bg-emerald-400/5'}`} />
+      <div className={`absolute top-0 left-1/4 w-64 h-64 rounded-full blur-[70px] -z-10 ${isBusiness ? 'bg-blue-600/5' : isRemini ? 'bg-red-600/5' : 'bg-primary/5'}`} />
+      <div className={`absolute bottom-0 right-1/4 w-64 h-64 rounded-full blur-[70px] -z-10 ${isBusiness ? 'bg-blue-400/5' : isRemini ? 'bg-red-400/5' : 'bg-emerald-400/5'}`} />
       
       <div className="container mx-auto px-4">
         {/* Main Footer Grid */}
@@ -122,7 +123,7 @@ export function Footer() {
                 href="https://t.me/AA_ModsOfficial" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-xs font-bold hover:opacity-90 transition-all shadow-sm ${isBusiness ? 'bg-blue-600 text-white shadow-blue-500/10' : 'bg-primary text-primary-foreground shadow-primary/10'}`}
+                className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-xs font-bold hover:opacity-90 transition-all shadow-sm ${isBusiness ? 'bg-blue-600 text-white shadow-blue-500/10' : isRemini ? 'bg-[#FF0000] text-white shadow-[#FF0000]/10' : 'bg-primary text-primary-foreground shadow-primary/10'}`}
               >
                 <Send className="w-4 h-4" />
                 Join Telegram
