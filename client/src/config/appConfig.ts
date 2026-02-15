@@ -1,5 +1,5 @@
 export const APP_VERSIONS = {
-  aaWhatsApp: "V3.50",
+  aaWhatsApp: "V4.0",
   aaBusiness: "V1.0",
   capcutPro: "V17.3.0",
 } as const;
@@ -17,7 +17,8 @@ export const APP_BASE_VERSIONS = {
 } as const;
 
 export const APP_CHANGELOGS = {
-  aaWhatsApp: `NEW: Profile cover photo support for enhanced personalization
+  aaWhatsApp: `FIXED: App Crash Problem When Link Device or Register Number
+NEW: Profile cover photo support for enhanced personalization
 NEW: Status character limit increased up to 500 characters
 NEW: Status notification alerts when contacts post new updates
 NEW: Read receipt notifications fully restored and improved
@@ -50,9 +51,9 @@ FIXED: Minor sync issues in catalog management`,
 
 export const APP_UPDATE_DATES = {
   aaWhatsApp: {
-    display: "February 08, 2026",
-    short: "08/02/2026",
-    iso: "2026-02-08",
+    display: "February 15, 2026",
+    short: "15/02/2026",
+    iso: "2026-02-15",
   },
   aaBusiness: {
     display: "January 31, 2026",
