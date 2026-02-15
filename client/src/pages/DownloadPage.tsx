@@ -103,15 +103,6 @@ export default function DownloadPage() {
     },
   ];
 
-  const [downloadStep, setDownloadStep] = useState(0);
-
-  const handleDownload = (e: React.MouseEvent) => {
-    if (downloadStep === 0) {
-      e.preventDefault();
-      setDownloadStep(1);
-      window.open("https://otieu.com/4/10538189", "_blank");
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
@@ -251,22 +242,15 @@ export default function DownloadPage() {
               </p>
 
               <div className="mb-10 w-full flex flex-col items-center gap-4 px-2">
-                {downloadStep === 0 && (
-                  <div className="flex items-center gap-2 text-amber-500 font-bold animate-pulse text-sm">
-                    <ShieldAlert className="w-4 h-4" />
-                    Note: First click opens verified advertisement to support servers
-                  </div>
-                )}
                 <div className="flex w-full flex-col items-center gap-4">
                   <a
-                    href={downloadStep === 0 ? "#" : APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS.modern}
-                    onClick={handleDownload}
-                    target={downloadStep === 0 ? "_self" : "_blank"}
+                    href={APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS.modern}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="neon-download-btn w-full max-w-md h-auto py-5 md:py-6 px-4 md:px-8 text-lg md:text-2xl text-center leading-tight overflow-hidden"
                   >
                     <Download className="w-6 h-6" />
-                    {downloadStep === 0 ? "Start Secure Download" : "Download AAWhatsApp"}
+                    Download AAWhatsApp
                   </a>
                   <div className="text-xs text-muted-foreground">
                     Primary package: <span className="font-semibold">{APP_WHATSAPP_PACKAGE_NAMES.modern}</span>

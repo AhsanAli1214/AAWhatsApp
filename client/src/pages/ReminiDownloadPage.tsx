@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Helmet } from "react-helmet";
-import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import {
@@ -28,16 +27,8 @@ import reminiLogo from "@assets/download_1771149808669.png";
 
 export default function ReminiDownloadPage() {
   const canonicalUrl = "https://aa-mods.vercel.app/remini-mod/download";
-  const [downloadStep, setDownloadStep] = useState<0 | 1>(0);
   const heroImageUrl = "https://i.postimg.cc/W4hMbDm9/image-1771089734969956.png";
 
-  const handleDownloadClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (downloadStep === 0) {
-      e.preventDefault();
-      setDownloadStep(1);
-      window.open("https://otieu.com/4/10538189", "_blank", "noopener,noreferrer");
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-[#8B0000]/30">
@@ -94,43 +85,40 @@ export default function ReminiDownloadPage() {
         <Card className="rounded-[2rem] border-[#FF0000]/20 bg-[#FF0000]/5 p-6 md:p-8 mb-10">
           <CardContent className="p-0">
             <div className="text-center mb-4">
-              <h2 className="text-xl md:text-3xl font-black uppercase tracking-tight mb-1">One Button • 2-Step Secure Download</h2>
+              <h2 className="text-xl md:text-3xl font-black uppercase tracking-tight mb-1">Direct Download</h2>
               <p className="text-sm text-muted-foreground font-medium">
-                First click opens sponsored verification. Second click downloads the official APK package.
+                Click the button below to download the official APK package.
               </p>
             </div>
 
             <div className="flex justify-center">
               <a
-                href={downloadStep === 0 ? "#" : APP_DIRECT_DOWNLOAD_LINKS.reminiMod}
-                target={downloadStep === 0 ? "_self" : "_blank"}
+                href={APP_DIRECT_DOWNLOAD_LINKS.reminiMod}
+                target="_blank"
                 rel="noopener noreferrer"
-                onClick={handleDownloadClick}
-                className={`neon-download-btn [--download-glow:#FF0000] [--download-border:#ff8a8a] [--download-text:#ffffff] w-full max-w-3xl min-h-[84px] md:min-h-[102px] px-4 md:px-6 py-3 md:py-4 text-sm md:text-xl ${downloadStep === 1 ? "ring-2 ring-[#FF0000]/40" : ""}`}
+                className="neon-download-btn [--download-glow:#FF0000] [--download-border:#ff8a8a] [--download-text:#ffffff] w-full max-w-3xl min-h-[84px] md:min-h-[102px] px-4 md:px-6 py-3 md:py-4 text-sm md:text-xl"
               >
                 <div className="w-full flex items-center justify-between gap-2 md:gap-4">
                   <div className="flex items-center gap-2 md:gap-4 text-left min-w-0">
-                  <Download className={`h-5 w-5 md:h-7 md:w-7 shrink-0 ${downloadStep === 1 ? "animate-bounce" : ""}`} />
+                  <Download className="h-5 w-5 md:h-7 md:w-7 shrink-0" />
                   <div className="min-w-0">
                     <span className="block leading-tight break-words">
-                      {downloadStep === 0 ? "Step 1: Verify" : `Step 2: Download Remini ${APP_VERSIONS.reminiMod}`}
+                      Download Remini {APP_VERSIONS.reminiMod}
                     </span>
                     <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.16em] opacity-75 leading-tight">
-                      {downloadStep === 0 ? "Sponsored verification" : "Official package"}
+                      Official package
                     </span>
                   </div>
                   </div>
                   <Badge className="bg-white/20 text-white font-black px-2.5 py-1 shrink-0">
-                  {downloadStep === 0 ? "1/2" : "2/2"}
+                  Direct
                   </Badge>
                 </div>
               </a>
             </div>
 
             <div className="text-center text-xs text-muted-foreground font-medium mt-4">
-              {downloadStep === 0
-                ? "Click once to complete verification in a new tab, then return here and click again."
-                : "Verification complete. Click the button now to start APK download."}
+              Click the button to start APK download.
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs font-semibold text-muted-foreground">

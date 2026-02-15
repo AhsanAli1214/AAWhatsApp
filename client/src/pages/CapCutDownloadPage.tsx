@@ -3,7 +3,6 @@ import { Badge } from "@/components/ui/badge";
 import { Download, Shield, CheckCircle2, Cpu, History, ArrowRight, Sparkles } from "lucide-react";
 import { APP_VERSIONS, APP_DIRECT_DOWNLOAD_LINKS, APP_UPDATE_DATES, APP_BASE_VERSIONS, APP_FEATURES } from "@/config/appConfig";
 import { Helmet } from "react-helmet";
-import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { Link } from "wouter";
@@ -12,24 +11,6 @@ const HERO_IMAGE_URL = "https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1
 
 export default function CapCutDownloadPage() {
   const canonicalUrl = "https://aa-mods.vercel.app/capcut-pro/download";
-  const [downloadStep, setDownloadStep] = useState<0 | 1>(0);
-
-  const ctaLabel = useMemo(
-    () =>
-      downloadStep === 0
-        ? "Step 1: Verify"
-        : `Step 2: Download ${APP_VERSIONS.capcutPro}`,
-    [downloadStep],
-  );
-
-  const handleDownloadClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (downloadStep === 0) {
-      e.preventDefault();
-      setDownloadStep(1);
-      window.open("https://otieu.com/4/10538189", "_blank", "noopener,noreferrer");
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       <Helmet>
@@ -106,9 +87,9 @@ export default function CapCutDownloadPage() {
             <CardContent className="p-0">
               <div className="flex flex-col gap-4">
                 <div className="text-center">
-                  <h2 className="text-xl md:text-2xl font-black mb-1">Single Download Button • 2-Step Security Flow</h2>
+                  <h2 className="text-xl md:text-2xl font-black mb-1">Direct Download Button</h2>
                   <p className="text-sm text-muted-foreground">
-                    Click once to unlock. Click again to start the official APK download.
+                    Click the button below to start the official APK download.
                   </p>
                 </div>
 
@@ -116,29 +97,24 @@ export default function CapCutDownloadPage() {
                   href={APP_DIRECT_DOWNLOAD_LINKS.capcutPro}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={handleDownloadClick}
-                  className={`neon-download-btn mx-auto w-full max-w-2xl min-h-16 md:min-h-[4.5rem] text-sm md:text-lg px-4 md:px-5 py-3 ${downloadStep === 1 ? "ring-2 ring-emerald-400/40" : ""}`}
+                  className="neon-download-btn mx-auto w-full max-w-2xl min-h-16 md:min-h-[4.5rem] text-sm md:text-lg px-4 md:px-5 py-3"
                 >
                   <div className="w-full flex items-center justify-between gap-2 md:gap-3">
                     <div className="flex items-center gap-2 md:gap-4 text-left min-w-0">
-                      <Download className={`h-5 w-5 md:h-6 md:w-6 shrink-0 ${downloadStep === 1 ? "animate-bounce" : ""}`} />
+                      <Download className="h-5 w-5 md:h-6 md:w-6 shrink-0" />
                       <div className="min-w-0">
-                        <span className="block leading-tight break-words">{ctaLabel}</span>
+                        <span className="block leading-tight break-words">Download CapCut Pro</span>
                         <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.16em] opacity-75 leading-tight">
-                          {downloadStep === 0 ? "Secure verification" : "Official package"}
+                          Official package
                         </span>
                       </div>
                     </div>
-                    <Badge className="bg-white/20 text-white font-black px-2.5 py-1 shrink-0">
-                      {downloadStep === 0 ? "1/2" : "2/2"}
-                    </Badge>
+                    <Badge className="bg-white/20 text-white font-black px-2.5 py-1 shrink-0">Direct</Badge>
                   </div>
                 </a>
 
                 <div className="text-center text-xs text-muted-foreground font-medium">
-                  {downloadStep === 0
-                    ? "First click opens verification tab. Return and click again for direct APK download."
-                    : "Verified. Click the button now to start direct APK download."}
+                  Click the button to start direct APK download.
                 </div>
 
                 <div className="text-center text-xs text-muted-foreground/80 font-medium">
