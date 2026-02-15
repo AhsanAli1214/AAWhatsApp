@@ -2,14 +2,8 @@ import type { Express } from "express";
 import type { Server } from "http";
 import { api } from "@shared/routes";
 import { Resend } from "resend";
-import { APP_DOWNLOAD_REDIRECTS } from "@shared/downloadAssets";
-import { TURNSTILE_DOWNLOAD_ACTION } from "@shared/security";
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
-
-const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
-const TURNSTILE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY;
-const DOWNLOAD_CAPTCHA_ENABLED = process.env.ENABLE_DOWNLOAD_CAPTCHA !== "false";
 
 import { generateSitemap } from "./lib/sitemap";
 
@@ -17,69 +11,6 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  const new_status_date = new Date().toISOString().split('T')[0];
-  
-
-  app.post("/api/security/verify-download", async (req, res) => {
-    try {
-      const token = typeof req.body?.token === "string" ? req.body.token : "";
-      const asset = typeof req.body?.asset === "string" ? req.body.asset : "";
-
-      if (!token || !asset) {
-        return res.status(400).json({ success: false, message: "Token and asset are required." });
-      }
-
-      const redirectUrl = APP_DOWNLOAD_REDIRECTS[asset as keyof typeof APP_DOWNLOAD_REDIRECTS];
-      if (!redirectUrl) {
-        return res.status(400).json({ success: false, message: "Invalid download asset." });
-      }
-
-      if (!DOWNLOAD_CAPTCHA_ENABLED) {
-        return res.status(200).json({ success: true, redirectUrl });
-      }
-
-      if (!TURNSTILE_SECRET_KEY) {
-        return res.status(500).json({ success: false, message: "Turnstile secret is not configured on server." });
-      }
-
-      const form = new URLSearchParams();
-      form.append("secret", TURNSTILE_SECRET_KEY);
-      form.append("response", token);
-      if (req.ip) {
-        form.append("remoteip", req.ip);
-      }
-
-      const verification = await fetch(TURNSTILE_VERIFY_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: form,
-      });
-
-      const verificationResult = (await verification.json()) as {
-        success?: boolean;
-        action?: string;
-        "error-codes"?: string[];
-      };
-
-      const isValid =
-        Boolean(verificationResult.success) &&
-        (!verificationResult.action || verificationResult.action === TURNSTILE_DOWNLOAD_ACTION);
-
-      if (!isValid) {
-        return res.status(403).json({
-          success: false,
-          message: "CAPTCHA verification failed.",
-          details: verificationResult["error-codes"] || [],
-        });
-      }
-
-      return res.status(200).json({ success: true, redirectUrl });
-    } catch (error) {
-      console.error("Turnstile verification error:", error);
-      return res.status(500).json({ success: false, message: "Unable to verify request." });
-    }
-  });
-
   app.post("/api/report-bug", async (req, res) => {
     try {
       if (!resend) {

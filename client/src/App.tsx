@@ -1,6 +1,5 @@
 import { Switch, Route } from "wouter";
 import { Suspense, lazy, useEffect, useState } from "react";
-import ReactGA from "react-ga4";
 import { Analytics } from "@vercel/analytics/react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -108,7 +107,8 @@ function App() {
   const [enableNonCriticalUX, setEnableNonCriticalUX] = useState(false);
 
   useEffect(() => {
-    const initAnalytics = () => {
+    const initAnalytics = async () => {
+      const { default: ReactGA } = await import("react-ga4");
       ReactGA.initialize("G-339VLBF7PM");
       ReactGA.send({ hitType: "pageview", page: window.location.pathname });
     };

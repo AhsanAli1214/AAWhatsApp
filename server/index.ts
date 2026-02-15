@@ -4,6 +4,7 @@ import { serveStatic } from "./static.js";
 import { createServer } from "http";
 
 const app = express();
+app.set("trust proxy", 1);
 const httpServer = createServer(app);
 
 app.disable("x-powered-by");
@@ -25,6 +26,41 @@ app.use(
 
 app.use(express.urlencoded({ extended: false, limit: "1mb" }));
 
+
+const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>();
+
+const createRateLimiter = ({
+  windowMs,
+  max,
+}: {
+  windowMs: number;
+  max: number;
+}) => {
+  return (req: Request, res: Response, next: NextFunction) => {
+    const key = `${req.ip}:${req.path}`;
+    const now = Date.now();
+    const entry = rateLimitBuckets.get(key);
+
+    if (!entry || now > entry.resetAt) {
+      rateLimitBuckets.set(key, { count: 1, resetAt: now + windowMs });
+      return next();
+    }
+
+    if (entry.count >= max) {
+      const retryAfterSeconds = Math.ceil((entry.resetAt - now) / 1000);
+      res.setHeader("Retry-After", `${retryAfterSeconds}`);
+      return res.status(429).json({ message: "Too many requests. Please try again later." });
+    }
+
+    entry.count += 1;
+    rateLimitBuckets.set(key, entry);
+    return next();
+  };
+};
+
+app.use("/api/report-bug", createRateLimiter({ windowMs: 10 * 60 * 1000, max: 10 }));
+app.use("/api/subscribers", createRateLimiter({ windowMs: 5 * 60 * 1000, max: 30 }));
+app.use("/api/downloads", createRateLimiter({ windowMs: 60 * 1000, max: 120 }));
 // Security and Performance Headers
 app.use((req, res, next) => {
   const isProduction = process.env.NODE_ENV === "production";

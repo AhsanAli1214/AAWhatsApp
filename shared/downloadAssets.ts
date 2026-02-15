@@ -7,7 +7,7 @@ export const SECURE_DOWNLOAD_ASSETS = {
   reminiModMain: "remini-mod-main",
 } as const;
 
-export const APP_DOWNLOAD_REDIRECTS = {
+const redirectMap = {
   [SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern]: "https://ahsanali.short.gy/aa-wa-latest",
   [SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy]: "https://ahsanali.short.gy/aa-whatsapp",
   [SECURE_DOWNLOAD_ASSETS.aaBusinessMain]: "https://ahsanali.short.gy/aa-wa-pro",
@@ -16,7 +16,25 @@ export const APP_DOWNLOAD_REDIRECTS = {
   [SECURE_DOWNLOAD_ASSETS.reminiModMain]: "https://ahsanali.short.gy/remini-ahsan",
 } as const;
 
+const assertHttpsUrl = (value: string, asset: string) => {
+  let parsed: URL;
+  try {
+    parsed = new URL(value);
+  } catch {
+    throw new Error(`Invalid download URL for asset "${asset}".`);
+  }
+
+  if (parsed.protocol !== "https:") {
+    throw new Error(`Insecure download URL for asset "${asset}". HTTPS is required.`);
+  }
+};
+
+Object.entries(redirectMap).forEach(([asset, url]) => {
+  assertHttpsUrl(url, asset);
+});
+
+export const APP_DOWNLOAD_REDIRECTS = Object.freeze(redirectMap);
+
 export type SecureDownloadAsset = keyof typeof APP_DOWNLOAD_REDIRECTS;
 
-export const getSecureDownloadUrl = (asset: SecureDownloadAsset) =>
-  APP_DOWNLOAD_REDIRECTS[asset];
+export const getSecureDownloadUrl = (asset: SecureDownloadAsset) => APP_DOWNLOAD_REDIRECTS[asset];
