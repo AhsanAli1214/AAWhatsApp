@@ -28,7 +28,17 @@ export function BackToTop() {
     });
   };
 
-  const isBusiness = location.startsWith("/aa-business");
+  const isBusiness =
+    location.startsWith("/aa-business") ||
+    location.startsWith("/business-") ||
+    location.startsWith("/aa-business-whatsapp");
+  const isRemini = location.startsWith("/remini-mod");
+
+  const buttonThemeClass = isBusiness
+    ? "bg-gradient-to-br from-blue-600 to-blue-400 hover:from-blue-500 hover:to-blue-300 shadow-blue-500/40 text-white"
+    : isRemini
+      ? "bg-gradient-to-br from-[#FF0000] to-[#ff4d4d] hover:from-[#e60000] hover:to-[#ff6666] shadow-[#FF0000]/40 text-white"
+      : "bg-gradient-to-br from-primary to-emerald-400 hover:from-primary/90 hover:to-emerald-300 shadow-primary/40 text-primary-foreground";
 
   return (
     <div
@@ -39,11 +49,7 @@ export function BackToTop() {
       <Button
         size="icon"
         onClick={scrollToTop}
-        className={`h-12 w-12 rounded-full shadow-2xl transition-all hover:scale-110 active:scale-95 border-none ${
-          isBusiness 
-            ? "bg-gradient-to-br from-blue-600 to-blue-400 hover:from-blue-500 hover:to-blue-300 shadow-blue-500/40 text-white" 
-            : "bg-gradient-to-br from-primary to-emerald-400 hover:from-primary/90 hover:to-emerald-300 shadow-primary/40 text-primary-foreground"
-        }`}
+        className={`h-12 w-12 rounded-full shadow-2xl transition-all hover:scale-110 active:scale-95 border-none ${buttonThemeClass}`}
         aria-label="Back to top"
       >
         <ChevronUp className="h-6 w-6" />

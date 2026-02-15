@@ -169,3 +169,15 @@ export const APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS = {
   legacy: "https://ahsanali.short.gy/aa-whatsapp",
   modern: "https://ahsanali.short.gy/aa-wa-latest",
 } as const;
+
+
+// Global Floating Poster Configuration
+export const FLOATING_POSTER_CONFIG = {
+  // Turn this on/off anytime
+  enabled: true,
+  // Change this to any poster image link
+  imageUrl: "https://i.postimg.cc/HsPkz8Hy/Gemini-Generated-Image-qb1oceqb1oceqb1o.png",
+  // Optional click destination (leave empty to disable click-through)
+  targetUrl: "",
+  alt: "AA Mods Poster",
+} as const;
