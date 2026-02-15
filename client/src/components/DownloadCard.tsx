@@ -1,6 +1,7 @@
 import { Download, Server, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTrackDownload } from "@/hooks/use-downloads";
+import { getSecureDownloadUrl, SECURE_DOWNLOAD_ASSETS } from "@/config/appConfig";
 
 interface DownloadOption {
   name: string;
@@ -14,14 +15,14 @@ const OPTIONS: DownloadOption[] = [
   {
     name: "Fast Server",
     icon: Server,
-    url: "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file",
+    url: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
     platform: "android",
     version: "latest",
   },
   {
     name: "MediaFire",
     icon: Download,
-    url: "https://www.mediafire.com/file/uuw00r0kdjuns97/AAWhatsApp_V2.0.apk/file",
+    url: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
     platform: "android",
     version: "latest",
   },

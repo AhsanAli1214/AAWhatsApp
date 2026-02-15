@@ -1,5 +1,5 @@
 import { Switch, Route } from "wouter";
-import { Suspense, lazy, useEffect } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import ReactGA from "react-ga4";
 import { Analytics } from "@vercel/analytics/react";
 import { queryClient } from "./lib/queryClient";
@@ -14,7 +14,6 @@ import { Helmet } from "react-helmet";
 import { PageTransition } from "@/components/PageTransition";
 import { TapFeedback } from "@/components/TapFeedback";
 import { Skeleton } from "@/components/ui/skeleton";
-import CapCutFeaturesPage from "@/pages/CapCutFeaturesPage";
 import { initImageOptimization } from "@/lib/imageOptimization";
 
 const Home = lazy(() => import("@/pages/Home"));
@@ -22,6 +21,7 @@ const AppSelector = lazy(() => import("@/pages/AppSelector"));
 const AAWhatsAppPage = lazy(() => import("@/pages/AAWhatsAppPage"));
 const AABusinessWhatsAppPage = lazy(() => import("@/pages/AABusinessWhatsAppPage"));
 const CapCutProPage = lazy(() => import("@/pages/CapCutProPage"));
+const CapCutFeaturesPage = lazy(() => import("@/pages/CapCutFeaturesPage"));
 const CapCutDownloadPage = lazy(() => import("@/pages/CapCutDownloadPage"));
 const ReminiModPage = lazy(() => import("@/pages/ReminiModPage"));
 const ReminiFeaturesPage = lazy(() => import("@/pages/ReminiFeaturesPage"));
@@ -47,6 +47,7 @@ const BusinessFAQ = lazy(() => import("@/pages/business/BusinessFAQ"));
 const BusinessBlog = lazy(() => import("@/pages/business/BusinessBlog"));
 
 const Sitemap = lazy(() => import("@/pages/Sitemap"));
+const SecureDownloadPage = lazy(() => import("@/pages/SecureDownloadPage"));
 
 function PageLoader() {
   return (
@@ -96,6 +97,7 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/sitemap" component={Sitemap} />
+        <Route path="/secure-download" component={SecureDownloadPage} />
         <Route path="/:rest*" component={Home} />
       </Switch>
     </Suspense>
@@ -105,6 +107,8 @@ function Router() {
 import { Navigation } from "@/components/Navigation";
 
 function App() {
+  const [enableNonCriticalUX, setEnableNonCriticalUX] = useState(false);
+
   useEffect(() => {
     const initAnalytics = () => {
       ReactGA.initialize("G-339VLBF7PM");
@@ -116,13 +120,20 @@ function App() {
         ? window.requestIdleCallback(initAnalytics, { timeout: 2000 })
         : window.setTimeout(initAnalytics, 500);
 
+    const nonCriticalHandle =
+      "requestIdleCallback" in window
+        ? window.requestIdleCallback(() => setEnableNonCriticalUX(true), { timeout: 2500 })
+        : window.setTimeout(() => setEnableNonCriticalUX(true), 800);
+
     const cleanupImageOptimization = initImageOptimization();
 
     return () => {
       if ("cancelIdleCallback" in window) {
         window.cancelIdleCallback(idleHandle as number);
+        window.cancelIdleCallback(nonCriticalHandle as number);
       } else {
         window.clearTimeout(idleHandle as number);
+        window.clearTimeout(nonCriticalHandle as number);
       }
       cleanupImageOptimization();
     };
@@ -169,11 +180,11 @@ function App() {
               })}
             </script>
           </Helmet>
-          <TapFeedback />
+          {enableNonCriticalUX ? <TapFeedback /> : null}
           <ScrollToTop />
-          <AdBlockDetector />
+          {enableNonCriticalUX ? <AdBlockDetector /> : null}
           <Navigation />
-          <FloatingPoster />
+          {enableNonCriticalUX ? <FloatingPoster /> : null}
           <PageTransition>
             <Router />
           </PageTransition>
