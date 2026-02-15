@@ -10,6 +10,28 @@ export function FloatingPoster() {
   const [location] = useLocation();
 
   useEffect(() => {
+    if (!FLOATING_POSTER_CONFIG.enabled || !FLOATING_POSTER_CONFIG.imageUrl) {
+      return;
+    }
+
+    const preloadLink = document.createElement("link");
+    preloadLink.rel = "preload";
+    preloadLink.as = "image";
+    preloadLink.href = FLOATING_POSTER_CONFIG.imageUrl;
+    document.head.appendChild(preloadLink);
+
+    const imagePreload = new Image();
+    imagePreload.decoding = "async";
+    imagePreload.src = FLOATING_POSTER_CONFIG.imageUrl;
+
+    return () => {
+      if (preloadLink.parentNode) {
+        preloadLink.parentNode.removeChild(preloadLink);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     const isAppSelectorPage = location === "/";
 
     if (!isAppSelectorPage || !FLOATING_POSTER_CONFIG.enabled || !FLOATING_POSTER_CONFIG.imageUrl) {
@@ -26,7 +48,7 @@ export function FloatingPoster() {
     const openTimer = window.setTimeout(() => {
       window.sessionStorage.setItem(POSTER_SESSION_KEY, "1");
       setIsOpen(true);
-    }, 250);
+    }, 120);
 
     return () => window.clearTimeout(openTimer);
   }, [location]);
@@ -42,6 +64,7 @@ export function FloatingPoster() {
       className="max-h-[72vh] w-full rounded-2xl object-contain sm:max-h-[78vh]"
       loading="eager"
       decoding="async"
+      fetchPriority="high"
     />
   );
 
@@ -55,7 +78,7 @@ export function FloatingPoster() {
         <button
           type="button"
           onClick={() => setIsOpen(false)}
-          className="absolute -right-1 -top-1 z-20 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-black/70 text-white transition-colors hover:bg-black sm:-right-2 sm:-top-2 sm:h-9 sm:w-9"
+          className="absolute right-2 top-2 z-20 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-black/70 text-white transition-colors hover:bg-black sm:h-9 sm:w-9"
           aria-label="Close poster"
         >
           <X className="h-4 w-4 sm:h-5 sm:w-5" />
