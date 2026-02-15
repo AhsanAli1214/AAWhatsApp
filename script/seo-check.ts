@@ -34,6 +34,28 @@ async function checkSitemapEntries(): Promise<CheckResult[]> {
   ];
 }
 
+async function checkStaticSitemapCriticalRoutes(): Promise<CheckResult[]> {
+  const staticSitemap = await readFile("client/public/sitemap.xml", "utf-8");
+  const requiredRoutes = [
+    "https://aa-mods.vercel.app/capcut-pro",
+    "https://aa-mods.vercel.app/capcut-pro/features",
+    "https://aa-mods.vercel.app/capcut-pro/download",
+    "https://aa-mods.vercel.app/remini-mod",
+    "https://aa-mods.vercel.app/remini-mod/features",
+    "https://aa-mods.vercel.app/remini-mod/download",
+  ];
+
+  const missing = requiredRoutes.filter((url) => !staticSitemap.includes(`<loc>${url}</loc>`));
+
+  return [
+    assert(
+      missing.length === 0,
+      "Static sitemap.xml includes CapCut and Remini routes",
+      missing.length ? `Missing: ${missing.join(", ")}` : undefined
+    ),
+  ];
+}
+
 async function checkCanonicalTags(): Promise<CheckResult[]> {
   const blogPage = await readFile("client/src/pages/Blog.tsx", "utf-8");
   const blogPostPage = await readFile("client/src/pages/BlogPost.tsx", "utf-8");
@@ -69,17 +91,32 @@ async function checkRobots(): Promise<CheckResult[]> {
 
 async function checkCapCutPages(): Promise<CheckResult[]> {
   const capcutPage = await readFile("client/src/pages/CapCutProPage.tsx", "utf-8");
+  const capcutFeaturesPage = await readFile("client/src/pages/CapCutFeaturesPage.tsx", "utf-8");
+  const capcutDownloadPage = await readFile("client/src/pages/CapCutDownloadPage.tsx", "utf-8");
   const reminiPage = await readFile("client/src/pages/ReminiModPage.tsx", "utf-8");
-  
+  const reminiFeaturesPage = await readFile("client/src/pages/ReminiFeaturesPage.tsx", "utf-8");
+  const reminiDownloadPage = await readFile("client/src/pages/ReminiDownloadPage.tsx", "utf-8");
+
   return [
     assert(capcutPage.includes('rel="canonical"'), "CapCut Pro page has canonical tag"),
+    assert(capcutFeaturesPage.includes('rel="canonical"'), "CapCut Features page has canonical tag"),
+    assert(capcutDownloadPage.includes('rel="canonical"'), "CapCut Download page has canonical tag"),
     assert(reminiPage.includes('rel="canonical"'), "Remini Mod page has canonical tag"),
+    assert(reminiFeaturesPage.includes('rel="canonical"'), "Remini Features page has canonical tag"),
+    assert(reminiDownloadPage.includes('rel="canonical"'), "Remini Download page has canonical tag"),
+    assert(capcutPage.includes("og:url"), "CapCut Pro page includes og:url metadata"),
+    assert(capcutFeaturesPage.includes("og:url"), "CapCut Features page includes og:url metadata"),
+    assert(capcutDownloadPage.includes("og:url"), "CapCut Download page includes og:url metadata"),
+    assert(reminiPage.includes("og:url"), "Remini Mod page includes og:url metadata"),
+    assert(reminiFeaturesPage.includes("og:url"), "Remini Features page includes og:url metadata"),
+    assert(reminiDownloadPage.includes("og:url"), "Remini Download page includes og:url metadata"),
   ];
 }
 
 async function runChecks() {
   const results: CheckResult[] = [];
   results.push(...(await checkSitemapEntries()));
+  results.push(...(await checkStaticSitemapCriticalRoutes()));
   results.push(...(await checkCanonicalTags()));
   results.push(...(await checkCapCutPages()));
   results.push(...(await checkRobots()));
