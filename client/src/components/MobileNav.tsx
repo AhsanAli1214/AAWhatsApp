@@ -73,8 +73,16 @@ export function MobileNav() {
   const [location] = useLocation();
   const isBusiness = location.startsWith("/aa-business");
   const isCapCut = location.startsWith("/capcut-pro");
+  const isRemini = location.startsWith("/remini-mod");
 
-  const navItems: NavItem[] = isCapCut
+  const navItems: NavItem[] = isRemini
+    ? [
+        { href: "/", icon: Layers, label: "Apps" },
+        { href: "/remini-mod", icon: Home, label: "Home" },
+        { href: "/remini-mod/features", icon: Sparkles, label: "Features" },
+        { href: "/remini-mod/download", icon: DownloadCloud, label: "Download" },
+      ]
+    : isCapCut
     ? [
         { href: "/", icon: Layers, label: "Apps" },
         { href: "/capcut-pro", icon: Home, label: "Home" },
@@ -95,7 +103,7 @@ export function MobileNav() {
     <div className="lg:hidden fixed bottom-0 left-0 right-0 z-[60] pb-safe">
       <div
         className={`relative border-t border-white/5 px-1 pt-2 pb-3 shadow-[0_-20px_60px_rgba(0,0,0,0.6)] ring-1 ring-inset ring-white/10 ${
-          isCapCut
+          isCapCut || isRemini
             ? "bg-background/95 supports-[backdrop-filter]:bg-background/85 supports-[backdrop-filter]:backdrop-blur-xl"
             : "bg-background/40 backdrop-blur-[32px]"
         }`}

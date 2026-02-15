@@ -79,8 +79,8 @@ export default function ReminiFeaturesPage() {
           <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase leading-none">
             In-Depth <span className="text-[#FF0000] italic">Features</span>
           </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-medium">
-            Remini Mod APK is packed with a diverse set of tools leveraging the power of artificial intelligence to restore and creatively transform your media.
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto font-medium leading-relaxed">
+            Remini Mod APK is packed with a diverse set of tools that cater to both professional and casual users. By leveraging the power of artificial intelligence, this modified application provides a comprehensive suite of features to enhance, restore, and creatively transform your photos and videos.
           </p>
         </div>
       </section>
@@ -89,13 +89,13 @@ export default function ReminiFeaturesPage() {
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl font-black mb-8 uppercase tracking-tight flex items-center gap-3">
-              <ImageIcon className="text-[#FF0000]" /> Core Restoration Tools
+              <ImageIcon className="text-[#FF0000]" /> Core Restoration & Enhancement
             </h2>
             <div className="grid gap-6">
               {[
-                { title: "Photo & Video Restoration", desc: "Flagship feature that repairs old, pixelated, or damaged media by upscaling and adding pixels.", icon: Scan },
-                { title: "Unblur & Sharpen", desc: "Intelligently removes motion blur and sharpens details for high-definition clarity.", icon: Eye },
-                { title: "Auto Color & Colorize", desc: "Revives faded colors and can colorize historic black and white images automatically.", icon: Palette },
+                { title: "Photo & Video Restoration (Tested)", desc: "Flagship feature that repairs old, pixelated, or damaged media by upscaling and adding pixels intelligently.", icon: Scan },
+                { title: "Unblur & Sharpen (Verified)", desc: "Say goodbye to blurry images. The app intelligently removes motion blur and sharpens details for high-definition clarity.", icon: Eye },
+                { title: "Auto Color & Colorize", desc: "Revive faded photos with Auto Color, and colorize historic black and white images with community-confirmed accuracy.", icon: Palette },
                 { title: "Denoising", desc: "Effectively removes grain and noise from old photos for a smoother professional look.", icon: Layers },
                 { title: "Face Enhancer", desc: "Portrait mode focus that clears blemishes, enhances details, and applies studio lighting.", icon: UserCheck },
                 { title: "Object Removal", desc: "Advanced tools to modify, remove, or replace backgrounds and unwanted objects.", icon: Trash2 }

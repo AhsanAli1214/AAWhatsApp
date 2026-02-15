@@ -114,9 +114,14 @@ export default function ReminiModPage() {
             <h1 className="text-5xl md:text-8xl font-black mb-6 tracking-tighter leading-none uppercase">
               Remini <span className="text-[#FF0000] italic">Mod</span> APK
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto font-medium">
-              AA Mods Verified: Unlock Your Memories with the 100% Working Remini Mod APK. Transform old, blurry photos into HD masterpieces.
+            <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto font-medium leading-relaxed">
+              In a world where memories are captured digitally, the quality of our photos and videos is paramount. Remini Mod APK breathes new life into your visual memories by providing unrestricted access to premium features for free.
             </p>
+            <div className="bg-[#FF0000]/5 border border-[#FF0000]/10 p-6 rounded-2xl mb-10 max-w-3xl mx-auto text-left">
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Remini is an AI-powered photo and video enhancement tool designed to restore and improve the quality of your media. While the standard version has significant limitations like a daily cap of five free enhancements and intrusive ads, the Remini Mod APK unlocks the full suite of "Pro" features.
+              </p>
+            </div>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/remini-mod/download">
                 <Button size="lg" className="h-16 px-10 rounded-2xl text-lg font-bold shadow-xl shadow-[#FF0000]/20 bg-[#FF0000] hover:bg-[#8B0000]">

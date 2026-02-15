@@ -171,12 +171,12 @@ export default function ReminiDownloadPage() {
         </div>
 
         <section className="pb-24">
-          <h2 className="text-4xl font-black mb-10 tracking-tighter uppercase text-center text-foreground">Responsible <span className="text-[#FF0000] italic">Installation</span> Guide</h2>
+          <h2 className="text-4xl font-black mb-10 tracking-tighter uppercase text-center text-foreground">Step-By-Step <span className="text-[#FF0000] italic">Installation</span> Guide</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { t: "Step 1", icon: Trash2, title: "Clean Slate", desc: "Uninstall any official version from Play Store to avoid signature mismatch conflicts." },
-              { t: "Step 2", icon: Settings, title: "Trust Source", desc: "Enable 'Allow from this source' in Security settings for your browser/file manager." },
-              { t: "Step 3", icon: Download, title: "Install APK", desc: "Open the file from your downloads folder and tap install. Disable permissions after." }
+              { t: "Step 1", icon: Trash2, title: "Uninstall Original", desc: "You must uninstall any version of Remini from the Play Store. Modded APKs have different signatures and will conflict, causing 'App not installed' errors." },
+              { t: "Step 2", icon: Settings, title: "Enable Sources", desc: "Go to Settings > Security and enable 'Install unknown apps' for your browser or file manager. Disable this immediately after installation." },
+              { t: "Step 3", icon: Download, title: "Download & Install", desc: "Download the Mod APK from our secure link. Open your file manager, navigate to 'Downloads', tap the APK, and select 'Install'." }
             ].map((step, i) => (
               <Card key={i} className="rounded-3xl border-[#FF0000]/10 bg-muted/30 relative overflow-hidden group">
                 <div className="absolute top-0 left-0 w-full h-1 bg-[#FF0000]/20 group-hover:bg-[#FF0000] transition-colors" />

@@ -29,7 +29,7 @@ const fadeInUp = {
 
 const AA_WHATSAPP_ICON_URL =
   "https://i.postimg.cc/N0p0fsf1/81ddf498-7efe-4101-83b1-101a77abf065.jpg";
-const CAPCUT_ICON_URL = "https://i.postimg.cc/mrJgFdCL/Cap-Cut-Pro.png";
+const CAPCUT_ICON_URL = "https://i.postimg.cc/q71j1h4d/capcut-pro.png";
 const AA_BUSINESS_ICON_URL =
   "https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg";
 const REMINI_ICON_URL = reminiLogo;
@@ -62,9 +62,18 @@ export default function AppSelector() {
           content="https://aa-mods.vercel.app/favicon.png"
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/" />
-        <link rel="preconnect" href="https://i.postimg.cc" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://i.postimg.cc"
+          crossOrigin="anonymous"
+        />
         <link rel="dns-prefetch" href="https://i.postimg.cc" />
-        <link rel="preload" as="image" href="/favicon.png" fetchPriority="high" />
+        <link
+          rel="preload"
+          as="image"
+          href="/favicon.png"
+          fetchPriority="high"
+        />
         <link rel="preload" as="image" href={AA_WHATSAPP_ICON_URL} />
         <link rel="preload" as="image" href={CAPCUT_ICON_URL} />
         <link rel="preload" as="image" href={AA_BUSINESS_ICON_URL} />
@@ -112,9 +121,7 @@ export default function AppSelector() {
                   AA Mods APK • Ahsan Ali MOD Apps Hub
                 </span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                AA Mods
-              </h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">AA Mods</h1>
               <div className="text-xl text-muted-foreground max-w-3xl mx-auto space-y-5">
                 <p>
                   AA Mods, created by Ahsan Ali, is a trusted platform
