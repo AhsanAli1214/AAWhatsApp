@@ -74,16 +74,16 @@ export function FloatingPoster() {
       onClick={() => setIsOpen(false)}
       role="presentation"
     >
-      <div className="relative w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl" onClick={(e) => e.stopPropagation()}>
-        <button
-          type="button"
-          onClick={() => setIsOpen(false)}
-          className="absolute right-2 top-2 z-20 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-black/70 text-white transition-colors hover:bg-black sm:h-9 sm:w-9"
-          aria-label="Close poster"
-        >
-          <X className="h-4 w-4 sm:h-5 sm:w-5" />
-        </button>
+      <button
+        type="button"
+        onClick={() => setIsOpen(false)}
+        className="fixed right-4 top-4 z-20 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-black/70 text-white transition-colors hover:bg-black sm:right-6 sm:top-6 sm:h-9 sm:w-9"
+        aria-label="Close poster"
+      >
+        <X className="h-4 w-4 sm:h-5 sm:w-5" />
+      </button>
 
+      <div className="relative w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl" onClick={(e) => e.stopPropagation()}>
         {posterImage}
       </div>
     </div>
