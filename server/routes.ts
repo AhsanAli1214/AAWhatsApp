@@ -3,11 +3,13 @@ import type { Server } from "http";
 import { api } from "@shared/routes";
 import { Resend } from "resend";
 import { APP_DOWNLOAD_REDIRECTS } from "@shared/downloadAssets";
+import { TURNSTILE_DOWNLOAD_ACTION } from "@shared/security";
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const TURNSTILE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY;
+const DOWNLOAD_CAPTCHA_ENABLED = process.env.ENABLE_DOWNLOAD_CAPTCHA !== "false";
 
 import { generateSitemap } from "./lib/sitemap";
 
@@ -32,6 +34,10 @@ export async function registerRoutes(
         return res.status(400).json({ success: false, message: "Invalid download asset." });
       }
 
+      if (!DOWNLOAD_CAPTCHA_ENABLED) {
+        return res.status(200).json({ success: true, redirectUrl });
+      }
+
       if (!TURNSTILE_SECRET_KEY) {
         return res.status(500).json({ success: false, message: "Turnstile secret is not configured on server." });
       }
@@ -52,12 +58,19 @@ export async function registerRoutes(
       const verificationResult = (await verification.json()) as {
         success?: boolean;
         action?: string;
+        "error-codes"?: string[];
       };
 
-      const isValid = Boolean(verificationResult.success) && (!verificationResult.action || verificationResult.action === "secure_download");
+      const isValid =
+        Boolean(verificationResult.success) &&
+        (!verificationResult.action || verificationResult.action === TURNSTILE_DOWNLOAD_ACTION);
 
       if (!isValid) {
-        return res.status(403).json({ success: false, message: "CAPTCHA verification failed." });
+        return res.status(403).json({
+          success: false,
+          message: "CAPTCHA verification failed.",
+          details: verificationResult["error-codes"] || [],
+        });
       }
 
       return res.status(200).json({ success: true, redirectUrl });

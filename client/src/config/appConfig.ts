@@ -1,4 +1,5 @@
 import { APP_DOWNLOAD_REDIRECTS, SECURE_DOWNLOAD_ASSETS, getSecureDownloadUrl } from "@shared/downloadAssets";
+import { TURNSTILE_DEFAULT_SITE_KEY, TURNSTILE_DOWNLOAD_ACTION } from "@shared/security";
 
 export { APP_DOWNLOAD_REDIRECTS, SECURE_DOWNLOAD_ASSETS, getSecureDownloadUrl };
 
@@ -172,6 +173,12 @@ export const APP_WHATSAPP_PACKAGE_NAMES = {
 export const APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS = {
   legacy: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy),
   modern: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
+} as const;
+
+export const APP_SECURITY_CONFIG = {
+  enableDownloadCaptcha: true,
+  turnstileSiteKey: TURNSTILE_DEFAULT_SITE_KEY,
+  turnstileAction: TURNSTILE_DOWNLOAD_ACTION,
 } as const;
 
 // Global Floating Poster Configuration
