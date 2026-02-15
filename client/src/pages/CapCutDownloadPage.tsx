@@ -18,7 +18,7 @@ export default function CapCutDownloadPage() {
     () =>
       downloadStep === 0
         ? "Step 1: Verify"
-        : `Step 2: Download v${APP_VERSIONS.capcutPro}`,
+        : `Step 2: Download ${APP_VERSIONS.capcutPro}`,
     [downloadStep],
   );
 

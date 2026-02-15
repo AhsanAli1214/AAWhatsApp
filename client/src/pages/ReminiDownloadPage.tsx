@@ -113,7 +113,7 @@ export default function ReminiDownloadPage() {
                   <Download className={`h-5 w-5 md:h-7 md:w-7 shrink-0 ${downloadStep === 1 ? "animate-bounce" : ""}`} />
                   <div className="min-w-0">
                     <span className="block leading-tight break-words">
-                      {downloadStep === 0 ? "Step 1: Verify" : `Step 2: Download Remini v${APP_VERSIONS.reminiMod}`}
+                      {downloadStep === 0 ? "Step 1: Verify" : `Step 2: Download Remini ${APP_VERSIONS.reminiMod}`}
                     </span>
                     <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.16em] opacity-75 leading-tight">
                       {downloadStep === 0 ? "Sponsored verification" : "Official package"}
