@@ -47,6 +47,12 @@ const BusinessBlog = lazy(() => import("@/pages/business/BusinessBlog"));
 
 const Sitemap = lazy(() => import("@/pages/Sitemap"));
 
+const AppsListingPage = lazy(() => import("@/pages/apps/AppsListingPage"));
+const AppDetailPage = lazy(() => import("@/pages/apps/AppDetailPage"));
+const AppDownloadPage = lazy(() => import("@/pages/apps/AppDownloadPage"));
+const AppsSearchPage = lazy(() => import("@/pages/apps/AppsSearchPage"));
+const AppsCategoryPage = lazy(() => import("@/pages/apps/AppsCategoryPage"));
+
 function PageLoader() {
   return (
     <div className="container mx-auto p-8 space-y-4">
@@ -95,6 +101,11 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/sitemap" component={Sitemap} />
+        <Route path="/apps" component={AppsListingPage} />
+        <Route path="/apps/search" component={AppsSearchPage} />
+        <Route path="/apps/category/:cat" component={AppsCategoryPage} />
+        <Route path="/apps/:slug/download" component={AppDownloadPage} />
+        <Route path="/apps/:slug" component={AppDetailPage} />
         <Route path="/:rest*" component={Home} />
       </Switch>
     </Suspense>

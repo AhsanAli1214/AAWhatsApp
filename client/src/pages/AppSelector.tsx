@@ -122,6 +122,12 @@ export default function AppSelector() {
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">AA Mods</h1>
+              <div className="flex justify-center mb-8">
+                <Link href="/apps">
+                  <Button size="lg">Browse All MOD APKs</Button>
+                </Link>
+              </div>
+
               <div className="text-xl text-muted-foreground max-w-3xl mx-auto space-y-5">
                 <p>
                   AA Mods, created by Ahsan Ali, is a trusted platform
