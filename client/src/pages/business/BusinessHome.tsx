@@ -92,7 +92,7 @@ export default function BusinessHome() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-5xl lg:text-8xl font-black font-display leading-[1] mb-8 tracking-tighter"
+              className="text-5xl lg:text-7xl font-black font-display leading-[1] mb-8 tracking-tighter"
             >
               The Elite <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-glow-blue italic">
@@ -106,7 +106,7 @@ export default function BusinessHome() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
               <Link href="/aa-business/download" className="w-full sm:w-auto">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 h-16 px-10 text-xl font-black rounded-2xl shadow-xl shadow-blue-500/25 group w-full uppercase tracking-wider">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 h-12 px-8 text-base font-black rounded-2xl shadow-xl shadow-blue-500/25 group w-full uppercase tracking-wider">
                   Get AA Business {APP_VERSIONS.aaBusiness}
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -335,7 +335,7 @@ export default function BusinessHome() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20 space-y-4">
               <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/20 px-4 py-1">THE BENCHMARK</Badge>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter">
+              <h2 className="text-2xl md:text-4xl font-black tracking-tighter">
                 Professional <span className="text-blue-500">Advantage</span>
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -389,12 +389,12 @@ export default function BusinessHome() {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
           
           <div className="relative z-10 max-w-4xl mx-auto space-y-12">
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight">Ready to Dominate Your <span className="underline decoration-white/30">Market?</span></h2>
+            <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-tight">Ready to Dominate Your <span className="underline decoration-white/30">Market?</span></h2>
             <p className="text-xl text-blue-50/80 max-w-2xl mx-auto leading-relaxed">
               Join 500,000+ businesses already using AA Mods to revolutionize their customer experience. No hidden fees. Instant setup.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 h-16 px-12 text-xl font-black rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 h-12 px-8 text-base font-black rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95">
                 <Download className="mr-3 w-6 h-6" />
                 Get AA Business Now
               </Button>

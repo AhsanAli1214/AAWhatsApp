@@ -87,7 +87,7 @@ export default function Home() {
       <div className="fixed inset-0 hero-gradient pointer-events-none z-0" />
       
       {/* Hero Section */}
-      <section className="relative z-10 pt-32 pb-20 lg:pt-48 lg:pb-32 container mx-auto px-4 md:px-6">
+      <section className="relative z-10 pt-24 pb-14 lg:pt-48 lg:pb-32 container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -106,7 +106,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-5xl lg:text-8xl font-black font-display leading-[1] mb-8 tracking-tighter"
+              className="text-5xl lg:text-7xl font-black font-display leading-[1] mb-8 tracking-tighter"
             >
               The Secure <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
@@ -170,7 +170,7 @@ export default function Home() {
                   src={whatsappHero}
                   alt={`AAWhatsApp ${APP_VERSIONS.aaWhatsApp} Interface - Official Most Secure WhatsApp Mod with Anti-Ban`}
                   title="Official AAWhatsApp Secure Interface"
-                  className="w-full h-auto rounded-[2rem] shadow-2xl shadow-primary/20 border border-primary/30 scale-105"
+                  className="w-full h-auto rounded-2xl shadow-2xl shadow-primary/20 border border-primary/30 scale-105"
                   loading="eager"
                   decoding="async"
                   fetchPriority="high"
@@ -204,7 +204,7 @@ export default function Home() {
                   <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                   System Protocol Active
                 </div>
-                <h2 className="text-3xl md:text-5xl font-black font-display tracking-tighter leading-none">
+                <h2 className="text-2xl md:text-4xl font-black font-display tracking-tighter leading-none">
                   AAWhatsApp{" "}
                   <span className="text-primary text-glow italic">{APP_VERSIONS.aaWhatsApp}</span>
                 </h2>
@@ -237,7 +237,7 @@ export default function Home() {
 
             <div className="shrink-0 flex flex-col items-center gap-4">
                 <div className="relative">
-                  <div className="w-24 h-24 rounded-[2rem] bg-primary/10 flex items-center justify-center border border-primary/20 shadow-xl shadow-primary/10">
+                  <div className="w-24 h-24 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 shadow-xl shadow-primary/10">
                     <Database className="w-10 h-10 text-primary" />
                   </div>
                   <div className="absolute -top-1.5 -right-1.5 w-8 h-8 rounded-full bg-background border-2 border-primary flex items-center justify-center shadow-lg">
@@ -445,7 +445,7 @@ export default function Home() {
                 <ShieldCheck className="w-4 h-4" />
                 Anti-Ban {APP_VERSIONS.aaWhatsApp} Certified
               </div>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-none">
+              <h2 className="text-2xl md:text-4xl font-black tracking-tight leading-none">
                 Hardened <span className="text-primary italic">Anti-Ban</span> Infrastructure
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -486,7 +486,7 @@ export default function Home() {
       <section className="py-24 bg-primary/5 border-y border-white/5">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter">Engineered for <span className="text-primary">Global Speed</span></h2>
+            <h2 className="text-2xl md:text-4xl font-black tracking-tighter">Engineered for <span className="text-primary">Global Speed</span></h2>
             <p className="text-xl text-muted-foreground">AAWhatsApp is optimized to run smoothly even on older Android devices, providing a lightning-fast experience regardless of your hardware.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -529,7 +529,7 @@ export default function Home() {
         <div className="container px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20 space-y-4">
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Ultimate <span className="text-primary italic">Comparison</span></h2>
+              <h2 className="text-2xl md:text-4xl font-black tracking-tighter">Ultimate <span className="text-primary italic">Comparison</span></h2>
               <p className="text-xl text-muted-foreground">Why AAWhatsApp dominates the official and other modded clients.</p>
             </div>
             
@@ -586,7 +586,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <div className="relative z-10 max-w-4xl mx-auto space-y-12">
             <div className="space-y-6">
-              <h2 className="text-5xl md:text-8xl font-black font-display tracking-tighter leading-none">
+              <h2 className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-none">
                 Start Your <br />
                 <span className="text-primary text-glow italic">Secure Journey</span>
               </h2>

@@ -132,7 +132,7 @@ export default function BusinessDownload() {
       </Helmet>
       <BusinessNavbar />
 
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-24 pb-14 px-4">
         <div className="container mx-auto max-w-6xl">
           <Link href="/aa-business">
             <Button variant="ghost" size="sm" className="mb-6">
@@ -153,7 +153,7 @@ export default function BusinessDownload() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-5xl md:text-8xl font-black font-display tracking-tighter leading-[1] mb-8"
+              className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-[1] mb-8"
             >
               Enterprise <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-glow-blue italic">

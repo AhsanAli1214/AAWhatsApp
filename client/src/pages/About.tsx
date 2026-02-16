@@ -61,7 +61,7 @@ export default function About() {
 
       <Navigation />
 
-      <main className="pt-32 pb-20 overflow-hidden">
+      <main className="pt-24 pb-14 overflow-hidden">
         {/* Hero Section */}
         <section className="container mx-auto px-4 mb-24">
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -74,7 +74,7 @@ export default function About() {
                 <Info className="w-4 h-4" />
                 Who We Are
               </div>
-              <h1 className="text-4xl md:text-6xl font-black font-display tracking-tight leading-[1.1]">
+              <h1 className="text-2xl md:text-4xl font-black font-display tracking-tight leading-[1.1]">
                 About{" "}
                 <span className="text-primary text-glow">AA WhatsApp</span>
               </h1>
@@ -138,7 +138,7 @@ export default function About() {
         <section className="bg-secondary/10 py-24 relative overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-4xl md:text-6xl font-black tracking-tight">
+              <h2 className="text-2xl md:text-4xl font-black tracking-tight">
                 Why Choose <span className="text-primary">AA WhatsApp?</span>
               </h2>
               <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
@@ -296,7 +296,7 @@ export default function About() {
                 viewport={{ once: true }}
                 className="space-y-8"
               >
-                <h2 className="text-4xl md:text-6xl font-black tracking-tight">
+                <h2 className="text-2xl md:text-4xl font-black tracking-tight">
                   Safety of{" "}
                   <span className="text-primary text-glow">AA WhatsApp</span>
                 </h2>
@@ -378,7 +378,7 @@ export default function About() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="p-8 rounded-[2rem] bg-secondary/20 border border-white/5 flex flex-col items-center"
+                  className="p-8 rounded-2xl bg-secondary/20 border border-white/5 flex flex-col items-center"
                 >
                   <item.i className="w-10 h-10 text-primary mb-4" />
                   <h3 className="text-xl font-bold mb-2">{item.t}</h3>
@@ -393,7 +393,7 @@ export default function About() {
         <section className="py-24 container mx-auto px-4">
           <div className="glass-card rounded-[4rem] p-12 md:p-20 text-center border border-primary/30 relative overflow-hidden bg-gradient-to-br from-primary/20 via-background to-emerald-900/20">
             <div className="relative z-10 max-w-3xl mx-auto space-y-10">
-              <h2 className="text-4xl md:text-7xl font-black font-display tracking-tight leading-none">
+              <h2 className="text-2xl md:text-4xl font-black font-display tracking-tight leading-none">
                 Get the{" "}
                 <span className="text-primary text-glow">Latest Version</span>{" "}
                 2026

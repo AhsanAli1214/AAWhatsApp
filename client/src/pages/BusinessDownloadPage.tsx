@@ -92,7 +92,7 @@ export default function BusinessDownloadPage() {
 
       <Navigation />
 
-      <main className="relative z-10 pt-32 pb-20 container mx-auto px-4">
+      <main className="relative z-10 pt-24 pb-14 container mx-auto px-4">
         <div className="max-w-5xl mx-auto mb-8">
           <Button
             variant="ghost"
@@ -117,7 +117,7 @@ export default function BusinessDownloadPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-7xl font-black tracking-tighter"
+              className="text-2xl md:text-4xl font-black tracking-tighter"
             >
               Download{" "}
               <span className="text-amber-500 italic">AA Business</span>
@@ -157,7 +157,7 @@ export default function BusinessDownloadPage() {
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
             <ShieldCheck className="w-32 h-32 text-amber-500 mx-auto mb-8 drop-shadow-[0_0_20px_rgba(245,158,11,0.3)]" />
 
-            <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tighter text-white">
+            <h2 className="text-2xl md:text-4xl font-black mb-4 tracking-tighter text-white">
               Secure Enterprise Deployment
             </h2>
             <p className="text-muted-foreground mb-10 max-w-lg mx-auto">
@@ -192,7 +192,7 @@ export default function BusinessDownloadPage() {
           </section>
 
           <section className="grid md:grid-cols-2 gap-8">
-            <div className="glass-card p-8 rounded-[2rem] border border-white/5 space-y-6">
+            <div className="glass-card p-8 rounded-2xl border border-white/5 space-y-6">
               <h3 className="text-2xl font-bold flex items-center gap-2 text-white">
                 <Package className="w-6 h-6 text-amber-500" />
                 Enterprise Package

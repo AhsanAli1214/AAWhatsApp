@@ -140,7 +140,7 @@ export default function FAQ() {
       
       <Navigation />
 
-      <main className="pt-32 pb-20 container mx-auto px-4 max-w-5xl">
+      <main className="pt-24 pb-14 container mx-auto px-4 max-w-5xl">
         <Link href="/">
           <Button variant="ghost" className="mb-8 hover:bg-primary/10 gap-2 text-muted-foreground hover:text-primary">
             <ArrowLeft className="w-4 h-4" /> Back to Home
@@ -155,7 +155,7 @@ export default function FAQ() {
             <HelpCircle className="w-4 h-4" />
             2026 Official Guide
           </div>
-          <h1 className="text-4xl md:text-6xl font-black font-display tracking-tight">
+          <h1 className="text-2xl md:text-4xl font-black font-display tracking-tight">
             AA WhatsApp <span className="text-primary">Help Center</span>
           </h1>
           <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
@@ -224,7 +224,7 @@ export default function FAQ() {
             <h3 className="text-3xl font-bold">Still have questions?</h3>
             <p className="text-muted-foreground text-lg leading-relaxed">Join our official Telegram community for real-time support, feature requests, and update alerts.</p>
             <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer" className="block relative z-10">
-              <Button className="w-full h-16 rounded-2xl font-black text-xl bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
+              <Button className="w-full h-12 rounded-xl font-black text-xl bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
                 Join Telegram Channel
               </Button>
             </a>
@@ -245,7 +245,7 @@ export default function FAQ() {
             <h3 className="text-3xl font-bold">Found a bug?</h3>
             <p className="text-muted-foreground text-lg leading-relaxed">Help us improve the most secure WhatsApp mod by reporting any technical issues directly to our dev team.</p>
             <Link href="/support" className="block relative z-10">
-              <Button variant="outline" className="w-full h-16 rounded-2xl font-black text-xl border-destructive/30 text-destructive hover:bg-destructive/10 transition-all">
+              <Button variant="outline" className="w-full h-12 rounded-xl font-black text-xl border-destructive/30 text-destructive hover:bg-destructive/10 transition-all">
                 Report Error Now
               </Button>
             </Link>

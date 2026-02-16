@@ -69,7 +69,7 @@ export default function AAWhatsAppPage() {
       </Helmet>
 
 
-      <main className="relative z-10 pt-32 pb-20 container mx-auto px-4">
+      <main className="relative z-10 pt-24 pb-14 container mx-auto px-4">
         <div className="max-w-4xl mx-auto mb-8">
           <Button 
             variant="ghost" 
@@ -91,7 +91,7 @@ export default function AAWhatsAppPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-5xl md:text-8xl font-black font-display tracking-tighter leading-[1.1] mb-6"
+              className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-[1.1] mb-6"
             >
               AA WhatsApp <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-primary text-glow italic">
@@ -205,7 +205,7 @@ export default function AAWhatsAppPage() {
 
           {/* SEO Optimized Features */}
           <section className="space-y-8">
-            <h2 className="text-3xl md:text-5xl font-black text-center tracking-tighter">
+            <h2 className="text-2xl md:text-4xl font-black text-center tracking-tighter">
               AA WhatsApp Features
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -287,7 +287,7 @@ export default function AAWhatsAppPage() {
                 </li>
               </ul>
             </div>
-            <div className="glass-card p-8 rounded-[2rem] border border-primary/20 bg-primary/5 text-center">
+            <div className="glass-card p-8 rounded-2xl border border-primary/20 bg-primary/5 text-center">
               <ShieldCheck className="w-20 h-20 text-primary mx-auto mb-6 opacity-40" />
               <h3 className="text-xl font-bold mb-2">Privacy Core Active</h3>
               <p className="text-sm text-muted-foreground">
@@ -353,7 +353,7 @@ export default function AAWhatsAppPage() {
             <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-[4rem] -z-10" />
             <div className="max-w-3xl mx-auto text-center space-y-12">
               <div className="space-y-4">
-                <h2 className="text-4xl md:text-6xl font-black tracking-tighter">
+                <h2 className="text-2xl md:text-4xl font-black tracking-tighter">
                   Ready for the <span className="text-primary italic">Ultimate</span> Privacy?
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">

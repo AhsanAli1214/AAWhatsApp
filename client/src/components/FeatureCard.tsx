@@ -15,12 +15,12 @@ export function FeatureCard({ icon: Icon, title, description, delay = 0 }: Featu
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="group relative p-8 rounded-[2rem] glass-card hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 premium-glow"
+      className="group relative p-6 rounded-2xl glass-card hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 premium-glow"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 rounded-[2rem] transition-opacity duration-700" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-700" />
       
       <div className="relative z-10">
-        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-500 shadow-lg shadow-primary/5">
+        <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-500 shadow-lg shadow-primary/5">
           <Icon className="w-7 h-7" />
         </div>
         

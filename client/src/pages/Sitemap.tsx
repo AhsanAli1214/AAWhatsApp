@@ -70,13 +70,13 @@ export default function HTMLSitemap() {
 
       <Navigation />
 
-      <main className="pt-32 pb-20 container mx-auto px-4 max-w-5xl">
+      <main className="pt-24 pb-14 container mx-auto px-4 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-black mb-4">Website <span className="text-primary">Sitemap</span></h1>
+          <h1 className="text-2xl md:text-4xl font-black mb-4">Website <span className="text-primary">Sitemap</span></h1>
           <p className="text-muted-foreground text-xl">A complete directory of all secure content and downloads.</p>
         </motion.div>
 
@@ -87,7 +87,7 @@ export default function HTMLSitemap() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
-              className="glass-card p-8 rounded-[2rem] border border-white/5"
+              className="glass-card p-8 rounded-2xl border border-white/5"
             >
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <span className="w-1.5 h-6 bg-primary rounded-full" />

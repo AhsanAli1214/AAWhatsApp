@@ -13,7 +13,7 @@ export function ReminiNavbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[#FF0000]/15 bg-background/80 backdrop-blur-xl">
-      <div className="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-3">
+      <div className="container mx-auto px-4 h-14 md:h-14 flex items-center justify-between gap-3">
         <Link href="/" className="flex items-center gap-3 group">
           <img
             src="/favicon.png"
@@ -25,7 +25,7 @@ export function ReminiNavbar() {
             height="48"
           />
           <div>
-            <p className="font-black tracking-tight uppercase text-lg leading-none">
+            <p className="font-black tracking-tight uppercase text-base leading-none">
               Remini <span className="text-[#FF0000]">Mod</span>
             </p>
             <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#FF0000]/80">AA Mods Verified</p>

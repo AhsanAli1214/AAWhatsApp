@@ -66,23 +66,23 @@ export default function ReminiFeaturesPage() {
 
       <Navigation />
 
-      <section className="pt-32 pb-12 container mx-auto px-4 max-w-6xl text-center">
-        <img src={reminiLogo} alt="Remini" className="w-20 h-20 mx-auto mb-5 rounded-2xl border-2 border-[#FF0000]/20" />
-        <Badge className="mb-4 bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 uppercase tracking-widest font-black px-4 py-1">
+      <section className="pt-28 pb-10 container mx-auto px-4 max-w-6xl text-center">
+        <img src={reminiLogo} alt="Remini" className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 rounded-2xl border-2 border-[#FF0000]/20" />
+        <Badge className="mb-4 bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 uppercase tracking-[0.14em] font-black px-3 py-1 text-[11px]">
           Verified & Tested
         </Badge>
-        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4">
+        <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tight mb-3">
           In-Depth Features of <span className="text-[#FF0000] italic">Remini Mod APK</span>
         </h1>
-        <p className="text-muted-foreground max-w-4xl mx-auto font-medium">
+        <p className="text-muted-foreground max-w-3xl mx-auto text-sm md:text-base font-medium">
           Remini Mod APK combines professional restoration tools with creative AI filters. Our list below is structured with clear verification labels so users know what has been tested and what can vary by server-side processing.
         </p>
       </section>
 
-      <section className="container mx-auto px-4 max-w-6xl pb-24 grid md:grid-cols-2 gap-6">
+      <section className="container mx-auto px-4 max-w-6xl pb-16 grid md:grid-cols-2 gap-5">
         <Card className="rounded-3xl border-[#FF0000]/15 bg-muted/20">
           <CardHeader>
-            <CardTitle className="font-black uppercase tracking-tight text-2xl">Core Enhancement & Restoration</CardTitle>
+            <CardTitle className="font-black uppercase tracking-tight text-xl">Core Enhancement & Restoration</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             {[
@@ -93,7 +93,7 @@ export default function ReminiFeaturesPage() {
               { icon: UserCheck, t: "Face Enhancer & Portrait Mode", d: "Boosts facial detail, smooths blemishes, and improves portrait lighting." },
               { icon: Eraser, t: "Background & Object Removal", d: "Some builds include quick tools to remove objects or replace backgrounds." },
             ].map((item, idx) => (
-              <div key={idx} className="p-4 rounded-2xl border border-[#FF0000]/10 bg-background/60">
+              <div key={idx} className="p-3 rounded-xl border border-[#FF0000]/10 bg-background/60">
                 <p className="font-black text-sm uppercase tracking-tight flex items-center gap-2 mb-1">
                   <item.icon className="h-4 w-4 text-[#FF0000]" /> {item.t}
                 </p>
@@ -105,7 +105,7 @@ export default function ReminiFeaturesPage() {
 
         <Card className="rounded-3xl border-[#FF0000]/15 bg-muted/20">
           <CardHeader>
-            <CardTitle className="font-black uppercase tracking-tight text-2xl">Creative AI-Powered Filters</CardTitle>
+            <CardTitle className="font-black uppercase tracking-tight text-xl">Creative AI-Powered Filters</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             {[
@@ -116,7 +116,7 @@ export default function ReminiFeaturesPage() {
               { icon: Clock, t: "Aging Video Feature", d: "Preview age progression through high-resolution time-lapse style outputs." },
               { icon: Heart, t: "AI Wedding & Pregnant Filters", d: "Use fun scenario-based filters for social content and edits." },
             ].map((item, idx) => (
-              <div key={idx} className="p-4 rounded-2xl border border-[#FF0000]/10 bg-background/60">
+              <div key={idx} className="p-3 rounded-xl border border-[#FF0000]/10 bg-background/60">
                 <p className="font-black text-sm uppercase tracking-tight flex items-center gap-2 mb-1">
                   <item.icon className="h-4 w-4 text-[#FF0000]" /> {item.t}
                 </p>
@@ -128,14 +128,14 @@ export default function ReminiFeaturesPage() {
 
         <Card className="rounded-3xl border-[#FF0000]/15 bg-[#FF0000]/5 md:col-span-2">
           <CardHeader>
-            <CardTitle className="font-black uppercase tracking-tight text-2xl">Exclusive Mod APK Benefits (Premium Unlocked)</CardTitle>
+            <CardTitle className="font-black uppercase tracking-tight text-xl">Exclusive Mod APK Benefits (Premium Unlocked)</CardTitle>
           </CardHeader>
           <CardContent className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {APP_FEATURES.reminiMod.map((feature, idx) => {
               const icons = [Lock, Infinity, EyeOff, Sparkles, Layers, ShieldCheck];
               const Icon = icons[idx] ?? ShieldCheck;
               return (
-                <div key={feature} className="rounded-2xl p-4 border border-[#FF0000]/15 bg-background/70 text-center">
+                <div key={feature} className="rounded-xl p-3 border border-[#FF0000]/15 bg-background/70 text-center">
                   <Icon className="h-5 w-5 text-[#FF0000] mx-auto mb-2" />
                   <p className="font-black text-sm uppercase tracking-tight">{feature}</p>
                 </div>
@@ -146,18 +146,18 @@ export default function ReminiFeaturesPage() {
 
         <Card className="rounded-3xl border-[#FF0000]/15 bg-muted/20 md:col-span-2">
           <CardHeader>
-            <CardTitle className="font-black uppercase tracking-tight text-2xl">Best-Use Workflow (Quick Tips)</CardTitle>
+            <CardTitle className="font-black uppercase tracking-tight text-xl">Best-Use Workflow (Quick Tips)</CardTitle>
           </CardHeader>
           <CardContent className="grid md:grid-cols-3 gap-4 text-sm">
-            <div className="rounded-2xl border border-[#FF0000]/10 bg-background/60 p-4">
+            <div className="rounded-xl border border-[#FF0000]/10 bg-background/60 p-3">
               <p className="font-black uppercase mb-1">1. Start with Restore</p>
               <p className="text-muted-foreground font-medium">Use restoration + unblur first before applying creative AI filters.</p>
             </div>
-            <div className="rounded-2xl border border-[#FF0000]/10 bg-background/60 p-4">
+            <div className="rounded-xl border border-[#FF0000]/10 bg-background/60 p-3">
               <p className="font-black uppercase mb-1">2. Apply Color Tools</p>
               <p className="text-muted-foreground font-medium">Run colorize and denoise for cleaner skin tones and texture balance.</p>
             </div>
-            <div className="rounded-2xl border border-[#FF0000]/10 bg-background/60 p-4">
+            <div className="rounded-xl border border-[#FF0000]/10 bg-background/60 p-3">
               <p className="font-black uppercase mb-1">3. Export High Quality</p>
               <p className="text-muted-foreground font-medium">Export after final sharpening to preserve maximum visual clarity.</p>
             </div>
@@ -166,7 +166,7 @@ export default function ReminiFeaturesPage() {
 
         <Card className="rounded-3xl border-amber-500/30 bg-amber-500/5 md:col-span-2">
           <CardHeader>
-            <CardTitle className="font-black uppercase tracking-tight text-xl text-amber-600 flex items-center gap-2">
+            <CardTitle className="font-black uppercase tracking-tight text-lg text-amber-600 flex items-center gap-2">
               <AlertTriangle className="h-5 w-5" /> Important Caveat (Transparency Promise)
             </CardTitle>
           </CardHeader>

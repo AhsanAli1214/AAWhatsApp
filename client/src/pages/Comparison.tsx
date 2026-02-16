@@ -83,7 +83,7 @@ export default function Comparison() {
       
       <Navigation />
 
-      <main className="pt-32 pb-20 overflow-hidden">
+      <main className="pt-24 pb-14 overflow-hidden">
         <section className="container mx-auto px-4 mb-24 text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ export default function Comparison() {
               <Scale className="w-4 h-4" />
               {isBusiness ? "Business Protocol Comparison" : "2026 Comparison Guide"}
             </div>
-            <h1 className="text-5xl md:text-7xl font-black font-display tracking-tight leading-tight">
+            <h1 className="text-2xl md:text-4xl font-black font-display tracking-tight leading-tight">
               Compare <span className={`${accentClass} text-glow`}>AA {isBusiness ? "Business" : "WhatsApp"}</span>
             </h1>
           </motion.div>
@@ -134,7 +134,7 @@ export default function Comparison() {
               { t: isBusiness ? "AA Business" : "AA WhatsApp", d: isBusiness ? "Best for enterprise security and bulk tools." : "Best for privacy, features, and anti-ban protection.", color: isBusiness ? "border-amber-500/30 bg-amber-500/5" : "border-primary/30 bg-primary/5" },
               { t: "Official WhatsApp", d: "Ideal for safety and reliability, but limited features.", color: "border-white/10 bg-secondary/20" },
             ].map((item, i) => (
-              <div key={i} className={`p-8 rounded-[2rem] border ${item.color} flex flex-col md:flex-row md:items-center justify-between gap-6`}>
+              <div key={i} className={`p-8 rounded-2xl border ${item.color} flex flex-col md:flex-row md:items-center justify-between gap-6`}>
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold">{item.t}</h3>
                   <p className="text-muted-foreground text-lg">{item.d}</p>
