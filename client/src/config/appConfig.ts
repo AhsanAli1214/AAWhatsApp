@@ -90,7 +90,7 @@ export const REMINI_MOD_CONFIG = {
     "Unlimited Pro Cards",
     "No Ads, No Watermarks",
     "Advanced AI Technology",
-    "High-Resolution Output",
+    "Internet connection Issue Solved",
     "100% Working & Safe",
   ],
 };
