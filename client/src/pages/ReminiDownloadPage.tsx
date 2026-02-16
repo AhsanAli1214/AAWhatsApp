@@ -69,21 +69,21 @@ export default function ReminiDownloadPage() {
 
       <Navigation />
 
-      <div className="container mx-auto px-4 pt-32 pb-24 max-w-6xl">
+      <div className="container mx-auto px-4 pt-28 pb-16 max-w-6xl">
         <div className="text-center mb-10">
-          <img src={reminiLogo} alt="Remini" className="w-24 h-24 mx-auto mb-6 rounded-3xl border-4 border-[#FF0000]/20" />
-          <Badge className="mb-4 bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 uppercase tracking-widest font-black px-4 py-1">
+          <img src={reminiLogo} alt="Remini" className="w-20 h-20 mx-auto mb-5 rounded-2xl border-2 border-[#FF0000]/20" />
+          <Badge className="mb-4 bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 uppercase tracking-[0.14em] font-black px-3 py-1 text-[11px]">
             Responsible Download Guide
           </Badge>
-          <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tight leading-none mb-4">
+          <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tight leading-tight mb-3">
             Download & Install <span className="text-[#FF0000] italic">Remini Mod APK</span>
           </h1>
-          <p className="text-muted-foreground text-lg font-medium max-w-4xl mx-auto">
+          <p className="text-muted-foreground text-base font-medium max-w-3xl mx-auto">
             This guide explains how to install the Remini Mod APK from AA Mods in a safer way, with full transparency about risks, compatibility, and known troubleshooting steps.
           </p>
         </div>
 
-        <Card className="rounded-[2rem] border-[#FF0000]/20 bg-[#FF0000]/5 p-6 md:p-8 mb-10">
+        <Card className="rounded-2xl border-[#FF0000]/20 bg-[#FF0000]/5 p-4 md:p-6 mb-8">
           <CardContent className="p-0">
             <div className="text-center mb-4">
               <h2 className="text-xl md:text-3xl font-black uppercase tracking-tight mb-1">Direct Download</h2>
@@ -95,16 +95,16 @@ export default function ReminiDownloadPage() {
             <div className="flex justify-center">
               <DirectDownloadButton
                 asset={SECURE_DOWNLOAD_ASSETS.reminiModMain}
-                buttonClassName="neon-download-btn [--download-glow:#FF0000] [--download-border:#ff8a8a] [--download-text:#ffffff] w-full max-w-3xl min-h-[74px] md:min-h-[102px] px-4 md:px-6 py-3 md:py-4 text-sm md:text-xl"
+                buttonClassName="neon-download-btn [--download-glow:#FF0000] [--download-border:#ff8a8a] [--download-text:#ffffff] w-full max-w-2xl min-h-[62px] md:min-h-[82px] px-4 md:px-5 py-2.5 md:py-3 text-sm md:text-base"
               >
                 <div className="w-full flex items-center justify-between gap-2 md:gap-4">
                   <div className="flex items-center gap-2 md:gap-4 text-left min-w-0">
-                  <Download className="h-5 w-5 md:h-7 md:w-7 shrink-0" />
+                  <Download className="h-5 w-5 md:h-6 md:w-6 shrink-0" />
                   <div className="min-w-0">
                     <span className="block leading-tight break-words">
                       Download Remini {APP_VERSIONS.reminiMod}
                     </span>
-                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.16em] opacity-75 leading-tight">
+                    <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.14em] opacity-75 leading-tight">
                       Official package
                     </span>
                   </div>
@@ -166,7 +166,7 @@ export default function ReminiDownloadPage() {
                 <CheckCircle2 className="h-5 w-5" /> Feature Highlights
               </CardTitle>
               <p className="text-sm text-muted-foreground font-medium">
-                Live features synced from app config for Remini Mod v{APP_VERSIONS.reminiMod}.
+                Live features synced from app config for Remini Mod {APP_VERSIONS.reminiMod}.
               </p>
             </CardHeader>
             <CardContent>
@@ -209,7 +209,7 @@ export default function ReminiDownloadPage() {
           ].map((item, idx) => (
             <Card key={idx} className="rounded-3xl border-[#FF0000]/15 bg-muted/20">
               <CardHeader>
-                <CardTitle className="font-black uppercase tracking-tight text-lg flex items-center gap-2">
+                <CardTitle className="font-black uppercase tracking-tight text-base md:text-lg flex items-center gap-2">
                   <item.icon className="h-5 w-5 text-[#FF0000]" /> {item.t}
                 </CardTitle>
               </CardHeader>
@@ -221,7 +221,7 @@ export default function ReminiDownloadPage() {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-6">Step-by-Step Installation Guide</h2>
+          <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-5">Step-by-Step Installation Guide</h2>
           <div className="grid md:grid-cols-3 gap-5">
             {[
               {
@@ -242,7 +242,7 @@ export default function ReminiDownloadPage() {
             ].map((item, idx) => (
               <Card key={idx} className="rounded-3xl border-[#FF0000]/15">
                 <CardHeader>
-                  <CardTitle className="font-black uppercase tracking-tight text-lg flex items-center gap-2">
+                  <CardTitle className="font-black uppercase tracking-tight text-base md:text-lg flex items-center gap-2">
                     <item.icon className="h-5 w-5 text-[#FF0000]" /> {item.t}
                   </CardTitle>
                 </CardHeader>
@@ -258,7 +258,7 @@ export default function ReminiDownloadPage() {
         </section>
 
         <section>
-          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-6">Troubleshooting & FAQ</h2>
+          <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-5">Troubleshooting & FAQ</h2>
           <div className="grid md:grid-cols-2 gap-5">
             {[
               {
@@ -284,7 +284,7 @@ export default function ReminiDownloadPage() {
             ].map((item, idx) => (
               <Card key={idx} className="rounded-3xl border-[#FF0000]/15 bg-muted/20">
                 <CardHeader>
-                  <CardTitle className="font-black tracking-tight text-lg flex items-center gap-2">
+                  <CardTitle className="font-black tracking-tight text-base md:text-lg flex items-center gap-2">
                     <item.icon className="h-5 w-5 text-[#FF0000]" /> {item.q}
                   </CardTitle>
                 </CardHeader>

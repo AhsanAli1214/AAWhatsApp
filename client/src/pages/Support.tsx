@@ -29,7 +29,7 @@ export default function Support() {
       <div className="fixed top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent z-50" />
       <Navigation />
       
-      <main className="relative z-10 pt-32 pb-20 px-4">
+      <main className="relative z-10 pt-24 pb-14 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
             <motion.div
@@ -99,7 +99,7 @@ export default function Support() {
                     rel="noopener noreferrer"
                     className="w-full"
                   >
-                    <Button className="w-full h-16 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-xl shadow-lg shadow-primary/20 transition-all">
+                    <Button className="w-full h-12 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-xl shadow-lg shadow-primary/20 transition-all">
                       Open Telegram Channel <Send className="w-5 h-5 ml-2" />
                     </Button>
                   </a>

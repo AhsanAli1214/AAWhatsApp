@@ -213,12 +213,12 @@ export default function CapCutFeaturesPage() {
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
-      <section className="pt-32 pb-12 container mx-auto px-4 max-w-6xl">
+      <section className="pt-24 pb-10 container mx-auto px-4 max-w-6xl">
         <div className="text-center">
           <Badge className="mb-5 bg-primary/10 text-primary border-primary/20 uppercase tracking-widest font-black">
             Author & Developer: Ahsan Ali (AA Mods)
           </Badge>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-4">
+          <h1 className="text-2xl md:text-4xl font-black tracking-tight mb-4">
             CapCut Pro MOD APK – All Premium Features Unlocked
           </h1>
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto">

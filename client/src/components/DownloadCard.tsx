@@ -34,7 +34,7 @@ export function DownloadCard() {
   };
 
   return (
-    <div className="glass-card rounded-3xl p-8 max-w-md w-full mx-auto relative overflow-hidden">
+    <div className="glass-card rounded-3xl p-6 max-w-md w-full mx-auto relative overflow-hidden">
       <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 blur-3xl rounded-full" />
       <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-accent/20 blur-3xl rounded-full" />
 
@@ -54,7 +54,7 @@ export function DownloadCard() {
             <Button
               key={idx}
               onClick={() => handleDownload(opt)}
-              className="w-full justify-between h-16 text-lg font-bold bg-gradient-to-r from-secondary to-secondary/50 hover:from-primary/20 hover:to-primary/10 border border-white/10 hover:border-primary/50 group transition-all duration-300 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
+              className="w-full justify-between h-14 text-base font-bold bg-gradient-to-r from-secondary to-secondary/50 hover:from-primary/20 hover:to-primary/10 border border-white/10 hover:border-primary/50 group transition-all duration-300 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
               variant="outline"
             >
               <span className="flex items-center gap-3">

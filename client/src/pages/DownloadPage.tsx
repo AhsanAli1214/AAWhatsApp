@@ -148,7 +148,7 @@ export default function DownloadPage() {
 
       <Navigation />
 
-      <main className="relative z-10 pt-32 pb-20 container mx-auto px-4">
+      <main className="relative z-10 pt-24 pb-14 container mx-auto px-4">
         <div className="max-w-5xl mx-auto mb-8">
           <Button
             variant="ghost"
@@ -175,7 +175,7 @@ export default function DownloadPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-4xl md:text-8xl font-black tracking-tighter leading-[1] mb-8"
+              className="text-4xl md:text-6xl font-black tracking-tighter leading-[1] mb-8"
             >
               Download <span className="text-primary italic">AAWhatsApp</span>
               <br />
@@ -233,7 +233,7 @@ export default function DownloadPage() {
                 <ShieldCheck className="w-32 h-32 text-primary drop-shadow-[0_0_20px_rgba(16,185,129,0.3)]" />
               </div>
 
-              <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tighter">
+              <h2 className="text-2xl md:text-4xl font-black mb-4 tracking-tighter">
                 Ready to Download?
               </h2>
 
@@ -292,7 +292,7 @@ export default function DownloadPage() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="glass-card p-8 rounded-[2rem] border border-white/5 space-y-6"
+              className="glass-card p-8 rounded-2xl border border-white/5 space-y-6"
             >
               <h3 className="text-2xl font-bold flex items-center gap-2">
                 <Package className="w-6 h-6 text-primary" />
@@ -327,7 +327,7 @@ export default function DownloadPage() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="glass-card p-8 rounded-[2rem] border border-white/5 space-y-6 flex flex-col"
+              className="glass-card p-8 rounded-2xl border border-white/5 space-y-6 flex flex-col"
             >
               <div className="mx-auto w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mb-4">
                 <ShieldCheckIcon className="w-12 h-12 text-primary" />

@@ -32,7 +32,7 @@ export default function ReminiModPage() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-[#8B0000]/30">
       <Helmet>
-        <title>Remini Mod APK v{version} Download (100% Working, Premium Unlocked)</title>
+        <title>Remini Mod APK {version} Download (100% Working, Premium Unlocked)</title>
         <meta
           name="description"
           content="Download the latest, community-tested Remini Mod APK for free. Our secure, virus-scanned mod transforms old photos into HD masterpieces with all premium features unlocked, no ads, and no watermarks."
@@ -42,7 +42,7 @@ export default function ReminiModPage() {
           content="Remini Mod APK, Remini Pro APK, Remini Mod APK download, safe Remini mod, 100% working mod, AI photo enhancer, video enhancement, premium unlocked, free photo editor, unblur photos, photo restoration, Remini Mod APK latest version"
         />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content={`Remini Mod APK v${version} Download (100% Working, Premium Unlocked)`} />
+        <meta property="og:title" content={`Remini Mod APK ${version} Download (100% Working, Premium Unlocked)`} />
         <meta
           property="og:description"
           content="AA Mods verified Remini Mod APK with premium unlocked, unlimited edits, no ads, and no watermarks."
@@ -51,7 +51,7 @@ export default function ReminiModPage() {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`Remini Mod APK v${version} by AA Mods`} />
+        <meta name="twitter:title" content={`Remini Mod APK ${version} by AA Mods`} />
         <meta name="twitter:description" content="Restore old photos in HD with premium Remini tools unlocked, ad-free workflow, and no watermark exports." />
         <meta name="twitter:image" content={heroImageUrl} />
         <script type="application/ld+json">
@@ -70,51 +70,51 @@ export default function ReminiModPage() {
 
       <Navigation />
 
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24">
+      <section className="pt-28 pb-12 md:pt-24 md:pb-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} className="text-center">
             <img
               src={reminiLogo}
               alt="Remini Mod APK"
-              className="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-3xl border-4 border-[#FF0000]/20 shadow-2xl mb-6"
+              className="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-2xl border-2 border-[#FF0000]/20 shadow-xl mb-5"
             />
-            <Badge className="mb-6 bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 uppercase tracking-widest font-black px-4 py-1">
+            <Badge className="mb-5 bg-[#FF0000]/10 text-[#FF0000] border-[#FF0000]/20 uppercase tracking-[0.14em] font-black px-3 py-1 text-[11px]">
               AA Mods Verified
             </Badge>
-            <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tight leading-none mb-5">
+            <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tight leading-tight mb-4">
               Unlock Your Memories with the
               <span className="text-[#FF0000] italic"> 100% Working </span>
               Remini Mod APK
             </h1>
-            <p className="text-muted-foreground max-w-4xl mx-auto text-lg leading-relaxed font-medium">
+            <p className="text-muted-foreground max-w-3xl mx-auto text-base leading-relaxed font-medium">
               At AA Mods, every Remini Mod APK is rigorously tested by our team and verified by our community to ensure it is safe and fully functional. Remini uses advanced AI to restore blurry, old, and faded media, while this premium-unlocked mod removes limits, ads, and watermarks.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 mt-8">
               <Link href="/remini-mod/download">
-                <Button size="lg" className="h-14 px-8 rounded-2xl font-bold bg-[#FF0000] hover:bg-[#c30000]">
+                <Button size="lg" className="h-11 px-6 rounded-xl font-bold bg-[#FF0000] hover:bg-[#c30000] text-sm">
                   Download Now <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link href="/remini-mod/features">
-                <Button variant="outline" size="lg" className="h-14 px-8 rounded-2xl font-bold border-[#FF0000]/30 hover:bg-[#FF0000]/5">
+                <Button variant="outline" size="lg" className="h-11 px-6 rounded-xl font-bold border-[#FF0000]/30 hover:bg-[#FF0000]/5 text-sm">
                   Explore Features
                 </Button>
               </Link>
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-10">
             {[
-              { l: "Latest Version", v: `v${version}`, i: Star },
+              { l: "Latest Version", v: version, i: Star },
               { l: "Last Update", v: updateDate, i: Clock },
               { l: "Working Status", v: "100%", i: Zap },
               { l: "Community", v: "Active", i: Users },
             ].map((item, idx) => (
-              <Card key={idx} className="rounded-2xl border-[#FF0000]/15 bg-[#FF0000]/5">
-                <CardContent className="p-4 text-center">
-                  <item.i className="h-6 w-6 mx-auto text-[#FF0000] mb-2" />
+              <Card key={idx} className="rounded-xl border-[#FF0000]/15 bg-[#FF0000]/5">
+                <CardContent className="p-3 text-center">
+                  <item.i className="h-5 w-5 mx-auto text-[#FF0000] mb-2" />
                   <p className="text-xs uppercase tracking-widest text-muted-foreground font-bold">{item.l}</p>
-                  <p className="font-black text-lg">{item.v}</p>
+                  <p className="font-black text-base">{item.v}</p>
                 </CardContent>
               </Card>
             ))}
@@ -156,9 +156,9 @@ export default function ReminiModPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-center mb-12">
+          <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-center mb-8">
             Key Benefits of Our <span className="text-[#FF0000] italic">Remini Mod APK</span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -193,9 +193,9 @@ export default function ReminiModPage() {
 
       <section className="pb-16">
         <div className="container mx-auto px-4 max-w-6xl">
-          <Card className="rounded-3xl border-[#FF0000]/20 bg-[#FF0000]/5">
+          <Card className="rounded-2xl border-[#FF0000]/20 bg-[#FF0000]/5">
             <CardHeader>
-              <CardTitle className="text-2xl font-black uppercase tracking-tight">Who Should Use Remini Mod APK?</CardTitle>
+              <CardTitle className="text-xl font-black uppercase tracking-tight">Who Should Use Remini Mod APK?</CardTitle>
             </CardHeader>
             <CardContent className="grid md:grid-cols-3 gap-4 text-sm">
               <div className="rounded-2xl border border-[#FF0000]/15 bg-background/60 p-4">

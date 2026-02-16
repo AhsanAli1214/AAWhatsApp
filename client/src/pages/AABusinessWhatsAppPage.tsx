@@ -83,7 +83,7 @@ export default function AABusinessWhatsAppPage() {
 
       <Navigation />
 
-      <main className="relative z-10 pt-32 pb-20 container mx-auto px-4">
+      <main className="relative z-10 pt-24 pb-14 container mx-auto px-4">
         <div className="max-w-4xl mx-auto mb-8">
           <Button 
             variant="ghost" 
@@ -109,7 +109,7 @@ export default function AABusinessWhatsAppPage() {
               <Shield className="w-3 h-3" /> Enterprise Protocol Active
             </motion.div>
             
-            <h1 className="text-4xl md:text-6xl font-black font-display tracking-tighter leading-tight mb-4">
+            <h1 className="text-2xl md:text-4xl font-black font-display tracking-tighter leading-tight mb-4">
               AA Business WhatsApp – <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 text-glow-amber">
                 The Secure Fortress
@@ -137,7 +137,7 @@ export default function AABusinessWhatsAppPage() {
 
             <div className="relative mt-16 group">
               <div className="absolute inset-0 bg-amber-500/10 blur-3xl rounded-full opacity-50 group-hover:opacity-70 transition-opacity" />
-              <div className="relative glass-card border-amber-500/20 p-8 rounded-[2rem] aspect-video flex items-center justify-center overflow-hidden">
+              <div className="relative glass-card border-amber-500/20 p-8 rounded-2xl aspect-video flex items-center justify-center overflow-hidden">
                  <img 
                    src={businessHero} 
                    alt="AA Business Real-time Interface"
@@ -154,7 +154,7 @@ export default function AABusinessWhatsAppPage() {
 
           {/* 2. Key Features */}
           <section className="space-y-12">
-            <h2 className="text-3xl md:text-5xl font-black text-center tracking-tighter">
+            <h2 className="text-2xl md:text-4xl font-black text-center tracking-tighter">
               Enterprise Grade Power
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
@@ -258,7 +258,7 @@ export default function AABusinessWhatsAppPage() {
           <section className="py-20 relative">
             <div className="max-w-3xl mx-auto space-y-12">
                <div className="text-center space-y-4">
-                  <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Deploy the <span className="text-amber-500">Fortress</span></h2>
+                  <h2 className="text-2xl md:text-4xl font-black tracking-tighter">Deploy the <span className="text-amber-500">Fortress</span></h2>
                   <p className="text-xl text-muted-foreground">Download the AA Business WhatsApp Package.</p>
                </div>
 

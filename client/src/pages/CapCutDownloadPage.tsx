@@ -71,12 +71,12 @@ export default function CapCutDownloadPage() {
         </script>
       </Helmet>
 
-      <div className="container mx-auto px-4 pt-32 max-w-5xl">
+      <div className="container mx-auto px-4 pt-24 max-w-5xl">
         <div className="text-center mb-14">
           <Badge className="mb-6 px-4 py-1 bg-primary/10 text-primary border-primary/20 uppercase tracking-widest font-black">
             Official CapCut Pro Download Gateway
           </Badge>
-          <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tighter uppercase">
+          <h1 className="text-2xl md:text-4xl font-black mb-4 tracking-tighter uppercase">
             Download CapCut <span className="text-primary italic">Pro</span> MOD APK
           </h1>
           <p className="text-muted-foreground text-lg font-medium">
@@ -85,7 +85,7 @@ export default function CapCutDownloadPage() {
         </div>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
-          <Card className="rounded-[2rem] border-primary/20 bg-primary/5 p-4 md:p-6">
+          <Card className="rounded-2xl border-primary/20 bg-primary/5 p-4 md:p-6">
             <CardContent className="p-0">
               <div className="flex flex-col gap-4">
                 <div className="text-center">
@@ -127,7 +127,7 @@ export default function CapCutDownloadPage() {
 
 
         <section className="mb-12">
-          <Card className="rounded-[2rem] border-primary/20 bg-primary/5">
+          <Card className="rounded-2xl border-primary/20 bg-primary/5">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl font-black uppercase tracking-widest">
                 <Sparkles className="h-5 w-5 text-primary" /> Feature Highlights
@@ -151,7 +151,7 @@ export default function CapCutDownloadPage() {
 
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           <div className="lg:col-span-2 space-y-6">
-            <Card className="rounded-[2rem] border-white/5 bg-secondary/20">
+            <Card className="rounded-2xl border-white/5 bg-secondary/20">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg font-black uppercase tracking-widest italic">
                   <History className="h-5 w-5 text-primary" /> Package Intelligence
@@ -184,7 +184,7 @@ export default function CapCutDownloadPage() {
               </CardContent>
             </Card>
 
-            <Card className="rounded-[2rem] border-border/60 bg-background/60">
+            <Card className="rounded-2xl border-border/60 bg-background/60">
               <CardHeader>
                 <CardTitle className="text-xl font-black">Quick Install Steps</CardTitle>
               </CardHeader>
@@ -205,7 +205,7 @@ export default function CapCutDownloadPage() {
           </div>
 
           <div className="space-y-6">
-            <Card className="rounded-[2rem] border-primary/20 bg-primary/5">
+            <Card className="rounded-2xl border-primary/20 bg-primary/5">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base font-black uppercase tracking-widest">
                   <Shield className="h-5 w-5 text-primary" /> Safety Core
@@ -221,8 +221,8 @@ export default function CapCutDownloadPage() {
               </CardContent>
             </Card>
 
-            <Card className="rounded-[2rem] border-white/5 bg-secondary/20 p-7 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+            <Card className="rounded-2xl border-white/5 bg-secondary/20 p-7 text-center">
+              <div className="w-16 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                 <Cpu className="h-8 w-8 text-primary" />
               </div>
               <h4 className="font-black uppercase tracking-widest text-sm mb-2">Optimized Build</h4>
@@ -231,7 +231,7 @@ export default function CapCutDownloadPage() {
               </p>
             </Card>
 
-            <Card className="rounded-[2rem] border-primary/20 bg-primary/5 p-5">
+            <Card className="rounded-2xl border-primary/20 bg-primary/5 p-5">
               <div className="flex items-start gap-3">
                 <Sparkles className="h-5 w-5 text-primary mt-0.5" />
                 <div>

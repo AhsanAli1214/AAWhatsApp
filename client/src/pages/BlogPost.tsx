@@ -354,7 +354,7 @@ export default function BlogPost() {
                     </div>
                   </div>
                   <Link href="/download">
-                    <Button size="lg" className="font-black px-10 h-16 rounded-2xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 text-xl transition-all" data-testid="button-download-post">
+                    <Button size="lg" className="font-black px-10 h-12 rounded-xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 text-xl transition-all" data-testid="button-download-post">
                       <Download className="w-6 h-6 mr-3" />
                       DOWNLOAD NOW
                     </Button>
