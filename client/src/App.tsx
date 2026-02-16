@@ -1,4 +1,5 @@
 import { Switch, Route } from "wouter";
+import { useLocation } from "wouter";
 import { Suspense, lazy, useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { queryClient } from "./lib/queryClient";
@@ -36,6 +37,12 @@ const DownloadPage = lazy(() => import("@/pages/DownloadPage"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const NotFound = lazy(() => import("@/pages/not-found"));
+const AdminIndex = lazy(() => import("@/pages/admin/Index"));
+const AdminLogin = lazy(() => import("@/pages/admin/Login"));
+const AdminDashboard = lazy(() => import("@/pages/admin/Dashboard"));
+const AdminApps = lazy(() => import("@/pages/admin/Apps"));
+const AdminContent = lazy(() => import("@/pages/admin/Content"));
+const AdminGuard = lazy(() => import("@/pages/admin/AdminGuard"));
 
 const BusinessHome = lazy(() => import("@/pages/business/BusinessHome"));
 const BusinessAbout = lazy(() => import("@/pages/business/BusinessAbout"));
@@ -95,6 +102,23 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/sitemap" component={Sitemap} />
+        <Route path="/admin" component={AdminIndex} />
+        <Route path="/admin/login" component={AdminLogin} />
+        <Route path="/admin/dashboard">
+          <AdminGuard>
+            <AdminDashboard />
+          </AdminGuard>
+        </Route>
+        <Route path="/admin/apps">
+          <AdminGuard>
+            <AdminApps />
+          </AdminGuard>
+        </Route>
+        <Route path="/admin/content">
+          <AdminGuard>
+            <AdminContent />
+          </AdminGuard>
+        </Route>
         <Route path="/:rest*" component={Home} />
       </Switch>
     </Suspense>
@@ -105,6 +129,8 @@ import { Navigation } from "@/components/Navigation";
 
 function App() {
   const [enableNonCriticalUX, setEnableNonCriticalUX] = useState(false);
+  const [location] = useLocation();
+  const isAdminRoute = location.startsWith("/admin");
 
   useEffect(() => {
     const initAnalytics = async () => {
@@ -178,15 +204,15 @@ function App() {
               })}
             </script>
           </Helmet>
-          {enableNonCriticalUX ? <TapFeedback /> : null}
+          {!isAdminRoute && enableNonCriticalUX ? <TapFeedback /> : null}
           <ScrollToTop />
-          {enableNonCriticalUX ? <AdBlockDetector /> : null}
-          <Navigation />
-          {enableNonCriticalUX ? <FloatingPoster /> : null}
+          {!isAdminRoute && enableNonCriticalUX ? <AdBlockDetector /> : null}
+          {!isAdminRoute ? <Navigation /> : null}
+          {!isAdminRoute && enableNonCriticalUX ? <FloatingPoster /> : null}
           <PageTransition>
             <Router />
           </PageTransition>
-          <BackToTop />
+          {!isAdminRoute ? <BackToTop /> : null}
           <Analytics />
         </TooltipProvider>
       </LanguageProvider>

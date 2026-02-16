@@ -2,15 +2,141 @@ import type { Express } from "express";
 import type { Server } from "http";
 import { api } from "@shared/routes";
 import { Resend } from "resend";
+import crypto from "crypto";
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 import { generateSitemap } from "./lib/sitemap";
+import {
+  createAdminApp,
+  createAdminPage,
+  initAdminDb,
+  listAdminApps,
+  listAdminPages,
+  updateAdminAppStatus,
+} from "./lib/adminDb";
+
+
+
+const ADMIN_COOKIE = "aa_admin_session";
+const SESSION_TTL_SECONDS = 60 * 60 * 8;
+
+function readCookie(rawCookie: string | undefined, name: string) {
+  if (!rawCookie) return null;
+  const cookie = rawCookie
+    .split(";")
+    .map((entry) => entry.trim())
+    .find((entry) => entry.startsWith(`${name}=`));
+  if (!cookie) return null;
+  return decodeURIComponent(cookie.split("=").slice(1).join("="));
+}
+
+function signSession(payload: string) {
+  const secret = process.env.ADMIN_JWT_SECRET || "change-this-admin-secret";
+  const signature = crypto.createHmac("sha256", secret).update(payload).digest("hex");
+  return `${payload}.${signature}`;
+}
+
+function verifySession(token: string | null) {
+  if (!token) return false;
+  const parts = token.split(".");
+  if (parts.length < 2) return false;
+  const signature = parts.pop();
+  const payload = parts.join(".");
+  if (!signature) return false;
+
+  const expected = signSession(payload).split(".").pop();
+  if (!expected || expected !== signature) return false;
+
+  const [username, expiresAtRaw] = payload.split("|");
+  const expiresAt = Number(expiresAtRaw);
+  if (!username || !expiresAt || Date.now() > expiresAt) return false;
+
+  return true;
+}
+
+function requireAdmin(req: any, res: any, next: any) {
+  const token = readCookie(req.headers.cookie, ADMIN_COOKIE);
+  if (!verifySession(token)) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+  return next();
+}
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  await initAdminDb();
+  app.post("/api/admin/auth/login", async (req, res) => {
+    const { username, password } = req.body ?? {};
+    const validUsername = process.env.ADMIN_USERNAME || "admin";
+    const validPassword = process.env.ADMIN_PASSWORD || "admin123";
+
+    if (username !== validUsername || password !== validPassword) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    const expiresAt = Date.now() + SESSION_TTL_SECONDS * 1000;
+    const token = signSession(`${username}|${expiresAt}`);
+    const secure = process.env.NODE_ENV === "production" ? "; Secure" : "";
+    res.setHeader(
+      "Set-Cookie",
+      `${ADMIN_COOKIE}=${encodeURIComponent(token)}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${SESSION_TTL_SECONDS}${secure}`,
+    );
+
+    return res.status(200).json({ success: true });
+  });
+
+  app.post("/api/admin/auth/logout", async (_req, res) => {
+    res.setHeader("Set-Cookie", `${ADMIN_COOKIE}=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0`);
+    return res.status(200).json({ success: true });
+  });
+
+  app.get("/api/admin/auth/session", requireAdmin, async (_req, res) => {
+    return res.status(200).json({ authenticated: true });
+  });
+
+  app.get("/api/admin/apps", requireAdmin, async (_req, res) => {
+    const apps = await listAdminApps();
+    return res.status(200).json(apps);
+  });
+
+  app.post("/api/admin/apps", requireAdmin, async (req, res) => {
+    const name = String(req.body?.name || "").trim();
+    const slug = String(req.body?.slug || "").trim().toLowerCase();
+
+    if (!name || !slug) {
+      return res.status(400).json({ message: "name and slug are required" });
+    }
+
+    const appItem = await createAdminApp({ name, slug });
+    return res.status(201).json(appItem);
+  });
+
+  app.patch("/api/admin/apps/:id/status", requireAdmin, async (req, res) => {
+    const updated = await updateAdminAppStatus(req.params.id);
+    if (!updated) return res.status(404).json({ message: "App not found" });
+    return res.status(200).json(updated);
+  });
+
+  app.get("/api/admin/pages", requireAdmin, async (_req, res) => {
+    const pages = await listAdminPages();
+    return res.status(200).json(pages);
+  });
+
+  app.post("/api/admin/pages", requireAdmin, async (req, res) => {
+    const title = String(req.body?.title || "").trim();
+    const key = String(req.body?.key || "").trim().toLowerCase();
+
+    if (!title || !key) {
+      return res.status(400).json({ message: "title and key are required" });
+    }
+
+    const pageItem = await createAdminPage({ title, key });
+    return res.status(201).json(pageItem);
+  });
+
   app.post("/api/report-bug", async (req, res) => {
     try {
       if (!resend) {
