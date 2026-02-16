@@ -177,7 +177,7 @@ export const APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS = {
 // Global Floating Poster Configuration
 export const FLOATING_POSTER_CONFIG = {
   enabled: true,
-  imageUrl: "https://i.postimg.cc/NM1ZG8Xj/generated-image-8244a26b-b3ee-487e-ae2c-13604ee32e9c.png",
+  imageUrl: "https://i.postimg.cc/XvV2kfM3/generated-image-f2fface5-8898-42e9-99c2-367fd6bf7bdf.png",
   targetUrl: "",
   alt: "AA Mods Poster",
 } as const;
