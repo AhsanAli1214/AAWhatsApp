@@ -109,7 +109,7 @@ export default function YouTubePremiumFeaturesPage() {
         <link rel="canonical" href="https://aa-mods.vercel.app/youtube-premium-mod/features" />
       </Helmet>
 
-      <main className="pt-24 pb-20 px-4">
+      <main className="pt-20 md:pt-24 pb-28 lg:pb-20 px-3 sm:px-4">
         <div className="container mx-auto max-w-6xl space-y-9">
           <section className="text-center space-y-4">
             <Badge className="bg-red-500/10 text-red-400 border-red-500/30 uppercase tracking-[0.14em] font-bold">

@@ -28,6 +28,8 @@ import {
   ListChecks,
 } from "lucide-react";
 
+const YOUTUBE_LOGO_URL = "https://i.postimg.cc/4y3bZ6cj/download-1-removebg-preview.png";
+
 const features = [
   { icon: Ban, label: "Absolutely ad-free playback" },
   { icon: Music2, label: "Background + screen-off playback" },
@@ -140,9 +142,18 @@ export default function YouTubePremiumPage() {
         <link rel="canonical" href="https://aa-mods.vercel.app/youtube-premium-mod" />
       </Helmet>
 
-      <main className="pt-24 pb-20 px-4">
+      <main className="pt-20 md:pt-24 pb-28 lg:pb-20 px-3 sm:px-4">
         <div className="container mx-auto max-w-6xl space-y-10">
           <section className="text-center space-y-5">
+            <img
+              src={YOUTUBE_LOGO_URL}
+              alt="YouTube Premium MOD Logo"
+              className="w-20 h-20 md:w-24 md:h-24 mx-auto object-contain"
+              loading="eager"
+              decoding="async"
+              width="96"
+              height="96"
+            />
             <Badge className="bg-red-500/10 text-red-400 border-red-500/30 uppercase tracking-[0.12em] font-bold">
               Latest Stable Release
             </Badge>
@@ -169,18 +180,18 @@ export default function YouTubePremiumPage() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch">
               <Link href="/youtube-premium-mod/install">
                 <Button
                   size="lg"
-                  className="font-extrabold bg-gradient-to-r from-red-500 via-rose-500 to-orange-400 text-white shadow-lg shadow-red-500/40 hover:opacity-95"
+                  className="w-full sm:w-auto font-extrabold bg-gradient-to-r from-red-500 via-rose-500 to-orange-400 text-white shadow-lg shadow-red-500/40 hover:opacity-95"
                 >
                   <Download className="w-5 h-5 mr-2" />
                   DOWNLOAD LATEST STABLE VERSION v21.06.259
                 </Button>
               </Link>
               <Link href="/youtube-premium-mod/features">
-                <Button size="lg" variant="outline" className="font-bold border-red-500/40 text-red-400 hover:bg-red-500/10">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto font-bold border-red-500/40 text-red-400 hover:bg-red-500/10">
                   Explore Features
                 </Button>
               </Link>

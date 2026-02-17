@@ -29,7 +29,7 @@ const CAPCUT_ICON_URL = "https://i.postimg.cc/q71j1h4d/capcut-pro.png";
 const AA_BUSINESS_ICON_URL =
   "https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg";
 const REMINI_ICON_URL = reminiLogo;
-const YOUTUBE_ICON_URL = "https://i.postimg.cc/J0QXxP7X/youtube-premium-mod-icon.png";
+const YOUTUBE_ICON_URL = "https://i.postimg.cc/4y3bZ6cj/download-1-removebg-preview.png";
 
 type ProductCard = {
   name: string;
@@ -230,6 +230,27 @@ export default function AppSelector() {
                 </CardContent>
               </Card>
             ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.18 }}
+            className="mb-8"
+          >
+            <Card className="border-primary/25 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
+              <CardContent className="p-4 md:p-5">
+                <p className="text-[11px] uppercase tracking-[0.14em] text-primary font-black mb-3">Latest Stable Versions</p>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm">
+                  {productCards.map((product) => (
+                    <div key={`${product.name}-version`} className="rounded-lg border border-white/10 bg-background/50 px-3 py-2">
+                      <p className="text-[11px] text-muted-foreground font-semibold leading-tight">{product.name}</p>
+                      <p className="font-black mt-1">{product.version}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-5">
