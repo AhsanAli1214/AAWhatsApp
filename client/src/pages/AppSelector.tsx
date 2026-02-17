@@ -32,9 +32,9 @@ const REMINI_ICON_URL = reminiLogo;
 const YOUTUBE_ICON_URL = "https://i.postimg.cc/4y3bZ6cj/download-1-removebg-preview.png";
 
 type ProductCard = {
+  appKey: keyof typeof APP_VERSIONS;
   name: string;
   description: string;
-  version: string;
   icon: LucideIcon;
   image: string;
   tintClass: string;
@@ -49,10 +49,10 @@ type ProductCard = {
 
 const productCards: ProductCard[] = [
   {
+    appKey: "aaWhatsApp",
     name: "AA WhatsApp",
     description:
       "Secure WhatsApp mod with advanced privacy controls, anti-ban optimization, and deep customization.",
-    version: APP_VERSIONS.aaWhatsApp,
     icon: MessageSquare,
     image: AA_WHATSAPP_ICON_URL,
     tintClass: "from-primary/10 via-primary/5 to-transparent",
@@ -65,10 +65,10 @@ const productCards: ProductCard[] = [
     highlights: ["Anti-Ban Protection", "Ghost/Privacy Features", "Performance Optimized"],
   },
   {
+    appKey: "capcutPro",
     name: "CapCut Pro",
     description:
       "Professional video editor build with premium assets, AI tools unlocked, and no-watermark exports.",
-    version: APP_VERSIONS.capcutPro,
     icon: Video,
     image: CAPCUT_ICON_URL,
     tintClass: "from-primary/10 via-primary/5 to-transparent",
@@ -81,10 +81,10 @@ const productCards: ProductCard[] = [
     highlights: ["AI Features Enabled", "No Watermark", "Template Library Unlocked"],
   },
   {
+    appKey: "aaBusiness",
     name: "AA Business WhatsApp",
     description:
       "Business-first WhatsApp experience with analytics, automation workflows, and enterprise messaging controls.",
-    version: APP_VERSIONS.aaBusiness,
     icon: Briefcase,
     image: AA_BUSINESS_ICON_URL,
     tintClass: "from-blue-500/12 via-blue-500/6 to-transparent",
@@ -98,10 +98,10 @@ const productCards: ProductCard[] = [
   },
 
   {
+    appKey: "youtubePremium",
     name: "YouTube Premium MOD",
     description:
       "Premium YouTube build with ad-free playback, SponsorBlock, RYD, enhanced bitrate, and offline-focused controls.",
-    version: APP_VERSIONS.youtubePremium,
     icon: Video,
     image: YOUTUBE_ICON_URL,
     tintClass: "from-red-500/12 via-red-500/6 to-transparent",
@@ -114,10 +114,10 @@ const productCards: ProductCard[] = [
     highlights: ["Ad-Free + Background Play", "SponsorBlock + RYD", "AA Mods Services Login"],
   },
   {
+    appKey: "reminiMod",
     name: "Remini Mod",
     description:
       "AI-powered photo enhancer for restoration, unblur, and HD upscaling with premium workflow unlocks.",
-    version: APP_VERSIONS.reminiMod,
     icon: Sparkles,
     image: REMINI_ICON_URL,
     tintClass: "from-[#FF0000]/12 via-[#FF0000]/6 to-transparent",
@@ -245,7 +245,7 @@ export default function AppSelector() {
                   {productCards.map((product) => (
                     <div key={`${product.name}-version`} className="rounded-lg border border-white/10 bg-background/50 px-3 py-2">
                       <p className="text-[11px] text-muted-foreground font-semibold leading-tight">{product.name}</p>
-                      <p className="font-black mt-1">{product.version}</p>
+                      <p className="font-black mt-1">{APP_VERSIONS[product.appKey]}</p>
                     </div>
                   ))}
                 </div>
@@ -279,7 +279,7 @@ export default function AppSelector() {
                         />
                         <div>
                           <CardTitle className="text-xl font-black tracking-tight">{product.name}</CardTitle>
-                          <p className="text-xs text-muted-foreground font-semibold">Version {product.version}</p>
+                          <p className="text-xs text-muted-foreground font-semibold">Version {APP_VERSIONS[product.appKey]}</p>
                         </div>
                       </div>
                     </CardHeader>
