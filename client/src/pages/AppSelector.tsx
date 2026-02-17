@@ -394,21 +394,6 @@ export default function AppSelector() {
             </Card>
           ) : null}
 
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-10"
-          >
-            <Card className="border-primary/20 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
-              <CardContent className="p-5 md:p-6">
-                <p className="text-sm uppercase tracking-[0.14em] text-primary font-black">Classic AA Mods HTML Page</p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  The original page is available directly from your browser at <span className="font-semibold text-foreground">/aa-mods-page</span>.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
         </div>
       </section>
 
