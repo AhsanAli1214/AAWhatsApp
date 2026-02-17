@@ -1,13 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Send, Shield, Zap, Lock, BookOpen, HelpCircle, LayoutGrid, Info, Video, Sparkles, ArrowUpRight } from "lucide-react";
-
-const PRODUCT_LINKS = [
-  { href: "/aa-whatsapp", label: "AA WhatsApp", icon: Zap, iconClass: "text-primary/70" },
-  { href: "/aa-business", label: "AA Business", icon: Shield, iconClass: "text-blue-500/70" },
-  { href: "/capcut-pro", label: "CapCut Pro", icon: Video, iconClass: "text-red-500/70" },
-  { href: "/remini-mod", label: "Remini Mod", icon: Sparkles, iconClass: "text-primary/70" },
-  { href: "/", label: "App Selector", icon: LayoutGrid, iconClass: "text-muted-foreground/50" },
-] as const;
+import { Send, Shield, Lock, BookOpen, HelpCircle, Info, ArrowUpRight, BadgeCheck, Globe, Activity } from "lucide-react";
 
 export function Footer() {
   const [location] = useLocation();
@@ -93,20 +85,6 @@ export function Footer() {
           <div className="rounded-2xl border border-border/40 bg-card/50 p-4 md:p-5 lg:col-span-8">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
               <div>
-                <h4 className="mb-2 text-[10px] font-extrabold uppercase tracking-[0.22em] text-foreground/70">Products</h4>
-                <ul className="space-y-2 text-xs md:text-sm">
-                  {PRODUCT_LINKS.map(({ href, label, icon: Icon, iconClass }) => (
-                    <li key={href}>
-                      <Link href={href} className="group inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground">
-                        <Icon className={`h-4 w-4 transition-transform group-hover:scale-110 ${iconClass}`} />
-                        {label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
                 <h4 className="mb-2 text-[10px] font-extrabold uppercase tracking-[0.22em] text-foreground/70">Resources</h4>
                 <ul className="space-y-2 text-xs md:text-sm">
                   <li>
@@ -138,6 +116,24 @@ export function Footer() {
                   <li><Link href="/terms" className="text-muted-foreground transition-colors hover:text-foreground">Terms of Service</Link></li>
                   <li><Link href="/support" className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"><Lock className="h-4 w-4 text-muted-foreground/60" />Support</Link></li>
                 </ul>
+              </div>
+
+              <div>
+                <h4 className="mb-2 text-[10px] font-extrabold uppercase tracking-[0.22em] text-foreground/70">Trust Signals</h4>
+                <div className="grid gap-2 text-xs md:text-sm">
+                  <div className="inline-flex items-center gap-2 rounded-lg border border-border/50 bg-background/40 px-2.5 py-2 text-muted-foreground">
+                    <BadgeCheck className="h-4 w-4 text-emerald-400" /> Verified stable builds
+                  </div>
+                  <div className="inline-flex items-center gap-2 rounded-lg border border-border/50 bg-background/40 px-2.5 py-2 text-muted-foreground">
+                    <Shield className="h-4 w-4 text-cyan-400" /> Security-first publishing
+                  </div>
+                  <div className="inline-flex items-center gap-2 rounded-lg border border-border/50 bg-background/40 px-2.5 py-2 text-muted-foreground">
+                    <Activity className="h-4 w-4 text-primary" /> Frequent monitored updates
+                  </div>
+                  <div className="inline-flex items-center gap-2 rounded-lg border border-border/50 bg-background/40 px-2.5 py-2 text-muted-foreground">
+                    <Globe className="h-4 w-4 text-violet-400" /> Global Android compatibility
+                  </div>
+                </div>
               </div>
             </div>
           </div>
