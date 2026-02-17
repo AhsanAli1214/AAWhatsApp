@@ -98,12 +98,12 @@ export const REMINI_MOD_CONFIG = {
 
 // YouTube Premium MOD Configuration
 export const YOUTUBE_PREMIUM_CONFIG = {
-  version: "v21.06.259",
-  baseVersion: "21.06.25 stable",
+  version: "v20.45.39",
+  baseVersion: "20.45.39 stable",
   updateDate: {
-    display: "February 16, 2026",
-    short: "16/02/2026",
-    iso: "2026-02-16",
+    display: "February 17, 2026",
+    short: "17/02/2026",
+    iso: "2026-02-17",
   },
   aaModsServicesDownloadLink: "https://ahsanali.short.gy/services-ahsan",
   youtubeApkDownloadLink: "https://ahsanali.short.gy/youtube-ahsan",
