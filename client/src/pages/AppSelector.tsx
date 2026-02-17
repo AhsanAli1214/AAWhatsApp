@@ -29,6 +29,7 @@ const CAPCUT_ICON_URL = "https://i.postimg.cc/q71j1h4d/capcut-pro.png";
 const AA_BUSINESS_ICON_URL =
   "https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg";
 const REMINI_ICON_URL = reminiLogo;
+const YOUTUBE_ICON_URL = "https://i.postimg.cc/J0QXxP7X/youtube-premium-mod-icon.png";
 
 type ProductCard = {
   name: string;
@@ -95,6 +96,23 @@ const productCards: ProductCard[] = [
     exploreLabel: "Explore AA Business",
     highlights: ["Bulk Messaging", "Smart Auto Replies", "Business Dashboard"],
   },
+
+  {
+    name: "YouTube Premium MOD",
+    description:
+      "Premium YouTube build with ad-free playback, SponsorBlock, RYD, enhanced bitrate, and offline-focused controls.",
+    version: APP_VERSIONS.youtubePremium,
+    icon: Video,
+    image: YOUTUBE_ICON_URL,
+    tintClass: "from-red-500/12 via-red-500/6 to-transparent",
+    borderClass: "border-red-500/30",
+    hoverClass: "hover:border-red-500/55",
+    iconClass: "text-red-500",
+    exploreHref: "/youtube-premium-mod",
+    downloadHref: "/youtube-premium-mod/install",
+    exploreLabel: "Explore YouTube Premium MOD",
+    highlights: ["Ad-Free + Background Play", "SponsorBlock + RYD", "AA Mods Services Login"],
+  },
   {
     name: "Remini Mod",
     description:
@@ -157,6 +175,7 @@ export default function AppSelector() {
         <link rel="preload" as="image" href={CAPCUT_ICON_URL} />
         <link rel="preload" as="image" href={AA_BUSINESS_ICON_URL} />
         <link rel="preload" as="image" href={REMINI_ICON_URL} />
+        <link rel="preload" as="image" href={YOUTUBE_ICON_URL} />
       </Helmet>
 
       <Navigation />

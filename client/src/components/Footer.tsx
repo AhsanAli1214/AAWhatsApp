@@ -13,6 +13,7 @@ export function Footer() {
   const [location] = useLocation();
   const isBusiness = location.startsWith("/aa-business");
   const isRemini = location.startsWith("/remini-mod");
+  const isYouTube = location.startsWith("/youtube-premium-mod");
 
   const accentClasses = isBusiness
     ? {
@@ -28,12 +29,19 @@ export function Footer() {
           primaryBtn: "bg-[#FF0000] hover:bg-[#e40000] text-white shadow-[#FF0000]/20",
           panelBorder: "border-red-500/20",
         }
-      : {
-          glowOne: "bg-primary/10",
-          glowTwo: "bg-emerald-400/10",
-          primaryBtn: "bg-primary hover:bg-primary/90 text-primary-foreground shadow-primary/20",
-          panelBorder: "border-primary/20",
-        };
+      : isYouTube
+        ? {
+            glowOne: "bg-red-600/12",
+            glowTwo: "bg-orange-400/10",
+            primaryBtn: "bg-gradient-to-r from-red-500 via-rose-500 to-orange-400 hover:opacity-95 text-white shadow-red-500/30",
+            panelBorder: "border-red-500/25",
+          }
+        : {
+            glowOne: "bg-primary/10",
+            glowTwo: "bg-emerald-400/10",
+            primaryBtn: "bg-primary hover:bg-primary/90 text-primary-foreground shadow-primary/20",
+            panelBorder: "border-primary/20",
+          };
 
   return (
     <footer className="relative z-10 mt-10 overflow-hidden border-t border-border/40 bg-background/70 backdrop-blur-xl">
@@ -102,19 +110,19 @@ export function Footer() {
                 <h4 className="mb-2 text-[10px] font-extrabold uppercase tracking-[0.22em] text-foreground/70">Resources</h4>
                 <ul className="space-y-2 text-xs md:text-sm">
                   <li>
-                    <Link href={isBusiness ? "/aa-business/blog" : "/aa-whatsapp/blog"} className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground">
+                    <Link href={isBusiness ? "/aa-business/blog" : isYouTube ? "/youtube-premium-mod/features" : "/aa-whatsapp/blog"} className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground">
                       <BookOpen className="h-4 w-4 text-muted-foreground/60" />
                       Blog & News
                     </Link>
                   </li>
                   <li>
-                    <Link href={isBusiness ? "/aa-business/faq" : "/aa-whatsapp/faq"} className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground">
+                    <Link href={isBusiness ? "/aa-business/faq" : isYouTube ? "/youtube-premium-mod/install" : "/aa-whatsapp/faq"} className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground">
                       <HelpCircle className="h-4 w-4 text-muted-foreground/60" />
                       Help Center
                     </Link>
                   </li>
                   <li>
-                    <Link href={isBusiness ? "/aa-business/about" : "/aa-whatsapp/about"} className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground">
+                    <Link href={isBusiness ? "/aa-business/about" : isYouTube ? "/youtube-premium-mod" : "/aa-whatsapp/about"} className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground">
                       <Info className="h-4 w-4 text-muted-foreground/60" />
                       About Us
                     </Link>

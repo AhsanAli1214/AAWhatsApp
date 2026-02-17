@@ -95,12 +95,28 @@ export const REMINI_MOD_CONFIG = {
   ],
 };
 
+
+// YouTube Premium MOD Configuration
+export const YOUTUBE_PREMIUM_CONFIG = {
+  version: "v21.06.259",
+  baseVersion: "21.06.25 stable",
+  updateDate: {
+    display: "February 16, 2026",
+    short: "16/02/2026",
+    iso: "2026-02-16",
+  },
+  aaModsServicesDownloadLink: "https://ahsanali.short.gy/services-ahsan",
+  youtubeApkDownloadLink: "https://ahsanali.short.gy/youtube-ahsan",
+  downloadLink: "https://aa-mods.vercel.app/youtube-premium-mod/install",
+};
+
 // Legacy Exports for Backward Compatibility
 export const APP_VERSIONS = {
   aaWhatsApp: AA_WHATSAPP_CONFIG.version,
   aaBusiness: AA_BUSINESS_CONFIG.version,
   capcutPro: CAPCUT_PRO_CONFIG.version,
   reminiMod: REMINI_MOD_CONFIG.version,
+  youtubePremium: YOUTUBE_PREMIUM_CONFIG.version,
 } as const;
 
 export const APP_VERSION_LOWER = {
@@ -108,6 +124,7 @@ export const APP_VERSION_LOWER = {
   aaBusiness: AA_BUSINESS_CONFIG.version.toLowerCase(),
   capcutPro: CAPCUT_PRO_CONFIG.version.toLowerCase(),
   reminiMod: REMINI_MOD_CONFIG.version.toLowerCase(),
+  youtubePremium: YOUTUBE_PREMIUM_CONFIG.version.toLowerCase(),
 } as const;
 
 export const APP_BASE_VERSIONS = {
@@ -115,6 +132,7 @@ export const APP_BASE_VERSIONS = {
   aaBusiness: AA_BUSINESS_CONFIG.baseVersion,
   capcutPro: CAPCUT_PRO_CONFIG.baseVersion,
   reminiMod: REMINI_MOD_CONFIG.baseVersion,
+  youtubePremium: YOUTUBE_PREMIUM_CONFIG.baseVersion,
 } as const;
 
 const splitLines = (value: string) =>
@@ -129,6 +147,13 @@ export const APP_FEATURES = {
   aaBusiness: splitLines(AA_BUSINESS_CONFIG.changelog),
   capcutPro: CAPCUT_PRO_CONFIG.features,
   reminiMod: REMINI_MOD_CONFIG.features,
+  youtubePremium: [
+    "Ad-free playback",
+    "Background play",
+    "SponsorBlock + RYD",
+    "Enhanced 1080p bitrate",
+    "AA Mods Services login support",
+  ],
 } as const;
 
 export const APP_CHANGELOGS = {
@@ -136,6 +161,7 @@ export const APP_CHANGELOGS = {
   aaBusiness: AA_BUSINESS_CONFIG.changelog,
   capcutPro: CAPCUT_PRO_CONFIG.features.join("\n"),
   reminiMod: REMINI_MOD_CONFIG.features.join("\n"),
+  youtubePremium: APP_FEATURES.youtubePremium.join("\n"),
 } as const;
 
 export const APP_UPDATE_DATES = {
@@ -143,6 +169,7 @@ export const APP_UPDATE_DATES = {
   aaBusiness: AA_BUSINESS_CONFIG.updateDate,
   capcutPro: CAPCUT_PRO_CONFIG.updateDate,
   reminiMod: REMINI_MOD_CONFIG.updateDate,
+  youtubePremium: YOUTUBE_PREMIUM_CONFIG.updateDate,
 } as const;
 
 export const APP_DOWNLOAD_LINKS = {
@@ -150,6 +177,7 @@ export const APP_DOWNLOAD_LINKS = {
   aaBusiness: AA_BUSINESS_CONFIG.downloadLink,
   capcutPro: CAPCUT_PRO_CONFIG.downloadLink,
   reminiMod: REMINI_MOD_CONFIG.downloadLink,
+  youtubePremium: YOUTUBE_PREMIUM_CONFIG.downloadLink,
 } as const;
 
 export const APP_DIRECT_DOWNLOAD_LINKS = {

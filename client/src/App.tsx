@@ -25,6 +25,9 @@ const CapCutDownloadPage = lazy(() => import("@/pages/CapCutDownloadPage"));
 const ReminiModPage = lazy(() => import("@/pages/ReminiModPage"));
 const ReminiFeaturesPage = lazy(() => import("@/pages/ReminiFeaturesPage"));
 const ReminiDownloadPage = lazy(() => import("@/pages/ReminiDownloadPage"));
+const YouTubePremiumPage = lazy(() => import("@/pages/YouTubePremiumPage"));
+const YouTubePremiumFeaturesPage = lazy(() => import("@/pages/YouTubePremiumFeaturesPage"));
+const YouTubePremiumInstallPage = lazy(() => import("@/pages/YouTubePremiumInstallPage"));
 const BusinessDownloadPage = lazy(() => import("@/pages/BusinessDownloadPage"));
 const About = lazy(() => import("@/pages/About"));
 const Comparison = lazy(() => import("@/pages/Comparison"));
@@ -78,6 +81,9 @@ function Router() {
         <Route path="/remini-mod" component={ReminiModPage} />
         <Route path="/remini-mod/features" component={ReminiFeaturesPage} />
         <Route path="/remini-mod/download" component={ReminiDownloadPage} />
+        <Route path="/youtube-premium-mod" component={YouTubePremiumPage} />
+        <Route path="/youtube-premium-mod/features" component={YouTubePremiumFeaturesPage} />
+        <Route path="/youtube-premium-mod/install" component={YouTubePremiumInstallPage} />
         <Route path="/aa-business/about" component={BusinessAbout} />
         <Route path="/aa-business/features" component={BusinessFeatures} />
         <Route path="/aa-business/download" component={BusinessDownload} />

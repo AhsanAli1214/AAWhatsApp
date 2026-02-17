@@ -1,4 +1,5 @@
 import { Link, useLocation } from "wouter";
+import { useEffect, useState } from "react";
 import {
   Home,
   DownloadCloud,
@@ -16,13 +17,13 @@ type NavItem = {
   hash?: boolean;
 };
 
-function NavTab({ item, isActive, isBusiness, isRemini }: { item: NavItem; isActive: boolean; isBusiness: boolean; isRemini: boolean }) {
+function NavTab({ item, isActive, isBusiness, isRemini, isYouTube }: { item: NavItem; isActive: boolean; isBusiness: boolean; isRemini: boolean; isYouTube: boolean }) {
   const Icon = item.icon;
 
   const content = (
     <div
       className={`relative flex flex-col items-center justify-center min-w-[56px] h-full transition-all duration-500 active:scale-90 ${
-        isActive ? (isBusiness ? "text-blue-400" : isRemini ? "text-[#FF0000]" : "text-primary") : (isRemini ? "text-[#ff8c8c]/65" : "text-muted-foreground/40")
+        isActive ? (isBusiness ? "text-blue-400" : isRemini ? "text-[#FF0000]" : isYouTube ? "text-red-500" : "text-primary") : (isRemini ? "text-[#ff8c8c]/65" : isYouTube ? "text-red-300/65" : "text-muted-foreground/40")
       }`}
     >
       <div className="flex flex-col items-center group">
@@ -51,6 +52,8 @@ function NavTab({ item, isActive, isBusiness, isRemini }: { item: NavItem; isAct
                   ? "bg-blue-400 shadow-[0_0_12px_rgba(96,165,250,1)]"
                   : isRemini
                   ? "bg-[#FF0000] shadow-[0_0_12px_rgba(255,0,0,0.9)]"
+                  : isYouTube
+                  ? "bg-red-500 shadow-[0_0_12px_rgba(239,68,68,1)]"
                   : "bg-primary shadow-[0_0_12px_rgba(16,185,129,1)]"
               }`}
             />
@@ -73,9 +76,24 @@ function NavTab({ item, isActive, isBusiness, isRemini }: { item: NavItem; isAct
 
 export function MobileNav() {
   const [location] = useLocation();
+  const [currentHash, setCurrentHash] = useState("");
+
+  useEffect(() => {
+    const syncHash = () => setCurrentHash(window.location.hash);
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    window.addEventListener("popstate", syncHash);
+
+    return () => {
+      window.removeEventListener("hashchange", syncHash);
+      window.removeEventListener("popstate", syncHash);
+    };
+  }, [location]);
+
   const isBusiness = location.startsWith("/aa-business");
   const isCapCut = location.startsWith("/capcut-pro");
   const isRemini = location.startsWith("/remini-mod");
+  const isYouTube = location.startsWith("/youtube-premium-mod");
 
   const navItems: NavItem[] = isRemini
     ? [
@@ -83,6 +101,14 @@ export function MobileNav() {
         { href: "/remini-mod", icon: Home, label: "Home" },
         { href: "/remini-mod/features", icon: Sparkles, label: "Features" },
         { href: "/remini-mod/download", icon: DownloadCloud, label: "Download" },
+      ]
+    : isYouTube
+    ? [
+        { href: "/", icon: Layers, label: "Apps" },
+        { href: "/youtube-premium-mod", icon: Home, label: "Home" },
+        { href: "/youtube-premium-mod/features", icon: Sparkles, label: "Features" },
+        { href: "/youtube-premium-mod/install", icon: DownloadCloud, label: "Install" },
+        { href: "/youtube-premium-mod/install#youtube-faq", icon: LifeBuoy, label: "FAQ", hash: true },
       ]
     : isCapCut
     ? [
@@ -109,14 +135,21 @@ export function MobileNav() {
             ? "bg-background/95 supports-[backdrop-filter]:bg-background/85 supports-[backdrop-filter]:backdrop-blur-xl"
             : isRemini
             ? "bg-gradient-to-b from-[#2a0000]/95 via-[#160000]/95 to-background/95 supports-[backdrop-filter]:backdrop-blur-xl border-[#FF0000]/30 ring-[#FF0000]/20"
+            : isYouTube
+            ? "bg-gradient-to-b from-red-950/95 via-red-900/90 to-background/95 supports-[backdrop-filter]:backdrop-blur-xl border-red-500/30 ring-red-500/20"
             : "bg-background/40 backdrop-blur-[32px]"
         }`}
       >
         {isRemini && <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#FF0000]/70 to-transparent" />}
-        <nav className="flex items-center justify-around max-w-lg mx-auto h-14">
+        {isYouTube && <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-red-500/80 to-transparent" />}
+        <nav className="flex items-center justify-around max-w-lg mx-auto h-14 gap-1">
           {navItems.map((item) => {
-            const isActive = item.hash ? location === item.href.split("#")[0] : location === item.href;
-            return <NavTab key={item.href} item={item} isActive={isActive} isBusiness={isBusiness} isRemini={isRemini} />;
+            const [basePath, hashPart] = item.href.split("#");
+            const isActive = item.hash
+              ? location === basePath && currentHash === `#${hashPart}`
+              : location === item.href;
+
+            return <NavTab key={`${item.href}-${item.label}`} item={item} isActive={isActive} isBusiness={isBusiness} isRemini={isRemini} isYouTube={isYouTube} />;
           })}
         </nav>
       </div>
