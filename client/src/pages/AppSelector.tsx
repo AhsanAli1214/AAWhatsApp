@@ -4,11 +4,9 @@ import reminiLogo from "@assets/download_1771149808669.png";
 import {
   MessageSquare,
   Briefcase,
-  Shield,
   Download,
   Sparkles,
   Users,
-  Building2,
   Video,
   CheckCircle2,
   ShieldCheck,
@@ -30,6 +28,7 @@ const AA_BUSINESS_ICON_URL =
   "https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg";
 const REMINI_ICON_URL = reminiLogo;
 const YOUTUBE_ICON_URL = "https://i.postimg.cc/4y3bZ6cj/download-1-removebg-preview.png";
+const FAVICON_URL = "https://i.postimg.cc/cH2Vjzjc/Gemini_Generated_Image_m5jfz1m5jfz1m5jf_removebg_preview.png";
 
 type ProductCard = {
   appKey: keyof typeof APP_VERSIONS;
@@ -55,9 +54,9 @@ const productCards: ProductCard[] = [
       "Secure WhatsApp mod with advanced privacy controls, anti-ban optimization, and deep customization.",
     icon: MessageSquare,
     image: AA_WHATSAPP_ICON_URL,
-    tintClass: "from-primary/10 via-primary/5 to-transparent",
-    borderClass: "border-primary/25",
-    hoverClass: "hover:border-primary/50",
+    tintClass: "from-emerald-500/20 via-primary/10 to-cyan-500/20",
+    borderClass: "border-emerald-400/40",
+    hoverClass: "hover:border-emerald-300/70",
     iconClass: "text-primary",
     exploreHref: "/aa-whatsapp",
     downloadHref: "/aa-whatsapp/download",
@@ -71,9 +70,9 @@ const productCards: ProductCard[] = [
       "Professional video editor build with premium assets, AI tools unlocked, and no-watermark exports.",
     icon: Video,
     image: CAPCUT_ICON_URL,
-    tintClass: "from-primary/10 via-primary/5 to-transparent",
-    borderClass: "border-primary/25",
-    hoverClass: "hover:border-primary/50",
+    tintClass: "from-emerald-500/20 via-primary/10 to-cyan-500/20",
+    borderClass: "border-emerald-400/40",
+    hoverClass: "hover:border-emerald-300/70",
     iconClass: "text-primary",
     exploreHref: "/capcut-pro",
     downloadHref: "/capcut-pro/download",
@@ -87,9 +86,9 @@ const productCards: ProductCard[] = [
       "Business-first WhatsApp experience with analytics, automation workflows, and enterprise messaging controls.",
     icon: Briefcase,
     image: AA_BUSINESS_ICON_URL,
-    tintClass: "from-blue-500/12 via-blue-500/6 to-transparent",
-    borderClass: "border-blue-500/30",
-    hoverClass: "hover:border-blue-500/55",
+    tintClass: "from-emerald-500/20 via-primary/10 to-cyan-500/20",
+    borderClass: "border-emerald-400/40",
+    hoverClass: "hover:border-emerald-300/70",
     iconClass: "text-blue-500",
     exploreHref: "/aa-business",
     downloadHref: "/aa-business/download",
@@ -104,9 +103,9 @@ const productCards: ProductCard[] = [
       "Premium YouTube build with ad-free playback, SponsorBlock, RYD, enhanced bitrate, and offline-focused controls.",
     icon: Video,
     image: YOUTUBE_ICON_URL,
-    tintClass: "from-red-500/12 via-red-500/6 to-transparent",
-    borderClass: "border-red-500/30",
-    hoverClass: "hover:border-red-500/55",
+    tintClass: "from-emerald-500/20 via-primary/10 to-cyan-500/20",
+    borderClass: "border-emerald-400/40",
+    hoverClass: "hover:border-emerald-300/70",
     iconClass: "text-red-500",
     exploreHref: "/youtube-premium-mod",
     downloadHref: "/youtube-premium-mod/install",
@@ -120,9 +119,9 @@ const productCards: ProductCard[] = [
       "AI-powered photo enhancer for restoration, unblur, and HD upscaling with premium workflow unlocks.",
     icon: Sparkles,
     image: REMINI_ICON_URL,
-    tintClass: "from-[#FF0000]/12 via-[#FF0000]/6 to-transparent",
-    borderClass: "border-[#FF0000]/30",
-    hoverClass: "hover:border-[#FF0000]/55",
+    tintClass: "from-emerald-500/20 via-primary/10 to-cyan-500/20",
+    borderClass: "border-emerald-400/40",
+    hoverClass: "hover:border-emerald-300/70",
     iconClass: "text-[#FF0000]",
     exploreHref: "/remini-mod",
     downloadHref: "/remini-mod/download",
@@ -159,6 +158,8 @@ export default function AppSelector() {
           content="https://aa-mods.vercel.app/AA%20Mods.png"
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/" />
+        <link rel="icon" type="image/png" href={FAVICON_URL} />
+        <link rel="shortcut icon" href={FAVICON_URL} />
         <link
           rel="preconnect"
           href="https://i.postimg.cc"
@@ -264,9 +265,10 @@ export default function AppSelector() {
                   transition={{ duration: 0.5, delay: 0.15 + index * 0.08 }}
                 >
                   <Card
-                    className={`h-full border ${product.borderClass} ${product.hoverClass} transition-all duration-300 bg-gradient-to-br ${product.tintClass}`}
+                    className={`h-full border ${product.borderClass} ${product.hoverClass} transition-all duration-300 bg-gradient-to-br ${product.tintClass} shadow-lg shadow-emerald-500/10 hover:shadow-emerald-400/30 hover:-translate-y-1 relative overflow-hidden`}
                   >
-                    <CardHeader className="pb-2">
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.20),transparent_52%),radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.16),transparent_56%)]" />
+                    <CardHeader className="pb-2 relative z-10">
                       <div className="flex items-center gap-3">
                         <img
                           src={product.image}
@@ -284,7 +286,7 @@ export default function AppSelector() {
                       </div>
                     </CardHeader>
 
-                    <CardContent className="pt-3">
+                    <CardContent className="pt-3 relative z-10">
                       <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{product.description}</p>
 
                       <div className="space-y-2.5 mb-6">
