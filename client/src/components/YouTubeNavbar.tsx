@@ -25,19 +25,21 @@ const navLinks = [
   { href: "/youtube-premium-mod/install", label: "Install & FAQ", primary: true },
 ];
 
+const YOUTUBE_LOGO_URL = "https://i.postimg.cc/4y3bZ6cj/download-1-removebg-preview.png";
+
 export function YouTubeNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-red-500/20 bg-background/95 supports-[backdrop-filter]:bg-background/80 supports-[backdrop-filter]:backdrop-blur-lg">
+    <nav className="sticky top-0 left-0 right-0 z-50 border-b border-red-500/20 bg-background/95 supports-[backdrop-filter]:bg-background/80 supports-[backdrop-filter]:backdrop-blur-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           <Link href="/" className="flex items-center gap-2 group">
             <img
-              src="/favicon.png"
-              alt="AA Mods"
-              className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-500"
+              src={YOUTUBE_LOGO_URL}
+              alt="YouTube Premium MOD"
+              className="w-10 h-10 md:w-12 md:h-12 object-contain group-hover:scale-110 transition-transform duration-500"
               loading="eager"
               decoding="async"
               width="48"

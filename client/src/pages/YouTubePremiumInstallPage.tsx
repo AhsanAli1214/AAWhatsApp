@@ -49,7 +49,7 @@ export default function YouTubePremiumInstallPage() {
         <link rel="canonical" href="https://aa-mods.vercel.app/youtube-premium-mod/install" />
       </Helmet>
 
-      <main className="pt-24 pb-20 px-4">
+      <main className="pt-20 md:pt-24 pb-28 lg:pb-20 px-3 sm:px-4">
         <div className="container mx-auto max-w-6xl space-y-8">
           <section className="space-y-4 text-center">
             <Badge className="bg-red-500/10 text-red-400 border-red-500/30 uppercase tracking-[0.12em] font-bold">
