@@ -1,5 +1,6 @@
 import type { Express } from "express";
 import type { Server } from "http";
+import path from "path";
 import { api } from "@shared/routes";
 import { Resend } from "resend";
 
@@ -11,6 +12,10 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  app.get("/aa-mods-page", (_req, res) => {
+    res.sendFile(path.resolve(process.cwd(), "AA Mods.html"));
+  });
+
   app.post("/api/report-bug", async (req, res) => {
     try {
       if (!resend) {
