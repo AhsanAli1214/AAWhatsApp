@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { useMemo, useState } from "react";
 import reminiLogo from "@assets/download_1771149808669.png";
 import {
   MessageSquare,
@@ -10,10 +11,12 @@ import {
   Video,
   CheckCircle2,
   ShieldCheck,
-  ArrowRight,
+  Search,
+  X,
   type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
@@ -131,6 +134,31 @@ const productCards: ProductCard[] = [
 ];
 
 export default function AppSelector() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+
+  const filteredProductCards = useMemo(() => {
+    if (!normalizedQuery) {
+      return productCards;
+    }
+
+    return productCards.filter((product) => {
+      const version = APP_VERSIONS[product.appKey].toLowerCase();
+      const haystack = [
+        product.name,
+        product.description,
+        product.exploreLabel,
+        ...product.highlights,
+        version,
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      return haystack.includes(normalizedQuery);
+    });
+  }, [normalizedQuery]);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
@@ -243,7 +271,7 @@ export default function AppSelector() {
               <CardContent className="p-4 md:p-5">
                 <p className="text-[11px] uppercase tracking-[0.14em] text-primary font-black mb-3">Latest Stable Versions</p>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm">
-                  {productCards.map((product) => (
+                  {filteredProductCards.map((product) => (
                     <div key={`${product.name}-version`} className="rounded-lg border border-white/10 bg-background/50 px-3 py-2">
                       <p className="text-[11px] text-muted-foreground font-semibold leading-tight">{product.name}</p>
                       <p className="font-black mt-1">{APP_VERSIONS[product.appKey]}</p>
@@ -254,8 +282,46 @@ export default function AppSelector() {
             </Card>
           </motion.div>
 
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.22 }}
+            className="mb-8"
+          >
+            <Card className="border-primary/25 bg-gradient-to-r from-primary/10 via-background/90 to-primary/5 shadow-lg shadow-primary/10">
+              <CardContent className="p-4 md:p-5">
+                <div className="flex flex-col md:flex-row md:items-center gap-3">
+                  <div className="relative flex-1">
+                    <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
+                    <Input
+                      value={searchQuery}
+                      onChange={(event) => setSearchQuery(event.target.value)}
+                      placeholder="Search apps, features, or versions..."
+                      className="pl-10 pr-10 h-11 bg-background/80 border-primary/20 focus-visible:ring-primary/40"
+                      aria-label="Search AA Mods apps"
+                    />
+                    {searchQuery ? (
+                      <button
+                        type="button"
+                        onClick={() => setSearchQuery("")}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1 text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+                        aria-label="Clear search"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    ) : null}
+                  </div>
+                  <Badge className="self-start md:self-center bg-primary/10 text-primary border-primary/20 font-bold px-3 py-1.5">
+                    {filteredProductCards.length} result{filteredProductCards.length === 1 ? "" : "s"}
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
           <div className="grid md:grid-cols-2 gap-5">
-            {productCards.map((product, index) => {
+            {filteredProductCards.map((product, index) => {
               const Icon = product.icon;
               return (
                 <motion.div
@@ -319,23 +385,27 @@ export default function AppSelector() {
             })}
           </div>
 
+          {filteredProductCards.length === 0 ? (
+            <Card className="mt-5 border-dashed border-primary/30 bg-secondary/20">
+              <CardContent className="p-6 text-center">
+                <p className="text-base font-bold">No apps matched your search.</p>
+                <p className="text-sm text-muted-foreground mt-1">Try searching by app name (AA WhatsApp, CapCut, Remini) or feature keywords.</p>
+              </CardContent>
+            </Card>
+          ) : null}
+
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-10"
           >
-            <Card className="border-primary/20 bg-primary/5">
-              <CardContent className="p-5 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.14em] text-primary font-black">Need help choosing?</p>
-                  <p className="text-sm text-muted-foreground">Check feature pages and download guides for each app before installing.</p>
-                </div>
-                <Link href="/comparison">
-                  <Button variant="outline" className="font-bold">
-                    Compare Apps <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </Link>
+            <Card className="border-primary/20 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent">
+              <CardContent className="p-5 md:p-6">
+                <p className="text-sm uppercase tracking-[0.14em] text-primary font-black">Classic AA Mods HTML Page</p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  The original page is available directly from your browser at <span className="font-semibold text-foreground">/aa-mods-page</span>.
+                </p>
               </CardContent>
             </Card>
           </motion.div>
