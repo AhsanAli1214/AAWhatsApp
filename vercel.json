@@ -43,6 +43,10 @@
       "dest": "/attached_assets/$1"
     },
     {
+      "src": "/aa-mods-page",
+      "dest": "/aa-mods-page.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

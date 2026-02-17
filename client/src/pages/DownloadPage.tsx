@@ -22,7 +22,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { Footer } from "@/components/Footer";
-import { APP_BASE_VERSIONS, APP_CHANGELOGS, APP_UPDATE_DATES, APP_VERSION_LOWER, APP_VERSIONS, APP_WHATSAPP_PACKAGE_NAMES } from "@/config/appConfig";
+import {
+  APP_BASE_VERSIONS,
+  APP_CHANGELOGS,
+  APP_UPDATE_DATES,
+  APP_VERSION_LOWER,
+  APP_VERSIONS,
+  APP_WHATSAPP_PACKAGE_NAMES,
+} from "@/config/appConfig";
 import { SECURE_DOWNLOAD_ASSETS } from "@shared/downloadAssets";
 import { DirectDownloadButton } from "@/components/DirectDownloadButton";
 
@@ -254,6 +261,20 @@ export default function DownloadPage() {
                   <div className="text-xs text-muted-foreground">
                     Primary package: <span className="font-semibold">{APP_WHATSAPP_PACKAGE_NAMES.modern}</span>
                   </div>
+                </div>
+
+                <div className="flex w-full flex-col items-center gap-3">
+                  <DirectDownloadButton
+                    asset={SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy}
+                    buttonClassName="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-2xl border border-primary/40 bg-primary/10 px-4 py-4 font-bold text-primary transition hover:bg-primary/20"
+                    ariaLabel="Download AAWhatsApp com.gbwhatsapp package"
+                  >
+                    <Download className="w-5 h-5" />
+                    Download AAWhatsApp ({APP_WHATSAPP_PACKAGE_NAMES.legacy})
+                  </DirectDownloadButton>
+                  <p className="max-w-md text-center text-xs text-muted-foreground">
+                    Best for users who want the classic package name compatibility and easier migration from older mod installs.
+                  </p>
                 </div>
               </div>
 
