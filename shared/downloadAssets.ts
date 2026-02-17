@@ -5,6 +5,7 @@ export const SECURE_DOWNLOAD_ASSETS = {
   aaBusinessMirror: "aa-business-mirror",
   capcutProMain: "capcut-pro-main",
   reminiModMain: "remini-mod-main",
+  youtubePremiumMain: "youtube-premium-main",
 } as const;
 
 const redirectMap = {
@@ -14,6 +15,7 @@ const redirectMap = {
   [SECURE_DOWNLOAD_ASSETS.aaBusinessMirror]: "https://www.mediafire.com/file/aabusiness_v1.0.apk",
   [SECURE_DOWNLOAD_ASSETS.capcutProMain]: "https://ahsanali.short.gy/capcut-ahsan",
   [SECURE_DOWNLOAD_ASSETS.reminiModMain]: "https://ahsanali.short.gy/remini-ahsan",
+  [SECURE_DOWNLOAD_ASSETS.youtubePremiumMain]: "https://ahsanali.short.gy/youtube-ahsan",
 } as const;
 
 const assertHttpsUrl = (value: string, asset: string) => {

@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet";
-import { YOUTUBE_PREMIUM_CONFIG } from "@/config/appConfig";
+import { APP_UPDATE_DATES, APP_VERSIONS, YOUTUBE_PREMIUM_CONFIG } from "@/config/appConfig";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { DirectDownloadButton } from "@/components/DirectDownloadButton";
+import { SECURE_DOWNLOAD_ASSETS } from "@shared/downloadAssets";
 import {
   ShieldCheck,
   Download,
@@ -59,6 +60,9 @@ export default function YouTubePremiumInstallPage() {
             <p className="text-muted-foreground leading-relaxed max-w-4xl mx-auto">
               Follow these steps exactly for the best result. You must install AA Mods Services first, then install YouTube Premium MOD APK.
             </p>
+            <p className="text-sm text-muted-foreground">
+              Latest stable build: <span className="font-bold text-red-300">{APP_VERSIONS.youtubePremium}</span> • Updated: {APP_UPDATE_DATES.youtubePremium.display}
+            </p>
             <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm font-semibold text-red-300 max-w-4xl mx-auto">
               <AlertTriangle className="w-4 h-4 inline mr-2" />
               Important: AA Mods Services is mandatory and must be installed first. Without it, login and account sync can fail.
@@ -95,11 +99,27 @@ export default function YouTubePremiumInstallPage() {
               <CardContent className="text-sm text-muted-foreground space-y-2">
                 <p>AA Mods Services provides compatibility for Google sign-in on the MOD app.</p>
                 <p>Install this first before installing YouTube Premium MOD.</p>
-                <a href={YOUTUBE_PREMIUM_CONFIG.aaModsServicesDownloadLink} target="_blank" rel="noopener noreferrer">
-                  <Button className="mt-2 bg-gradient-to-r from-red-500 via-rose-500 to-orange-400 text-white font-extrabold shadow-lg shadow-red-500/40 hover:opacity-95">
-                    DOWNLOAD AA MODS SERVICES APK (STEP 1)
-                  </Button>
-                </a>
+                <div className="pt-3 pb-2">
+                  <a
+                    href={YOUTUBE_PREMIUM_CONFIG.aaModsServicesDownloadLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="neon-download-btn [--download-glow:#ef4444] [--download-border:#fca5a5] [--download-text:#ffffff] inline-flex w-full max-w-3xl min-h-[62px] md:min-h-[82px] items-center justify-between gap-2 md:gap-4 px-4 md:px-6 py-2.5 md:py-3"
+                  >
+                    <div className="flex items-center gap-2 md:gap-4 text-left min-w-0">
+                      <Download className="h-5 w-5 md:h-6 md:w-6 shrink-0" />
+                      <div className="min-w-0">
+                        <span className="block leading-tight break-words font-bold text-white">Download AA Mods Services APK</span>
+                        <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.14em] opacity-75 leading-tight text-white">
+                          Required package • Step 1
+                        </span>
+                      </div>
+                    </div>
+                    <Badge className="bg-white/20 text-white font-black px-2.5 py-1 shrink-0">
+                      Direct
+                    </Badge>
+                  </a>
+                </div>
               </CardContent>
             </Card>
 
@@ -108,12 +128,34 @@ export default function YouTubePremiumInstallPage() {
               <CardContent className="text-sm text-muted-foreground space-y-2">
                 <p>This build is a universal APK. There are no separate CPU variants for this release.</p>
                 <p>After AA Mods Services is installed, install this YouTube package normally.</p>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  <a href={YOUTUBE_PREMIUM_CONFIG.youtubeApkDownloadLink} target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-gradient-to-r from-red-500 via-rose-500 to-orange-400 text-white font-extrabold shadow-lg shadow-red-500/30 hover:opacity-95">
-                      DOWNLOAD YOUTUBE PREMIUM MOD APK (STEP 2)
-                    </Button>
-                  </a>
+                <div className="pt-3 pb-2">
+                  <DirectDownloadButton
+                    asset={SECURE_DOWNLOAD_ASSETS.youtubePremiumMain}
+                    buttonClassName="neon-download-btn [--download-glow:#ef4444] [--download-border:#fca5a5] [--download-text:#ffffff] w-full max-w-3xl min-h-[62px] md:min-h-[82px] px-4 md:px-6 py-2.5 md:py-3 text-sm md:text-base"
+                    ariaLabel="Download YouTube Premium MOD APK"
+                  >
+                    <div className="w-full flex items-center justify-between gap-2 md:gap-4">
+                      <div className="flex items-center gap-2 md:gap-4 text-left min-w-0">
+                        <Download className="h-5 w-5 md:h-6 md:w-6 shrink-0" />
+                        <div className="min-w-0">
+                          <span className="block leading-tight break-words">Download YouTube Premium MOD {APP_VERSIONS.youtubePremium}</span>
+                          <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.14em] opacity-75 leading-tight">
+                            Official package • Step 2
+                          </span>
+                        </div>
+                      </div>
+                      <Badge className="bg-white/20 text-white font-black px-2.5 py-1 shrink-0">
+                        Direct
+                      </Badge>
+                    </div>
+                  </DirectDownloadButton>
+                </div>
+                <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-muted-foreground">
+                  <span className="inline-flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-red-400" /> No login required</span>
+                  <span className="opacity-50">•</span>
+                  <span className="inline-flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-red-400" /> No VPN required</span>
+                  <span className="opacity-50">•</span>
+                  <span className="inline-flex items-center gap-1"><CheckCircle2 className="h-3.5 w-3.5 text-red-400" /> No root required</span>
                 </div>
               </CardContent>
             </Card>
