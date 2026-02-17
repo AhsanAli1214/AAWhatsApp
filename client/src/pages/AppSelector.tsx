@@ -220,12 +220,12 @@ export default function AppSelector() {
             <img
               src="/favicon.png"
               alt="AA Mods Logo"
-              className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-4 object-contain rounded-2xl"
+              className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-5 object-contain rounded-2xl"
               loading="eager"
               decoding="async"
               fetchPriority="high"
-              width="112"
-              height="112"
+              width="160"
+              height="160"
             />
             <Badge className="bg-primary/10 text-primary border-primary/20 uppercase tracking-[0.14em] font-black text-[11px] px-3 py-1 mb-4">
               Official Apps Directory
