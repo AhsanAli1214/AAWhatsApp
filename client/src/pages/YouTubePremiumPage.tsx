@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Footer } from "@/components/Footer";
+import { APP_UPDATE_DATES, APP_VERSIONS } from "@/config/appConfig";
 import {
   CheckCircle2,
   Download,
@@ -180,29 +181,39 @@ export default function YouTubePremiumPage() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch">
-              <Link href="/youtube-premium-mod/install">
-                <Button
-                  size="lg"
-                  className="w-full sm:w-auto font-extrabold bg-gradient-to-r from-red-500 via-rose-500 to-orange-400 text-white shadow-lg shadow-red-500/40 hover:opacity-95"
-                >
-                  <Download className="w-5 h-5 mr-2" />
-                  DOWNLOAD LATEST STABLE VERSION v21.06.259
-                </Button>
-              </Link>
-              <Link href="/youtube-premium-mod/features">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto font-bold border-red-500/40 text-red-400 hover:bg-red-500/10">
-                  Explore Features
-                </Button>
-              </Link>
+            <div className="max-w-3xl mx-auto w-full space-y-3 py-2 md:py-3">
+              <div className="inline-flex items-center justify-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-red-300">
+                <span>Version {APP_VERSIONS.youtubePremium}</span>
+                <span className="opacity-60">•</span>
+                <span>{APP_UPDATE_DATES.youtubePremium.short}</span>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
+                <Link href="/youtube-premium-mod/install" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto min-h-[62px] md:min-h-[78px] px-5 md:px-7 font-extrabold bg-gradient-to-r from-red-500 via-rose-500 to-orange-400 text-white shadow-lg shadow-red-500/40 hover:opacity-95"
+                  >
+                    <Download className="w-5 h-5 mr-2" />
+                    DOWNLOAD LATEST STABLE VERSION {APP_VERSIONS.youtubePremium}
+                  </Button>
+                </Link>
+                <Link href="/youtube-premium-mod/features" className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto min-h-[62px] md:min-h-[78px] px-5 md:px-7 font-bold border-red-500/40 text-red-400 hover:bg-red-500/10">
+                    Explore Features & Changelog
+                  </Button>
+                </Link>
+              </div>
             </div>
 
-            <p className="text-sm text-muted-foreground">
-              Last Updated: February 16, 2026 | Requirements: Android 5.1+
-            </p>
-            <p className="text-sm text-red-300">
-              Note: This release is provided as one universal APK. Install AA Mods Services first, then install YouTube Premium MOD.
-            </p>
+            <div className="space-y-1">
+              <p className="text-sm text-muted-foreground">
+                Last Updated: {APP_UPDATE_DATES.youtubePremium.display} | Requirements: Android 5.1+
+              </p>
+              <p className="text-sm text-red-300">
+                Install order: Step 1 AA Mods Services → Step 2 YouTube Premium MOD.
+              </p>
+            </div>
           </section>
 
           <section>
@@ -323,15 +334,17 @@ export default function YouTubePremiumPage() {
                 </p>
               ))}
             </div>
-            <Link href="/youtube-premium-mod/install">
-              <Button
-                size="lg"
-                className="font-extrabold bg-gradient-to-r from-red-500 via-rose-500 to-orange-400 text-white shadow-lg shadow-red-500/40 hover:opacity-95"
-              >
-                <CheckCircle2 className="w-5 h-5 mr-2" />
-                DOWNLOAD NOW
-              </Button>
-            </Link>
+            <div className="pt-2 md:pt-3 flex justify-center">
+              <Link href="/youtube-premium-mod/install" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto min-h-[62px] md:min-h-[72px] px-6 md:px-8 font-extrabold bg-gradient-to-r from-red-500 via-rose-500 to-orange-400 text-white shadow-lg shadow-red-500/40 hover:opacity-95"
+                >
+                  <CheckCircle2 className="w-5 h-5 mr-2" />
+                  DOWNLOAD {APP_VERSIONS.youtubePremium} NOW
+                </Button>
+              </Link>
+            </div>
           </section>
         </div>
       </main>
