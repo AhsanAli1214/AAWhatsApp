@@ -47,6 +47,20 @@ export default function YouTubePremiumInstallPage() {
           name="description"
           content="A step-by-step guide on how to install YouTube Premium MOD APK correctly. Install AA Mods Services first, then install the universal YouTube MOD APK."
         />
+        <meta
+          name="keywords"
+          content="install YouTube Premium MOD APK, YouTube MOD setup guide, AA Mods Services install, YouTube mod troubleshooting, YouTube premium APK login fix"
+        />
+        <meta
+          property="og:title"
+          content="How to Install YouTube Premium MOD APK - Step-by-Step Guide"
+        />
+        <meta
+          property="og:description"
+          content="Follow the safest installation sequence for YouTube Premium MOD APK with AA Mods Services, plus FAQ and troubleshooting fixes."
+        />
+        <meta property="og:url" content="https://aa-mods.vercel.app/youtube-premium-mod/install" />
+        <meta name="robots" content="index,follow" />
         <link rel="canonical" href="https://aa-mods.vercel.app/youtube-premium-mod/install" />
       </Helmet>
 

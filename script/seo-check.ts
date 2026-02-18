@@ -43,6 +43,10 @@ async function checkStaticSitemapCriticalRoutes(): Promise<CheckResult[]> {
     "https://aa-mods.vercel.app/remini-mod",
     "https://aa-mods.vercel.app/remini-mod/features",
     "https://aa-mods.vercel.app/remini-mod/download",
+    "https://aa-mods.vercel.app/youtube-premium-mod",
+    "https://aa-mods.vercel.app/youtube-premium-mod/features",
+    "https://aa-mods.vercel.app/youtube-premium-mod/install",
+    "https://aa-mods.vercel.app/aa-business/comparison",
   ];
 
   const missing = requiredRoutes.filter((url) => !staticSitemap.includes(`<loc>${url}</loc>`));
@@ -50,7 +54,7 @@ async function checkStaticSitemapCriticalRoutes(): Promise<CheckResult[]> {
   return [
     assert(
       missing.length === 0,
-      "Static sitemap.xml includes CapCut and Remini routes",
+      "Static sitemap.xml includes CapCut, Remini, YouTube, and Business comparison routes",
       missing.length ? `Missing: ${missing.join(", ")}` : undefined
     ),
   ];
@@ -113,12 +117,35 @@ async function checkCapCutPages(): Promise<CheckResult[]> {
   ];
 }
 
+async function checkYouTubeAndBusinessPages(): Promise<CheckResult[]> {
+  const youtubeHomePage = await readFile("client/src/pages/YouTubePremiumPage.tsx", "utf-8");
+  const youtubeFeaturesPage = await readFile("client/src/pages/YouTubePremiumFeaturesPage.tsx", "utf-8");
+  const youtubeInstallPage = await readFile("client/src/pages/YouTubePremiumInstallPage.tsx", "utf-8");
+  const businessComparisonPage = await readFile("client/src/pages/business/BusinessComparison.tsx", "utf-8");
+
+  return [
+    assert(youtubeHomePage.includes('rel="canonical"'), "YouTube Premium page has canonical tag"),
+    assert(youtubeFeaturesPage.includes('rel="canonical"'), "YouTube Premium Features page has canonical tag"),
+    assert(youtubeInstallPage.includes('rel="canonical"'), "YouTube Premium Install page has canonical tag"),
+    assert(youtubeHomePage.includes("og:url"), "YouTube Premium page includes og:url metadata"),
+    assert(youtubeFeaturesPage.includes("og:url"), "YouTube Premium Features page includes og:url metadata"),
+    assert(youtubeInstallPage.includes("og:url"), "YouTube Premium Install page includes og:url metadata"),
+    assert(youtubeHomePage.includes("name=\"description\""), "YouTube Premium page has description meta"),
+    assert(youtubeFeaturesPage.includes("name=\"description\""), "YouTube Premium Features page has description meta"),
+    assert(youtubeInstallPage.includes("name=\"description\""), "YouTube Premium Install page has description meta"),
+    assert(businessComparisonPage.includes('rel="canonical"'), "Business Comparison page has canonical tag"),
+    assert(businessComparisonPage.includes("og:url"), "Business Comparison page includes og:url metadata"),
+    assert(businessComparisonPage.includes("name=\"description\""), "Business Comparison page has description meta"),
+  ];
+}
+
 async function runChecks() {
   const results: CheckResult[] = [];
   results.push(...(await checkSitemapEntries()));
   results.push(...(await checkStaticSitemapCriticalRoutes()));
   results.push(...(await checkCanonicalTags()));
   results.push(...(await checkCapCutPages()));
+  results.push(...(await checkYouTubeAndBusinessPages()));
   results.push(...(await checkRobots()));
 
   const failed = results.filter((result) => !result.passed);

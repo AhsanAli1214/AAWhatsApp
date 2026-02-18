@@ -47,6 +47,10 @@ export async function generateSitemap() {
       { path: "/remini-mod/features", priority: "0.8", changefreq: "weekly" },
       { path: "/remini-mod/download", priority: "1.0", changefreq: "daily" },
 
+      { path: "/youtube-premium-mod", priority: "0.9", changefreq: "daily" },
+      { path: "/youtube-premium-mod/features", priority: "0.8", changefreq: "weekly" },
+      { path: "/youtube-premium-mod/install", priority: "0.8", changefreq: "weekly" },
+
       // legacy/shortcut routes still served in App.tsx
       { path: "/aa-business-whatsapp", priority: "0.7", changefreq: "monthly" },
       { path: "/business-download", priority: "0.7", changefreq: "monthly" },
