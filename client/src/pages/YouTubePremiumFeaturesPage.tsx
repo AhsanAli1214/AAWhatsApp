@@ -106,6 +106,20 @@ export default function YouTubePremiumFeaturesPage() {
           name="description"
           content="Explore the best features of YouTube Premium MOD APK including ad-block, SponsorBlock, Return YouTube Dislike, enhanced 1080p bitrate, offline downloads, privacy optimizations, and project history from Vanced to ReVanced-inspired methods."
         />
+        <meta
+          name="keywords"
+          content="YouTube Premium MOD features, SponsorBlock, Return YouTube Dislike, ad block YouTube app, YouTube background playback, YouTube MOD APK 2026"
+        />
+        <meta
+          property="og:title"
+          content="YouTube Premium MOD APK Features - Ad-Block, SponsorBlock, RYD"
+        />
+        <meta
+          property="og:description"
+          content="Discover all YouTube Premium MOD features including ad-free playback, enhanced bitrate, SponsorBlock, RYD, and privacy improvements."
+        />
+        <meta property="og:url" content="https://aa-mods.vercel.app/youtube-premium-mod/features" />
+        <meta name="robots" content="index,follow" />
         <link rel="canonical" href="https://aa-mods.vercel.app/youtube-premium-mod/features" />
       </Helmet>
 

@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BusinessNavbar } from "@/components/BusinessNavbar";
 import { Footer } from "@/components/Footer";
+import { Helmet } from "react-helmet";
 
 const comparisonData = [
   { feature: "Bulk Messaging", aaBusiness: true, official: false, gbBusiness: true, fmBusiness: false },
@@ -36,6 +37,28 @@ const apps = [
 export default function BusinessComparison() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>AA Business WhatsApp Comparison 2026 - Official vs GB/FM Business</title>
+        <meta
+          name="description"
+          content="Compare AA Business WhatsApp with Official WhatsApp Business, GB Business, and FM Business. Review privacy, anti-ban, automation, and enterprise messaging tools in one guide."
+        />
+        <meta
+          name="keywords"
+          content="AA Business comparison, WhatsApp Business mod comparison, AA Business vs GB Business, AA Business vs FM Business, business WhatsApp anti-ban, enterprise WhatsApp features"
+        />
+        <meta
+          property="og:title"
+          content="AA Business WhatsApp Comparison 2026 - Official vs GB/FM Business"
+        />
+        <meta
+          property="og:description"
+          content="See how AA Business WhatsApp compares across automation, privacy, anti-ban protection, and professional messaging features."
+        />
+        <meta property="og:url" content="https://aa-mods.vercel.app/aa-business/comparison" />
+        <link rel="canonical" href="https://aa-mods.vercel.app/aa-business/comparison" />
+        <meta name="robots" content="index,follow" />
+      </Helmet>
       <BusinessNavbar />
       
       <section className="pt-24 pb-14 px-4">

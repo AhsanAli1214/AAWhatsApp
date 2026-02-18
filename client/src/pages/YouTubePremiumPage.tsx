@@ -140,6 +140,17 @@ export default function YouTubePremiumPage() {
           name="description"
           content="Download the latest stable version of YouTube Premium MOD APK for free. Enjoy an ad-free experience, background playback, SponsorBlock, Return YouTube Dislike, enhanced 1080p bitrate, and offline downloads. No root required."
         />
+        <meta
+          name="keywords"
+          content="YouTube Premium MOD APK, YouTube mod download, ad free YouTube APK, SponsorBlock YouTube APK, Return YouTube Dislike mod, no root YouTube premium"
+        />
+        <meta property="og:title" content="YouTube Premium MOD APK - Latest Stable Version" />
+        <meta
+          property="og:description"
+          content="Download YouTube Premium MOD APK with ad-free playback, SponsorBlock, Return YouTube Dislike, background play, and offline downloads."
+        />
+        <meta property="og:url" content="https://aa-mods.vercel.app/youtube-premium-mod" />
+        <meta name="robots" content="index,follow" />
         <link rel="canonical" href="https://aa-mods.vercel.app/youtube-premium-mod" />
       </Helmet>
 
