@@ -15,22 +15,40 @@ type AppDetailsProps = {
 
 function AppIcon({ app }: { app: StoreApp }) {
   if (app.iconImage) {
-    return <img src={app.iconImage} alt={`${app.name} icon`} className="h-44 w-44 object-contain" />;
+    return (
+      <div className="relative">
+        <div className="absolute -inset-4 rounded-[3rem] bg-emerald-500/10 blur-2xl" />
+        <img 
+          src={app.iconImage} 
+          alt={`${app.name} icon`} 
+          className="relative h-40 w-40 rounded-[2.5rem] object-cover shadow-2xl ring-4 ring-white" 
+        />
+      </div>
+    );
   }
+
+  const IconWrapper = ({ children }: { children: React.ReactNode }) => (
+    <div className="relative">
+      <div className="absolute -inset-4 rounded-[3rem] bg-emerald-500/10 blur-2xl" />
+      <div className="relative flex h-40 w-40 items-center justify-center rounded-[2.5rem] bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-2xl ring-4 ring-white">
+        {children}
+      </div>
+    </div>
+  );
 
   switch (app.iconType) {
     case "whatsapp":
-      return <FaWhatsapp className="h-32 w-32" />;
+      return <IconWrapper><FaWhatsapp className="h-20 w-20" /></IconWrapper>;
     case "business":
-      return <BriefcaseBusiness className="h-32 w-32" />;
+      return <IconWrapper><BriefcaseBusiness className="h-20 w-20" /></IconWrapper>;
     case "capcut":
-      return <Clapperboard className="h-32 w-32" />;
+      return <IconWrapper><Clapperboard className="h-20 w-20" /></IconWrapper>;
     case "youtube":
-      return <FaYoutube className="h-32 w-32" />;
+      return <IconWrapper><FaYoutube className="h-20 w-20" /></IconWrapper>;
     case "youtubeMusic":
-      return <SiYoutubemusic className="h-32 w-32" />;
+      return <IconWrapper><SiYoutubemusic className="h-20 w-20" /></IconWrapper>;
     default:
-      return <Music2 className="h-32 w-32" />;
+      return <IconWrapper><Music2 className="h-20 w-20" /></IconWrapper>;
   }
 }
 
@@ -117,98 +135,132 @@ export default function AppDetails({ params }: AppDetailsProps) {
         </script>
       </Helmet>
 
-      <main className="mx-auto max-w-5xl px-4 py-8">
-        <Link href="/" className="text-sm font-semibold text-emerald-700">
-          ← Back to all apps
-        </Link>
+      <div className="sticky top-0 z-30 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div className="mx-auto flex max-w-5xl items-center px-4 py-3">
+          <Link href="/" className="group flex items-center gap-2 text-sm font-semibold text-slate-600 transition-colors hover:text-emerald-600">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition-colors group-hover:bg-emerald-50">←</span>
+            Back to Store
+          </Link>
+        </div>
+      </div>
 
-        <section className="mt-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-          <div className="grid gap-6 md:grid-cols-[280px_1fr] md:items-center">
-            <div className="flex items-center justify-center">
+      <main className="mx-auto max-w-5xl px-4 py-8">
+        <section className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-sm md:p-12">
+          <div className="absolute right-0 top-0 h-64 w-64 -translate-y-1/2 translate-x-1/2 rounded-full bg-emerald-500/5 blur-3xl" />
+          
+          <div className="relative grid gap-10 md:grid-cols-[auto_1fr] md:items-center">
+            <div className="flex justify-center">
               <AppIcon app={app} />
             </div>
 
-            <div>
-              <p className="text-sm text-slate-500">{app.developer}</p>
-              <h1 className="text-3xl font-bold">{app.name}</h1>
-              <p className="mt-1 text-slate-600">{app.subtitle}</p>
+            <div className="text-center md:text-left">
+              <div className="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-700">
+                {app.category}
+              </div>
+              <h1 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">{app.name}</h1>
+              <p className="mt-2 text-lg font-medium text-slate-500">{app.subtitle}</p>
 
-              <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-slate-600">
-                <div className="flex items-center gap-1">
-                  <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-                  {app.rating}
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-6 md:justify-start">
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Rating</span>
+                  <div className="mt-1 flex items-center gap-1.5 text-lg font-bold">
+                    <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
+                    {app.rating}
+                  </div>
                 </div>
-                <span>•</span>
-                <span>{app.downloads} downloads</span>
-                <span>•</span>
-                <span>{app.category}</span>
+                <div className="h-8 w-px bg-slate-200" />
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Downloads</span>
+                  <span className="mt-1 text-lg font-bold">{app.downloads}</span>
+                </div>
+                <div className="h-8 w-px bg-slate-200" />
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Version</span>
+                  <span className="mt-1 text-lg font-bold">{app.version}</span>
+                </div>
               </div>
 
-              <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-slate-600">
-                <span className="rounded-md bg-slate-100 px-2 py-1 font-semibold">{app.version}</span>
-                <span>Base {app.baseVersion}</span>
-                <span>•</span>
-                <span className="inline-flex items-center gap-1">
-                  <CalendarDays className="h-4 w-4" /> Updated {app.updatedDisplay}
-                </span>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href={app.directDownloadLink} target="_blank" rel="noreferrer" className="flex-1">
+                  <Button className="h-14 w-full rounded-2xl bg-emerald-600 text-lg font-bold shadow-lg shadow-emerald-200 hover:bg-emerald-700 hover:shadow-emerald-300">
+                    <Download className="mr-2 h-5 w-5" /> Download APK
+                  </Button>
+                </a>
               </div>
-
             </div>
           </div>
 
-          <p className="mt-8 text-slate-700">{app.longDescription}</p>
+          <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_320px]">
+            <div className="space-y-12">
+              <article>
+                <h2 className="text-2xl font-bold tracking-tight">About this app</h2>
+                <p className="mt-4 leading-relaxed text-slate-600">{app.longDescription}</p>
+              </article>
 
-          <div className="mt-8 rounded-2xl bg-slate-50 p-5">
-            <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-emerald-700">
-              <ShieldCheck className="h-4 w-4" /> What's new
-            </div>
-            <ul className="grid gap-2 text-sm text-slate-700 md:grid-cols-2">
-              {app.whatsNew.map((feature) => (
-                <li key={feature} className="rounded-lg border border-slate-200 bg-white px-3 py-2">
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-
-          {relatedMods.length > 0 ? (
-            <div className="mt-8 rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
-              <h2 className="text-sm font-bold uppercase tracking-wide text-emerald-800">See More Mod</h2>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {relatedMods.map((item) => (
-                  <Link key={item.slug} href={`/app/${item.slug}`}>
-                    <Button variant="outline" className="rounded-full border-emerald-300 bg-white text-emerald-800">
-                      {item.label}
-                    </Button>
-                  </Link>
-                ))}
+              <div className="rounded-[2rem] bg-slate-50 p-8">
+                <div className="mb-6 flex items-center gap-2 text-lg font-bold">
+                  <ShieldCheck className="h-6 w-6 text-emerald-600" /> What's new in this version
+                </div>
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {app.whatsNew.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-sm font-medium text-slate-700 shadow-sm">
+                      <div className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          ) : null}
 
-          <article className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <h2 className="text-lg font-bold text-slate-900">Detailed Blog Guide</h2>
-            <div className="prose prose-slate mt-4 max-w-none prose-headings:font-bold prose-h2:text-xl prose-h3:text-base prose-li:my-1">
-              <ReactMarkdown>{app.blogMarkdown}</ReactMarkdown>
+              <article className="prose prose-slate max-w-none prose-headings:font-black prose-h2:text-3xl prose-h3:text-xl prose-p:text-slate-600 prose-li:text-slate-600">
+                <h2 className="mb-8 font-black">Installation Guide & Features</h2>
+                <ReactMarkdown>{app.blogMarkdown}</ReactMarkdown>
+              </article>
             </div>
-          </article>
 
-          <div className="mt-8 flex justify-center">
-            <a href={app.directDownloadLink} target="_blank" rel="noreferrer" className="w-full max-w-3xl">
-              <Button className="h-16 w-full rounded-2xl bg-emerald-600 text-xl font-black hover:bg-emerald-700">
-                <Download className="mr-2 h-6 w-6" /> Direct Download APK
-              </Button>
-            </a>
+            <aside className="space-y-8">
+              <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400">Technical Details</h3>
+                <div className="mt-6 space-y-4">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-500">Developer</span>
+                    <span className="font-bold">{app.developer}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-500">Base Version</span>
+                    <span className="font-bold">{app.baseVersion}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-500">Last Updated</span>
+                    <span className="font-bold">{app.updatedDisplay}</span>
+                  </div>
+                </div>
+              </div>
+
+              {relatedMods.length > 0 && (
+                <div className="rounded-[2rem] border border-emerald-100 bg-emerald-50/50 p-6">
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-emerald-800/50">Suggested Mods</h3>
+                  <div className="mt-4 space-y-2">
+                    {relatedMods.map((item) => (
+                      <Link key={item.slug} href={`/app/${item.slug}`}>
+                        <Button variant="ghost" className="w-full justify-start rounded-xl border border-emerald-200 bg-white font-bold text-emerald-700 hover:bg-emerald-50">
+                          {item.label}
+                        </Button>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {app.note && (
+                <div className="rounded-[2rem] border border-amber-100 bg-amber-50/50 p-6">
+                  <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-amber-800">
+                    Important Note
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-amber-900/80">{app.note}</p>
+                </div>
+              )}
+            </aside>
           </div>
-
-          {app.note ? (
-            <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5">
-              <h2 className="text-sm font-bold uppercase tracking-wide text-amber-800">Note</h2>
-              <p className="mt-2 text-sm leading-relaxed text-amber-900">{app.note}</p>
-            </div>
-          ) : null}
-
         </section>
       </main>
     </div>

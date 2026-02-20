@@ -157,13 +157,13 @@ export default function Home() {
                       <span className="h-1 w-1 rounded-full bg-slate-300" />
                       <span>{app.downloads}</span>
                       <span className="h-1 w-1 rounded-full bg-slate-300" />
-                      <span>v{app.version}</span>
+                      <span>{app.version}</span>
                     </div>
 
                     <div className="mt-6">
                       <Link href={`/app/${app.slug}`}>
-                        <Button className="w-full rounded-xl bg-emerald-600 py-6 text-base font-semibold hover:bg-emerald-700">
-                          View details <ArrowRight className="ml-2 h-5 w-5" />
+                        <Button className="w-full rounded-xl bg-emerald-600 py-5 text-sm font-semibold hover:bg-emerald-700">
+                          View details <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                       </Link>
                     </div>
