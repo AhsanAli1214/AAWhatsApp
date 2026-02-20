@@ -66,11 +66,8 @@ app.use((req, res, next) => {
   const isProduction = process.env.NODE_ENV === "production";
 
   res.setHeader("X-Content-Type-Options", "nosniff");
-  res.setHeader("X-Frame-Options", "DENY");
   res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
   res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self)");
-  res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
-  res.setHeader("Cross-Origin-Resource-Policy", "same-site");
   res.setHeader("X-Permitted-Cross-Domain-Policies", "none");
   res.setHeader("X-DNS-Prefetch-Control", "off");
   res.setHeader("Origin-Agent-Cluster", "?1");
@@ -88,7 +85,7 @@ app.use((req, res, next) => {
   const csp = [
     "default-src 'self' https: data: blob:",
     "base-uri 'self'",
-    "frame-ancestors 'none'",
+    "frame-ancestors *",
     "object-src 'none'",
     "img-src 'self' https: data: blob:",
     "font-src 'self' https: data:",
