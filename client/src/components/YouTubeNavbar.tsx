@@ -10,6 +10,7 @@ import {
   Briefcase,
   Sparkles,
   LayoutGrid,
+  Music2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,17 +20,25 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const navLinks = [
-  { href: "/youtube-premium-mod", label: "Home" },
-  { href: "/youtube-premium-mod/features", label: "Features & History" },
-  { href: "/youtube-premium-mod/install", label: "Install & FAQ", primary: true },
-];
-
 const YOUTUBE_LOGO_URL = "https://i.postimg.cc/4y3bZ6cj/download-1-removebg-preview.png";
+const YOUTUBE_MUSIC_ICON_URL = "https://i.postimg.cc/y6wzMTBm/cropped-circle-image-(3).png";
 
 export function YouTubeNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+  const isMusic = location.startsWith("/youtube-music-mod");
+
+  const navLinks = isMusic
+    ? [
+        { href: "/youtube-music-mod", label: "Home" },
+        { href: "/youtube-music-mod/features", label: "Features & History" },
+        { href: "/youtube-music-mod/install", label: "Install & FAQ", primary: true },
+      ]
+    : [
+        { href: "/youtube-premium-mod", label: "Home" },
+        { href: "/youtube-premium-mod/features", label: "Features & History" },
+        { href: "/youtube-premium-mod/install", label: "Install & FAQ", primary: true },
+      ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-red-500/20 bg-background/95 supports-[backdrop-filter]:bg-background/80 supports-[backdrop-filter]:backdrop-blur-lg">
@@ -37,17 +46,13 @@ export function YouTubeNavbar() {
         <div className="flex items-center justify-between h-14">
           <Link href="/" className="flex items-center gap-2 group">
             <img
-              src={YOUTUBE_LOGO_URL}
-              alt="YouTube Premium MOD"
+              src={isMusic ? YOUTUBE_MUSIC_ICON_URL : YOUTUBE_LOGO_URL}
+              alt={isMusic ? "YouTube Music MOD" : "YouTube Premium MOD"}
               className="w-10 h-10 md:w-12 md:h-12 object-contain group-hover:scale-110 transition-transform duration-500"
-              loading="eager"
-              decoding="async"
-              width="48"
-              height="48"
             />
             <div className="flex flex-col">
               <span className="font-bold text-xl leading-tight group-hover:text-red-400 transition-colors">
-                YouTube Premium MOD
+                {isMusic ? "YouTube Music MOD" : "YouTube Premium MOD"}
               </span>
               <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">
                 by AA Mods Services
@@ -57,11 +62,7 @@ export function YouTubeNavbar() {
 
           <div className="hidden lg:flex items-center gap-1">
             <Link href="/">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="flex items-center gap-2 text-muted-foreground hover:text-red-400"
-              >
+              <Button variant="ghost" size="sm" className="flex items-center gap-2 text-muted-foreground hover:text-red-400">
                 <LayoutGrid className="w-4 h-4" />
                 App Selector
               </Button>
@@ -69,11 +70,7 @@ export function YouTubeNavbar() {
             <div className="h-4 w-px bg-border mx-2" />
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className={location === link.href ? "text-red-400 font-bold" : ""}
-                >
+                <Button variant="ghost" size="sm" className={location === link.href ? "text-red-400 font-bold" : ""}>
                   {link.label}
                 </Button>
               </Link>
@@ -89,28 +86,19 @@ export function YouTubeNavbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem>
-                  <Link href="/aa-whatsapp" className="flex items-center gap-2 w-full">
-                    <MessageSquare className="w-4 h-4" />
-                    AAWhatsApp
-                  </Link>
+                  <Link href="/aa-whatsapp" className="flex items-center gap-2 w-full"><MessageSquare className="w-4 h-4" />AAWhatsApp</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/aa-business" className="flex items-center gap-2 w-full">
-                    <Briefcase className="w-4 h-4" />
-                    AA Business
-                  </Link>
+                  <Link href="/aa-business" className="flex items-center gap-2 w-full"><Briefcase className="w-4 h-4" />AA Business</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/capcut-pro" className="flex items-center gap-2 w-full">
-                    <Video className="w-4 h-4" />
-                    CapCut Pro
-                  </Link>
+                  <Link href="/capcut-pro" className="flex items-center gap-2 w-full"><Video className="w-4 h-4" />CapCut Pro</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/remini-mod" className="flex items-center gap-2 w-full">
-                    <Sparkles className="w-4 h-4" />
-                    Remini Mod
-                  </Link>
+                  <Link href="/remini-mod" className="flex items-center gap-2 w-full"><Sparkles className="w-4 h-4" />Remini Mod</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/youtube-music-mod" className="flex items-center gap-2 w-full"><Music2 className="w-4 h-4" />YT Music MOD</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -132,13 +120,8 @@ export function YouTubeNavbar() {
           <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-2">
               <Link href="/">
-                <Button
-                  variant="ghost"
-                  className="w-full justify-start gap-2 text-muted-foreground"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <LayoutGrid className="w-4 h-4" />
-                  App Selector
+                <Button variant="ghost" className="w-full justify-start gap-2 text-muted-foreground" onClick={() => setIsOpen(false)}>
+                  <LayoutGrid className="w-4 h-4" /> App Selector
                 </Button>
               </Link>
               <hr className="my-2 border-border" />

@@ -22,7 +22,7 @@ export function Navigation() {
         <CapCutNavbar />
       ) : location.startsWith("/remini-mod") ? (
         <ReminiNavbar />
-      ) : location.startsWith("/youtube-premium-mod") ? (
+      ) : location.startsWith("/youtube-premium-mod") || location.startsWith("/youtube-music-mod") ? (
         <YouTubeNavbar />
       ) : (
         <Navbar />

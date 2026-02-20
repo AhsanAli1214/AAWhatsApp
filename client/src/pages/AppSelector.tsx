@@ -9,6 +9,7 @@ import {
   Sparkles,
   Users,
   Video,
+  Music,
   CheckCircle2,
   ShieldCheck,
   Search,
@@ -31,6 +32,7 @@ const AA_BUSINESS_ICON_URL =
   "https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg";
 const REMINI_ICON_URL = reminiLogo;
 const YOUTUBE_ICON_URL = "https://i.postimg.cc/4y3bZ6cj/download-1-removebg-preview.png";
+const YOUTUBE_MUSIC_ICON_URL = "https://i.postimg.cc/y6wzMTBm/cropped-circle-image-(3).png";
 const FAVICON_URL = "https://i.postimg.cc/cH2Vjzjc/Gemini_Generated_Image_m5jfz1m5jfz1m5jf_removebg_preview.png";
 
 type ProductCard = {
@@ -114,6 +116,22 @@ const productCards: ProductCard[] = [
     downloadHref: "/youtube-premium-mod/install",
     exploreLabel: "Explore YouTube Premium MOD",
     highlights: ["Ad-Free + Background Play", "SponsorBlock + RYD", "AA Mods Services Login"],
+  },
+  {
+    appKey: "youtubeMusic",
+    name: "YT Music MOD",
+    description:
+      "Ad-free YouTube Music experience with background playback, offline-ready downloads, and enhanced quality streaming.",
+    icon: Music,
+    image: YOUTUBE_MUSIC_ICON_URL,
+    tintClass: "from-emerald-500/20 via-primary/10 to-cyan-500/20",
+    borderClass: "border-emerald-400/40",
+    hoverClass: "hover:border-emerald-300/70",
+    iconClass: "text-red-500",
+    exploreHref: "/youtube-music-mod",
+    downloadHref: "/youtube-music-mod/install",
+    exploreLabel: "Explore YT Music MOD",
+    highlights: ["Ad-Free Listening", "Background Playback", "Offline + Hi-Fi Audio"],
   },
   {
     appKey: "reminiMod",
@@ -205,6 +223,7 @@ export default function AppSelector() {
         <link rel="preload" as="image" href={AA_BUSINESS_ICON_URL} />
         <link rel="preload" as="image" href={REMINI_ICON_URL} />
         <link rel="preload" as="image" href={YOUTUBE_ICON_URL} />
+        <link rel="preload" as="image" href={YOUTUBE_MUSIC_ICON_URL} />
       </Helmet>
 
       <Navigation />
@@ -339,7 +358,7 @@ export default function AppSelector() {
                         <img
                           src={product.image}
                           alt={`${product.name} icon`}
-                          className="w-12 h-12 rounded-xl object-cover"
+                          className="w-12 h-12 rounded-xl object-contain bg-transparent"
                           loading="eager"
                           decoding="async"
                           width="48"

@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Link } from "wouter";
-import { BookOpen, Download, HelpCircle, Info, ShieldCheck, Zap, ArrowRight, MessageSquare, Briefcase, Video } from "lucide-react";
+import { BookOpen, Download, HelpCircle, Info, ShieldCheck, Zap, ArrowRight, MessageSquare, Briefcase, Video, Music2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HTMLSitemap() {
@@ -45,6 +45,14 @@ export default function HTMLSitemap() {
       links: [
         { label: "CapCut Pro Info", href: "/capcut-pro", icon: Video },
         { label: "Secure Download", href: "/capcut-pro/download", icon: Download },
+      ]
+    },
+    {
+      title: "YouTube Music MOD",
+      links: [
+        { label: "YouTube Music MOD Info", href: "/youtube-music-mod", icon: Music2 },
+        { label: "YT Music Features", href: "/youtube-music-mod/features", icon: Zap },
+        { label: "YT Music Install & FAQ", href: "/youtube-music-mod/install", icon: Download },
       ]
     },
     {
