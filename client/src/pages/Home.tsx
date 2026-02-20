@@ -6,12 +6,12 @@ import { SiYoutubemusic } from "react-icons/si";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { storeApps, type StoreApp } from "@/data/storeApps";
+import { storeApps } from "@/data/appData";
 import logo from "@/assets/logo.png";
 
 const categories = ["All", "Communication", "Business", "Video", "Photography", "Music & Audio"];
 
-function AppCardIcon({ app, size = "small" }: { app: StoreApp; size?: "small" | "large" }) {
+function AppCardIcon({ app, size = "small" }: { app: any; size?: "small" | "large" }) {
   const iconSize = size === "large" ? "h-16 w-16" : "h-10 w-10";
   const iconInnerSize = size === "large" ? "h-10 w-10" : "h-7 w-7";
 

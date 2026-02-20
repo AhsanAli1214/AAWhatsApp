@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useRoute, Link } from "wouter";
 import { Helmet } from "react-helmet";
 import { 
@@ -20,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
-import { getStoreApp, storeApps } from "@/data/storeApps";
+import { getStoreApp } from "@/data/appData";
 import logo from "@/assets/logo.png";
 import { useToast } from "@/hooks/use-toast";
 
@@ -76,7 +75,7 @@ export default function AppDetails() {
     }
   };
 
-  const relatedMods = (app.seeMoreMods ?? []).map(mod => ({ label: mod.label, slug: mod.slug }));
+  const relatedMods = (app.seeMoreMods ?? []).map((mod: any) => ({ label: mod.label, slug: mod.slug }));
 
   return (
     <div className="min-h-screen bg-[#f8fafd] text-slate-900 pb-20">
@@ -87,7 +86,6 @@ export default function AppDetails() {
         <link rel="canonical" href={`https://aa-mods.vercel.app/app/${app.slug}`} />
       </Helmet>
 
-      {/* Header */}
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-4">
@@ -108,7 +106,6 @@ export default function AppDetails() {
       </header>
 
       <main className="mx-auto max-w-5xl px-4 pt-8">
-        {/* App Hero Section */}
         <section className="relative overflow-hidden rounded-[2.5rem] bg-white border border-slate-200 shadow-sm">
           <div className={`h-32 w-full bg-gradient-to-r ${app.gradient} opacity-90`} />
           <div className="px-6 pb-8">
@@ -162,7 +159,7 @@ export default function AppDetails() {
             </div>
             <div className="p-4 text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Updated</p>
-              <p className="mt-1 font-bold text-slate-900">{app.updatedDisplay}</p>
+              <p className="mt-1 font-bold text-slate-900">{app.updateDate.display}</p>
             </div>
             <div className="p-4 text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Base</p>
@@ -175,11 +172,8 @@ export default function AppDetails() {
           </div>
         </section>
 
-        {/* Content Grid */}
         <div className="mt-8 grid gap-8 lg:grid-cols-3">
-          {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Quick Info */}
             <section className="grid sm:grid-cols-2 gap-4">
               <Card className="border-slate-200 shadow-sm bg-blue-50/30 border-l-4 border-l-blue-500">
                 <CardContent className="p-4 flex gap-4">
@@ -189,7 +183,7 @@ export default function AppDetails() {
                   <div>
                     <h3 className="font-bold text-blue-900">What's New</h3>
                     <ul className="mt-2 space-y-1.5">
-                      {app.whatsNew.slice(0, 3).map((item: string, i: number) => (
+                      {app.whatsNew?.slice(0, 3).map((item: string, i: number) => (
                         <li key={i} className="text-sm text-blue-800 flex items-start gap-2">
                           <CheckCircle2 className="h-4 w-4 shrink-0 mt-0.5" />
                           <span>{item}</span>
@@ -216,7 +210,6 @@ export default function AppDetails() {
               </Card>
             </section>
 
-            {/* Markdown Content (The Blog/Details) */}
             <section className="rounded-[2.5rem] bg-white border border-slate-200 p-6 sm:p-10 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-12 w-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600">
@@ -236,7 +229,6 @@ export default function AppDetails() {
               </article>
             </section>
 
-            {/* Full Changelog */}
             <section className="rounded-[2.5rem] bg-white border border-slate-200 p-6 sm:p-10 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-12 w-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-900">
@@ -245,7 +237,7 @@ export default function AppDetails() {
                 <h2 className="text-3xl font-black tracking-tight">Full Changelog</h2>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
-                {app.whatsNew.map((item: string, i: number) => (
+                {app.whatsNew?.map((item: string, i: number) => (
                   <div key={i} className="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50 transition-all group">
                     <div className="h-2 w-2 rounded-full bg-emerald-500 mt-2 shrink-0 group-hover:scale-125 transition-transform" />
                     <p className="text-slate-700 font-semibold leading-relaxed">{item}</p>
@@ -255,9 +247,7 @@ export default function AppDetails() {
             </section>
           </div>
 
-          {/* Sidebar Area */}
           <div className="space-y-6">
-            {/* Install Guide Card */}
             <Card className="rounded-[2.5rem] border-slate-200 shadow-sm overflow-hidden">
               <div className="bg-slate-900 p-6 text-white">
                 <h3 className="text-xl font-black flex items-center gap-2">
@@ -292,11 +282,10 @@ export default function AppDetails() {
               </CardContent>
             </Card>
 
-            {/* More Apps */}
             <div className="space-y-4">
               <h3 className="text-xl font-black px-2">Related Mods</h3>
               <div className="space-y-3">
-                {relatedMods.map((mod, i) => (
+                {relatedMods.map((mod: any, i: number) => (
                   <Link key={i} href={`/app/${mod.slug}`}>
                     <div className="group flex items-center justify-between p-5 rounded-[2rem] bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-lg transition-all cursor-pointer">
                       <span className="font-black text-slate-800 group-hover:text-emerald-600">{mod.label}</span>
@@ -314,7 +303,6 @@ export default function AppDetails() {
               </div>
             </div>
 
-            {/* Footer Tag */}
             <div className="p-8 rounded-[2.5rem] bg-emerald-600 text-white text-center space-y-3 shadow-2xl shadow-emerald-200 overflow-hidden relative">
               <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 h-32 w-32 bg-white/10 rounded-full blur-2xl" />
               <p className="text-xs font-black uppercase tracking-[0.2em] opacity-80">Join Community</p>
