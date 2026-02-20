@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { insertSubscriberSchema, insertDownloadSchema } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -13,6 +12,16 @@ export const errorSchemas = {
     message: z.string(),
   }),
 };
+
+// Simplified schemas since we no longer use a database for these
+const insertSubscriberSchema = z.object({
+  email: z.string().email(),
+});
+
+const insertDownloadSchema = z.object({
+  appSlug: z.string(),
+  platform: z.string().optional(),
+});
 
 export const api = {
   subscribers: {

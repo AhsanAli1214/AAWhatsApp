@@ -21,7 +21,6 @@ import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { getStoreApp } from "@/data/appData";
 import logo from "@/assets/logo.png";
-import { useToast } from "@/hooks/use-toast";
 
 function AppIcon({ app }: { app: any }) {
   if (app.iconImage) {
@@ -44,7 +43,6 @@ function AppIcon({ app }: { app: any }) {
 
 export default function AppDetails() {
   const [, params] = useRoute("/app/:slug");
-  const { toast } = useToast();
   const app = getStoreApp(params?.slug || "");
 
   if (!app) {
@@ -68,10 +66,7 @@ export default function AppDetails() {
       });
     } else {
       navigator.clipboard.writeText(window.location.href);
-      toast({
-        title: "Link copied!",
-        description: "App link copied to clipboard.",
-      });
+      alert("App link copied to clipboard.");
     }
   };
 
