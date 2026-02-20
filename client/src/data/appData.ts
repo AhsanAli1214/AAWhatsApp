@@ -1,4 +1,8 @@
-import { APP_DOWNLOAD_REDIRECTS, SECURE_DOWNLOAD_ASSETS, getSecureDownloadUrl } from "@shared/downloadAssets";
+import {
+  APP_DOWNLOAD_REDIRECTS,
+  SECURE_DOWNLOAD_ASSETS,
+  getSecureDownloadUrl,
+} from "@shared/downloadAssets";
 import reminiLogo from "@assets/download_1771149808669.png";
 
 // --- Technical & Shared Links ---
@@ -8,9 +12,10 @@ const SHARED_LINKS = {
 
 // --- Icon URLs ---
 const ICONS = {
-  aaWhatsApp: "https://i.postimg.cc/N0p0fsf1/81ddf498-7efe-4101-83b1-101a77abf065.jpg",
+  aaWhatsApp:
+    "https://i.postimg.cc/N0p0fsf1/81ddf498-7efe-4101-83b1-101a77abf065.jpg",
   capcutPro: "https://i.postimg.cc/q71j1h4d/capcut-pro.png",
-  aaBusiness: "https://i.postimg.cc/59vMs9dS/a8abc6a4_b6d9_4453_8a6a_08ffa7ad85d7.jpg",
+  aaBusiness: "https://i.postimg.cc/15TztvX9/cropped-circle-image-(4).png",
   youtube: "https://i.postimg.cc/4y3bZ6cj/download-1-removebg-preview.png",
   youtubeMusic: "https://i.postimg.cc/y6wzMTBm/cropped-circle-image-(3).png",
   remini: reminiLogo,
@@ -24,7 +29,9 @@ export const APP_DATA = {
     baseVersion: "2.25.36.73",
     updateDate: { display: "February 15, 2026", iso: "2026-02-15" },
     downloadLink: "https://aa-mods.vercel.app/aa-whatsapp/download",
-    directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
+    directDownloadLink: getSecureDownloadUrl(
+      SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern,
+    ),
     changelog: [
       "FIXED: App Crash Problem When Link Device or Register Number",
       "NEW: Profile cover photo support for enhanced personalization",
@@ -35,7 +42,7 @@ export const APP_DATA = {
       "IMPROVED: Voice message clarity and playback stability",
       "IMPROVED: Message sending and receiving speed with delays fully resolved",
       "IMPROVED: Anti-ban and account protection system",
-      "IMPROVED: Overall performance, responsiveness, and app stability"
+      "IMPROVED: Overall performance, responsiveness, and app stability",
     ],
     // Page Content
     slug: "aa-whatsapp",
@@ -48,13 +55,19 @@ export const APP_DATA = {
     iconImage: ICONS.aaWhatsApp,
     gradient: "from-emerald-500 to-teal-500",
     subtitle: "Secure messaging with anti-ban architecture",
-    shortDescription: "Privacy-focused WhatsApp experience with anti-ban, better media controls, and stable day-to-day performance.",
-    longDescription: "AA WhatsApp is the flagship communication app by AA Mods. It is built around privacy-first behavior while maintaining a smooth everyday messaging experience.",
+    shortDescription:
+      "Privacy-focused WhatsApp experience with anti-ban, better media controls, and stable day-to-day performance.",
+    longDescription:
+      "AA WhatsApp is the flagship communication app by AA Mods. It is built around privacy-first behavior while maintaining a smooth everyday messaging experience.",
     seoTitle: "AA WhatsApp Download Latest Version | AA Mods",
-    seoDescription: "Download AA WhatsApp latest version by AA Mods with anti-ban protection, privacy controls, and full update details.",
-    seoKeywords: "AA WhatsApp, AA WhatsApp APK, Anti-Ban WhatsApp, WhatsApp mod 2026, privacy WhatsApp mod, AA Mods",
+    seoDescription:
+      "Download AA WhatsApp latest version by AA Mods with anti-ban protection, privacy controls, and full update details.",
+    seoKeywords:
+      "AA WhatsApp, AA WhatsApp APK, Anti-Ban WhatsApp, WhatsApp mod 2026, privacy WhatsApp mod, AA Mods",
     note: "If installation protection appears, tap Install anyway from Android security prompt. Keep AA Mods Services updated for best compatibility.",
-    seeMoreMods: [{ label: "YouTube Premium Mod APK", slug: "youtube-premium-mod" }],
+    seeMoreMods: [
+      { label: "YouTube Premium Mod APK", slug: "youtube-premium-mod" },
+    ],
     whatsNew: [
       "FIXED: App Crash Problem When Link Device or Register Number",
       "NEW: Profile cover photo support for enhanced personalization",
@@ -65,7 +78,7 @@ export const APP_DATA = {
       "IMPROVED: Voice message clarity and playback stability",
       "IMPROVED: Message sending and receiving speed with delays fully resolved",
       "IMPROVED: Anti-ban and account protection system",
-      "IMPROVED: Overall performance, responsiveness, and app stability"
+      "IMPROVED: Overall performance, responsiveness, and app stability",
     ],
     blogMarkdown: `## Overview
 AA WhatsApp is designed for users who want a **privacy-first WhatsApp mod** without giving up stability or speed.
@@ -97,14 +110,18 @@ If you want a balance of performance, customization, and privacy improvements, A
     baseVersion: "2.25.29.77",
     updateDate: { display: "January 31, 2026", iso: "2026-01-31" },
     downloadLink: "https://aa-mods.vercel.app/aa-business/download",
-    directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMain),
-    mirrorDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMirror),
+    directDownloadLink: getSecureDownloadUrl(
+      SECURE_DOWNLOAD_ASSETS.aaBusinessMain,
+    ),
+    mirrorDownloadLink: getSecureDownloadUrl(
+      SECURE_DOWNLOAD_ASSETS.aaBusinessMirror,
+    ),
     changelog: [
       "NEW: Enterprise deployment toolkit for faster onboarding",
       "NEW: Advanced bulk broadcasting segmentation controls",
       "IMPROVED: Auto-reply accuracy and scheduling reliability",
       "IMPROVED: Analytics dashboards with clearer KPI breakdowns",
-      "FIXED: Minor sync issues in catalog management"
+      "FIXED: Minor sync issues in catalog management",
     ],
     slug: "aa-business",
     name: "AA Business",
@@ -116,17 +133,21 @@ If you want a balance of performance, customization, and privacy improvements, A
     iconImage: ICONS.aaBusiness,
     gradient: "from-blue-500 to-cyan-500",
     subtitle: "Business messaging automation and operations toolkit",
-    shortDescription: "Professional communication app with scheduling, automation, and customer support workflows.",
-    longDescription: "AA Business is designed for sellers, teams, and service operators who handle high-volume customer chats.",
+    shortDescription:
+      "Professional communication app with scheduling, automation, and customer support workflows.",
+    longDescription:
+      "AA Business is designed for sellers, teams, and service operators who handle high-volume customer chats.",
     seoTitle: "AA Business APK Download Latest Version | AA Mods",
-    seoDescription: "Get AA Business by AA Mods with business automation, customer communication tools, and enterprise-style reliability.",
-    seoKeywords: "AA Business APK, WhatsApp business mod, business broadcast app, customer support messaging, AA Mods",
+    seoDescription:
+      "Get AA Business by AA Mods with business automation, customer communication tools, and enterprise-style reliability.",
+    seoKeywords:
+      "AA Business APK, WhatsApp business mod, business broadcast app, customer support messaging, AA Mods",
     whatsNew: [
       "NEW: Enterprise deployment toolkit for faster onboarding",
       "NEW: Advanced bulk broadcasting segmentation controls",
       "IMPROVED: Auto-reply accuracy and scheduling reliability",
       "IMPROVED: Analytics dashboards with clearer KPI breakdowns",
-      "FIXED: Minor sync issues in catalog management"
+      "FIXED: Minor sync issues in catalog management",
     ],
     blogMarkdown: `## Overview
 AA Business is built for teams that need **high-volume communication** with faster response operations.
@@ -154,7 +175,9 @@ Useful for support teams that need quick replies and organized communication rou
     baseVersion: "v17.3.0 Stable",
     updateDate: { display: "February 14, 2026", iso: "2026-02-14" },
     downloadLink: "https://aa-mods.vercel.app/capcut-pro/download",
-    directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.capcutProMain),
+    directDownloadLink: getSecureDownloadUrl(
+      SECURE_DOWNLOAD_ASSETS.capcutProMain,
+    ),
     changelog: [
       "AI features working",
       "All templates unlocked",
@@ -166,7 +189,7 @@ Useful for support teams that need quick replies and organized communication rou
       "No watermark on export",
       "Optimized & cleaned resources",
       "Faster loading & smooth UI",
-      "Battery & performance optimized"
+      "Battery & performance optimized",
     ],
     slug: "capcut-pro",
     name: "CapCut Pro",
@@ -178,11 +201,15 @@ Useful for support teams that need quick replies and organized communication rou
     iconImage: ICONS.capcutPro,
     gradient: "from-violet-500 to-purple-500",
     subtitle: "Premium mobile editing for creators",
-    shortDescription: "Advanced editing build with premium templates, AI tools, and export-focused optimization.",
-    longDescription: "CapCut Pro by AA Mods is tuned for creators who need a smoother timeline, premium resources, and stable long-session editing.",
+    shortDescription:
+      "Advanced editing build with premium templates, AI tools, and export-focused optimization.",
+    longDescription:
+      "CapCut Pro by AA Mods is tuned for creators who need a smoother timeline, premium resources, and stable long-session editing.",
     seoTitle: "CapCut Pro APK Latest Download | AA Mods",
-    seoDescription: "Download CapCut Pro latest version from AA Mods with premium templates, AI editing tools, and stable export support.",
-    seoKeywords: "CapCut Pro APK, CapCut premium unlocked, no watermark export, AI video editing, AA Mods",
+    seoDescription:
+      "Download CapCut Pro latest version from AA Mods with premium templates, AI editing tools, and stable export support.",
+    seoKeywords:
+      "CapCut Pro APK, CapCut premium unlocked, no watermark export, AI video editing, AA Mods",
     whatsNew: [
       "AI features working",
       "All templates unlocked",
@@ -194,7 +221,7 @@ Useful for support teams that need quick replies and organized communication rou
       "No watermark on export",
       "Optimized & cleaned resources",
       "Faster loading & smooth UI",
-      "Battery & performance optimized"
+      "Battery & performance optimized",
     ],
     blogMarkdown: `## Overview
 CapCut Pro is for creators who need **faster editing flow** with unlocked premium resources.
@@ -222,14 +249,16 @@ Optimized output handling helps keep rendering and final export more consistent.
     baseVersion: "3.7.1260.202519018",
     updateDate: { display: "February 15, 2026", iso: "2026-02-15" },
     downloadLink: "https://aa-mods.vercel.app/remini-mod/download",
-    directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.reminiModMain),
+    directDownloadLink: getSecureDownloadUrl(
+      SECURE_DOWNLOAD_ASSETS.reminiModMain,
+    ),
     changelog: [
       "Premium/VIP Unlocked",
       "Unlimited Pro Cards",
       "No Ads, No Watermarks",
       "Advanced AI Technology",
       "Internet connection Issue Solved",
-      "100% Working & Safe"
+      "100% Working & Safe",
     ],
     slug: "remini-mod",
     name: "Remini Mod",
@@ -241,18 +270,22 @@ Optimized output handling helps keep rendering and final export more consistent.
     iconImage: ICONS.remini,
     gradient: "from-orange-500 to-rose-500",
     subtitle: "AI photo enhancement and restoration",
-    shortDescription: "Premium enhancement pipeline for portraits, old images, and blurry photos.",
-    longDescription: "Remini Mod by AA Mods improves image detail with AI enhancement flows for portraits, old memories, and low-quality camera output.",
+    shortDescription:
+      "Premium enhancement pipeline for portraits, old images, and blurry photos.",
+    longDescription:
+      "Remini Mod by AA Mods improves image detail with AI enhancement flows for portraits, old memories, and low-quality camera output.",
     seoTitle: "Remini Mod APK Download Latest | AA Mods",
-    seoDescription: "Install Remini Mod latest version by AA Mods for AI restoration, portrait enhancement, and premium image tools.",
-    seoKeywords: "Remini Mod APK, AI photo enhancement, portrait restore app, premium photo tools, AA Mods",
+    seoDescription:
+      "Install Remini Mod latest version by AA Mods for AI restoration, portrait enhancement, and premium image tools.",
+    seoKeywords:
+      "Remini Mod APK, AI photo enhancement, portrait restore app, premium photo tools, AA Mods",
     whatsNew: [
       "Premium/VIP Unlocked",
       "Unlimited Pro Cards",
       "No Ads, No Watermarks",
       "Advanced AI Technology",
       "Internet connection Issue Solved",
-      "100% Working & Safe"
+      "100% Working & Safe",
     ],
     blogMarkdown: `## Overview
 Remini Mod is focused on turning low-quality images into cleaner and sharper results using AI enhancement.
@@ -278,13 +311,15 @@ The build is optimized around enhancement quality while reducing interruptions f
     baseVersion: "20.45.39 stable",
     updateDate: { display: "February 17, 2026", iso: "2026-02-17" },
     downloadLink: "https://aa-mods.vercel.app/youtube-premium-mod/install",
-    directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.youtubePremiumMain),
+    directDownloadLink: getSecureDownloadUrl(
+      SECURE_DOWNLOAD_ASSETS.youtubePremiumMain,
+    ),
     changelog: [
       "Ad-free playback",
       "Background play",
       "SponsorBlock + RYD",
       "Enhanced 1080p bitrate",
-      "AA Mods Services login support"
+      "AA Mods Services login support",
     ],
     slug: "youtube-premium-mod",
     name: "YouTube Premium Mod",
@@ -296,18 +331,24 @@ The build is optimized around enhancement quality while reducing interruptions f
     iconImage: ICONS.youtube,
     gradient: "from-red-500 to-rose-500",
     subtitle: "Enhanced playback controls for video streaming",
-    shortDescription: "Cleaner watch experience with background playback and quality-focused controls.",
-    longDescription: "YouTube Premium Mod by AA Mods is designed for uninterrupted viewing with advanced playback behavior and support components through AA Mods Services.",
+    shortDescription:
+      "Cleaner watch experience with background playback and quality-focused controls.",
+    longDescription:
+      "YouTube Premium Mod by AA Mods is designed for uninterrupted viewing with advanced playback behavior and support components through AA Mods Services.",
     seoTitle: "YouTube Premium Mod APK Download | AA Mods",
-    seoDescription: "Download YouTube Premium Mod by AA Mods with advanced playback options, SponsorBlock support, and updated builds.",
-    seoKeywords: "YouTube Premium Mod APK, background playback mod, SponsorBlock APK, ad-free video app, AA Mods",
-    seeMoreMods: [{ label: "YouTube Music Mod APK", slug: "youtube-music-mod" }],
+    seoDescription:
+      "Download YouTube Premium Mod by AA Mods with advanced playback options, SponsorBlock support, and updated builds.",
+    seoKeywords:
+      "YouTube Premium Mod APK, background playback mod, SponsorBlock APK, ad-free video app, AA Mods",
+    seeMoreMods: [
+      { label: "YouTube Music Mod APK", slug: "youtube-music-mod" },
+    ],
     whatsNew: [
       "Ad-free playback",
       "Background play",
       "SponsorBlock + RYD",
       "Enhanced 1080p bitrate",
-      "AA Mods Services login support"
+      "AA Mods Services login support",
     ],
     blogMarkdown: `## Overview
 YouTube Premium Mod is built for users who want a smoother video experience with stronger playback control.
@@ -339,7 +380,7 @@ For login-related features, keep AA Mods Services updated to the latest compatib
       "Background playback",
       "Offline downloads",
       "OLED dark theme",
-      "High quality audio unlock"
+      "High quality audio unlock",
     ],
     slug: "youtube-music-mod",
     name: "YouTube Music Mod",
@@ -351,18 +392,24 @@ For login-related features, keep AA Mods Services updated to the latest compatib
     iconImage: ICONS.youtubeMusic,
     gradient: "from-fuchsia-500 to-pink-500",
     subtitle: "Premium listening with playback freedom",
-    shortDescription: "High-quality audio, background listening, and smoother daily music performance.",
-    longDescription: "YouTube Music Mod by AA Mods brings premium listening behavior, streamlined controls, and reliable long-session music playback.",
+    shortDescription:
+      "High-quality audio, background listening, and smoother daily music performance.",
+    longDescription:
+      "YouTube Music Mod by AA Mods brings premium listening behavior, streamlined controls, and reliable long-session music playback.",
     seoTitle: "YouTube Music Mod APK Latest Download | AA Mods",
-    seoDescription: "Get YouTube Music Mod latest version by AA Mods with background playback, high quality audio, and premium listening controls.",
-    seoKeywords: "YouTube Music Mod APK, background music playback, high quality audio unlock, music mod app, AA Mods",
-    seeMoreMods: [{ label: "YouTube Premium Mod APK", slug: "youtube-premium-mod" }],
+    seoDescription:
+      "Get YouTube Music Mod latest version by AA Mods with background playback, high quality audio, and premium listening controls.",
+    seoKeywords:
+      "YouTube Music Mod APK, background music playback, high quality audio unlock, music mod app, AA Mods",
+    seeMoreMods: [
+      { label: "YouTube Premium Mod APK", slug: "youtube-premium-mod" },
+    ],
     whatsNew: [
       "Ad-free music streaming",
       "Background playback",
       "Offline downloads",
       "OLED dark theme",
-      "High quality audio unlock"
+      "High quality audio unlock",
     ],
     blogMarkdown: `## Overview
 YouTube Music Mod is optimized for uninterrupted listening with premium-style playback behavior.
@@ -387,4 +434,5 @@ If you need better playback freedom and cleaner listening UX, this is the strong
 
 export type AppKey = keyof typeof APP_DATA;
 export const storeApps = Object.values(APP_DATA);
-export const getStoreApp = (slug: string) => storeApps.find(app => app.slug === slug);
+export const getStoreApp = (slug: string) =>
+  storeApps.find((app) => app.slug === slug);
