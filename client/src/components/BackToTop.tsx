@@ -34,10 +34,11 @@ export function BackToTop() {
     location.startsWith("/aa-business-whatsapp");
   const isRemini = location.startsWith("/remini-mod");
   const isYouTube = location.startsWith("/youtube-premium-mod");
+  const isYouTubeMusic = location.startsWith("/youtube-music-mod");
 
   const buttonThemeClass = isBusiness
     ? "bg-gradient-to-br from-blue-600 to-blue-400 hover:from-blue-500 hover:to-blue-300 shadow-blue-500/40 text-white"
-    : isRemini || isYouTube
+    : isRemini || isYouTube || isYouTubeMusic
       ? "bg-gradient-to-br from-[#FF0000] to-[#ff4d4d] hover:from-[#e60000] hover:to-[#ff6666] shadow-[#FF0000]/40 text-white"
       : "bg-gradient-to-br from-primary to-emerald-400 hover:from-primary/90 hover:to-emerald-300 shadow-primary/40 text-primary-foreground";
 
