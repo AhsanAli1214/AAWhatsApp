@@ -1,23 +1,67 @@
+const APP_DOWNLOAD_ASSET_IDS = {
+  aaWhatsApp: {
+    modern: "aa-whatsapp-modern",
+    legacy: "aa-whatsapp-legacy",
+  },
+  aaBusiness: {
+    main: "aa-business-main",
+    mirror: "aa-business-mirror",
+  },
+  capcutPro: {
+    main: "capcut-pro-main",
+  },
+  reminiMod: {
+    main: "remini-mod-main",
+  },
+  youtubePremium: {
+    main: "youtube-premium-main",
+  },
+  youtubeMusic: {
+    main: "youtube-music-main",
+  },
+} as const;
+
 export const SECURE_DOWNLOAD_ASSETS = {
-  aaWhatsAppModern: "aa-whatsapp-modern",
-  aaWhatsAppLegacy: "aa-whatsapp-legacy",
-  aaBusinessMain: "aa-business-main",
-  aaBusinessMirror: "aa-business-mirror",
-  capcutProMain: "capcut-pro-main",
-  reminiModMain: "remini-mod-main",
-  youtubePremiumMain: "youtube-premium-main",
-  youtubeMusicMain: "youtube-music-main",
+  aaWhatsAppModern: APP_DOWNLOAD_ASSET_IDS.aaWhatsApp.modern,
+  aaWhatsAppLegacy: APP_DOWNLOAD_ASSET_IDS.aaWhatsApp.legacy,
+  aaBusinessMain: APP_DOWNLOAD_ASSET_IDS.aaBusiness.main,
+  aaBusinessMirror: APP_DOWNLOAD_ASSET_IDS.aaBusiness.mirror,
+  capcutProMain: APP_DOWNLOAD_ASSET_IDS.capcutPro.main,
+  reminiModMain: APP_DOWNLOAD_ASSET_IDS.reminiMod.main,
+  youtubePremiumMain: APP_DOWNLOAD_ASSET_IDS.youtubePremium.main,
+  youtubeMusicMain: APP_DOWNLOAD_ASSET_IDS.youtubeMusic.main,
+} as const;
+
+const APP_DOWNLOAD_REDIRECT_GROUPS = {
+  aaWhatsApp: {
+    [APP_DOWNLOAD_ASSET_IDS.aaWhatsApp.modern]: "https://ahsanali.short.gy/aa-wa-latest",
+    [APP_DOWNLOAD_ASSET_IDS.aaWhatsApp.legacy]: "https://ahsanali.short.gy/aa-whatsapp",
+  },
+  aaBusiness: {
+    [APP_DOWNLOAD_ASSET_IDS.aaBusiness.main]: "https://ahsanali.short.gy/aa-wa-pro",
+    [APP_DOWNLOAD_ASSET_IDS.aaBusiness.mirror]: "https://www.mediafire.com/file/aabusiness_v1.0.apk",
+  },
+  capcutPro: {
+    [APP_DOWNLOAD_ASSET_IDS.capcutPro.main]: "https://ahsanali.short.gy/capcut-ahsan",
+  },
+  reminiMod: {
+    [APP_DOWNLOAD_ASSET_IDS.reminiMod.main]: "https://ahsanali.short.gy/remini-ahsan",
+  },
+  youtubePremium: {
+    [APP_DOWNLOAD_ASSET_IDS.youtubePremium.main]: "https://ahsanali.short.gy/youtube-ahsan",
+  },
+  youtubeMusic: {
+    [APP_DOWNLOAD_ASSET_IDS.youtubeMusic.main]: "https://via.placeholder.com/350x100/1e88e5/ffffff?text=++DOWNLOAD+LATEST+MOD++v8.20.52++",
+  },
 } as const;
 
 const redirectMap = {
-  [SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern]: "https://ahsanali.short.gy/aa-wa-latest",
-  [SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy]: "https://ahsanali.short.gy/aa-whatsapp",
-  [SECURE_DOWNLOAD_ASSETS.aaBusinessMain]: "https://ahsanali.short.gy/aa-wa-pro",
-  [SECURE_DOWNLOAD_ASSETS.aaBusinessMirror]: "https://www.mediafire.com/file/aabusiness_v1.0.apk",
-  [SECURE_DOWNLOAD_ASSETS.capcutProMain]: "https://ahsanali.short.gy/capcut-ahsan",
-  [SECURE_DOWNLOAD_ASSETS.reminiModMain]: "https://ahsanali.short.gy/remini-ahsan",
-  [SECURE_DOWNLOAD_ASSETS.youtubePremiumMain]: "https://ahsanali.short.gy/youtube-ahsan",
-  [SECURE_DOWNLOAD_ASSETS.youtubeMusicMain]: "https://via.placeholder.com/350x100/1e88e5/ffffff?text=++DOWNLOAD+LATEST+MOD++v8.20.52++",
+  ...APP_DOWNLOAD_REDIRECT_GROUPS.aaWhatsApp,
+  ...APP_DOWNLOAD_REDIRECT_GROUPS.aaBusiness,
+  ...APP_DOWNLOAD_REDIRECT_GROUPS.capcutPro,
+  ...APP_DOWNLOAD_REDIRECT_GROUPS.reminiMod,
+  ...APP_DOWNLOAD_REDIRECT_GROUPS.youtubePremium,
+  ...APP_DOWNLOAD_REDIRECT_GROUPS.youtubeMusic,
 } as const;
 
 const assertHttpsUrl = (value: string, asset: string) => {

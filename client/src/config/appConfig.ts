@@ -17,6 +17,11 @@ type AppConfigEntry = {
   mirrorDownloadLink?: string;
   changelog?: string;
   features?: readonly string[];
+  aaModsServicesDownloadLink?: string;
+  youtubeApkDownloadLink?: string;
+  homeLink?: string;
+  featuresLink?: string;
+  installLink?: string;
 };
 
 const SHARED_LINKS = {
@@ -24,15 +29,53 @@ const SHARED_LINKS = {
 } as const;
 
 const APP_ROUTES = {
-  aaWhatsApp: "https://aa-mods.vercel.app/aa-whatsapp/download",
-  aaBusiness: "https://aa-mods.vercel.app/aa-business/download",
-  capcutPro: "https://aa-mods.vercel.app/capcut-pro/download",
-  reminiMod: "https://aa-mods.vercel.app/remini-mod/download",
-  youtubePremium: "https://aa-mods.vercel.app/youtube-premium-mod/install",
-  youtubeMusicHome: "https://aa-mods.vercel.app/youtube-music-mod",
-  youtubeMusicFeatures: "https://aa-mods.vercel.app/youtube-music-mod/features",
-  youtubeMusicInstall: "https://aa-mods.vercel.app/youtube-music-mod/install",
+  aaWhatsApp: {
+    download: "https://aa-mods.vercel.app/aa-whatsapp/download",
+  },
+  aaBusiness: {
+    download: "https://aa-mods.vercel.app/aa-business/download",
+  },
+  capcutPro: {
+    download: "https://aa-mods.vercel.app/capcut-pro/download",
+  },
+  reminiMod: {
+    download: "https://aa-mods.vercel.app/remini-mod/download",
+  },
+  youtubePremium: {
+    install: "https://aa-mods.vercel.app/youtube-premium-mod/install",
+  },
+  youtubeMusic: {
+    home: "https://aa-mods.vercel.app/youtube-music-mod",
+    features: "https://aa-mods.vercel.app/youtube-music-mod/features",
+    install: "https://aa-mods.vercel.app/youtube-music-mod/install",
+  },
 } as const;
+
+const APP_DOWNLOADS = {
+  aaWhatsApp: {
+    primary: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
+    legacy: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy),
+  },
+  aaBusiness: {
+    primary: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMain),
+    mirror: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMirror),
+  },
+  capcutPro: {
+    primary: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.capcutProMain),
+  },
+  reminiMod: {
+    primary: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.reminiModMain),
+  },
+  youtubePremium: {
+    apk: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.youtubePremiumMain),
+  },
+} as const;
+
+const createUpdateDate = (display: string, short: string, iso: string): UpdateDate => ({
+  display,
+  short,
+  iso,
+});
 
 const splitLines = (value: string) =>
   value
@@ -53,22 +96,13 @@ const getFeatures = (config: Pick<AppConfigEntry, "features" | "changelog">) => 
   return [];
 };
 
-const mapConfigValues = <T>(selector: (config: AppConfigEntry) => T) =>
-  Object.fromEntries(
-    Object.entries(APP_CONFIGS).map(([appKey, config]) => [appKey, selector(config)]),
-  ) as Record<keyof typeof APP_CONFIGS, T>;
-
 export const APP_CONFIGS = {
   aaWhatsApp: {
     version: "V4.0",
     baseVersion: "2.25.36.73",
-    updateDate: {
-      display: "February 15, 2026",
-      short: "15/02/2026",
-      iso: "2026-02-15",
-    },
-    downloadLink: APP_ROUTES.aaWhatsApp,
-    directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
+    updateDate: createUpdateDate("February 15, 2026", "15/02/2026", "2026-02-15"),
+    downloadLink: APP_ROUTES.aaWhatsApp.download,
+    directDownloadLink: APP_DOWNLOADS.aaWhatsApp.primary,
     changelog: `FIXED: App Crash Problem When Link Device or Register Number
 NEW: Profile cover photo support for enhanced personalization
 NEW: Status character limit increased up to 500 characters
@@ -87,14 +121,10 @@ FIXED: Minor crashes affecting some devices`,
   aaBusiness: {
     version: "V1.0",
     baseVersion: "2.25.29.77",
-    updateDate: {
-      display: "January 31, 2026",
-      short: "31/01/2026",
-      iso: "2026-01-31",
-    },
-    downloadLink: APP_ROUTES.aaBusiness,
-    directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMain),
-    mirrorDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaBusinessMirror),
+    updateDate: createUpdateDate("January 31, 2026", "31/01/2026", "2026-01-31"),
+    downloadLink: APP_ROUTES.aaBusiness.download,
+    directDownloadLink: APP_DOWNLOADS.aaBusiness.primary,
+    mirrorDownloadLink: APP_DOWNLOADS.aaBusiness.mirror,
     changelog: `NEW: Enterprise deployment toolkit for faster onboarding
 NEW: Advanced bulk broadcasting segmentation controls
 IMPROVED: Auto-reply accuracy and scheduling reliability
@@ -104,13 +134,9 @@ FIXED: Minor sync issues in catalog management`,
   capcutPro: {
     version: "V17.3.0",
     baseVersion: "v17.3.0 Stable",
-    updateDate: {
-      display: "February 14, 2026",
-      short: "14/02/2026",
-      iso: "2026-02-14",
-    },
-    downloadLink: APP_ROUTES.capcutPro,
-    directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.capcutProMain),
+    updateDate: createUpdateDate("February 14, 2026", "14/02/2026", "2026-02-14"),
+    downloadLink: APP_ROUTES.capcutPro.download,
+    directDownloadLink: APP_DOWNLOADS.capcutPro.primary,
     features: [
       "AI features working",
       "All templates unlocked",
@@ -128,13 +154,9 @@ FIXED: Minor sync issues in catalog management`,
   reminiMod: {
     version: "v3.7.1260",
     baseVersion: "3.7.1260.202519018",
-    updateDate: {
-      display: "February 15, 2026",
-      short: "15/02/2026",
-      iso: "2026-02-15",
-    },
-    downloadLink: APP_ROUTES.reminiMod,
-    directDownloadLink: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.reminiModMain),
+    updateDate: createUpdateDate("February 15, 2026", "15/02/2026", "2026-02-15"),
+    downloadLink: APP_ROUTES.reminiMod.download,
+    directDownloadLink: APP_DOWNLOADS.reminiMod.primary,
     features: [
       "Premium/VIP Unlocked",
       "Unlimited Pro Cards",
@@ -147,14 +169,10 @@ FIXED: Minor sync issues in catalog management`,
   youtubePremium: {
     version: "v20.45.39",
     baseVersion: "20.45.39 stable",
-    updateDate: {
-      display: "February 17, 2026",
-      short: "17/02/2026",
-      iso: "2026-02-17",
-    },
-    downloadLink: APP_ROUTES.youtubePremium,
+    updateDate: createUpdateDate("February 17, 2026", "17/02/2026", "2026-02-17"),
+    downloadLink: APP_ROUTES.youtubePremium.install,
     aaModsServicesDownloadLink: SHARED_LINKS.aaModsServices,
-    youtubeApkDownloadLink: "https://ahsanali.short.gy/youtube-ahsan",
+    youtubeApkDownloadLink: APP_DOWNLOADS.youtubePremium.apk,
     features: [
       "Ad-free playback",
       "Background play",
@@ -166,16 +184,12 @@ FIXED: Minor sync issues in catalog management`,
   youtubeMusic: {
     version: "v8.20.52",
     baseVersion: "8.20.52 stable",
-    updateDate: {
-      display: "February 20, 2026",
-      short: "20/02/2026",
-      iso: "2026-02-20",
-    },
-    downloadLink: APP_ROUTES.youtubeMusicInstall,
+    updateDate: createUpdateDate("February 20, 2026", "20/02/2026", "2026-02-20"),
+    downloadLink: APP_ROUTES.youtubeMusic.install,
     aaModsServicesDownloadLink: SHARED_LINKS.aaModsServices,
-    homeLink: APP_ROUTES.youtubeMusicHome,
-    featuresLink: APP_ROUTES.youtubeMusicFeatures,
-    installLink: APP_ROUTES.youtubeMusicInstall,
+    homeLink: APP_ROUTES.youtubeMusic.home,
+    featuresLink: APP_ROUTES.youtubeMusic.features,
+    installLink: APP_ROUTES.youtubeMusic.install,
     features: [
       "Ad-free music streaming",
       "Background playback",
@@ -185,6 +199,11 @@ FIXED: Minor sync issues in catalog management`,
     ],
   },
 } as const satisfies Record<string, AppConfigEntry>;
+
+const mapConfigValues = <T>(selector: (config: AppConfigEntry) => T) =>
+  Object.fromEntries(
+    Object.entries(APP_CONFIGS).map(([appKey, config]) => [appKey, selector(config)]),
+  ) as Record<keyof typeof APP_CONFIGS, T>;
 
 export type AppKey = keyof typeof APP_CONFIGS;
 
@@ -251,8 +270,8 @@ export const APP_WHATSAPP_PACKAGE_NAMES = {
 } as const;
 
 export const APP_WHATSAPP_PACKAGE_DOWNLOAD_LINKS = {
-  legacy: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy),
-  modern: getSecureDownloadUrl(SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern),
+  legacy: APP_DOWNLOADS.aaWhatsApp.legacy,
+  modern: APP_DOWNLOADS.aaWhatsApp.primary,
 } as const;
 
 // Global Floating Poster Configuration
