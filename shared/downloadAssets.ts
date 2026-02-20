@@ -6,7 +6,6 @@ export const SECURE_DOWNLOAD_ASSETS = {
   capcutProMain: "capcut-pro-main",
   reminiModMain: "remini-mod-main",
   youtubePremiumMain: "youtube-premium-main",
-  youtubeMusicMicroG: "youtube-music-microg",
   youtubeMusicMain: "youtube-music-main",
 } as const;
 
@@ -18,7 +17,6 @@ const redirectMap = {
   [SECURE_DOWNLOAD_ASSETS.capcutProMain]: "https://ahsanali.short.gy/capcut-ahsan",
   [SECURE_DOWNLOAD_ASSETS.reminiModMain]: "https://ahsanali.short.gy/remini-ahsan",
   [SECURE_DOWNLOAD_ASSETS.youtubePremiumMain]: "https://ahsanali.short.gy/youtube-ahsan",
-  [SECURE_DOWNLOAD_ASSETS.youtubeMusicMicroG]: "https://via.placeholder.com/300x70/43a047/ffffff?text=Download+MicroG+v0.2.27",
   [SECURE_DOWNLOAD_ASSETS.youtubeMusicMain]: "https://via.placeholder.com/350x100/1e88e5/ffffff?text=++DOWNLOAD+LATEST+MOD++v8.20.52++",
 } as const;
 
