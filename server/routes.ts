@@ -12,10 +12,8 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  app.get("/aa-mods-page", (_req, res) => {
-    res.sendFile(path.resolve(process.cwd(), "AA Mods.html"));
-  });
-
+  // Removed direct SendFile for AA Mods.html as it is no longer used or present.
+  
   app.post("/api/report-bug", async (req, res) => {
     try {
       if (!resend) {
