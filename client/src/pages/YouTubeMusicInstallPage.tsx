@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DirectDownloadButton } from "@/components/DirectDownloadButton";
-import { APP_UPDATE_DATES, APP_VERSIONS, YOUTUBE_PREMIUM_CONFIG } from "@/config/appConfig";
+import { APP_UPDATE_DATES, APP_VERSIONS, YOUTUBE_MUSIC_CONFIG } from "@/config/appConfig";
 import { SECURE_DOWNLOAD_ASSETS } from "@shared/downloadAssets";
 import {
   Download,
@@ -31,7 +31,7 @@ export default function YouTubeMusicInstallPage() {
         <title>How to Install YouTube Music Premium MOD APK & FAQ | Safe Guide</title>
         <meta
           name="description"
-          content="Step-by-step installation guide for YouTube Music Premium MOD APK and MicroG. Universal APK supports both 32-bit and 64-bit Android devices."
+          content="Step-by-step installation guide for YouTube Music Premium MOD APK with AA Mods Services. Universal APK supports both 32-bit and 64-bit Android devices."
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/youtube-music-mod/install" />
       </Helmet>
@@ -42,14 +42,14 @@ export default function YouTubeMusicInstallPage() {
             <Badge className="bg-red-500/10 text-red-400 border-red-500/30 uppercase tracking-[0.12em] font-bold">Install Guide + FAQ</Badge>
             <h1 className="text-3xl md:text-5xl font-black tracking-tight">Safe Installation Guide (Universal APK)</h1>
             <p className="text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Install order is simple: enable unknown sources, install MicroG, then install one universal YouTube Music MOD APK that supports both 32-bit and 64-bit devices.
+              Install order is simple: enable unknown sources, install AA Mods Services first, then install one universal YouTube Music MOD APK that supports both 32-bit and 64-bit devices.
             </p>
             <p className="text-sm text-muted-foreground">
               Latest: <span className="font-bold text-red-300">{APP_VERSIONS.youtubeMusic}</span> • Updated: {APP_UPDATE_DATES.youtubeMusic.display}
             </p>
             <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm font-semibold text-red-300 max-w-4xl mx-auto">
               <AlertTriangle className="w-4 h-4 inline mr-2" />
-              Important: uninstall old Vanced MicroG versions first to avoid login conflicts.
+              Important: AA Mods Services is required for sign-in. Install it first to avoid login conflicts.
             </div>
           </section>
 
@@ -79,11 +79,11 @@ export default function YouTubeMusicInstallPage() {
             </Card>
 
             <Card className="border-red-500/25">
-              <CardHeader><CardTitle>Step 2: Install AA Mods Services (Required for Sign-In)</CardTitle></CardHeader>
+              <CardHeader><CardTitle>Step 2: Install AA Mods Services (Required First)</CardTitle></CardHeader>
               <CardContent className="space-y-4 text-sm text-muted-foreground">
                 <p>AA Mods Services provides stable sign-in compatibility for this MOD app.</p>
                 <a
-                  href={YOUTUBE_PREMIUM_CONFIG.aaModsServicesDownloadLink}
+                  href={YOUTUBE_MUSIC_CONFIG.aaModsServicesDownloadLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="neon-download-btn [--download-glow:#ef4444] [--download-border:#fca5a5] [--download-text:#ffffff] inline-flex w-full max-w-3xl min-h-[62px] md:min-h-[82px] items-center justify-between gap-3 md:gap-4 px-4 md:px-6 py-2.5 md:py-3"
