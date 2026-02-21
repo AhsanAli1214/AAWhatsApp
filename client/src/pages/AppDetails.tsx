@@ -100,7 +100,7 @@ export default function AppDetails() {
               </Button>
             </Link>
             <div className="flex items-center gap-2">
-              <img src={APP_LOGO_URL} alt="AA Mods" className="h-11 w-11 rounded-xl object-cover" />
+              <img src={APP_LOGO_URL} alt="AA Mods" fetchPriority="high" decoding="async" loading="eager" className="h-14 w-14 object-contain" />
               <span className="hidden font-bold sm:inline-block">AA Mods Store</span>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function AppDetails() {
 
       <main className="mx-auto max-w-5xl px-4 pt-8">
         <section className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-sm">
-          <div className={`h-32 w-full bg-gradient-to-r ${app.gradient} opacity-90`} />
+          <div className="h-32 w-full border-b border-slate-100 bg-white" />
           <div className="px-6 pb-8">
             <div className="relative -mt-16 flex flex-col gap-6 text-center sm:flex-row sm:items-end sm:text-left">
               <div className="flex justify-center sm:justify-start">
@@ -183,7 +183,7 @@ export default function AppDetails() {
             <section className="grid gap-4 sm:grid-cols-2">
               <Card className="border-l-4 border-l-blue-500 border-slate-200 bg-blue-50/30 shadow-sm">
                 <CardContent className="flex gap-4 p-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600">
                     <Zap className="h-5 w-5" />
                   </div>
                   <div>
@@ -202,7 +202,7 @@ export default function AppDetails() {
 
               <Card className="border-l-4 border-l-emerald-500 border-slate-200 bg-emerald-50/30 shadow-sm">
                 <CardContent className="flex gap-4 p-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
                     <ShieldCheck className="h-5 w-5" />
                   </div>
                   <div>
@@ -318,17 +318,17 @@ export default function AppDetails() {
                 {relatedApps.map((relatedApp) => (
                   <article
                     key={relatedApp.slug}
-                    className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition-all hover:border-emerald-200 hover:shadow-md"
+                    className="flex min-h-[238px] flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition-all hover:border-emerald-200 hover:shadow-md"
                   >
-                    <div className={`flex items-center gap-3 bg-gradient-to-r ${relatedApp.gradient} p-4 text-white`}>
-                      <img src={relatedApp.iconImage} alt={`${relatedApp.name} icon`} className="h-12 w-12 rounded-xl object-cover" />
-                      <div className="min-w-0">
-                        <h4 className="truncate text-base font-black">{relatedApp.name}</h4>
-                        <p className="truncate text-xs opacity-90">{relatedApp.subtitle}</p>
+                    <div className={`flex min-h-[84px] items-center gap-3 bg-gradient-to-r ${relatedApp.gradient} px-4 py-4 text-white`}>
+                      <img src={relatedApp.iconImage} alt={`${relatedApp.name} icon`} className="h-12 w-12 rounded-xl object-cover shadow-sm" />
+                      <div className="min-w-0 space-y-1">
+                        <h4 className="truncate text-base font-black leading-tight">{relatedApp.name}</h4>
+                        <p className="line-clamp-1 text-xs leading-relaxed opacity-90">{relatedApp.subtitle}</p>
                       </div>
                     </div>
-                    <div className="space-y-3 p-4">
-                      <div className="flex items-center gap-3 text-xs font-medium text-slate-600">
+                    <div className="flex flex-1 flex-col justify-between gap-4 p-4 sm:p-5">
+                      <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-slate-600">
                         <span className="flex items-center gap-1">
                           <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" /> {relatedApp.rating}
                         </span>
@@ -338,7 +338,7 @@ export default function AppDetails() {
                         <span>{relatedApp.version}</span>
                       </div>
                       <Link href={`/app/${relatedApp.slug}`}>
-                        <Button className="h-11 w-full gap-2 rounded-xl bg-emerald-600 px-5 text-sm font-bold tracking-wide hover:bg-emerald-700">
+                        <Button className="h-12 w-full gap-2 rounded-xl bg-emerald-600 px-6 text-sm font-bold tracking-wide hover:bg-emerald-700">
                           View App Details <ChevronRight className="h-4 w-4" />
                         </Button>
                       </Link>
