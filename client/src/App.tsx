@@ -6,12 +6,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Helmet } from "react-helmet";
 import Home from "@/pages/Home";
 import AppDetails from "@/pages/AppDetails";
+import Admin from "@/pages/Admin";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/app/:slug" component={AppDetails} />
+      <Route path="/management/console/secure" component={Admin} />
       <Route path="/:rest*" component={Home} />
     </Switch>
   );
