@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useRoute, Link } from "wouter";
 import { Helmet } from "react-helmet";
 import {
@@ -41,6 +41,10 @@ export default function AppDetails() {
   const [, params] = useRoute("/app/:slug");
   const app = getStoreApp(params?.slug || "");
   const mainDownloadRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [params?.slug]);
 
   if (!app) {
     return (
@@ -280,7 +284,8 @@ export default function AppDetails() {
             <section ref={mainDownloadRef} className="rounded-[2.5rem] border border-emerald-200 bg-gradient-to-r from-emerald-50 to-cyan-50 p-6 shadow-sm sm:p-10">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-700">Main Download</p>
               <h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900">Download {app.name} APK</h2>
-              <p className="mt-2 text-slate-600">The primary secure download button is always placed below the full blog/details section.</p>
+              <p className="mt-2 whitespace-pre-line text-slate-600">🔒 Download Secure & Verified Version
+Safe • Virus-Scanned • No Hidden Modifications</p>
               <a href={app.directDownloadLink} target="_blank" rel="noopener noreferrer" className="mt-6 block">
                 <Button className="h-14 w-full gap-2 rounded-2xl bg-emerald-600 text-lg font-bold hover:bg-emerald-700">
                   <Download className="h-6 w-6" /> {app.primaryDownloadLabel ?? "Download APK Now"}

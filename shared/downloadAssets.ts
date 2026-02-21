@@ -21,6 +21,15 @@ const APP_DOWNLOAD_ASSET_IDS = {
   },
 } as const;
 
+export const APP_DETAIL_SLUGS = Object.freeze([
+  "aa-whatsapp",
+  "aa-business",
+  "capcut-pro",
+  "remini-mod",
+  "youtube-premium-mod",
+  "youtube-music-mod",
+] as const);
+
 export const SECURE_DOWNLOAD_ASSETS = {
   aaWhatsAppModern: APP_DOWNLOAD_ASSET_IDS.aaWhatsApp.modern,
   aaWhatsAppLegacy: APP_DOWNLOAD_ASSET_IDS.aaWhatsApp.legacy,

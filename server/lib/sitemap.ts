@@ -1,92 +1,58 @@
-import { APP_DOWNLOAD_REDIRECTS } from "../../shared/downloadAssets";
+import { APP_DETAIL_SLUGS } from "../../shared/downloadAssets";
 
-type BlogPostEntry = {
-  slug?: string;
-  publishedAt?: string;
+type SitemapRoute = {
+  path: string;
+  priority: string;
+  changefreq: "daily" | "weekly" | "monthly";
 };
 
-async function loadBlogPosts(): Promise<BlogPostEntry[]> {
-  try {
-    // Attempt to load blog posts dynamically if the file exists
-    const module = await import("../../client/src/data/blogPosts").catch(() => ({ blogPosts: [] }));
-    const posts = (module as { blogPosts?: BlogPostEntry[] }).blogPosts;
-    return Array.isArray(posts) ? posts : [];
-  } catch (error) {
-    console.warn("Sitemap blog post load failed, using static routes only.", error);
-    return [];
-  }
+const DEFAULT_SITE_URL = "https://aa-mods.vercel.app";
+
+function getSiteUrl() {
+  const fromEnv = process.env.SITE_URL || process.env.PUBLIC_SITE_URL;
+  const vercelUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined;
+  const raw = fromEnv || vercelUrl || DEFAULT_SITE_URL;
+  return raw.replace(/\/$/, "");
+}
+
+function escapeXml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&apos;");
 }
 
 export async function generateSitemap() {
-  try {
-    const baseUrl = "https://aa-mods.vercel.app";
-    const today = new Date().toISOString().split("T")[0];
+  const baseUrl = getSiteUrl();
+  const today = new Date().toISOString().split("T")[0];
 
-    // Get all app slugs from downloadAssets
-    const appSlugs = Object.keys(APP_DOWNLOAD_REDIRECTS);
-    
-    // Core static routes
-    const routes = [
-      { path: "/", priority: "1.0", changefreq: "daily" },
-      { path: "/terms-of-service", priority: "0.5", changefreq: "monthly" },
-      { path: "/privacy-policy", priority: "0.5", changefreq: "monthly" },
-    ];
+  const routes: SitemapRoute[] = [
+    { path: "/", priority: "1.0", changefreq: "daily" },
+    { path: "/terms-of-service", priority: "0.5", changefreq: "monthly" },
+    { path: "/privacy-policy", priority: "0.5", changefreq: "monthly" },
+    ...APP_DETAIL_SLUGS.map((slug) => ({
+      path: `/app/${slug}`,
+      priority: "0.9",
+      changefreq: "weekly" as const,
+    })),
+  ];
 
-    // Dynamically add app detail pages from the centralized config
-    appSlugs.forEach(slug => {
-      routes.push({ path: `/app/${slug}`, priority: "1.0", changefreq: "daily" });
-    });
+  const uniqueRoutes = Array.from(new Map(routes.map((route) => [route.path, route])).values());
 
-    // Add common category routes if they exist in the app structure
-    const commonCategories = ["/features", "/download", "/faq", "/about", "/comparison"];
-    appSlugs.forEach(slug => {
-      commonCategories.forEach(cat => {
-        routes.push({ path: `/app/${slug}${cat}`, priority: "0.8", changefreq: "weekly" });
-      });
-    });
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">`;
+  uniqueRoutes.forEach((route) => {
+    xml += `\n  <url>`;
+    xml += `\n    <loc>${escapeXml(`${baseUrl}${route.path}`)}</loc>`;
+    xml += `\n    <lastmod>${today}</lastmod>`;
+    xml += `\n    <changefreq>${route.changefreq}</changefreq>`;
+    xml += `\n    <priority>${route.priority}</priority>`;
+    xml += `\n  </url>`;
+  });
 
-    // Add routes
-    routes.forEach(route => {
-      xml += `
-  <url>
-    <loc>${baseUrl}${route.path}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${route.changefreq}</changefreq>
-    <priority>${route.priority}</priority>
-  </url>`;
-    });
-
-    // Add blog posts if any
-    const blogPosts = await loadBlogPosts();
-    if (Array.isArray(blogPosts)) {
-      blogPosts.forEach(post => {
-        if (post && post.slug) {
-          const publishedDate = new Date(post.publishedAt || today);
-          const lastmod = Number.isNaN(publishedDate.getTime())
-            ? today
-            : publishedDate.toISOString().split("T")[0];
-          
-          xml += `
-  <url>
-    <loc>${baseUrl}/blog/${post.slug}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>`;
-        }
-      });
-    }
-
-    xml += "\n</urlset>";
-    return xml.trim();
-  } catch (error) {
-    console.error("Error in generateSitemap:", error);
-    throw error;
-  }
+  xml += "\n</urlset>";
+  return xml;
 }
