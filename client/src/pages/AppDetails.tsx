@@ -128,7 +128,7 @@ export default function AppDetails() {
               </Button>
             </Link>
             <div className="flex items-center gap-2">
-              <img src="https://i.postimg.org/8Pz7S6G1/AA-Mods-Logo.png" alt="AA Mods" className="h-8 w-8 rounded-lg" />
+              <img src="https://i.postimg.cc/0NRdTr3r/generated_image_6bb6c336_9b07_4a65_b01b_92ba8e39c556_modified.png" alt="AA Mods" className="h-8 w-8 rounded-lg" />
               <span className="hidden font-bold sm:inline-block">AA Mods Store</span>
             </div>
           </div>

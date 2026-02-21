@@ -78,7 +78,12 @@ export default function Admin() {
     // we'll update the local state and notify the user.
     // To make it "real-time" across the session, we would need a backend.
     
-    setApps(prev => prev.map(a => a.slug === editedData.slug ? editedData : a));
+    setApps(prev => prev.map(a => a.slug === editedData.slug ? {
+      ...editedData,
+      // Ensure changelog and whatsNew are treated as arrays to satisfy type checks if needed
+      changelog: Array.isArray(editedData.changelog) ? editedData.changelog : (editedData.changelog as string).split("\n"),
+      whatsNew: Array.isArray(editedData.whatsNew) ? editedData.whatsNew : (editedData.whatsNew as string).split("\n"),
+    } : a) as any);
     
     toast({
       title: "Changes Saved Locally",

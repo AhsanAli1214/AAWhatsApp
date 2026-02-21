@@ -177,7 +177,7 @@ export default function Home() {
               <Search className="mb-2 h-10 w-10 opacity-20" />
               <p>No apps found matching your criteria</p>
               <Button 
-                variant="link" 
+                variant="ghost" 
                 onClick={() => { setSearchQuery(""); setActiveCategory("All"); }}
                 className="mt-2 text-emerald-600"
               >
