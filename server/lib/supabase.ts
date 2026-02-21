@@ -1,36 +1,58 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.SUPABASE_URL || '';
-const supabaseKey = process.env.SUPABASE_KEY || '';
+const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseServiceRoleKey =
+  process.env.SUPABASE_SERVICE_ROLE_KEY ||
+  process.env.SUPABASE_KEY ||
+  '';
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+if (!supabaseUrl || !supabaseServiceRoleKey) {
+  console.error(
+    '[supabase] Missing SUPABASE_URL and/or SUPABASE_SERVICE_ROLE_KEY. Admin writes will fail until they are configured.',
+  );
+}
+
+export const supabase = createClient(supabaseUrl, supabaseServiceRoleKey, {
+  auth: {
+    autoRefreshToken: false,
+    persistSession: false,
+  },
+});
 
 export async function getApps() {
-  const { data, error } = await supabase
-    .from('apps')
-    .select('*')
-    .order('name');
-  
+  const { data, error } = await supabase.from('apps').select('*').order('name');
+
   if (error) throw error;
   return data;
 }
 
-export async function updateApp(slug: string, updates: any) {
-  // Map camelCase to snake_case for Supabase if needed, or handle both
-  const { iconImage, seoTitle, seoDescription, seoKeywords, directDownloadLink, baseVersion, shortDescription, longDescription, whatsNew, ...rest } = updates;
-  
-  const payload = {
-    ...rest,
-    ...(iconImage && { icon_image: iconImage }),
-    ...(seoTitle && { seo_title: seoTitle }),
-    ...(seoDescription && { seo_description: seoDescription }),
-    ...(seoKeywords && { seo_keywords: seoKeywords }),
-    ...(directDownloadLink && { direct_download_link: directDownloadLink }),
-    ...(baseVersion && { base_version: baseVersion }),
-    ...(shortDescription && { short_description: shortDescription }),
-    ...(longDescription && { long_description: longDescription }),
-    ...(whatsNew && { whats_new: whatsNew }),
+function mapAppPayload(input: Record<string, any>) {
+  const payload: Record<string, any> = { ...input };
+
+  const map: Record<string, string> = {
+    iconImage: 'icon_image',
+    seoTitle: 'seo_title',
+    seoDescription: 'seo_description',
+    seoKeywords: 'seo_keywords',
+    directDownloadLink: 'direct_download_link',
+    baseVersion: 'base_version',
+    shortDescription: 'short_description',
+    longDescription: 'long_description',
+    whatsNew: 'whats_new',
   };
+
+  for (const [camel, snake] of Object.entries(map)) {
+    if (Object.prototype.hasOwnProperty.call(input, camel)) {
+      payload[snake] = input[camel];
+      delete payload[camel];
+    }
+  }
+
+  return payload;
+}
+
+export async function updateApp(slug: string, updates: Record<string, any>) {
+  const payload = mapAppPayload(updates);
 
   const { data, error } = await supabase
     .from('apps')
@@ -38,33 +60,16 @@ export async function updateApp(slug: string, updates: any) {
     .eq('slug', slug)
     .select()
     .single();
-  
+
   if (error) throw error;
   return data;
 }
 
-export async function createApp(app: any) {
-  const { iconImage, seoTitle, seoDescription, seoKeywords, directDownloadLink, baseVersion, shortDescription, longDescription, whatsNew, ...rest } = app;
-  
-  const payload = {
-    ...rest,
-    icon_image: iconImage || app.icon_image,
-    seo_title: seoTitle || app.seo_title,
-    seo_description: seoDescription || app.seo_description,
-    seo_keywords: seoKeywords || app.seo_keywords,
-    direct_download_link: directDownloadLink || app.direct_download_link,
-    base_version: baseVersion || app.base_version,
-    short_description: shortDescription || app.short_description,
-    long_description: longDescription || app.long_description,
-    whats_new: whatsNew || app.whats_new,
-  };
+export async function createApp(app: Record<string, any>) {
+  const payload = mapAppPayload(app);
 
-  const { data, error } = await supabase
-    .from('apps')
-    .insert([payload])
-    .select()
-    .single();
-  
+  const { data, error } = await supabase.from('apps').insert([payload]).select().single();
+
   if (error) throw error;
   return data;
 }

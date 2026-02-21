@@ -26,7 +26,13 @@ export async function registerRoutes(
   });
 
   app.get("/api/admin-password", (req, res) => {
-    res.json(process.env.ADMIN_PASSWORD || "ahsanali123");
+    const adminPassword = process.env.ADMIN_PASSWORD;
+
+    if (!adminPassword && process.env.NODE_ENV === "production") {
+      return res.status(500).json({ error: "ADMIN_PASSWORD is not configured" });
+    }
+
+    res.json(adminPassword || "ahsanali123");
   });
 
   app.post("/api/apps", async (req, res) => {
