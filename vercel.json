@@ -1,22 +1,17 @@
 {
   "version": 2,
   "framework": "vite",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/sitemap.xml",
-      "destination": "/sitemap.xml"
+      "handle": "filesystem"
     },
     {
-      "source": "/robots.txt",
-      "destination": "/robots.txt"
+      "src": "^/$",
+      "dest": "/index.html"
     },
     {
-      "source": "/88eae1744d0947619ec188fec7ff3b06.txt",
-      "destination": "/88eae1744d0947619ec188fec7ff3b06.txt"
-    },
-    {
-      "source": "/((?!.*\\.).*)",
-      "destination": "/index.html"
+      "src": "^/(?!api/).+",
+      "dest": "/index.html"
     }
   ]
 }
