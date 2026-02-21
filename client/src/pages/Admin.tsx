@@ -274,24 +274,32 @@ export default function Admin() {
                       <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Version</label>
-                          <Input value={editedData.version} onChange={e => setEditedData({...editedData, version: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                          <Input value={editedData.version} onChange={e => setEditedData({...editedData, version: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Downloads</label>
-                          <Input value={editedData.downloads} onChange={e => setEditedData({...editedData, downloads: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                          <Input value={editedData.downloads} onChange={e => setEditedData({...editedData, downloads: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500" />
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Subtitle</label>
-                        <Input value={editedData.subtitle} onChange={e => setEditedData({...editedData, subtitle: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Download URL (Direct APK Link)</label>
+                        <Input value={editedData.directDownloadLink} onChange={e => setEditedData({...editedData, directDownloadLink: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Icon URL</label>
-                        <Input value={editedData.iconImage} onChange={e => setEditedData({...editedData, iconImage: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Base Version (Technical Info)</label>
+                        <Input value={editedData.baseVersion} onChange={e => setEditedData({...editedData, baseVersion: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Gradient Class</label>
-                        <Input value={editedData.gradient} onChange={e => setEditedData({...editedData, gradient: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Visual Subtitle (Card/Header)</label>
+                        <Input value={editedData.subtitle} onChange={e => setEditedData({...editedData, subtitle: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500" />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">App Icon Image URL</label>
+                        <Input value={editedData.iconImage} onChange={e => setEditedData({...editedData, iconImage: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500" />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Gradient Class (Tailwind)</label>
+                        <Input value={editedData.gradient} onChange={e => setEditedData({...editedData, gradient: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500" />
                       </div>
                     </CardContent>
                   </Card>
@@ -302,19 +310,19 @@ export default function Admin() {
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Short Description (What's New)</label>
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Short Description (What's New - SEO Meta)</label>
                         <Textarea 
                           value={editedData.shortDescription} 
                           onChange={e => setEditedData({...editedData, shortDescription: e.target.value})} 
-                          className="rounded-xl border-slate-200 bg-white text-slate-900 resize-none h-24" 
+                          className="rounded-xl border-slate-200 bg-white text-slate-900 resize-none h-24 focus:ring-2 focus:ring-emerald-500/20 transition-all" 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Changelog (One item per line)</label>
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Changelog (One item per line - Google Rich Snippets)</label>
                         <Textarea 
                           value={editedData.changelog?.join("\n")} 
                           onChange={e => setEditedData({...editedData, changelog: e.target.value.split("\n")})} 
-                          className="rounded-xl border-slate-200 bg-white text-slate-900 resize-none h-48 font-mono text-sm" 
+                          className="rounded-xl border-slate-200 bg-white text-slate-900 resize-none h-48 font-mono text-sm focus:ring-2 focus:ring-emerald-500/20 transition-all" 
                           placeholder="Added new feature X&#10;Fixed bug Y"
                         />
                       </div>
