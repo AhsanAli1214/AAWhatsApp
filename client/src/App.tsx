@@ -6,12 +6,17 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Helmet } from "react-helmet";
 import Home from "@/pages/Home";
 import AppDetails from "@/pages/AppDetails";
+import TermsOfService from "@/pages/TermsOfService";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import SiteFooter from "@/components/SiteFooter";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/app/:slug" component={AppDetails} />
+      <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/:rest*" component={Home} />
     </Switch>
   );
@@ -27,8 +32,17 @@ function App() {
           <meta property="og:site_name" content="AA Mods" />
           <meta property="og:type" content="website" />
           <meta name="twitter:card" content="summary_large_image" />
+          <meta name="copyright" content="AA Mods" />
+          <meta name="author" content="AA Mods Team" />
+          <link rel="preconnect" href="https://i.postimg.cc" />
+          <link rel="dns-prefetch" href="https://i.postimg.cc" />
         </Helmet>
-        <Router />
+        <div className="flex min-h-screen flex-col bg-slate-50">
+          <div className="flex-1">
+            <Router />
+          </div>
+          <SiteFooter />
+        </div>
         <Analytics />
       </TooltipProvider>
     </QueryClientProvider>

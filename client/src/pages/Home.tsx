@@ -62,8 +62,8 @@ const AppCard = memo(function AppCard({ app }: { app: StoreApp }) {
 
 
 function AppCardIcon({ app, size = "small" }: { app: any; size?: "small" | "large" }) {
-  const iconSize = size === "large" ? "h-16 w-16" : "h-10 w-10";
-  const iconInnerSize = size === "large" ? "h-10 w-10" : "h-7 w-7";
+  const iconSize = size === "large" ? "h-16 w-16" : "h-12 w-12";
+  const iconInnerSize = size === "large" ? "h-12 w-12" : "h-7 w-7";
 
   if (app.iconImage) {
     return <img src={app.iconImage} alt={`${app.name} icon`} loading="lazy" decoding="async" className={`${iconSize} rounded-2xl object-cover shadow-sm`} />;
@@ -159,7 +159,7 @@ export default function Home() {
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
           <Link href="/">
-            <img src={APP_LOGO_URL} alt="AA Mods Logo" fetchPriority="high" decoding="async" className="h-12 w-12 cursor-pointer rounded-xl object-cover ring-1 ring-slate-200" />
+            <img src={APP_LOGO_URL} alt="AA Mods Logo" fetchPriority="high" decoding="async" className="h-14 w-14 cursor-pointer object-contain" />
           </Link>
           <div className="relative min-w-0 flex-1">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
@@ -254,7 +254,7 @@ export default function Home() {
             </div>
           ) : (
             <div className="flex h-64 flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white text-slate-500">
-              <Search className="mb-2 h-10 w-10 opacity-20" />
+              <Search className="mb-2 h-12 w-12 opacity-20" />
               <p>No apps found matching your criteria</p>
               <Button
                 variant="link"
