@@ -23,36 +23,36 @@ type StoreApp = (typeof storeApps)[number];
 const AppCard = memo(function AppCard({ app }: { app: StoreApp }) {
   return (
     <article
-      className="group relative overflow-hidden rounded-2xl border border-slate-200/50 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-500/10"
+      className="group relative overflow-hidden rounded-xl border border-slate-200/50 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-500/10"
     >
-      <div className={`relative flex items-center gap-4 bg-gradient-to-r ${app.gradient} p-6 text-white`}>
+      <div className={`relative flex items-center gap-3 bg-gradient-to-r ${app.gradient} p-4 text-white`}>
         <div className="absolute inset-0 bg-black/5 transition-opacity group-hover:opacity-0" />
-        <AppCardIcon app={app} size="large" />
+        <AppCardIcon app={app} size="small" />
         <div className="min-w-0 flex-1 relative z-10">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">{app.developer}</p>
-          <h3 className="truncate text-xl font-black leading-tight tracking-tight">{app.name}</h3>
-          <p className="truncate text-xs font-medium opacity-90">{app.subtitle}</p>
+          <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-white/90">{app.developer}</p>
+          <h3 className="truncate text-lg font-black leading-tight tracking-tight text-white">{app.name}</h3>
+          <p className="truncate text-[10px] font-medium text-white/90">{app.subtitle}</p>
         </div>
       </div>
 
-      <div className="flex flex-col p-5">
-        <p className="line-clamp-2 text-sm leading-relaxed text-slate-600">{app.shortDescription}</p>
+      <div className="flex flex-col p-4">
+        <p className="line-clamp-2 text-xs leading-relaxed text-slate-600">{app.shortDescription}</p>
 
-        <div className="mt-4 flex items-center gap-3 text-sm font-semibold text-slate-500">
-          <div className="flex items-center gap-1.5">
-            <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+        <div className="mt-3 flex items-center gap-2 text-[11px] font-semibold text-slate-500">
+          <div className="flex items-center gap-1">
+            <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
             <span className="text-slate-900">{app.rating}</span>
           </div>
           <span className="h-1 w-1 rounded-full bg-slate-300" />
           <span>{app.downloads}</span>
           <span className="h-1 w-1 rounded-full bg-slate-300" />
-          <span className="text-[10px] uppercase tracking-wider text-emerald-600 font-bold">Verified</span>
+          <span className="text-[9px] uppercase tracking-wider text-emerald-600 font-bold">Verified</span>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-4">
           <Link href={`/app/${app.slug}`}>
-            <Button className="w-full rounded-xl bg-slate-900 py-6 text-sm font-bold transition-all hover:bg-emerald-600 hover:shadow-lg hover:shadow-emerald-500/20 active:scale-[0.98]">
-              Get App Details <ArrowRight className="ml-2 h-4 w-4" />
+            <Button className="w-full h-9 rounded-lg bg-emerald-600 text-white text-xs font-bold transition-all hover:bg-emerald-700 hover:shadow-md active:scale-[0.98]">
+              Get App Details <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
             </Button>
           </Link>
         </div>
@@ -63,8 +63,8 @@ const AppCard = memo(function AppCard({ app }: { app: StoreApp }) {
 
 
 function AppCardIcon({ app, size = "small" }: { app: any; size?: "small" | "large" }) {
-  const iconSize = size === "large" ? "h-16 w-16" : "h-12 w-12";
-  const iconInnerSize = size === "large" ? "h-12 w-12" : "h-7 w-7";
+  const iconSize = size === "large" ? "h-14 w-14" : "h-10 w-10";
+  const iconInnerSize = size === "large" ? "h-10 w-10" : "h-6 w-6";
 
   if (app.iconImage) {
     return <img src={app.iconImage} alt={`${app.name} icon`} loading="lazy" decoding="async" className={`${iconSize} rounded-2xl object-cover shadow-sm`} />;
