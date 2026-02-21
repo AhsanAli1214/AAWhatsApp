@@ -84,6 +84,13 @@ export default function Admin() {
       });
       setIsEditing(false);
     },
+    onError: (error: Error) => {
+      toast({
+        title: "Save Failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    },
   });
 
   const createMutation = useMutation({
@@ -98,6 +105,13 @@ export default function Admin() {
         description: "New app added to Supabase.",
       });
       setIsEditing(false);
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Create Failed",
+        description: error.message,
+        variant: "destructive",
+      });
     },
   });
 
