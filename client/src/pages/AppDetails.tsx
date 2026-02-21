@@ -59,6 +59,20 @@ export default function AppDetails() {
 
   const relatedMods = (app.seeMoreMods ?? []).map((mod: any) => ({ label: mod.label as string, slug: mod.slug as string }));
 
+  const handleShare = () => {
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      navigator.share({
+        title: app.name,
+        text: app.shortDescription,
+        url: window.location.href,
+      }).catch(console.error);
+    } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        // window.alert("Link copied to clipboard!");
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#f8fafd] text-slate-900 pb-20">
       <Helmet>

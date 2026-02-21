@@ -97,19 +97,46 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl space-y-8 px-4 py-8">
-        <section className="rounded-3xl bg-gradient-to-r from-emerald-600 to-teal-600 p-8 text-white shadow-lg">
-          <p className="text-xs uppercase tracking-[0.2em] text-white/80">Premium Modded Applications</p>
-          <h1 className="mt-2 text-3xl font-bold md:text-4xl">The Ultimate Collection of AA Mods</h1>
-          <p className="mt-3 max-w-3xl text-white/90 leading-relaxed">
-            Experience the next level of mobile freedom. Our centralized store provides the most secure, 
-            feature-rich WhatsApp modifications and utility apps. Each application is rigorously tested, 
-            verified for safety, and comes with comprehensive changelogs and direct direct high-speed download links.
-          </p>
+      <main className="mx-auto max-w-6xl space-y-12 px-4 py-12">
+        <section className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-slate-900 via-emerald-900 to-teal-900 p-8 md:p-12 text-white shadow-2xl">
+          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 h-64 w-64 bg-emerald-500/20 rounded-full blur-3xl" />
+          <div className="relative z-10 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">
+              <Star className="h-3 w-3 fill-emerald-400" /> Premium Modded Applications
+            </div>
+            <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">
+              The Ultimate Collection of <span className="text-emerald-400">AA Mods</span>
+            </h1>
+            <p className="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed font-medium">
+              Experience the next level of mobile freedom. Our centralized store provides the most secure, 
+              feature-rich WhatsApp modifications and utility apps.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button className="h-14 px-8 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-lg shadow-lg shadow-emerald-500/20">
+                Browse Apps
+              </Button>
+              <div className="flex items-center gap-4 px-6 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                <div className="flex -space-x-3">
+                  {[1,2,3].map(i => (
+                    <div key={i} className="h-8 w-8 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center text-[10px] font-bold">
+                      {i}
+                    </div>
+                  ))}
+                </div>
+                <div className="text-sm">
+                  <span className="block font-bold">10M+ Users</span>
+                  <span className="text-slate-400 text-xs text-nowrap">Trust AA Mods</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section>
-          <div className="flex gap-3 overflow-x-auto pb-2">
+        <section className="space-y-6">
+          <div className="flex items-center justify-between px-2">
+            <h2 className="text-3xl font-black tracking-tight text-slate-900">Explore Categories</h2>
+          </div>
+          <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
             {categories.map((category) => (
               <button
                 key={category}
