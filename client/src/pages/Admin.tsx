@@ -305,7 +305,7 @@ export default function Admin() {
                   }`}
                 >
                   <img
-                    src={app.iconImage}
+                    src={app.iconImage || app.icon_image}
                     className="h-10 w-10 rounded-lg object-cover"
                   />
                   <div className="min-w-0 flex-1">
@@ -333,7 +333,7 @@ export default function Admin() {
                     className={`p-1 rounded-2xl bg-gradient-to-r ${selectedApp.gradient}`}
                   >
                     <img
-                      src={selectedApp.iconImage}
+                      src={selectedApp.iconImage || selectedApp.icon_image}
                       className="h-20 w-20 rounded-xl object-cover border-2 border-white/20"
                     />
                   </div>
@@ -542,11 +542,12 @@ export default function Admin() {
                           App Icon Image URL
                         </label>
                         <Input
-                          value={editedData.iconImage}
+                          value={editedData.iconImage || editedData.icon_image || ""}
                           onChange={(e) =>
                             setEditedData({
                               ...editedData,
                               iconImage: e.target.value,
+                              icon_image: e.target.value,
                             })
                           }
                           className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500"

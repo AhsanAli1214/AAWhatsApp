@@ -17,7 +17,7 @@ function AppCardIcon({ app, size = "small" }: { app: any; size?: "small" | "larg
   if (app.icon_image) {
     return (
       <img 
-        src={app.icon_image} 
+        src={app.iconImage || app.icon_image} 
         alt={`${app.name} icon`} 
         className={`${iconSize} rounded-2xl object-cover`} 
       />
@@ -30,7 +30,8 @@ function AppCardIcon({ app, size = "small" }: { app: any; size?: "small" | "larg
     </div>
   );
 
-  switch (app.iconType) {
+  const iconType = app.iconType || app.icon_type;
+  switch (iconType) {
     case "whatsapp":
       return <IconWrapper><FaWhatsapp className={iconInnerSize} /></IconWrapper>;
     case "business":
@@ -58,7 +59,7 @@ export default function Home() {
     return apps.filter((app) => {
       const matchesSearch = 
         app.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (app.short_description || "").toLowerCase().includes(searchQuery.toLowerCase());
+        (app.short_description || app.shortDescription || "").toLowerCase().includes(searchQuery.toLowerCase());
       
       const matchesCategory = 
         activeCategory === "All" || app.category === activeCategory;
