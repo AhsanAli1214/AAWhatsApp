@@ -37,6 +37,19 @@ export default function Admin() {
   const [editedData, setEditedData] = useState<any>(apps[0]);
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Update selectedApp and editedData when apps change
+  useEffect(() => {
+    if (selectedApp) {
+      const updatedApp = apps.find(a => a.slug === selectedApp.slug);
+      if (updatedApp) {
+        setSelectedApp(updatedApp);
+        if (!isEditing) {
+          setEditedData(updatedApp);
+        }
+      }
+    }
+  }, [apps]);
+
   const filteredApps = apps.filter(app => 
     app.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -60,12 +73,18 @@ export default function Admin() {
   };
 
   const handleSave = () => {
-    toast({
-      title: "Changes simulated",
-      description: "In a real database environment, this would update appData.ts. For now, it updates the local state.",
-    });
+    // In a real app, this would be a database call. 
+    // Since we are in Fast mode and the current architecture relies on appData.ts,
+    // we'll update the local state and notify the user.
+    // To make it "real-time" across the session, we would need a backend.
+    
     setApps(prev => prev.map(a => a.slug === editedData.slug ? editedData : a));
-    setSelectedApp(editedData);
+    
+    toast({
+      title: "Changes Saved Locally",
+      description: "App data updated in current session. Note: For permanent persistence, a backend integration is required.",
+    });
+    
     setIsEditing(false);
   };
 
@@ -90,7 +109,7 @@ export default function Admin() {
       <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
         <Card className="w-full max-w-md border-slate-200 shadow-xl rounded-3xl overflow-hidden">
           <CardHeader className="bg-white border-b border-slate-100 text-center pb-8 pt-10">
-            <img src={logo} alt="AA Mods Logo" className="h-16 w-16 mx-auto mb-4 rounded-2xl shadow-lg" />
+            <img src="https://i.postimg.cc/0NRdTr3r/generated_image_6bb6c336_9b07_4a65_b01b_92ba8e39c556_modified.png" alt="AA Mods Logo" className="h-16 w-16 mx-auto mb-4 rounded-2xl shadow-lg" />
             <CardTitle className="text-2xl font-black">Secure Access</CardTitle>
             <CardDescription className="font-medium">Enter your management key to continue</CardDescription>
           </CardHeader>
@@ -135,7 +154,7 @@ export default function Admin() {
             </Button>
           </Link>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="AA Mods Logo" className="h-10 w-10 rounded-xl object-cover shadow-sm" />
+            <img src="https://i.postimg.cc/0NRdTr3r/generated_image_6bb6c336_9b07_4a65_b01b_92ba8e39c556_modified.png" alt="AA Mods Logo" className="h-10 w-10 rounded-xl object-cover shadow-sm" />
             <div className="hidden sm:block">
               <h1 className="text-lg font-bold leading-none">Management Console</h1>
               <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Secure Access Only</p>

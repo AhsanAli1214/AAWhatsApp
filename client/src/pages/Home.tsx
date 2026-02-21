@@ -78,7 +78,7 @@ export default function Home() {
       <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
           <Link href="/">
-            <img src="https://i.postimg.org/8Pz7S6G1/AA-Mods-Logo.png" alt="AA Mods Logo" className="h-10 w-10 cursor-pointer rounded-xl object-cover" />
+            <img src="https://i.postimg.cc/0NRdTr3r/generated_image_6bb6c336_9b07_4a65_b01b_92ba8e39c556_modified.png" alt="AA Mods Logo" className="h-10 w-10 cursor-pointer rounded-xl object-cover" />
           </Link>
           <div className="relative min-w-0 flex-1">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
