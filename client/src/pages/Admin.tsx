@@ -120,9 +120,13 @@ export default function Admin() {
       )
     : [];
 
+  const { data: adminPassword = "ahsanali123" } = useQuery<string>({
+    queryKey: ["/api/admin-password"],
+  });
+
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === "ahsanali123") {
+    if (password === adminPassword) {
       setIsAuthenticated(true);
       toast({
         title: "System Unlocked",
@@ -134,16 +138,25 @@ export default function Admin() {
   };
 
   const handleSave = () => {
+    // Map camelCase to snake_case before sending to API
     const data = {
       ...editedData,
+      icon_image: editedData.iconImage || editedData.icon_image,
+      seo_title: editedData.seoTitle || editedData.seo_title,
+      seo_description: editedData.seoDescription || editedData.seo_description,
+      seo_keywords: editedData.seoKeywords || editedData.seo_keywords,
+      direct_download_link: editedData.directDownloadLink || editedData.direct_download_link,
+      base_version: editedData.baseVersion || editedData.base_version,
+      short_description: editedData.shortDescription || editedData.short_description,
+      long_description: editedData.longDescription || editedData.long_description,
+      whats_new: Array.isArray(editedData.whats_new || editedData.whatsNew)
+        ? (editedData.whats_new || editedData.whatsNew)
+        : String(editedData.whats_new || editedData.whatsNew || "")
+            .split("\n")
+            .filter(Boolean),
       changelog: Array.isArray(editedData.changelog)
         ? editedData.changelog
         : String(editedData.changelog || "")
-            .split("\n")
-            .filter(Boolean),
-      whats_new: Array.isArray(editedData.whats_new)
-        ? editedData.whats_new
-        : String(editedData.whats_new || "")
             .split("\n")
             .filter(Boolean),
     };

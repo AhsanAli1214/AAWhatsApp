@@ -20,8 +20,13 @@ export async function registerRoutes(
       const apps = await getApps();
       res.json(apps);
     } catch (error) {
+      console.error("Fetch apps error:", error);
       res.status(500).json({ error: "Failed to fetch apps" });
     }
+  });
+
+  app.get("/api/admin-password", (req, res) => {
+    res.json(process.env.ADMIN_PASSWORD || "ahsanali123");
   });
 
   app.post("/api/apps", async (req, res) => {
@@ -29,6 +34,7 @@ export async function registerRoutes(
       const app = await createApp(req.body);
       res.status(201).json(app);
     } catch (error) {
+      console.error("Create app error:", error);
       res.status(500).json({ error: "Failed to create app" });
     }
   });
@@ -38,6 +44,7 @@ export async function registerRoutes(
       const app = await updateApp(req.params.slug, req.body);
       res.json(app);
     } catch (error) {
+      console.error("Update app error:", error);
       res.status(500).json({ error: "Failed to update app" });
     }
   });
