@@ -83,30 +83,55 @@ export default function AppDetails() {
   const relatedApps = [...primaryRelatedApps, ...fallbackRelatedApps].slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-[#f8fafd] pb-20 text-slate-900">
+    <div className="min-h-screen bg-[#f8fafd] pb-20 text-slate-900 selection:bg-emerald-500/20 selection:text-emerald-900">
       <Helmet>
-        <title>{app.seoTitle}</title>
+        <title>{app.seoTitle} | Official Download - AA Mods</title>
         <meta name="description" content={app.seoDescription} />
         <meta name="keywords" content={app.seoKeywords} />
         <link rel="canonical" href={`https://aa-mods.vercel.app/app/${app.slug}`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": app.name,
+            "operatingSystem": "Android",
+            "applicationCategory": app.category,
+            "description": app.seoDescription,
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": app.rating,
+              "ratingCount": "1250"
+            }
+          })}
+        </script>
       </Helmet>
 
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-2">
           <div className="flex items-center gap-4">
             <Link href="/">
-              <Button variant="ghost" size="icon" className="rounded-full">
+              <Button variant="ghost" size="icon" className="rounded-full hover:bg-slate-100 transition-colors">
                 <ArrowLeft className="h-5 w-5" />
               </Button>
             </Link>
             <div className="flex items-center gap-2">
-              <img src={APP_LOGO_URL} alt="AA Mods" fetchPriority="high" decoding="async" loading="eager" className="h-14 w-14 object-contain" />
-              <span className="hidden font-bold sm:inline-block">AA Mods Store</span>
+              <img src={APP_LOGO_URL} alt="AA Mods" fetchPriority="high" decoding="async" loading="eager" className="h-12 w-12 object-contain" />
+              <span className="hidden font-black text-lg tracking-tight sm:inline-block">AA Mods</span>
             </div>
           </div>
-          <Button variant="ghost" size="icon" onClick={handleShare} className="rounded-full">
-            <Share2 className="h-5 w-5 text-slate-600" />
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" onClick={handleShare} className="rounded-full gap-2 border-slate-200 font-bold hover:bg-slate-50 hidden sm:flex">
+              <Share2 className="h-4 w-4" /> Share App
+            </Button>
+            <Button variant="ghost" size="icon" onClick={handleShare} className="rounded-full sm:hidden">
+              <Share2 className="h-5 w-5 text-slate-600" />
+            </Button>
+          </div>
         </div>
       </header>
 

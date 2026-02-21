@@ -28,20 +28,20 @@ export async function generateSitemap() {
     // Core static routes
     const routes = [
       { path: "/", priority: "1.0", changefreq: "daily" },
-      { path: "/terms-of-service", priority: "0.3", changefreq: "monthly" },
-      { path: "/privacy-policy", priority: "0.3", changefreq: "monthly" },
+      { path: "/terms-of-service", priority: "0.5", changefreq: "monthly" },
+      { path: "/privacy-policy", priority: "0.5", changefreq: "monthly" },
     ];
 
     // Dynamically add app detail pages from the centralized config
     appSlugs.forEach(slug => {
-      routes.push({ path: `/app/${slug}`, priority: "0.9", changefreq: "weekly" });
+      routes.push({ path: `/app/${slug}`, priority: "1.0", changefreq: "daily" });
     });
 
     // Add common category routes if they exist in the app structure
     const commonCategories = ["/features", "/download", "/faq", "/about", "/comparison"];
     appSlugs.forEach(slug => {
       commonCategories.forEach(cat => {
-        routes.push({ path: `/app/${slug}${cat}`, priority: "0.7", changefreq: "weekly" });
+        routes.push({ path: `/app/${slug}${cat}`, priority: "0.8", changefreq: "weekly" });
       });
     });
 

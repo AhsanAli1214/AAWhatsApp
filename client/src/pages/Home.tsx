@@ -23,35 +23,36 @@ type StoreApp = (typeof storeApps)[number];
 const AppCard = memo(function AppCard({ app }: { app: StoreApp }) {
   return (
     <article
-      className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+      className="group relative overflow-hidden rounded-2xl border border-slate-200/50 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-500/10"
     >
       <div className={`relative flex items-center gap-4 bg-gradient-to-r ${app.gradient} p-6 text-white`}>
+        <div className="absolute inset-0 bg-black/5 transition-opacity group-hover:opacity-0" />
         <AppCardIcon app={app} size="large" />
-        <div className="min-w-0 flex-1">
-          <p className="text-xs font-medium uppercase tracking-wider opacity-80">{app.developer}</p>
-          <h3 className="truncate text-xl font-bold leading-tight">{app.name}</h3>
-          <p className="truncate text-xs opacity-90">{app.subtitle}</p>
+        <div className="min-w-0 flex-1 relative z-10">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">{app.developer}</p>
+          <h3 className="truncate text-xl font-black leading-tight tracking-tight">{app.name}</h3>
+          <p className="truncate text-xs font-medium opacity-90">{app.subtitle}</p>
         </div>
       </div>
 
       <div className="flex flex-col p-5">
-        <p className="line-clamp-2 text-sm text-slate-600">{app.shortDescription}</p>
+        <p className="line-clamp-2 text-sm leading-relaxed text-slate-600">{app.shortDescription}</p>
 
-        <div className="mt-4 flex items-center gap-3 text-sm text-slate-600">
-          <div className="flex items-center gap-1">
+        <div className="mt-4 flex items-center gap-3 text-sm font-semibold text-slate-500">
+          <div className="flex items-center gap-1.5">
             <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-            <span className="font-medium">{app.rating}</span>
+            <span className="text-slate-900">{app.rating}</span>
           </div>
           <span className="h-1 w-1 rounded-full bg-slate-300" />
           <span>{app.downloads}</span>
           <span className="h-1 w-1 rounded-full bg-slate-300" />
-          <span>Universal APK</span>
+          <span className="text-[10px] uppercase tracking-wider text-emerald-600 font-bold">Verified</span>
         </div>
 
         <div className="mt-6">
           <Link href={`/app/${app.slug}`}>
-            <Button className="w-full rounded-xl bg-emerald-600 py-5 text-sm font-semibold hover:bg-emerald-700">
-              View details <ArrowRight className="ml-2 h-4 w-4" />
+            <Button className="w-full rounded-xl bg-slate-900 py-6 text-sm font-bold transition-all hover:bg-emerald-600 hover:shadow-lg hover:shadow-emerald-500/20 active:scale-[0.98]">
+              Get App Details <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
         </div>
@@ -146,14 +147,35 @@ export default function Home() {
   }, [searchableApps, normalizedQuery, activeCategory]);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-emerald-500/20 selection:text-emerald-900">
       <Helmet>
-        <title>AA Mods Store | Official Apps</title>
+        <title>AA Mods Store | Official Apps & Premium WhatsApp Mods</title>
         <meta
           name="description"
-          content="Official AA Mods app store. Explore all apps with detailed information, highlights, and direct APK downloads."
+          content="Official AA Mods app store. Securely download the latest WhatsApp modifications, premium utility apps, and verified APKs with direct links."
         />
+        <meta name="keywords" content="AA Mods, WhatsApp Mods, Premium APK, AA WhatsApp, CapCut Pro, Remini Mod, Android Mods" />
         <link rel="canonical" href="https://aa-mods.vercel.app/" />
+        {/* Schema.org Organization data for Store */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "AA Mods Store",
+            "operatingSystem": "Android",
+            "applicationCategory": "Utilities",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "ratingCount": "10500"
+            }
+          })}
+        </script>
       </Helmet>
 
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">

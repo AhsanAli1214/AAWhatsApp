@@ -17,6 +17,8 @@ function Router() {
       <Route path="/app/:slug" component={AppDetails} />
       <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/privacy" component={PrivacyPolicy} />
+      <Route path="/terms" component={TermsOfService} />
       <Route path="/:rest*" component={Home} />
     </Switch>
   );
