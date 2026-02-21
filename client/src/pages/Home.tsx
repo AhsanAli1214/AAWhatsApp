@@ -279,7 +279,6 @@ export default function Home() {
               <Search className="mb-2 h-12 w-12 opacity-20" />
               <p>No apps found matching your criteria</p>
               <Button
-                variant="link"
                 onClick={() => {
                   setSearchQuery("");
                   setActiveCategory("All");
