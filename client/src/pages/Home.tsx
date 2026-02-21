@@ -15,10 +15,8 @@ import { SiYoutubemusic } from "react-icons/si";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { storeApps } from "@/data/appData";
+import { STORE_LINKS, storeApps, storeCategories } from "@/data/appData";
 import { APP_LOGO_URL } from "@/lib/branding";
-
-const categories = ["All", "Communication", "Business", "Video", "Photography", "Music & Audio"];
 
 type StoreApp = (typeof storeApps)[number];
 
@@ -197,7 +195,9 @@ export default function Home() {
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button className="h-11 rounded-xl bg-white px-5 font-semibold text-emerald-700 hover:bg-emerald-50">Browse Featured Apps</Button>
-                <Button variant="outline" className="h-11 rounded-xl border-white/40 bg-white/10 px-5 font-semibold text-white hover:bg-white/20">Trusted & Daily Updated</Button>
+                <a href={STORE_LINKS.telegramChannel} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="h-11 rounded-xl border-white/40 bg-white/10 px-5 font-semibold text-white hover:bg-white/20">Trusted & Daily Updated</Button>
+                </a>
               </div>
             </div>
 
@@ -224,7 +224,7 @@ export default function Home() {
 
         <section>
           <div className="flex gap-3 overflow-x-auto pb-2">
-            {categories.map((category) => (
+            {storeCategories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}

@@ -7,8 +7,18 @@ import reminiLogo from "@assets/download_1771149808669.png";
 import { AA_WHATSAPP_ICON_URL } from "@/lib/branding";
 
 // --- Technical & Shared Links ---
-const SHARED_LINKS = {
+export const STORE_LINKS = {
   aaModsServices: "https://ahsanali.short.gy/services-ahsan",
+  telegramChannel: "https://t.me/AA_ModsOfficial",
+} as const;
+
+export const APP_EDITOR_GUIDE = {
+  file: "client/src/data/appData.ts",
+  notes: [
+    "All app content is managed in this file.",
+    "Each app has its own dedicated section inside APP_DATA.",
+    "Add a new app by duplicating one section and updating slug, metadata, links, and content.",
+  ],
 } as const;
 
 // --- Icon URLs ---
@@ -23,6 +33,7 @@ const ICONS = {
 
 // --- App Definitions (The Single Source of Truth) ---
 export const APP_DATA = {
+  // ===== AA WhatsApp Section =====
   aaWhatsApp: {
     // Technical Info
     version: "V4.0",
@@ -32,6 +43,11 @@ export const APP_DATA = {
     directDownloadLink: getSecureDownloadUrl(
       SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern,
     ),
+    primaryDownloadLabel: "Download com.aawhatsapp",
+    mirrorDownloadLink: getSecureDownloadUrl(
+      SECURE_DOWNLOAD_ASSETS.aaWhatsAppLegacy,
+    ),
+    mirrorDownloadLabel: "Download com.gbwhatsapp",
     changelog: [
       "FIXED: App Crash Problem When Link Device or Register Number",
       "NEW: Profile cover photo support for enhanced personalization",
@@ -64,7 +80,7 @@ export const APP_DATA = {
       "Download AA WhatsApp latest version by AA Mods with anti-ban protection, privacy controls, and full update details.",
     seoKeywords:
       "AA WhatsApp, AA WhatsApp APK, Anti-Ban WhatsApp, WhatsApp mod 2026, privacy WhatsApp mod, AA Mods",
-    note: "If installation protection appears, tap Install anyway from Android security prompt. Keep AA Mods Services updated for best compatibility.",
+    note: "If installation protection appears, tap Install anyway from Android security prompt and continue setup.",
     seeMoreMods: [
       { label: "YouTube Premium Mod APK", slug: "youtube-premium-mod" },
     ],
@@ -105,6 +121,7 @@ The app includes regular anti-ban tuning and package-level optimizations to redu
 ## Final thoughts
 If you want a balance of performance, customization, and privacy improvements, AA WhatsApp is the most complete AA Mods communication build.`,
   },
+  // ===== AA Business Section =====
   aaBusiness: {
     version: "V1.0",
     baseVersion: "2.25.29.77",
@@ -170,6 +187,7 @@ Useful for support teams that need quick replies and organized communication rou
 - Better customer follow-up consistency
 - More organized outreach and support structure`,
   },
+  // ===== CapCut Pro Section =====
   capcutPro: {
     version: "V17.3.0",
     baseVersion: "v17.3.0 Stable",
@@ -244,6 +262,7 @@ Optimized output handling helps keep rendering and final export more consistent.
 - Business promo videos
 - Daily creator reels and edits`,
   },
+  // ===== Remini Mod Section =====
   reminiMod: {
     version: "v3.7.1260",
     baseVersion: "3.7.1260.202519018",
@@ -306,6 +325,7 @@ Useful for restoring historical photos and family albums.
 ## Why it works
 The build is optimized around enhancement quality while reducing interruptions for a smoother editing session.`,
   },
+  // ===== YouTube Premium Mod Section =====
   youtubePremium: {
     version: "v20.45.39",
     baseVersion: "20.45.39 stable",
@@ -314,6 +334,7 @@ The build is optimized around enhancement quality while reducing interruptions f
     directDownloadLink: getSecureDownloadUrl(
       SECURE_DOWNLOAD_ASSETS.youtubePremiumMain,
     ),
+    aaModsServicesRequired: true,
     changelog: [
       "Ad-free playback",
       "Background play",
@@ -369,12 +390,16 @@ Provides extra playback options not always available in standard builds.
 ## Good to know
 For login-related features, keep AA Mods Services updated to the latest compatible release.`,
   },
+  // ===== YouTube Music Mod Section =====
   youtubeMusic: {
     version: "v8.45.32",
     baseVersion: "8.45.32 stable",
     updateDate: { display: "February 20, 2026", iso: "2026-02-20" },
     downloadLink: "https://aa-mods.vercel.app/youtube-music-mod/install",
-    directDownloadLink: "https://aa-mods.vercel.app/aa-mods-page",
+    directDownloadLink: getSecureDownloadUrl(
+      SECURE_DOWNLOAD_ASSETS.youtubeMusicMain,
+    ),
+    aaModsServicesRequired: true,
     changelog: [
       "Ad-free music streaming",
       "Background playback",
@@ -436,3 +461,7 @@ export type AppKey = keyof typeof APP_DATA;
 export const storeApps = Object.values(APP_DATA);
 export const getStoreApp = (slug: string) =>
   storeApps.find((app) => app.slug === slug);
+export const storeCategories = [
+  "All",
+  ...Array.from(new Set(storeApps.map((app) => app.category))),
+];

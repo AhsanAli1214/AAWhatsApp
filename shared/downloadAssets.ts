@@ -51,7 +51,7 @@ const APP_DOWNLOAD_REDIRECT_GROUPS = {
     [APP_DOWNLOAD_ASSET_IDS.youtubePremium.main]: "https://ahsanali.short.gy/youtube-ahsan",
   },
   youtubeMusic: {
-    [APP_DOWNLOAD_ASSET_IDS.youtubeMusic.main]: "https://aa-mods.vercel.app/aa-mods-page",
+    [APP_DOWNLOAD_ASSET_IDS.youtubeMusic.main]: "https://ahsanali.short.gy/aa-music-premium",
   },
 } as const;
 

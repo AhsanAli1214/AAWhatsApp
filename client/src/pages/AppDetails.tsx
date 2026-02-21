@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
-import { getStoreApp, storeApps } from "@/data/appData";
+import { STORE_LINKS, getStoreApp, storeApps } from "@/data/appData";
 import { APP_LOGO_URL } from "@/lib/branding";
 
 type StoreApp = (typeof storeApps)[number];
@@ -257,9 +257,25 @@ export default function AppDetails() {
               <p className="mt-2 text-slate-600">The primary secure download button is always placed below the full blog/details section.</p>
               <a href={app.directDownloadLink} target="_blank" rel="noopener noreferrer" className="mt-6 block">
                 <Button className="h-14 w-full gap-2 rounded-2xl bg-emerald-600 text-lg font-bold hover:bg-emerald-700">
-                  <Download className="h-6 w-6" /> Download APK Now
+                  <Download className="h-6 w-6" /> {app.primaryDownloadLabel ?? "Download APK Now"}
                 </Button>
               </a>
+
+              {app.mirrorDownloadLink && (
+                <a href={app.mirrorDownloadLink} target="_blank" rel="noopener noreferrer" className="mt-3 block">
+                  <Button variant="outline" className="h-12 w-full rounded-2xl border-emerald-300 font-bold text-emerald-700 hover:bg-emerald-100">
+                    {app.mirrorDownloadLabel ?? "Download Mirror APK"}
+                  </Button>
+                </a>
+              )}
+
+              {app.aaModsServicesRequired && (
+                <a href={STORE_LINKS.aaModsServices} target="_blank" rel="noopener noreferrer" className="mt-3 block">
+                  <Button variant="outline" className="h-12 w-full rounded-2xl border-emerald-300 font-bold text-emerald-700 hover:bg-emerald-100">
+                    Download AA Mods Services (Required)
+                  </Button>
+                </a>
+              )}
             </section>
           </div>
 
@@ -346,7 +362,7 @@ export default function AppDetails() {
                 <p className="text-sm leading-relaxed text-slate-100/90">
                   Get instant release alerts, update notes, troubleshooting help, and direct support from the AA Mods team.
                 </p>
-                <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer" className="block pt-1">
+                <a href={STORE_LINKS.telegramChannel} target="_blank" rel="noopener noreferrer" className="block pt-1">
                   <Button className="h-12 w-full rounded-xl bg-white font-bold text-slate-900 hover:bg-slate-100">
                     Join Telegram Channel
                   </Button>
