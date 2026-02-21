@@ -57,20 +57,7 @@ export default function AppDetails() {
     );
   }
 
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: app.seoTitle,
-        text: app.seoDescription,
-        url: window.location.href,
-      });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      alert("App link copied to clipboard.");
-    }
-  };
-
-  const relatedMods = (app.seeMoreMods ?? []).map((mod: any) => ({ label: mod.label, slug: mod.slug }));
+  const relatedMods = (app.seeMoreMods ?? []).map((mod: any) => ({ label: mod.label as string, slug: mod.slug as string }));
 
   return (
     <div className="min-h-screen bg-[#f8fafd] text-slate-900 pb-20">
@@ -121,7 +108,7 @@ export default function AppDetails() {
 
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4">
             <Link href="/">
               <Button variant="ghost" size="icon" className="rounded-full">
                 <ArrowLeft className="h-5 w-5" />
@@ -215,14 +202,12 @@ export default function AppDetails() {
                   </div>
                   <div>
                     <h3 className="font-bold text-blue-900">What's New</h3>
-                    <ul className="mt-2 space-y-1.5">
-                      {app.whatsNew?.slice(0, 3).map((item: string, i: number) => (
+                      {app.whatsNew?.slice(0, 3).map((item: any, i: number) => (
                         <li key={i} className="text-sm text-blue-800 flex items-start gap-2">
                           <CheckCircle2 className="h-4 w-4 shrink-0 mt-0.5" />
-                          <span>{item}</span>
+                          <span>{String(item)}</span>
                         </li>
                       ))}
-                    </ul>
                   </div>
                 </CardContent>
               </Card>
@@ -270,10 +255,10 @@ export default function AppDetails() {
                 <h2 className="text-3xl font-black tracking-tight">Full Changelog</h2>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
-                {app.whatsNew?.map((item: string, i: number) => (
+                {app.whatsNew?.map((item: any, i: number) => (
                   <div key={i} className="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50 transition-all group">
                     <div className="h-2 w-2 rounded-full bg-emerald-500 mt-2 shrink-0 group-hover:scale-125 transition-transform" />
-                    <p className="text-slate-700 font-semibold leading-relaxed">{item}</p>
+                    <p className="text-slate-700 font-semibold leading-relaxed">{String(item)}</p>
                   </div>
                 ))}
               </div>

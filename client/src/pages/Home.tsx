@@ -176,13 +176,15 @@ export default function Home() {
             <div className="flex h-64 flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-slate-500">
               <Search className="mb-2 h-10 w-10 opacity-20" />
               <p>No apps found matching your criteria</p>
-              <Button 
-                variant="ghost" 
-                onClick={() => { setSearchQuery(""); setActiveCategory("All"); }}
-                className="mt-2 text-emerald-600"
-              >
-                Clear all filters
-              </Button>
+                <Link href="/">
+                  <Button 
+                    variant="ghost" 
+                    onClick={() => { setSearchQuery(""); setActiveCategory("All"); }}
+                    className="mt-2 text-emerald-600"
+                  >
+                    Clear all filters
+                  </Button>
+                </Link>
             </div>
           )}
         </section>

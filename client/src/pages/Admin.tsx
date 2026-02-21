@@ -31,10 +31,10 @@ export default function Admin() {
   const { toast } = useToast();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
-  const [apps, setApps] = useState(Object.values(APP_DATA));
-  const [selectedApp, setSelectedApp] = useState<any>(apps[0]);
+  const [apps, setApps] = useState<any[]>(Object.values(APP_DATA));
+  const [selectedApp, setSelectedApp] = useState<any>(Object.values(APP_DATA)[0]);
   const [isEditing, setIsEditing] = useState(false);
-  const [editedData, setEditedData] = useState<any>(apps[0]);
+  const [editedData, setEditedData] = useState<any>(Object.values(APP_DATA)[0]);
   const [searchQuery, setSearchQuery] = useState("");
 
   // Update selectedApp and editedData when apps change
@@ -76,18 +76,26 @@ export default function Admin() {
     // In a real app, this would be a database call. 
     // Since we are in Fast mode and the current architecture relies on appData.ts,
     // we'll update the local state and notify the user.
-    // To make it "real-time" across the session, we would need a backend.
+    // To make it "real-time" across the session, we'll update the local storeApps array too.
     
-    setApps(prev => prev.map(a => a.slug === editedData.slug ? {
+    const updatedApps = apps.map(a => a.slug === editedData.slug ? {
       ...editedData,
-      // Ensure changelog and whatsNew are treated as arrays to satisfy type checks if needed
-      changelog: Array.isArray(editedData.changelog) ? editedData.changelog : (editedData.changelog as string).split("\n"),
-      whatsNew: Array.isArray(editedData.whatsNew) ? editedData.whatsNew : (editedData.whatsNew as string).split("\n"),
-    } : a) as any);
+      changelog: Array.isArray(editedData.changelog) ? editedData.changelog : String(editedData.changelog).split("\n").filter(Boolean),
+      whatsNew: Array.isArray(editedData.whatsNew) ? editedData.whatsNew : String(editedData.whatsNew).split("\n").filter(Boolean),
+    } : a);
+
+    setApps(updatedApps as any);
+    
+    // Force update the global storeApps reference for the current session
+    // This allows Home and AppDetails to see the changes immediately
+    const index = storeApps.findIndex(a => a.slug === editedData.slug);
+    if (index !== -1) {
+      Object.assign(storeApps[index], updatedApps.find(a => a.slug === editedData.slug));
+    }
     
     toast({
-      title: "Changes Saved Locally",
-      description: "App data updated in current session. Note: For permanent persistence, a backend integration is required.",
+      title: "Changes Saved Real-Time",
+      description: "App data updated across the entire site for this session. Note: For permanent persistence, a backend integration is required.",
     });
     
     setIsEditing(false);
