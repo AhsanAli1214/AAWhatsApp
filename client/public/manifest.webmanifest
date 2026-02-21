@@ -1,23 +1,22 @@
 {
-  "name": "AA WhatsApp",
-  "short_name": "AAMods",
-  "description": "The most secure WhatsApp modification with Anti-Ban and Privacy Core.",
-  "start_url": "/",
-  "display": "standalone",
+  "name": "AA Mods Store",
+  "short_name": "AA Mods",
+  "description": "Official AA Mods app store for secure APK downloads.",
+  "theme_color": "#030712",
   "background_color": "#030712",
-  "theme_color": "#10b981",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
-      "src": "/favicon.png",
+      "src": "https://i.postimg.cc/0NRdTr3r/generated_image_6bb6c336_9b07_4a65_b01b_92ba8e39c556_modified.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "/favicon.png",
+      "src": "https://i.postimg.cc/0NRdTr3r/generated_image_6bb6c336_9b07_4a65_b01b_92ba8e39c556_modified.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }

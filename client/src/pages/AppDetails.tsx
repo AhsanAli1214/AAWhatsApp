@@ -1,49 +1,46 @@
+import { useRef } from "react";
 import { useRoute, Link } from "wouter";
 import { Helmet } from "react-helmet";
-import { 
-  ArrowLeft, 
-  Download, 
-  ShieldCheck, 
-  Zap, 
-  Info, 
-  CheckCircle2, 
-  ChevronRight,
-  Share2,
+import {
   AlertTriangle,
+  ArrowLeft,
+  CheckCircle2,
+  ChevronRight,
+  Download,
   History,
+  Info,
+  Share2,
+  ShieldCheck,
   Star,
-  Users
+  Users,
+  Zap,
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
-import { getStoreApp } from "@/data/appData";
-import logo from "@/assets/logo.png";
+import { getStoreApp, storeApps } from "@/data/appData";
+import { APP_LOGO_URL } from "@/lib/branding";
+
+type StoreApp = (typeof storeApps)[number];
 
 function AppIcon({ app }: { app: any }) {
-  if (app.iconImage) {
-    return (
-      <div className="relative">
-        <div className="absolute -inset-4 rounded-[3rem] bg-emerald-500/10 blur-2xl" />
-        <img 
-          src={app.iconImage} 
-          alt={`${app.name} icon`} 
-          className="relative h-32 w-32 sm:h-40 sm:w-40 rounded-[2rem] sm:rounded-[2.5rem] object-cover shadow-2xl ring-4 ring-white" 
-        />
-        <div className="absolute -bottom-2 -right-2 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg border-4 border-white">
-          <ShieldCheck className="h-5 w-5 sm:h-6 sm:w-6" />
-        </div>
-      </div>
-    );
-  }
-  return null;
+  if (!app.iconImage) return null;
+
+  return (
+    <img
+      src={app.iconImage}
+      alt={`${app.name} icon`}
+      className="h-32 w-32 rounded-[2rem] object-cover shadow-md sm:h-40 sm:w-40 sm:rounded-[2.5rem]"
+    />
+  );
 }
 
 export default function AppDetails() {
   const [, params] = useRoute("/app/:slug");
   const app = getStoreApp(params?.slug || "");
+  const mainDownloadRef = useRef<HTMLDivElement | null>(null);
 
   if (!app) {
     return (
@@ -64,16 +61,29 @@ export default function AppDetails() {
         text: app.seoDescription,
         url: window.location.href,
       });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      alert("App link copied to clipboard.");
+      return;
     }
+
+    navigator.clipboard.writeText(window.location.href);
+    alert("App link copied to clipboard.");
   };
 
-  const relatedMods = (app.seeMoreMods ?? []).map((mod: any) => ({ label: mod.label, slug: mod.slug }));
+  const scrollToMainDownload = () => {
+    mainDownloadRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+  const primaryRelatedApps = (app.seeMoreMods ?? [])
+    .map((mod: any) => storeApps.find((item) => item.slug === mod.slug))
+    .filter((item): item is StoreApp => Boolean(item));
+
+  const fallbackRelatedApps = storeApps.filter(
+    (item) => item.slug !== app.slug && !primaryRelatedApps.some((related) => related.slug === item.slug),
+  );
+
+  const relatedApps = [...primaryRelatedApps, ...fallbackRelatedApps].slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-[#f8fafd] text-slate-900 pb-20">
+    <div className="min-h-screen bg-[#f8fafd] pb-20 text-slate-900">
       <Helmet>
         <title>{app.seoTitle}</title>
         <meta name="description" content={app.seoDescription} />
@@ -90,7 +100,7 @@ export default function AppDetails() {
               </Button>
             </Link>
             <div className="flex items-center gap-2">
-              <img src={logo} alt="AA Mods" className="h-8 w-8 rounded-lg" />
+              <img src={APP_LOGO_URL} alt="AA Mods" className="h-11 w-11 rounded-xl object-cover" />
               <span className="hidden font-bold sm:inline-block">AA Mods Store</span>
             </div>
           </div>
@@ -101,53 +111,54 @@ export default function AppDetails() {
       </header>
 
       <main className="mx-auto max-w-5xl px-4 pt-8">
-        <section className="relative overflow-hidden rounded-[2.5rem] bg-white border border-slate-200 shadow-sm">
+        <section className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-sm">
           <div className={`h-32 w-full bg-gradient-to-r ${app.gradient} opacity-90`} />
           <div className="px-6 pb-8">
-            <div className="relative -mt-16 flex flex-col sm:flex-row sm:items-end gap-6 text-center sm:text-left">
+            <div className="relative -mt-16 flex flex-col gap-6 text-center sm:flex-row sm:items-end sm:text-left">
               <div className="flex justify-center sm:justify-start">
                 <AppIcon app={app} />
               </div>
-              
+
               <div className="flex-1 space-y-2">
-                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-start">
                   <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">{app.name}</h1>
-                  <Badge variant="secondary" className="bg-emerald-100 text-emerald-700 hover:bg-emerald-100 border-none">
+                  <Badge variant="secondary" className="border-none bg-emerald-100 text-emerald-700 hover:bg-emerald-100">
                     Official Build
                   </Badge>
                 </div>
                 <p className="text-lg font-medium text-slate-600">{app.subtitle}</p>
-                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-1">
+                <div className="flex flex-wrap items-center justify-center gap-4 pt-1 sm:justify-start">
                   <div className="flex items-center gap-1.5">
                     <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
                     <span className="font-bold text-slate-900">{app.rating}</span>
                   </div>
-                  <Separator orientation="vertical" className="hidden sm:block h-4" />
+                  <Separator orientation="vertical" className="hidden h-4 sm:block" />
                   <div className="flex items-center gap-1.5 text-slate-500">
                     <Users className="h-4 w-4" />
                     <span className="text-sm font-medium">{app.downloads} Downloads</span>
                   </div>
-                  <Separator orientation="vertical" className="hidden sm:block h-4" />
-                  <div className="flex items-center gap-1.5 text-slate-500">
-                    <Badge variant="outline" className="text-xs uppercase tracking-wider">{app.category}</Badge>
-                  </div>
+                  <Separator orientation="vertical" className="hidden h-4 sm:block" />
+                  <Badge variant="outline" className="text-xs uppercase tracking-wider">
+                    {app.category}
+                  </Badge>
                 </div>
               </div>
 
-              <div className="pt-4 sm:pt-0 w-full sm:w-auto">
-                <a href={app.directDownloadLink} target="_blank" rel="noopener noreferrer" className="block">
-                  <Button className="w-full h-14 px-8 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-lg font-bold shadow-lg shadow-emerald-200 gap-2">
-                    <Download className="h-6 w-6" /> Download APK
-                  </Button>
-                </a>
-                <p className="mt-2 text-center text-xs text-slate-400 font-medium">Safe & Scanned by Play Protect</p>
+              <div className="w-full pt-4 sm:w-auto sm:pt-0">
+                <Button
+                  onClick={scrollToMainDownload}
+                  className="h-14 w-full gap-2 rounded-2xl bg-slate-900 px-8 text-base font-bold text-white shadow-lg hover:bg-slate-800"
+                >
+                  <Download className="h-5 w-5" /> Go to Main Download
+                </Button>
+                <p className="mt-2 text-center text-xs font-medium text-slate-500">Scroll to secure download section</p>
               </div>
             </div>
           </div>
 
           <Separator className="bg-slate-100" />
-          
-          <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-slate-100">
+
+          <div className="grid grid-cols-2 divide-x divide-slate-100 sm:grid-cols-4">
             <div className="p-4 text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Version</p>
               <p className="mt-1 font-bold text-slate-900">{app.version}</p>
@@ -158,7 +169,7 @@ export default function AppDetails() {
             </div>
             <div className="p-4 text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Base</p>
-              <p className="mt-1 font-bold text-slate-900 truncate px-2">{app.baseVersion}</p>
+              <p className="mt-1 truncate px-2 font-bold text-slate-900">{app.baseVersion}</p>
             </div>
             <div className="p-4 text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Dev</p>
@@ -168,19 +179,19 @@ export default function AppDetails() {
         </section>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-3">
-          <div className="lg:col-span-2 space-y-8">
-            <section className="grid sm:grid-cols-2 gap-4">
-              <Card className="border-slate-200 shadow-sm bg-blue-50/30 border-l-4 border-l-blue-500">
-                <CardContent className="p-4 flex gap-4">
-                  <div className="h-10 w-10 shrink-0 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+          <div className="space-y-8 lg:col-span-2">
+            <section className="grid gap-4 sm:grid-cols-2">
+              <Card className="border-l-4 border-l-blue-500 border-slate-200 bg-blue-50/30 shadow-sm">
+                <CardContent className="flex gap-4 p-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600">
                     <Zap className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="font-bold text-blue-900">What's New</h3>
                     <ul className="mt-2 space-y-1.5">
                       {app.whatsNew?.slice(0, 3).map((item: string, i: number) => (
-                        <li key={i} className="text-sm text-blue-800 flex items-start gap-2">
-                          <CheckCircle2 className="h-4 w-4 shrink-0 mt-0.5" />
+                        <li key={i} className="flex items-start gap-2 text-sm text-blue-800">
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -189,124 +200,171 @@ export default function AppDetails() {
                 </CardContent>
               </Card>
 
-              <Card className="border-slate-200 shadow-sm bg-emerald-50/30 border-l-4 border-l-emerald-500">
-                <CardContent className="p-4 flex gap-4">
-                  <div className="h-10 w-10 shrink-0 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+              <Card className="border-l-4 border-l-emerald-500 border-slate-200 bg-emerald-50/30 shadow-sm">
+                <CardContent className="flex gap-4 p-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
                     <ShieldCheck className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="font-bold text-emerald-900">Security Status</h3>
-                    <p className="mt-2 text-sm text-emerald-800 leading-relaxed">
-                      Anti-ban protection enabled. Fully compatible with Android 14. 
-                      Verified safe by our security team.
+                    <p className="mt-2 text-sm leading-relaxed text-emerald-800">
+                      Anti-ban protection enabled. Fully compatible with Android 14. Verified safe by our security team.
                     </p>
                   </div>
                 </CardContent>
               </Card>
             </section>
 
-            <section className="rounded-[2.5rem] bg-white border border-slate-200 p-6 sm:p-10 shadow-sm">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="h-12 w-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600">
-                  <Info className="h-6 w-6" />
-                </div>
-                <h2 className="text-3xl font-black tracking-tight">App Guide & Details</h2>
-              </div>
-              <article className="prose prose-slate max-w-none 
-                prose-headings:font-black prose-headings:tracking-tight prose-headings:text-slate-900
-                prose-h2:text-3xl prose-h3:text-2xl
-                prose-p:text-slate-600 prose-p:text-lg prose-p:leading-relaxed
-                prose-li:text-slate-600 prose-li:text-lg
-                prose-strong:text-slate-900 prose-strong:font-bold
-                prose-hr:border-slate-100
-              ">
-                <ReactMarkdown>{app.blogMarkdown}</ReactMarkdown>
-              </article>
-            </section>
-
-            <section className="rounded-[2.5rem] bg-white border border-slate-200 p-6 sm:p-10 shadow-sm">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="h-12 w-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-900">
+            <section className="rounded-[2.5rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
+              <div className="mb-8 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-50 text-slate-900">
                   <History className="h-6 w-6" />
                 </div>
                 <h2 className="text-3xl font-black tracking-tight">Full Changelog</h2>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {app.whatsNew?.map((item: string, i: number) => (
-                  <div key={i} className="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50 transition-all group">
-                    <div className="h-2 w-2 rounded-full bg-emerald-500 mt-2 shrink-0 group-hover:scale-125 transition-transform" />
-                    <p className="text-slate-700 font-semibold leading-relaxed">{item}</p>
+                  <div
+                    key={i}
+                    className="group flex items-start gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4 transition-all hover:border-emerald-200 hover:bg-emerald-50"
+                  >
+                    <div className="mt-2 h-2 w-2 shrink-0 rounded-full bg-emerald-500 transition-transform group-hover:scale-125" />
+                    <p className="font-semibold leading-relaxed text-slate-700">{item}</p>
                   </div>
                 ))}
               </div>
             </section>
+
+            <section className="rounded-[2.5rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
+              <div className="mb-8 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
+                  <Info className="h-6 w-6" />
+                </div>
+                <h2 className="text-3xl font-black tracking-tight">App Guide & Details</h2>
+              </div>
+              <article
+                className="prose prose-slate max-w-none prose-h2:text-3xl prose-h3:text-2xl prose-headings:font-black
+                prose-headings:tracking-tight prose-headings:text-slate-900 prose-li:text-lg prose-li:text-slate-600
+                prose-p:text-lg prose-p:leading-relaxed prose-p:text-slate-600 prose-strong:font-bold prose-strong:text-slate-900"
+              >
+                <ReactMarkdown>{app.blogMarkdown}</ReactMarkdown>
+              </article>
+            </section>
+
+            <section ref={mainDownloadRef} className="rounded-[2.5rem] border border-emerald-200 bg-gradient-to-r from-emerald-50 to-cyan-50 p-6 shadow-sm sm:p-10">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-700">Main Download</p>
+              <h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900">Download {app.name} APK</h2>
+              <p className="mt-2 text-slate-600">The primary secure download button is always placed below the full blog/details section.</p>
+              <a href={app.directDownloadLink} target="_blank" rel="noopener noreferrer" className="mt-6 block">
+                <Button className="h-14 w-full gap-2 rounded-2xl bg-emerald-600 text-lg font-bold hover:bg-emerald-700">
+                  <Download className="h-6 w-6" /> Download APK Now
+                </Button>
+              </a>
+            </section>
           </div>
 
           <div className="space-y-6">
-            <Card className="rounded-[2.5rem] border-slate-200 shadow-sm overflow-hidden">
+            <Card className="overflow-hidden rounded-[2.5rem] border-slate-200 shadow-sm">
               <div className="bg-slate-900 p-6 text-white">
-                <h3 className="text-xl font-black flex items-center gap-2">
+                <h3 className="flex items-center gap-2 text-xl font-black">
                   <ShieldCheck className="h-6 w-6 text-emerald-400" /> Install Guide
                 </h3>
               </div>
-              <CardContent className="p-8 space-y-6">
+              <CardContent className="space-y-6 p-8">
                 <div className="space-y-5">
                   {[
                     "Download the APK file",
                     "Enable 'Unknown Sources' in settings",
                     "Tap install and follow prompts",
-                    "Launch and enjoy premium features"
+                    "Launch and enjoy premium features",
                   ].map((step, i) => (
-                    <div key={i} className="flex gap-4 items-start">
+                    <div key={i} className="flex items-start gap-4">
                       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-sm font-black text-emerald-700">
                         {i + 1}
                       </div>
-                      <p className="text-base font-bold text-slate-700 leading-tight pt-1">{step}</p>
+                      <p className="pt-1 text-base font-bold leading-tight text-slate-700">{step}</p>
                     </div>
                   ))}
                 </div>
-                
+
                 {app.note && (
-                  <div className="rounded-[2rem] bg-amber-50 p-6 border border-amber-100 flex gap-4">
-                    <AlertTriangle className="h-6 w-6 text-amber-500 shrink-0" />
-                    <p className="text-sm font-bold text-amber-900 leading-relaxed">
-                      {app.note}
-                    </p>
+                  <div className="flex gap-4 rounded-[2rem] border border-amber-100 bg-amber-50 p-6">
+                    <AlertTriangle className="h-6 w-6 shrink-0 text-amber-500" />
+                    <p className="text-sm font-bold leading-relaxed text-amber-900">{app.note}</p>
                   </div>
                 )}
               </CardContent>
             </Card>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-black px-2">Related Mods</h3>
+              <h3 className="px-2 text-xl font-black">Related Apps</h3>
               <div className="space-y-3">
-                {relatedMods.map((mod: any, i: number) => (
-                  <Link key={i} href={`/app/${mod.slug}`}>
-                    <div className="group flex items-center justify-between p-5 rounded-[2rem] bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-lg transition-all cursor-pointer">
-                      <span className="font-black text-slate-800 group-hover:text-emerald-600">{mod.label}</span>
-                      <div className="h-10 w-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-emerald-50 transition-colors">
-                        <ChevronRight className="h-6 w-6 text-slate-400 group-hover:text-emerald-600" />
+                {relatedApps.map((relatedApp) => (
+                  <article
+                    key={relatedApp.slug}
+                    className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition-all hover:border-emerald-200 hover:shadow-md"
+                  >
+                    <div className={`flex items-center gap-3 bg-gradient-to-r ${relatedApp.gradient} p-4 text-white`}>
+                      <img src={relatedApp.iconImage} alt={`${relatedApp.name} icon`} className="h-12 w-12 rounded-xl object-cover" />
+                      <div className="min-w-0">
+                        <h4 className="truncate text-base font-black">{relatedApp.name}</h4>
+                        <p className="truncate text-xs opacity-90">{relatedApp.subtitle}</p>
                       </div>
                     </div>
-                  </Link>
+                    <div className="space-y-3 p-4">
+                      <div className="flex items-center gap-3 text-xs font-medium text-slate-600">
+                        <span className="flex items-center gap-1">
+                          <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" /> {relatedApp.rating}
+                        </span>
+                        <span className="h-1 w-1 rounded-full bg-slate-300" />
+                        <span>{relatedApp.downloads}</span>
+                        <span className="h-1 w-1 rounded-full bg-slate-300" />
+                        <span>{relatedApp.version}</span>
+                      </div>
+                      <Link href={`/app/${relatedApp.slug}`}>
+                        <Button className="h-11 w-full gap-2 rounded-xl bg-emerald-600 px-5 text-sm font-bold tracking-wide hover:bg-emerald-700">
+                          View App Details <ChevronRight className="h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </article>
                 ))}
+
                 <Link href="/">
-                  <Button variant="outline" className="w-full rounded-[2rem] h-14 border-slate-200 border-2 font-black hover:bg-slate-50 text-slate-700">
+                  <Button variant="outline" className="h-14 w-full rounded-[2rem] border-2 border-slate-200 font-black text-slate-700 hover:bg-slate-50">
                     Explore All Apps
                   </Button>
                 </Link>
               </div>
             </div>
 
-            <div className="p-8 rounded-[2.5rem] bg-emerald-600 text-white text-center space-y-3 shadow-2xl shadow-emerald-200 overflow-hidden relative">
-              <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 h-32 w-32 bg-white/10 rounded-full blur-2xl" />
-              <p className="text-xs font-black uppercase tracking-[0.2em] opacity-80">Join Community</p>
-              <h4 className="text-xl font-black">AA Mods Official</h4>
-              <p className="text-sm opacity-90 font-medium">Get instant updates, support, and exclusive mod news.</p>
-              <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer" className="block pt-2">
-                <Button variant="secondary" className="w-full h-12 rounded-xl font-black text-emerald-700">Join Telegram</Button>
-              </a>
-            </div>
+
+            <Card className="overflow-hidden rounded-[2.5rem] border-none bg-gradient-to-br from-[#0f172a] via-[#0b2443] to-[#0d9488] text-white shadow-xl">
+              <CardContent className="space-y-4 p-7">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-200">Official Channel</p>
+                <h4 className="text-2xl font-black leading-tight">Join AA Mods Telegram</h4>
+                <p className="text-sm leading-relaxed text-slate-100/90">
+                  Get instant release alerts, update notes, troubleshooting help, and direct support from the AA Mods team.
+                </p>
+                <a href="https://t.me/AA_ModsOfficial" target="_blank" rel="noopener noreferrer" className="block pt-1">
+                  <Button className="h-12 w-full rounded-xl bg-white font-bold text-slate-900 hover:bg-slate-100">
+                    Join Telegram Channel
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden rounded-[2.5rem] border-slate-200 bg-white shadow-sm">
+              <CardContent className="space-y-4 p-7">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-600">AA Mods Trust Center</p>
+                <h4 className="text-xl font-black leading-tight text-slate-900">Verified Updates & Secure Downloads</h4>
+                <ul className="space-y-2 text-sm font-medium text-slate-600">
+                  <li className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-emerald-500" />Fast release tracking for all major builds</li>
+                  <li className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-emerald-500" />Direct links with stable mirrors and update notes</li>
+                  <li className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-emerald-500" />Clean install guidance for safer setup flow</li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </main>
