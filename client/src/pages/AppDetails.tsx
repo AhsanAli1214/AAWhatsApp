@@ -12,23 +12,23 @@ import {
   AlertTriangle,
   History,
   Star,
-  Users
+  Users,
+  RefreshCw
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
-import { getStoreApp } from "@/data/appData";
-import logo from "@/assets/logo.png";
+import { useQuery } from "@tanstack/react-query";
 
 function AppIcon({ app }: { app: any }) {
-  if (app.iconImage) {
+  if (app.icon_image) {
     return (
       <div className="relative">
         <div className="absolute -inset-4 rounded-[3rem] bg-emerald-500/10 blur-2xl" />
         <img 
-          src={app.iconImage} 
+          src={app.icon_image} 
           alt={`${app.name} icon`} 
           className="relative h-32 w-32 sm:h-40 sm:w-40 rounded-[2rem] sm:rounded-[2.5rem] object-cover shadow-2xl" 
         />
@@ -43,7 +43,22 @@ function AppIcon({ app }: { app: any }) {
 
 export default function AppDetails() {
   const [, params] = useRoute("/app/:slug");
-  const app = getStoreApp(params?.slug || "");
+  const slug = params?.slug || "";
+
+  const { data: apps = [], isLoading } = useQuery<any[]>({
+    queryKey: ["/api/apps"],
+  });
+
+  const app = apps.find((a: any) => a.slug === slug);
+
+  if (isLoading) {
+    return (
+      <div className="flex h-screen flex-col items-center justify-center bg-slate-50">
+        <RefreshCw className="h-10 w-10 animate-spin text-emerald-600 mb-4" />
+        <p className="font-bold text-slate-600">Loading App Details...</p>
+      </div>
+    );
+  }
 
   if (!app) {
     return (
@@ -84,15 +99,15 @@ export default function AppDetails() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://aa-mods.vercel.app/app/${app.slug}`} />
-        <meta property="og:title" content={app.seoTitle || app.name} />
-        <meta property="og:description" content={app.seoDescription || app.shortDescription} />
-        <meta property="og:image" content={app.iconImage} />
+        <meta property="og:title" content={app.seo_title || app.name} />
+        <meta property="og:description" content={app.seo_description || app.short_description} />
+        <meta property="og:image" content={app.icon_image} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={app.seoTitle || app.name} />
-        <meta name="twitter:description" content={app.seoDescription || app.shortDescription} />
-        <meta name="twitter:image" content={app.iconImage} />
+        <meta name="twitter:title" content={app.seo_title || app.name} />
+        <meta name="twitter:description" content={app.seo_description || app.short_description} />
+        <meta name="twitter:image" content={app.icon_image} />
 
         {/* Structured Data for Google Search Visibility */}
         <script type="application/ld+json">
@@ -112,10 +127,10 @@ export default function AppDetails() {
               "price": "0",
               "priceCurrency": "USD"
             },
-            "description": app.shortDescription,
+            "description": app.short_description,
             "softwareVersion": app.version,
             "downloadUrl": `https://aa-mods.vercel.app/app/${app.slug}`,
-            "featureList": app.whatsNew?.join(", ")
+            "featureList": app.whats_new?.join(", ")
           })}
         </script>
       </Helmet>
@@ -216,7 +231,7 @@ export default function AppDetails() {
                   </div>
                   <div>
                     <h3 className="font-bold text-blue-900">What's New</h3>
-                      {app.whatsNew?.slice(0, 3).map((item: any, i: number) => (
+                      {app.whats_new?.slice(0, 3).map((item: any, i: number) => (
                         <li key={i} className="text-sm text-blue-800 flex items-start gap-2">
                           <CheckCircle2 className="h-4 w-4 shrink-0 mt-0.5" />
                           <span>{String(item)}</span>
@@ -257,7 +272,7 @@ export default function AppDetails() {
                 prose-strong:text-slate-900 prose-strong:font-bold
                 prose-hr:border-slate-100
               ">
-                <ReactMarkdown>{app.blogMarkdown}</ReactMarkdown>
+                <ReactMarkdown>{app.blog_markdown}</ReactMarkdown>
               </article>
             </section>
 
@@ -269,7 +284,7 @@ export default function AppDetails() {
                 <h2 className="text-3xl font-black tracking-tight">Full Changelog</h2>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
-                {app.whatsNew?.map((item: any, i: number) => (
+                {app.whats_new?.map((item: any, i: number) => (
                   <div key={i} className="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50 transition-all group">
                     <div className="h-2 w-2 rounded-full bg-emerald-500 mt-2 shrink-0 group-hover:scale-125 transition-transform" />
                     <p className="text-slate-700 font-semibold leading-relaxed">{String(item)}</p>

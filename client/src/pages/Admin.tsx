@@ -38,7 +38,7 @@ export default function Admin() {
   const [editedData, setEditedData] = useState<any>(null);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const { data: apps = [], isLoading } = useQuery({
+  const { data: apps = [] as any[], isLoading } = useQuery<any[]>({
     queryKey: ["/api/apps"],
   });
 
@@ -67,10 +67,10 @@ export default function Admin() {
   });
 
   useEffect(() => {
-    if (apps.length > 0 && !selectedApp) {
+    if (Array.isArray(apps) && apps.length > 0 && !selectedApp) {
       setSelectedApp(apps[0]);
       setEditedData(apps[0]);
-    } else if (selectedApp) {
+    } else if (selectedApp && Array.isArray(apps)) {
       const updated = apps.find((a: any) => a.slug === selectedApp.slug);
       if (updated) {
         setSelectedApp(updated);
@@ -79,9 +79,9 @@ export default function Admin() {
     }
   }, [apps]);
 
-  const filteredApps = apps.filter((app: any) => 
+  const filteredApps = Array.isArray(apps) ? apps.filter((app: any) => 
     app.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  ) : [];
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,7 +100,7 @@ export default function Admin() {
       whats_new: Array.isArray(editedData.whats_new) ? editedData.whats_new : String(editedData.whats_new).split("\n").filter(Boolean),
     };
 
-    if (apps.find((a: any) => a.slug === data.slug)) {
+    if (Array.isArray(apps) && apps.find((a: any) => a.slug === data.slug)) {
       updateMutation.mutate(data);
     } else {
       createMutation.mutate(data);

@@ -6,14 +6,7 @@ type BlogPostEntry = {
 };
 
 async function loadBlogPosts(): Promise<BlogPostEntry[]> {
-  try {
-    const module = await import("../../client/src/data/blogPosts");
-    const posts = (module as { blogPosts?: BlogPostEntry[] }).blogPosts;
-    return Array.isArray(posts) ? posts : [];
-  } catch (error) {
-    console.warn("Sitemap blog post load failed, using static routes only.", error);
-    return [];
-  }
+  return [];
 }
 
 export async function generateSitemap() {
