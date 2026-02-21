@@ -4,12 +4,12 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_ENV=development ./node_modules/.bin/tsx server/index.ts",
-    "build": "./node_modules/.bin/tsx script/build.ts",
+    "dev": "NODE_ENV=development npx tsx server/index.ts",
+    "build": "npx tsx script/build.ts",
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
-    "seo:check": "./node_modules/.bin/tsx script/seo-check.ts",
-    "vercel-build": "./node_modules/.bin/tsx script/build.ts"
+    "seo:check": "npx tsx script/seo-check.ts",
+    "vercel-build": "npx tsx script/build.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

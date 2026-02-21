@@ -9,69 +9,105 @@ import {
   ShieldCheck,
   Sparkles,
   Star,
+  Download,
+  Zap,
+  CheckCircle2,
+  Users,
 } from "lucide-react";
 import { FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { SiYoutubemusic } from "react-icons/si";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 import { STORE_LINKS, storeApps, storeCategories } from "@/data/appData";
 import { APP_LOGO_URL } from "@/lib/branding";
+import { motion, AnimatePresence } from "framer-motion";
 
 type StoreApp = (typeof storeApps)[number];
 
 const AppCard = memo(function AppCard({ app }: { app: StoreApp }) {
   return (
-    <article
-      className="group relative overflow-hidden rounded-xl border border-slate-200/50 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-500/10"
+    <motion.article
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4 }}
+      className="group relative overflow-hidden rounded-2xl border border-slate-200/60 bg-white/80 backdrop-blur-sm shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10 dark:border-slate-800/60 dark:bg-slate-900/80"
     >
-      <div className={`relative flex items-center gap-3 bg-gradient-to-r ${app.gradient} p-4 text-white`}>
-        <div className="absolute inset-0 bg-black/5 transition-opacity group-hover:opacity-0" />
-        <AppCardIcon app={app} size="small" />
+      <div className={`relative flex items-center gap-4 bg-gradient-to-br ${app.gradient} p-5 text-white`}>
+        <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity group-hover:opacity-100" />
+        <div className="relative z-10 scale-100 transition-transform duration-500 group-hover:scale-110">
+          <AppCardIcon app={app} size="small" />
+        </div>
         <div className="min-w-0 flex-1 relative z-10">
-          <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-white/90">{app.developer}</p>
-          <h3 className="truncate text-lg font-black leading-tight tracking-tight text-white">{app.name}</h3>
-          <p className="truncate text-[10px] font-medium text-white/90">{app.subtitle}</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">{app.developer}</p>
+          <h3 className="truncate text-xl font-black leading-tight tracking-tight text-white">{app.name}</h3>
+          <div className="flex items-center gap-1.5">
+            <Badge className="h-4 bg-white/20 text-[8px] font-bold uppercase hover:bg-white/30 border-none">
+              {app.subtitle}
+            </Badge>
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-col p-4">
-        <p className="line-clamp-2 text-xs leading-relaxed text-slate-600">{app.shortDescription}</p>
+      <div className="flex flex-col p-5">
+        <p className="line-clamp-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{app.shortDescription}</p>
 
-        <div className="mt-3 flex items-center gap-2 text-[11px] font-semibold text-slate-500">
-          <div className="flex items-center gap-1">
-            <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
-            <span className="text-slate-900">{app.rating}</span>
+        <div className="mt-4 flex items-center justify-between">
+          <div className="flex items-center gap-3 text-[12px] font-semibold">
+            <div className="flex items-center gap-1 text-slate-900 dark:text-slate-100">
+              <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+              <span>{app.rating}</span>
+            </div>
+            <span className="h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700" />
+            <div className="flex items-center gap-1 text-slate-500">
+              <Download className="h-3 w-3" />
+              <span>{app.downloads}</span>
+            </div>
           </div>
-          <span className="h-1 w-1 rounded-full bg-slate-300" />
-          <span>{app.downloads}</span>
-          <span className="h-1 w-1 rounded-full bg-slate-300" />
-          <span className="text-[9px] uppercase tracking-wider text-emerald-600 font-bold">Verified</span>
+          <div className="flex items-center gap-1">
+            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+            <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600">Verified</span>
+          </div>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-5">
           <Link href={`/app/${app.slug}`}>
-            <Button className="w-full h-9 rounded-lg bg-emerald-600 text-white text-xs font-bold transition-all hover:bg-emerald-700 hover:shadow-md active:scale-[0.98]">
-              Get App Details <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+            <Button className="w-full h-11 rounded-xl bg-emerald-600 text-white text-sm font-bold shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-700 hover:shadow-emerald-500/30 active:scale-[0.97]">
+              View Experience <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 });
 
 
 function AppCardIcon({ app, size = "small" }: { app: any; size?: "small" | "large" }) {
-  const iconSize = size === "large" ? "h-14 w-14" : "h-10 w-10";
-  const iconInnerSize = size === "large" ? "h-10 w-10" : "h-6 w-6";
+  const iconSize = size === "large" ? "h-16 w-16" : "h-12 w-12";
+  const iconInnerSize = size === "large" ? "h-10 w-10" : "h-7 w-7";
 
   if (app.iconImage) {
-    return <img src={app.iconImage} alt={`${app.name} icon`} loading="lazy" decoding="async" className={`${iconSize} rounded-2xl object-cover shadow-sm`} />;
+    return (
+      <div className="relative">
+        <img 
+          src={app.iconImage} 
+          alt={`${app.name} icon`} 
+          loading="lazy" 
+          decoding="async" 
+          className={`${iconSize} rounded-[1.25rem] object-cover shadow-md border-2 border-white/20`} 
+        />
+        <div className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center">
+          <div className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
+        </div>
+      </div>
+    );
   }
 
   const IconWrapper = ({ children }: { children: React.ReactNode }) => (
-    <div className={`${iconSize} flex items-center justify-center rounded-2xl bg-white/20`}>{children}</div>
+    <div className={`${iconSize} flex items-center justify-center rounded-[1.25rem] bg-white/20 backdrop-blur-sm border-2 border-white/20`}>{children}</div>
   );
 
   switch (app.iconType) {
