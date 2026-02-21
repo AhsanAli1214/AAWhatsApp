@@ -1,31 +1,61 @@
-# How to Manage Your App Store
+# How to Update and Edit Any App
 
-This guide explains how to add, edit, or remove apps and details in one single place.
+This project keeps all app content in a single source of truth, so updating any app is fast and safe.
 
-## 🚀 Unified Management
-All app data, technical info, and blog content are now managed in **ONE** file:
+## 📍 Main File You Need
+All app entries are managed in:
 `client/src/data/appData.ts`
 
-### 1. How to Edit an App
-1.  Open `client/src/data/appData.ts`.
-2.  Find the app you want to edit (e.g., `aaWhatsApp`).
-3.  Update any field:
-    *   `version`: Current app version.
-    *   `updateDate`: Date shown on the page.
-    *   `changelog`: List of changes (shown in the changelog section).
-    *   `whatsNew`: Short list of highlights (shown in the blue box).
-    *   `blogMarkdown`: The detailed guide/article (supports bold, headers, etc.).
-    *   `seoTitle`/`seoDescription`: For Google search results.
+---
 
-### 2. How to Add a New App
-1.  Copy an existing app entry in `client/src/data/appData.ts`.
-2.  Paste it at the end of the `APP_DATA` object.
-3.  Change the key (e.g., `myNewApp`) and all its details.
-4.  The app will automatically appear on the Home page and get its own details page.
+## 1) Edit an Existing App
+1. Open `client/src/data/appData.ts`.
+2. Find the app key you want to edit inside `APP_DATA` (for example: `aaWhatsApp`, `aaBusiness`, `capcutPro`).
+3. Update the fields you need:
+   - `version` and `baseVersion`
+   - `updateDate.display` and `updateDate.iso`
+   - `changelog` and `whatsNew`
+   - `shortDescription` and `longDescription`
+   - `seoTitle`, `seoDescription`, `seoKeywords`
+   - `blogMarkdown` (full rich content section)
+4. Save the file.
 
-### 3. How to Change Icons
-1.  Add your icon URL to the `ICONS` object at the top of the file.
-2.  Reference it in your app's `iconImage` field.
+## 2) Add a New App
+1. In `client/src/data/appData.ts`, copy one full existing app object from `APP_DATA`.
+2. Paste it as a new key (for example `myNewApp`).
+3. Set a unique `slug` and correct app metadata (`name`, `category`, `downloads`, etc.).
+4. Set `downloadLink` and `directDownloadLink`.
+5. Add the icon URL in `ICONS` and reference it from `iconImage`.
+6. Save the file.
+
+## 3) Remove an App
+1. Delete that app object from `APP_DATA`.
+2. Remove unused icon entries from `ICONS` (optional cleanup).
+3. Save and run checks.
+
+## 4) Update Download Assets (If Needed)
+If your direct download file changes, update the asset mapping in:
+`shared/downloadAssets.ts`
+
+Then update the app's `directDownloadLink` usage in:
+`client/src/data/appData.ts`
+
+## 5) Preview and Validate Before Deploy
+Run these commands:
+- `npm run dev` (local preview)
+- `npm run check` (TypeScript validation)
+- `npm run build` (production build)
+
+## 6) Deploy Update
+This repo is configured for Vercel (`vercel-build` script). Once changes are pushed, deploy from your normal git/Vercel workflow.
 
 ---
-*The website is now cleaner, faster, and much easier to maintain!*
+
+## Quick Safe Workflow (Recommended)
+1. Edit `client/src/data/appData.ts`.
+2. Run `npm run check`.
+3. Run `npm run build`.
+4. Commit + push.
+5. Deploy.
+
+This is the easiest way to update and edit any app in this project.
