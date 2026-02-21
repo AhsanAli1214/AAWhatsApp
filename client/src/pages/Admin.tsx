@@ -48,7 +48,7 @@ export default function Admin() {
       setIsAuthenticated(true);
       toast({
         title: "Access Granted",
-        description: "Welcome to the management console.",
+        description: "Welcome back, Admin. System is ready.",
       });
     } else {
       toast({
@@ -244,48 +244,54 @@ export default function Admin() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Card className="border-slate-200 shadow-sm rounded-2xl overflow-hidden">
                     <CardHeader className="bg-slate-50/50 border-b border-slate-100">
-                      <CardTitle className="text-sm font-bold uppercase tracking-widest text-slate-500">Identity & Branding</CardTitle>
+                      <CardTitle className="text-sm font-bold uppercase tracking-widest text-slate-500">Identity & SEO Branding</CardTitle>
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">App Name</label>
-                        <Input value={editedData.name} onChange={e => setEditedData({...editedData, name: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">App Name (H1/Title Tag)</label>
+                        <Input value={editedData.name} onChange={e => setEditedData({...editedData, name: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 font-semibold focus:border-emerald-500" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Subtitle</label>
-                        <Input value={editedData.subtitle} onChange={e => setEditedData({...editedData, subtitle: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">SEO Title Tag</label>
+                        <Input value={editedData.seoTitle} onChange={e => setEditedData({...editedData, seoTitle: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Icon URL</label>
-                        <Input value={editedData.iconImage} onChange={e => setEditedData({...editedData, iconImage: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">SEO Meta Description</label>
+                        <Textarea value={editedData.seoDescription} onChange={e => setEditedData({...editedData, seoDescription: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 resize-none h-20 focus:border-emerald-500" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Gradient Class</label>
-                        <Input value={editedData.gradient} onChange={e => setEditedData({...editedData, gradient: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">SEO Keywords (Comma Separated)</label>
+                        <Input value={editedData.seoKeywords} onChange={e => setEditedData({...editedData, seoKeywords: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500" />
                       </div>
                     </CardContent>
                   </Card>
 
                   <Card className="border-slate-200 shadow-sm rounded-2xl overflow-hidden">
                     <CardHeader className="bg-slate-50/50 border-b border-slate-100">
-                      <CardTitle className="text-sm font-bold uppercase tracking-widest text-slate-500">Technical Data</CardTitle>
+                      <CardTitle className="text-sm font-bold uppercase tracking-widest text-slate-500">Technical & Branding</CardTitle>
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
-                      <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Version</label>
-                        <Input value={editedData.version} onChange={e => setEditedData({...editedData, version: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Version</label>
+                          <Input value={editedData.version} onChange={e => setEditedData({...editedData, version: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Downloads</label>
+                          <Input value={editedData.downloads} onChange={e => setEditedData({...editedData, downloads: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        </div>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Base Version</label>
-                        <Input value={editedData.baseVersion} onChange={e => setEditedData({...editedData, baseVersion: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Subtitle</label>
+                        <Input value={editedData.subtitle} onChange={e => setEditedData({...editedData, subtitle: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Download URL</label>
-                        <Input value={editedData.directDownloadLink} onChange={e => setEditedData({...editedData, directDownloadLink: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Icon URL</label>
+                        <Input value={editedData.iconImage} onChange={e => setEditedData({...editedData, iconImage: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Downloads Count</label>
-                        <Input value={editedData.downloads} onChange={e => setEditedData({...editedData, downloads: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Gradient Class</label>
+                        <Input value={editedData.gradient} onChange={e => setEditedData({...editedData, gradient: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
                       </div>
                     </CardContent>
                   </Card>
@@ -317,15 +323,25 @@ export default function Admin() {
 
                   <Card className="col-span-full border-slate-200 shadow-sm rounded-2xl overflow-hidden">
                     <CardHeader className="bg-slate-50/50 border-b border-slate-100 flex flex-row items-center justify-between">
-                      <CardTitle className="text-sm font-bold uppercase tracking-widest text-slate-500">Blog Content (Markdown)</CardTitle>
-                      <Badge variant="outline" className="text-[10px] font-black tracking-tighter uppercase">Rich Editor</Badge>
+                      <div className="space-y-1">
+                        <CardTitle className="text-sm font-bold uppercase tracking-widest text-slate-500">Blog Content (Markdown)</CardTitle>
+                        <CardDescription className="text-[10px] text-slate-400 font-medium">Supports up to 50,000 characters for deep SEO guides</CardDescription>
+                      </div>
+                      <Badge variant="outline" className="text-[10px] font-black tracking-tighter uppercase bg-white">SEO Optimized</Badge>
                     </CardHeader>
                     <CardContent className="p-6">
                       <Textarea 
                         value={editedData.blogMarkdown} 
                         onChange={e => setEditedData({...editedData, blogMarkdown: e.target.value})} 
-                        className="min-h-[400px] font-mono text-sm p-4 rounded-xl border-slate-200 bg-white text-slate-900 resize-none"
+                        maxLength={50000}
+                        placeholder="Write your comprehensive SEO guide here..."
+                        className="min-h-[600px] font-mono text-sm p-6 rounded-2xl border-slate-200 bg-white text-slate-900 resize-none focus:ring-2 focus:ring-emerald-500/20 transition-all leading-relaxed"
                       />
+                      <div className="mt-2 flex justify-end">
+                        <span className={`text-[10px] font-bold uppercase tracking-widest ${editedData.blogMarkdown?.length > 45000 ? "text-rose-500" : "text-slate-400"}`}>
+                          {editedData.blogMarkdown?.length || 0} / 50,000 Characters
+                        </span>
+                      </div>
                     </CardContent>
                   </Card>
                 </div>

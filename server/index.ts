@@ -17,14 +17,14 @@ declare module "http" {
 
 app.use(
   express.json({
-    limit: "1mb",
+    limit: "10mb",
     verify: (req, _res, buf) => {
       req.rawBody = buf;
     },
   }),
 );
 
-app.use(express.urlencoded({ extended: false, limit: "1mb" }));
+app.use(express.urlencoded({ extended: false, limit: "10mb" }));
 
 
 const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>();
