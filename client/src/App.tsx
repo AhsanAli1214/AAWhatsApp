@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 import Home from "@/pages/Home";
 import AppDetails from "@/pages/AppDetails";
 import Admin from "@/pages/Admin";
+import { Toaster } from "@/components/ui/toaster";
 
 function Router() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
         <Router />
+        <Toaster />
         <Analytics />
       </TooltipProvider>
     </QueryClientProvider>
