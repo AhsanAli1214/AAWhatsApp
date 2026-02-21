@@ -45,7 +45,9 @@ function App() {
           <meta name="copyright" content="AA Mods" />
           <meta name="author" content="AA Mods Team" />
           <link rel="canonical" href="https://aa-mods.vercel.app" />
-          <link rel="preconnect" href="https://i.postimg.cc" />
+          <meta property="og:image" content="/favicon.png" />
+          <meta name="twitter:image" content="/favicon.png" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="dns-prefetch" href="https://i.postimg.cc" />
         </Helmet>
         <div className="flex min-h-screen flex-col bg-slate-50">
