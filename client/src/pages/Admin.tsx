@@ -119,14 +119,16 @@ export default function Admin() {
   const handleSave = () => {
     const data = {
       ...editedData,
-      changelog: Array.isArray(editedData.changelog) ? editedData.changelog : String(editedData.changelog).split("\n").filter(Boolean),
-      whats_new: Array.isArray(editedData.whats_new) ? editedData.whats_new : String(editedData.whats_new).split("\n").filter(Boolean),
+      changelog: Array.isArray(editedData.changelog) ? editedData.changelog : String(editedData.changelog || "").split("\n").filter(Boolean),
+      whats_new: Array.isArray(editedData.whats_new) ? editedData.whats_new : String(editedData.whats_new || "").split("\n").filter(Boolean),
     };
 
     if (Array.isArray(apps) && apps.find((a: any) => a.slug === data.slug)) {
       updateMutation.mutate(data);
     } else {
-      createMutation.mutate(data);
+      // For new apps, ensure created_at is not manually set to avoid Supabase errors if it's default
+      const { created_at, ...newData } = data;
+      createMutation.mutate(newData);
     }
   };
 

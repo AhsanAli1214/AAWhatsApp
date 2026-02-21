@@ -208,7 +208,7 @@ export default function AppDetails() {
             </div>
             <div className="p-4 text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Updated</p>
-              <p className="mt-1 font-bold text-slate-900">{app.updateDate.display}</p>
+              <p className="mt-1 font-bold text-slate-900">{app.updateDate?.display || "Recently"}</p>
             </div>
             <div className="p-4 text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Base</p>
