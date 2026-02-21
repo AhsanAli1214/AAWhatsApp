@@ -4,6 +4,7 @@ import {
   getSecureDownloadUrl,
 } from "@shared/downloadAssets";
 import reminiLogo from "@assets/download_1771149808669.png";
+import { AA_WHATSAPP_ICON_URL } from "@/lib/branding";
 
 // --- Technical & Shared Links ---
 const SHARED_LINKS = {
@@ -12,11 +13,10 @@ const SHARED_LINKS = {
 
 // --- Icon URLs ---
 const ICONS = {
-  aaWhatsApp:
-    "https://i.postimg.cc/N0p0fsf1/81ddf498-7efe-4101-83b1-101a77abf065.jpg",
+  aaWhatsApp: AA_WHATSAPP_ICON_URL,
   capcutPro: "https://i.postimg.cc/q71j1h4d/capcut-pro.png",
   aaBusiness: "https://i.postimg.cc/15TztvX9/cropped-circle-image-(4).png",
-  youtube: "https://i.postimg.cc/4y3bZ6cj/download-1-removebg-preview.png",
+  youtube: "https://i.postimg.cc/mkXHyrFx/cropped_circle_image_(6).png",
   youtubeMusic: "https://i.postimg.cc/y6wzMTBm/cropped-circle-image-(3).png",
   remini: reminiLogo,
 };
