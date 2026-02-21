@@ -8,8 +8,8 @@
     "build": "npx tsx script/build.ts",
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
-    "seo:check": "npx tsx script/seo-check.ts",
-    "vercel-build": "npx tsx script/build.ts"
+    "seo:check": "tsx script/seo-check.ts",
+    "vercel-build": "tsx script/build.ts"
   },
   "dependencies": {
     "tsx": "^4.21.0",

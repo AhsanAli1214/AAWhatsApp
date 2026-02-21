@@ -32,19 +32,19 @@
     },
     {
       "src": "/favicon.png",
-      "dest": "/favicon.png"
+      "dest": "favicon.png"
     },
     {
       "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "dest": "assets/$1"
     },
     {
       "src": "/attached_assets/(.*)",
-      "dest": "/attached_assets/$1"
+      "dest": "attached_assets/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "index.html"
     }
   ]
 }
