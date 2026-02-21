@@ -9,7 +9,7 @@ export default function SiteFooter() {
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-5 px-4 py-8 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
           <Link href="/" aria-label="Go to AA Mods home" className="shrink-0">
-            <img src={APP_LOGO_URL} alt="AA Mods Logo" fetchPriority="high" decoding="async" loading="eager" className="h-14 w-14 object-contain" />
+            <img src={APP_LOGO_URL} alt="AA Mods Logo" fetchPriority="high" decoding="async" loading="eager" className="h-16 w-16 object-contain" />
           </Link>
           <div className="space-y-1">
             <p className="text-sm font-semibold text-slate-900">AA Mods Store</p>

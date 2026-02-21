@@ -19,7 +19,6 @@ import { SiYoutubemusic } from "react-icons/si";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { STORE_LINKS, storeApps, storeCategories } from "@/data/appData";
 import { APP_LOGO_URL } from "@/lib/branding";
 import { motion, AnimatePresence } from "framer-motion";
@@ -33,7 +32,7 @@ const AppCard = memo(function AppCard({ app }: { app: StoreApp }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className="group relative overflow-hidden rounded-2xl border border-slate-200/60 bg-white/80 backdrop-blur-sm shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10 dark:border-slate-800/60 dark:bg-slate-900/80"
+      className="group relative overflow-hidden rounded-2xl border border-slate-200/60 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10 dark:border-slate-800/60 dark:bg-slate-900"
     >
       <div className={`relative flex items-center gap-4 bg-gradient-to-br ${app.gradient} p-5 text-white`}>
         <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -43,11 +42,7 @@ const AppCard = memo(function AppCard({ app }: { app: StoreApp }) {
         <div className="min-w-0 flex-1 relative z-10">
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">{app.developer}</p>
           <h3 className="truncate text-xl font-black leading-tight tracking-tight text-white">{app.name}</h3>
-          <div className="flex items-center gap-1.5">
-            <Badge className="h-4 bg-white/20 text-[8px] font-bold uppercase hover:bg-white/30 border-none">
-              {app.subtitle}
-            </Badge>
-          </div>
+          <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90">{app.subtitle}</p>
         </div>
       </div>
 
@@ -217,7 +212,7 @@ export default function Home() {
       <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
           <Link href="/">
-            <img src={APP_LOGO_URL} alt="AA Mods Logo" fetchPriority="high" decoding="async" className="h-14 w-14 cursor-pointer object-contain" />
+            <img src={APP_LOGO_URL} alt="AA Mods Logo" fetchPriority="high" decoding="async" className="h-16 w-16 cursor-pointer object-contain" />
           </Link>
           <div className="relative min-w-0 flex-1">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
@@ -237,44 +232,44 @@ export default function Home() {
       </header>
 
       <main className="mx-auto max-w-6xl space-y-8 px-4 py-8">
-        <section className="relative overflow-hidden rounded-3xl border border-emerald-300/20 bg-gradient-to-br from-emerald-600 via-emerald-500 to-cyan-500 p-8 text-white shadow-lg shadow-emerald-900/10">
-          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-xl" />
+        <section className="relative overflow-hidden rounded-3xl border border-emerald-300/40 bg-gradient-to-br from-emerald-600 via-emerald-500 to-green-500 p-8 text-white shadow-xl shadow-emerald-900/20">
+          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/20 blur-xl" />
           <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-white/80">Official AA Mods Marketplace</p>
-              <h1 className="mt-2 text-3xl font-bold md:text-5xl">Secure, modern, and fast APK downloads</h1>
-              <p className="mt-3 max-w-3xl text-white/90">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-100/90">Official AA Mods Marketplace</p>
+              <h1 className="mt-2 text-3xl font-bold text-white md:text-5xl">Secure, modern, and fast APK downloads</h1>
+              <p className="mt-3 max-w-3xl text-emerald-50/95">
                 Experience the next level of mobile freedom. Our centralized store provides the most secure,
                 feature-rich WhatsApp modifications and utility apps.
               </p>
-              <div className="mt-5 flex flex-wrap gap-4 text-sm font-medium text-white/90">
-                <span className="flex items-center gap-2 rounded-full bg-white/15 px-4 py-2"><ShieldCheck className="h-4 w-4" /> Verified builds</span>
-                <span className="flex items-center gap-2 rounded-full bg-white/15 px-4 py-2"><Sparkles className="h-4 w-4" /> Smooth install flow</span>
+              <div className="mt-5 flex flex-wrap gap-5 text-sm font-semibold text-emerald-50">
+                <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-white" /> Verified builds</span>
+                <span className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-white" /> Smooth install flow</span>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button className="h-11 rounded-xl bg-white px-5 font-semibold text-emerald-700 hover:bg-emerald-50">Browse Featured Apps</Button>
                 <a href={STORE_LINKS.telegramChannel} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="h-11 rounded-xl border-white/40 bg-white/10 px-5 font-semibold text-white hover:bg-white/20">Trusted & Daily Updated</Button>
+                  <Button variant="outline" className="h-11 rounded-xl border-white/50 bg-white/10 px-5 font-semibold text-white hover:bg-white/20">Trusted & Daily Updated</Button>
                 </a>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
+            <div className="grid grid-cols-2 gap-3 rounded-2xl border border-white/35 bg-white/10 p-4 backdrop-blur-sm">
               <div>
-                <p className="text-2xl font-bold">{storeApps.length}+</p>
-                <p className="text-xs text-white/80">Curated Apps</p>
+                <p className="text-2xl font-bold text-white">{storeApps.length}+</p>
+                <p className="text-xs text-emerald-100/90">Curated Apps</p>
               </div>
               <div>
-                <p className="text-2xl font-bold">24/7</p>
-                <p className="text-xs text-white/80">Update Tracking</p>
+                <p className="text-2xl font-bold text-white">24/7</p>
+                <p className="text-xs text-emerald-100/90">Update Tracking</p>
               </div>
               <div>
-                <p className="text-2xl font-bold">100%</p>
-                <p className="text-xs text-white/80">Direct Links</p>
+                <p className="text-2xl font-bold text-white">100%</p>
+                <p className="text-xs text-emerald-100/90">Direct Links</p>
               </div>
               <div>
-                <p className="text-2xl font-bold">A+</p>
-                <p className="text-xs text-white/80">User Trust</p>
+                <p className="text-2xl font-bold text-white">A+</p>
+                <p className="text-xs text-emerald-100/90">User Trust</p>
               </div>
             </div>
           </div>
