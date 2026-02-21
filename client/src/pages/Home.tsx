@@ -6,8 +6,7 @@ import { SiYoutubemusic } from "react-icons/si";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { storeApps } from "@/data/appData";
-import logo from "@/assets/logo.png";
+import { useQuery } from "@tanstack/react-query";
 
 const categories = ["All", "Communication", "Business", "Video", "Photography", "Music & Audio"];
 
@@ -15,10 +14,10 @@ function AppCardIcon({ app, size = "small" }: { app: any; size?: "small" | "larg
   const iconSize = size === "large" ? "h-16 w-16" : "h-10 w-10";
   const iconInnerSize = size === "large" ? "h-10 w-10" : "h-7 w-7";
 
-  if (app.iconImage) {
+  if (app.icon_image) {
     return (
       <img 
-        src={app.iconImage} 
+        src={app.icon_image} 
         alt={`${app.name} icon`} 
         className={`${iconSize} rounded-2xl object-cover`} 
       />
@@ -51,18 +50,22 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
+  const { data: apps = [] } = useQuery<any[]>({
+    queryKey: ["/api/apps"],
+  });
+
   const filteredApps = useMemo(() => {
-    return storeApps.filter((app) => {
+    return apps.filter((app) => {
       const matchesSearch = 
         app.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        app.shortDescription.toLowerCase().includes(searchQuery.toLowerCase());
+        (app.short_description || "").toLowerCase().includes(searchQuery.toLowerCase());
       
       const matchesCategory = 
         activeCategory === "All" || app.category === activeCategory;
 
       return matchesSearch && matchesCategory;
     });
-  }, [searchQuery, activeCategory]);
+  }, [searchQuery, activeCategory, apps]);
 
   return (
     <div className="min-h-screen bg-[#f8fafd] text-slate-900">
@@ -175,7 +178,7 @@ export default function Home() {
                   </div>
 
                   <div className="flex flex-col p-5">
-                    <p className="line-clamp-2 text-sm text-slate-600">{app.shortDescription}</p>
+                    <p className="line-clamp-2 text-sm text-slate-600">{app.short_description}</p>
 
                     <div className="mt-4 flex items-center gap-3 text-sm text-slate-600">
                       <div className="flex items-center gap-1">

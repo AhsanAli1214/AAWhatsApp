@@ -1,3 +1,5 @@
+import { supabase } from "./supabase";
+
 type BlogPostEntry = {
   slug?: string;
   publishedAt?: string;
@@ -19,20 +21,18 @@ export async function generateSitemap() {
     const baseUrl = "https://aa-mods.vercel.app";
     const today = new Date().toISOString().split("T")[0];
 
-    // Static routes mapped from client/src/App.tsx (+ sitemap.xml endpoint)
+    // Fetch dynamic apps from Supabase
+    const { data: apps } = await supabase.from('apps').select('slug');
+    const appSlugs = apps?.map(a => a.slug) || [];
+
+    // Static routes
     const staticRoutes = [
       { path: "/", priority: "1.0", changefreq: "daily" },
-      { path: "/aa-whatsapp", priority: "0.9", changefreq: "daily" },
-      { path: "/aa-business", priority: "0.9", changefreq: "daily" },
-      { path: "/capcut-pro", priority: "0.9", changefreq: "daily" },
-      { path: "/remini-mod", priority: "0.9", changefreq: "daily" },
-      { path: "/youtube-premium-mod", priority: "0.9", changefreq: "daily" },
       { path: "/privacy", priority: "0.3", changefreq: "monthly" },
       { path: "/terms", priority: "0.3", changefreq: "monthly" },
       { path: "/support", priority: "0.5", changefreq: "weekly" },
     ];
 
-    const appSlugs = ["aa-whatsapp", "aa-business", "capcut-pro", "remini-mod", "youtube-premium-mod"];
     const appSubRoutes = ["", "/about", "/comparison", "/features", "/faq", "/download", "/blog"];
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -53,16 +53,13 @@ export async function generateSitemap() {
     appSlugs.forEach(slug => {
       appSubRoutes.forEach(sub => {
         const path = sub === "" ? `/${slug}` : `/${slug}${sub}`;
-        // Skip duplicate root paths if already in staticRoutes
-        if (sub !== "" || !staticRoutes.find(r => r.path === `/${slug}`)) {
-          xml += `
+        xml += `
   <url>
     <loc>${baseUrl}${path}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${sub === "" ? "0.9" : "0.8"}</priority>
   </url>`;
-        }
       });
     });
 

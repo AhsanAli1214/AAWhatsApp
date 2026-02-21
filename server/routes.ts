@@ -3,6 +3,7 @@ import type { Server } from "http";
 import path from "path";
 import { api } from "@shared/routes";
 import { Resend } from "resend";
+import { supabase, getApps, updateApp, createApp } from "./lib/supabase";
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
@@ -12,8 +13,34 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // Removed direct SendFile for AA Mods.html as it is no longer used or present.
   
+  // Supabase Apps Routes
+  app.get("/api/apps", async (req, res) => {
+    try {
+      const apps = await getApps();
+      res.json(apps);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch apps" });
+    }
+  });
+
+  app.post("/api/apps", async (req, res) => {
+    try {
+      const app = await createApp(req.body);
+      res.status(201).json(app);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to create app" });
+    }
+  });
+
+  app.patch("/api/apps/:slug", async (req, res) => {
+    try {
+      const app = await updateApp(req.params.slug, req.body);
+      res.json(app);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to update app" });
+    }
+  });
   app.post("/api/report-bug", async (req, res) => {
     try {
       if (!resend) {

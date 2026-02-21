@@ -13,7 +13,8 @@ import {
   Search,
   CheckCircle2,
   AlertCircle,
-  Lock
+  Lock,
+  RefreshCw
 } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -21,97 +22,108 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { APP_DATA, storeApps } from "@/data/appData";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import logo from "@/assets/logo.png";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function Admin() {
   const { toast } = useToast();
+  const queryClient = useQueryClient();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
-  const [apps, setApps] = useState<any[]>(Object.values(APP_DATA));
-  const [selectedApp, setSelectedApp] = useState<any>(Object.values(APP_DATA)[0]);
+  const [selectedApp, setSelectedApp] = useState<any>(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [editedData, setEditedData] = useState<any>(Object.values(APP_DATA)[0]);
+  const [editedData, setEditedData] = useState<any>(null);
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Update selectedApp and editedData when apps change
+  const { data: apps = [], isLoading } = useQuery({
+    queryKey: ["/api/apps"],
+  });
+
+  const updateMutation = useMutation({
+    mutationFn: async (data: any) => {
+      const res = await apiRequest("PATCH", `/api/apps/${data.slug}`, data);
+      return res.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/apps"] });
+      toast({ title: "Changes Saved Real-Time", description: "App data updated in Supabase." });
+      setIsEditing(false);
+    }
+  });
+
+  const createMutation = useMutation({
+    mutationFn: async (data: any) => {
+      const res = await apiRequest("POST", "/api/apps", data);
+      return res.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/apps"] });
+      toast({ title: "App Created", description: "New app added to Supabase." });
+      setIsEditing(false);
+    }
+  });
+
   useEffect(() => {
-    if (selectedApp) {
-      const updatedApp = apps.find(a => a.slug === selectedApp.slug);
-      if (updatedApp) {
-        setSelectedApp(updatedApp);
-        if (!isEditing) {
-          setEditedData(updatedApp);
-        }
+    if (apps.length > 0 && !selectedApp) {
+      setSelectedApp(apps[0]);
+      setEditedData(apps[0]);
+    } else if (selectedApp) {
+      const updated = apps.find((a: any) => a.slug === selectedApp.slug);
+      if (updated) {
+        setSelectedApp(updated);
+        if (!isEditing) setEditedData(updated);
       }
     }
   }, [apps]);
 
-  const filteredApps = apps.filter(app => 
+  const filteredApps = apps.filter((app: any) => 
     app.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simple client-side check as requested "without setting any authentication" (backend)
     if (password === "admin123") {
       setIsAuthenticated(true);
-      toast({
-        title: "System Unlocked",
-        description: "Authenticated successfully. Admin permissions active.",
-      });
+      toast({ title: "System Unlocked", description: "Authenticated successfully." });
     } else {
-      toast({
-        title: "Access Denied",
-        variant: "destructive",
-        description: "Invalid secure access key.",
-      });
+      toast({ title: "Access Denied", variant: "destructive" });
     }
   };
 
   const handleSave = () => {
-    // In a real app, this would be a database call. 
-    // Since we are in Fast mode and the current architecture relies on appData.ts,
-    // we'll update the local state and notify the user.
-    // To make it "real-time" across the session, we'll update the local storeApps array too.
-    
-    const updatedApps = apps.map(a => a.slug === editedData.slug ? {
+    const data = {
       ...editedData,
       changelog: Array.isArray(editedData.changelog) ? editedData.changelog : String(editedData.changelog).split("\n").filter(Boolean),
-      whatsNew: Array.isArray(editedData.whatsNew) ? editedData.whatsNew : String(editedData.whatsNew).split("\n").filter(Boolean),
-    } : a);
+      whats_new: Array.isArray(editedData.whats_new) ? editedData.whats_new : String(editedData.whats_new).split("\n").filter(Boolean),
+    };
 
-    setApps(updatedApps as any);
-    
-    // Force update the global storeApps reference for the current session
-    // This allows Home and AppDetails to see the changes immediately
-    const index = storeApps.findIndex(a => a.slug === editedData.slug);
-    if (index !== -1) {
-      Object.assign(storeApps[index], updatedApps.find(a => a.slug === editedData.slug));
+    if (apps.find((a: any) => a.slug === data.slug)) {
+      updateMutation.mutate(data);
+    } else {
+      createMutation.mutate(data);
     }
-    
-    toast({
-      title: "Changes Saved Real-Time",
-      description: "App data updated across the entire site for this session. Note: For permanent persistence, a backend integration is required.",
-    });
-    
-    setIsEditing(false);
   };
 
   const handleAddNew = () => {
     const newApp = {
-      ...apps[0],
       slug: `new-app-${Date.now()}`,
       name: "New App Name",
+      version: "V1.0",
+      developer: "AA Mods",
+      category: "Communication",
+      rating: "5.0",
+      downloads: "0+",
       subtitle: "App subtitle",
-      shortDescription: "Short description for the card",
-      longDescription: "Detailed description for the app page",
+      short_description: "Short description",
+      long_description: "Long description",
       changelog: ["Initial release"],
+      whats_new: ["Initial release"],
+      gradient: "from-emerald-500 to-teal-500",
+      icon_image: "https://i.postimg.cc/N0p0fsf1/81ddf498-7efe-4101-83b1-101a77abf065.jpg"
     };
-    setApps(prev => [...prev, newApp]);
     setSelectedApp(newApp);
     setEditedData(newApp);
     setIsEditing(true);

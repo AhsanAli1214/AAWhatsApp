@@ -45,3 +45,9 @@ expertMode = true
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[userenv]
+
+[userenv.shared]
+SUPABASE_URL = "https://lexwbssddchgwxzgtxjk.supabase.co"
+SUPABASE_KEY = "sb_publishable_JldtswW8E8Zx1TpHywXVtw_O_l6UdHT"
