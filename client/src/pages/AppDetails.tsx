@@ -120,8 +120,8 @@ export default function AppDetails() {
               </Button>
             </Link>
             <div className="flex items-center gap-2">
-              <img src={APP_LOGO_URL} alt="AA Mods" fetchPriority="high" decoding="async" loading="eager" className="h-12 w-12 object-contain" />
-              <span className="hidden font-black text-lg tracking-tight sm:inline-block">AA Mods</span>
+              <img src={APP_LOGO_URL} alt="AA Mods" fetchPriority="high" decoding="async" loading="eager" className="h-14 w-14 object-contain" />
+              <span className="hidden font-black text-xl tracking-tight sm:inline-block">AA Mods</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -136,10 +136,10 @@ export default function AppDetails() {
       </header>
 
       <main className="mx-auto max-w-5xl px-4 pt-8">
-        <section className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-sm">
-          <div className="h-32 w-full border-b border-slate-100 bg-white" />
+        <section className="relative overflow-hidden rounded-[2.5rem] border border-emerald-200/70 bg-white shadow-md">
+          <div className="h-36 w-full border-b border-emerald-200/50 bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500" />
           <div className="px-6 pb-8">
-            <div className="relative -mt-16 flex flex-col gap-6 text-center sm:flex-row sm:items-end sm:text-left">
+            <div className="relative -mt-20 flex flex-col gap-6 text-center sm:flex-row sm:items-end sm:text-left">
               <div className="flex justify-center sm:justify-start">
                 <AppIcon app={app} />
               </div>
@@ -172,11 +172,11 @@ export default function AppDetails() {
               <div className="w-full pt-4 sm:w-auto sm:pt-0">
                 <Button
                   onClick={scrollToMainDownload}
-                  className="h-14 w-full gap-2 rounded-2xl bg-slate-900 px-8 text-base font-bold text-white shadow-lg hover:bg-slate-800"
+                  className="h-14 w-full gap-2 rounded-2xl bg-emerald-600 px-8 text-base font-bold text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-700"
                 >
                   <Download className="h-5 w-5" /> Go to Main Download
                 </Button>
-                <p className="mt-2 text-center text-xs font-medium text-slate-500">Scroll to secure download section</p>
+                <p className="mt-2 text-center text-xs font-medium text-emerald-700/80">Scroll to secure download section</p>
               </div>
             </div>
           </div>
