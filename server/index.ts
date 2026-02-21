@@ -26,7 +26,6 @@ app.use(
 
 app.use(express.urlencoded({ extended: false, limit: "10mb" }));
 
-
 const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>();
 
 const createRateLimiter = ({
@@ -149,51 +148,73 @@ app.use((req, res, next) => {
   next();
 });
 
-  (async () => {
-    // Register routes BEFORE anything else to ensure sitemap/robots work in all environments
-    await registerRoutes(httpServer, app);
+let hasBootstrapped = false;
 
-    app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
-      const status = err.status || err.statusCode || 500;
-      const message = err.message || "Internal Server Error";
+async function bootstrap() {
+  if (hasBootstrapped) {
+    return;
+  }
 
-      console.error("Internal Server Error:", err);
+  // Register routes BEFORE anything else to ensure sitemap/robots work in all environments
+  await registerRoutes(httpServer, app);
 
-      if (res.headersSent) {
-        return next(err);
-      }
+  app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
+    const status = err.status || err.statusCode || 500;
+    const message = err.message || "Internal Server Error";
 
-      return res.status(status).json({ message });
-    });
+    console.error("Internal Server Error:", err);
 
-    const isProduction = process.env.NODE_ENV === "production";
-    const isVercel = process.env.VERCEL === "1";
-
-    // importantly only setup vite in development and after
-    // setting up all the other routes so the catch-all route
-    // doesn't interfere with the other routes
-    if (isProduction && !isVercel) {
-      // Register routes BEFORE serveStatic to ensure sitemap/robots work in production
-      // and aren't intercepted by the SPA catch-all
-      serveStatic(app);
-    } else if (!isProduction) {
-      const { setupVite } = await import("./vite");
-      await setupVite(httpServer, app);
+    if (res.headersSent) {
+      return next(err);
     }
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || "5000", 10);
-  httpServer.listen(
-    {
-      port,
-      host: "0.0.0.0",
-      reusePort: true,
-    },
-    () => {
-      log(`serving on port ${port}`);
-    },
-  );
-})();
+    return res.status(status).json({ message });
+  });
+
+  const isProduction = process.env.NODE_ENV === "production";
+  const isVercel = process.env.VERCEL === "1";
+
+  // importantly only setup vite in development and after
+  // setting up all the other routes so the catch-all route
+  // doesn't interfere with the other routes
+  if (isProduction && !isVercel) {
+    // Register routes BEFORE serveStatic to ensure sitemap/robots work in production
+    // and aren't intercepted by the SPA catch-all
+    serveStatic(app);
+  } else if (!isProduction) {
+    const { setupVite } = await import("./vite");
+    await setupVite(httpServer, app);
+  }
+
+  hasBootstrapped = true;
+}
+
+const bootstrapPromise = bootstrap();
+
+if (process.env.VERCEL !== "1") {
+  bootstrapPromise.then(() => {
+    // ALWAYS serve the app on the port specified in the environment variable PORT
+    // Other ports are firewalled. Default to 5000 if not specified.
+    // this serves both the API and the client.
+    // It is the only port that is not firewalled.
+    const port = parseInt(process.env.PORT || "5000", 10);
+    httpServer.listen(
+      {
+        port,
+        host: "0.0.0.0",
+        reusePort: true,
+      },
+      () => {
+        log(`serving on port ${port}`);
+      },
+    );
+  }).catch((error) => {
+    console.error("Failed to bootstrap server:", error);
+    process.exit(1);
+  });
+}
+
+export default async function handler(req: Request, res: Response) {
+  await bootstrapPromise;
+  return app(req, res);
+}
