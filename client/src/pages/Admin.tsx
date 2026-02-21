@@ -40,6 +40,7 @@ export default function Admin() {
   const queryClient = useQueryClient();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
+  const [adminSecret, setAdminSecret] = useState("");
   const [selectedApp, setSelectedApp] = useState<any>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editedData, setEditedData] = useState<any>(null);
@@ -73,7 +74,9 @@ export default function Admin() {
 
   const updateMutation = useMutation({
     mutationFn: async (data: any) => {
-      const res = await apiRequest("PATCH", `/api/apps/${data.slug}`, data);
+      const res = await apiRequest("PATCH", `/api/apps/${data.slug}`, data, {
+        "x-admin-password": adminSecret,
+      });
       return res.json();
     },
     onSuccess: () => {
@@ -95,7 +98,9 @@ export default function Admin() {
 
   const createMutation = useMutation({
     mutationFn: async (data: any) => {
-      const res = await apiRequest("POST", "/api/apps", data);
+      const res = await apiRequest("POST", "/api/apps", data, {
+        "x-admin-password": adminSecret,
+      });
       return res.json();
     },
     onSuccess: () => {
@@ -134,20 +139,24 @@ export default function Admin() {
       )
     : [];
 
-  const { data: adminPassword = "ahsanali123" } = useQuery<string>({
-    queryKey: ["/api/admin-password"],
-  });
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === adminPassword) {
+
+    try {
+      await apiRequest("POST", "/api/admin/verify", { password });
+      setAdminSecret(password);
       setIsAuthenticated(true);
       toast({
         title: "System Unlocked",
         description: "Authenticated successfully.",
       });
-    } else {
-      toast({ title: "Access Denied", variant: "destructive" });
+    } catch (error: any) {
+      toast({
+        title: "Access Denied",
+        description: error?.message || "Invalid admin password",
+        variant: "destructive",
+      });
     }
   };
 

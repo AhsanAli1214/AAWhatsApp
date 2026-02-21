@@ -9,6 +9,22 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 
 import { generateSitemap } from "./lib/sitemap";
 
+const getConfiguredAdminPassword = () => process.env.ADMIN_PASSWORD?.trim();
+
+const validateAdminPassword = (providedPassword?: string) => {
+  const configuredPassword = getConfiguredAdminPassword();
+
+  if (!configuredPassword) {
+    return { ok: false as const, status: 500, error: "ADMIN_PASSWORD is not configured" };
+  }
+
+  if (!providedPassword || providedPassword !== configuredPassword) {
+    return { ok: false as const, status: 401, error: "Invalid admin password" };
+  }
+
+  return { ok: true as const };
+};
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express
@@ -19,39 +35,49 @@ export async function registerRoutes(
     try {
       const apps = await getApps();
       res.json(apps);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Fetch apps error:", error);
-      res.status(500).json({ error: "Failed to fetch apps" });
+      res.status(500).json({ error: "Failed to fetch apps", details: error?.message || "Unknown DB error" });
     }
   });
 
-  app.get("/api/admin-password", (req, res) => {
-    const adminPassword = process.env.ADMIN_PASSWORD;
+  app.post("/api/admin/verify", (req, res) => {
+    const result = validateAdminPassword(req.body?.password);
 
-    if (!adminPassword && process.env.NODE_ENV === "production") {
-      return res.status(500).json({ error: "ADMIN_PASSWORD is not configured" });
+    if (!result.ok) {
+      return res.status(result.status).json({ error: result.error });
     }
 
-    res.json(adminPassword || "ahsanali123");
+    return res.json({ ok: true });
   });
 
   app.post("/api/apps", async (req, res) => {
+    const auth = validateAdminPassword(req.headers["x-admin-password"] as string | undefined);
+    if (!auth.ok) {
+      return res.status(auth.status).json({ error: auth.error });
+    }
+
     try {
       const app = await createApp(req.body);
       res.status(201).json(app);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Create app error:", error);
-      res.status(500).json({ error: "Failed to create app" });
+      res.status(500).json({ error: "Failed to create app", details: error?.message || "Unknown DB error" });
     }
   });
 
   app.patch("/api/apps/:slug", async (req, res) => {
+    const auth = validateAdminPassword(req.headers["x-admin-password"] as string | undefined);
+    if (!auth.ok) {
+      return res.status(auth.status).json({ error: auth.error });
+    }
+
     try {
       const app = await updateApp(req.params.slug, req.body);
       res.json(app);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Update app error:", error);
-      res.status(500).json({ error: "Failed to update app" });
+      res.status(500).json({ error: "Failed to update app", details: error?.message || "Unknown DB error" });
     }
   });
   app.post("/api/report-bug", async (req, res) => {

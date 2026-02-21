@@ -1,26 +1,59 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseServiceRoleKey =
-  process.env.SUPABASE_SERVICE_ROLE_KEY ||
-  process.env.SUPABASE_KEY ||
-  '';
+const getEnv = (...keys: string[]) => {
+  for (const key of keys) {
+    const value = process.env[key];
+    if (value && value.trim()) {
+      return value.trim();
+    }
+  }
 
-if (!supabaseUrl || !supabaseServiceRoleKey) {
+  return '';
+};
+
+const supabaseUrl = getEnv('SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_URL', 'VITE_SUPABASE_URL');
+const supabaseServiceRoleKey = getEnv(
+  'SUPABASE_SERVICE_ROLE_KEY',
+  'SUPABASE_SERVICE_KEY',
+  'SUPABASE_SECRET_KEY',
+);
+
+let supabaseClient: SupabaseClient | null = null;
+
+if (supabaseUrl && supabaseServiceRoleKey) {
+  supabaseClient = createClient(supabaseUrl, supabaseServiceRoleKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  });
+} else {
   console.error(
-    '[supabase] Missing SUPABASE_URL and/or SUPABASE_SERVICE_ROLE_KEY. Admin writes will fail until they are configured.',
+    '[supabase] Missing server env vars. Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in Vercel (or aliases SUPABASE_SERVICE_KEY/SUPABASE_SECRET_KEY).',
   );
 }
 
-export const supabase = createClient(supabaseUrl, supabaseServiceRoleKey, {
-  auth: {
-    autoRefreshToken: false,
-    persistSession: false,
+const getSupabaseClient = () => {
+  if (!supabaseClient) {
+    throw new Error(
+      'Database is not configured. Please set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY (service role key, not anon key) and redeploy.',
+    );
+  }
+
+  return supabaseClient;
+};
+
+export const supabase = new Proxy(
+  {},
+  {
+    get(_target, property) {
+      return Reflect.get(getSupabaseClient(), property);
+    },
   },
-});
+) as SupabaseClient;
 
 export async function getApps() {
-  const { data, error } = await supabase.from('apps').select('*').order('name');
+  const { data, error } = await getSupabaseClient().from('apps').select('*').order('name');
 
   if (error) throw error;
   return data;
@@ -54,7 +87,7 @@ function mapAppPayload(input: Record<string, any>) {
 export async function updateApp(slug: string, updates: Record<string, any>) {
   const payload = mapAppPayload(updates);
 
-  const { data, error } = await supabase
+  const { data, error } = await getSupabaseClient()
     .from('apps')
     .update(payload)
     .eq('slug', slug)
@@ -68,7 +101,7 @@ export async function updateApp(slug: string, updates: Record<string, any>) {
 export async function createApp(app: Record<string, any>) {
   const payload = mapAppPayload(app);
 
-  const { data, error } = await supabase.from('apps').insert([payload]).select().single();
+  const { data, error } = await getSupabaseClient().from('apps').insert([payload]).select().single();
 
   if (error) throw error;
   return data;
