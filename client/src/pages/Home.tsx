@@ -232,44 +232,44 @@ export default function Home() {
       </header>
 
       <main className="mx-auto max-w-6xl space-y-8 px-4 py-8">
-        <section className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-emerald-50 p-8 text-slate-900 shadow-sm">
-          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-xl" />
+        <section className="relative overflow-hidden rounded-3xl border border-emerald-300/40 bg-gradient-to-br from-emerald-600 via-emerald-500 to-green-500 p-8 text-white shadow-xl shadow-emerald-900/20">
+          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/20 blur-xl" />
           <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Official AA Mods Marketplace</p>
-              <h1 className="mt-2 text-3xl font-bold text-slate-900 md:text-5xl">Secure, modern, and fast APK downloads</h1>
-              <p className="mt-3 max-w-3xl text-slate-600">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-100/90">Official AA Mods Marketplace</p>
+              <h1 className="mt-2 text-3xl font-bold text-white md:text-5xl">Secure, modern, and fast APK downloads</h1>
+              <p className="mt-3 max-w-3xl text-emerald-50/95">
                 Experience the next level of mobile freedom. Our centralized store provides the most secure,
                 feature-rich WhatsApp modifications and utility apps.
               </p>
-              <div className="mt-5 flex flex-wrap gap-5 text-sm font-semibold text-slate-700">
-                <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-emerald-600" /> Verified builds</span>
-                <span className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-emerald-600" /> Smooth install flow</span>
+              <div className="mt-5 flex flex-wrap gap-5 text-sm font-semibold text-emerald-50">
+                <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-white" /> Verified builds</span>
+                <span className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-white" /> Smooth install flow</span>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button className="h-11 rounded-xl bg-emerald-600 px-5 font-semibold text-white hover:bg-emerald-700">Browse Featured Apps</Button>
+                <Button className="h-11 rounded-xl bg-white px-5 font-semibold text-emerald-700 hover:bg-emerald-50">Browse Featured Apps</Button>
                 <a href={STORE_LINKS.telegramChannel} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="h-11 rounded-xl border-slate-300 bg-white px-5 font-semibold text-slate-700 hover:bg-slate-100">Trusted & Daily Updated</Button>
+                  <Button variant="outline" className="h-11 rounded-xl border-white/50 bg-white/10 px-5 font-semibold text-white hover:bg-white/20">Trusted & Daily Updated</Button>
                 </a>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 rounded-2xl border border-slate-200 bg-white p-4">
+            <div className="grid grid-cols-2 gap-3 rounded-2xl border border-white/35 bg-white/10 p-4 backdrop-blur-sm">
               <div>
-                <p className="text-2xl font-bold text-slate-900">{storeApps.length}+</p>
-                <p className="text-xs text-slate-500">Curated Apps</p>
+                <p className="text-2xl font-bold text-white">{storeApps.length}+</p>
+                <p className="text-xs text-emerald-100/90">Curated Apps</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-slate-900">24/7</p>
-                <p className="text-xs text-slate-500">Update Tracking</p>
+                <p className="text-2xl font-bold text-white">24/7</p>
+                <p className="text-xs text-emerald-100/90">Update Tracking</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-slate-900">100%</p>
-                <p className="text-xs text-slate-500">Direct Links</p>
+                <p className="text-2xl font-bold text-white">100%</p>
+                <p className="text-xs text-emerald-100/90">Direct Links</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-slate-900">A+</p>
-                <p className="text-xs text-slate-500">User Trust</p>
+                <p className="text-2xl font-bold text-white">A+</p>
+                <p className="text-xs text-emerald-100/90">User Trust</p>
               </div>
             </div>
           </div>
