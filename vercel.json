@@ -36,15 +36,15 @@
     },
     {
       "src": "/assets/(.*)",
-      "dest": "assets/$1"
+      "dest": "dist/public/assets/$1"
     },
     {
       "src": "/attached_assets/(.*)",
-      "dest": "attached_assets/$1"
+      "dest": "dist/public/attached_assets/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "index.html"
+      "dest": "dist/public/index.html"
     }
   ]
 }
