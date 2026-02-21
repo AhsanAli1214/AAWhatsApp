@@ -12,7 +12,8 @@ import {
   ArrowLeft,
   Search,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  Lock
 } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -28,6 +29,8 @@ import logo from "@/assets/logo.png";
 
 export default function Admin() {
   const { toast } = useToast();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
   const [apps, setApps] = useState(Object.values(APP_DATA));
   const [selectedApp, setSelectedApp] = useState<any>(apps[0]);
   const [isEditing, setIsEditing] = useState(false);
@@ -37,6 +40,24 @@ export default function Admin() {
   const filteredApps = apps.filter(app => 
     app.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simple client-side check as requested "without setting any authentication" (backend)
+    if (password === "admin123") {
+      setIsAuthenticated(true);
+      toast({
+        title: "Access Granted",
+        description: "Welcome to the management console.",
+      });
+    } else {
+      toast({
+        title: "Access Denied",
+        variant: "destructive",
+        description: "Invalid secure access key.",
+      });
+    }
+  };
 
   const handleSave = () => {
     toast({
@@ -56,12 +77,47 @@ export default function Admin() {
       subtitle: "App subtitle",
       shortDescription: "Short description for the card",
       longDescription: "Detailed description for the app page",
+      changelog: ["Initial release"],
     };
     setApps(prev => [...prev, newApp]);
     setSelectedApp(newApp);
     setEditedData(newApp);
     setIsEditing(true);
   };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md border-slate-200 shadow-xl rounded-3xl overflow-hidden">
+          <CardHeader className="bg-white border-b border-slate-100 text-center pb-8 pt-10">
+            <img src={logo} alt="AA Mods Logo" className="h-16 w-16 mx-auto mb-4 rounded-2xl shadow-lg" />
+            <CardTitle className="text-2xl font-black">Secure Access</CardTitle>
+            <CardDescription className="font-medium">Enter your management key to continue</CardDescription>
+          </CardHeader>
+          <CardContent className="p-8">
+            <form onSubmit={handleLogin} className="space-y-4">
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Access Key</label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                  <Input 
+                    type="password" 
+                    placeholder="••••••••" 
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="pl-10 rounded-xl border-slate-200 bg-white text-slate-900" 
+                  />
+                </div>
+              </div>
+              <Button type="submit" className="w-full bg-slate-900 hover:bg-slate-800 text-white rounded-xl h-12 font-bold shadow-lg shadow-slate-200">
+                Unlock Console
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#f8fafd] text-slate-900 flex flex-col">
@@ -79,7 +135,7 @@ export default function Admin() {
             </Button>
           </Link>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="AA Mods Logo" className="h-8 w-8 rounded-lg" />
+            <img src={logo} alt="AA Mods Logo" className="h-10 w-10 rounded-xl object-cover shadow-sm" />
             <div className="hidden sm:block">
               <h1 className="text-lg font-bold leading-none">Management Console</h1>
               <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Secure Access Only</p>
@@ -109,7 +165,7 @@ export default function Admin() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
               <Input 
                 placeholder="Search apps..." 
-                className="pl-9 bg-slate-50 border-none rounded-xl"
+                className="pl-9 bg-slate-50 border-none rounded-xl text-slate-900"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -193,19 +249,19 @@ export default function Admin() {
                     <CardContent className="p-6 space-y-4">
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">App Name</label>
-                        <Input value={editedData.name} onChange={e => setEditedData({...editedData, name: e.target.value})} className="rounded-xl border-slate-200" />
+                        <Input value={editedData.name} onChange={e => setEditedData({...editedData, name: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Subtitle</label>
-                        <Input value={editedData.subtitle} onChange={e => setEditedData({...editedData, subtitle: e.target.value})} className="rounded-xl border-slate-200" />
+                        <Input value={editedData.subtitle} onChange={e => setEditedData({...editedData, subtitle: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Icon URL</label>
-                        <Input value={editedData.iconImage} onChange={e => setEditedData({...editedData, iconImage: e.target.value})} className="rounded-xl border-slate-200" />
+                        <Input value={editedData.iconImage} onChange={e => setEditedData({...editedData, iconImage: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Gradient Class</label>
-                        <Input value={editedData.gradient} onChange={e => setEditedData({...editedData, gradient: e.target.value})} className="rounded-xl border-slate-200" />
+                        <Input value={editedData.gradient} onChange={e => setEditedData({...editedData, gradient: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
                       </div>
                     </CardContent>
                   </Card>
@@ -217,19 +273,44 @@ export default function Admin() {
                     <CardContent className="p-6 space-y-4">
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Version</label>
-                        <Input value={editedData.version} onChange={e => setEditedData({...editedData, version: e.target.value})} className="rounded-xl border-slate-200" />
+                        <Input value={editedData.version} onChange={e => setEditedData({...editedData, version: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Base Version</label>
-                        <Input value={editedData.baseVersion} onChange={e => setEditedData({...editedData, baseVersion: e.target.value})} className="rounded-xl border-slate-200" />
+                        <Input value={editedData.baseVersion} onChange={e => setEditedData({...editedData, baseVersion: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Download URL</label>
-                        <Input value={editedData.directDownloadLink} onChange={e => setEditedData({...editedData, directDownloadLink: e.target.value})} className="rounded-xl border-slate-200" />
+                        <Input value={editedData.directDownloadLink} onChange={e => setEditedData({...editedData, directDownloadLink: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Downloads Count</label>
-                        <Input value={editedData.downloads} onChange={e => setEditedData({...editedData, downloads: e.target.value})} className="rounded-xl border-slate-200" />
+                        <Input value={editedData.downloads} onChange={e => setEditedData({...editedData, downloads: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900" />
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="col-span-full border-slate-200 shadow-sm rounded-2xl overflow-hidden">
+                    <CardHeader className="bg-slate-50/50 border-b border-slate-100">
+                      <CardTitle className="text-sm font-bold uppercase tracking-widest text-slate-500">What's New & Changelog</CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-6 space-y-4">
+                      <div className="space-y-2">
+                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Short Description (What's New)</label>
+                        <Textarea 
+                          value={editedData.shortDescription} 
+                          onChange={e => setEditedData({...editedData, shortDescription: e.target.value})} 
+                          className="rounded-xl border-slate-200 bg-white text-slate-900 resize-none h-24" 
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider">Changelog (One item per line)</label>
+                        <Textarea 
+                          value={editedData.changelog?.join("\n")} 
+                          onChange={e => setEditedData({...editedData, changelog: e.target.value.split("\n")})} 
+                          className="rounded-xl border-slate-200 bg-white text-slate-900 resize-none h-48 font-mono text-sm" 
+                          placeholder="Added new feature X&#10;Fixed bug Y"
+                        />
                       </div>
                     </CardContent>
                   </Card>
@@ -243,7 +324,7 @@ export default function Admin() {
                       <Textarea 
                         value={editedData.blogMarkdown} 
                         onChange={e => setEditedData({...editedData, blogMarkdown: e.target.value})} 
-                        className="min-h-[400px] font-mono text-sm p-4 rounded-xl border-slate-200 resize-none"
+                        className="min-h-[400px] font-mono text-sm p-4 rounded-xl border-slate-200 bg-white text-slate-900 resize-none"
                       />
                     </CardContent>
                   </Card>
@@ -284,7 +365,7 @@ export default function Admin() {
                           <p className="text-slate-600 leading-relaxed">{selectedApp.longDescription}</p>
                         </TabsContent>
                         <TabsContent value="changelog" className="p-6 m-0 space-y-3">
-                          {selectedApp.changelog.map((item: string, i: number) => (
+                          {selectedApp.changelog?.map((item: string, i: number) => (
                             <div key={i} className="flex gap-3 items-start group">
                               <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0" />
                               <p className="text-sm text-slate-700 font-medium">{item}</p>
