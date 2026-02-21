@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Host: https://aa-mods.vercel.app
+
+# Bingbot Specific
+User-agent: bingbot
+Crawl-delay: 1
+
+Sitemap: https://aa-mods.vercel.app/sitemap.xml

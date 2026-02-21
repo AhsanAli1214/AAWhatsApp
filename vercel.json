@@ -3,11 +3,19 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/(favicon.png|manifest.webmanifest|sw.js)",
-      "destination": "/$1"
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
     },
     {
-      "source": "/(.*)",
+      "source": "/robots.txt",
+      "destination": "/robots.txt"
+    },
+    {
+      "source": "/88eae1744d0947619ec188fec7ff3b06.txt",
+      "destination": "/88eae1744d0947619ec188fec7ff3b06.txt"
+    },
+    {
+      "source": "/((?!.*\\.).*)",
       "destination": "/index.html"
     }
   ]
