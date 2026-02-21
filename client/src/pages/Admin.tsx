@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { supabase } from "@/lib/supabase";
 import { 
   Save, 
   Plus, 
@@ -41,6 +42,28 @@ export default function Admin() {
   const { data: apps = [] as any[], isLoading } = useQuery<any[]>({
     queryKey: ["/api/apps"],
   });
+
+  useEffect(() => {
+    const channel = supabase
+      .channel('schema-db-changes')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'apps',
+        },
+        (payload) => {
+          console.log('Realtime change received!', payload);
+          queryClient.invalidateQueries({ queryKey: ["/api/apps"] });
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [queryClient]);
 
   const updateMutation = useMutation({
     mutationFn: async (data: any) => {
