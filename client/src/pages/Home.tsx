@@ -57,6 +57,10 @@ const AppCard = memo(function AppCard({ app }: { app: StoreApp }) {
             </div>
             <span className="h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700" />
             <div className="flex items-center gap-1 text-slate-500">
+              <span className="text-[11px] font-bold uppercase tracking-wide text-slate-600 dark:text-slate-300">{app.version}</span>
+            </div>
+            <span className="h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700" />
+            <div className="flex items-center gap-1 text-slate-500">
               <Download className="h-3 w-3" />
               <span>{app.downloads}</span>
             </div>
@@ -70,7 +74,7 @@ const AppCard = memo(function AppCard({ app }: { app: StoreApp }) {
         <div className="mt-5">
           <Link href={`/app/${app.slug}`}>
             <Button className="w-full h-11 rounded-xl bg-emerald-600 text-white text-sm font-bold shadow-lg shadow-emerald-500/20 transition-all hover:bg-emerald-700 hover:shadow-emerald-500/30 active:scale-[0.97]">
-              View Experience <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              Download <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </div>
