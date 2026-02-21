@@ -32,9 +32,17 @@ export async function generateSitemap() {
       { path: "/privacy-policy", priority: "0.3", changefreq: "monthly" },
     ];
 
-    // Dynamically add app detail pages
+    // Dynamically add app detail pages from the centralized config
     appSlugs.forEach(slug => {
       routes.push({ path: `/app/${slug}`, priority: "0.9", changefreq: "weekly" });
+    });
+
+    // Add common category routes if they exist in the app structure
+    const commonCategories = ["/features", "/download", "/faq", "/about", "/comparison"];
+    appSlugs.forEach(slug => {
+      commonCategories.forEach(cat => {
+        routes.push({ path: `/app/${slug}${cat}`, priority: "0.7", changefreq: "weekly" });
+      });
     });
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
