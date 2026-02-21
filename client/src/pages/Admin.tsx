@@ -47,8 +47,8 @@ export default function Admin() {
     if (password === "admin123") {
       setIsAuthenticated(true);
       toast({
-        title: "Access Granted",
-        description: "Welcome back, Admin. System is ready.",
+        title: "System Unlocked",
+        description: "Authenticated successfully. Admin permissions active.",
       });
     } else {
       toast({
@@ -291,7 +291,7 @@ export default function Admin() {
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Visual Subtitle (Card/Header)</label>
-                        <Input value={editedData.subtitle} onChange={e => setEditedData({...editedData, subtitle: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500" />
+                        <Input value={editedData.subtitle} onChange={e => setEditedData({...editedData, subtitle: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500 font-medium" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">App Icon Image URL</label>
@@ -310,15 +310,15 @@ export default function Admin() {
                     </CardHeader>
                     <CardContent className="p-6 space-y-4">
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Short Description (What's New - SEO Meta)</label>
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Short Description (App Card & SEO Snippet)</label>
                         <Textarea 
                           value={editedData.shortDescription} 
                           onChange={e => setEditedData({...editedData, shortDescription: e.target.value})} 
-                          className="rounded-xl border-slate-200 bg-white text-slate-900 resize-none h-24 focus:ring-2 focus:ring-emerald-500/20 transition-all" 
+                          className="rounded-xl border-slate-200 bg-white text-slate-900 resize-none h-24 focus:ring-2 focus:ring-emerald-500/20 transition-all font-medium" 
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Changelog (One item per line - Google Rich Snippets)</label>
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Google Changelog Schema (One item per line)</label>
                         <Textarea 
                           value={editedData.changelog?.join("\n")} 
                           onChange={e => setEditedData({...editedData, changelog: e.target.value.split("\n")})} 

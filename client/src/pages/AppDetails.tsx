@@ -75,10 +75,47 @@ export default function AppDetails() {
   return (
     <div className="min-h-screen bg-[#f8fafd] text-slate-900 pb-20">
       <Helmet>
-        <title>{app.seoTitle}</title>
-        <meta name="description" content={app.seoDescription} />
-        <meta name="keywords" content={app.seoKeywords} />
+        <title>{app.seoTitle || `${app.name} - Download Latest Version | AA Mods`}</title>
+        <meta name="description" content={app.seoDescription || app.shortDescription} />
+        <meta name="keywords" content={app.seoKeywords || `${app.name}, APK, mod, 2026, AA Mods`} />
         <link rel="canonical" href={`https://aa-mods.vercel.app/app/${app.slug}`} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://aa-mods.vercel.app/app/${app.slug}`} />
+        <meta property="og:title" content={app.seoTitle || app.name} />
+        <meta property="og:description" content={app.seoDescription || app.shortDescription} />
+        <meta property="og:image" content={app.iconImage} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={app.seoTitle || app.name} />
+        <meta name="twitter:description" content={app.seoDescription || app.shortDescription} />
+        <meta name="twitter:image" content={app.iconImage} />
+
+        {/* Structured Data for Google Search Visibility */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": app.name,
+            "operatingSystem": "Android",
+            "applicationCategory": app.category,
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": app.rating,
+              "ratingCount": "1000"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "description": app.shortDescription,
+            "softwareVersion": app.version,
+            "downloadUrl": `https://aa-mods.vercel.app/app/${app.slug}`
+          })}
+        </script>
       </Helmet>
 
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
