@@ -9,7 +9,7 @@
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
     "seo:check": "npx tsx script/seo-check.ts",
-    "vercel-build": "npx tsx script/build.ts"
+    "vercel-build": "tsx script/build.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
