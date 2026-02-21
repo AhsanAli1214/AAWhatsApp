@@ -45,7 +45,7 @@ const AppCard = memo(function AppCard({ app }: { app: StoreApp }) {
           <span className="h-1 w-1 rounded-full bg-slate-300" />
           <span>{app.downloads}</span>
           <span className="h-1 w-1 rounded-full bg-slate-300" />
-          <span>{app.version}</span>
+          <span>Universal APK</span>
         </div>
 
         <div className="mt-6">
@@ -151,7 +151,7 @@ export default function Home() {
         <title>AA Mods Store | Official Apps</title>
         <meta
           name="description"
-          content="Official AA Mods app store. Explore all apps with detailed information, latest versions, what's new, and direct APK downloads."
+          content="Official AA Mods app store. Explore all apps with detailed information, highlights, and direct APK downloads."
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/" />
       </Helmet>
@@ -165,7 +165,7 @@ export default function Home() {
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <Input
               type="text"
-              placeholder="Search apps, versions, or features..."
+              placeholder="Search apps or features..."
               className="h-10 rounded-full border-slate-200 bg-slate-100 pl-10 focus:bg-white"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}

@@ -160,16 +160,16 @@ export default function AppDetails() {
 
           <div className="grid grid-cols-2 divide-x divide-slate-100 sm:grid-cols-4">
             <div className="p-4 text-center">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Version</p>
-              <p className="mt-1 font-bold text-slate-900">{app.version}</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Package</p>
+              <p className="mt-1 font-bold text-slate-900">Universal APK</p>
             </div>
             <div className="p-4 text-center">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Updated</p>
-              <p className="mt-1 font-bold text-slate-900">{app.updateDate.display}</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Device Support</p>
+              <p className="mt-1 font-bold text-slate-900">All Android Devices</p>
             </div>
             <div className="p-4 text-center">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Base</p>
-              <p className="mt-1 truncate px-2 font-bold text-slate-900">{app.baseVersion}</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Experience</p>
+              <p className="mt-1 truncate px-2 font-bold text-slate-900">Professionally Optimized</p>
             </div>
             <div className="p-4 text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Dev</p>
@@ -245,7 +245,9 @@ export default function AppDetails() {
               <article
                 className="prose prose-slate max-w-none prose-h2:text-3xl prose-h3:text-2xl prose-headings:font-black
                 prose-headings:tracking-tight prose-headings:text-slate-900 prose-li:text-lg prose-li:text-slate-600
-                prose-p:text-lg prose-p:leading-relaxed prose-p:text-slate-600 prose-strong:font-bold prose-strong:text-slate-900"
+                prose-p:text-lg prose-p:leading-relaxed prose-p:text-slate-600 prose-strong:font-bold prose-strong:text-slate-900
+                prose-blockquote:rounded-2xl prose-blockquote:border-emerald-200 prose-blockquote:bg-emerald-50/60 prose-blockquote:px-5 prose-blockquote:py-3
+                prose-table:overflow-hidden prose-table:rounded-2xl prose-th:bg-slate-100 prose-th:font-bold prose-td:align-middle"
               >
                 <ReactMarkdown>{app.blogMarkdown}</ReactMarkdown>
               </article>
@@ -335,7 +337,7 @@ export default function AppDetails() {
                         <span className="h-1 w-1 rounded-full bg-slate-300" />
                         <span>{relatedApp.downloads}</span>
                         <span className="h-1 w-1 rounded-full bg-slate-300" />
-                        <span>{relatedApp.version}</span>
+                        <span>Universal APK</span>
                       </div>
                       <Link href={`/app/${relatedApp.slug}`}>
                         <Button className="h-12 w-full gap-2 rounded-xl bg-emerald-600 px-6 text-sm font-bold tracking-wide hover:bg-emerald-700">
