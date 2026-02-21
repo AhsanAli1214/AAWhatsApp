@@ -291,7 +291,12 @@ export default function Admin() {
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Visual Subtitle (Card/Header)</label>
-                        <Input value={editedData.subtitle} onChange={e => setEditedData({...editedData, subtitle: e.target.value})} className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500 font-medium" />
+                        <Input 
+                          value={editedData.subtitle} 
+                          onChange={e => setEditedData({...editedData, subtitle: e.target.value})} 
+                          className="rounded-xl border-slate-200 bg-white text-slate-900 focus:border-emerald-500 font-medium placeholder:text-slate-300" 
+                          placeholder="e.g. Anti-Ban & High Privacy"
+                        />
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">App Icon Image URL</label>

@@ -113,7 +113,8 @@ export default function AppDetails() {
             },
             "description": app.shortDescription,
             "softwareVersion": app.version,
-            "downloadUrl": `https://aa-mods.vercel.app/app/${app.slug}`
+            "downloadUrl": `https://aa-mods.vercel.app/app/${app.slug}`,
+            "featureList": app.whatsNew?.join(", ")
           })}
         </script>
       </Helmet>
