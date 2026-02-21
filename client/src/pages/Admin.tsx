@@ -323,6 +323,15 @@ export default function Admin() {
                         />
                       </div>
                       <div className="space-y-2">
+                        <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">What's New (One item per line)</label>
+                        <Textarea 
+                          value={editedData.whatsNew?.join("\n")} 
+                          onChange={e => setEditedData({...editedData, whatsNew: e.target.value.split("\n")})} 
+                          className="rounded-xl border-slate-200 bg-white text-slate-900 resize-none h-32 font-medium focus:ring-2 focus:ring-emerald-500/20 transition-all" 
+                          placeholder="Added Privacy Mode&#10;New UI Theme"
+                        />
+                      </div>
+                      <div className="space-y-2">
                         <label className="text-xs font-bold uppercase text-slate-500 tracking-wider">Google Changelog Schema (One item per line)</label>
                         <Textarea 
                           value={editedData.changelog?.join("\n")} 

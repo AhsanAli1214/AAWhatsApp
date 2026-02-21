@@ -30,7 +30,7 @@ function AppIcon({ app }: { app: any }) {
         <img 
           src={app.iconImage} 
           alt={`${app.name} icon`} 
-          className="relative h-32 w-32 sm:h-40 sm:w-40 rounded-[2rem] sm:rounded-[2.5rem] object-cover shadow-2xl ring-4 ring-white" 
+          className="relative h-32 w-32 sm:h-40 sm:w-40 rounded-[2rem] sm:rounded-[2.5rem] object-cover shadow-2xl" 
         />
         <div className="absolute -bottom-2 -right-2 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg border-4 border-white">
           <ShieldCheck className="h-5 w-5 sm:h-6 sm:w-6" />
@@ -128,7 +128,7 @@ export default function AppDetails() {
               </Button>
             </Link>
             <div className="flex items-center gap-2">
-              <img src={logo} alt="AA Mods" className="h-8 w-8 rounded-lg" />
+              <img src="https://i.postimg.org/8Pz7S6G1/AA-Mods-Logo.png" alt="AA Mods" className="h-8 w-8 rounded-lg" />
               <span className="hidden font-bold sm:inline-block">AA Mods Store</span>
             </div>
           </div>

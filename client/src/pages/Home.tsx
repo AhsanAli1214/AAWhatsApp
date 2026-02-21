@@ -20,7 +20,7 @@ function AppCardIcon({ app, size = "small" }: { app: any; size?: "small" | "larg
       <img 
         src={app.iconImage} 
         alt={`${app.name} icon`} 
-        className={`${iconSize} rounded-2xl object-cover shadow-sm`} 
+        className={`${iconSize} rounded-2xl object-cover`} 
       />
     );
   }
@@ -67,10 +67,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#f8fafd] text-slate-900">
       <Helmet>
-        <title>AA Mods Store | Official Apps</title>
+        <title>AA Mods Store | Official App Marketplace 2026</title>
         <meta
           name="description"
-          content="Official AA Mods app store. Explore all apps with detailed information, latest versions, what's new, and direct APK downloads."
+          content="The official AA Mods app store. Access the most secure WhatsApp mods, premium tools, and exclusive Android applications with direct high-speed APK downloads."
         />
         <link rel="canonical" href="https://aa-mods.vercel.app/" />
       </Helmet>
@@ -78,32 +78,33 @@ export default function Home() {
       <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
           <Link href="/">
-            <img src={logo} alt="AA Mods Logo" className="h-10 w-10 cursor-pointer rounded-xl object-cover" />
+            <img src="https://i.postimg.org/8Pz7S6G1/AA-Mods-Logo.png" alt="AA Mods Logo" className="h-10 w-10 cursor-pointer rounded-xl object-cover" />
           </Link>
           <div className="relative min-w-0 flex-1">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <Input
               type="text"
-              placeholder="Search AA Mods apps..."
-              className="h-10 rounded-full border-slate-200 bg-slate-50 pl-10 focus:bg-white"
+              placeholder="Search AA Mods... (WhatsApp, CapCut, etc.)"
+              className="h-10 rounded-full border-slate-200 bg-slate-50 pl-10 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 transition-all"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
           <div className="hidden text-right md:block">
-            <p className="text-sm font-semibold">AA Mods Store</p>
-            <p className="text-xs text-slate-500">Official apps collection</p>
+            <p className="text-sm font-black tracking-tight text-slate-800">AA MODS STORE</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-600">Secure Mod Gateway</p>
           </div>
         </div>
       </header>
 
       <main className="mx-auto max-w-6xl space-y-8 px-4 py-8">
         <section className="rounded-3xl bg-gradient-to-r from-emerald-600 to-teal-600 p-8 text-white shadow-lg">
-          <p className="text-xs uppercase tracking-[0.2em] text-white/80">Official AA Mods Marketplace</p>
-          <h1 className="mt-2 text-3xl font-bold md:text-4xl">Download all AA Mods apps in one place</h1>
-          <p className="mt-3 max-w-3xl text-white/90">
-            Every app page includes latest version details, update information, complete highlights, and direct APK
-            download links. Structure is centralized for easy add, edit, or delete operations.
+          <p className="text-xs uppercase tracking-[0.2em] text-white/80">Premium Modded Applications</p>
+          <h1 className="mt-2 text-3xl font-bold md:text-4xl">The Ultimate Collection of AA Mods</h1>
+          <p className="mt-3 max-w-3xl text-white/90 leading-relaxed">
+            Experience the next level of mobile freedom. Our centralized store provides the most secure, 
+            feature-rich WhatsApp modifications and utility apps. Each application is rigorously tested, 
+            verified for safety, and comes with comprehensive changelogs and direct direct high-speed download links.
           </p>
         </section>
 
