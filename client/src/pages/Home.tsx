@@ -237,7 +237,7 @@ export default function Home() {
   }, [searchableApps, normalizedQuery, compactQuery, queryTokens, activeCategory]);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-emerald-500/20 selection:text-emerald-900">
+    <div className="min-h-full bg-slate-50 text-slate-900 selection:bg-emerald-500/20 selection:text-emerald-900">
       <Helmet>
         <title>AA Mods - Download Premium WhatsApp Mods & Android Apps</title>
         <meta name="description" content="Download the latest AA WhatsApp Mods, CapCut Pro, Remini Mod, and more. Secure, fast, and always updated premium Android applications." />
