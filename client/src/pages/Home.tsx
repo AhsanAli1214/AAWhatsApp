@@ -213,7 +213,7 @@ export default function Home() {
         </script>
       </Helmet>
 
-      <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
+      <header className="sticky inset-x-0 top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
           <Link href="/">
             <img src={APP_LOGO_URL} alt="AA Mods Logo" fetchPriority="high" decoding="async" className="h-16 w-16 cursor-pointer object-contain" />

@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 
 export function serveStatic(app: Express) {
+  const rootPublicPath = path.resolve(process.cwd(), "public");
   const distPath = path.resolve(process.cwd(), "dist", "public");
   if (!fs.existsSync(distPath)) {
     // Check if we are in development and if we should just skip
@@ -14,6 +15,7 @@ export function serveStatic(app: Express) {
     );
   }
 
+  app.use(express.static(rootPublicPath));
   app.use(express.static(distPath));
 
   // Ensure index.html is served ONLY for page requests

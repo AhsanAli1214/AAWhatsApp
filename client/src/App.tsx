@@ -45,8 +45,10 @@ function App() {
           <meta name="copyright" content="AA Mods" />
           <meta name="author" content="AA Mods Team" />
           <link rel="canonical" href="https://aa-mods.vercel.app" />
-          <meta property="og:image" content="/favicon.png" />
-          <meta name="twitter:image" content="/favicon.png" />
+          <meta property="og:image" content="https://i.postimg.cc/0NRdTr3r/generated_image_6bb6c336_9b07_4a65_b01b_92ba8e39c556_modified.png" />
+          <meta property="og:image:secure_url" content="https://i.postimg.cc/0NRdTr3r/generated_image_6bb6c336_9b07_4a65_b01b_92ba8e39c556_modified.png" />
+          <meta property="og:image:type" content="image/png" />
+          <meta name="twitter:image" content="https://i.postimg.cc/0NRdTr3r/generated_image_6bb6c336_9b07_4a65_b01b_92ba8e39c556_modified.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="dns-prefetch" href="https://i.postimg.cc" />
         </Helmet>
