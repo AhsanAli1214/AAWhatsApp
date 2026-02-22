@@ -27,7 +27,7 @@ export const HOME_POSTER_CONFIG = {
   imageUrl: "https://i.postimg.cc/tgHVCwP3/Gemini_Generated_Image_r9qxbr9qxbr9qxbr.png",
   // Change this link to control where poster click opens.
   linkUrl: "https://t.me/AA_ModsOfficial",
-  alt: "Featured poster",
+  alt: "Telegram Poster",
 } as const;
 
 // --- Icon URLs ---
