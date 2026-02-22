@@ -28,6 +28,7 @@ type StoreApp = (typeof storeApps)[number];
 
 const POSTER_SESSION_KEY = "home-poster-dismissed";
 
+
 const normalizeSearchValue = (value: string) =>
   value
     .toLowerCase()
