@@ -37,6 +37,20 @@
     <meta property="og:image:type" content="image/png" />
     <meta name="twitter:image" content="https://i.postimg.cc/0NRdTr3r/generated_image_6bb6c336_9b07_4a65_b01b_92ba8e39c556_modified.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
+    <style>
+      .elfsight-widget-host {
+        position: fixed;
+        width: 0;
+        height: 0;
+        overflow: visible;
+        pointer-events: none;
+        z-index: 60;
+      }
+
+      .elfsight-widget-host > div {
+        pointer-events: auto;
+      }
+    </style>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
@@ -48,10 +62,11 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Elfsight Telegram Chat | Global floating widget -->
+    <!-- Elfsight widgets | Telegram + AI Chatbot -->
     <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="telegram-chat-floating">
+    <div class="elfsight-widget-host" aria-hidden="true">
       <div class="elfsight-app-77d4e223-c3bc-4a0f-ae68-972bbd9d0a67" data-elfsight-app-lazy></div>
+      <div class="elfsight-app-7e86b160-ecef-497a-9e28-0293c6111b6b" data-elfsight-app-lazy></div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
