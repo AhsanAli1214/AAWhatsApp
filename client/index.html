@@ -52,11 +52,14 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Elfsight widgets | Telegram + AI Chatbot -->
+    <!-- Elfsight widget | Telegram only -->
     <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-widget-host" aria-hidden="true">
-      <div class="elfsight-app-77d4e223-c3bc-4a0f-ae68-972bbd9d0a67" data-elfsight-app-lazy></div>
-      <div class="elfsight-app-7e86b160-ecef-497a-9e28-0293c6111b6b" data-elfsight-app-lazy></div>
+    <div
+      class="elfsight-widget-host"
+      aria-hidden="true"
+      style="position:fixed;inset:0;width:100vw;height:100dvh;pointer-events:none;overflow:clip;z-index:80;"
+    >
+      <div class="elfsight-app-77d4e223-c3bc-4a0f-ae68-972bbd9d0a67" data-elfsight-app-lazy style="pointer-events:auto;"></div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

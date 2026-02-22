@@ -90,7 +90,7 @@ export default function AppDetails() {
     : "Mod Info";
 
   return (
-    <div className="min-h-screen bg-[#f8fafd] pb-20 text-slate-900 selection:bg-emerald-500/20 selection:text-emerald-900">
+    <div className="min-h-full bg-[#f8fafd] pb-8 text-slate-900 selection:bg-emerald-500/20 selection:text-emerald-900">
       <Helmet>
         <title>{app.seoTitle} | Official Download - AA Mods</title>
         <meta name="description" content={app.seoDescription} />
