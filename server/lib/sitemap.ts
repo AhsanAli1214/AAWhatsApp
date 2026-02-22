@@ -8,7 +8,12 @@ type SitemapRoute = {
 
 const DEFAULT_SITE_URL = "https://aa-mods.vercel.app";
 
-function getSiteUrl() {
+function getSiteUrl(req?: any) {
+  if (req) {
+    const host = req.get('host');
+    const protocol = req.protocol;
+    return `${protocol}://${host}`;
+  }
   const fromEnv = process.env.SITE_URL || process.env.PUBLIC_SITE_URL;
   const vercelUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined;
   const raw = fromEnv || vercelUrl || DEFAULT_SITE_URL;
@@ -24,8 +29,8 @@ function escapeXml(value: string) {
     .replace(/'/g, "&apos;");
 }
 
-export async function generateSitemap() {
-  const baseUrl = getSiteUrl();
+export async function generateSitemap(req?: any) {
+  const baseUrl = getSiteUrl(req);
   const today = new Date().toISOString().split("T")[0];
 
   const routes: SitemapRoute[] = [

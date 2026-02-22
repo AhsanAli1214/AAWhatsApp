@@ -122,10 +122,13 @@ export async function registerRoutes(
   });
 
   app.get("/robots.txt", (req, res) => {
+    const host = req.get('host');
+    const protocol = req.protocol;
+    const siteUrl = `${protocol}://${host}`;
     const robots = `User-agent: *
 Allow: /
-Host: https://aa-mods.vercel.app
-Sitemap: https://aa-mods.vercel.app/sitemap.xml
+Host: ${siteUrl}
+Sitemap: ${siteUrl}/sitemap.xml
 
 User-agent: bingbot
 Crawl-delay: 1
@@ -141,9 +144,9 @@ Allow: /`;
     res.status(200).send("88eae1744d0947619ec188fec7ff3b06");
   });
 
-  app.get("/sitemap.xml", async (_req, res) => {
+  app.get("/sitemap.xml", async (req, res) => {
     try {
-      const sitemap = await generateSitemap();
+      const sitemap = await generateSitemap(req);
       res.header("Content-Type", "application/xml; charset=utf-8");
       res.status(200).send(sitemap);
     } catch (error) {

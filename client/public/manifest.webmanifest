@@ -5,6 +5,17 @@
   "theme_color": "#030712",
   "background_color": "#030712",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "minimal-ui"],
+  "orientation": "portrait",
+  "categories": ["utilities", "personalization"],
+  "shortcuts": [
+    {
+      "name": "Latest Mods",
+      "url": "/",
+      "icons": [{ "src": "https://i.postimg.cc/0NRdTr3r/generated_image_6bb6c336_9b07_4a65_b01b_92ba8e39c556_modified.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false,
   "scope": "/",
   "start_url": "/",
   "icons": [
