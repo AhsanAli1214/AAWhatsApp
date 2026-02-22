@@ -250,3 +250,23 @@
     backdrop-filter: blur(12px);
   }
 }
+
+/* Global floating host for Telegram chat widget across all pages */
+.telegram-chat-floating {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 80;
+  pointer-events: none;
+}
+
+.telegram-chat-floating > * {
+  pointer-events: auto;
+}
+
+@media (max-width: 640px) {
+  .telegram-chat-floating {
+    right: 0.75rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+}

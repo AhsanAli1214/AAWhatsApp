@@ -21,6 +21,15 @@ export const APP_EDITOR_GUIDE = {
   ],
 } as const;
 
+export const HOME_POSTER_CONFIG = {
+  enabled: true,
+  // Change this URL anytime to update poster image.
+  imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85",
+  // Change this link to control where poster click opens.
+  linkUrl: "https://aa-mods.vercel.app/",
+  alt: "Featured poster",
+} as const;
+
 // --- Icon URLs ---
 const ICONS = {
   aaWhatsApp: AA_WHATSAPP_ICON_URL,
