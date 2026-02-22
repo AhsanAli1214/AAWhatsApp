@@ -85,6 +85,9 @@ export default function AppDetails() {
   );
 
   const relatedApps = [...primaryRelatedApps, ...fallbackRelatedApps].slice(0, 2);
+  const changelogTitle = ["aa-whatsapp", "aa-business"].includes(app.slug)
+    ? "Full Changelog"
+    : "Mod Info";
 
   return (
     <div className="min-h-screen bg-[#f8fafd] pb-20 text-slate-900 selection:bg-emerald-500/20 selection:text-emerald-900">
@@ -248,7 +251,7 @@ export default function AppDetails() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-50 text-slate-900">
                   <History className="h-6 w-6" />
                 </div>
-                <h2 className="text-3xl font-black tracking-tight">Full Changelog</h2>
+                <h2 className="text-3xl font-black tracking-tight">{changelogTitle}</h2>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {app.whatsNew?.map((item: string, i: number) => (
