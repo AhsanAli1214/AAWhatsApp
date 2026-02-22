@@ -2,7 +2,7 @@ const CACHE_NAME = 'aa-mods-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/favicon.png'
+  '/cropped-circle-image.png'
 ];
 
 self.addEventListener('install', (event) => {

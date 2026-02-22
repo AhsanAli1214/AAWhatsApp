@@ -25,6 +25,15 @@ import { motion, AnimatePresence } from "framer-motion";
 
 type StoreApp = (typeof storeApps)[number];
 
+
+const normalizeSearchValue = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
+const compactSearchValue = (value: string) => normalizeSearchValue(value).replace(/\s+/g, "");
+
 const AppCard = memo(function AppCard({ app }: { app: StoreApp }) {
   return (
     <motion.article
@@ -154,16 +163,30 @@ export default function Home() {
   const deferredSearchQuery = useDeferredValue(searchQuery);
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const normalizedQuery = deferredSearchQuery.trim().toLowerCase();
+  const normalizedQuery = normalizeSearchValue(deferredSearchQuery);
+  const compactQuery = compactSearchValue(deferredSearchQuery);
+  const queryTokens = normalizedQuery.split(/\s+/).filter(Boolean);
   const isFiltering = deferredSearchQuery !== searchQuery;
 
   const searchableApps = useMemo(
     () =>
-      storeApps.map((app) => ({
-        app,
-        name: app.name.toLowerCase(),
-        description: app.shortDescription.toLowerCase(),
-      })),
+      storeApps.map((app) => {
+        const searchableText = [
+          app.name,
+          app.shortDescription,
+          app.longDescription,
+          app.category,
+          app.slug,
+          app.seoKeywords ?? "",
+          app.subtitle ?? "",
+        ].join(" ");
+
+        return {
+          app,
+          normalizedText: normalizeSearchValue(searchableText),
+          compactText: compactSearchValue(searchableText),
+        };
+      }),
     [],
   );
 
@@ -172,14 +195,15 @@ export default function Home() {
       .filter((item) => {
         const matchesSearch =
           normalizedQuery.length === 0 ||
-          item.name.includes(normalizedQuery) ||
-          item.description.includes(normalizedQuery);
+          item.normalizedText.includes(normalizedQuery) ||
+          (compactQuery.length > 0 && item.compactText.includes(compactQuery)) ||
+          queryTokens.every((token) => item.normalizedText.includes(token));
 
         const matchesCategory = activeCategory === "All" || item.app.category === activeCategory;
         return matchesSearch && matchesCategory;
       })
       .map((item) => item.app);
-  }, [searchableApps, normalizedQuery, activeCategory]);
+  }, [searchableApps, normalizedQuery, compactQuery, queryTokens, activeCategory]);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-emerald-500/20 selection:text-emerald-900">
@@ -213,7 +237,7 @@ export default function Home() {
         </script>
       </Helmet>
 
-      <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
+      <header className="sticky inset-x-0 top-0 z-40 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
           <Link href="/">
             <img src={APP_LOGO_URL} alt="AA Mods Logo" fetchPriority="high" decoding="async" className="h-16 w-16 cursor-pointer object-contain" />

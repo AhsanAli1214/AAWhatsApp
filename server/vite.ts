@@ -1,3 +1,4 @@
+import express from "express";
 import { type Express } from "express";
 import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
@@ -29,6 +30,8 @@ export async function setupVite(server: Server, app: Express) {
     appType: "custom",
   });
 
+  const rootPublicPath = path.resolve(process.cwd(), "public");
+  app.use(express.static(rootPublicPath));
   app.use(vite.middlewares);
 
   app.get(/^(?!\/api).*/, async (req, res, next) => {
