@@ -52,15 +52,44 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Elfsight widget | Telegram only -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div
-      class="elfsight-widget-host"
-      aria-hidden="true"
-      style="position:fixed;inset:0;width:100vw;height:100dvh;pointer-events:none;overflow:clip;z-index:80;"
-    >
-      <div class="elfsight-app-77d4e223-c3bc-4a0f-ae68-972bbd9d0a67" data-elfsight-app-lazy style="pointer-events:auto;"></div>
-    </div>
+    <script>
+      window.intergramId = "6001083166";
+
+      window.intergramCustomizations = {
+        titleClosed: '💬 AA Mods Support',
+        titleOpen: '🛠 AA Mods Helpline',
+
+        introMessage:
+          "👋 Welcome to AA Mods Official Support. " +
+          "- Need help with installation, updates, mod features, or security status. " +
+          "- Our Android specialists are ready to assist you. " +
+          "- Please describe your issue clearly using simple text.",
+
+        autoResponse:
+          "✅ Your message has been received. " +
+          "- Our support team will review your request shortly. " +
+          "- Average response time is 5 to 30 minutes. " +
+          "- Thank you for choosing AA Mods.",
+
+        autoNoResponse:
+          "⏳ We are currently reviewing your request. " +
+          "- If your issue is urgent, please include. " +
+          "- App Name. " +
+          "- Version. " +
+          "- Device Model. " +
+          "- Android Version. " +
+          "- This helps us resolve your issue faster.",
+
+        mainColor: "#0072ff",
+        alwaysUseFloatingButton: true,
+      };
+    </script>
+
+    <script
+      id="intergram"
+      type="text/javascript"
+      src="https://www.intergram.xyz/js/widget.js"
+    ></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
