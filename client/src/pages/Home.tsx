@@ -1,4 +1,4 @@
-import { memo, useDeferredValue, useMemo, useState } from "react";
+import { memo, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
 import {
   ArrowRight,
@@ -13,18 +13,20 @@ import {
   Zap,
   CheckCircle2,
   Users,
+  X,
 } from "lucide-react";
 import { FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { SiYoutubemusic } from "react-icons/si";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { STORE_LINKS, storeApps, storeCategories } from "@/data/appData";
+import { HOME_POSTER_CONFIG, STORE_LINKS, storeApps, storeCategories } from "@/data/appData";
 import { APP_LOGO_URL } from "@/lib/branding";
 import { motion, AnimatePresence } from "framer-motion";
 
 type StoreApp = (typeof storeApps)[number];
 
+const POSTER_SESSION_KEY = "home-poster-dismissed";
 
 const normalizeSearchValue = (value: string) =>
   value
@@ -162,6 +164,22 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const deferredSearchQuery = useDeferredValue(searchQuery);
   const [activeCategory, setActiveCategory] = useState("All");
+  const [isPosterOpen, setIsPosterOpen] = useState(false);
+
+  useEffect(() => {
+    if (!HOME_POSTER_CONFIG.enabled) {
+      setIsPosterOpen(false);
+      return;
+    }
+
+    const isDismissedForTab = window.sessionStorage.getItem(POSTER_SESSION_KEY) === "true";
+    setIsPosterOpen(!isDismissedForTab);
+  }, []);
+
+  const closePosterForCurrentTab = () => {
+    window.sessionStorage.setItem(POSTER_SESSION_KEY, "true");
+    setIsPosterOpen(false);
+  };
 
   const normalizedQuery = normalizeSearchValue(deferredSearchQuery);
   const compactQuery = compactSearchValue(deferredSearchQuery);
@@ -350,6 +368,46 @@ export default function Home() {
           )}
         </section>
       </main>
+
+      <AnimatePresence>
+        {HOME_POSTER_CONFIG.enabled && isPosterOpen ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[70] flex items-center justify-center bg-black/70 px-3 py-4 sm:p-6 backdrop-blur-sm"
+            onClick={closePosterForCurrentTab}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-[95vw] sm:max-w-2xl md:max-w-3xl lg:max-w-4xl overflow-hidden rounded-2xl border border-white/30 bg-white shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closePosterForCurrentTab}
+                className="absolute right-2 top-2 z-10 inline-flex h-9 w-9 sm:right-3 sm:top-3 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-black/85"
+                aria-label="Close poster"
+              >
+                <X className="h-5 w-5" />
+              </button>
+
+              <a href={HOME_POSTER_CONFIG.linkUrl} target="_blank" rel="noopener noreferrer" className="block">
+                <img
+                  src={HOME_POSTER_CONFIG.imageUrl}
+                  alt={HOME_POSTER_CONFIG.alt}
+                  className="max-h-[82vh] sm:max-h-[85vh] w-full object-contain bg-black"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </motion.div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 }
