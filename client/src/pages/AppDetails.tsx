@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useRoute, Link } from "wouter";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import {
   AlertTriangle,
   ArrowLeft,
