@@ -9,7 +9,6 @@ import AppDetails from "@/pages/AppDetails";
 import TermsOfService from "@/pages/TermsOfService";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import SiteFooter from "@/components/SiteFooter";
-import TelegramChatWidget from "@/components/TelegramChatWidget";
 
 function Router() {
   return (
@@ -30,13 +29,14 @@ function App() {
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <div className="flex min-h-screen flex-col bg-slate-50">
-            <div className="flex-1">
+          <div className="flex min-h-dvh flex-col bg-slate-50">
+            <main className="flex-1">
               <Router />
+            </main>
+            <div className="shrink-0 mt-auto">
+              <SiteFooter />
             </div>
-            <SiteFooter />
           </div>
-          <TelegramChatWidget />
           <Analytics />
         </TooltipProvider>
       </QueryClientProvider>
