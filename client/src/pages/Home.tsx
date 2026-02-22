@@ -163,6 +163,7 @@ function AppCardIcon({ app, size = "small" }: { app: any; size?: "small" | "larg
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchInputValue, setSearchInputValue] = useState("");
   const deferredSearchQuery = useDeferredValue(searchQuery);
   const [activeCategory, setActiveCategory] = useState("All");
   const [isPosterOpen, setIsPosterOpen] = useState(false);
@@ -178,25 +179,14 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (!HOME_POSTER_CONFIG.enabled || !HOME_POSTER_CONFIG.imageUrl) return;
-
-    const preloadLink = document.createElement("link");
-    preloadLink.rel = "preload";
-    preloadLink.as = "image";
-    preloadLink.href = HOME_POSTER_CONFIG.imageUrl;
-    preloadLink.crossOrigin = "anonymous";
-    document.head.appendChild(preloadLink);
-
-    const posterImage = new Image();
-    posterImage.decoding = "async";
-    posterImage.loading = "eager";
-    posterImage.fetchPriority = "high";
-    posterImage.src = HOME_POSTER_CONFIG.imageUrl;
+    const timeoutId = window.setTimeout(() => {
+      setSearchQuery(searchInputValue);
+    }, 120);
 
     return () => {
-      document.head.removeChild(preloadLink);
+      window.clearTimeout(timeoutId);
     };
-  }, []);
+  }, [searchInputValue]);
 
   const closePosterForCurrentTab = () => {
     window.sessionStorage.setItem(POSTER_SESSION_KEY, "true");
@@ -303,8 +293,8 @@ export default function Home() {
               type="text"
               placeholder="Search apps or features..."
               className="h-10 rounded-full border-slate-200 bg-slate-100 pl-10 focus:bg-white"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              value={searchInputValue}
+              onChange={(e) => setSearchInputValue(e.target.value)}
             />
           </div>
           <div className="hidden text-right md:block">
@@ -398,6 +388,7 @@ export default function Home() {
               <p>No apps found matching your criteria</p>
               <Button
                 onClick={() => {
+                  setSearchInputValue("");
                   setSearchQuery("");
                   setActiveCategory("All");
                 }}

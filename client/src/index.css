@@ -34,6 +34,14 @@
 }
 
 @layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
     font-family: var(--font-body);
@@ -250,23 +258,17 @@
     backdrop-filter: blur(12px);
   }
 }
-
-/* Global floating host for Telegram chat widget across all pages */
-.telegram-chat-floating {
+/* Global floating host for Elfsight widgets across all pages */
+.elfsight-widget-host {
   position: fixed;
-  right: 1rem;
-  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
-  z-index: 80;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
   pointer-events: none;
+  overflow: clip;
+  z-index: 80;
 }
 
-.telegram-chat-floating > * {
+.elfsight-widget-host > * {
   pointer-events: auto;
-}
-
-@media (max-width: 640px) {
-  .telegram-chat-floating {
-    right: 0.75rem;
-    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
-  }
 }
