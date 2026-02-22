@@ -9,7 +9,6 @@ import AppDetails from "@/pages/AppDetails";
 import TermsOfService from "@/pages/TermsOfService";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import SiteFooter from "@/components/SiteFooter";
-import TelegramChatWidget from "@/components/TelegramChatWidget";
 
 function Router() {
   return (
@@ -38,7 +37,6 @@ function App() {
               <SiteFooter />
             </div>
           </div>
-          <TelegramChatWidget />
           <Analytics />
         </TooltipProvider>
       </QueryClientProvider>

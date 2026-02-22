@@ -262,17 +262,3 @@
     backdrop-filter: blur(12px);
   }
 }
-/* Global floating host for Elfsight widgets across all pages */
-.elfsight-widget-host {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100dvh;
-  pointer-events: none;
-  overflow: clip;
-  z-index: 80;
-}
-
-.elfsight-widget-host > * {
-  pointer-events: auto;
-}
