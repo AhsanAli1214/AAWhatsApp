@@ -1,4 +1,4 @@
-import { memo, useDeferredValue, useMemo, useState } from "react";
+import { memo, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
 import {
   ArrowRight,
@@ -26,6 +26,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 type StoreApp = (typeof storeApps)[number];
 
+const POSTER_SESSION_KEY = "home-poster-dismissed";
 
 
 const normalizeSearchValue = (value: string) =>
@@ -164,8 +165,22 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const deferredSearchQuery = useDeferredValue(searchQuery);
   const [activeCategory, setActiveCategory] = useState("All");
-  const [isPosterOpen, setIsPosterOpen] = useState(true);
+  const [isPosterOpen, setIsPosterOpen] = useState(false);
 
+  useEffect(() => {
+    if (!HOME_POSTER_CONFIG.enabled) {
+      setIsPosterOpen(false);
+      return;
+    }
+
+    const isDismissedForTab = window.sessionStorage.getItem(POSTER_SESSION_KEY) === "true";
+    setIsPosterOpen(!isDismissedForTab);
+  }, []);
+
+  const closePosterForCurrentTab = () => {
+    window.sessionStorage.setItem(POSTER_SESSION_KEY, "true");
+    setIsPosterOpen(false);
+  };
 
   const normalizedQuery = normalizeSearchValue(deferredSearchQuery);
   const compactQuery = compactSearchValue(deferredSearchQuery);
@@ -363,7 +378,7 @@ export default function Home() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-[70] flex items-center justify-center bg-black/70 px-3 py-4 sm:p-6 backdrop-blur-sm"
-            onClick={() => setIsPosterOpen(false)}
+            onClick={closePosterForCurrentTab}
           >
             <motion.div
               initial={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -374,7 +389,7 @@ export default function Home() {
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                onClick={() => setIsPosterOpen(false)}
+                onClick={closePosterForCurrentTab}
                 className="absolute right-2 top-2 z-10 inline-flex h-9 w-9 sm:right-3 sm:top-3 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-black/85"
                 aria-label="Close poster"
               >
