@@ -24,9 +24,9 @@ export const APP_EDITOR_GUIDE = {
 export const HOME_POSTER_CONFIG = {
   enabled: true,
   // Change this URL anytime to update poster image.
-  imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85",
+  imageUrl: "https://i.postimg.cc/tgHVCwP3/Gemini_Generated_Image_r9qxbr9qxbr9qxbr.png",
   // Change this link to control where poster click opens.
-  linkUrl: "https://aa-mods.vercel.app/",
+  linkUrl: "https://t.me/AA_ModsOfficial",
   alt: "Featured poster",
 } as const;
 
@@ -48,7 +48,7 @@ export const APP_DATA = {
     version: "V4.0",
     baseVersion: "2.25.36.73",
     updateDate: { display: "February 15, 2026", iso: "2026-02-15" },
-    downloadLink: "https://aa-mods.vercel.app/aa-whatsapp/download",
+    downloadLink: "https://t.me/AA_ModsOfficialaa-whatsapp/download",
     directDownloadLink: getSecureDownloadUrl(
       SECURE_DOWNLOAD_ASSETS.aaWhatsAppModern,
     ),
@@ -227,7 +227,7 @@ If you need stronger privacy, better media freedom, anti-ban safeguards, and dee
     version: "V1.0",
     baseVersion: "2.25.29.77",
     updateDate: { display: "January 31, 2026", iso: "2026-01-31" },
-    downloadLink: "https://aa-mods.vercel.app/aa-business/download",
+    downloadLink: "https://t.me/AA_ModsOfficialaa-business/download",
     directDownloadLink: getSecureDownloadUrl(
       SECURE_DOWNLOAD_ASSETS.aaBusinessMain,
     ),
@@ -395,7 +395,7 @@ For business users who need automation, professional privacy, stronger customer 
     version: "V17.3.0",
     baseVersion: "v17.3.0 Stable",
     updateDate: { display: "February 14, 2026", iso: "2026-02-14" },
-    downloadLink: "https://aa-mods.vercel.app/capcut-pro/download",
+    downloadLink: "https://t.me/AA_ModsOfficialcapcut-pro/download",
     directDownloadLink: getSecureDownloadUrl(
       SECURE_DOWNLOAD_ASSETS.capcutProMain,
     ),
@@ -557,7 +557,7 @@ If you want premium editing behavior—strong export controls, cleaner workflows
     version: "v3.7.1260",
     baseVersion: "3.7.1260.202519018",
     updateDate: { display: "February 15, 2026", iso: "2026-02-15" },
-    downloadLink: "https://aa-mods.vercel.app/remini-mod/download",
+    downloadLink: "https://t.me/AA_ModsOfficialremini-mod/download",
     directDownloadLink: getSecureDownloadUrl(
       SECURE_DOWNLOAD_ASSETS.reminiModMain,
     ),
@@ -701,7 +701,7 @@ If you want a professional AI enhancement workflow—restoration, sharpening, po
     version: "v20.45.39",
     baseVersion: "20.45.39 stable",
     updateDate: { display: "February 17, 2026", iso: "2026-02-17" },
-    downloadLink: "https://aa-mods.vercel.app/youtube-premium-mod/install",
+    downloadLink: "https://t.me/AA_ModsOfficialyoutube-premium-mod/install",
     directDownloadLink: getSecureDownloadUrl(
       SECURE_DOWNLOAD_ASSETS.youtubePremiumMain,
     ),
@@ -861,7 +861,7 @@ If you want ad-free playback, stronger control features, SponsorBlock, dislike v
     version: "v8.45.32",
     baseVersion: "8.45.32 stable",
     updateDate: { display: "February 20, 2026", iso: "2026-02-20" },
-    downloadLink: "https://aa-mods.vercel.app/youtube-music-mod/install",
+    downloadLink: "https://t.me/AA_ModsOfficialyoutube-music-mod/install",
     directDownloadLink: getSecureDownloadUrl(
       SECURE_DOWNLOAD_ASSETS.youtubeMusicMain,
     ),
