@@ -30,11 +30,13 @@ function App() {
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <div className="flex min-h-screen flex-col bg-slate-50">
+          <div className="flex min-h-dvh flex-col bg-slate-50">
             <div className="flex-1">
               <Router />
             </div>
-            <SiteFooter />
+            <div className="mt-auto">
+              <SiteFooter />
+            </div>
           </div>
           <TelegramChatWidget />
           <Analytics />
