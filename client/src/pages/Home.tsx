@@ -177,6 +177,27 @@ export default function Home() {
     setIsPosterOpen(!isDismissedForTab);
   }, []);
 
+  useEffect(() => {
+    if (!HOME_POSTER_CONFIG.enabled || !HOME_POSTER_CONFIG.imageUrl) return;
+
+    const preloadLink = document.createElement("link");
+    preloadLink.rel = "preload";
+    preloadLink.as = "image";
+    preloadLink.href = HOME_POSTER_CONFIG.imageUrl;
+    preloadLink.crossOrigin = "anonymous";
+    document.head.appendChild(preloadLink);
+
+    const posterImage = new Image();
+    posterImage.decoding = "async";
+    posterImage.loading = "eager";
+    posterImage.fetchPriority = "high";
+    posterImage.src = HOME_POSTER_CONFIG.imageUrl;
+
+    return () => {
+      document.head.removeChild(preloadLink);
+    };
+  }, []);
+
   const closePosterForCurrentTab = () => {
     window.sessionStorage.setItem(POSTER_SESSION_KEY, "true");
     setIsPosterOpen(false);
@@ -186,6 +207,7 @@ export default function Home() {
   const compactQuery = compactSearchValue(deferredSearchQuery);
   const queryTokens = normalizedQuery.split(/\s+/).filter(Boolean);
   const isFiltering = deferredSearchQuery !== searchQuery;
+  const hasActiveSearch = normalizedQuery.length > 0;
 
   const searchableApps = useMemo(
     () =>
@@ -293,6 +315,7 @@ export default function Home() {
       </header>
 
       <main className="mx-auto max-w-6xl space-y-8 px-4 py-8">
+        {!hasActiveSearch ? (
         <section className="relative overflow-hidden rounded-3xl border border-emerald-300/40 bg-gradient-to-br from-emerald-600 via-emerald-500 to-green-500 p-8 text-white shadow-xl shadow-emerald-900/20">
           <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/20 blur-xl" />
           <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
@@ -335,7 +358,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+        ) : null}
 
+        {!hasActiveSearch ? (
         <section>
           <div className="flex gap-3 overflow-x-auto pb-2">
             {storeCategories.map((category) => (
@@ -353,6 +378,7 @@ export default function Home() {
             ))}
           </div>
         </section>
+        ) : null}
 
         <section>
           <div className="mb-4 flex items-end justify-between">
@@ -415,7 +441,8 @@ export default function Home() {
                   src={HOME_POSTER_CONFIG.imageUrl}
                   alt={HOME_POSTER_CONFIG.alt}
                   className="max-h-[82vh] sm:max-h-[85vh] w-full object-contain bg-black"
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                 />
               </a>
