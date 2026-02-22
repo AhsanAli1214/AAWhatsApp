@@ -52,38 +52,76 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      window.intergramId = "6001083166";
+    <!-- AA Mods Premium Telegram Support -->
 
-      window.intergramCustomizations = {
-        titleClosed: '💬 AA Mods Support',
-        titleOpen: '🛠 AA Mods Helpline',
+<style>
+.intergram-launcher {
+  background: linear-gradient(135deg, #0072ff, #00c6ff) !important;
+  border-radius: 50px !important;
+  padding: 14px 22px !important;
 
-        introMessage:
-          "👋 Welcome to AA Mods Official Support. " +
-          "- Need help with installation, updates, mod features, or security status. " +
-          "- Our Android specialists are ready to assist you. " +
-          "- Please describe your issue clearly using simple text.",
+  font-weight: 600 !important;
+  font-family: system-ui, sans-serif !important;
+  letter-spacing: 0.3px;
 
-        autoResponse:
-          "✅ Your message has been received. " +
-          "- Our support team will review your request shortly. " +
-          "- Average response time is 5 to 30 minutes. " +
-          "- Thank you for choosing AA Mods.",
+  box-shadow:
+    0 8px 20px rgba(0,114,255,0.35),
+    0 2px 6px rgba(0,0,0,0.2) !important;
 
-        autoNoResponse:
-          "⏳ We are currently reviewing your request. " +
-          "- If your issue is urgent, please include. " +
-          "- App Name. " +
-          "- Version. " +
-          "- Device Model. " +
-          "- Android Version. " +
-          "- This helps us resolve your issue faster.",
+  transition: all 0.35s ease !important;
+}
 
-        mainColor: "#0072ff",
-        alwaysUseFloatingButton: true,
-      };
-    </script>
+.intergram-launcher:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow:
+    0 12px 30px rgba(0,114,255,0.5);
+}
+
+@media (max-width:768px){
+  .intergram-launcher{
+    padding:12px 18px !important;
+    font-size:14px !important;
+  }
+}
+</style>
+
+<script>
+window.intergramId = "6001083166";
+
+window.intergramCustomizations = {
+
+titleClosed: '💬 AA Mods Support',
+titleOpen: '🛠 AA Mods Live Assistance',
+
+introMessage:
+"👋 Welcome to AA Mods Official Support. " +
+"- Need help with installation, updates, mod features, or security status. " +
+"- Our Android specialists are ready to assist you. " +
+"- Please describe your issue clearly using simple text.",
+
+autoResponse:
+"✅ Your message has been received. " +
+"- Our support team will review your request shortly. " +
+"- Average response time is 5 to 30 minutes. " +
+"- Thank you for choosing AA Mods.",
+
+autoNoResponse:
+"⏳ We are currently reviewing your request. " +
+"- If your issue is urgent, please include. " +
+"- App Name. " +
+"- Version. " +
+"- Device Model. " +
+"- Android Version. " +
+"- This helps us resolve your issue faster.",
+
+mainColor: "#0072ff",
+alwaysUseFloatingButton: true
+
+};
+</script>
+
+<script id="intergram" type="text/javascript"
+src="https://www.intergram.xyz/js/widget.js"></script>
 
     <script
       id="intergram"
