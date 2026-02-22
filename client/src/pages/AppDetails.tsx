@@ -115,7 +115,7 @@ export default function AppDetails() {
         </script>
       </Helmet>
 
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+      <header className="sticky inset-x-0 top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-2">
           <div className="flex items-center gap-4">
             <Link href="/">

@@ -28,6 +28,7 @@ export const APP_DETAIL_SLUGS = Object.freeze([
   "remini-mod",
   "youtube-premium-mod",
   "youtube-music-mod",
+  "aa-mods-store",
 ] as const);
 
 export const SECURE_DOWNLOAD_ASSETS = {
