@@ -177,6 +177,27 @@ export default function Home() {
     setIsPosterOpen(!isDismissedForTab);
   }, []);
 
+  useEffect(() => {
+    if (!HOME_POSTER_CONFIG.enabled || !HOME_POSTER_CONFIG.imageUrl) return;
+
+    const preloadLink = document.createElement("link");
+    preloadLink.rel = "preload";
+    preloadLink.as = "image";
+    preloadLink.href = HOME_POSTER_CONFIG.imageUrl;
+    preloadLink.crossOrigin = "anonymous";
+    document.head.appendChild(preloadLink);
+
+    const posterImage = new Image();
+    posterImage.decoding = "async";
+    posterImage.loading = "eager";
+    posterImage.fetchPriority = "high";
+    posterImage.src = HOME_POSTER_CONFIG.imageUrl;
+
+    return () => {
+      document.head.removeChild(preloadLink);
+    };
+  }, []);
+
   const closePosterForCurrentTab = () => {
     window.sessionStorage.setItem(POSTER_SESSION_KEY, "true");
     setIsPosterOpen(false);
@@ -415,7 +436,8 @@ export default function Home() {
                   src={HOME_POSTER_CONFIG.imageUrl}
                   alt={HOME_POSTER_CONFIG.alt}
                   className="max-h-[82vh] sm:max-h-[85vh] w-full object-contain bg-black"
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                 />
               </a>
