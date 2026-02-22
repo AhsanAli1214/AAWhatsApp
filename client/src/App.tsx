@@ -31,10 +31,10 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <div className="flex min-h-dvh flex-col bg-slate-50">
-            <div className="flex-1">
+            <main className="flex-1">
               <Router />
-            </div>
-            <div className="mt-auto">
+            </main>
+            <div className="shrink-0 mt-auto">
               <SiteFooter />
             </div>
           </div>
