@@ -42,10 +42,14 @@
     overflow-x: clip;
   }
 
+  html {
+    @apply bg-slate-50;
+  }
+
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
+    @apply bg-slate-50 text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
     font-family: var(--font-body);
-    padding-bottom: calc(var(--global-ad-banner-space, 0px) + env(safe-area-inset-bottom, 0px));
+    padding-bottom: var(--global-ad-banner-space, 0px);
   }
 
   h1, h2, h3, h4, h5, h6 {
